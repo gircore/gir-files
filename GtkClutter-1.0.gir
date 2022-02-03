@@ -111,7 +111,8 @@ gtk_container_add (GTK_CONTAINER (bin), contents);
         </parameters>
       </constructor>
       <method name="get_contents"
-              c:identifier="gtk_clutter_actor_get_contents">
+              c:identifier="gtk_clutter_actor_get_contents"
+              glib:get-property="contents">
         <doc xml:space="preserve"
              filename="../clutter-gtk/gtk-clutter-actor.c"
              line="682">Retrieves the child of the #GtkBin used to hold the contents of @actor.
@@ -166,7 +167,8 @@ return gtk_bin_get_child (GTK_BIN (bin));
       <property name="contents"
                 writable="1"
                 construct="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                getter="get_contents">
         <doc xml:space="preserve"
              filename="../clutter-gtk/gtk-clutter-actor.c"
              line="520">The #GtkWidget to be embedded into the #GtkClutterActor</doc>
@@ -299,28 +301,28 @@ private data and should be accessed using the provided API.</doc>
       <constructor name="new" c:identifier="gtk_clutter_embed_new">
         <doc xml:space="preserve"
              filename="../clutter-gtk/gtk-clutter-embed.c"
-             line="1208">Creates a new #GtkClutterEmbed widget. This widget can be
+             line="1205">Creates a new #GtkClutterEmbed widget. This widget can be
 used to build a scene using Clutter API into a GTK+ application.</doc>
         <source-position filename="../clutter-gtk/gtk-clutter-embed.h"
                          line="89"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../clutter-gtk/gtk-clutter-embed.c"
-               line="1214">the newly created #GtkClutterEmbed</doc>
+               line="1211">the newly created #GtkClutterEmbed</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
       <method name="get_stage" c:identifier="gtk_clutter_embed_get_stage">
         <doc xml:space="preserve"
              filename="../clutter-gtk/gtk-clutter-embed.c"
-             line="1222">Retrieves the #ClutterStage from @embed. The returned stage can be
+             line="1219">Retrieves the #ClutterStage from @embed. The returned stage can be
 used to add actors to the Clutter scene.</doc>
         <source-position filename="../clutter-gtk/gtk-clutter-embed.h"
                          line="91"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../clutter-gtk/gtk-clutter-embed.c"
-               line="1229">the Clutter stage. You should never
+               line="1226">the Clutter stage. You should never
   destroy or unref the returned actor.</doc>
           <type name="Clutter.Actor" c:type="ClutterActor*"/>
         </return-value>
@@ -328,41 +330,43 @@ used to add actors to the Clutter scene.</doc>
           <instance-parameter name="embed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../clutter-gtk/gtk-clutter-embed.c"
-                 line="1224">a #GtkClutterEmbed</doc>
+                 line="1221">a #GtkClutterEmbed</doc>
             <type name="Embed" c:type="GtkClutterEmbed*"/>
           </instance-parameter>
         </parameters>
       </method>
       <method name="get_use_layout_size"
               c:identifier="gtk_clutter_embed_get_use_layout_size"
+              glib:get-property="use-layout-size"
               version="1.4">
         <doc xml:space="preserve"
              filename="../clutter-gtk/gtk-clutter-embed.c"
-             line="1286">Retrieves whether the embedding uses the layout size, see
+             line="1283">Retrieves whether the embedding uses the layout size, see
 gtk_clutter_embed_set_use_layout_size() for details.</doc>
         <source-position filename="../clutter-gtk/gtk-clutter-embed.h"
                          line="96"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../clutter-gtk/gtk-clutter-embed.c"
-               line="1293">%TRUE if reporting stage size as widget size, %FALSE otherwise.</doc>
+               line="1290">%TRUE if reporting stage size as widget size, %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="embed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../clutter-gtk/gtk-clutter-embed.c"
-                 line="1288">a #GtkClutterEmbed</doc>
+                 line="1285">a #GtkClutterEmbed</doc>
             <type name="Embed" c:type="GtkClutterEmbed*"/>
           </instance-parameter>
         </parameters>
       </method>
       <method name="set_use_layout_size"
               c:identifier="gtk_clutter_embed_set_use_layout_size"
+              glib:set-property="use-layout-size"
               version="1.4">
         <doc xml:space="preserve"
              filename="../clutter-gtk/gtk-clutter-embed.c"
-             line="1240">Changes the way @embed requests size. If @use_layout_size is
+             line="1237">Changes the way @embed requests size. If @use_layout_size is
 %TRUE, the @embed widget will request the size that the
 LayoutManager reports as the preferred size. This means that
 a Gtk+ window will automatically get the natural and minimum
@@ -383,13 +387,13 @@ as a viewport into a potentially unlimited clutter space.</doc>
           <instance-parameter name="embed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../clutter-gtk/gtk-clutter-embed.c"
-                 line="1242">a #GtkClutterEmbed</doc>
+                 line="1239">a #GtkClutterEmbed</doc>
             <type name="Embed" c:type="GtkClutterEmbed*"/>
           </instance-parameter>
           <parameter name="use_layout_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../clutter-gtk/gtk-clutter-embed.c"
-                 line="1243">a boolean</doc>
+                 line="1240">a boolean</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -398,11 +402,12 @@ as a viewport into a potentially unlimited clutter space.</doc>
                 version="1.4"
                 writable="1"
                 construct="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                setter="set_use_layout_size"
+                getter="get_use_layout_size">
         <doc xml:space="preserve"
              filename="../clutter-gtk/gtk-clutter-embed.c"
-             line="1093">Whether to use the reported size of the LayoutManager on the stage as the widget size.
-See gtk_clutter_embed_set_use_layout_size() for details.</doc>
+             line="1091">The #GtkWidget to be embedded into the #GtkClutterActor</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <field name="parent_instance" readable="0" private="1">
@@ -1004,6 +1009,89 @@ guaranteed to be initialized.</doc>
         <type name="GLib.OptionGroup" c:type="GOptionGroup*"/>
       </return-value>
     </function>
+    <docsection name="gtk-clutter-actor">
+      <doc xml:space="preserve"
+           filename="../clutter-gtk/gtk-clutter-actor.c"
+           line="25">#GtkClutterActor is a #ClutterContainer that also allows embedding
+any #GtkWidget in a Clutter scenegraph.
+
+#GtkClutterActor only allows embedding #GtkWidget&lt;!-- --&gt;s when inside
+the #ClutterStage provided by a #GtkClutterEmbed: it is not possible to
+use #GtkClutterActor in a #ClutterStage handled by Clutter alone.</doc>
+    </docsection>
+    <docsection name="gtk-clutter-embed">
+      <doc xml:space="preserve"
+           filename="../clutter-gtk/gtk-clutter-embed.c"
+           line="23">#GtkClutterEmbed is a GTK+ widget embedding a #ClutterStage inside
+a GTK+ application.
+
+By using a #GtkClutterEmbed widget is possible to build, show and
+interact with a scene built using Clutter inside a GTK+ application.
+
+## Event handling with GtkClutterEmbed
+
+Due to re-entrancy concerns, you should not use GTK event-related
+API from within event handling signals emitted by Clutter actors
+inside a #GtkClutterEmbed.
+
+Event-related API, like the GTK drag and drop functions, or the
+GTK grab ones, cause events to be processed inside the GDK event
+loop; #GtkClutterEmbed and the Clutter event loop may use those
+events to generate Clutter events, and thus emit signals on
+#ClutterActors. If you use the event-related signals of a
+#ClutterActor to call the GTK API, one of the two event loops
+will try to re-enter into each other, and either cause a crash
+or simply block your application.
+
+To avoid this behavior, you can either:
+
+ - only use GTK+ event handling signals to call event-related
+   GTK functions
+ - let the main loop re-enter, by calling event-related GTK
+   functions from within an idle or a timeout callback
+
+You should also make sure you're not using GTK widgets that call
+event-related GTK API, like the grab functions in a #GtkMenu, in
+response to Clutter actor events.
+
+## Using GtkClutterEmbed as a container
+
+Though #GtkClutterEmbed is a #GtkContainer subclass, it is not a
+real GTK+ container; #GtkClutterEmbed is required to implement the
+#GtkContainer virtual functions in order to embed a #GtkWidget
+through the #GtkClutterActor class. Calling gtk_container_add()
+on a #GtkClutterEmbed will trigger an assertion. It is strongly
+advised not to override the #GtkContainer implementation when
+subclassing #GtkClutterEmbed, to avoid breaking internal state.</doc>
+    </docsection>
+    <docsection name="gtk-clutter-texture">
+      <doc xml:space="preserve"
+           filename="../clutter-gtk/gtk-clutter-texture.c"
+           line="22">#GtkClutterTexture is a simple sub-class of #ClutterTexture that
+integrates nicely with #GdkPixbuf, #GtkIconTheme and stock icons.</doc>
+    </docsection>
+    <docsection name="gtk-clutter-util">
+      <doc xml:space="preserve"
+           filename="../clutter-gtk/gtk-clutter-util.c"
+           line="44">In order to properly integrate a Clutter scene into a GTK+ applications
+a certain degree of state must be retrieved from GTK+ itself.
+
+Clutter-GTK provides API for easing the process of synchronizing colors
+with the current GTK+ theme and for loading image sources from #GdkPixbuf,
+GTK+ stock items and icon themes.</doc>
+    </docsection>
+    <docsection name="gtk-clutter-window">
+      <doc xml:space="preserve"
+           filename="../clutter-gtk/gtk-clutter-window.c"
+           line="22">#GtkClutterWindow is a #GtkWindow sub-class that embeds a Clutter stage.
+
+#GtkClutterWindow behaves exactly like a #GtkWindow, except that its
+child is automatically embedded inside a #GtkClutterActor and it is
+thus part of the embedded #ClutterStage.
+
+Clutter actors can be added to the same stage by calling
+gtk_clutter_window_get_stage().</doc>
+    </docsection>
     <function name="init" c:identifier="gtk_clutter_init">
       <doc xml:space="preserve"
            filename="../clutter-gtk/gtk-clutter-util.c"
