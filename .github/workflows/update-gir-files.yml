@@ -28,6 +28,7 @@ jobs:
           sudo apt-get update > /dev/null
           sudo apt-get upgrade > /dev/null
           sudo apt-get install binutils wget tar flatpak > /dev/null
+          flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
           flatpak install org.gnome.Sdk//$sdk_version -y --noninteractive
           flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version transfer.py
       - name: Create pull request
@@ -35,5 +36,5 @@ jobs:
         with:
           commit-message: Update gir files
           title: Update gir files
-          body: Keep the gir files in sync with org.gnome.Sdk version $sdk_version
+          body: Keep the gir files in sync with org.gnome.Sdk version ${{ env.sdk_version }}
           delete-branch: true
