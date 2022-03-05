@@ -1,4 +1,4 @@
-name: Update gir files
+name: MacOS - Update gir files
 on:
   workflow_dispatch:
   schedule:
@@ -11,30 +11,32 @@ on:
     #        │  │ │ │ │
     #        │  │ │ │ │
     #        *  * * * *
-    - cron: '00 0 * * 5'
-
-env:
-  sdk_version: 41
+    - cron: '00 1 * * 5'
 
 jobs:
   update:
-    name: Update gir files
-    runs-on: ubuntu-latest
+    name: MacOS - Update gir files
+    runs-on: macos-latest
     steps:
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Extract gir files
         run: |
-          sudo apt-get update > /dev/null
-          sudo apt-get upgrade > /dev/null
-          sudo apt-get install binutils wget tar flatpak > /dev/null
-          flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-          flatpak install org.gnome.Sdk//$sdk_version -y --noninteractive
-          flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version transfer.py
+          brew install gtk4
+          brew install gtk+3
+          brew install clutter-gtk
+          brew install gstreamer
+          brew install gst-plugins-base
+          brew install gst-plugins-good
+          python macos/transfer.py
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Update gir files
-          title: Update gir files
-          body: Keep the gir files in sync with org.gnome.Sdk version ${{ env.sdk_version }}
+          commit-message: MacOS - Update gir files
+          title: MacOS - Update gir files
+          body: Keep the gir files in sync with current homebrew version
           delete-branch: true

@@ -1,0 +1,40 @@
+name: Linux - Update gir files
+on:
+  workflow_dispatch:
+  schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │  ┌───────────── hour (0 - 23)
+    #        │  │ ┌───────────── day of the month (1 - 31)
+    #        │  │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │  │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        *  * * * *
+    - cron: '00 0 * * 5'
+
+env:
+  sdk_version: 41
+
+jobs:
+  update:
+    name: Linux - Update gir files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Extract gir files
+        run: |
+          sudo apt-get update > /dev/null
+          sudo apt-get upgrade > /dev/null
+          sudo apt-get install binutils wget tar flatpak > /dev/null
+          flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+          flatpak install org.gnome.Sdk//$sdk_version --or-update -y --noninteractive
+          flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version linux/transfer.py
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Linux - Update gir files
+          title: Linux - Update gir files
+          body: Keep the gir files in sync with org.gnome.Sdk version ${{ env.sdk_version }}
+          delete-branch: true
