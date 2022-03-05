@@ -14,3 +14,4 @@ for file in gir_files:
       shutil.copy(src, dest)
   except FileNotFoundError:
     print(f"Could not copy {file} to {dest_dir}.")
+    sys.exit(1)
