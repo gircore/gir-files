@@ -1,0 +1,39 @@
+name: Update gir files
+on:
+  workflow_dispatch:
+  schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │  ┌───────────── hour (0 - 23)
+    #        │  │ ┌───────────── day of the month (1 - 31)
+    #        │  │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │  │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        *  * * * *
+    - cron: '00 1 * * 5'
+
+jobs:
+  update:
+    name: MacOS - Update gir files
+    runs-on: macos-latest
+    steps:
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Extract gir files
+        run: |
+          brew install gtk+3
+          brew install gtk4
+          brew install gstreamer
+          python macos/transfer.py
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: MacOS - Update gir files
+          title: MacOS - Update gir files
+          body: Keep the gir files in sync with current homebrew version
+          delete-branch: true
