@@ -24337,7 +24337,7 @@ for sparse streams such as subtitle streams.</doc>
                    version="1.18">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2203">Create a new instant-rate-change event. This event is sent by seek
+             line="2208">Create a new instant-rate-change event. This event is sent by seek
 handlers (e.g. demuxers) when receiving a seek with the
 %GST_SEEK_FLAG_INSTANT_RATE_CHANGE and signals to downstream elements that
 the playback rate in the existing segment should be immediately multiplied
@@ -24350,20 +24350,20 @@ are ignored and not transferred in the event.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="2218">the new instant-rate-change event.</doc>
+               line="2223">the new instant-rate-change event.</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="rate_multiplier" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2205">the multiplier to be applied to the playback rate</doc>
+                 line="2210">the multiplier to be applied to the playback rate</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
           <parameter name="new_flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2206">A new subset of segment flags to replace in segments</doc>
+                 line="2211">A new subset of segment flags to replace in segments</doc>
             <type name="SegmentFlags" c:type="GstSegmentFlags"/>
           </parameter>
         </parameters>
@@ -24373,7 +24373,7 @@ are ignored and not transferred in the event.</doc>
                    version="1.18">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2270">Create a new instant-rate-sync-time event. This event is sent by the
+             line="2275">Create a new instant-rate-sync-time event. This event is sent by the
 pipeline to notify elements handling the instant-rate-change event about
 the running-time when the new rate should be applied. The running time
 may be in the past when elements handle this event, which can lead to
@@ -24389,26 +24389,26 @@ different to the one indicated in the playback segments.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="2290">the new instant-rate-sync-time event.</doc>
+               line="2295">the new instant-rate-sync-time event.</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="rate_multiplier" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2272">the new playback rate multiplier to be applied</doc>
+                 line="2277">the new playback rate multiplier to be applied</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
           <parameter name="running_time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2273">Running time when the rate change should be applied</doc>
+                 line="2278">Running time when the rate change should be applied</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="upstream_running_time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2274">The upstream-centric running-time when the
+                 line="2279">The upstream-centric running-time when the
    rate change should be applied.</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
@@ -24417,7 +24417,7 @@ different to the one indicated in the playback segments.</doc>
       <constructor name="new_latency" c:identifier="gst_event_new_latency">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1461">Create a new latency event. The event is sent upstream from the sinks and
+             line="1464">Create a new latency event. The event is sent upstream from the sinks and
 notifies elements that they should add an additional @latency to the
 running time before synchronising against the clock.
 
@@ -24427,14 +24427,14 @@ the time format.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1472">a new #GstEvent</doc>
+               line="1475">a new #GstEvent</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1463">the new latency value</doc>
+                 line="1466">the new latency value</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -24443,19 +24443,19 @@ the time format.</doc>
                    c:identifier="gst_event_new_navigation">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1444">Create a new navigation event from the given description.</doc>
+             line="1447">Create a new navigation event from the given description.</doc>
         <source-position filename="../gst/gstevent.h" line="651"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1451">a new #GstEvent</doc>
+               line="1454">a new #GstEvent</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="structure" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1446">description of the event. The event will take
+                 line="1449">description of the event. The event will take
     ownership of the structure.</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
@@ -24466,7 +24466,7 @@ the time format.</doc>
                    version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2033">Creates a new event containing information specific to a particular
+             line="2038">Creates a new event containing information specific to a particular
 protection system (uniquely identified by @system_id), by which that
 protection system can acquire key(s) to decrypt a protected stream.
 
@@ -24499,7 +24499,7 @@ be stuck to the output pad of the sending element.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="2073">a #GST_EVENT_PROTECTION event, if successful; %NULL
+               line="2078">a #GST_EVENT_PROTECTION event, if successful; %NULL
 if unsuccessful.</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
@@ -24507,21 +24507,21 @@ if unsuccessful.</doc>
           <parameter name="system_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2035">a string holding a UUID that uniquely
+                 line="2040">a string holding a UUID that uniquely
 identifies a protection system.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2037">a #GstBuffer holding protection system specific
+                 line="2042">a #GstBuffer holding protection system specific
 information. The reference count of the buffer will be incremented by one.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
           <parameter name="origin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2039">a string indicating where the protection
+                 line="2044">a string indicating where the protection
 information carried in the event was extracted from. The allowed values
 of this string will depend upon the protection scheme.</doc>
             <type name="utf8" c:type="const gchar*"/>
@@ -24611,7 +24611,7 @@ event and implement custom application specific QoS handling.</doc>
                    c:identifier="gst_event_new_reconfigure">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1595">Create a new reconfigure event. The purpose of the reconfigure event is
+             line="1598">Create a new reconfigure event. The purpose of the reconfigure event is
 to travel upstream and make elements renegotiate their caps or reconfigure
 their buffer pools. This is useful when changing properties on elements
 or changing the topology of the pipeline.</doc>
@@ -24619,7 +24619,7 @@ or changing the topology of the pipeline.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1603">a new #GstEvent</doc>
+               line="1606">a new #GstEvent</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
       </constructor>
@@ -24763,26 +24763,26 @@ After a segment event, the buffer stream time is calculated with:
                    c:identifier="gst_event_new_segment_done">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2146">Create a new segment-done event. This event is sent by elements that
+             line="2151">Create a new segment-done event. This event is sent by elements that
 finish playback of a segment as a result of a segment seek.</doc>
         <source-position filename="../gst/gstevent.h" line="686"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="2154">a new #GstEvent</doc>
+               line="2159">a new #GstEvent</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2148">The format of the position being done</doc>
+                 line="2153">The format of the position being done</doc>
             <type name="Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="position" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2149">The position of the segment being done</doc>
+                 line="2154">The position of the segment being done</doc>
             <type name="gint64" c:type="gint64"/>
           </parameter>
         </parameters>
@@ -24826,7 +24826,7 @@ activate</doc>
                    c:identifier="gst_event_new_sink_message">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1617">Create a new sink-message event. The purpose of the sink-message event is
+             line="1620">Create a new sink-message event. The purpose of the sink-message event is
 to instruct a sink to post the message contained in the event synchronized
 with the stream.
 
@@ -24835,20 +24835,20 @@ with the stream.
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1628">a new #GstEvent</doc>
+               line="1631">a new #GstEvent</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1619">a name for the event</doc>
+                 line="1622">a name for the event</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1620">the #GstMessage to be posted</doc>
+                 line="1623">the #GstMessage to be posted</doc>
             <type name="Message" c:type="GstMessage*"/>
           </parameter>
         </parameters>
@@ -24856,7 +24856,7 @@ with the stream.
       <constructor name="new_step" c:identifier="gst_event_new_step">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1509">Create a new step event. The purpose of the step event is to instruct a sink
+             line="1512">Create a new step event. The purpose of the step event is to instruct a sink
 to skip @amount (expressed in @format) of media. It can be used to implement
 stepping through the video frame by frame or for doing fast trick modes.
 
@@ -24873,38 +24873,38 @@ part of a larger step operation.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1531">a new #GstEvent</doc>
+               line="1534">a new #GstEvent</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1511">the format of @amount</doc>
+                 line="1514">the format of @amount</doc>
             <type name="Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="amount" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1512">the amount of data to step</doc>
+                 line="1515">the amount of data to step</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="rate" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1513">the step rate</doc>
+                 line="1516">the step rate</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
           <parameter name="flush" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1514">flushing steps</doc>
+                 line="1517">flushing steps</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
           <parameter name="intermediate" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1515">intermediate steps</doc>
+                 line="1518">intermediate steps</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -24914,7 +24914,7 @@ part of a larger step operation.</doc>
                    version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1869">Create a new STREAM_COLLECTION event. The stream collection event can only
+             line="1874">Create a new STREAM_COLLECTION event. The stream collection event can only
 travel downstream synchronized with the buffer flow.
 
 Source elements, demuxers and other elements that manage collections
@@ -24926,14 +24926,14 @@ data flow.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1882">the new STREAM_COLLECTION event.</doc>
+               line="1887">the new STREAM_COLLECTION event.</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="collection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1871">Active collection for this data flow</doc>
+                 line="1876">Active collection for this data flow</doc>
             <type name="StreamCollection" c:type="GstStreamCollection*"/>
           </parameter>
         </parameters>
@@ -24972,7 +24972,7 @@ new pads can be exposed before sending EOS on the existing pads.</doc>
                    c:identifier="gst_event_new_stream_start">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1670">Create a new STREAM_START event. The stream start event can only
+             line="1673">Create a new STREAM_START event. The stream start event can only
 travel downstream synchronized with the buffer flow. It is expected
 to be the first event that is sent for a new stream.
 
@@ -24997,14 +24997,14 @@ stream flags).</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1696">the new STREAM_START event.</doc>
+               line="1699">the new STREAM_START event.</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="stream_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1672">Identifier for this stream</doc>
+                 line="1675">Identifier for this stream</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -25039,26 +25039,26 @@ scope and create a new tag event from it.</doc>
       <constructor name="new_toc" c:identifier="gst_event_new_toc">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1926">Generate a TOC event from the given @toc. The purpose of the TOC event is to
+             line="1931">Generate a TOC event from the given @toc. The purpose of the TOC event is to
 inform elements that some kind of the TOC was found.</doc>
         <source-position filename="../gst/gstevent.h" line="590"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1934">a new #GstEvent.</doc>
+               line="1939">a new #GstEvent.</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="toc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1928">#GstToc structure.</doc>
+                 line="1933">#GstToc structure.</doc>
             <type name="Toc" c:type="GstToc*"/>
           </parameter>
           <parameter name="updated" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1929">whether @toc was updated or not.</doc>
+                 line="1934">whether @toc was updated or not.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -25067,21 +25067,21 @@ inform elements that some kind of the TOC was found.</doc>
                    c:identifier="gst_event_new_toc_select">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1984">Generate a TOC select event with the given @uid. The purpose of the
+             line="1989">Generate a TOC select event with the given @uid. The purpose of the
 TOC select event is to start playback based on the TOC's entry with the
 given @uid.</doc>
         <source-position filename="../gst/gstevent.h" line="678"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1992">a new #GstEvent.</doc>
+               line="1997">a new #GstEvent.</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <parameter name="uid" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1986">UID in the TOC to start playback from.</doc>
+                 line="1991">UID in the TOC to start playback from.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -25411,7 +25411,7 @@ valid.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstevent.c"
-               line="1849">%TRUE if a group id was set on the event and could be parsed,
+               line="1853">%TRUE if a group id was set on the event and could be parsed,
   %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -25419,7 +25419,7 @@ valid.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1846">a stream-start event</doc>
+                 line="1850">a stream-start event</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="group_id"
@@ -25428,7 +25428,7 @@ valid.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1847">address of variable where to store the group id</doc>
+                 line="1851">address of variable where to store the group id</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
         </parameters>
@@ -25438,7 +25438,7 @@ valid.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2243">Extract rate and flags from an instant-rate-change event.</doc>
+             line="2248">Extract rate and flags from an instant-rate-change event.</doc>
         <source-position filename="../gst/gstevent.h" line="697"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25447,7 +25447,7 @@ valid.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2245">a #GstEvent of type #GST_EVENT_INSTANT_RATE_CHANGE</doc>
+                 line="2250">a #GstEvent of type #GST_EVENT_INSTANT_RATE_CHANGE</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="rate_multiplier"
@@ -25458,7 +25458,7 @@ valid.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2246">location in which to store the rate
+                 line="2251">location in which to store the rate
     multiplier of the instant-rate-change event, or %NULL</doc>
             <type name="gdouble" c:type="gdouble*"/>
           </parameter>
@@ -25470,7 +25470,7 @@ valid.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2248">location in which to store the new
+                 line="2253">location in which to store the new
     segment flags of the instant-rate-change event, or %NULL</doc>
             <type name="SegmentFlags" c:type="GstSegmentFlags*"/>
           </parameter>
@@ -25481,7 +25481,7 @@ valid.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2319">Extract the rate multiplier and running times from an instant-rate-sync-time event.</doc>
+             line="2324">Extract the rate multiplier and running times from an instant-rate-sync-time event.</doc>
         <source-position filename="../gst/gstevent.h" line="708"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25490,7 +25490,7 @@ valid.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2321">a #GstEvent of type #GST_EVENT_INSTANT_RATE_CHANGE</doc>
+                 line="2326">a #GstEvent of type #GST_EVENT_INSTANT_RATE_CHANGE</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="rate_multiplier"
@@ -25501,7 +25501,7 @@ valid.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2322">location where to store the rate of
+                 line="2327">location where to store the rate of
     the instant-rate-sync-time event, or %NULL</doc>
             <type name="gdouble" c:type="gdouble*"/>
           </parameter>
@@ -25513,7 +25513,7 @@ valid.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2324">location in which to store the running time
+                 line="2329">location in which to store the running time
     of the instant-rate-sync-time event, or %NULL</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
@@ -25525,7 +25525,7 @@ valid.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2326">location in which to store the
+                 line="2331">location in which to store the
     upstream running time of the instant-rate-sync-time event, or %NULL</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
@@ -25534,7 +25534,7 @@ valid.</doc>
       <method name="parse_latency" c:identifier="gst_event_parse_latency">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1490">Get the latency in the latency event.</doc>
+             line="1493">Get the latency in the latency event.</doc>
         <source-position filename="../gst/gstevent.h" line="659"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25543,7 +25543,7 @@ valid.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1492">The event to query</doc>
+                 line="1495">The event to query</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="latency"
@@ -25552,7 +25552,7 @@ valid.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1493">A pointer to store the latency in.</doc>
+                 line="1496">A pointer to store the latency in.</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
         </parameters>
@@ -25562,7 +25562,7 @@ valid.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2105">Parses an event containing protection system specific information and stores
+             line="2110">Parses an event containing protection system specific information and stores
 the results in @system_id, @data and @origin. The data stored in @system_id,
 @origin and @data are valid until @event is released.</doc>
         <source-position filename="../gst/gstevent.h" line="601"/>
@@ -25573,7 +25573,7 @@ the results in @system_id, @data and @origin. The data stored in @system_id,
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2107">a #GST_EVENT_PROTECTION event.</doc>
+                 line="2112">a #GST_EVENT_PROTECTION event.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="system_id"
@@ -25584,7 +25584,7 @@ the results in @system_id, @data and @origin. The data stored in @system_id,
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2108">pointer to store the UUID
+                 line="2113">pointer to store the UUID
 string uniquely identifying a content protection system.</doc>
             <type name="utf8" c:type="const gchar**"/>
           </parameter>
@@ -25596,7 +25596,7 @@ string uniquely identifying a content protection system.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2110">pointer to store a #GstBuffer
+                 line="2115">pointer to store a #GstBuffer
 holding protection system specific information.</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
@@ -25608,7 +25608,7 @@ holding protection system specific information.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2112">pointer to store a value that
+                 line="2117">pointer to store a value that
 indicates where the protection information carried by @event was extracted
 from.</doc>
             <type name="utf8" c:type="const gchar**"/>
@@ -25806,7 +25806,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
               c:identifier="gst_event_parse_segment_done">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2173">Extracts the position and format from the segment done message.</doc>
+             line="2178">Extracts the position and format from the segment done message.</doc>
         <source-position filename="../gst/gstevent.h" line="689"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25815,7 +25815,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2175">A valid #GstEvent of type GST_EVENT_SEGMENT_DONE.</doc>
+                 line="2180">A valid #GstEvent of type GST_EVENT_SEGMENT_DONE.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="format"
@@ -25826,7 +25826,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2176">Result location for the format, or %NULL</doc>
+                 line="2181">Result location for the format, or %NULL</doc>
             <type name="Format" c:type="GstFormat*"/>
           </parameter>
           <parameter name="position"
@@ -25837,7 +25837,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2177">Result location for the position, or %NULL</doc>
+                 line="2182">Result location for the position, or %NULL</doc>
             <type name="gint64" c:type="gint64*"/>
           </parameter>
         </parameters>
@@ -25876,7 +25876,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
               c:identifier="gst_event_parse_sink_message">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1648">Parse the sink-message event. Unref @msg after usage.</doc>
+             line="1651">Parse the sink-message event. Unref @msg after usage.</doc>
         <source-position filename="../gst/gstevent.h" line="619"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25885,7 +25885,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1650">The event to query</doc>
+                 line="1653">The event to query</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="msg"
@@ -25894,7 +25894,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1651">a pointer to store the #GstMessage in.</doc>
+                 line="1654">a pointer to store the #GstMessage in.</doc>
             <type name="Message" c:type="GstMessage**"/>
           </parameter>
         </parameters>
@@ -25902,7 +25902,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
       <method name="parse_step" c:identifier="gst_event_parse_step">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1555">Parse the step event.</doc>
+             line="1558">Parse the step event.</doc>
         <source-position filename="../gst/gstevent.h" line="667"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25911,7 +25911,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1557">The event to query</doc>
+                 line="1560">The event to query</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="format"
@@ -25922,7 +25922,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1558">a pointer to store the format in</doc>
+                 line="1561">a pointer to store the format in</doc>
             <type name="Format" c:type="GstFormat*"/>
           </parameter>
           <parameter name="amount"
@@ -25933,7 +25933,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1559">a pointer to store the amount in</doc>
+                 line="1562">a pointer to store the amount in</doc>
             <type name="guint64" c:type="guint64*"/>
           </parameter>
           <parameter name="rate"
@@ -25944,7 +25944,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1560">a pointer to store the rate in</doc>
+                 line="1563">a pointer to store the rate in</doc>
             <type name="gdouble" c:type="gdouble*"/>
           </parameter>
           <parameter name="flush"
@@ -25955,7 +25955,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1561">a pointer to store the flush boolean in</doc>
+                 line="1564">a pointer to store the flush boolean in</doc>
             <type name="gboolean" c:type="gboolean*"/>
           </parameter>
           <parameter name="intermediate"
@@ -25966,7 +25966,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1562">a pointer to store the intermediate
+                 line="1565">a pointer to store the intermediate
     boolean in</doc>
             <type name="gboolean" c:type="gboolean*"/>
           </parameter>
@@ -25977,7 +25977,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1758">Parse a stream-start @event and extract the #GstStream from it.</doc>
+             line="1761">Parse a stream-start @event and extract the #GstStream from it.</doc>
         <source-position filename="../gst/gstevent.h" line="496"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25986,7 +25986,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1760">a stream-start event</doc>
+                 line="1763">a stream-start event</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="stream"
@@ -25995,7 +25995,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1761">address of variable to store the stream</doc>
+                 line="1764">address of variable to store the stream</doc>
             <type name="Stream" c:type="GstStream**"/>
           </parameter>
         </parameters>
@@ -26005,7 +26005,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1900">Retrieve new #GstStreamCollection from STREAM_COLLECTION event @event.</doc>
+             line="1905">Retrieve new #GstStreamCollection from STREAM_COLLECTION event @event.</doc>
         <source-position filename="../gst/gstevent.h" line="527"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -26014,7 +26014,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1902">a stream-collection event</doc>
+                 line="1907">a stream-collection event</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="collection"
@@ -26023,7 +26023,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1903">pointer to store the collection</doc>
+                 line="1908">pointer to store the collection</doc>
             <type name="StreamCollection" c:type="GstStreamCollection**"/>
           </parameter>
         </parameters>
@@ -26039,7 +26039,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1800">a stream-start event</doc>
+                 line="1803">a stream-start event</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="flags"
@@ -26048,7 +26048,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1801">address of variable where to store the stream flags</doc>
+                 line="1804">address of variable where to store the stream flags</doc>
             <type name="StreamFlags" c:type="GstStreamFlags*"/>
           </parameter>
         </parameters>
@@ -26086,7 +26086,7 @@ and make a copy if you want to modify it or store it for later use.</doc>
               c:identifier="gst_event_parse_stream_start">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1712">Parse a stream-id @event and store the result in the given @stream_id
+             line="1715">Parse a stream-id @event and store the result in the given @stream_id
 location. The string stored in @stream_id must not be modified and will
 remain valid only until @event gets freed. Make a copy if you want to
 modify it or store it for later use.</doc>
@@ -26098,7 +26098,7 @@ modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1714">a stream-start event.</doc>
+                 line="1717">a stream-start event.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="stream_id"
@@ -26107,7 +26107,7 @@ modify it or store it for later use.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1715">pointer to store the stream-id</doc>
+                 line="1718">pointer to store the stream-id</doc>
             <type name="utf8" c:type="const gchar**"/>
           </parameter>
         </parameters>
@@ -26144,7 +26144,7 @@ want to modify it or store it for later use.</doc>
       <method name="parse_toc" c:identifier="gst_event_parse_toc">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1960">Parse a TOC @event and store the results in the given @toc and @updated locations.</doc>
+             line="1965">Parse a TOC @event and store the results in the given @toc and @updated locations.</doc>
         <source-position filename="../gst/gstevent.h" line="593"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -26153,7 +26153,7 @@ want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1962">a TOC event.</doc>
+                 line="1967">a TOC event.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="toc"
@@ -26162,7 +26162,7 @@ want to modify it or store it for later use.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1963">pointer to #GstToc structure.</doc>
+                 line="1968">pointer to #GstToc structure.</doc>
             <type name="Toc" c:type="GstToc**"/>
           </parameter>
           <parameter name="updated"
@@ -26171,7 +26171,7 @@ want to modify it or store it for later use.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1964">pointer to store TOC updated flag.</doc>
+                 line="1969">pointer to store TOC updated flag.</doc>
             <type name="gboolean" c:type="gboolean*"/>
           </parameter>
         </parameters>
@@ -26180,7 +26180,7 @@ want to modify it or store it for later use.</doc>
               c:identifier="gst_event_parse_toc_select">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="2009">Parse a TOC select @event and store the results in the given @uid location.</doc>
+             line="2014">Parse a TOC select @event and store the results in the given @uid location.</doc>
         <source-position filename="../gst/gstevent.h" line="681"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -26189,7 +26189,7 @@ want to modify it or store it for later use.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2011">a TOC select event.</doc>
+                 line="2016">a TOC select event.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="uid"
@@ -26200,7 +26200,7 @@ want to modify it or store it for later use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="2012">storage for the selection UID.</doc>
+                 line="2017">storage for the selection UID.</doc>
             <type name="utf8" c:type="gchar**"/>
           </parameter>
         </parameters>
@@ -26210,7 +26210,7 @@ want to modify it or store it for later use.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1817">All streams that have the same group id are supposed to be played
+             line="1821">All streams that have the same group id are supposed to be played
 together, i.e. all streams inside a container file should have the
 same group id but different stream ids. The group id should change
 each time the stream is started, resulting in different group ids
@@ -26225,13 +26225,13 @@ Use gst_util_group_id_next() to get a new group id.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1819">a stream-start event</doc>
+                 line="1823">a stream-start event</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="group_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1820">the group id to set</doc>
+                 line="1824">the group id to set</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -26319,7 +26319,7 @@ MT safe.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstevent.c"
-             line="1738">Set the @stream on the stream-start @event</doc>
+             line="1741">Set the @stream on the stream-start @event</doc>
         <source-position filename="../gst/gstevent.h" line="493"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -26328,13 +26328,13 @@ MT safe.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1740">a stream-start event</doc>
+                 line="1743">a stream-start event</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="stream" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1741">the stream object to set</doc>
+                 line="1744">the stream object to set</doc>
             <type name="Stream" c:type="GstStream*"/>
           </parameter>
         </parameters>
@@ -26350,13 +26350,13 @@ MT safe.</doc>
           <instance-parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1782">a stream-start event</doc>
+                 line="1785">a stream-start event</doc>
             <type name="Event" c:type="GstEvent*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstevent.c"
-                 line="1783">the stream flags to set</doc>
+                 line="1786">the stream flags to set</doc>
             <type name="StreamFlags" c:type="GstStreamFlags"/>
           </parameter>
         </parameters>
@@ -31619,27 +31619,27 @@ MT safe.</doc>
                    version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2592">Creates a new device-added message. The device-added message is produced by
+             line="2594">Creates a new device-added message. The device-added message is produced by
 #GstDeviceProvider or a #GstDeviceMonitor. They announce the appearance
 of monitored devices.</doc>
         <source-position filename="../gst/gstmessage.h" line="762"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2601">a newly allocated #GstMessage</doc>
+               line="2603">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2594">The #GstObject that created the message</doc>
+                 line="2596">The #GstObject that created the message</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2595">The new #GstDevice</doc>
+                 line="2597">The new #GstDevice</doc>
             <type name="Device" c:type="GstDevice*"/>
           </parameter>
         </parameters>
@@ -31649,27 +31649,27 @@ of monitored devices.</doc>
                    version="1.16">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2696">Creates a new device-changed message. The device-changed message is produced
+             line="2698">Creates a new device-changed message. The device-changed message is produced
 by #GstDeviceProvider or a #GstDeviceMonitor. They announce that a device
 properties has changed and @device represent the new modified version of @changed_device.</doc>
         <source-position filename="../gst/gstmessage.h" line="778"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2706">a newly allocated #GstMessage</doc>
+               line="2708">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2698">The #GstObject that created the message</doc>
+                 line="2700">The #GstObject that created the message</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2699">The newly created device representing @replaced_device
+                 line="2701">The newly created device representing @replaced_device
         with its new configuration.</doc>
             <type name="Device" c:type="GstDevice*"/>
           </parameter>
@@ -31683,27 +31683,27 @@ properties has changed and @device represent the new modified version of @change
                    version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2644">Creates a new device-removed message. The device-removed message is produced
+             line="2646">Creates a new device-removed message. The device-removed message is produced
 by #GstDeviceProvider or a #GstDeviceMonitor. They announce the
 disappearance of monitored devices.</doc>
         <source-position filename="../gst/gstmessage.h" line="770"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2653">a newly allocated #GstMessage</doc>
+               line="2655">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2646">The #GstObject that created the message</doc>
+                 line="2648">The #GstObject that created the message</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2647">The removed #GstDevice</doc>
+                 line="2649">The removed #GstDevice</doc>
             <type name="Device" c:type="GstDevice*"/>
           </parameter>
         </parameters>
@@ -31893,12 +31893,12 @@ receiving this message should stop the pipeline.</doc>
                    version="1.2">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2542">This message is posted when an element has a new local #GstContext.</doc>
+             line="2544">This message is posted when an element has a new local #GstContext.</doc>
         <source-position filename="../gst/gstmessage.h" line="754"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2549">The new have-context message.
+               line="2551">The new have-context message.
 
 MT safe.</doc>
           <type name="Message" c:type="GstMessage*"/>
@@ -31910,13 +31910,13 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2544">The object originating the message.</doc>
+                 line="2546">The object originating the message.</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="context" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2545">the context</doc>
+                 line="2547">the context</doc>
             <type name="Context" c:type="GstContext*"/>
           </parameter>
         </parameters>
@@ -32011,7 +32011,7 @@ MT safe.</doc>
                    version="1.18">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3272">Creates a new instant-rate-request message. Elements handling the
+             line="3274">Creates a new instant-rate-request message. Elements handling the
 instant-rate-change event must post this message. The message is
 handled at the pipeline, and allows the pipeline to select the
 running time when the rate change should happen and to send an
@@ -32021,20 +32021,20 @@ in the pipeline.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="3284">a newly allocated #GstMessage</doc>
+               line="3286">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3274">The #GstObject that posted the message</doc>
+                 line="3276">The #GstObject that posted the message</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="rate_multiplier" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3275">the rate multiplier factor that should be applied</doc>
+                 line="3277">the rate multiplier factor that should be applied</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -32070,12 +32070,12 @@ MT safe.</doc>
                    version="1.2">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2483">This message is posted when an element needs a specific #GstContext.</doc>
+             line="2485">This message is posted when an element needs a specific #GstContext.</doc>
         <source-position filename="../gst/gstmessage.h" line="746"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2490">The new need-context message.
+               line="2492">The new need-context message.
 
 MT safe.</doc>
           <type name="Message" c:type="GstMessage*"/>
@@ -32087,13 +32087,13 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2485">The object originating the message.</doc>
+                 line="2487">The object originating the message.</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="context_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2486">The context type that is needed</doc>
+                 line="2488">The context type that is needed</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -32180,20 +32180,20 @@ to perform actions triggered by a state change.
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2765">a newly allocated #GstMessage</doc>
+               line="2767">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2761">The #GstObject whose property changed (may or may not be a #GstElement)</doc>
+                 line="2763">The #GstObject whose property changed (may or may not be a #GstElement)</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="property_name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2762">name of the property that changed</doc>
+                 line="2764">name of the property that changed</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="val"
@@ -32202,7 +32202,7 @@ to perform actions triggered by a state change.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2763">new property value, or %NULL</doc>
+                 line="2765">new property value, or %NULL</doc>
             <type name="GObject.Value" c:type="GValue*"/>
           </parameter>
         </parameters>
@@ -32276,7 +32276,7 @@ MT safe.</doc>
                    version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3032">Creates a new redirect message and adds a new entry to it. Redirect messages
+             line="3034">Creates a new redirect message and adds a new entry to it. Redirect messages
 are posted when an element detects that the actual data has to be retrieved
 from a different location. This is useful if such a redirection cannot be
 handled inside a source element, for example when HTTP 302/303 redirects
@@ -32305,20 +32305,20 @@ list and structure are transferred to the message.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="3065">a newly allocated #GstMessage</doc>
+               line="3067">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3034">The #GstObject whose property changed (may or may not be a #GstElement)</doc>
+                 line="3036">The #GstObject whose property changed (may or may not be a #GstElement)</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="location" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3035">location string for the new entry</doc>
+                 line="3037">location string for the new entry</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="tag_list"
@@ -32327,7 +32327,7 @@ list and structure are transferred to the message.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3036">tag list for the new entry</doc>
+                 line="3038">tag list for the new entry</doc>
             <type name="TagList" c:type="GstTagList*"/>
           </parameter>
           <parameter name="entry_struct"
@@ -32336,7 +32336,7 @@ list and structure are transferred to the message.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3037">structure for the new entry</doc>
+                 line="3039">structure for the new entry</doc>
             <type name="Structure" c:type="const GstStructure*"/>
           </parameter>
         </parameters>
@@ -32705,26 +32705,26 @@ MT safe.</doc>
                    version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2831">Creates a new stream-collection message. The message is used to announce new
+             line="2833">Creates a new stream-collection message. The message is used to announce new
 #GstStreamCollection</doc>
         <source-position filename="../gst/gstmessage.h" line="795"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2839">a newly allocated #GstMessage</doc>
+               line="2841">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2833">The #GstObject that created the message</doc>
+                 line="2835">The #GstObject that created the message</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="collection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2834">The #GstStreamCollection</doc>
+                 line="2836">The #GstStreamCollection</doc>
             <type name="StreamCollection" c:type="GstStreamCollection*"/>
           </parameter>
         </parameters>
@@ -32798,7 +32798,7 @@ MT safe.</doc>
                    version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2885">Creates a new steams-selected message. The message is used to announce
+             line="2887">Creates a new steams-selected message. The message is used to announce
 that an array of streams has been selected. This is generally in response
 to a #GST_EVENT_SELECT_STREAMS event, or when an element (such as decodebin3)
 makes an initial selection of streams.
@@ -32812,20 +32812,20 @@ gst_message_streams_selected_add().</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2901">a newly allocated #GstMessage</doc>
+               line="2903">a newly allocated #GstMessage</doc>
           <type name="Message" c:type="GstMessage*"/>
         </return-value>
         <parameters>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2887">The #GstObject that created the message</doc>
+                 line="2889">The #GstObject that created the message</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="collection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2888">The #GstStreamCollection</doc>
+                 line="2890">The #GstStreamCollection</doc>
             <type name="StreamCollection" c:type="GstStreamCollection*"/>
           </parameter>
         </parameters>
@@ -33035,7 +33035,7 @@ MT safe.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3101">Creates and appends a new entry.
+             line="3103">Creates and appends a new entry.
 
 The specified location string is copied. However, ownership over the tag
 list and structure are transferred to the message.</doc>
@@ -33047,13 +33047,13 @@ list and structure are transferred to the message.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3103">a #GstMessage of type %GST_MESSAGE_REDIRECT</doc>
+                 line="3105">a #GstMessage of type %GST_MESSAGE_REDIRECT</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="location" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3104">location string for the new entry</doc>
+                 line="3106">location string for the new entry</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="tag_list"
@@ -33062,7 +33062,7 @@ list and structure are transferred to the message.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3105">tag list for the new entry</doc>
+                 line="3107">tag list for the new entry</doc>
             <type name="TagList" c:type="GstTagList*"/>
           </parameter>
           <parameter name="entry_struct"
@@ -33071,7 +33071,7 @@ list and structure are transferred to the message.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3106">structure for the new entry</doc>
+                 line="3108">structure for the new entry</doc>
             <type name="Structure" c:type="const GstStructure*"/>
           </parameter>
         </parameters>
@@ -33079,12 +33079,12 @@ list and structure are transferred to the message.</doc>
       <method name="copy" c:identifier="gst_message_copy" introspectable="0">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3374">Creates a copy of the message. Returns a copy of the message.</doc>
+             line="3376">Creates a copy of the message. Returns a copy of the message.</doc>
         <source-position filename="../gst/gstmessage.h" line="384"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="3380">a new copy of @msg.
+               line="3382">a new copy of @msg.
 
 MT safe</doc>
           <type name="Message" c:type="GstMessage*"/>
@@ -33093,7 +33093,7 @@ MT safe</doc>
           <instance-parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3376">the message to copy</doc>
+                 line="3378">the message to copy</doc>
             <type name="Message" c:type="const GstMessage*"/>
           </instance-parameter>
         </parameters>
@@ -33105,14 +33105,14 @@ MT safe</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="3232">the number of entries stored in the message</doc>
+               line="3234">the number of entries stored in the message</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
         <parameters>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3230">a #GstMessage of type %GST_MESSAGE_REDIRECT</doc>
+                 line="3232">a #GstMessage of type %GST_MESSAGE_REDIRECT</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
         </parameters>
@@ -33432,19 +33432,19 @@ MT safe.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2511">Parse a context type from an existing GST_MESSAGE_NEED_CONTEXT message.</doc>
+             line="2513">Parse a context type from an existing GST_MESSAGE_NEED_CONTEXT message.</doc>
         <source-position filename="../gst/gstmessage.h" line="749"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2518">a #gboolean indicating if the parsing succeeded.</doc>
+               line="2520">a #gboolean indicating if the parsing succeeded.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2513">a GST_MESSAGE_NEED_CONTEXT type message</doc>
+                 line="2515">a GST_MESSAGE_NEED_CONTEXT type message</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="context_type"
@@ -33455,7 +33455,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2514">the context type, or %NULL</doc>
+                 line="2516">the context type, or %NULL</doc>
             <type name="utf8" c:type="const gchar**"/>
           </parameter>
         </parameters>
@@ -33465,7 +33465,7 @@ MT safe.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2621">Parses a device-added message. The device-added message is produced by
+             line="2623">Parses a device-added message. The device-added message is produced by
 #GstDeviceProvider or a #GstDeviceMonitor. It announces the appearance
 of monitored devices.</doc>
         <source-position filename="../gst/gstmessage.h" line="765"/>
@@ -33476,7 +33476,7 @@ of monitored devices.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2623">a #GstMessage of type %GST_MESSAGE_DEVICE_ADDED</doc>
+                 line="2625">a #GstMessage of type %GST_MESSAGE_DEVICE_ADDED</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="device"
@@ -33487,7 +33487,7 @@ of monitored devices.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2624">A location where to store a
+                 line="2626">A location where to store a
  pointer to the new #GstDevice, or %NULL</doc>
             <type name="Device" c:type="GstDevice**"/>
           </parameter>
@@ -33498,7 +33498,7 @@ of monitored devices.</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2728">Parses a device-changed message. The device-changed message is produced by
+             line="2730">Parses a device-changed message. The device-changed message is produced by
 #GstDeviceProvider or a #GstDeviceMonitor. It announces the
 disappearance of monitored devices. * It announce that a device properties has
 changed and @device represents the new modified version of @changed_device.</doc>
@@ -33510,7 +33510,7 @@ changed and @device represents the new modified version of @changed_device.</doc
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2730">a #GstMessage of type %GST_MESSAGE_DEVICE_CHANGED</doc>
+                 line="2732">a #GstMessage of type %GST_MESSAGE_DEVICE_CHANGED</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="device"
@@ -33521,7 +33521,7 @@ changed and @device represents the new modified version of @changed_device.</doc
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2731">A location where to store a
+                 line="2733">A location where to store a
  pointer to the updated version of the #GstDevice, or %NULL</doc>
             <type name="Device" c:type="GstDevice**"/>
           </parameter>
@@ -33533,7 +33533,7 @@ changed and @device represents the new modified version of @changed_device.</doc
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2733">A location where to store a
+                 line="2735">A location where to store a
  pointer to the old version of the #GstDevice, or %NULL</doc>
             <type name="Device" c:type="GstDevice**"/>
           </parameter>
@@ -33544,7 +33544,7 @@ changed and @device represents the new modified version of @changed_device.</doc
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2673">Parses a device-removed message. The device-removed message is produced by
+             line="2675">Parses a device-removed message. The device-removed message is produced by
 #GstDeviceProvider or a #GstDeviceMonitor. It announces the
 disappearance of monitored devices.</doc>
         <source-position filename="../gst/gstmessage.h" line="773"/>
@@ -33555,7 +33555,7 @@ disappearance of monitored devices.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2675">a #GstMessage of type %GST_MESSAGE_DEVICE_REMOVED</doc>
+                 line="2677">a #GstMessage of type %GST_MESSAGE_DEVICE_REMOVED</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="device"
@@ -33566,7 +33566,7 @@ disappearance of monitored devices.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2676">A location where to store a
+                 line="2678">A location where to store a
  pointer to the removed #GstDevice, or %NULL</doc>
             <type name="Device" c:type="GstDevice**"/>
           </parameter>
@@ -33706,7 +33706,7 @@ MT safe.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2569">Extract the context from the HAVE_CONTEXT message.
+             line="2571">Extract the context from the HAVE_CONTEXT message.
 
 MT safe.</doc>
         <source-position filename="../gst/gstmessage.h" line="757"/>
@@ -33717,7 +33717,7 @@ MT safe.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2571">A valid #GstMessage of type GST_MESSAGE_HAVE_CONTEXT.</doc>
+                 line="2573">A valid #GstMessage of type GST_MESSAGE_HAVE_CONTEXT.</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="context"
@@ -33728,7 +33728,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2572">Result location for the
+                 line="2574">Result location for the
      context or %NULL</doc>
             <type name="Context" c:type="GstContext**"/>
           </parameter>
@@ -33811,7 +33811,7 @@ The returned structure must not be freed.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3304">Parses the rate_multiplier from the instant-rate-request message.</doc>
+             line="3306">Parses the rate_multiplier from the instant-rate-request message.</doc>
         <source-position filename="../gst/gstmessage.h" line="836"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -33820,7 +33820,7 @@ The returned structure must not be freed.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3306">a #GstMessage of type %GST_MESSAGE_INSTANT_RATE_REQUEST</doc>
+                 line="3308">a #GstMessage of type %GST_MESSAGE_INSTANT_RATE_REQUEST</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="rate_multiplier"
@@ -33831,7 +33831,7 @@ The returned structure must not be freed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3307">return location for the rate, or %NULL</doc>
+                 line="3309">return location for the rate, or %NULL</doc>
             <type name="gdouble" c:type="gdouble*"/>
           </parameter>
         </parameters>
@@ -33924,7 +33924,7 @@ MT safe.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2789">Parses a property-notify message. These will be posted on the bus only
+             line="2791">Parses a property-notify message. These will be posted on the bus only
 when set up with gst_element_add_property_notify_watch() or
 gst_element_add_property_deep_notify_watch().</doc>
         <source-position filename="../gst/gstmessage.h" line="790"/>
@@ -33935,7 +33935,7 @@ gst_element_add_property_deep_notify_watch().</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2791">a #GstMessage of type %GST_MESSAGE_PROPERTY_NOTIFY</doc>
+                 line="2793">a #GstMessage of type %GST_MESSAGE_PROPERTY_NOTIFY</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="object"
@@ -33946,7 +33946,7 @@ gst_element_add_property_deep_notify_watch().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2792">location where to store a
+                 line="2794">location where to store a
     pointer to the object whose property got changed, or %NULL</doc>
             <type name="Object" c:type="GstObject**"/>
           </parameter>
@@ -33958,7 +33958,7 @@ gst_element_add_property_deep_notify_watch().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2794">return location for
+                 line="2796">return location for
     the name of the property that got changed, or %NULL</doc>
             <type name="utf8" c:type="const gchar**"/>
           </parameter>
@@ -33970,7 +33970,7 @@ gst_element_add_property_deep_notify_watch().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2796">return location for
+                 line="2798">return location for
     the new value of the property that got changed, or %NULL. This will
     only be set if the property notify watch was told to include the value
     when it was set up</doc>
@@ -34184,7 +34184,7 @@ MT safe.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3160">Parses the location and/or structure from the entry with the given index.
+             line="3162">Parses the location and/or structure from the entry with the given index.
 The index must be between 0 and gst_message_get_num_redirect_entries() - 1.
 Returned pointers are valid for as long as this message exists.</doc>
         <source-position filename="../gst/gstmessage.h" line="826"/>
@@ -34195,13 +34195,13 @@ Returned pointers are valid for as long as this message exists.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3162">a #GstMessage of type %GST_MESSAGE_REDIRECT</doc>
+                 line="3164">a #GstMessage of type %GST_MESSAGE_REDIRECT</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="entry_index" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3163">index of the entry to parse</doc>
+                 line="3165">index of the entry to parse</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="location"
@@ -34212,7 +34212,7 @@ Returned pointers are valid for as long as this message exists.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3164">return location for
+                 line="3166">return location for
     the pointer to the entry's location string, or %NULL</doc>
             <type name="utf8" c:type="const gchar**"/>
           </parameter>
@@ -34224,7 +34224,7 @@ Returned pointers are valid for as long as this message exists.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3166">return location for
+                 line="3168">return location for
     the pointer to the entry's tag list, or %NULL</doc>
             <type name="TagList" c:type="GstTagList**"/>
           </parameter>
@@ -34236,7 +34236,7 @@ Returned pointers are valid for as long as this message exists.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3168">return location
+                 line="3170">return location
     for the pointer to the entry's structure, or %NULL</doc>
             <type name="Structure" c:type="const GstStructure**"/>
           </parameter>
@@ -34649,7 +34649,7 @@ MT safe.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2862">Parses a stream-collection message.</doc>
+             line="2864">Parses a stream-collection message.</doc>
         <source-position filename="../gst/gstmessage.h" line="798"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -34658,7 +34658,7 @@ MT safe.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2864">a #GstMessage of type %GST_MESSAGE_STREAM_COLLECTION</doc>
+                 line="2866">a #GstMessage of type %GST_MESSAGE_STREAM_COLLECTION</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="collection"
@@ -34669,7 +34669,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2865">A location where to store a
+                 line="2867">A location where to store a
  pointer to the #GstStreamCollection, or %NULL</doc>
             <type name="StreamCollection" c:type="GstStreamCollection**"/>
           </parameter>
@@ -34720,7 +34720,7 @@ MT safe.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3010">Parses a streams-selected message.</doc>
+             line="3012">Parses a streams-selected message.</doc>
         <source-position filename="../gst/gstmessage.h" line="809"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -34729,7 +34729,7 @@ MT safe.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3012">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
+                 line="3014">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="collection"
@@ -34740,7 +34740,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3013">A location where to store a
+                 line="3015">A location where to store a
  pointer to the #GstStreamCollection, or %NULL</doc>
             <type name="StreamCollection" c:type="GstStreamCollection**"/>
           </parameter>
@@ -35175,7 +35175,7 @@ GstTask object but other objects might be added in the future.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2952">Adds the @stream to the @message.</doc>
+             line="2954">Adds the @stream to the @message.</doc>
         <source-position filename="../gst/gstmessage.h" line="806"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -35184,13 +35184,13 @@ GstTask object but other objects might be added in the future.</doc>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2954">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
+                 line="2956">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="stream" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2955">a #GstStream to add to @message</doc>
+                 line="2957">a #GstStream to add to @message</doc>
             <type name="Stream" c:type="GstStream*"/>
           </parameter>
         </parameters>
@@ -35200,19 +35200,19 @@ GstTask object but other objects might be added in the future.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2927">Returns the number of streams contained in the @message.</doc>
+             line="2929">Returns the number of streams contained in the @message.</doc>
         <source-position filename="../gst/gstmessage.h" line="812"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2933">The number of streams contained within.</doc>
+               line="2935">The number of streams contained within.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2929">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
+                 line="2931">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
         </parameters>
@@ -35222,25 +35222,25 @@ GstTask object but other objects might be added in the future.</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="2979">Retrieves the #GstStream with index @index from the @message.</doc>
+             line="2981">Retrieves the #GstStream with index @index from the @message.</doc>
         <source-position filename="../gst/gstmessage.h" line="815"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="2986">A #GstStream</doc>
+               line="2988">A #GstStream</doc>
           <type name="Stream" c:type="GstStream*"/>
         </return-value>
         <parameters>
           <instance-parameter name="message" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2981">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
+                 line="2983">a #GstMessage of type %GST_MESSAGE_STREAMS_SELECTED</doc>
             <type name="Message" c:type="GstMessage*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="2982">Index of the stream to retrieve</doc>
+                 line="2984">Index of the stream to retrieve</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -35278,7 +35278,7 @@ MT safe.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3392">Modifies a pointer to a #GstMessage to point to a different #GstMessage. The
+             line="3394">Modifies a pointer to a #GstMessage to point to a different #GstMessage. The
 modification is done atomically (so this is useful for ensuring thread safety
 in some cases), and the reference counts are updated appropriately (the old
 message is unreffed, the new one is reffed).
@@ -35288,7 +35288,7 @@ Either @new_message or the #GstMessage pointed to by @old_message may be %NULL.<
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="3406">%TRUE if @new_message was different from @old_message</doc>
+               line="3408">%TRUE if @new_message was different from @old_message</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -35300,7 +35300,7 @@ Either @new_message or the #GstMessage pointed to by @old_message may be %NULL.<
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3394">pointer to a
+                 line="3396">pointer to a
     pointer to a #GstMessage to be replaced.</doc>
             <type name="Message" c:type="GstMessage**"/>
           </parameter>
@@ -35310,7 +35310,7 @@ Either @new_message or the #GstMessage pointed to by @old_message may be %NULL.<
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstmessage.c"
-                 line="3396">pointer to a #GstMessage that will
+                 line="3398">pointer to a #GstMessage that will
     replace the message pointed to by @old_message.</doc>
             <type name="Message" c:type="GstMessage*"/>
           </parameter>
@@ -46249,7 +46249,7 @@ into memory.</doc>
       <function name="list_free" c:identifier="gst_plugin_list_free">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1396">Unrefs each member of @list, then frees the list.</doc>
+             line="1468">Unrefs each member of @list, then frees the list.</doc>
         <source-position filename="../gst/gstplugin.h" line="396"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -46258,7 +46258,7 @@ into memory.</doc>
           <parameter name="list" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1398">list of #GstPlugin</doc>
+                 line="1470">list of #GstPlugin</doc>
             <type name="GLib.List" c:type="GList*">
               <type name="Plugin"/>
             </type>
@@ -46268,12 +46268,12 @@ into memory.</doc>
       <function name="load_by_name" c:identifier="gst_plugin_load_by_name">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1320">Load the named plugin. Refs the plugin.</doc>
+             line="1392">Load the named plugin. Refs the plugin.</doc>
         <source-position filename="../gst/gstplugin.h" line="381"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1326">a reference to a loaded plugin, or
+               line="1398">a reference to a loaded plugin, or
 %NULL on error.</doc>
           <type name="Plugin" c:type="GstPlugin*"/>
         </return-value>
@@ -46281,7 +46281,7 @@ into memory.</doc>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1322">name of plugin to load</doc>
+                 line="1394">name of plugin to load</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -46497,7 +46497,7 @@ via gst_init_get_option_group()) before calling this function.</doc>
       <method name="add_dependency" c:identifier="gst_plugin_add_dependency">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1828">Make GStreamer aware of external dependencies which affect the feature
+             line="1900">Make GStreamer aware of external dependencies which affect the feature
 set of this plugin (ie. the elements or typefinders associated with it).
 
 GStreamer will re-inspect plugins with external dependencies whenever any
@@ -46514,7 +46514,7 @@ codec libraries are currently installed.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1830">a #GstPlugin</doc>
+                 line="1902">a #GstPlugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
           <parameter name="env_vars"
@@ -46523,7 +46523,7 @@ codec libraries are currently installed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1831">%NULL-terminated array of environment variables affecting the
+                 line="1903">%NULL-terminated array of environment variables affecting the
     feature set of the plugin (e.g. an environment variable containing
     paths where to look for additional modules/plugins of a library),
     or %NULL. Environment variable names may be followed by a path component
@@ -46539,7 +46539,7 @@ codec libraries are currently installed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1837">%NULL-terminated array of directories/paths where dependent files
+                 line="1909">%NULL-terminated array of directories/paths where dependent files
     may be, or %NULL.</doc>
             <array c:type="const gchar**">
               <type name="utf8" c:type="gchar*"/>
@@ -46551,7 +46551,7 @@ codec libraries are currently installed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1839">%NULL-terminated array of file names (or file name suffixes,
+                 line="1911">%NULL-terminated array of file names (or file name suffixes,
     depending on @flags) to be used in combination with the paths from
     @paths and/or the paths extracted from the environment variables in
     @env_vars, or %NULL.</doc>
@@ -46562,7 +46562,7 @@ codec libraries are currently installed.</doc>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1843">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
+                 line="1915">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
             <type name="PluginDependencyFlags"
                   c:type="GstPluginDependencyFlags"/>
           </parameter>
@@ -46572,7 +46572,7 @@ codec libraries are currently installed.</doc>
               c:identifier="gst_plugin_add_dependency_simple">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1899">Make GStreamer aware of external dependencies which affect the feature
+             line="1971">Make GStreamer aware of external dependencies which affect the feature
 set of this plugin (ie. the elements or typefinders associated with it).
 
 GStreamer will re-inspect plugins with external dependencies whenever any
@@ -46593,7 +46593,7 @@ arguments separated by predefined delimiters (see above).</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1901">the #GstPlugin</doc>
+                 line="1973">the #GstPlugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
           <parameter name="env_vars"
@@ -46602,7 +46602,7 @@ arguments separated by predefined delimiters (see above).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1902">one or more environment variables (separated by ':', ';' or ','),
+                 line="1974">one or more environment variables (separated by ':', ';' or ','),
      or %NULL. Environment variable names may be followed by a path component
      which will be added to the content of the environment variable, e.g.
      "HOME/.mystuff/plugins:MYSTUFF_PLUGINS_PATH"</doc>
@@ -46614,7 +46614,7 @@ arguments separated by predefined delimiters (see above).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1906">one ore more directory paths (separated by ':' or ';' or ','),
+                 line="1978">one ore more directory paths (separated by ':' or ';' or ','),
      or %NULL. Example: "/usr/lib/mystuff/plugins"</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -46624,14 +46624,14 @@ arguments separated by predefined delimiters (see above).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1908">one or more file names or file name suffixes (separated by commas),
+                 line="1980">one or more file names or file name suffixes (separated by commas),
      or %NULL</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1910">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
+                 line="1982">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
             <type name="PluginDependencyFlags"
                   c:type="GstPluginDependencyFlags"/>
           </parameter>
@@ -46640,13 +46640,13 @@ arguments separated by predefined delimiters (see above).</doc>
       <method name="get_cache_data" c:identifier="gst_plugin_get_cache_data">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1118">Gets the plugin specific data cache. If it is %NULL there is no cached data
+             line="1190">Gets the plugin specific data cache. If it is %NULL there is no cached data
 stored. This is the case when the registry is getting rebuilt.</doc>
         <source-position filename="../gst/gstplugin.h" line="366"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1125">The cached data as a
+               line="1197">The cached data as a
 #GstStructure or %NULL.</doc>
           <type name="Structure" c:type="const GstStructure*"/>
         </return-value>
@@ -46654,7 +46654,7 @@ stored. This is the case when the registry is getting rebuilt.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1120">a plugin</doc>
+                 line="1192">a plugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46662,19 +46662,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_description" c:identifier="gst_plugin_get_description">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="966">Get the long descriptive name of the plugin</doc>
+             line="1038">Get the long descriptive name of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="342"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="972">the long name of the plugin</doc>
+               line="1044">the long name of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="968">plugin to get long name of</doc>
+                 line="1040">plugin to get long name of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46682,19 +46682,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_filename" c:identifier="gst_plugin_get_filename">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="982">get the filename of the plugin</doc>
+             line="1054">get the filename of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="345"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="988">the filename of the plugin</doc>
+               line="1060">the filename of the plugin</doc>
           <type name="filename" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="984">plugin to get the filename of</doc>
+                 line="1056">plugin to get the filename of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46702,19 +46702,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_license" c:identifier="gst_plugin_get_license">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1014">get the license of the plugin</doc>
+             line="1086">get the license of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="351"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1020">the license of the plugin</doc>
+               line="1092">the license of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1016">plugin to get the license of</doc>
+                 line="1088">plugin to get the license of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46722,19 +46722,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_name" c:identifier="gst_plugin_get_name">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="950">Get the short name of the plugin</doc>
+             line="1022">Get the short name of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="339"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="956">the name of the plugin</doc>
+               line="1028">the name of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="952">plugin to get the name of</doc>
+                 line="1024">plugin to get the name of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46742,19 +46742,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_origin" c:identifier="gst_plugin_get_origin">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1062">get the URL where the plugin comes from</doc>
+             line="1134">get the URL where the plugin comes from</doc>
         <source-position filename="../gst/gstplugin.h" line="360"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1068">the origin of the plugin</doc>
+               line="1140">the origin of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1064">plugin to get the origin of</doc>
+                 line="1136">plugin to get the origin of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46762,19 +46762,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_package" c:identifier="gst_plugin_get_package">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1046">get the package the plugin belongs to.</doc>
+             line="1118">get the package the plugin belongs to.</doc>
         <source-position filename="../gst/gstplugin.h" line="357"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1052">the package of the plugin</doc>
+               line="1124">the package of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1048">plugin to get the package of</doc>
+                 line="1120">plugin to get the package of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46783,7 +46783,7 @@ stored. This is the case when the registry is getting rebuilt.</doc>
               c:identifier="gst_plugin_get_release_date_string">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1078">Get the release date (and possibly time) in form of a string, if available.
+             line="1150">Get the release date (and possibly time) in form of a string, if available.
 
 For normal GStreamer plugin releases this will usually just be a date in
 the form of "YYYY-MM-DD", while pre-releases and builds from git may contain
@@ -46795,7 +46795,7 @@ There may be plugins that do not have a valid release date set on them.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1091">the date string of the plugin, or %NULL if not
+               line="1163">the date string of the plugin, or %NULL if not
 available.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
@@ -46803,7 +46803,7 @@ available.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1080">plugin to get the release date of</doc>
+                 line="1152">plugin to get the release date of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46811,19 +46811,19 @@ available.</doc>
       <method name="get_source" c:identifier="gst_plugin_get_source">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1030">get the source module the plugin belongs to.</doc>
+             line="1102">get the source module the plugin belongs to.</doc>
         <source-position filename="../gst/gstplugin.h" line="354"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1036">the source of the plugin</doc>
+               line="1108">the source of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1032">plugin to get the source of</doc>
+                 line="1104">plugin to get the source of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46831,19 +46831,19 @@ available.</doc>
       <method name="get_version" c:identifier="gst_plugin_get_version">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="998">get the version of the plugin</doc>
+             line="1070">get the version of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="348"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1004">the version of the plugin</doc>
+               line="1076">the version of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1000">plugin to get the version of</doc>
+                 line="1072">plugin to get the version of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46851,19 +46851,19 @@ available.</doc>
       <method name="is_loaded" c:identifier="gst_plugin_is_loaded">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1102">queries if the plugin is loaded into memory</doc>
+             line="1174">queries if the plugin is loaded into memory</doc>
         <source-position filename="../gst/gstplugin.h" line="372"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1108">%TRUE is loaded, %FALSE otherwise</doc>
+               line="1180">%TRUE is loaded, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1104">plugin to query</doc>
+                 line="1176">plugin to query</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46871,7 +46871,7 @@ available.</doc>
       <method name="load" c:identifier="gst_plugin_load">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1355">Loads @plugin. Note that the *return value* is the loaded plugin; @plugin is
+             line="1427">Loads @plugin. Note that the *return value* is the loaded plugin; @plugin is
 untouched. The normal use pattern of this function goes like this:
 
 |[
@@ -46885,7 +46885,7 @@ plugin = loaded_plugin;
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1370">a reference to a loaded plugin, or
+               line="1442">a reference to a loaded plugin, or
 %NULL on error.</doc>
           <type name="Plugin" c:type="GstPlugin*"/>
         </return-value>
@@ -46893,7 +46893,7 @@ plugin = loaded_plugin;
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1357">plugin to load</doc>
+                 line="1429">plugin to load</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -46901,7 +46901,7 @@ plugin = loaded_plugin;
       <method name="set_cache_data" c:identifier="gst_plugin_set_cache_data">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1136">Adds plugin specific data to cache. Passes the ownership of the structure to
+             line="1208">Adds plugin specific data to cache. Passes the ownership of the structure to
 the @plugin.
 
 The cache is flushed every time the registry is rebuilt.</doc>
@@ -46913,13 +46913,13 @@ The cache is flushed every time the registry is rebuilt.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1138">a plugin</doc>
+                 line="1210">a plugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
           <parameter name="cache_data" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1139">a structure containing the data to cache</doc>
+                 line="1211">a structure containing the data to cache</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -69703,7 +69703,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="../gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="5" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="6" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="../gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -72996,7 +72996,7 @@ returned.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="../gst/gstmessage.c"
-           line="3392">Modifies a pointer to a #GstMessage to point to a different #GstMessage. The
+           line="3394">Modifies a pointer to a #GstMessage to point to a different #GstMessage. The
 modification is done atomically (so this is useful for ensuring thread safety
 in some cases), and the reference counts are updated appropriately (the old
 message is unreffed, the new one is reffed).
@@ -73006,7 +73006,7 @@ Either @new_message or the #GstMessage pointed to by @old_message may be %NULL.<
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../gst/gstmessage.c"
-             line="3406">%TRUE if @new_message was different from @old_message</doc>
+             line="3408">%TRUE if @new_message was different from @old_message</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
@@ -73018,7 +73018,7 @@ Either @new_message or the #GstMessage pointed to by @old_message may be %NULL.<
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="3394">pointer to a
+               line="3396">pointer to a
     pointer to a #GstMessage to be replaced.</doc>
           <type name="Message" c:type="GstMessage**"/>
         </parameter>
@@ -73028,7 +73028,7 @@ Either @new_message or the #GstMessage pointed to by @old_message may be %NULL.<
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../gst/gstmessage.c"
-               line="3396">pointer to a #GstMessage that will
+               line="3398">pointer to a #GstMessage that will
     replace the message pointed to by @old_message.</doc>
           <type name="Message" c:type="GstMessage*"/>
         </parameter>
