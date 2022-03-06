@@ -24,7 +24,7 @@ jobs:
           python-version: '3.x'
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Extract gir files
+      - name: Install libraries
         run: |
           brew install gtk4
           brew install gtk+3
@@ -32,7 +32,8 @@ jobs:
           brew install gstreamer
           brew install gst-plugins-base
           brew install gst-plugins-good
-          python macos/transfer.py
+      - name: Extract gir files
+        run: python macos/transfer.py
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:

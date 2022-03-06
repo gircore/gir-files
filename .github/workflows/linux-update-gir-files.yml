@@ -23,14 +23,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Extract gir files
+      - name: Install libraries
         run: |
           sudo apt-get update > /dev/null
           sudo apt-get upgrade > /dev/null
           sudo apt-get install binutils wget tar flatpak > /dev/null
           flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
           flatpak install org.gnome.Sdk//$sdk_version --or-update -y --noninteractive
-          flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version linux/transfer.py
+      - name: Extract gir files
+        run: flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version linux/transfer.py
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
