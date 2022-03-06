@@ -505,12 +505,12 @@ currently in effect can be queried.</doc>
       <method name="copy" c:identifier="pango_attr_iterator_copy">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2137">Copy a `PangoAttrIterator`.</doc>
+             line="2151">Copy a `PangoAttrIterator`.</doc>
         <source-position filename="../pango/pango-attributes.h" line="669"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="2143">the newly allocated
+               line="2157">the newly allocated
   `PangoAttrIterator`, which should be freed with
   [method@Pango.AttrIterator.destroy]</doc>
           <type name="AttrIterator" c:type="PangoAttrIterator*"/>
@@ -519,7 +519,7 @@ currently in effect can be queried.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2139">a `PangoAttrIterator`</doc>
+                 line="2153">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -527,7 +527,7 @@ currently in effect can be queried.</doc>
       <method name="destroy" c:identifier="pango_attr_iterator_destroy">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2173">Destroy a `PangoAttrIterator` and free all associated memory.</doc>
+             line="2187">Destroy a `PangoAttrIterator` and free all associated memory.</doc>
         <source-position filename="../pango/pango-attributes.h" line="671"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -536,7 +536,7 @@ currently in effect can be queried.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2175">a `PangoAttrIterator`</doc>
+                 line="2189">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -544,7 +544,7 @@ currently in effect can be queried.</doc>
       <method name="get" c:identifier="pango_attr_iterator_get">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2188">Find the current attribute of a particular type
+             line="2202">Find the current attribute of a particular type
 at the iterator location.
 
 When multiple attributes of the same type overlap,
@@ -554,7 +554,7 @@ current location is used.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="2200">the current
+               line="2214">the current
   attribute of the given type, or %NULL if no attribute
   of that type applies to the current location.</doc>
           <type name="Attribute" c:type="PangoAttribute*"/>
@@ -563,13 +563,13 @@ current location is used.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2190">a `PangoAttrIterator`</doc>
+                 line="2204">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2191">the type of attribute to find</doc>
+                 line="2205">the type of attribute to find</doc>
             <type name="AttrType" c:type="PangoAttrType"/>
           </parameter>
         </parameters>
@@ -579,13 +579,13 @@ current location is used.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2452">Gets a list of all attributes at the current position of the
+             line="2466">Gets a list of all attributes at the current position of the
 iterator.</doc>
         <source-position filename="../pango/pango-attributes.h" line="681"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="2459">
+               line="2473">
   a list of all attributes for the current range. To free
   this value, call [method@Pango.Attribute.destroy] on each
   value and g_slist_free() on the list.</doc>
@@ -597,7 +597,7 @@ iterator.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2454">a `PangoAttrIterator`</doc>
+                 line="2468">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -605,7 +605,7 @@ iterator.</doc>
       <method name="get_font" c:identifier="pango_attr_iterator_get_font">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2226">Get the font and other attributes at the current
+             line="2240">Get the font and other attributes at the current
 iterator position.</doc>
         <source-position filename="../pango/pango-attributes.h" line="676"/>
         <return-value transfer-ownership="none">
@@ -615,13 +615,13 @@ iterator position.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2228">a `PangoAttrIterator`</doc>
+                 line="2242">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
           <parameter name="desc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2229">a `PangoFontDescription` to fill in with the current
+                 line="2243">a `PangoFontDescription` to fill in with the current
   values. The family name in this structure will be set using
   [method@Pango.FontDescription.set_family_static] using
   values from an attribute in the `PangoAttrList` associated
@@ -638,7 +638,7 @@ iterator position.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2236">location to store language tag
+                 line="2250">location to store language tag
   for item, or %NULL if none is found.</doc>
             <type name="Language" c:type="PangoLanguage**"/>
           </parameter>
@@ -650,7 +650,7 @@ iterator position.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2238">
+                 line="2252">
   location in which to store a list of non-font attributes
   at the the current position; only the highest priority
   value of each attribute will be added to this list. In
@@ -665,12 +665,12 @@ iterator position.</doc>
       <method name="next" c:identifier="pango_attr_iterator_next">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2066">Advance the iterator until the next change of style.</doc>
+             line="2080">Advance the iterator until the next change of style.</doc>
         <source-position filename="../pango/pango-attributes.h" line="667"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="2072">%FALSE if the iterator is at the end
+               line="2086">%FALSE if the iterator is at the end
   of the list, otherwise %TRUE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -678,7 +678,7 @@ iterator position.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2068">a `PangoAttrIterator`</doc>
+                 line="2082">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -686,7 +686,7 @@ iterator position.</doc>
       <method name="range" c:identifier="pango_attr_iterator_range">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2040">Get the range of the current segment.
+             line="2054">Get the range of the current segment.
 
 Note that the stored return values are signed, not unsigned
 like the values in `PangoAttribute`. To deal with this API
@@ -700,7 +700,7 @@ a signed integer are clamped to %G_MAXINT.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2042">a PangoAttrIterator</doc>
+                 line="2056">a PangoAttrIterator</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
           <parameter name="start"
@@ -709,7 +709,7 @@ a signed integer are clamped to %G_MAXINT.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2043">location to store the start of the range</doc>
+                 line="2057">location to store the start of the range</doc>
             <type name="gint" c:type="gint*"/>
           </parameter>
           <parameter name="end"
@@ -718,7 +718,7 @@ a signed integer are clamped to %G_MAXINT.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2044">location to store the end of the range</doc>
+                 line="2058">location to store the end of the range</doc>
             <type name="gint" c:type="gint*"/>
           </parameter>
         </parameters>
@@ -862,7 +862,7 @@ never removes or combines existing attributes.</doc>
       <method name="equal" c:identifier="pango_attr_list_equal" version="1.46">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="1916">Checks whether @list and @other_list contain the same
+             line="1930">Checks whether @list and @other_list contain the same
 attributes and whether those attributes apply to the
 same ranges.
 
@@ -872,7 +872,7 @@ contains duplicates.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="1928">%TRUE if the lists are equal, %FALSE if
+               line="1942">%TRUE if the lists are equal, %FALSE if
   they aren't</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -880,13 +880,13 @@ contains duplicates.</doc>
           <instance-parameter name="list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="1918">a `PangoAttrList`</doc>
+                 line="1932">a `PangoAttrList`</doc>
             <type name="AttrList" c:type="PangoAttrList*"/>
           </instance-parameter>
           <parameter name="other_list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="1919">the other `PangoAttrList`</doc>
+                 line="1933">the other `PangoAttrList`</doc>
             <type name="AttrList" c:type="PangoAttrList*"/>
           </parameter>
         </parameters>
@@ -896,14 +896,14 @@ contains duplicates.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2398">Given a `PangoAttrList` and callback function, removes
+             line="2412">Given a `PangoAttrList` and callback function, removes
 any elements of @list for which @func returns %TRUE and
 inserts them into a new list.</doc>
         <source-position filename="../pango/pango-attributes.h" line="645"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="2409">the new
+               line="2423">the new
   `PangoAttrList` or %NULL if no attributes of the
   given types were found</doc>
           <type name="AttrList" c:type="PangoAttrList*"/>
@@ -912,7 +912,7 @@ inserts them into a new list.</doc>
           <instance-parameter name="list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2400">a `PangoAttrList`</doc>
+                 line="2414">a `PangoAttrList`</doc>
             <type name="AttrList" c:type="PangoAttrList*"/>
           </instance-parameter>
           <parameter name="func"
@@ -921,7 +921,7 @@ inserts them into a new list.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2401">callback function;
+                 line="2415">callback function;
   returns %TRUE if an attribute should be filtered out</doc>
             <type name="AttrFilterFunc" c:type="PangoAttrFilterFunc"/>
           </parameter>
@@ -931,7 +931,7 @@ inserts them into a new list.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2403">Data to be passed to @func</doc>
+                 line="2417">Data to be passed to @func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -941,12 +941,12 @@ inserts them into a new list.</doc>
               version="1.44">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="1882">Gets a list of all attributes in @list.</doc>
+             line="1896">Gets a list of all attributes in @list.</doc>
         <source-position filename="../pango/pango-attributes.h" line="650"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="1888">
+               line="1902">
   a list of all attributes in @list. To free this value,
   call [method@Pango.Attribute.destroy] on each value and
   g_slist_free() on the list.</doc>
@@ -958,7 +958,7 @@ inserts them into a new list.</doc>
           <instance-parameter name="list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="1884">a `PangoAttrList`</doc>
+                 line="1898">a `PangoAttrList`</doc>
             <type name="AttrList" c:type="PangoAttrList*"/>
           </instance-parameter>
         </parameters>
@@ -966,14 +966,14 @@ inserts them into a new list.</doc>
       <method name="get_iterator" c:identifier="pango_attr_list_get_iterator">
         <doc xml:space="preserve"
              filename="../pango/pango-attributes.c"
-             line="2015">Create a iterator initialized to the beginning of the list.
+             line="2029">Create a iterator initialized to the beginning of the list.
 
 @list must not be modified until this iterator is freed.</doc>
         <source-position filename="../pango/pango-attributes.h" line="660"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../pango/pango-attributes.c"
-               line="2023">the newly allocated
+               line="2037">the newly allocated
   `PangoAttrIterator`, which should be freed with
   [method@Pango.AttrIterator.destroy]</doc>
           <type name="AttrIterator" c:type="PangoAttrIterator*"/>
@@ -982,7 +982,7 @@ inserts them into a new list.</doc>
           <instance-parameter name="list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../pango/pango-attributes.c"
-                 line="2017">a `PangoAttrList`</doc>
+                 line="2031">a `PangoAttrList`</doc>
             <type name="AttrList" c:type="PangoAttrList*"/>
           </instance-parameter>
         </parameters>
@@ -1075,10 +1075,16 @@ This operation is equivalent to stretching every attribute
 that applies at position @pos in @list by an amount @len,
 and then calling [method@Pango.AttrList.change] with a copy
 of each attribute in @other in sequence (offset in position
-by @pos).
+by @pos, and limited in length to @len).
 
 This operation proves useful for, for instance, inserting
-a pre-edit string in the middle of an edit buffer.</doc>
+a pre-edit string in the middle of an edit buffer.
+
+For backwards compatibility, the function behaves differently
+when @len is 0. In this case, the attributes from @other are
+not imited to @len, and are just overlayed on top of @list.
+
+This mode is useful for merging two lists of attributes together.</doc>
         <source-position filename="../pango/pango-attributes.h" line="634"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -17551,7 +17557,7 @@ Two encoded version numbers can be compared as integers.</doc>
       <source-position filename="../pango/pango-features.h" line="4"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="10" c:type="PANGO_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="11" c:type="PANGO_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="../pango/pango-utils.h"
            line="141">The micro component of the version of Pango available at compile-time.</doc>
@@ -17566,7 +17572,7 @@ Two encoded version numbers can be compared as integers.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="VERSION_STRING"
-              value="1.48.10"
+              value="1.48.11"
               c:type="PANGO_VERSION_STRING">
       <doc xml:space="preserve"
            filename="../pango/pango-utils.h"

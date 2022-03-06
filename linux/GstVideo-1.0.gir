@@ -8511,7 +8511,7 @@ with the parsed values.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/video-converter.c"
-             line="2699">Convert the pixels of @src into @dest using @convert.</doc>
+             line="2719">Convert the pixels of @src into @dest using @convert.</doc>
         <source-position filename="../gst-libs/gst/video/video-converter.h"
                          line="293"/>
         <return-value transfer-ownership="none">
@@ -8521,19 +8521,19 @@ with the parsed values.</doc>
           <instance-parameter name="convert" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2701">a #GstVideoConverter</doc>
+                 line="2721">a #GstVideoConverter</doc>
             <type name="VideoConverter" c:type="GstVideoConverter*"/>
           </instance-parameter>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2703">a #GstVideoFrame</doc>
+                 line="2723">a #GstVideoFrame</doc>
             <type name="VideoFrame" c:type="const GstVideoFrame*"/>
           </parameter>
           <parameter name="dest" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2702">a #GstVideoFrame</doc>
+                 line="2722">a #GstVideoFrame</doc>
             <type name="VideoFrame" c:type="GstVideoFrame*"/>
           </parameter>
         </parameters>
@@ -8543,7 +8543,7 @@ with the parsed values.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/video-converter.c"
-             line="2533">Free @convert</doc>
+             line="2553">Free @convert</doc>
         <source-position filename="../gst-libs/gst/video/video-converter.h"
                          line="284"/>
         <return-value transfer-ownership="none">
@@ -8553,7 +8553,7 @@ with the parsed values.</doc>
           <instance-parameter name="convert" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2535">a #GstVideoConverter</doc>
+                 line="2555">a #GstVideoConverter</doc>
             <type name="VideoConverter" c:type="GstVideoConverter*"/>
           </instance-parameter>
         </parameters>
@@ -8561,13 +8561,13 @@ with the parsed values.</doc>
       <method name="get_config" c:identifier="gst_video_converter_get_config">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/video-converter.c"
-             line="2682">Get the current configuration of @convert.</doc>
+             line="2702">Get the current configuration of @convert.</doc>
         <source-position filename="../gst-libs/gst/video/video-converter.h"
                          line="290"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/video-converter.c"
-               line="2688">a #GstStructure that remains valid for as long as @convert is valid
+               line="2708">a #GstStructure that remains valid for as long as @convert is valid
   or until gst_video_converter_set_config() is called.</doc>
           <type name="Gst.Structure" c:type="const GstStructure*"/>
         </return-value>
@@ -8575,7 +8575,7 @@ with the parsed values.</doc>
           <instance-parameter name="convert" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2684">a #GstVideoConverter</doc>
+                 line="2704">a #GstVideoConverter</doc>
             <type name="VideoConverter" c:type="GstVideoConverter*"/>
           </instance-parameter>
         </parameters>
@@ -8585,7 +8585,7 @@ with the parsed values.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/video-converter.c"
-             line="2651">Set @config as extra configuration for @convert.
+             line="2671">Set @config as extra configuration for @convert.
 
 If the parameters in @config can not be set exactly, this function returns
 %FALSE and will try to update as much state as possible. The new state can
@@ -8598,20 +8598,20 @@ option and values.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/video-converter.c"
-               line="2665">%TRUE when @config could be set.</doc>
+               line="2685">%TRUE when @config could be set.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="convert" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2653">a #GstVideoConverter</doc>
+                 line="2673">a #GstVideoConverter</doc>
             <type name="VideoConverter" c:type="GstVideoConverter*"/>
           </instance-parameter>
           <parameter name="config" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2654">a #GstStructure</doc>
+                 line="2674">a #GstStructure</doc>
             <type name="Gst.Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -8622,33 +8622,33 @@ option and values.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/video-converter.c"
-             line="2285">Create a new converter object to convert between @in_info and @out_info
+             line="2305">Create a new converter object to convert between @in_info and @out_info
 with @config.</doc>
         <source-position filename="../gst-libs/gst/video/video-converter.h"
                          line="279"/>
         <return-value>
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/video-converter.c"
-               line="2294">a #GstVideoConverter or %NULL if conversion is not possible.</doc>
+               line="2314">a #GstVideoConverter or %NULL if conversion is not possible.</doc>
           <type name="VideoConverter" c:type="GstVideoConverter*"/>
         </return-value>
         <parameters>
           <parameter name="in_info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2287">a #GstVideoInfo</doc>
+                 line="2307">a #GstVideoInfo</doc>
             <type name="VideoInfo" c:type="GstVideoInfo*"/>
           </parameter>
           <parameter name="out_info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2288">a #GstVideoInfo</doc>
+                 line="2308">a #GstVideoInfo</doc>
             <type name="VideoInfo" c:type="GstVideoInfo*"/>
           </parameter>
           <parameter name="config" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/video-converter.c"
-                 line="2289">a #GstStructure with configuration options</doc>
+                 line="2309">a #GstStructure with configuration options</doc>
             <type name="Gst.Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -11227,7 +11227,7 @@ of the buffer.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2627">If multiple subframes are produced for one input frame then use this method
+             line="2630">If multiple subframes are produced for one input frame then use this method
 for each subframe, except for the last one. Before calling this function,
 you need to fill frame-&gt;output_buffer with the encoded buffer to push.
 
@@ -11241,20 +11241,20 @@ will be pushed downstream.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="2642">a #GstFlowReturn resulting from pushing the buffer downstream.</doc>
+               line="2645">a #GstFlowReturn resulting from pushing the buffer downstream.</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2629">a #GstVideoEncoder</doc>
+                 line="2632">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2630">a #GstVideoCodecFrame being encoded</doc>
+                 line="2633">a #GstVideoCodecFrame being encoded</doc>
             <type name="VideoCodecFrame" c:type="GstVideoCodecFrame*"/>
           </parameter>
         </parameters>
@@ -11263,7 +11263,7 @@ will be pushed downstream.</doc>
               c:identifier="gst_video_encoder_get_allocator">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2996">Lets #GstVideoEncoder sub-classes to know the memory @allocator
+             line="3002">Lets #GstVideoEncoder sub-classes to know the memory @allocator
 used by the base class and its @params.
 
 Unref the @allocator after use it.</doc>
@@ -11276,7 +11276,7 @@ Unref the @allocator after use it.</doc>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2998">a #GstVideoEncoder</doc>
+                 line="3004">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="allocator"
@@ -11287,7 +11287,7 @@ Unref the @allocator after use it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2999">the #GstAllocator
+                 line="3005">the #GstAllocator
 used</doc>
             <type name="Gst.Allocator" c:type="GstAllocator**"/>
           </parameter>
@@ -11299,7 +11299,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3001">the
+                 line="3007">the
 #GstAllocationParams of @allocator</doc>
             <type name="Gst.AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
@@ -11308,26 +11308,26 @@ used</doc>
       <method name="get_frame" c:identifier="gst_video_encoder_get_frame">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2900">Get a pending unfinished #GstVideoCodecFrame</doc>
+             line="2906">Get a pending unfinished #GstVideoCodecFrame</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="317"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="2907">pending unfinished #GstVideoCodecFrame identified by @frame_number.</doc>
+               line="2913">pending unfinished #GstVideoCodecFrame identified by @frame_number.</doc>
           <type name="VideoCodecFrame" c:type="GstVideoCodecFrame*"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2902">a #GstVideoEncoder</doc>
+                 line="2908">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="frame_number" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2903">system_frame_number of a frame</doc>
+                 line="2909">system_frame_number of a frame</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -11335,13 +11335,13 @@ used</doc>
       <method name="get_frames" c:identifier="gst_video_encoder_get_frames">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2931">Get all pending unfinished #GstVideoCodecFrame</doc>
+             line="2937">Get all pending unfinished #GstVideoCodecFrame</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="324"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="2937">pending unfinished #GstVideoCodecFrame.</doc>
+               line="2943">pending unfinished #GstVideoCodecFrame.</doc>
           <type name="GLib.List" c:type="GList*">
             <type name="VideoCodecFrame"/>
           </type>
@@ -11350,7 +11350,7 @@ used</doc>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2933">a #GstVideoEncoder</doc>
+                 line="2939">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
         </parameters>
@@ -11358,7 +11358,7 @@ used</doc>
       <method name="get_latency" c:identifier="gst_video_encoder_get_latency">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2856">Query the configured encoding latency. Results will be returned via
+             line="2862">Query the configured encoding latency. Results will be returned via
 @min_latency and @max_latency.</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="354"/>
@@ -11369,7 +11369,7 @@ used</doc>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2858">a #GstVideoEncoder</doc>
+                 line="2864">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="min_latency"
@@ -11380,7 +11380,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2859">address of variable in which to store the
+                 line="2865">address of variable in which to store the
     configured minimum latency, or %NULL</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime*"/>
           </parameter>
@@ -11392,7 +11392,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2861">address of variable in which to store the
+                 line="2867">address of variable in which to store the
     configured maximum latency, or %NULL</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime*"/>
           </parameter>
@@ -11403,7 +11403,7 @@ used</doc>
               version="1.14">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="3043">Determines maximum possible encoding time for @frame that will
+             line="3049">Determines maximum possible encoding time for @frame that will
 allow it to encode and arrive in time (as determined by QoS events).
 In particular, a negative result means encoding in time is no longer possible
 and should therefore occur as soon/skippy as possible.
@@ -11415,20 +11415,20 @@ If no QoS events have been received from downstream, or if
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="3056">max decoding time.</doc>
+               line="3062">max decoding time.</doc>
           <type name="Gst.ClockTimeDiff" c:type="GstClockTimeDiff"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3045">a #GstVideoEncoder</doc>
+                 line="3051">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3046">a #GstVideoCodecFrame</doc>
+                 line="3052">a #GstVideoCodecFrame</doc>
             <type name="VideoCodecFrame" c:type="GstVideoCodecFrame*"/>
           </parameter>
         </parameters>
@@ -11439,21 +11439,21 @@ If no QoS events have been received from downstream, or if
               version="1.18">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="3147">Returns the minimum force-keyunit interval, see gst_video_encoder_set_min_force_key_unit_interval()
+             line="3153">Returns the minimum force-keyunit interval, see gst_video_encoder_set_min_force_key_unit_interval()
 for more details.</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="388"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="3154">the minimum force-keyunit interval</doc>
+               line="3160">the minimum force-keyunit interval</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3149">the encoder</doc>
+                 line="3155">the encoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
         </parameters>
@@ -11462,20 +11462,20 @@ for more details.</doc>
               c:identifier="gst_video_encoder_get_oldest_frame">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2879">Get the oldest unfinished pending #GstVideoCodecFrame</doc>
+             line="2885">Get the oldest unfinished pending #GstVideoCodecFrame</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="321"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="2885">oldest unfinished pending #GstVideoCodecFrame</doc>
+               line="2891">oldest unfinished pending #GstVideoCodecFrame</doc>
           <type name="VideoCodecFrame" c:type="GstVideoCodecFrame*"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2881">a #GstVideoEncoder</doc>
+                 line="2887">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
         </parameters>
@@ -11484,20 +11484,20 @@ for more details.</doc>
               c:identifier="gst_video_encoder_get_output_state">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2753">Get the current #GstVideoCodecState</doc>
+             line="2759">Get the current #GstVideoCodecState</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="306"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="2759">#GstVideoCodecState describing format of video data.</doc>
+               line="2765">#GstVideoCodecState describing format of video data.</doc>
           <type name="VideoCodecState" c:type="GstVideoCodecState*"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2755">a #GstVideoEncoder</doc>
+                 line="2761">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
         </parameters>
@@ -11507,21 +11507,21 @@ for more details.</doc>
               version="1.14">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="3103">Checks if @encoder is currently configured to handle Quality-of-Service
+             line="3109">Checks if @encoder is currently configured to handle Quality-of-Service
 events from downstream.</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="379"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="3110">%TRUE if the encoder is configured to perform Quality-of-Service.</doc>
+               line="3116">%TRUE if the encoder is configured to perform Quality-of-Service.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3105">the encoder</doc>
+                 line="3111">the encoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
         </parameters>
@@ -11529,7 +11529,7 @@ events from downstream.</doc>
       <method name="merge_tags" c:identifier="gst_video_encoder_merge_tags">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2953">Sets the video encoder tags and how they should be merged with any
+             line="2959">Sets the video encoder tags and how they should be merged with any
 upstream stream tags. This will override any tags previously-set
 with gst_video_encoder_merge_tags().
 
@@ -11546,7 +11546,7 @@ MT safe.</doc>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2955">a #GstVideoEncoder</doc>
+                 line="2961">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="tags"
@@ -11555,14 +11555,14 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2956">a #GstTagList to merge, or NULL to unset
+                 line="2962">a #GstTagList to merge, or NULL to unset
     previously-set tags</doc>
             <type name="Gst.TagList" c:type="const GstTagList*"/>
           </parameter>
           <parameter name="mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2958">the #GstTagMergeMode to use, usually #GST_TAG_MERGE_REPLACE</doc>
+                 line="2964">the #GstTagMergeMode to use, usually #GST_TAG_MERGE_REPLACE</doc>
             <type name="Gst.TagMergeMode" c:type="GstTagMergeMode"/>
           </parameter>
         </parameters>
@@ -11661,7 +11661,7 @@ elements (e.g. muxers).</doc>
       <method name="set_latency" c:identifier="gst_video_encoder_set_latency">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2832">Informs baseclass of encoding latency.</doc>
+             line="2838">Informs baseclass of encoding latency.</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="349"/>
         <return-value transfer-ownership="none">
@@ -11671,19 +11671,19 @@ elements (e.g. muxers).</doc>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2834">a #GstVideoEncoder</doc>
+                 line="2840">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="min_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2835">minimum latency</doc>
+                 line="2841">minimum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="max_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2836">maximum latency</doc>
+                 line="2842">maximum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -11694,7 +11694,7 @@ elements (e.g. muxers).</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="3125">Sets the minimum interval for requesting keyframes based on force-keyunit
+             line="3131">Sets the minimum interval for requesting keyframes based on force-keyunit
 events. Setting this to 0 will allow to handle every event, setting this to
 %GST_CLOCK_TIME_NONE causes force-keyunit events to be ignored.</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
@@ -11706,13 +11706,13 @@ events. Setting this to 0 will allow to handle every event, setting this to
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3127">the encoder</doc>
+                 line="3133">the encoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="interval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3128">minimum interval</doc>
+                 line="3134">minimum interval</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -11722,7 +11722,7 @@ events. Setting this to 0 will allow to handle every event, setting this to
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="3023">Request minimal value for PTS passed to handle_frame.
+             line="3029">Request minimal value for PTS passed to handle_frame.
 
 For streams with reordered frames this can be used to ensure that there
 is enough time to accommodate first DTS, which may be less than first PTS</doc>
@@ -11735,13 +11735,13 @@ is enough time to accommodate first DTS, which may be less than first PTS</doc>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3025">a #GstVideoEncoder</doc>
+                 line="3031">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="min_pts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3026">minimal PTS that will be passed to handle_frame</doc>
+                 line="3032">minimal PTS that will be passed to handle_frame</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -11750,7 +11750,7 @@ is enough time to accommodate first DTS, which may be less than first PTS</doc>
               c:identifier="gst_video_encoder_set_output_state">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="2773">Creates a new #GstVideoCodecState with the specified caps as the output state
+             line="2779">Creates a new #GstVideoCodecState with the specified caps as the output state
 for the encoder.
 Any previously set output state on @encoder will be replaced by the newly
 created one.
@@ -11773,20 +11773,20 @@ from the next call to #gst_video_encoder_finish_frame().</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/gstvideoencoder.c"
-               line="2798">the newly configured output state.</doc>
+               line="2804">the newly configured output state.</doc>
           <type name="VideoCodecState" c:type="GstVideoCodecState*"/>
         </return-value>
         <parameters>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2775">a #GstVideoEncoder</doc>
+                 line="2781">a #GstVideoEncoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="caps" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2776">the #GstCaps to use for the output</doc>
+                 line="2782">the #GstCaps to use for the output</doc>
             <type name="Gst.Caps" c:type="GstCaps*"/>
           </parameter>
           <parameter name="reference"
@@ -11795,7 +11795,7 @@ from the next call to #gst_video_encoder_finish_frame().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="2777">An optional reference @GstVideoCodecState</doc>
+                 line="2783">An optional reference @GstVideoCodecState</doc>
             <type name="VideoCodecState" c:type="GstVideoCodecState*"/>
           </parameter>
         </parameters>
@@ -11805,7 +11805,7 @@ from the next call to #gst_video_encoder_finish_frame().</doc>
               version="1.14">
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/gstvideoencoder.c"
-             line="3087">Configures @encoder to handle Quality-of-Service events from downstream.</doc>
+             line="3093">Configures @encoder to handle Quality-of-Service events from downstream.</doc>
         <source-position filename="../gst-libs/gst/video/gstvideoencoder.h"
                          line="376"/>
         <return-value transfer-ownership="none">
@@ -11815,13 +11815,13 @@ from the next call to #gst_video_encoder_finish_frame().</doc>
           <instance-parameter name="encoder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3089">the encoder</doc>
+                 line="3095">the encoder</doc>
             <type name="VideoEncoder" c:type="GstVideoEncoder*"/>
           </instance-parameter>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst-libs/gst/video/gstvideoencoder.c"
-                 line="3090">the new qos value.</doc>
+                 line="3096">the new qos value.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -24232,33 +24232,33 @@ anymore.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="../gst-libs/gst/video/video-converter.c"
-           line="2285">Create a new converter object to convert between @in_info and @out_info
+           line="2305">Create a new converter object to convert between @in_info and @out_info
 with @config.</doc>
       <source-position filename="../gst-libs/gst/video/video-converter.h"
                        line="279"/>
       <return-value>
         <doc xml:space="preserve"
              filename="../gst-libs/gst/video/video-converter.c"
-             line="2294">a #GstVideoConverter or %NULL if conversion is not possible.</doc>
+             line="2314">a #GstVideoConverter or %NULL if conversion is not possible.</doc>
         <type name="VideoConverter" c:type="GstVideoConverter*"/>
       </return-value>
       <parameters>
         <parameter name="in_info" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/video-converter.c"
-               line="2287">a #GstVideoInfo</doc>
+               line="2307">a #GstVideoInfo</doc>
           <type name="VideoInfo" c:type="GstVideoInfo*"/>
         </parameter>
         <parameter name="out_info" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/video-converter.c"
-               line="2288">a #GstVideoInfo</doc>
+               line="2308">a #GstVideoInfo</doc>
           <type name="VideoInfo" c:type="GstVideoInfo*"/>
         </parameter>
         <parameter name="config" transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst-libs/gst/video/video-converter.c"
-               line="2289">a #GstStructure with configuration options</doc>
+               line="2309">a #GstStructure with configuration options</doc>
           <type name="Gst.Structure" c:type="GstStructure*"/>
         </parameter>
       </parameters>
