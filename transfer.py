@@ -7,6 +7,8 @@ import shutil
 source_folder = sys.argv[1]
 destination_folder = os.path.abspath(sys.argv[2])
 
+os.makedirs(destination_folder, exist_ok=True)
+
 files_to_delete = glob.glob(os.path.join(destination_folder, "*"))
 for f in files_to_delete:
     os.remove(f)
@@ -19,8 +21,8 @@ for file in gir_files:
   src = os.path.join(source_folder, file)
   dest = os.path.join(destination_folder, file)
   try:
-      shutil.copy(src, dest)
-      print(f"Copied {src} to {dest}")
+    shutil.copy(src, dest)
+    print(f"Copied {src} to {dest}")
   except FileNotFoundError:
-    print(f"Could not copy {file} to {dest_dir}.")
+    print(f"Could not copy {src} to {dest}.")
     sys.exit(1)

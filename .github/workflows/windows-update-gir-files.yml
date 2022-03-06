@@ -1,0 +1,45 @@
+name: Windows - Update gir files
+on:
+  workflow_dispatch:
+  schedule:
+    #        ┌───────────── minute (0 - 59)
+    #        │  ┌───────────── hour (0 - 23)
+    #        │  │ ┌───────────── day of the month (1 - 31)
+    #        │  │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+    #        │  │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        │  │ │ │ │
+    #        *  * * * *
+    - cron: '00 3 * * 5'
+
+jobs:
+  update:
+    name: Windows - Update gir files
+    runs-on: windows-latest
+    steps:
+      - name: Setup MSYS2
+        uses: msys2/setup-msys2@v2
+        with:
+          install: >-
+            mingw-w64-x86_64-gtk4
+            mingw-w64-x86_64-gtk3
+            mingw-w64-x86_64-gstreamer
+            mingw-w64-x86_64-gst-plugins-good
+            mingw-w64-x86_64-gst-plugins-base
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Extract gir files
+        run: python transfer.py D:\a\_temp\msys64\mingw64\share\gir-1.0\ .\windows
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          branch: windows-update-gir-files
+          commit-message: Windows - Update gir files
+          title: Windows - Update gir files
+          body: Keep the gir files in sync with current msys version
+          delete-branch: true
