@@ -3530,7 +3530,7 @@ in horizontal orientation and by @vradius in vertial orientation.</doc>
       <doc xml:space="preserve"
            filename="../gsk/gskrendernode.c"
            line="19">`GskRenderNode` is the basic block in a scene graph to be
-rendered using `GskRenderer`.
+rendered using [class@Gsk.Renderer].
 
 Each node has a parent, except the top-level node; each node may have
 children nodes.
@@ -3545,7 +3545,7 @@ properties during construction.</doc>
       <function name="deserialize" c:identifier="gsk_render_node_deserialize">
         <doc xml:space="preserve"
              filename="../gsk/gskrendernode.c"
-             line="600">Loads data previously created via gsk_render_node_serialize().
+             line="600">Loads data previously created via [method@Gsk.RenderNode.serialize].
 
 For a discussion of the supported format, see that function.</doc>
         <source-position filename="../gsk/gskrendernode.h" line="138"/>
@@ -3592,7 +3592,7 @@ For a discussion of the supported format, see that function.</doc>
 
 Typically, you'll use this function to implement fallback rendering
 of `GskRenderNode`s on an intermediate Cairo context, instead of using
-the drawing context associated to a `GdkSurface`'s rendering buffer.
+the drawing context associated to a [class@Gdk.Surface]'s rendering buffer.
 
 For advanced nodes that cannot be supported using Cairo, in particular
 for nodes doing 3D operations, this function may fail.</doc>
@@ -3737,8 +3737,8 @@ freed.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="../gsk/gskrendernode.c"
-             line="562">This function is equivalent to calling gsk_render_node_serialize()
-followed by g_file_set_contents().
+             line="562">This function is equivalent to calling [method@Gsk.RenderNode.serialize]
+followed by [func@GLib.file_set_contents].
 
 See those two functions for details on the arguments.
 
@@ -4035,7 +4035,7 @@ to render the scene.</doc>
                    c:identifier="gsk_renderer_new_for_surface">
         <doc xml:space="preserve"
              filename="../gsk/gskrenderer.c"
-             line="623">Creates an appropriate `GskRenderer` instance for the given @surface.
+             line="621">Creates an appropriate `GskRenderer` instance for the given @surface.
 
 If the `GSK_RENDERER` environment variable is set, GSK will
 try that renderer first, before trying the backend-specific
@@ -4046,14 +4046,14 @@ The renderer will be realized before it is returned.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gskrenderer.c"
-               line="635">a `GskRenderer`</doc>
+               line="633">a `GskRenderer`</doc>
           <type name="Renderer" c:type="GskRenderer*"/>
         </return-value>
         <parameters>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="625">a `GdkSurface`</doc>
+                 line="623">a `GdkSurface`</doc>
             <type name="Gdk.Surface" c:type="GdkSurface*"/>
           </parameter>
         </parameters>
@@ -4111,9 +4111,15 @@ If the renderer has not been realized yet, %NULL will be returned.</doc>
 graph.
 
 Since GTK 4.6, the surface may be `NULL`, which allows using
-renderers without having to create a surface.</doc>
+renderers without having to create a surface.
+
+Note that it is mandatory to call [method@Gsk.Renderer.unrealize] before
+destroying the renderer.</doc>
         <source-position filename="../gsk/gskrenderer.h" line="48"/>
         <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="../gsk/gskrenderer.c"
+               line="296">Whether the renderer was successfully realized</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -4137,7 +4143,7 @@ renderers without having to create a surface.</doc>
       <method name="render" c:identifier="gsk_renderer_render">
         <doc xml:space="preserve"
              filename="../gsk/gskrenderer.c"
-             line="404">Renders the scene graph, described by a tree of `GskRenderNode` instances
+             line="409">Renders the scene graph, described by a tree of `GskRenderNode` instances
 to the renderer's surface,  ensuring that the given @region gets redrawn.
 
 If the renderer has no associated surface, this function does nothing.
@@ -4157,13 +4163,13 @@ the rendering is in progress.</doc>
           <instance-parameter name="renderer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="406">a realized `GskRenderer`</doc>
+                 line="411">a realized `GskRenderer`</doc>
             <type name="Renderer" c:type="GskRenderer*"/>
           </instance-parameter>
           <parameter name="root" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="407">a `GskRenderNode`</doc>
+                 line="412">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </parameter>
           <parameter name="region"
@@ -4172,7 +4178,7 @@ the rendering is in progress.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="408">the `cairo_region_t` that must be redrawn or %NULL
+                 line="413">the `cairo_region_t` that must be redrawn or %NULL
   for the whole window</doc>
             <type name="cairo.Region" c:type="const cairo_region_t*"/>
           </parameter>
@@ -4181,7 +4187,7 @@ the rendering is in progress.</doc>
       <method name="render_texture" c:identifier="gsk_renderer_render_texture">
         <doc xml:space="preserve"
              filename="../gsk/gskrenderer.c"
-             line="341">Renders the scene graph, described by a tree of `GskRenderNode` instances,
+             line="346">Renders the scene graph, described by a tree of `GskRenderNode` instances,
 to a `GdkTexture`.
 
 The @renderer will acquire a reference on the `GskRenderNode` tree while
@@ -4193,20 +4199,20 @@ transform node and pass that node instead.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gsk/gskrenderer.c"
-               line="356">a `GdkTexture` with the rendered contents of @root.</doc>
+               line="361">a `GdkTexture` with the rendered contents of @root.</doc>
           <type name="Gdk.Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <instance-parameter name="renderer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="343">a realized `GskRenderer`</doc>
+                 line="348">a realized `GskRenderer`</doc>
             <type name="Renderer" c:type="GskRenderer*"/>
           </instance-parameter>
           <parameter name="root" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="344">a `GskRenderNode`</doc>
+                 line="349">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </parameter>
           <parameter name="viewport"
@@ -4215,7 +4221,7 @@ transform node and pass that node instead.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="345">the section to draw or %NULL to use @root's bounds</doc>
+                 line="350">the section to draw or %NULL to use @root's bounds</doc>
             <type name="Graphene.Rect" c:type="const graphene_rect_t*"/>
           </parameter>
         </parameters>
@@ -4223,7 +4229,7 @@ transform node and pass that node instead.</doc>
       <method name="unrealize" c:identifier="gsk_renderer_unrealize">
         <doc xml:space="preserve"
              filename="../gsk/gskrenderer.c"
-             line="318">Releases all the resources created by gsk_renderer_realize().</doc>
+             line="323">Releases all the resources created by gsk_renderer_realize().</doc>
         <source-position filename="../gsk/gskrenderer.h" line="52"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4232,7 +4238,7 @@ transform node and pass that node instead.</doc>
           <instance-parameter name="renderer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gsk/gskrenderer.c"
-                 line="320">a `GskRenderer`</doc>
+                 line="325">a `GskRenderer`</doc>
             <type name="Renderer" c:type="GskRenderer*"/>
           </instance-parameter>
         </parameters>
@@ -5971,7 +5977,7 @@ The result of this function can later be parsed with
              filename="../gsk/gsktransform.c"
              line="1520">Acquires a reference on the given `GskTransform`.</doc>
         <source-position filename="../gsk/gsktransform.h" line="39"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="1526">the `GskTransform` with an additional reference</doc>
@@ -5994,7 +6000,7 @@ The result of this function can later be parsed with
              filename="../gsk/gsktransform.c"
              line="855">Rotates @next @angle degrees in 2D - or in 3D-speak, around the z axis.</doc>
         <source-position filename="../gsk/gsktransform.h" line="109"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="862">The new transform</doc>
@@ -6025,7 +6031,7 @@ The result of this function can later be parsed with
 
 For a rotation in 2D space, use [method@Gsk.Transform.rotate]</doc>
         <source-position filename="../gsk/gsktransform.h" line="112"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="990">The new transform</doc>
@@ -6062,7 +6068,7 @@ For a rotation in 2D space, use [method@Gsk.Transform.rotate]</doc>
 
 Use [method@Gsk.Transform.scale_3d] to scale in all 3 dimensions.</doc>
         <source-position filename="../gsk/gsktransform.h" line="116"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="1338">The new transform</doc>
@@ -6097,7 +6103,7 @@ Use [method@Gsk.Transform.scale_3d] to scale in all 3 dimensions.</doc>
              filename="../gsk/gsktransform.c"
              line="1348">Scales @next by the given factors.</doc>
         <source-position filename="../gsk/gsktransform.h" line="120"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="1357">The new transform</doc>
@@ -6138,7 +6144,7 @@ Use [method@Gsk.Transform.scale_3d] to scale in all 3 dimensions.</doc>
              filename="../gsk/gsktransform.c"
              line="1158">Applies a skew transform.</doc>
         <source-position filename="../gsk/gsktransform.h" line="105"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="1166">The new transform</doc>
@@ -6538,7 +6544,7 @@ to check.</doc>
              filename="../gsk/gsktransform.c"
              line="1894">Applies all the operations from @other to @next.</doc>
         <source-position filename="../gsk/gsktransform.h" line="91"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="1901">The new transform</doc>
@@ -6640,7 +6646,7 @@ The result is the bounding box containing the coplanar quad.</doc>
              filename="../gsk/gsktransform.c"
              line="619">Translates @next in 2-dimensional space by @point.</doc>
         <source-position filename="../gsk/gsktransform.h" line="99"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="626">The new transform</doc>
@@ -6669,7 +6675,7 @@ The result is the bounding box containing the coplanar quad.</doc>
              filename="../gsk/gsktransform.c"
              line="639">Translates @next by @point.</doc>
         <source-position filename="../gsk/gsktransform.h" line="102"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gsk/gsktransform.c"
                line="646">The new transform</doc>
@@ -6997,7 +7003,7 @@ a reference to it.</doc>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gsk/gskrendernode.c"
-               line="716">a `GValue` initialized with type `GSK_TYPE_RENDER_NODE`</doc>
+               line="716">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
           <type name="GObject.Value" c:type="const GValue*"/>
         </parameter>
       </parameters>
@@ -7031,7 +7037,7 @@ a reference to it.</doc>
            filename="../gsk/gskrendernode.c"
            line="624">Stores the given `GskRenderNode` inside `value`.
 
-The `GValue` will acquire a reference to the `node`.</doc>
+The [struct@GObject.Value] will acquire a reference to the `node`.</doc>
       <source-position filename="../gsk/gskrendernode.h" line="546"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -7040,7 +7046,7 @@ The `GValue` will acquire a reference to the `node`.</doc>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gsk/gskrendernode.c"
-               line="626">a `GValue` initialized with type `GSK_TYPE_RENDER_NODE`</doc>
+               line="626">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
           <type name="GObject.Value" c:type="GValue*"/>
         </parameter>
         <parameter name="node" transfer-ownership="none">
@@ -7067,7 +7073,7 @@ This function transfers the ownership of the `node` to the `GValue`.</doc>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gsk/gskrendernode.c"
-               line="662">a `GValue` initialized with type `GSK_TYPE_RENDER_NODE`</doc>
+               line="662">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
           <type name="GObject.Value" c:type="GValue*"/>
         </parameter>
         <parameter name="node"
