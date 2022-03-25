@@ -550,7 +550,7 @@ of the buffer.</doc>
       <source-position filename="../src/hb-version.h" line="44"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="0" c:type="HB_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="1" c:type="HB_VERSION_MICRO">
       <source-position filename="../src/hb-version.h" line="56"/>
       <type name="gint" c:type="gint"/>
     </constant>
@@ -558,7 +558,7 @@ of the buffer.</doc>
       <source-position filename="../src/hb-version.h" line="50"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_STRING" value="4.0.0" c:type="HB_VERSION_STRING">
+    <constant name="VERSION_STRING" value="4.0.1" c:type="HB_VERSION_STRING">
       <source-position filename="../src/hb-version.h" line="63"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -2865,25 +2865,25 @@ of the buffer.</doc>
               version="2.2.0">
       <doc xml:space="preserve"
            filename="../src/hb-aat-layout.cc"
-           line="379">Fetches the name identifier of the specified feature type in the face's `name` table.</doc>
+           line="380">Fetches the name identifier of the specified feature type in the face's `name` table.</doc>
       <source-position filename="../src/hb-aat-layout.h" line="732"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-aat-layout.cc"
-             line="386">Name identifier of the requested feature type</doc>
+             line="387">Name identifier of the requested feature type</doc>
         <type name="ot_name_id_t" c:type="hb_ot_name_id_t"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="381">#hb_face_t to work upon</doc>
+               line="382">#hb_face_t to work upon</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="feature_type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="382">The #hb_aat_layout_feature_type_t of the requested feature type</doc>
+               line="383">The #hb_aat_layout_feature_type_t of the requested feature type</doc>
           <type name="aat_layout_feature_type_t"
                 c:type="hb_aat_layout_feature_type_t"/>
         </parameter>
@@ -2894,7 +2894,7 @@ of the buffer.</doc>
               version="2.2.0">
       <doc xml:space="preserve"
            filename="../src/hb-aat-layout.cc"
-           line="397">Fetches a list of the selectors available for the specified feature in the given face.
+           line="398">Fetches a list of the selectors available for the specified feature in the given face.
 
 If upon return, @default_index is set to #HB_AAT_LAYOUT_NO_SELECTOR_INDEX, then
 the feature type is non-exclusive.  Otherwise, @default_index is the index of
@@ -2903,27 +2903,27 @@ the selector that is selected by default.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-aat-layout.cc"
-             line="414">Number of all available feature selectors</doc>
+             line="415">Number of all available feature selectors</doc>
         <type name="guint" c:type="unsigned int"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="399">#hb_face_t to work upon</doc>
+               line="400">#hb_face_t to work upon</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="feature_type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="400">The #hb_aat_layout_feature_type_t of the requested feature type</doc>
+               line="401">The #hb_aat_layout_feature_type_t of the requested feature type</doc>
           <type name="aat_layout_feature_type_t"
                 c:type="hb_aat_layout_feature_type_t"/>
         </parameter>
         <parameter name="start_offset" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="401">offset of the first feature type to retrieve</doc>
+               line="402">offset of the first feature type to retrieve</doc>
           <type name="guint" c:type="unsigned int"/>
         </parameter>
         <parameter name="selector_count"
@@ -2934,7 +2934,7 @@ the selector that is selected by default.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="402">Input = the maximum number of selectors to return;
+               line="403">Input = the maximum number of selectors to return;
                  Output = the actual number of selectors returned (may be zero)</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
@@ -2946,7 +2946,7 @@ the selector that is selected by default.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="404">
+               line="405">
             A buffer pointer. The selectors available for the feature type queries.</doc>
           <array length="3"
                  zero-terminated="0"
@@ -2963,7 +2963,7 @@ the selector that is selected by default.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="406">The index of the feature's default selector, if any</doc>
+               line="407">The index of the feature's default selector, if any</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
       </parameters>
@@ -3342,25 +3342,25 @@ the selector that is selected by default.</doc>
               version="2.2.0">
       <doc xml:space="preserve"
            filename="../src/hb-aat-layout.cc"
-           line="356">Fetches a list of the AAT feature types included in the specified face.</doc>
+           line="357">Fetches a list of the AAT feature types included in the specified face.</doc>
       <source-position filename="../src/hb-aat-layout.h" line="726"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-aat-layout.cc"
-             line="366">Number of all available feature types.</doc>
+             line="367">Number of all available feature types.</doc>
         <type name="guint" c:type="unsigned int"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="358">#hb_face_t to work upon</doc>
+               line="359">#hb_face_t to work upon</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="start_offset" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="359">offset of the first feature type to retrieve</doc>
+               line="360">offset of the first feature type to retrieve</doc>
           <type name="guint" c:type="unsigned int"/>
         </parameter>
         <parameter name="feature_count"
@@ -3371,7 +3371,7 @@ the selector that is selected by default.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="360">Input = the maximum number of feature types to return;
+               line="361">Input = the maximum number of feature types to return;
                 Output = the actual number of feature types returned (may be zero)</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
@@ -3381,7 +3381,7 @@ the selector that is selected by default.</doc>
                    transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="362">Array of feature types found</doc>
+               line="363">Array of feature types found</doc>
           <array length="2"
                  zero-terminated="0"
                  c:type="hb_aat_layout_feature_type_t*">
@@ -3396,7 +3396,7 @@ the selector that is selected by default.</doc>
               version="2.3.0">
       <doc xml:space="preserve"
            filename="../src/hb-aat-layout.cc"
-           line="293">Tests whether the specified face includes any positioning information
+           line="294">Tests whether the specified face includes any positioning information
 in the `kerx` table.
 
 &lt;note&gt;Note: does not examine the `GPOS` table.&lt;/note&gt;</doc>
@@ -3404,14 +3404,14 @@ in the `kerx` table.
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-aat-layout.cc"
-             line="302">%true if data found, %false otherwise</doc>
+             line="303">%true if data found, %false otherwise</doc>
         <type name="bool_t" c:type="hb_bool_t"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="295">#hb_face_t to work upon</doc>
+               line="296">#hb_face_t to work upon</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
       </parameters>
@@ -3421,7 +3421,7 @@ in the `kerx` table.
               version="2.3.0">
       <doc xml:space="preserve"
            filename="../src/hb-aat-layout.cc"
-           line="222">Tests whether the specified face includes any substitutions in the
+           line="223">Tests whether the specified face includes any substitutions in the
 `morx` or `mort` tables.
 
 &lt;note&gt;Note: does not examine the `GSUB` table.&lt;/note&gt;</doc>
@@ -3429,14 +3429,14 @@ in the `kerx` table.
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-aat-layout.cc"
-             line="231">%true if data found, %false otherwise</doc>
+             line="232">%true if data found, %false otherwise</doc>
         <type name="bool_t" c:type="hb_bool_t"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="224">#hb_face_t to work upon</doc>
+               line="225">#hb_face_t to work upon</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
       </parameters>
@@ -3446,20 +3446,20 @@ in the `kerx` table.
               version="2.3.0">
       <doc xml:space="preserve"
            filename="../src/hb-aat-layout.cc"
-           line="328">Tests whether the specified face includes any tracking information
+           line="329">Tests whether the specified face includes any tracking information
 in the `trak` table.</doc>
       <source-position filename="../src/hb-aat-layout.h" line="790"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-aat-layout.cc"
-             line="335">%true if data found, %false otherwise</doc>
+             line="336">%true if data found, %false otherwise</doc>
         <type name="bool_t" c:type="hb_bool_t"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-aat-layout.cc"
-               line="330">#hb_face_t to work upon</doc>
+               line="331">#hb_face_t to work upon</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
       </parameters>
@@ -13658,7 +13658,7 @@ Note that @height is negative, in coordinate systems that grow up.</doc>
 				   from there, and repeat.
 				   At the start of next line a similar algorithm can
 				   be implemented. That is: 1. Iterate forward from
-				   the line-break position untill the first cluster
+				   the line-break position until the first cluster
 				   start position that is NOT unsafe-to-concat, 2.
 				   shape the segment from beginning of the line to
 				   that position, 3. check whether the resulting
@@ -15705,7 +15705,7 @@ Useful if the client program wishes to cache the list.</doc>
               version="4.0.0">
       <doc xml:space="preserve"
            filename="../src/hb-ot-layout.cc"
-           line="2071">Fetches a baseline value from the face, and synthesizes
+           line="2066">Fetches a baseline value from the face, and synthesizes
 it if the font does not have it.</doc>
       <source-position filename="../src/hb-ot-layout.h" line="483"/>
       <return-value transfer-ownership="none">
@@ -15715,32 +15715,32 @@ it if the font does not have it.</doc>
         <parameter name="font" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2073">a font</doc>
+               line="2068">a font</doc>
           <type name="font_t" c:type="hb_font_t*"/>
         </parameter>
         <parameter name="baseline_tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2074">a baseline tag</doc>
+               line="2069">a baseline tag</doc>
           <type name="ot_layout_baseline_tag_t"
                 c:type="hb_ot_layout_baseline_tag_t"/>
         </parameter>
         <parameter name="direction" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2075">text direction.</doc>
+               line="2070">text direction.</doc>
           <type name="direction_t" c:type="hb_direction_t"/>
         </parameter>
         <parameter name="script_tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2076">script tag.</doc>
+               line="2071">script tag.</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
         <parameter name="language_tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2077">language tag, currently unused.</doc>
+               line="2072">language tag, currently unused.</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
         <parameter name="coord"
@@ -15749,7 +15749,7 @@ it if the font does not have it.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2078">baseline value if found.</doc>
+               line="2073">baseline value if found.</doc>
           <type name="position_t" c:type="hb_position_t*"/>
         </parameter>
       </parameters>
@@ -16480,37 +16480,37 @@ specified face's GSUB table or GPOS table.</doc>
               version="2.6.8">
       <doc xml:space="preserve"
            filename="../src/hb-ot-layout.cc"
-           line="2318">Fetches alternates of a glyph from a given GSUB lookup index.</doc>
+           line="2313">Fetches alternates of a glyph from a given GSUB lookup index.</doc>
       <source-position filename="../src/hb-ot-layout.h" line="363"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-ot-layout.cc"
-             line="2331">Total number of alternates found in the specific lookup index for the given glyph id.</doc>
+             line="2326">Total number of alternates found in the specific lookup index for the given glyph id.</doc>
         <type name="guint" c:type="unsigned"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2320">a face.</doc>
+               line="2315">a face.</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="lookup_index" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2321">index of the feature lookup to query.</doc>
+               line="2316">index of the feature lookup to query.</doc>
           <type name="guint" c:type="unsigned"/>
         </parameter>
         <parameter name="glyph" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2322">a glyph id.</doc>
+               line="2317">a glyph id.</doc>
           <type name="codepoint_t" c:type="hb_codepoint_t"/>
         </parameter>
         <parameter name="start_offset" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2323">starting offset.</doc>
+               line="2318">starting offset.</doc>
           <type name="guint" c:type="unsigned"/>
         </parameter>
         <parameter name="alternate_count"
@@ -16521,7 +16521,7 @@ specified face's GSUB table or GPOS table.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2324">Input = the maximum number of alternate glyphs to return;
+               line="2319">Input = the maximum number of alternate glyphs to return;
                   Output = the actual number of alternate glyphs returned (may be zero).</doc>
           <type name="guint" c:type="unsigned*"/>
         </parameter>
@@ -16531,7 +16531,7 @@ specified face's GSUB table or GPOS table.</doc>
                    transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-layout.cc"
-               line="2326">A glyphs buffer.
+               line="2321">A glyphs buffer.
                    Alternate glyphs associated with the glyph id.</doc>
           <array length="4" zero-terminated="0" c:type="hb_codepoint_t*">
             <type name="codepoint_t" c:type="hb_codepoint_t"/>
