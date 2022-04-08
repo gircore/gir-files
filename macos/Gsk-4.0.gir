@@ -600,7 +600,7 @@ Since it is using cairo, this renderer cannot support
       <constructor name="new" c:identifier="gsk_cairo_renderer_new">
         <doc xml:space="preserve"
              filename="../gsk/gskcairorenderer.c"
-             line="184">Creates a new Cairo renderer.
+             line="220">Creates a new Cairo renderer.
 
 The Cairo renderer is the fallback renderer drawing in ways similar
 to how GTK 3 drew its content. Its primary use is as comparison tool.
@@ -612,7 +612,7 @@ avoided.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gsk/gskcairorenderer.c"
-               line="196">a new Cairo renderer.</doc>
+               line="232">a new Cairo renderer.</doc>
           <type name="Renderer" c:type="GskRenderer*"/>
         </return-value>
       </constructor>
@@ -2261,11 +2261,14 @@ renderer before using it.</doc>
                  line="5132">Arguments for the uniforms</doc>
             <type name="GLib.Bytes" c:type="GBytes*"/>
           </parameter>
-          <parameter name="children" transfer-ownership="none">
+          <parameter name="children"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="../gsk/gskrendernodeimpl.c"
-                 line="5133">array of child nodes, these will
-    be rendered to textures and used as input.</doc>
+                 line="5133">array of child nodes,
+  these will be rendered to textures and used as input.</doc>
             <array length="4" zero-terminated="0" c:type="GskRenderNode**">
               <type name="RenderNode" c:type="GskRenderNode*"/>
             </array>
@@ -2274,7 +2277,7 @@ renderer before using it.</doc>
             <doc xml:space="preserve"
                  filename="../gsk/gskrendernodeimpl.c"
                  line="5135">Length of @children (currenly the GL backend supports
-    up to 4 children)</doc>
+  up to 4 children)</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -2885,13 +2888,13 @@ points and color stops, and render that into the area given by @bounds.</doc>
                    deprecated-version="4.4">
         <doc xml:space="preserve"
              filename="../gsk/gl/gskglrenderer.c"
-             line="366">Same as gsk_gl_renderer_new().</doc>
+             line="461">Same as gsk_gl_renderer_new().</doc>
         <doc-deprecated xml:space="preserve">Use gsk_gl_renderer_new()</doc-deprecated>
         <source-position filename="../gsk/gl/gskglrenderer.h" line="47"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gsk/gl/gskglrenderer.c"
-               line="371">a new GL renderer</doc>
+               line="466">a new GL renderer</doc>
           <type name="Renderer" c:type="GskRenderer*"/>
         </return-value>
       </constructor>
