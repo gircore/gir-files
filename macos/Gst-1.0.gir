@@ -5464,12 +5464,12 @@ all buffers are returned to the pool they will be freed.</doc>
       <constructor name="new" c:identifier="gst_buffer_pool_new">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="202">Creates a new #GstBufferPool instance.</doc>
+             line="218">Creates a new #GstBufferPool instance.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="278"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="207">a new #GstBufferPool instance</doc>
+               line="223">a new #GstBufferPool instance</doc>
           <type name="BufferPool" c:type="GstBufferPool*"/>
         </return-value>
       </constructor>
@@ -5477,7 +5477,7 @@ all buffers are returned to the pool they will be freed.</doc>
                 c:identifier="gst_buffer_pool_config_add_option">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="868">Enables the option in @config. This will instruct the @bufferpool to enable
+             line="884">Enables the option in @config. This will instruct the @bufferpool to enable
 the specified option on the buffers that it allocates.
 
 The options supported by @pool can be retrieved with gst_buffer_pool_get_options().</doc>
@@ -5489,13 +5489,13 @@ The options supported by @pool can be retrieved with gst_buffer_pool_get_options
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="870">a #GstBufferPool configuration</doc>
+                 line="886">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="option" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="871">an option to add</doc>
+                 line="887">an option to add</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -5504,19 +5504,19 @@ The options supported by @pool can be retrieved with gst_buffer_pool_get_options
                 c:identifier="gst_buffer_pool_config_get_allocator">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="1019">Gets the @allocator and @params from @config.</doc>
+             line="1035">Gets the @allocator and @params from @config.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="318"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="1027">%TRUE, if the values are set.</doc>
+               line="1043">%TRUE, if the values are set.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1021">a #GstBufferPool configuration</doc>
+                 line="1037">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="allocator"
@@ -5528,7 +5528,7 @@ The options supported by @pool can be retrieved with gst_buffer_pool_get_options
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1022">a #GstAllocator, or %NULL</doc>
+                 line="1038">a #GstAllocator, or %NULL</doc>
             <type name="Allocator" c:type="GstAllocator**"/>
           </parameter>
           <parameter name="params"
@@ -5539,7 +5539,7 @@ The options supported by @pool can be retrieved with gst_buffer_pool_get_options
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1023">#GstAllocationParams, or %NULL</doc>
+                 line="1039">#GstAllocationParams, or %NULL</doc>
             <type name="AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
         </parameters>
@@ -5548,26 +5548,26 @@ The options supported by @pool can be retrieved with gst_buffer_pool_get_options
                 c:identifier="gst_buffer_pool_config_get_option">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="932">Parses an available @config and gets the option at @index of the options API
+             line="948">Parses an available @config and gets the option at @index of the options API
 array.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="330"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="940">the option at @index.</doc>
+               line="956">the option at @index.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="934">a #GstBufferPool configuration</doc>
+                 line="950">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="index" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="935">position in the option array to read</doc>
+                 line="951">position in the option array to read</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -5576,19 +5576,19 @@ array.</doc>
                 c:identifier="gst_buffer_pool_config_get_params">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="991">Gets the configuration values from @config.</doc>
+             line="1007">Gets the configuration values from @config.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="310"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="1001">%TRUE if all parameters could be fetched.</doc>
+               line="1017">%TRUE if all parameters could be fetched.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="993">a #GstBufferPool configuration</doc>
+                 line="1009">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="caps"
@@ -5600,7 +5600,7 @@ array.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="994">the caps of buffers</doc>
+                 line="1010">the caps of buffers</doc>
             <type name="Caps" c:type="GstCaps**"/>
           </parameter>
           <parameter name="size"
@@ -5611,7 +5611,7 @@ array.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="995">the size of each buffer, not including prefix and padding</doc>
+                 line="1011">the size of each buffer, not including prefix and padding</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
           <parameter name="min_buffers"
@@ -5622,7 +5622,7 @@ array.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="996">the minimum amount of buffers to allocate.</doc>
+                 line="1012">the minimum amount of buffers to allocate.</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
           <parameter name="max_buffers"
@@ -5633,7 +5633,7 @@ array.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="997">the maximum amount of buffers to allocate or 0 for unlimited.</doc>
+                 line="1013">the maximum amount of buffers to allocate or 0 for unlimited.</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
         </parameters>
@@ -5642,25 +5642,25 @@ array.</doc>
                 c:identifier="gst_buffer_pool_config_has_option">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="961">Checks if @config contains @option.</doc>
+             line="977">Checks if @config contains @option.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="333"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="968">%TRUE if the options array contains @option.</doc>
+               line="984">%TRUE if the options array contains @option.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="963">a #GstBufferPool configuration</doc>
+                 line="979">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="option" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="964">an option</doc>
+                 line="980">an option</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -5669,20 +5669,20 @@ array.</doc>
                 c:identifier="gst_buffer_pool_config_n_options">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="908">Retrieves the number of values currently stored in the options array of the
+             line="924">Retrieves the number of values currently stored in the options array of the
 @config structure.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="324"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="915">the options array size as a #guint.</doc>
+               line="931">the options array size as a #guint.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="910">a #GstBufferPool configuration</doc>
+                 line="926">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -5691,7 +5691,7 @@ array.</doc>
                 c:identifier="gst_buffer_pool_config_set_allocator">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="837">Sets the @allocator and @params on @config.
+             line="853">Sets the @allocator and @params on @config.
 
 One of @allocator and @params can be %NULL, but not both. When @allocator
 is %NULL, the default allocator of the pool will use the values in @param
@@ -5711,7 +5711,7 @@ used values.</doc>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="839">a #GstBufferPool configuration</doc>
+                 line="855">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="allocator"
@@ -5720,7 +5720,7 @@ used values.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="840">a #GstAllocator</doc>
+                 line="856">a #GstAllocator</doc>
             <type name="Allocator" c:type="GstAllocator*"/>
           </parameter>
           <parameter name="params"
@@ -5729,7 +5729,7 @@ used values.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="841">#GstAllocationParams</doc>
+                 line="857">#GstAllocationParams</doc>
             <type name="AllocationParams" c:type="const GstAllocationParams*"/>
           </parameter>
         </parameters>
@@ -5738,7 +5738,7 @@ used values.</doc>
                 c:identifier="gst_buffer_pool_config_set_params">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="812">Configures @config with the given parameters.</doc>
+             line="828">Configures @config with the given parameters.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="306"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -5747,7 +5747,7 @@ used values.</doc>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="814">a #GstBufferPool configuration</doc>
+                 line="830">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="caps"
@@ -5756,25 +5756,25 @@ used values.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="815">caps for the buffers</doc>
+                 line="831">caps for the buffers</doc>
             <type name="Caps" c:type="GstCaps*"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="816">the size of each buffer, not including prefix and padding</doc>
+                 line="832">the size of each buffer, not including prefix and padding</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="min_buffers" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="817">the minimum amount of buffers to allocate.</doc>
+                 line="833">the minimum amount of buffers to allocate.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="max_buffers" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="818">the maximum amount of buffers to allocate or 0 for unlimited.</doc>
+                 line="834">the maximum amount of buffers to allocate or 0 for unlimited.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -5784,7 +5784,7 @@ used values.</doc>
                 version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="1052">Validates that changes made to @config are still valid in the context of the
+             line="1068">Validates that changes made to @config are still valid in the context of the
 expected parameters. This function is a helper that can be used to validate
 changes made by a pool to a config when gst_buffer_pool_set_config()
 returns %FALSE. This expects that @caps haven't changed and that
@@ -5796,14 +5796,14 @@ padding.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="1071">%TRUE, if the parameters are valid in this context.</doc>
+               line="1087">%TRUE, if the parameters are valid in this context.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="config" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1054">a #GstBufferPool configuration</doc>
+                 line="1070">a #GstBufferPool configuration</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
           <parameter name="caps"
@@ -5812,25 +5812,25 @@ padding.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1055">the excepted caps of buffers</doc>
+                 line="1071">the excepted caps of buffers</doc>
             <type name="Caps" c:type="GstCaps*"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1056">the expected size of each buffer, not including prefix and padding</doc>
+                 line="1072">the expected size of each buffer, not including prefix and padding</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="min_buffers" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1057">the expected minimum amount of buffers to allocate.</doc>
+                 line="1073">the expected minimum amount of buffers to allocate.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="max_buffers" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1058">the expect maximum amount of buffers to allocate or 0 for unlimited.</doc>
+                 line="1074">the expect maximum amount of buffers to allocate or 0 for unlimited.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -5838,7 +5838,7 @@ padding.</doc>
       <virtual-method name="acquire_buffer" invoker="acquire_buffer">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="1242">Acquires a buffer from @pool. @buffer should point to a memory location that
+             line="1258">Acquires a buffer from @pool. @buffer should point to a memory location that
 can hold a pointer to the new buffer.
 
 @params can contain optional parameters to influence the allocation.</doc>
@@ -5846,7 +5846,7 @@ can hold a pointer to the new buffer.
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="1253">a #GstFlowReturn such as %GST_FLOW_FLUSHING when the pool is
+               line="1269">a #GstFlowReturn such as %GST_FLOW_FLUSHING when the pool is
 inactive.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -5854,7 +5854,7 @@ inactive.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1244">a #GstBufferPool</doc>
+                 line="1260">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="buffer"
@@ -5863,7 +5863,7 @@ inactive.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1245">a location for a #GstBuffer</doc>
+                 line="1261">a location for a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
           <parameter name="params"
@@ -5872,7 +5872,7 @@ inactive.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1246">parameters.</doc>
+                 line="1262">parameters.</doc>
             <type name="BufferPoolAcquireParams"
                   c:type="GstBufferPoolAcquireParams*"/>
           </parameter>
@@ -5983,14 +5983,14 @@ successful.</doc>
       <virtual-method name="get_options" invoker="get_options">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="748">Gets a %NULL terminated array of string with supported bufferpool options for
+             line="764">Gets a %NULL terminated array of string with supported bufferpool options for
 @pool. An option would typically be enabled with
 gst_buffer_pool_config_add_option().</doc>
         <source-position filename="../gst/gstbufferpool.h" line="139"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="756">a %NULL terminated array
+               line="772">a %NULL terminated array
          of strings.</doc>
           <array c:type="const gchar**">
             <type name="utf8"/>
@@ -6000,7 +6000,7 @@ gst_buffer_pool_config_add_option().</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="750">a #GstBufferPool</doc>
+                 line="766">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
         </parameters>
@@ -6008,7 +6008,7 @@ gst_buffer_pool_config_add_option().</doc>
       <virtual-method name="release_buffer" invoker="release_buffer">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="1340">Releases @buffer to @pool. @buffer should have previously been allocated from
+             line="1356">Releases @buffer to @pool. @buffer should have previously been allocated from
 @pool with gst_buffer_pool_acquire_buffer().
 
 This function is usually called automatically when the last ref on @buffer
@@ -6021,13 +6021,13 @@ disappears.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1342">a #GstBufferPool</doc>
+                 line="1358">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1343">a #GstBuffer</doc>
+                 line="1359">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
         </parameters>
@@ -6063,7 +6063,7 @@ restore the memory and clear the #GST_BUFFER_FLAG_TAG_MEMORY again.</doc>
       <virtual-method name="set_config" invoker="set_config">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="628">Sets the configuration of the pool. If the pool is already configured, and
+             line="644">Sets the configuration of the pool. If the pool is already configured, and
 the configuration hasn't changed, this function will return %TRUE. If the
 pool is active, this method will return %FALSE and active configuration
 will remain. Buffers allocated from this pool must be returned or else this
@@ -6083,20 +6083,20 @@ This function takes ownership of @config.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="650">%TRUE when the configuration could be set.</doc>
+               line="666">%TRUE when the configuration could be set.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="630">a #GstBufferPool</doc>
+                 line="646">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="config" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="631">a #GstStructure</doc>
+                 line="647">a #GstStructure</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -6148,7 +6148,7 @@ returned to the pool.</doc>
               c:identifier="gst_buffer_pool_acquire_buffer">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="1242">Acquires a buffer from @pool. @buffer should point to a memory location that
+             line="1258">Acquires a buffer from @pool. @buffer should point to a memory location that
 can hold a pointer to the new buffer.
 
 @params can contain optional parameters to influence the allocation.</doc>
@@ -6156,7 +6156,7 @@ can hold a pointer to the new buffer.
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="1253">a #GstFlowReturn such as %GST_FLOW_FLUSHING when the pool is
+               line="1269">a #GstFlowReturn such as %GST_FLOW_FLUSHING when the pool is
 inactive.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -6164,7 +6164,7 @@ inactive.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1244">a #GstBufferPool</doc>
+                 line="1260">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="buffer"
@@ -6173,7 +6173,7 @@ inactive.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1245">a location for a #GstBuffer</doc>
+                 line="1261">a location for a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
           <parameter name="params"
@@ -6182,7 +6182,7 @@ inactive.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1246">parameters.</doc>
+                 line="1262">parameters.</doc>
             <type name="BufferPoolAcquireParams"
                   c:type="GstBufferPoolAcquireParams*"/>
           </parameter>
@@ -6191,20 +6191,20 @@ inactive.</doc>
       <method name="get_config" c:identifier="gst_buffer_pool_get_config">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="723">Gets a copy of the current configuration of the pool. This configuration
+             line="739">Gets a copy of the current configuration of the pool. This configuration
 can be modified and used for the gst_buffer_pool_set_config() call.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="292"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="730">a copy of the current configuration of @pool.</doc>
+               line="746">a copy of the current configuration of @pool.</doc>
           <type name="Structure" c:type="GstStructure*"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="725">a #GstBufferPool</doc>
+                 line="741">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
         </parameters>
@@ -6212,14 +6212,14 @@ can be modified and used for the gst_buffer_pool_set_config() call.</doc>
       <method name="get_options" c:identifier="gst_buffer_pool_get_options">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="748">Gets a %NULL terminated array of string with supported bufferpool options for
+             line="764">Gets a %NULL terminated array of string with supported bufferpool options for
 @pool. An option would typically be enabled with
 gst_buffer_pool_config_add_option().</doc>
         <source-position filename="../gst/gstbufferpool.h" line="295"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="756">a %NULL terminated array
+               line="772">a %NULL terminated array
          of strings.</doc>
           <array c:type="const gchar**">
             <type name="utf8"/>
@@ -6229,7 +6229,7 @@ gst_buffer_pool_config_add_option().</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="750">a #GstBufferPool</doc>
+                 line="766">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
         </parameters>
@@ -6237,25 +6237,25 @@ gst_buffer_pool_config_add_option().</doc>
       <method name="has_option" c:identifier="gst_buffer_pool_has_option">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="785">Checks if the bufferpool supports @option.</doc>
+             line="801">Checks if the bufferpool supports @option.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="298"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="792">%TRUE if the buffer pool contains @option.</doc>
+               line="808">%TRUE if the buffer pool contains @option.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="787">a #GstBufferPool</doc>
+                 line="803">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="option" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="788">an option</doc>
+                 line="804">an option</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -6263,20 +6263,20 @@ gst_buffer_pool_config_add_option().</doc>
       <method name="is_active" c:identifier="gst_buffer_pool_is_active">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="568">Checks if @pool is active. A pool can be activated with the
+             line="584">Checks if @pool is active. A pool can be activated with the
 gst_buffer_pool_set_active() call.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="286"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="575">%TRUE when the pool is active.</doc>
+               line="591">%TRUE when the pool is active.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="570">a #GstBufferPool</doc>
+                 line="586">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
         </parameters>
@@ -6285,7 +6285,7 @@ gst_buffer_pool_set_active() call.</doc>
               c:identifier="gst_buffer_pool_release_buffer">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="1340">Releases @buffer to @pool. @buffer should have previously been allocated from
+             line="1356">Releases @buffer to @pool. @buffer should have previously been allocated from
 @pool with gst_buffer_pool_acquire_buffer().
 
 This function is usually called automatically when the last ref on @buffer
@@ -6298,13 +6298,13 @@ disappears.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1342">a #GstBufferPool</doc>
+                 line="1358">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1343">a #GstBuffer</doc>
+                 line="1359">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
         </parameters>
@@ -6312,7 +6312,7 @@ disappears.</doc>
       <method name="set_active" c:identifier="gst_buffer_pool_set_active">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="472">Controls the active state of @pool. When the pool is inactive, new calls to
+             line="488">Controls the active state of @pool. When the pool is inactive, new calls to
 gst_buffer_pool_acquire_buffer() will return with %GST_FLOW_FLUSHING.
 
 Activating the bufferpool will preallocate all resources in the pool based on
@@ -6325,7 +6325,7 @@ they are all returned to the pool.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="487">%FALSE when the pool was not configured or when preallocation of the
+               line="503">%FALSE when the pool was not configured or when preallocation of the
 buffers failed.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -6333,13 +6333,13 @@ buffers failed.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="474">a #GstBufferPool</doc>
+                 line="490">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="active" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="475">the new active state</doc>
+                 line="491">the new active state</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6347,7 +6347,7 @@ buffers failed.</doc>
       <method name="set_config" c:identifier="gst_buffer_pool_set_config">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="628">Sets the configuration of the pool. If the pool is already configured, and
+             line="644">Sets the configuration of the pool. If the pool is already configured, and
 the configuration hasn't changed, this function will return %TRUE. If the
 pool is active, this method will return %FALSE and active configuration
 will remain. Buffers allocated from this pool must be returned or else this
@@ -6367,20 +6367,20 @@ This function takes ownership of @config.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstbufferpool.c"
-               line="650">%TRUE when the configuration could be set.</doc>
+               line="666">%TRUE when the configuration could be set.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="630">a #GstBufferPool</doc>
+                 line="646">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="config" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="631">a #GstStructure</doc>
+                 line="647">a #GstStructure</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -6390,7 +6390,7 @@ This function takes ownership of @config.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstbufferpool.c"
-             line="1379">Enables or disables the flushing state of a @pool without freeing or
+             line="1395">Enables or disables the flushing state of a @pool without freeing or
 allocating buffers.</doc>
         <source-position filename="../gst/gstbufferpool.h" line="301"/>
         <return-value transfer-ownership="none">
@@ -6400,13 +6400,13 @@ allocating buffers.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1381">a #GstBufferPool</doc>
+                 line="1397">a #GstBufferPool</doc>
             <type name="BufferPool" c:type="GstBufferPool*"/>
           </instance-parameter>
           <parameter name="flushing" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1382">whether to start or stop flushing</doc>
+                 line="1398">whether to start or stop flushing</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6548,7 +6548,7 @@ return.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="756">a %NULL terminated array
+                 line="772">a %NULL terminated array
          of strings.</doc>
             <array c:type="const gchar**">
               <type name="utf8"/>
@@ -6558,7 +6558,7 @@ return.</doc>
             <parameter name="pool" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="750">a #GstBufferPool</doc>
+                   line="766">a #GstBufferPool</doc>
               <type name="BufferPool" c:type="GstBufferPool*"/>
             </parameter>
           </parameters>
@@ -6570,20 +6570,20 @@ return.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="650">%TRUE when the configuration could be set.</doc>
+                 line="666">%TRUE when the configuration could be set.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
           <parameters>
             <parameter name="pool" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="630">a #GstBufferPool</doc>
+                   line="646">a #GstBufferPool</doc>
               <type name="BufferPool" c:type="GstBufferPool*"/>
             </parameter>
             <parameter name="config" transfer-ownership="full">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="631">a #GstStructure</doc>
+                   line="647">a #GstStructure</doc>
               <type name="Structure" c:type="GstStructure*"/>
             </parameter>
           </parameters>
@@ -6633,7 +6633,7 @@ return.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstbufferpool.c"
-                 line="1253">a #GstFlowReturn such as %GST_FLOW_FLUSHING when the pool is
+                 line="1269">a #GstFlowReturn such as %GST_FLOW_FLUSHING when the pool is
 inactive.</doc>
             <type name="FlowReturn" c:type="GstFlowReturn"/>
           </return-value>
@@ -6641,7 +6641,7 @@ inactive.</doc>
             <parameter name="pool" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="1244">a #GstBufferPool</doc>
+                   line="1260">a #GstBufferPool</doc>
               <type name="BufferPool" c:type="GstBufferPool*"/>
             </parameter>
             <parameter name="buffer"
@@ -6650,7 +6650,7 @@ inactive.</doc>
                        transfer-ownership="full">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="1245">a location for a #GstBuffer</doc>
+                   line="1261">a location for a #GstBuffer</doc>
               <type name="Buffer" c:type="GstBuffer**"/>
             </parameter>
             <parameter name="params"
@@ -6659,7 +6659,7 @@ inactive.</doc>
                        allow-none="1">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="1246">parameters.</doc>
+                   line="1262">parameters.</doc>
               <type name="BufferPoolAcquireParams"
                     c:type="GstBufferPoolAcquireParams*"/>
             </parameter>
@@ -6737,13 +6737,13 @@ successful.</doc>
             <parameter name="pool" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="1342">a #GstBufferPool</doc>
+                   line="1358">a #GstBufferPool</doc>
               <type name="BufferPool" c:type="GstBufferPool*"/>
             </parameter>
             <parameter name="buffer" transfer-ownership="full">
               <doc xml:space="preserve"
                    filename="../gst/gstbufferpool.c"
-                   line="1343">a #GstBuffer</doc>
+                   line="1359">a #GstBuffer</doc>
               <type name="Buffer" c:type="GstBuffer*"/>
             </parameter>
           </parameters>
@@ -13704,7 +13704,7 @@ free it and that the pointer becomes invalid when you free the context.</doc>
              filename="../gst/gstcontext.c"
              line="248">Gets a writable version of the structure.</doc>
         <source-position filename="../gst/gstcontext.h" line="125"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstcontext.c"
                line="254">The structure of the context. The structure is still
@@ -55017,7 +55017,7 @@ removed at the end of initialization.</doc>
                 c:identifier="gst_registry_fork_is_enabled">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1825">By default GStreamer will perform scanning and rebuilding of the
+             line="1840">By default GStreamer will perform scanning and rebuilding of the
 registry file using a helper child process.
 
 Applications might want to disable this behaviour with the
@@ -55027,7 +55027,7 @@ are scanned (and loaded) into the application process.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstregistry.c"
-               line="1835">%TRUE if GStreamer will use the child helper process when
+               line="1850">%TRUE if GStreamer will use the child helper process when
 rebuilding the registry.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -55036,7 +55036,7 @@ rebuilding the registry.</doc>
                 c:identifier="gst_registry_fork_set_enabled">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1844">Applications might want to disable/enable spawning of a child helper process
+             line="1859">Applications might want to disable/enable spawning of a child helper process
 when rebuilding the registry. See gst_registry_fork_is_enabled() for more
 information.</doc>
         <source-position filename="../gst/gst.h" line="131"/>
@@ -55047,7 +55047,7 @@ information.</doc>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1846">whether rebuilding the registry can use a temporary child helper process.</doc>
+                 line="1861">whether rebuilding the registry can use a temporary child helper process.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -55361,20 +55361,20 @@ MT safe.</doc>
               c:identifier="gst_registry_get_feature_list_cookie">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1917">Returns the registry's feature list cookie. This changes
+             line="1932">Returns the registry's feature list cookie. This changes
 every time a feature is added or removed from the registry.</doc>
         <source-position filename="../gst/gstregistry.h" line="106"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstregistry.c"
-               line="1924">the feature list cookie.</doc>
+               line="1939">the feature list cookie.</doc>
           <type name="guint32" c:type="guint32"/>
         </return-value>
         <parameters>
           <instance-parameter name="registry" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1919">the registry</doc>
+                 line="1934">the registry</doc>
             <type name="Registry" c:type="GstRegistry*"/>
           </instance-parameter>
         </parameters>
@@ -71628,7 +71628,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="../gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="0" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="1" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="../gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -77589,7 +77589,7 @@ the plugin that defines it.</doc>
     <function name="update_registry" c:identifier="gst_update_registry">
       <doc xml:space="preserve"
            filename="../gst/gstregistry.c"
-           line="1858">Forces GStreamer to re-scan its plugin paths and update the default
+           line="1873">Forces GStreamer to re-scan its plugin paths and update the default
 plugin registry.
 
 Applications will almost never need to call this function, it is only
@@ -77609,7 +77609,7 @@ Note that this function may block for a significant amount of time.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1878">%TRUE if the registry has been updated successfully (does not
+             line="1893">%TRUE if the registry has been updated successfully (does not
          imply that there were changes), otherwise %FALSE.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
