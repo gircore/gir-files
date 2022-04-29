@@ -550,7 +550,7 @@ of the buffer.</doc>
       <source-position filename="../src/hb-version.h" line="44"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="0" c:type="HB_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="1" c:type="HB_VERSION_MICRO">
       <source-position filename="../src/hb-version.h" line="56"/>
       <type name="gint" c:type="gint"/>
     </constant>
@@ -558,7 +558,7 @@ of the buffer.</doc>
       <source-position filename="../src/hb-version.h" line="50"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_STRING" value="4.2.0" c:type="HB_VERSION_STRING">
+    <constant name="VERSION_STRING" value="4.2.1" c:type="HB_VERSION_STRING">
       <source-position filename="../src/hb-version.h" line="63"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -14020,7 +14020,7 @@ the font data necessary for typesetting OpenType Math layout.</doc>
     <docsection name="hb-ot-shape">
       <doc xml:space="preserve"
            filename="../src/hb-ot-shape.cc"
-           line="61">Support functions for OpenType shaping related queries.</doc>
+           line="64">Support functions for OpenType shaping related queries.</doc>
     </docsection>
     <docsection name="hb-ot-var">
       <doc xml:space="preserve"
@@ -19086,7 +19086,7 @@ used as long as @face is alive.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="../src/hb-ot-shape.cc"
-           line="1240">Computes the transitive closure of glyphs needed for a specified
+           line="1252">Computes the transitive closure of glyphs needed for a specified
 input buffer under the given font and feature list. The closure is
 computed as a set, not as a list.</doc>
       <source-position filename="../src/hb-ot-shape.h" line="40"/>
@@ -19097,19 +19097,19 @@ computed as a set, not as a list.</doc>
         <parameter name="font" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1242">#hb_font_t to work upon</doc>
+               line="1254">#hb_font_t to work upon</doc>
           <type name="font_t" c:type="hb_font_t*"/>
         </parameter>
         <parameter name="buffer" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1243">The input buffer to compute from</doc>
+               line="1255">The input buffer to compute from</doc>
           <type name="buffer_t" c:type="hb_buffer_t*"/>
         </parameter>
         <parameter name="features" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1244">The features enabled on the buffer</doc>
+               line="1256">The features enabled on the buffer</doc>
           <array length="3" zero-terminated="0" c:type="const hb_feature_t*">
             <type name="feature_t" c:type="hb_feature_t"/>
           </array>
@@ -19117,7 +19117,7 @@ computed as a set, not as a list.</doc>
         <parameter name="num_features" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1245">The number of features enabled on the buffer</doc>
+               line="1257">The number of features enabled on the buffer</doc>
           <type name="guint" c:type="unsigned int"/>
         </parameter>
         <parameter name="glyphs"
@@ -19126,7 +19126,7 @@ computed as a set, not as a list.</doc>
                    transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1246">The #hb_set_t set of glyphs comprising the transitive closure of the query</doc>
+               line="1258">The #hb_set_t set of glyphs comprising the transitive closure of the query</doc>
           <type name="set_t" c:type="hb_set_t*"/>
         </parameter>
       </parameters>
@@ -19136,7 +19136,7 @@ computed as a set, not as a list.</doc>
               version="0.9.7">
       <doc xml:space="preserve"
            filename="../src/hb-ot-shape.cc"
-           line="1200">Computes the complete set of GSUB or GPOS lookups that are applicable
+           line="1212">Computes the complete set of GSUB or GPOS lookups that are applicable
 under a given @shape_plan.</doc>
       <source-position filename="../src/hb-ot-shape.h" line="47"/>
       <return-value transfer-ownership="none">
@@ -19146,13 +19146,13 @@ under a given @shape_plan.</doc>
         <parameter name="shape_plan" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1202">#hb_shape_plan_t to query</doc>
+               line="1214">#hb_shape_plan_t to query</doc>
           <type name="shape_plan_t" c:type="hb_shape_plan_t*"/>
         </parameter>
         <parameter name="table_tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1203">GSUB or GPOS</doc>
+               line="1215">GSUB or GPOS</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
         <parameter name="lookup_indexes"
@@ -19161,7 +19161,7 @@ under a given @shape_plan.</doc>
                    transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-shape.cc"
-               line="1204">The #hb_set_t set of lookups returned</doc>
+               line="1216">The #hb_set_t set of lookups returned</doc>
           <type name="set_t" c:type="hb_set_t*"/>
         </parameter>
       </parameters>
