@@ -33,7 +33,7 @@ jobs:
       - name: Extract gir files
         run: flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version transfer.py /usr/share/gir-1.0/ ./linux
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           branch: linux-update-gir-files
           commit-message: Linux - Update gir files
