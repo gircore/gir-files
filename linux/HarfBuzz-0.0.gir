@@ -6688,7 +6688,7 @@ HB_DIRECTION_IS_HORIZONTAL() or HB_DIRECTION_IS_VERTICAL().</doc>
               version="1.9.0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="747">Add table for @tag with data provided by @blob to the face.  @face must
+           line="754">Add table for @tag with data provided by @blob to the face.  @face must
 be created using hb_face_builder_create().</doc>
       <source-position filename="src/hb-face.h" line="170"/>
       <return-value transfer-ownership="none">
@@ -6698,19 +6698,19 @@ be created using hb_face_builder_create().</doc>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="749">A face object created with hb_face_builder_create()</doc>
+               line="756">A face object created with hb_face_builder_create()</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="750">The #hb_tag_t of the table to add</doc>
+               line="757">The #hb_tag_t of the table to add</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
         <parameter name="blob" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="751">The blob containing the table data to add</doc>
+               line="758">The blob containing the table data to add</doc>
           <type name="blob_t" c:type="hb_blob_t*"/>
         </parameter>
       </parameters>
@@ -6720,14 +6720,14 @@ be created using hb_face_builder_create().</doc>
               version="1.9.0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="725">Creates a #hb_face_t that can be used with hb_face_builder_add_table().
+           line="732">Creates a #hb_face_t that can be used with hb_face_builder_add_table().
 After tables are added to the face, it can be compiled to a binary
 font file by calling hb_face_reference_blob().</doc>
       <source-position filename="src/hb-face.h" line="167"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="732">New face.</doc>
+             line="739">New face.</doc>
         <type name="face_t" c:type="hb_face_t*"/>
       </return-value>
     </function>
@@ -6736,7 +6736,7 @@ font file by calling hb_face_reference_blob().</doc>
               version="1.9.0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="568">Collects all of the Unicode characters covered by @face and adds
+           line="575">Collects all of the Unicode characters covered by @face and adds
 them to the #hb_set_t set @out.</doc>
       <source-position filename="src/hb-face.h" line="149"/>
       <return-value transfer-ownership="none">
@@ -6746,13 +6746,13 @@ them to the #hb_set_t set @out.</doc>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="570">A face object</doc>
+               line="577">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="out" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="571">The set to add Unicode characters to</doc>
+               line="578">The set to add Unicode characters to</doc>
           <type name="set_t" c:type="hb_set_t*"/>
         </parameter>
       </parameters>
@@ -6762,7 +6762,7 @@ them to the #hb_set_t set @out.</doc>
               version="1.9.0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="584">Collects all Unicode "Variation Selector" characters covered by @face and adds
+           line="591">Collects all Unicode "Variation Selector" characters covered by @face and adds
 them to the #hb_set_t set @out.</doc>
       <source-position filename="src/hb-face.h" line="153"/>
       <return-value transfer-ownership="none">
@@ -6772,13 +6772,13 @@ them to the #hb_set_t set @out.</doc>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="586">A face object</doc>
+               line="593">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="out" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="587">The set to add Variation Selector characters to</doc>
+               line="594">The set to add Variation Selector characters to</doc>
           <type name="set_t" c:type="hb_set_t*"/>
         </parameter>
       </parameters>
@@ -6788,7 +6788,7 @@ them to the #hb_set_t set @out.</doc>
               version="1.9.0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="600">Collects all Unicode characters for @variation_selector covered by @face and adds
+           line="607">Collects all Unicode characters for @variation_selector covered by @face and adds
 them to the #hb_set_t set @out.</doc>
       <source-position filename="src/hb-face.h" line="157"/>
       <return-value transfer-ownership="none">
@@ -6798,19 +6798,19 @@ them to the #hb_set_t set @out.</doc>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="602">A face object</doc>
+               line="609">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="variation_selector" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="603">The Variation Selector to query</doc>
+               line="610">The Variation Selector to query</doc>
           <type name="codepoint_t" c:type="hb_codepoint_t"/>
         </parameter>
         <parameter name="out" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="604">The set to add Unicode characters to</doc>
+               line="611">The set to add Unicode characters to</doc>
           <type name="set_t" c:type="hb_set_t*"/>
         </parameter>
       </parameters>
@@ -6839,14 +6839,20 @@ them to the #hb_set_t set @out.</doc>
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
            line="192">Constructs a new face object from the specified blob and
-a face index into that blob. This is used for blobs of
-file formats such as Dfont and TTC that can contain more
-than one face.</doc>
+a face index into that blob.
+
+The face index is used for blobs of file formats such as TTC and
+and DFont that can contain more than one face.  Face indices within
+such collections are zero-based.
+
+&lt;note&gt;Note: If the blob font format is not a collection, @index
+is ignored.  Otherwise, only the lower 16-bits of @index are used.
+The unmodified @index can be accessed via hb_face_get_index().&lt;/note&gt;</doc>
       <source-position filename="src/hb-face.h" line="58"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="202">The new face object</doc>
+             line="208">The new face object</doc>
         <type name="face_t" c:type="hb_face_t*"/>
       </return-value>
       <parameters>
@@ -6922,7 +6928,7 @@ with the @destroy callback.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="266">Decreases the reference count on a face object. When the
+           line="272">Decreases the reference count on a face object. When the
 reference count reaches zero, the face is destroyed,
 freeing all memory.</doc>
       <source-position filename="src/hb-face.h" line="89"/>
@@ -6933,7 +6939,7 @@ freeing all memory.</doc>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="268">A face object</doc>
+               line="274">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
       </parameters>
@@ -6943,12 +6949,12 @@ freeing all memory.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="234">Fetches the singleton empty face object.</doc>
+           line="240">Fetches the singleton empty face object.</doc>
       <source-position filename="src/hb-face.h" line="83"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="239">The empty face object</doc>
+             line="245">The empty face object</doc>
         <type name="face_t" c:type="hb_face_t*"/>
       </return-value>
     </function>
@@ -6957,19 +6963,19 @@ freeing all memory.</doc>
               version="0.9.7">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="509">Fetches the glyph-count value of the specified face object.</doc>
+           line="516">Fetches the glyph-count value of the specified face object.</doc>
       <source-position filename="src/hb-face.h" line="135"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="515">The glyph-count value of @face</doc>
+             line="522">The glyph-count value of @face</doc>
         <type name="guint" c:type="unsigned int"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="511">A face object</doc>
+               line="518">A face object</doc>
           <type name="face_t" c:type="const hb_face_t*"/>
         </parameter>
       </parameters>
@@ -6979,21 +6985,21 @@ freeing all memory.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="437">Fetches the face-index corresponding to the given face.
+           line="444">Fetches the face-index corresponding to the given face.
 
 &lt;note&gt;Note: face indices within a collection are zero-based.&lt;/note&gt;</doc>
       <source-position filename="src/hb-face.h" line="121"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="445">The index of @face.</doc>
+             line="452">The index of @face.</doc>
         <type name="guint" c:type="unsigned int"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="439">A face object</doc>
+               line="446">A face object</doc>
           <type name="face_t" c:type="const hb_face_t*"/>
         </parameter>
       </parameters>
@@ -7003,26 +7009,26 @@ freeing all memory.</doc>
               version="1.6.0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="525">Fetches a list of all table tags for a face, if possible. The list returned will
+           line="532">Fetches a list of all table tags for a face, if possible. The list returned will
 begin at the offset provided</doc>
       <source-position filename="src/hb-face.h" line="138"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="536">Total number of tables, or zero if it is not possible to list</doc>
+             line="543">Total number of tables, or zero if it is not possible to list</doc>
         <type name="guint" c:type="unsigned int"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="527">A face object</doc>
+               line="534">A face object</doc>
           <type name="face_t" c:type="const hb_face_t*"/>
         </parameter>
         <parameter name="start_offset" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="528">The index of first table tag to retrieve</doc>
+               line="535">The index of first table tag to retrieve</doc>
           <type name="guint" c:type="unsigned int"/>
         </parameter>
         <parameter name="table_count"
@@ -7031,7 +7037,7 @@ begin at the offset provided</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="529">Input = the maximum number of table tags to return;
+               line="536">Input = the maximum number of table tags to return;
                Output = the actual number of table tags returned (may be zero)</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
@@ -7041,7 +7047,7 @@ begin at the offset provided</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="531">The array of table tags found</doc>
+               line="538">The array of table tags found</doc>
           <array length="2" zero-terminated="0" c:type="hb_tag_t*">
             <type name="tag_t" c:type="hb_tag_t"/>
           </array>
@@ -7053,19 +7059,19 @@ begin at the offset provided</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="474">Fetches the units-per-em (upem) value of the specified face object.</doc>
+           line="481">Fetches the units-per-em (upem) value of the specified face object.</doc>
       <source-position filename="src/hb-face.h" line="128"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="480">The upem value of @face</doc>
+             line="487">The upem value of @face</doc>
         <type name="guint" c:type="unsigned int"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="476">A face object</doc>
+               line="483">A face object</doc>
           <type name="face_t" c:type="const hb_face_t*"/>
         </parameter>
       </parameters>
@@ -7076,26 +7082,26 @@ begin at the offset provided</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="322">Fetches the user data associated with the specified key,
+           line="328">Fetches the user data associated with the specified key,
 attached to the specified face object.</doc>
       <source-position filename="src/hb-face.h" line="99"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="330">A pointer to the user data</doc>
+             line="336">A pointer to the user data</doc>
         <type name="gpointer" c:type="void*"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="324">A face object</doc>
+               line="330">A face object</doc>
           <type name="face_t" c:type="const hb_face_t*"/>
         </parameter>
         <parameter name="key" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="325">The user-data key to query</doc>
+               line="331">The user-data key to query</doc>
           <type name="user_data_key_t" c:type="hb_user_data_key_t*"/>
         </parameter>
       </parameters>
@@ -7105,19 +7111,19 @@ attached to the specified face object.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="358">Tests whether the given face object is immutable.</doc>
+           line="364">Tests whether the given face object is immutable.</doc>
       <source-position filename="src/hb-face.h" line="106"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="364">%true is @face is immutable, %false otherwise</doc>
+             line="370">%true is @face is immutable, %false otherwise</doc>
         <type name="bool_t" c:type="hb_bool_t"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="360">A face object</doc>
+               line="366">A face object</doc>
           <type name="face_t" c:type="const hb_face_t*"/>
         </parameter>
       </parameters>
@@ -7127,7 +7133,7 @@ attached to the specified face object.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="341">Makes the given face object immutable.</doc>
+           line="347">Makes the given face object immutable.</doc>
       <source-position filename="src/hb-face.h" line="103"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -7136,7 +7142,7 @@ attached to the specified face object.</doc>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="343">A face object</doc>
+               line="349">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
       </parameters>
@@ -7147,19 +7153,19 @@ attached to the specified face object.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="250">Increases the reference count on a face object.</doc>
+           line="256">Increases the reference count on a face object.</doc>
       <source-position filename="src/hb-face.h" line="86"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="256">The @face object</doc>
+             line="262">The @face object</doc>
         <type name="face_t" c:type="hb_face_t*"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="252">A face object</doc>
+               line="258">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
       </parameters>
@@ -7169,21 +7175,21 @@ attached to the specified face object.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="397">Fetches a pointer to the binary blob that contains the
+           line="403">Fetches a pointer to the binary blob that contains the
 specified face. Returns an empty blob if referencing face data is not
 possible.</doc>
       <source-position filename="src/hb-face.h" line="114"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="405">A pointer to the blob for @face</doc>
+             line="411">A pointer to the blob for @face</doc>
         <type name="blob_t" c:type="hb_blob_t*"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="399">A face object</doc>
+               line="405">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
       </parameters>
@@ -7193,26 +7199,26 @@ possible.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="375">Fetches a reference to the specified table within
+           line="381">Fetches a reference to the specified table within
 the specified face.</doc>
       <source-position filename="src/hb-face.h" line="110"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="383">A pointer to the @tag table within @face</doc>
+             line="389">A pointer to the @tag table within @face</doc>
         <type name="blob_t" c:type="hb_blob_t*"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="377">A face object</doc>
+               line="383">A face object</doc>
           <type name="face_t" c:type="const hb_face_t*"/>
         </parameter>
         <parameter name="tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="378">The #hb_tag_t of the table to query</doc>
+               line="384">The #hb_tag_t of the table to query</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
       </parameters>
@@ -7222,7 +7228,7 @@ the specified face.</doc>
               version="0.9.7">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="490">Sets the glyph count for a face object to the specified value.</doc>
+           line="497">Sets the glyph count for a face object to the specified value.</doc>
       <source-position filename="src/hb-face.h" line="131"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -7231,13 +7237,13 @@ the specified face.</doc>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="492">A face object</doc>
+               line="499">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="glyph_count" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="493">The glyph-count value to assign</doc>
+               line="500">The glyph-count value to assign</doc>
           <type name="guint" c:type="unsigned int"/>
         </parameter>
       </parameters>
@@ -7247,10 +7253,11 @@ the specified face.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="415">Assigns the specified face-index to @face. Fails if the
+           line="421">Assigns the specified face-index to @face. Fails if the
 face is immutable.
 
-&lt;note&gt;Note: face indices within a collection are zero-based.&lt;/note&gt;</doc>
+&lt;note&gt;Note: changing the index has no effect on the face itself
+This only changes the value returned by hb_face_get_index().&lt;/note&gt;</doc>
       <source-position filename="src/hb-face.h" line="117"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -7259,13 +7266,13 @@ face is immutable.
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="417">A face object</doc>
+               line="423">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="index" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="418">The index to assign</doc>
+               line="424">The index to assign</doc>
           <type name="guint" c:type="unsigned int"/>
         </parameter>
       </parameters>
@@ -7275,7 +7282,7 @@ face is immutable.
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="455">Sets the units-per-em (upem) for a face object to the specified value.</doc>
+           line="462">Sets the units-per-em (upem) for a face object to the specified value.</doc>
       <source-position filename="src/hb-face.h" line="124"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -7284,13 +7291,13 @@ face is immutable.
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="457">A face object</doc>
+               line="464">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="upem" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="458">The units-per-em value to assign</doc>
+               line="465">The units-per-em value to assign</doc>
           <type name="guint" c:type="unsigned int"/>
         </parameter>
       </parameters>
@@ -7301,25 +7308,25 @@ face is immutable.
               introspectable="0">
       <doc xml:space="preserve"
            filename="src/hb-face.cc"
-           line="298">Attaches a user-data key/data pair to the given face object.</doc>
+           line="304">Attaches a user-data key/data pair to the given face object.</doc>
       <source-position filename="src/hb-face.h" line="92"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-face.cc"
-             line="308">%true if success, %false otherwise</doc>
+             line="314">%true if success, %false otherwise</doc>
         <type name="bool_t" c:type="hb_bool_t"/>
       </return-value>
       <parameters>
         <parameter name="face" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="300">A face object</doc>
+               line="306">A face object</doc>
           <type name="face_t" c:type="hb_face_t*"/>
         </parameter>
         <parameter name="key" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="301">The user-data key to set</doc>
+               line="307">The user-data key to set</doc>
           <type name="user_data_key_t" c:type="hb_user_data_key_t*"/>
         </parameter>
         <parameter name="data"
@@ -7328,7 +7335,7 @@ face is immutable.
                    allow-none="1">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="302">A pointer to the user data</doc>
+               line="308">A pointer to the user data</doc>
           <type name="gpointer" c:type="void*"/>
         </parameter>
         <parameter name="destroy"
@@ -7337,13 +7344,13 @@ face is immutable.
                    allow-none="1">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="303">A callback to call when @data is not needed anymore</doc>
+               line="309">A callback to call when @data is not needed anymore</doc>
           <type name="destroy_func_t" c:type="hb_destroy_func_t"/>
         </parameter>
         <parameter name="replace" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-face.cc"
-               line="304">Whether to replace an existing data with the same key</doc>
+               line="310">Whether to replace an existing data with the same key</doc>
           <type name="bool_t" c:type="hb_bool_t"/>
         </parameter>
       </parameters>
