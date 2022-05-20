@@ -17444,12 +17444,12 @@ The basic use pattern of a device monitor is as follows:
                    version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="790">Create a new #GstDeviceMonitor</doc>
+             line="806">Create a new #GstDeviceMonitor</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="82"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="795">a new device monitor.</doc>
+               line="811">a new device monitor.</doc>
           <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
         </return-value>
       </constructor>
@@ -17458,7 +17458,7 @@ The basic use pattern of a device monitor is as follows:
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="612">Adds a filter for which #GstDevice will be monitored, any device that matches
+             line="628">Adds a filter for which #GstDevice will be monitored, any device that matches
 all these classes and the #GstCaps will be returned.
 
 If this function is called multiple times to add more filters, each will be
@@ -17473,7 +17473,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="630">The id of the new filter or 0 if no provider matched the filter's
+               line="646">The id of the new filter or 0 if no provider matched the filter's
  classes.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
@@ -17481,7 +17481,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="614">a device monitor</doc>
+                 line="630">a device monitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
           <parameter name="classes"
@@ -17490,7 +17490,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="615">device classes to use as filter or %NULL for any class</doc>
+                 line="631">device classes to use as filter or %NULL for any class</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="caps"
@@ -17499,7 +17499,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="616">the #GstCaps to filter or %NULL for ANY</doc>
+                 line="632">the #GstCaps to filter or %NULL for ANY</doc>
             <type name="Caps" c:type="GstCaps*"/>
           </parameter>
         </parameters>
@@ -17509,19 +17509,19 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="812">Gets the #GstBus of this #GstDeviceMonitor</doc>
+             line="828">Gets the #GstBus of this #GstDeviceMonitor</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="85"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="818">a #GstBus</doc>
+               line="834">a #GstBus</doc>
           <type name="Bus" c:type="GstBus*"/>
         </return-value>
         <parameters>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="814">a #GstDeviceProvider</doc>
+                 line="830">a #GstDeviceProvider</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -17531,13 +17531,13 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="372">Gets a list of devices from all of the relevant monitors. This may actually
+             line="388">Gets a list of devices from all of the relevant monitors. This may actually
 probe the hardware if the monitor is not currently started.</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="88"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="379">a #GList of
+               line="395">a #GList of
   #GstDevice</doc>
           <type name="GLib.List" c:type="GList*">
             <type name="Device"/>
@@ -17547,7 +17547,7 @@ probe the hardware if the monitor is not currently started.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="374">A #GstDeviceProvider</doc>
+                 line="390">A #GstDeviceProvider</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -17557,14 +17557,14 @@ probe the hardware if the monitor is not currently started.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="830">Get a list of the currently selected device provider factories.
+             line="846">Get a list of the currently selected device provider factories.
 
 This</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="106"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="838">
+               line="854">
     A list of device provider factory names that are currently being
     monitored by @monitor or %NULL when nothing is being monitored.</doc>
           <array c:type="gchar**">
@@ -17575,7 +17575,7 @@ This</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="832">a #GstDeviceMonitor</doc>
+                 line="848">a #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -17585,20 +17585,20 @@ This</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="896">Get if @monitor is currently showing all devices, even those from hidden
+             line="912">Get if @monitor is currently showing all devices, even those from hidden
 providers.</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="112"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="903">%TRUE when all devices will be shown.</doc>
+               line="919">%TRUE when all devices will be shown.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="898">a #GstDeviceMonitor</doc>
+                 line="914">a #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -17608,26 +17608,26 @@ providers.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="724">Removes a filter from the #GstDeviceMonitor using the id that was returned
+             line="740">Removes a filter from the #GstDeviceMonitor using the id that was returned
 by gst_device_monitor_add_filter().</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="103"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="732">%TRUE of the filter id was valid, %FALSE otherwise</doc>
+               line="748">%TRUE of the filter id was valid, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="726">a device monitor</doc>
+                 line="742">a device monitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
           <parameter name="filter_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="727">the id of the filter</doc>
+                 line="743">the id of the filter</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -17637,7 +17637,7 @@ by gst_device_monitor_add_filter().</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="875">Set if all devices should be visible, even those devices from hidden
+             line="891">Set if all devices should be visible, even those devices from hidden
 providers. Setting @show_all to true might show some devices multiple times.</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="109"/>
         <return-value transfer-ownership="none">
@@ -17647,13 +17647,13 @@ providers. Setting @show_all to true might show some devices multiple times.</do
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="877">a #GstDeviceMonitor</doc>
+                 line="893">a #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
           <parameter name="show_all" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="878">show all devices</doc>
+                 line="894">show all devices</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -17663,14 +17663,14 @@ providers. Setting @show_all to true might show some devices multiple times.</do
               version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="468">Starts monitoring the devices, one this has succeeded, the
+             line="484">Starts monitoring the devices, one this has succeeded, the
 %GST_MESSAGE_DEVICE_ADDED and %GST_MESSAGE_DEVICE_REMOVED messages
 will be emitted on the bus when the list of devices changes.</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="92"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstdevicemonitor.c"
-               line="476">%TRUE if the device monitoring could be started, i.e. at least a
+               line="492">%TRUE if the device monitoring could be started, i.e. at least a
     single device provider was started successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -17678,7 +17678,7 @@ will be emitted on the bus when the list of devices changes.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="470">A #GstDeviceMonitor</doc>
+                 line="486">A #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -17686,7 +17686,7 @@ will be emitted on the bus when the list of devices changes.</doc>
       <method name="stop" c:identifier="gst_device_monitor_stop" version="1.4">
         <doc xml:space="preserve"
              filename="../gst/gstdevicemonitor.c"
-             line="546">Stops monitoring the devices.</doc>
+             line="562">Stops monitoring the devices.</doc>
         <source-position filename="../gst/gstdevicemonitor.h" line="95"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -17695,7 +17695,7 @@ will be emitted on the bus when the list of devices changes.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstdevicemonitor.c"
-                 line="548">A #GstDeviceProvider</doc>
+                 line="564">A #GstDeviceProvider</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -55017,7 +55017,7 @@ removed at the end of initialization.</doc>
                 c:identifier="gst_registry_fork_is_enabled">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1840">By default GStreamer will perform scanning and rebuilding of the
+             line="1868">By default GStreamer will perform scanning and rebuilding of the
 registry file using a helper child process.
 
 Applications might want to disable this behaviour with the
@@ -55027,7 +55027,7 @@ are scanned (and loaded) into the application process.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstregistry.c"
-               line="1850">%TRUE if GStreamer will use the child helper process when
+               line="1878">%TRUE if GStreamer will use the child helper process when
 rebuilding the registry.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -55036,7 +55036,7 @@ rebuilding the registry.</doc>
                 c:identifier="gst_registry_fork_set_enabled">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1859">Applications might want to disable/enable spawning of a child helper process
+             line="1887">Applications might want to disable/enable spawning of a child helper process
 when rebuilding the registry. See gst_registry_fork_is_enabled() for more
 information.</doc>
         <source-position filename="../gst/gst.h" line="131"/>
@@ -55047,7 +55047,7 @@ information.</doc>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1861">whether rebuilding the registry can use a temporary child helper process.</doc>
+                 line="1889">whether rebuilding the registry can use a temporary child helper process.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -55132,14 +55132,14 @@ MT safe.</doc>
               c:identifier="gst_registry_check_feature_version">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1483">Checks whether a plugin feature by the given name exists in
+             line="1511">Checks whether a plugin feature by the given name exists in
 @registry and whether its version is at least the
 version required.</doc>
         <source-position filename="../gst/gstregistry.h" line="121"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstregistry.c"
-               line="1495">%TRUE if the feature could be found and the version is
+               line="1523">%TRUE if the feature could be found and the version is
 the same as the required version or newer, and %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -55147,31 +55147,31 @@ the same as the required version or newer, and %FALSE otherwise.</doc>
           <instance-parameter name="registry" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1485">a #GstRegistry</doc>
+                 line="1513">a #GstRegistry</doc>
             <type name="Registry" c:type="GstRegistry*"/>
           </instance-parameter>
           <parameter name="feature_name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1486">the name of the feature (e.g. "oggdemux")</doc>
+                 line="1514">the name of the feature (e.g. "oggdemux")</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="min_major" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1487">the minimum major version number</doc>
+                 line="1515">the minimum major version number</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="min_minor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1488">the minimum minor version number</doc>
+                 line="1516">the minimum minor version number</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="min_micro" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1489">the minimum micro version number</doc>
+                 line="1517">the minimum micro version number</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -55331,12 +55331,12 @@ MT safe.</doc>
               c:identifier="gst_registry_get_feature_list_by_plugin">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1427">Retrieves a #GList of features of the plugin with name @name.</doc>
+             line="1455">Retrieves a #GList of features of the plugin with name @name.</doc>
         <source-position filename="../gst/gstregistry.h" line="103"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstregistry.c"
-               line="1434">a #GList of
+               line="1462">a #GList of
     #GstPluginFeature. Use gst_plugin_feature_list_free() after usage.</doc>
           <type name="GLib.List" c:type="GList*">
             <type name="PluginFeature"/>
@@ -55346,13 +55346,13 @@ MT safe.</doc>
           <instance-parameter name="registry" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1429">a #GstRegistry.</doc>
+                 line="1457">a #GstRegistry.</doc>
             <type name="Registry" c:type="GstRegistry*"/>
           </instance-parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1430">a plugin name.</doc>
+                 line="1458">a plugin name.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -55361,20 +55361,20 @@ MT safe.</doc>
               c:identifier="gst_registry_get_feature_list_cookie">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1932">Returns the registry's feature list cookie. This changes
+             line="1960">Returns the registry's feature list cookie. This changes
 every time a feature is added or removed from the registry.</doc>
         <source-position filename="../gst/gstregistry.h" line="106"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstregistry.c"
-               line="1939">the feature list cookie.</doc>
+               line="1967">the feature list cookie.</doc>
           <type name="guint32" c:type="guint32"/>
         </return-value>
         <parameters>
           <instance-parameter name="registry" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1934">the registry</doc>
+                 line="1962">the registry</doc>
             <type name="Registry" c:type="GstRegistry*"/>
           </instance-parameter>
         </parameters>
@@ -55569,26 +55569,26 @@ MT safe.</doc>
       <method name="scan_path" c:identifier="gst_registry_scan_path">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1391">Scan the given path for plugins to add to the registry. The syntax of the
+             line="1419">Scan the given path for plugins to add to the registry. The syntax of the
 path is specific to the registry.</doc>
         <source-position filename="../gst/gstregistry.h" line="67"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstregistry.c"
-               line="1399">%TRUE if registry changed</doc>
+               line="1427">%TRUE if registry changed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="registry" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1393">the registry to add found plugins to</doc>
+                 line="1421">the registry to add found plugins to</doc>
             <type name="Registry" c:type="GstRegistry*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstregistry.c"
-                 line="1394">the path to scan</doc>
+                 line="1422">the path to scan</doc>
             <type name="filename" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71628,7 +71628,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="../gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="1" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="2" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="../gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -77589,7 +77589,7 @@ the plugin that defines it.</doc>
     <function name="update_registry" c:identifier="gst_update_registry">
       <doc xml:space="preserve"
            filename="../gst/gstregistry.c"
-           line="1873">Forces GStreamer to re-scan its plugin paths and update the default
+           line="1901">Forces GStreamer to re-scan its plugin paths and update the default
 plugin registry.
 
 Applications will almost never need to call this function, it is only
@@ -77609,7 +77609,7 @@ Note that this function may block for a significant amount of time.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../gst/gstregistry.c"
-             line="1893">%TRUE if the registry has been updated successfully (does not
+             line="1921">%TRUE if the registry has been updated successfully (does not
          imply that there were changes), otherwise %FALSE.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
