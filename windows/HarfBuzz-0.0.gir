@@ -550,15 +550,15 @@ of the buffer.</doc>
       <source-position filename="../src/hb-version.h" line="44"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="1" c:type="HB_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="0" c:type="HB_VERSION_MICRO">
       <source-position filename="../src/hb-version.h" line="56"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MINOR" value="2" c:type="HB_VERSION_MINOR">
+    <constant name="VERSION_MINOR" value="3" c:type="HB_VERSION_MINOR">
       <source-position filename="../src/hb-version.h" line="50"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_STRING" value="4.2.1" c:type="HB_VERSION_STRING">
+    <constant name="VERSION_STRING" value="4.3.0" c:type="HB_VERSION_STRING">
       <source-position filename="../src/hb-version.h" line="63"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -14187,7 +14187,7 @@ the caller.</doc>
       <doc xml:space="preserve"
            filename="../src/hb-map.cc"
            line="211">Removes @key and its stored value from @map.</doc>
-      <source-position filename="../src/hb-map.h" line="104"/>
+      <source-position filename="../src/hb-map.h" line="108"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -14232,7 +14232,7 @@ destroyed, freeing all memory.</doc>
       <doc xml:space="preserve"
            filename="../src/hb-map.cc"
            line="195">Fetches the value stored for @key in @map.</doc>
-      <source-position filename="../src/hb-map.h" line="100"/>
+      <source-position filename="../src/hb-map.h" line="104"/>
       <return-value transfer-ownership="none">
         <type name="codepoint_t" c:type="hb_codepoint_t"/>
       </return-value>
@@ -14321,7 +14321,7 @@ attached to the specified map.</doc>
       <doc xml:space="preserve"
            filename="../src/hb-map.cc"
            line="228">Tests whether @key is an element of @map.</doc>
-      <source-position filename="../src/hb-map.h" line="108"/>
+      <source-position filename="../src/hb-map.h" line="112"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../src/hb-map.cc"
@@ -14365,6 +14365,35 @@ attached to the specified map.</doc>
         </parameter>
       </parameters>
     </function>
+    <function name="map_is_equal"
+              c:identifier="hb_map_is_equal"
+              version="4.3.0">
+      <doc xml:space="preserve"
+           filename="../src/hb-map.cc"
+           line="293">Tests whether @map and @other are equal (contain the same
+elements).</doc>
+      <source-position filename="../src/hb-map.h" line="95"/>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve"
+             filename="../src/hb-map.cc"
+             line="301">%true if the two maps are equal, %false otherwise.</doc>
+        <type name="bool_t" c:type="hb_bool_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="map" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="../src/hb-map.cc"
+               line="295">A map</doc>
+          <type name="map_t" c:type="const hb_map_t*"/>
+        </parameter>
+        <parameter name="other" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="../src/hb-map.cc"
+               line="296">Another map</doc>
+          <type name="map_t" c:type="const hb_map_t*"/>
+        </parameter>
+      </parameters>
+    </function>
     <function name="map_reference"
               c:identifier="hb_map_reference"
               version="1.7.7"
@@ -14392,7 +14421,7 @@ attached to the specified map.</doc>
       <doc xml:space="preserve"
            filename="../src/hb-map.cc"
            line="176">Stores @key:@value in the map.</doc>
-      <source-position filename="../src/hb-map.h" line="95"/>
+      <source-position filename="../src/hb-map.h" line="99"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -19120,12 +19149,12 @@ under a given @shape_plan.</doc>
               version="0.9.2">
       <doc xml:space="preserve"
            filename="../src/hb-ot-tag.cc"
-           line="437">Converts a language tag to an #hb_language_t.</doc>
+           line="456">Converts a language tag to an #hb_language_t.</doc>
       <source-position filename="../src/hb-ot-layout.h" line="121"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="../src/hb-ot-tag.cc"
-             line="443">
+             line="462">
 The #hb_language_t corresponding to @tag.</doc>
         <type name="language_t" c:type="hb_language_t"/>
       </return-value>
@@ -19133,7 +19162,7 @@ The #hb_language_t corresponding to @tag.</doc>
         <parameter name="tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="439">an language tag</doc>
+               line="458">an language tag</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
       </parameters>
@@ -19180,7 +19209,7 @@ The #hb_language_t corresponding to @tag.</doc>
               version="2.0.0">
       <doc xml:space="preserve"
            filename="../src/hb-ot-tag.cc"
-           line="362">Converts an #hb_script_t and an #hb_language_t to script and language tags.</doc>
+           line="381">Converts an #hb_script_t and an #hb_language_t to script and language tags.</doc>
       <source-position filename="../src/hb-ot-layout.h" line="110"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -19189,13 +19218,13 @@ The #hb_language_t corresponding to @tag.</doc>
         <parameter name="script" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="364">an #hb_script_t to convert.</doc>
+               line="383">an #hb_script_t to convert.</doc>
           <type name="script_t" c:type="hb_script_t"/>
         </parameter>
         <parameter name="language" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="365">an #hb_language_t to convert.</doc>
+               line="384">an #hb_language_t to convert.</doc>
           <type name="language_t" c:type="hb_language_t"/>
         </parameter>
         <parameter name="script_count"
@@ -19205,7 +19234,7 @@ The #hb_language_t corresponding to @tag.</doc>
                    optional="1">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="366">maximum number of script tags to retrieve (IN)
+               line="385">maximum number of script tags to retrieve (IN)
 and actual number of script tags retrieved (OUT)</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
@@ -19217,7 +19246,7 @@ and actual number of script tags retrieved (OUT)</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="368">array of size at least @script_count to store the
+               line="387">array of size at least @script_count to store the
 script tag results</doc>
           <type name="tag_t" c:type="hb_tag_t*"/>
         </parameter>
@@ -19228,7 +19257,7 @@ script tag results</doc>
                    optional="1">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="370">maximum number of language tags to retrieve
+               line="389">maximum number of language tags to retrieve
 (IN) and actual number of language tags retrieved (OUT)</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
@@ -19240,7 +19269,7 @@ script tag results</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="372">array of size at least @language_count to store
+               line="391">array of size at least @language_count to store
 the language tag results</doc>
           <type name="tag_t" c:type="hb_tag_t*"/>
         </parameter>
@@ -19251,7 +19280,7 @@ the language tag results</doc>
               version="2.0.0">
       <doc xml:space="preserve"
            filename="../src/hb-ot-tag.cc"
-           line="491">Converts a script tag and a language tag to an #hb_script_t and an
+           line="520">Converts a script tag and a language tag to an #hb_script_t and an
 #hb_language_t.</doc>
       <source-position filename="../src/hb-ot-layout.h" line="124"/>
       <return-value transfer-ownership="none">
@@ -19261,13 +19290,13 @@ the language tag results</doc>
         <parameter name="script_tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="493">a script tag</doc>
+               line="522">a script tag</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
         <parameter name="language_tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="494">a language tag</doc>
+               line="523">a language tag</doc>
           <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
         <parameter name="script"
@@ -19278,7 +19307,7 @@ the language tag results</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="495">the #hb_script_t corresponding to @script_tag.</doc>
+               line="524">the #hb_script_t corresponding to @script_tag.</doc>
           <type name="script_t" c:type="hb_script_t*"/>
         </parameter>
         <parameter name="language"
@@ -19289,7 +19318,7 @@ the language tag results</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../src/hb-ot-tag.cc"
-               line="496">the #hb_language_t corresponding to @script_tag and
+               line="525">the #hb_language_t corresponding to @script_tag and
 @language_tag.</doc>
           <type name="language_t" c:type="hb_language_t*"/>
         </parameter>
