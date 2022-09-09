@@ -20874,7 +20874,7 @@ linked against at application run time.</doc>
       <source-position filename="gtypes.h" line="70"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="0" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="3" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="1152">The micro version number of the GLib library.
@@ -39119,7 +39119,7 @@ Use g_strv_builder_unref() on the returned value when no longer needed.</doc>
               version="2.60">
       <doc xml:space="preserve"
            filename="gtestutils.h"
-           line="258">Creates a unique temporary directory for each unit test and uses
+           line="259">Creates a unique temporary directory for each unit test and uses
 g_set_user_dirs() to set XDG directories to point into subdirectories of it
 for the duration of the unit test. The directory tree is cleaned up after the
 test finishes successfully. Note that this doesn’t take effect until
@@ -39142,7 +39142,7 @@ guaranteed to be stable API — always use a getter function to retrieve them.
 The subdirectories may not be created by the test harness; as with normal
 calls to functions like g_get_user_cache_dir(), the caller must be prepared
 to create the directory if it doesn’t exist.</doc>
-      <source-position filename="gtestutils.h" line="287"/>
+      <source-position filename="gtestutils.h" line="288"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
     <constant name="TIME_SPAN_DAY"
@@ -39213,12 +39213,12 @@ to create the directory if it doesn’t exist.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="1913">An opaque structure representing a test case.</doc>
-      <source-position filename="gtestutils.h" line="35"/>
+      <source-position filename="gtestutils.h" line="36"/>
       <method name="free" c:identifier="g_test_case_free" version="2.70">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="33569">Free the @test_case.</doc>
-        <source-position filename="gtestutils.h" line="520"/>
+        <source-position filename="gtestutils.h" line="521"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -39233,7 +39233,7 @@ to create the directory if it doesn’t exist.</doc>
       </method>
     </record>
     <record name="TestConfig" c:type="GTestConfig">
-      <source-position filename="gtestutils.h" line="597"/>
+      <source-position filename="gtestutils.h" line="598"/>
       <field name="test_initialized" writable="1">
         <type name="gboolean" c:type="gboolean"/>
       </field>
@@ -39258,7 +39258,7 @@ to create the directory if it doesn’t exist.</doc>
            filename="glib-2.0.c"
            line="1920">The type used for test case functions that take an extra pointer
 argument.</doc>
-      <source-position filename="gtestutils.h" line="38"/>
+      <source-position filename="gtestutils.h" line="39"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -39294,7 +39294,7 @@ Note: as a general rule of automake, files that are generated only as
 part of the build-from-git process (but then are distributed with the
 tarball) always go in srcdir (even if doing a srcdir != builddir
 build from git) and are considered as distributed files.</doc>
-      <source-position filename="gtestutils.h" line="687"/>
+      <source-position filename="gtestutils.h" line="688"/>
       <member name="dist" value="0" c:identifier="G_TEST_DIST">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -39319,7 +39319,7 @@ the test case.
 @fixture will be a pointer to the area of memory allocated by the
 test framework, of the size requested.  If the requested size was
 zero then @fixture will be equal to @user_data.</doc>
-      <source-position filename="gtestutils.h" line="39"/>
+      <source-position filename="gtestutils.h" line="40"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -39346,13 +39346,13 @@ zero then @fixture will be equal to @user_data.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="1977">The type used for test case functions.</doc>
-      <source-position filename="gtestutils.h" line="37"/>
+      <source-position filename="gtestutils.h" line="38"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
     </callback>
     <record name="TestLogBuffer" c:type="GTestLogBuffer">
-      <source-position filename="gtestutils.h" line="634"/>
+      <source-position filename="gtestutils.h" line="635"/>
       <field name="data" readable="0" private="1">
         <type name="String" c:type="GString*"/>
       </field>
@@ -39365,7 +39365,7 @@ zero then @fixture will be equal to @user_data.</doc>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="33888">Internal function for gtester to free test log messages, no ABI guarantees provided.</doc>
-        <source-position filename="gtestutils.h" line="641"/>
+        <source-position filename="gtestutils.h" line="642"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -39381,7 +39381,7 @@ zero then @fixture will be equal to @user_data.</doc>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="33902">Internal function for gtester to retrieve test log messages, no ABI guarantees provided.</doc>
-        <source-position filename="gtestutils.h" line="647"/>
+        <source-position filename="gtestutils.h" line="648"/>
         <return-value>
           <type name="TestLogMsg" c:type="GTestLogMsg*"/>
         </return-value>
@@ -39395,7 +39395,7 @@ zero then @fixture will be equal to @user_data.</doc>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="33909">Internal function for gtester to decode test log messages, no ABI guarantees provided.</doc>
-        <source-position filename="gtestutils.h" line="643"/>
+        <source-position filename="gtestutils.h" line="644"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -39417,7 +39417,7 @@ zero then @fixture will be equal to @user_data.</doc>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="33895">Internal function for gtester to decode test log messages, no ABI guarantees provided.</doc>
-        <source-position filename="gtestutils.h" line="639"/>
+        <source-position filename="gtestutils.h" line="640"/>
         <return-value>
           <type name="TestLogBuffer" c:type="GTestLogBuffer*"/>
         </return-value>
@@ -39428,31 +39428,31 @@ zero then @fixture will be equal to @user_data.</doc>
               version="2.22">
       <doc xml:space="preserve"
            filename="gtestutils.h"
-           line="651">Specifies the prototype of fatal log handler functions.</doc>
-      <source-position filename="gtestutils.h" line="664"/>
+           line="652">Specifies the prototype of fatal log handler functions.</doc>
+      <source-position filename="gtestutils.h" line="665"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gtestutils.h"
-             line="660">%TRUE if the program should abort, %FALSE otherwise</doc>
+             line="661">%TRUE if the program should abort, %FALSE otherwise</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="log_domain" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="653">the log domain of the message</doc>
+               line="654">the log domain of the message</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="654">the log level of the message (including the fatal and recursion flags)</doc>
+               line="655">the log level of the message (including the fatal and recursion flags)</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="message" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="655">the message to process</doc>
+               line="656">the message to process</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="user_data"
@@ -39462,13 +39462,13 @@ zero then @fixture will be equal to @user_data.</doc>
                    closure="3">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="656">user data, set in g_test_log_set_fatal_handler()</doc>
+               line="657">user data, set in g_test_log_set_fatal_handler()</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
     </callback>
     <record name="TestLogMsg" c:type="GTestLogMsg">
-      <source-position filename="gtestutils.h" line="629"/>
+      <source-position filename="gtestutils.h" line="630"/>
       <field name="log_type" writable="1">
         <type name="TestLogType" c:type="GTestLogType"/>
       </field>
@@ -39488,7 +39488,7 @@ zero then @fixture will be equal to @user_data.</doc>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="33916">Internal function for gtester to free test log messages, no ABI guarantees provided.</doc>
-        <source-position filename="gtestutils.h" line="649"/>
+        <source-position filename="gtestutils.h" line="650"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -39500,7 +39500,7 @@ zero then @fixture will be equal to @user_data.</doc>
       </method>
     </record>
     <enumeration name="TestLogType" c:type="GTestLogType">
-      <source-position filename="gtestutils.h" line="621"/>
+      <source-position filename="gtestutils.h" line="622"/>
       <member name="none" value="0" c:identifier="G_TEST_LOG_NONE">
       </member>
       <member name="error" value="1" c:identifier="G_TEST_LOG_ERROR">
@@ -39533,7 +39533,7 @@ zero then @fixture will be equal to @user_data.</doc>
       </member>
     </enumeration>
     <enumeration name="TestResult" c:type="GTestResult">
-      <source-position filename="gtestutils.h" line="606"/>
+      <source-position filename="gtestutils.h" line="607"/>
       <member name="success" value="0" c:identifier="G_TEST_RUN_SUCCESS">
       </member>
       <member name="skipped" value="1" c:identifier="G_TEST_RUN_SKIPPED">
@@ -39550,7 +39550,7 @@ zero then @fixture will be equal to @user_data.</doc>
 
 Note that in contrast with g_test_trap_fork(), the default is to
 not show stdout and stderr.</doc>
-      <source-position filename="gtestutils.h" line="463"/>
+      <source-position filename="gtestutils.h" line="464"/>
       <member name="stdin"
               value="1"
               c:identifier="G_TEST_SUBPROCESS_INHERIT_STDIN">
@@ -39585,12 +39585,12 @@ not show stdout and stderr.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="2007">An opaque structure representing a test suite.</doc>
-      <source-position filename="gtestutils.h" line="36"/>
+      <source-position filename="gtestutils.h" line="37"/>
       <method name="add" c:identifier="g_test_suite_add" version="2.16">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="34278">Adds @test_case to @suite.</doc>
-        <source-position filename="gtestutils.h" line="511"/>
+        <source-position filename="gtestutils.h" line="512"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -39615,7 +39615,7 @@ not show stdout and stderr.</doc>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="34289">Adds @nestedsuite to @suite.</doc>
-        <source-position filename="gtestutils.h" line="514"/>
+        <source-position filename="gtestutils.h" line="515"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -39638,7 +39638,7 @@ not show stdout and stderr.</doc>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
              line="34300">Free the @suite and all nested #GTestSuites.</doc>
-        <source-position filename="gtestutils.h" line="523"/>
+        <source-position filename="gtestutils.h" line="524"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -39658,18 +39658,18 @@ not show stdout and stderr.</doc>
               c:type="GTestTrapFlags">
       <doc xml:space="preserve"
            filename="gtestutils.h"
-           line="424">Test traps are guards around forked tests.
+           line="425">Test traps are guards around forked tests.
 These flags determine what traps to set.</doc>
       <doc-deprecated xml:space="preserve">#GTestTrapFlags is used only with g_test_trap_fork(),
 which is deprecated. g_test_trap_subprocess() uses
 #GTestSubprocessFlags.</doc-deprecated>
-      <source-position filename="gtestutils.h" line="449"/>
+      <source-position filename="gtestutils.h" line="450"/>
       <member name="silence_stdout"
               value="128"
               c:identifier="G_TEST_TRAP_SILENCE_STDOUT">
         <doc xml:space="preserve"
              filename="gtestutils.h"
-             line="426">Redirect stdout of the test child to
+             line="427">Redirect stdout of the test child to
     `/dev/null` so it cannot be observed on the console during test
     runs. The actual output is still captured though to allow later
     tests with g_test_trap_assert_stdout().</doc>
@@ -39679,7 +39679,7 @@ which is deprecated. g_test_trap_subprocess() uses
               c:identifier="G_TEST_TRAP_SILENCE_STDERR">
         <doc xml:space="preserve"
              filename="gtestutils.h"
-             line="430">Redirect stderr of the test child to
+             line="431">Redirect stderr of the test child to
     `/dev/null` so it cannot be observed on the console during test
     runs. The actual output is still captured though to allow later
     tests with g_test_trap_assert_stderr().</doc>
@@ -39689,7 +39689,7 @@ which is deprecated. g_test_trap_subprocess() uses
               c:identifier="G_TEST_TRAP_INHERIT_STDIN">
         <doc xml:space="preserve"
              filename="gtestutils.h"
-             line="434">If this flag is given, stdin of the
+             line="435">If this flag is given, stdin of the
     child process is shared with stdin of its parent process.
     It is redirected to `/dev/null` otherwise.</doc>
       </member>
@@ -54682,7 +54682,7 @@ not depend on any side effects from @expr. Similarly, it must not be used
 in unit tests, otherwise the unit tests will be ineffective if compiled with
 `G_DISABLE_ASSERT`. Use g_assert_true() and related macros in unit tests
 instead.</doc>
-      <source-position filename="gtestutils.h" line="228"/>
+      <source-position filename="gtestutils.h" line="229"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -54703,7 +54703,7 @@ The effect of `g_assert_cmpfloat (n1, op, n2)` is
 the same as `g_assert_true (n1 op n2)`. The advantage
 of this macro is that it can produce a message that includes the
 actual values of @n1 and @n2.</doc>
-      <source-position filename="gtestutils.h" line="67"/>
+      <source-position filename="gtestutils.h" line="68"/>
       <parameters>
         <parameter name="n1">
           <doc xml:space="preserve"
@@ -54735,7 +54735,7 @@ The effect of `g_assert_cmpfloat_with_epsilon (n1, n2, epsilon)` is
 the same as `g_assert_true (abs (n1 - n2) &lt; epsilon)`. The advantage
 of this macro is that it can produce a message that includes the
 actual values of @n1 and @n2.</doc>
-      <source-position filename="gtestutils.h" line="73"/>
+      <source-position filename="gtestutils.h" line="74"/>
       <parameters>
         <parameter name="n1">
           <doc xml:space="preserve"
@@ -54765,7 +54765,7 @@ actual values of @n1 and @n2.</doc>
 
 This is a variant of g_assert_cmpuint() that displays the numbers
 in hexadecimal notation in the message.</doc>
-      <source-position filename="gtestutils.h" line="61"/>
+      <source-position filename="gtestutils.h" line="62"/>
       <parameters>
         <parameter name="n1">
           <doc xml:space="preserve"
@@ -54797,7 +54797,7 @@ The effect of `g_assert_cmpint (n1, op, n2)` is
 the same as `g_assert_true (n1 op n2)`. The advantage
 of this macro is that it can produce a message that includes the
 actual values of @n1 and @n2.</doc>
-      <source-position filename="gtestutils.h" line="49"/>
+      <source-position filename="gtestutils.h" line="50"/>
       <parameters>
         <parameter name="n1">
           <doc xml:space="preserve"
@@ -54837,7 +54837,7 @@ includes the actual values of @l1 and @l2.
 |[&lt;!-- language="C" --&gt;
   g_assert_cmpmem (buf-&gt;data, buf-&gt;len, expected, sizeof (expected));
 ]|</doc>
-      <source-position filename="gtestutils.h" line="80"/>
+      <source-position filename="gtestutils.h" line="81"/>
       <parameters>
         <parameter name="m1">
           <doc xml:space="preserve"
@@ -54880,7 +54880,7 @@ includes the actual values of @s1 and @s2.
 |[&lt;!-- language="C" --&gt;
   g_assert_cmpstr (mystring, ==, "fubar");
 ]|</doc>
-      <source-position filename="gtestutils.h" line="43"/>
+      <source-position filename="gtestutils.h" line="44"/>
       <parameters>
         <parameter name="s1">
           <doc xml:space="preserve"
@@ -54921,7 +54921,7 @@ includes how @strv1 and @strv2 are different.
   const char *expected[] = { "one", "two", "three", NULL };
   g_assert_cmpstrv (mystrv, expected);
 ]|</doc>
-      <source-position filename="gtestutils.h" line="114"/>
+      <source-position filename="gtestutils.h" line="115"/>
       <parameters>
         <parameter name="strv1">
           <doc xml:space="preserve"
@@ -54947,7 +54947,7 @@ The effect of `g_assert_cmpuint (n1, op, n2)` is
 the same as `g_assert_true (n1 op n2)`. The advantage
 of this macro is that it can produce a message that includes the
 actual values of @n1 and @n2.</doc>
-      <source-position filename="gtestutils.h" line="55"/>
+      <source-position filename="gtestutils.h" line="56"/>
       <parameters>
         <parameter name="n1">
           <doc xml:space="preserve"
@@ -54981,7 +54981,7 @@ g_variant_equal().
 The effect of `g_assert_cmpvariant (v1, v2)` is the same as
 `g_assert_true (g_variant_equal (v1, v2))`. The advantage of this macro is
 that it can produce a message that includes the actual values of @v1 and @v2.</doc>
-      <source-position filename="gtestutils.h" line="97"/>
+      <source-position filename="gtestutils.h" line="98"/>
       <parameters>
         <parameter name="v1">
           <doc xml:space="preserve"
@@ -55013,7 +55013,7 @@ error message and code.
 This can only be used to test for a specific error. If you want to
 test that @err is set, but don't care what it's set to, just use
 `g_assert_nonnull (err)`.</doc>
-      <source-position filename="gtestutils.h" line="178"/>
+      <source-position filename="gtestutils.h" line="179"/>
       <parameters>
         <parameter name="err">
           <doc xml:space="preserve"
@@ -55049,7 +55049,7 @@ Note that unlike g_assert(), this macro is unaffected by whether
 conversely, g_assert() should not be used in tests.
 
 See g_test_set_nonfatal_assertions().</doc>
-      <source-position filename="gtestutils.h" line="188"/>
+      <source-position filename="gtestutils.h" line="189"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -55074,7 +55074,7 @@ will contain the value of `errno` and its human-readable message from
 g_strerror().
 
 This macro will clear the value of `errno` before executing @expr.</doc>
-      <source-position filename="gtestutils.h" line="159"/>
+      <source-position filename="gtestutils.h" line="160"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -55095,7 +55095,7 @@ The effect of `g_assert_no_error (err)` is
 the same as `g_assert_true (err == NULL)`. The advantage
 of this macro is that it can produce a message that includes
 the error message and code.</doc>
-      <source-position filename="gtestutils.h" line="173"/>
+      <source-position filename="gtestutils.h" line="174"/>
       <parameters>
         <parameter name="err">
           <doc xml:space="preserve"
@@ -55121,7 +55121,7 @@ Note that unlike g_assert(), this macro is unaffected by whether
 conversely, g_assert() should not be used in tests.
 
 See g_test_set_nonfatal_assertions().</doc>
-      <source-position filename="gtestutils.h" line="200"/>
+      <source-position filename="gtestutils.h" line="201"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -55147,7 +55147,7 @@ Note that unlike g_assert(), this macro is unaffected by whether
 conversely, g_assert() should not be used in tests.
 
 See g_test_set_nonfatal_assertions().</doc>
-      <source-position filename="gtestutils.h" line="196"/>
+      <source-position filename="gtestutils.h" line="197"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -55173,7 +55173,7 @@ Note that unlike g_assert(), this macro is unaffected by whether
 conversely, g_assert() should not be used in tests.
 
 See g_test_set_nonfatal_assertions().</doc>
-      <source-position filename="gtestutils.h" line="183"/>
+      <source-position filename="gtestutils.h" line="184"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -55206,7 +55206,7 @@ See g_test_set_nonfatal_assertions().</doc>
       </parameters>
     </function>
     <function name="assertion_message" c:identifier="g_assertion_message">
-      <source-position filename="gtestutils.h" line="533"/>
+      <source-position filename="gtestutils.h" line="534"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -55231,7 +55231,7 @@ See g_test_set_nonfatal_assertions().</doc>
     <function name="assertion_message_cmpnum"
               c:identifier="g_assertion_message_cmpnum"
               introspectable="0">
-      <source-position filename="gtestutils.h" line="565"/>
+      <source-position filename="gtestutils.h" line="566"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -55267,7 +55267,7 @@ See g_test_set_nonfatal_assertions().</doc>
     </function>
     <function name="assertion_message_cmpstr"
               c:identifier="g_assertion_message_cmpstr">
-      <source-position filename="gtestutils.h" line="546"/>
+      <source-position filename="gtestutils.h" line="547"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -55300,7 +55300,7 @@ See g_test_set_nonfatal_assertions().</doc>
     </function>
     <function name="assertion_message_cmpstrv"
               c:identifier="g_assertion_message_cmpstrv">
-      <source-position filename="gtestutils.h" line="556"/>
+      <source-position filename="gtestutils.h" line="557"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -55333,7 +55333,7 @@ See g_test_set_nonfatal_assertions().</doc>
     </function>
     <function name="assertion_message_error"
               c:identifier="g_assertion_message_error">
-      <source-position filename="gtestutils.h" line="575"/>
+      <source-position filename="gtestutils.h" line="576"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -55371,7 +55371,7 @@ See g_test_set_nonfatal_assertions().</doc>
            filename="glib-2.0.c"
            line="10593">Internal function used to print messages from the public g_assert() and
 g_assert_not_reached() macros.</doc>
-      <source-position filename="gtestutils.h" line="540"/>
+      <source-position filename="gtestutils.h" line="541"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -74365,7 +74365,7 @@ Also see g_strchomp() and g_strstrip().</doc>
            line="32098">Compares @str1 and @str2 like strcmp(). Handles %NULL
 gracefully by sorting it before non-%NULL strings.
 Comparing two %NULL pointers returns 0.</doc>
-      <source-position filename="gtestutils.h" line="239"/>
+      <source-position filename="gtestutils.h" line="240"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -75576,44 +75576,44 @@ string array @str_array. @str_array must not be %NULL.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtestutils.h"
-           line="367">Hook up a new test case at @testpath, similar to g_test_add_func().
+           line="368">Hook up a new test case at @testpath, similar to g_test_add_func().
 A fixture data structure with setup and teardown functions may be provided,
 similar to g_test_create_case().
 
 g_test_add() is implemented as a macro, so that the fsetup(), ftest() and
 fteardown() callbacks can expect a @Fixture pointer as their first argument
 in a type safe manner. They otherwise have type #GTestFixtureFunc.</doc>
-      <source-position filename="gtestutils.h" line="386"/>
+      <source-position filename="gtestutils.h" line="387"/>
       <parameters>
         <parameter name="testpath">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="369">The test path for a new test case.</doc>
+               line="370">The test path for a new test case.</doc>
         </parameter>
         <parameter name="Fixture">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="370">The type of a fixture data structure.</doc>
+               line="371">The type of a fixture data structure.</doc>
         </parameter>
         <parameter name="tdata">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="371">Data argument for the test functions.</doc>
+               line="372">Data argument for the test functions.</doc>
         </parameter>
         <parameter name="fsetup">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="372">The function to set up the fixture data.</doc>
+               line="373">The function to set up the fixture data.</doc>
         </parameter>
         <parameter name="ftest">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="373">The actual test function.</doc>
+               line="374">The actual test function.</doc>
         </parameter>
         <parameter name="fteardown">
           <doc xml:space="preserve"
                filename="gtestutils.h"
-               line="374">The function to tear down the fixture data.</doc>
+               line="375">The function to tear down the fixture data.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -75635,7 +75635,7 @@ required via the `-p` command-line option or g_test_trap_subprocess().
 No component of @testpath may start with a dot (`.`) if the
 %G_TEST_OPTION_ISOLATE_DIRS option is being used; and it is recommended to
 do so even if it isn’t.</doc>
-      <source-position filename="gtestutils.h" line="332"/>
+      <source-position filename="gtestutils.h" line="333"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -75670,7 +75670,7 @@ do so even if it isn’t.</doc>
            filename="glib-2.0.c"
            line="33439">Create a new test case, as with g_test_add_data_func(), but freeing
 @test_data after the test run is complete.</doc>
-      <source-position filename="gtestutils.h" line="337"/>
+      <source-position filename="gtestutils.h" line="338"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -75726,7 +75726,7 @@ required via the `-p` command-line option or g_test_trap_subprocess().
 No component of @testpath may start with a dot (`.`) if the
 %G_TEST_OPTION_ISOLATE_DIRS option is being used; and it is recommended to
 do so even if it isn’t.</doc>
-      <source-position filename="gtestutils.h" line="328"/>
+      <source-position filename="gtestutils.h" line="329"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -75748,7 +75748,7 @@ do so even if it isn’t.</doc>
     <function name="test_add_vtable"
               c:identifier="g_test_add_vtable"
               introspectable="0">
-      <source-position filename="gtestutils.h" line="584"/>
+      <source-position filename="gtestutils.h" line="585"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -75778,7 +75778,7 @@ do so even if it isn’t.</doc>
     </function>
     <function name="test_assert_expected_messages_internal"
               c:identifier="g_test_assert_expected_messages_internal">
-      <source-position filename="gtestutils.h" line="678"/>
+      <source-position filename="gtestutils.h" line="679"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -75812,7 +75812,7 @@ Since GLib 2.70, the base URI is not prepended to @bug_uri_snippet if it
 is already a valid URI.</doc>
       <doc-version xml:space="preserve">
 See also: g_test_summary()</doc-version>
-      <source-position filename="gtestutils.h" line="405"/>
+      <source-position filename="gtestutils.h" line="406"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -75844,7 +75844,7 @@ portion to @uri_pattern, or by replacing the special string
 
 If g_test_bug_base() is not called, bug URIs are formed solely
 from the value provided by g_test_bug().</doc>
-      <source-position filename="gtestutils.h" line="403"/>
+      <source-position filename="gtestutils.h" line="404"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -75885,7 +75885,7 @@ This allows for casual running of tests directly from the commandline
 in the srcdir == builddir case and should also support running of
 installed tests, assuming the data files have been installed in the
 same relative path as the test binary.</doc>
-      <source-position filename="gtestutils.h" line="690"/>
+      <source-position filename="gtestutils.h" line="691"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -75936,7 +75936,7 @@ fixture teardown is most useful if the same fixture type is used for
 multiple tests. In this cases, g_test_create_case() will be
 called with the same type of fixture (the @data_size argument), but varying
 @test_name and @data_test arguments.</doc>
-      <source-position filename="gtestutils.h" line="500"/>
+      <source-position filename="gtestutils.h" line="501"/>
       <return-value>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -75994,7 +75994,7 @@ called with the same type of fixture (the @data_size argument), but varying
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="33611">Create a new test suite with the name @suite_name.</doc>
-      <source-position filename="gtestutils.h" line="507"/>
+      <source-position filename="gtestutils.h" line="508"/>
       <return-value>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76049,7 +76049,7 @@ abort; use g_test_trap_subprocess() in this case.
 
 If messages at %G_LOG_LEVEL_DEBUG are emitted, but not explicitly
 expected via g_test_expect_message() then they will be ignored.</doc>
-      <source-position filename="gtestutils.h" line="674"/>
+      <source-position filename="gtestutils.h" line="675"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76099,7 +76099,7 @@ function does not log a message alongside the test failure.
 If details of the test failure are available, either log them with
 g_test_message() before g_test_fail(), or use g_test_fail_printf()
 instead.</doc>
-      <source-position filename="gtestutils.h" line="348"/>
+      <source-position filename="gtestutils.h" line="349"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76112,7 +76112,7 @@ instead.</doc>
            filename="glib-2.0.c"
            line="33694">Equivalent to g_test_fail(), but also record a message like
 g_test_skip_printf().</doc>
-      <source-position filename="gtestutils.h" line="350"/>
+      <source-position filename="gtestutils.h" line="351"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76144,7 +76144,7 @@ continuing after a failed assertion might be harmful.
 
 The return value of this function is only meaningful
 if it is called from inside a test function.</doc>
-      <source-position filename="gtestutils.h" line="363"/>
+      <source-position filename="gtestutils.h" line="364"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76160,7 +76160,7 @@ specified by @file_type.
 
 This is approximately the same as calling g_test_build_filename("."),
 but you don't need to free the return value.</doc>
-      <source-position filename="gtestutils.h" line="694"/>
+      <source-position filename="gtestutils.h" line="695"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76194,7 +76194,7 @@ It is safe to use this function from a thread inside of a testcase
 but you must ensure that all such uses occur before the main testcase
 function returns (ie: it is best to ensure that all threads have been
 joined).</doc>
-      <source-position filename="gtestutils.h" line="696"/>
+      <source-position filename="gtestutils.h" line="697"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76233,7 +76233,7 @@ In essence, it will be the same string passed as the first argument to
 e.g. g_test_add() when the test was added.
 
 This function returns a valid string only within a test function.</doc>
-      <source-position filename="gtestutils.h" line="344"/>
+      <source-position filename="gtestutils.h" line="345"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76248,7 +76248,7 @@ This function returns a valid string only within a test function.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="33779">Get the toplevel test suite for the test path API.</doc>
-      <source-position filename="gtestutils.h" line="509"/>
+      <source-position filename="gtestutils.h" line="510"/>
       <return-value>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76271,7 +76271,7 @@ produce additional diagnostic messages or even continue running
 the test.
 
 If not called from inside a test, this function does nothing.</doc>
-      <source-position filename="gtestutils.h" line="353"/>
+      <source-position filename="gtestutils.h" line="354"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76295,7 +76295,7 @@ If not called from inside a test, this function does nothing.</doc>
            filename="glib-2.0.c"
            line="33808">Equivalent to g_test_incomplete(), but the explanation is formatted
 as if by g_strdup_printf().</doc>
-      <source-position filename="gtestutils.h" line="355"/>
+      <source-position filename="gtestutils.h" line="356"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76365,7 +76365,7 @@ g_test_init() will print an error and exit. This is to prevent no-op tests
 from being executed, as g_assert() is commonly (erroneously) used in unit
 tests, and is a no-op when compiled with `G_DISABLE_ASSERT`. Ensure your
 tests are compiled without `G_DISABLE_ASSERT` defined.</doc>
-      <source-position filename="gtestutils.h" line="254"/>
+      <source-position filename="gtestutils.h" line="255"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76419,7 +76419,7 @@ g_log_structured() or g_log_structured_array()). To change the fatal
 behaviour for specific log messages, programs must install a custom log
 writer function using g_log_set_writer_func().See
 [Using Structured Logging][using-structured-logging].</doc>
-      <source-position filename="gtestutils.h" line="670"/>
+      <source-position filename="gtestutils.h" line="671"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76442,7 +76442,7 @@ writer function using g_log_set_writer_func().See
       </parameters>
     </function>
     <function name="test_log_type_name" c:identifier="g_test_log_type_name">
-      <source-position filename="gtestutils.h" line="637"/>
+      <source-position filename="gtestutils.h" line="638"/>
       <return-value transfer-ownership="none">
         <type name="utf8" c:type="const char*"/>
       </return-value>
@@ -76463,7 +76463,7 @@ The test should generally strive to maximize the reported
 quantities (larger values are better than smaller ones),
 this and @maximized_quantity can determine sorting
 order for test result reports.</doc>
-      <source-position filename="gtestutils.h" line="248"/>
+      <source-position filename="gtestutils.h" line="249"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76495,7 +76495,7 @@ order for test result reports.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="33970">Add a message to the test report.</doc>
-      <source-position filename="gtestutils.h" line="400"/>
+      <source-position filename="gtestutils.h" line="401"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76525,7 +76525,7 @@ The test should generally strive to minimize the reported
 quantities (smaller values are better than larger ones),
 this and @minimized_quantity can determine sorting
 order for test result reports.</doc>
-      <source-position filename="gtestutils.h" line="244"/>
+      <source-position filename="gtestutils.h" line="245"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76561,7 +76561,7 @@ to auto destruct allocated test resources at the end of a test run.
 Resources are released in reverse queue order, that means enqueueing
 callback A before callback B will cause B() to be called before
 A() during teardown.</doc>
-      <source-position filename="gtestutils.h" line="420"/>
+      <source-position filename="gtestutils.h" line="421"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76591,7 +76591,7 @@ A() during teardown.</doc>
            line="34026">Enqueue a pointer to be released with g_free() during the next
 teardown phase. This is equivalent to calling g_test_queue_destroy()
 with a destroy callback of g_free().</doc>
-      <source-position filename="gtestutils.h" line="418"/>
+      <source-position filename="gtestutils.h" line="419"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76616,7 +76616,7 @@ with a destroy callback of g_free().</doc>
            line="34038">Enqueue an object to be released with g_object_unref() during
 the next teardown phase. This is equivalent to calling
 g_test_queue_destroy() with a destroy callback of g_object_unref().</doc>
-      <source-position filename="gtestutils.h" line="422"/>
+      <source-position filename="gtestutils.h" line="423"/>
       <parameters>
         <parameter name="gobject">
           <doc xml:space="preserve"
@@ -76632,7 +76632,7 @@ g_test_queue_destroy() with a destroy callback of g_object_unref().</doc>
            filename="glib-2.0.c"
            line="34087">Get a reproducible random floating point number,
 see g_test_rand_int() for details on test case random numbers.</doc>
-      <source-position filename="gtestutils.h" line="489"/>
+      <source-position filename="gtestutils.h" line="490"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76647,7 +76647,7 @@ see g_test_rand_int() for details on test case random numbers.</doc>
            filename="glib-2.0.c"
            line="34098">Get a reproducible random floating pointer number out of a specified range,
 see g_test_rand_int() for details on test case random numbers.</doc>
-      <source-position filename="gtestutils.h" line="491"/>
+      <source-position filename="gtestutils.h" line="492"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76683,7 +76683,7 @@ given when starting test programs.
 For individual test cases however, the random number generator is
 reseeded, to avoid dependencies between tests and to make --seed
 effective for all test cases.</doc>
-      <source-position filename="gtestutils.h" line="484"/>
+      <source-position filename="gtestutils.h" line="485"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76698,7 +76698,7 @@ effective for all test cases.</doc>
            filename="glib-2.0.c"
            line="34129">Get a reproducible random integer number out of a specified range,
 see g_test_rand_int() for details on test case random numbers.</doc>
-      <source-position filename="gtestutils.h" line="486"/>
+      <source-position filename="gtestutils.h" line="487"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76755,7 +76755,7 @@ g_test_add(), which lets you specify setup and teardown functions.
 If all tests are skipped or marked as incomplete (expected failures),
 this function will return 0 if producing TAP output, or 77 (treated
 as "skip test" by Automake) otherwise.</doc>
-      <source-position filename="gtestutils.h" line="325"/>
+      <source-position filename="gtestutils.h" line="326"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76778,7 +76778,7 @@ information on the order that tests are run in.
 
 g_test_run_suite() or g_test_run() may only be called once
 in a program.</doc>
-      <source-position filename="gtestutils.h" line="517"/>
+      <source-position filename="gtestutils.h" line="518"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76810,7 +76810,7 @@ Note that the g_assert_not_reached() and g_assert() macros are not
 affected by this.
 
 This function can only be called after g_test_init().</doc>
-      <source-position filename="gtestutils.h" line="365"/>
+      <source-position filename="gtestutils.h" line="366"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76826,7 +76826,7 @@ produce additional diagnostic messages or even continue running
 the test.
 
 If not called from inside a test, this function does nothing.</doc>
-      <source-position filename="gtestutils.h" line="358"/>
+      <source-position filename="gtestutils.h" line="359"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76850,7 +76850,7 @@ If not called from inside a test, this function does nothing.</doc>
            filename="glib-2.0.c"
            line="34239">Equivalent to g_test_skip(), but the explanation is formatted
 as if by g_strdup_printf().</doc>
-      <source-position filename="gtestutils.h" line="360"/>
+      <source-position filename="gtestutils.h" line="361"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76876,7 +76876,7 @@ as if by g_strdup_printf().</doc>
            filename="glib-2.0.c"
            line="34266">Returns %TRUE (after g_test_init() has been called) if the test
 program is running under g_test_trap_subprocess().</doc>
-      <source-position filename="gtestutils.h" line="321"/>
+      <source-position filename="gtestutils.h" line="322"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76908,7 +76908,7 @@ test_array_sort (void)
 ]|</doc>
       <doc-version xml:space="preserve">
 See also: g_test_bug()</doc-version>
-      <source-position filename="gtestutils.h" line="407"/>
+      <source-position filename="gtestutils.h" line="408"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76929,7 +76929,7 @@ See also: g_test_bug()</doc-version>
            filename="glib-2.0.c"
            line="34353">Get the number of seconds since the last start of the timer with
 g_test_timer_start().</doc>
-      <source-position filename="gtestutils.h" line="412"/>
+      <source-position filename="gtestutils.h" line="413"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76943,7 +76943,7 @@ g_test_timer_start().</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="34364">Report the last result of g_test_timer_elapsed().</doc>
-      <source-position filename="gtestutils.h" line="414"/>
+      <source-position filename="gtestutils.h" line="415"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76958,7 +76958,7 @@ g_test_timer_start().</doc>
            filename="glib-2.0.c"
            line="34374">Start a timing test. Call g_test_timer_elapsed() when the task is supposed
 to be done. Call this function again to restart the timer.</doc>
-      <source-position filename="gtestutils.h" line="410"/>
+      <source-position filename="gtestutils.h" line="411"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -76978,7 +76978,7 @@ g_assert() or g_error(). In these situations you should skip the
 entire test, including the call to g_test_trap_subprocess(), unless
 g_test_undefined() returns %TRUE to indicate that undefined
 behaviour may be tested.</doc>
-      <source-position filename="gtestutils.h" line="478"/>
+      <source-position filename="gtestutils.h" line="479"/>
       <parameters>
         <parameter name="serrpattern">
           <doc xml:space="preserve"
@@ -76995,7 +76995,7 @@ behaviour may be tested.</doc>
            filename="glib-2.0.c"
            line="34428">Assert that the stderr output of the last test subprocess
 does not match @serrpattern. See g_test_trap_subprocess().</doc>
-      <source-position filename="gtestutils.h" line="479"/>
+      <source-position filename="gtestutils.h" line="480"/>
       <parameters>
         <parameter name="serrpattern">
           <doc xml:space="preserve"
@@ -77012,7 +77012,7 @@ does not match @serrpattern. See g_test_trap_subprocess().</doc>
            filename="glib-2.0.c"
            line="34439">Assert that the stdout output of the last test subprocess matches
 @soutpattern. See g_test_trap_subprocess().</doc>
-      <source-position filename="gtestutils.h" line="476"/>
+      <source-position filename="gtestutils.h" line="477"/>
       <parameters>
         <parameter name="soutpattern">
           <doc xml:space="preserve"
@@ -77029,7 +77029,7 @@ does not match @serrpattern. See g_test_trap_subprocess().</doc>
            filename="glib-2.0.c"
            line="34450">Assert that the stdout output of the last test subprocess
 does not match @soutpattern. See g_test_trap_subprocess().</doc>
-      <source-position filename="gtestutils.h" line="477"/>
+      <source-position filename="gtestutils.h" line="478"/>
       <parameters>
         <parameter name="soutpattern">
           <doc xml:space="preserve"
@@ -77040,7 +77040,7 @@ does not match @soutpattern. See g_test_trap_subprocess().</doc>
     </function-macro>
     <function name="test_trap_assertions"
               c:identifier="g_test_trap_assertions">
-      <source-position filename="gtestutils.h" line="526"/>
+      <source-position filename="gtestutils.h" line="527"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -77102,7 +77102,7 @@ termination and validates child program outputs.
       <doc-deprecated xml:space="preserve">This function is implemented only on Unix platforms,
 and is not always reliable due to problems inherent in
 fork-without-exec. Use g_test_trap_subprocess() instead.</doc-deprecated>
-      <source-position filename="gtestutils.h" line="454"/>
+      <source-position filename="gtestutils.h" line="455"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77130,7 +77130,7 @@ fork-without-exec. Use g_test_trap_subprocess() instead.</doc-deprecated>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="34503">Check the result of the last g_test_trap_subprocess() call.</doc>
-      <source-position filename="gtestutils.h" line="471"/>
+      <source-position filename="gtestutils.h" line="472"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77144,7 +77144,7 @@ fork-without-exec. Use g_test_trap_subprocess() instead.</doc-deprecated>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="34513">Check the result of the last g_test_trap_subprocess() call.</doc>
-      <source-position filename="gtestutils.h" line="473"/>
+      <source-position filename="gtestutils.h" line="474"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77218,7 +77218,7 @@ message.
     return g_test_run ();
   }
 ]|</doc>
-      <source-position filename="gtestutils.h" line="466"/>
+      <source-position filename="gtestutils.h" line="467"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>

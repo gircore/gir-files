@@ -11664,13 +11664,13 @@ defines the minimum number of samples before the calibration is performed.</doc>
                 c:identifier="gst_clock_id_compare_func">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="452">Compares the two #GstClockID instances. This function can be used
+             line="509">Compares the two #GstClockID instances. This function can be used
 as a GCompareFunc when sorting ids.</doc>
         <source-position filename="../gst/gstclock.h" line="675"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="460">negative value if `a &lt; b`; zero if `a = b`; positive value if `a &gt; b`</doc>
+               line="517">negative value if `a &lt; b`; zero if `a = b`; positive value if `a &gt; b`</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
@@ -11680,7 +11680,7 @@ as a GCompareFunc when sorting ids.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="454">A #GstClockID</doc>
+                 line="511">A #GstClockID</doc>
             <type name="gpointer" c:type="gconstpointer"/>
           </parameter>
           <parameter name="id2"
@@ -11689,7 +11689,7 @@ as a GCompareFunc when sorting ids.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="455">A #GstClockID to compare with</doc>
+                 line="512">A #GstClockID to compare with</doc>
             <type name="gpointer" c:type="gconstpointer"/>
           </parameter>
         </parameters>
@@ -11699,12 +11699,12 @@ as a GCompareFunc when sorting ids.</doc>
                 version="1.16">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1359">This function returns the underlying clock.</doc>
+             line="1418">This function returns the underlying clock.</doc>
         <source-position filename="../gst/gstclock.h" line="678"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1365">a #GstClock or %NULL when the
+               line="1424">a #GstClock or %NULL when the
     underlying clock has been freed.</doc>
           <type name="Clock" c:type="GstClock*"/>
         </return-value>
@@ -11712,7 +11712,7 @@ as a GCompareFunc when sorting ids.</doc>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1361">a #GstClockID</doc>
+                 line="1420">a #GstClockID</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
         </parameters>
@@ -11720,19 +11720,19 @@ as a GCompareFunc when sorting ids.</doc>
       <function name="id_get_time" c:identifier="gst_clock_id_get_time">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="479">Gets the time of the clock ID</doc>
+             line="536">Gets the time of the clock ID</doc>
         <source-position filename="../gst/gstclock.h" line="684"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="485">the time of the given clock id.</doc>
+               line="542">the time of the given clock id.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="481">The #GstClockID to query</doc>
+                 line="538">The #GstClockID to query</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
         </parameters>
@@ -11740,19 +11740,19 @@ as a GCompareFunc when sorting ids.</doc>
       <function name="id_ref" c:identifier="gst_clock_id_ref">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="343">Increases the refcount of given @id.</doc>
+             line="400">Increases the refcount of given @id.</doc>
         <source-position filename="../gst/gstclock.h" line="667"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="349">The same #GstClockID with increased refcount.</doc>
+               line="406">The same #GstClockID with increased refcount.</doc>
           <type name="ClockID" c:type="GstClockID"/>
         </return-value>
         <parameters>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="345">The #GstClockID to ref</doc>
+                 line="402">The #GstClockID to ref</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
         </parameters>
@@ -11760,7 +11760,7 @@ as a GCompareFunc when sorting ids.</doc>
       <function name="id_unref" c:identifier="gst_clock_id_unref">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="384">Unrefs given @id. When the refcount reaches 0 the
+             line="441">Unrefs given @id. When the refcount reaches 0 the
 #GstClockID will be freed.</doc>
         <source-position filename="../gst/gstclock.h" line="670"/>
         <return-value transfer-ownership="none">
@@ -11770,7 +11770,7 @@ as a GCompareFunc when sorting ids.</doc>
           <parameter name="id" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="386">The #GstClockID to unref</doc>
+                 line="443">The #GstClockID to unref</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
         </parameters>
@@ -11778,7 +11778,7 @@ as a GCompareFunc when sorting ids.</doc>
       <function name="id_unschedule" c:identifier="gst_clock_id_unschedule">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="660">Cancels an outstanding request with @id. This can either
+             line="717">Cancels an outstanding request with @id. This can either
 be an outstanding async notification or a pending sync notification.
 After this call, @id cannot be used anymore to receive sync or
 async notifications, you need to create a new #GstClockID.</doc>
@@ -11790,7 +11790,7 @@ async notifications, you need to create a new #GstClockID.</doc>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="662">The id to unschedule</doc>
+                 line="719">The id to unschedule</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
         </parameters>
@@ -11800,7 +11800,7 @@ async notifications, you need to create a new #GstClockID.</doc>
                 version="1.16">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1380">This function returns whether @id uses @clock as the underlying clock.
+             line="1439">This function returns whether @id uses @clock as the underlying clock.
 @clock can be NULL, in which case the return value indicates whether
 the underlying clock has been freed.  If this is the case, the @id is
 no longer usable and should be freed.</doc>
@@ -11808,20 +11808,20 @@ no longer usable and should be freed.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1390">whether the clock @id uses the same underlying #GstClock @clock.</doc>
+               line="1449">whether the clock @id uses the same underlying #GstClock @clock.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1382">a #GstClockID to check</doc>
+                 line="1441">a #GstClockID to check</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
           <parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1383">a #GstClock to compare against</doc>
+                 line="1442">a #GstClock to compare against</doc>
             <type name="Clock" c:type="GstClock*"/>
           </parameter>
         </parameters>
@@ -11829,7 +11829,7 @@ no longer usable and should be freed.</doc>
       <function name="id_wait" c:identifier="gst_clock_id_wait">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="495">Performs a blocking wait on @id.
+             line="552">Performs a blocking wait on @id.
 @id should have been created with gst_clock_new_single_shot_id()
 or gst_clock_new_periodic_id() and should not have been unscheduled
 with a call to gst_clock_id_unschedule().
@@ -11846,7 +11846,7 @@ before this function returned.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="515">the result of the blocking wait. #GST_CLOCK_EARLY will be returned
+               line="572">the result of the blocking wait. #GST_CLOCK_EARLY will be returned
 if the current clock time is past the time of @id, #GST_CLOCK_OK if
 @id was scheduled in time. #GST_CLOCK_UNSCHEDULED if @id was
 unscheduled with gst_clock_id_unschedule().</doc>
@@ -11856,7 +11856,7 @@ unscheduled with gst_clock_id_unschedule().</doc>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="497">The #GstClockID to wait on</doc>
+                 line="554">The #GstClockID to wait on</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
           <parameter name="jitter"
@@ -11867,7 +11867,7 @@ unscheduled with gst_clock_id_unschedule().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="498">a pointer that will contain the jitter,
+                 line="555">a pointer that will contain the jitter,
     can be %NULL.</doc>
             <type name="ClockTimeDiff" c:type="GstClockTimeDiff*"/>
           </parameter>
@@ -11876,7 +11876,7 @@ unscheduled with gst_clock_id_unschedule().</doc>
       <function name="id_wait_async" c:identifier="gst_clock_id_wait_async">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="583">Registers a callback on the given #GstClockID @id with the given
+             line="640">Registers a callback on the given #GstClockID @id with the given
 function and user_data. When passing a #GstClockID with an invalid
 time to this function, the callback will be called immediately
 with  a time set to %GST_CLOCK_TIME_NONE. The callback will
@@ -11888,14 +11888,14 @@ core or from a streaming thread. The application should be prepared for this.</d
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="599">the result of the non blocking wait.</doc>
+               line="656">the result of the non blocking wait.</doc>
           <type name="ClockReturn" c:type="GstClockReturn"/>
         </return-value>
         <parameters>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="585">a #GstClockID to wait on</doc>
+                 line="642">a #GstClockID to wait on</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
           <parameter name="func"
@@ -11905,7 +11905,7 @@ core or from a streaming thread. The application should be prepared for this.</d
                      destroy="3">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="586">The callback function</doc>
+                 line="643">The callback function</doc>
             <type name="ClockCallback" c:type="GstClockCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -11914,7 +11914,7 @@ core or from a streaming thread. The application should be prepared for this.</d
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="587">User data passed in the callback</doc>
+                 line="644">User data passed in the callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="destroy_data"
@@ -11922,7 +11922,7 @@ core or from a streaming thread. The application should be prepared for this.</d
                      scope="async">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="588">#GDestroyNotify for user_data</doc>
+                 line="645">#GDestroyNotify for user_data</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -11963,13 +11963,13 @@ be acceptable.</doc>
       <virtual-method name="get_internal_time" invoker="get_internal_time">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1039">Gets the current internal time of the given clock. The time is returned
+             line="1098">Gets the current internal time of the given clock. The time is returned
 unadjusted for the offset and the rate.</doc>
         <source-position filename="../gst/gstclock.h" line="523"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1046">the internal time of the clock. Or %GST_CLOCK_TIME_NONE when
+               line="1105">the internal time of the clock. Or %GST_CLOCK_TIME_NONE when
 given invalid input.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
@@ -11977,7 +11977,7 @@ given invalid input.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1041">a #GstClock to query</doc>
+                 line="1100">a #GstClock to query</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -11985,20 +11985,20 @@ given invalid input.</doc>
       <virtual-method name="get_resolution" invoker="get_resolution">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="842">Gets the accuracy of the clock. The accuracy of the clock is the granularity
+             line="901">Gets the accuracy of the clock. The accuracy of the clock is the granularity
 of the values returned by gst_clock_get_time().</doc>
         <source-position filename="../gst/gstclock.h" line="511"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="849">the resolution of the clock in units of #GstClockTime.</doc>
+               line="908">the resolution of the clock in units of #GstClockTime.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="844">a #GstClock</doc>
+                 line="903">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -12096,7 +12096,7 @@ unscheduled with gst_clock_id_unschedule().</doc>
       <method name="add_observation" c:identifier="gst_clock_add_observation">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1415">The time @master of the master clock and the time @slave of the slave
+             line="1474">The time @master of the master clock and the time @slave of the slave
 clock are added to the list of observations. If enough observations
 are available, a linear regression algorithm is run on the
 observations and @clock is recalibrated.
@@ -12110,7 +12110,7 @@ clocks.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1433">%TRUE if enough observations were added to run the
+               line="1492">%TRUE if enough observations were added to run the
 regression algorithm.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -12118,19 +12118,19 @@ regression algorithm.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1417">a #GstClock</doc>
+                 line="1476">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="slave" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1418">a time on the slave</doc>
+                 line="1477">a time on the slave</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="master" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1419">a time on the master</doc>
+                 line="1478">a time on the master</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="r_squared"
@@ -12139,7 +12139,7 @@ regression algorithm.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1420">a pointer to hold the result</doc>
+                 line="1479">a pointer to hold the result</doc>
             <type name="gdouble" c:type="gdouble*"/>
           </parameter>
         </parameters>
@@ -12149,7 +12149,7 @@ regression algorithm.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1452">Add a clock observation to the internal slaving algorithm the same as
+             line="1511">Add a clock observation to the internal slaving algorithm the same as
 gst_clock_add_observation(), and return the result of the master clock
 estimation, without updating the internal calibration.
 
@@ -12159,7 +12159,7 @@ with the values, or some modified version of them.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1470">%TRUE if enough observations were added to run the
+               line="1529">%TRUE if enough observations were added to run the
 regression algorithm.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -12167,19 +12167,19 @@ regression algorithm.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1454">a #GstClock</doc>
+                 line="1513">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="slave" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1455">a time on the slave</doc>
+                 line="1514">a time on the slave</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="master" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1456">a time on the master</doc>
+                 line="1515">a time on the master</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="r_squared"
@@ -12188,7 +12188,7 @@ regression algorithm.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1457">a pointer to hold the result</doc>
+                 line="1516">a pointer to hold the result</doc>
             <type name="gdouble" c:type="gdouble*"/>
           </parameter>
           <parameter name="internal"
@@ -12199,7 +12199,7 @@ regression algorithm.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1458">a location to store the internal time</doc>
+                 line="1517">a location to store the internal time</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
           <parameter name="external"
@@ -12210,7 +12210,7 @@ regression algorithm.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1459">a location to store the external time</doc>
+                 line="1518">a location to store the external time</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
           <parameter name="rate_num"
@@ -12221,7 +12221,7 @@ regression algorithm.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1460">a location to store the rate numerator</doc>
+                 line="1519">a location to store the rate numerator</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
           <parameter name="rate_denom"
@@ -12232,7 +12232,7 @@ regression algorithm.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1461">a location to store the rate denominator</doc>
+                 line="1520">a location to store the rate denominator</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
         </parameters>
@@ -12240,7 +12240,7 @@ regression algorithm.</doc>
       <method name="adjust_unlocked" c:identifier="gst_clock_adjust_unlocked">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="923">Converts the given @internal clock time to the external time, adjusting for the
+             line="982">Converts the given @internal clock time to the external time, adjusting for the
 rate and reference time set with gst_clock_set_calibration() and making sure
 that the returned time is increasing. This function should be called with the
 clock's OBJECT_LOCK held and is mainly used by clock subclasses.
@@ -12250,20 +12250,20 @@ This function is the reverse of gst_clock_unadjust_unlocked().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="935">the converted time of the clock.</doc>
+               line="994">the converted time of the clock.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="925">a #GstClock to use</doc>
+                 line="984">a #GstClock to use</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="internal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="926">a clock time</doc>
+                 line="985">a clock time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12273,7 +12273,7 @@ This function is the reverse of gst_clock_unadjust_unlocked().</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="867">Converts the given @internal_target clock time to the external time,
+             line="926">Converts the given @internal_target clock time to the external time,
 using the passed calibration parameters. This function performs the
 same calculation as gst_clock_adjust_unlocked() when called using the
 current calibration parameters, but doesn't ensure a monotonically
@@ -12284,7 +12284,7 @@ Note: The @clock parameter is unused and can be NULL</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="885">the converted time of the clock.</doc>
+               line="944">the converted time of the clock.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
@@ -12294,38 +12294,38 @@ Note: The @clock parameter is unused and can be NULL</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="869">a #GstClock to use</doc>
+                 line="928">a #GstClock to use</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="internal_target" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="870">a clock time</doc>
+                 line="929">a clock time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cinternal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="871">a reference internal time</doc>
+                 line="930">a reference internal time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cexternal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="872">a reference external time</doc>
+                 line="931">a reference external time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cnum" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="873">the numerator of the rate of the clock relative to its
+                 line="932">the numerator of the rate of the clock relative to its
        internal time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cdenom" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="875">the denominator of the rate of the clock</doc>
+                 line="934">the denominator of the rate of the clock</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12333,7 +12333,7 @@ Note: The @clock parameter is unused and can be NULL</doc>
       <method name="get_calibration" c:identifier="gst_clock_get_calibration">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1177">Gets the internal rate and reference time of @clock. See
+             line="1236">Gets the internal rate and reference time of @clock. See
 gst_clock_set_calibration() for more information.
 
 @internal, @external, @rate_num, and @rate_denom can be left %NULL if the
@@ -12346,7 +12346,7 @@ caller is not interested in the values.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1179">a #GstClock</doc>
+                 line="1238">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="internal"
@@ -12357,7 +12357,7 @@ caller is not interested in the values.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1180">a location to store the internal time</doc>
+                 line="1239">a location to store the internal time</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
           <parameter name="external"
@@ -12368,7 +12368,7 @@ caller is not interested in the values.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1181">a location to store the external time</doc>
+                 line="1240">a location to store the external time</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
           <parameter name="rate_num"
@@ -12379,7 +12379,7 @@ caller is not interested in the values.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1182">a location to store the rate numerator</doc>
+                 line="1241">a location to store the rate numerator</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
           <parameter name="rate_denom"
@@ -12390,7 +12390,7 @@ caller is not interested in the values.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1183">a location to store the rate denominator</doc>
+                 line="1242">a location to store the rate denominator</doc>
             <type name="ClockTime" c:type="GstClockTime*"/>
           </parameter>
         </parameters>
@@ -12399,13 +12399,13 @@ caller is not interested in the values.</doc>
               c:identifier="gst_clock_get_internal_time">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1039">Gets the current internal time of the given clock. The time is returned
+             line="1098">Gets the current internal time of the given clock. The time is returned
 unadjusted for the offset and the rate.</doc>
         <source-position filename="../gst/gstclock.h" line="619"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1046">the internal time of the clock. Or %GST_CLOCK_TIME_NONE when
+               line="1105">the internal time of the clock. Or %GST_CLOCK_TIME_NONE when
 given invalid input.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
@@ -12413,7 +12413,7 @@ given invalid input.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1041">a #GstClock to query</doc>
+                 line="1100">a #GstClock to query</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -12421,13 +12421,13 @@ given invalid input.</doc>
       <method name="get_master" c:identifier="gst_clock_get_master">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1331">Gets the master clock that @clock is slaved to or %NULL when the clock is
+             line="1390">Gets the master clock that @clock is slaved to or %NULL when the clock is
 not slaved to any master clock.</doc>
         <source-position filename="../gst/gstclock.h" line="597"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1338">a master #GstClock or %NULL
+               line="1397">a master #GstClock or %NULL
     when this clock is not slaved to a master clock.</doc>
           <type name="Clock" c:type="GstClock*"/>
         </return-value>
@@ -12435,7 +12435,7 @@ not slaved to any master clock.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1333">a #GstClock</doc>
+                 line="1392">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -12443,20 +12443,20 @@ not slaved to any master clock.</doc>
       <method name="get_resolution" c:identifier="gst_clock_get_resolution">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="842">Gets the accuracy of the clock. The accuracy of the clock is the granularity
+             line="901">Gets the accuracy of the clock. The accuracy of the clock is the granularity
 of the values returned by gst_clock_get_time().</doc>
         <source-position filename="../gst/gstclock.h" line="575"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="849">the resolution of the clock in units of #GstClockTime.</doc>
+               line="908">the resolution of the clock in units of #GstClockTime.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="844">a #GstClock</doc>
+                 line="903">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -12464,14 +12464,14 @@ of the values returned by gst_clock_get_time().</doc>
       <method name="get_time" c:identifier="gst_clock_get_time">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1083">Gets the current time of the given clock. The time is always
+             line="1142">Gets the current time of the given clock. The time is always
 monotonically increasing and adjusted according to the current
 offset and rate.</doc>
         <source-position filename="../gst/gstclock.h" line="578"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1091">the time of the clock. Or %GST_CLOCK_TIME_NONE when
+               line="1150">the time of the clock. Or %GST_CLOCK_TIME_NONE when
 given invalid input.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
@@ -12479,7 +12479,7 @@ given invalid input.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1085">a #GstClock to query</doc>
+                 line="1144">a #GstClock to query</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -12489,19 +12489,19 @@ given invalid input.</doc>
               glib:get-property="timeout">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1562">Gets the amount of time that master and slave clocks are sampled.</doc>
+             line="1621">Gets the amount of time that master and slave clocks are sampled.</doc>
         <source-position filename="../gst/gstclock.h" line="603"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1568">the interval between samples.</doc>
+               line="1627">the interval between samples.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1564">a #GstClock</doc>
+                 line="1623">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -12511,20 +12511,20 @@ given invalid input.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1703">Checks if the clock is currently synced, by looking at whether
+             line="1762">Checks if the clock is currently synced, by looking at whether
 %GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC is set.</doc>
         <source-position filename="../gst/gstclock.h" line="647"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1710">%TRUE if the clock is currently synced</doc>
+               line="1769">%TRUE if the clock is currently synced</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1705">a GstClock</doc>
+                 line="1764">a GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
         </parameters>
@@ -12532,14 +12532,14 @@ given invalid input.</doc>
       <method name="new_periodic_id" c:identifier="gst_clock_new_periodic_id">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="426">Gets an ID from @clock to trigger a periodic notification.
+             line="483">Gets an ID from @clock to trigger a periodic notification.
 The periodic notifications will start at time @start_time and
 will then be fired with the given @interval.</doc>
         <source-position filename="../gst/gstclock.h" line="660"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="436">a #GstClockID that can be used to request the
+               line="493">a #GstClockID that can be used to request the
     time notification.</doc>
           <type name="ClockID" c:type="GstClockID"/>
         </return-value>
@@ -12547,19 +12547,19 @@ will then be fired with the given @interval.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="428">The #GstClockID to get a periodic notification id from</doc>
+                 line="485">The #GstClockID to get a periodic notification id from</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="start_time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="429">the requested start time</doc>
+                 line="486">the requested start time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="interval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="430">the requested interval</doc>
+                 line="487">the requested interval</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12568,13 +12568,13 @@ will then be fired with the given @interval.</doc>
               c:identifier="gst_clock_new_single_shot_id">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="405">Gets a #GstClockID from @clock to trigger a single shot
+             line="462">Gets a #GstClockID from @clock to trigger a single shot
 notification at the requested time.</doc>
         <source-position filename="../gst/gstclock.h" line="657"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="413">a #GstClockID that can be used to request the
+               line="470">a #GstClockID that can be used to request the
     time notification.</doc>
           <type name="ClockID" c:type="GstClockID"/>
         </return-value>
@@ -12582,13 +12582,13 @@ notification at the requested time.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="407">The #GstClockID to get a single shot notification from</doc>
+                 line="464">The #GstClockID to get a single shot notification from</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="408">the requested time</doc>
+                 line="465">the requested time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12597,13 +12597,13 @@ notification at the requested time.</doc>
               c:identifier="gst_clock_periodic_id_reinit">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="319">Reinitializes the provided periodic @id to the provided start time and
+             line="376">Reinitializes the provided periodic @id to the provided start time and
 interval. Does not modify the reference count.</doc>
         <source-position filename="../gst/gstclock.h" line="702"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="329">%TRUE if the GstClockID could be reinitialized to the provided
+               line="386">%TRUE if the GstClockID could be reinitialized to the provided
 @time, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -12611,25 +12611,25 @@ interval. Does not modify the reference count.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="321">a #GstClock</doc>
+                 line="378">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="322">a #GstClockID</doc>
+                 line="379">a #GstClockID</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
           <parameter name="start_time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="323">the requested start time</doc>
+                 line="380">the requested start time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="interval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="324">the requested interval</doc>
+                 line="381">the requested interval</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12637,7 +12637,7 @@ interval. Does not modify the reference count.</doc>
       <method name="set_calibration" c:identifier="gst_clock_set_calibration">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1118">Adjusts the rate and time of @clock. A rate of 1/1 is the normal speed of
+             line="1177">Adjusts the rate and time of @clock. A rate of 1/1 is the normal speed of
 the clock. Values bigger than 1/1 make the clock go faster.
 
 @internal and @external are calibration parameters that arrange that
@@ -12666,32 +12666,32 @@ until the clock catches up.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1120">a #GstClock to calibrate</doc>
+                 line="1179">a #GstClock to calibrate</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="internal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1121">a reference internal time</doc>
+                 line="1180">a reference internal time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="external" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1122">a reference external time</doc>
+                 line="1181">a reference external time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="rate_num" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1123">the numerator of the rate of the clock relative to its
+                 line="1182">the numerator of the rate of the clock relative to its
            internal time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="rate_denom" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1125">the denominator of the rate of the clock</doc>
+                 line="1184">the denominator of the rate of the clock</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12699,7 +12699,7 @@ until the clock catches up.</doc>
       <method name="set_master" c:identifier="gst_clock_set_master">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1245">Sets @master as the master clock for @clock. @clock will be automatically
+             line="1304">Sets @master as the master clock for @clock. @clock will be automatically
 calibrated so that gst_clock_get_time() reports the same time as the
 master clock.
 
@@ -12713,7 +12713,7 @@ and time offsets.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1261">%TRUE if the clock is capable of being slaved to a master clock.
+               line="1320">%TRUE if the clock is capable of being slaved to a master clock.
 Trying to set a master on a clock without the
 #GST_CLOCK_FLAG_CAN_SET_MASTER flag will make this function return %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -12722,7 +12722,7 @@ Trying to set a master on a clock without the
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1247">a #GstClock</doc>
+                 line="1306">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="master"
@@ -12731,7 +12731,7 @@ Trying to set a master on a clock without the
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1248">a master #GstClock</doc>
+                 line="1307">a master #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </parameter>
         </parameters>
@@ -12739,7 +12739,7 @@ Trying to set a master on a clock without the
       <method name="set_resolution" c:identifier="gst_clock_set_resolution">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="810">Sets the accuracy of the clock. Some clocks have the possibility to operate
+             line="869">Sets the accuracy of the clock. Some clocks have the possibility to operate
 with different accuracy at the expense of more resource usage. There is
 normally no need to change the default resolution of a clock. The resolution
 of a clock can only be changed if the clock has the
@@ -12748,20 +12748,20 @@ of a clock can only be changed if the clock has the
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="821">the new resolution of the clock.</doc>
+               line="880">the new resolution of the clock.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="812">a #GstClock</doc>
+                 line="871">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="resolution" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="813">The resolution to set</doc>
+                 line="872">The resolution to set</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12771,7 +12771,7 @@ of a clock can only be changed if the clock has the
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1723">Sets @clock to synced and emits the #GstClock::synced signal, and wakes up any
+             line="1782">Sets @clock to synced and emits the #GstClock::synced signal, and wakes up any
 thread waiting in gst_clock_wait_for_sync().
 
 This function must only be called if %GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC
@@ -12784,13 +12784,13 @@ is set on the clock, and is intended to be called by subclasses only.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1725">a GstClock</doc>
+                 line="1784">a GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="synced" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1726">if the clock is synced</doc>
+                 line="1785">if the clock is synced</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -12800,7 +12800,7 @@ is set on the clock, and is intended to be called by subclasses only.</doc>
               glib:set-property="timeout">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1544">Sets the amount of time, in nanoseconds, to sample master and slave
+             line="1603">Sets the amount of time, in nanoseconds, to sample master and slave
 clocks</doc>
         <source-position filename="../gst/gstclock.h" line="600"/>
         <return-value transfer-ownership="none">
@@ -12810,13 +12810,13 @@ clocks</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1546">a #GstClock</doc>
+                 line="1605">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="timeout" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1547">a timeout</doc>
+                 line="1606">a timeout</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12825,13 +12825,13 @@ clocks</doc>
               c:identifier="gst_clock_single_shot_id_reinit">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="297">Reinitializes the provided single shot @id to the provided time. Does not
+             line="354">Reinitializes the provided single shot @id to the provided time. Does not
 modify the reference count.</doc>
         <source-position filename="../gst/gstclock.h" line="698"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="306">%TRUE if the GstClockID could be reinitialized to the provided
+               line="363">%TRUE if the GstClockID could be reinitialized to the provided
 @time, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -12839,19 +12839,19 @@ modify the reference count.</doc>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="299">a #GstClock</doc>
+                 line="356">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="300">a #GstClockID</doc>
+                 line="357">a #GstClockID</doc>
             <type name="ClockID" c:type="GstClockID"/>
           </parameter>
           <parameter name="time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="301">The requested time.</doc>
+                 line="358">The requested time.</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12860,7 +12860,7 @@ modify the reference count.</doc>
               c:identifier="gst_clock_unadjust_unlocked">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1009">Converts the given @external clock time to the internal time of @clock,
+             line="1068">Converts the given @external clock time to the internal time of @clock,
 using the rate and reference time set with gst_clock_set_calibration().
 This function should be called with the clock's OBJECT_LOCK held and
 is mainly used by clock subclasses.
@@ -12870,20 +12870,20 @@ This function is the reverse of gst_clock_adjust_unlocked().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1021">the internal time of the clock corresponding to @external.</doc>
+               line="1080">the internal time of the clock corresponding to @external.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1011">a #GstClock to use</doc>
+                 line="1070">a #GstClock to use</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="external" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1012">an external clock time</doc>
+                 line="1071">an external clock time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12893,7 +12893,7 @@ This function is the reverse of gst_clock_adjust_unlocked().</doc>
               version="1.8">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="960">Converts the given @external_target clock time to the internal time,
+             line="1019">Converts the given @external_target clock time to the internal time,
 using the passed calibration parameters. This function performs the
 same calculation as gst_clock_unadjust_unlocked() when called using the
 current calibration parameters.
@@ -12903,7 +12903,7 @@ Note: The @clock parameter is unused and can be NULL</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="977">the converted time of the clock.</doc>
+               line="1036">the converted time of the clock.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
@@ -12913,38 +12913,38 @@ Note: The @clock parameter is unused and can be NULL</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="962">a #GstClock to use</doc>
+                 line="1021">a #GstClock to use</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="external_target" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="963">a clock time</doc>
+                 line="1022">a clock time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cinternal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="964">a reference internal time</doc>
+                 line="1023">a reference internal time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cexternal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="965">a reference external time</doc>
+                 line="1024">a reference external time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cnum" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="966">the numerator of the rate of the clock relative to its
+                 line="1025">the numerator of the rate of the clock relative to its
        internal time</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="cdenom" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="968">the denominator of the rate of the clock</doc>
+                 line="1027">the denominator of the rate of the clock</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -12954,7 +12954,7 @@ Note: The @clock parameter is unused and can be NULL</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="1651">Waits until @clock is synced for reporting the current time. If @timeout
+             line="1710">Waits until @clock is synced for reporting the current time. If @timeout
 is %GST_CLOCK_TIME_NONE it will wait forever, otherwise it will time out
 after @timeout nanoseconds.
 
@@ -12966,20 +12966,20 @@ is not set on the clock, or if the clock is already synced.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstclock.c"
-               line="1665">%TRUE if waiting was successful, or %FALSE on timeout</doc>
+               line="1724">%TRUE if waiting was successful, or %FALSE on timeout</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="clock" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1653">a GstClock</doc>
+                 line="1712">a GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </instance-parameter>
           <parameter name="timeout" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1654">timeout for waiting or %GST_CLOCK_TIME_NONE</doc>
+                 line="1713">timeout for waiting or %GST_CLOCK_TIME_NONE</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -13014,7 +13014,7 @@ is not set on the clock, or if the clock is already synced.</doc>
       <glib:signal name="synced" when="last" version="1.6">
         <doc xml:space="preserve"
              filename="../gst/gstclock.c"
-             line="730">Signaled on clocks with %GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC set once
+             line="787">Signaled on clocks with %GST_CLOCK_FLAG_NEEDS_STARTUP_SYNC set once
 the clock is synchronized, or when it completely lost synchronization.
 This signal will not be emitted on clocks without the flag.
 
@@ -13027,7 +13027,7 @@ the application's main thread.</doc>
           <parameter name="synced" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="733">if the clock is synced now</doc>
+                 line="790">if the clock is synced now</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -13126,14 +13126,14 @@ functionality.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="849">the resolution of the clock in units of #GstClockTime.</doc>
+                 line="908">the resolution of the clock in units of #GstClockTime.</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </return-value>
           <parameters>
             <parameter name="clock" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="../gst/gstclock.c"
-                   line="844">a #GstClock</doc>
+                   line="903">a #GstClock</doc>
               <type name="Clock" c:type="GstClock*"/>
             </parameter>
           </parameters>
@@ -13145,7 +13145,7 @@ functionality.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstclock.c"
-                 line="1046">the internal time of the clock. Or %GST_CLOCK_TIME_NONE when
+                 line="1105">the internal time of the clock. Or %GST_CLOCK_TIME_NONE when
 given invalid input.</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </return-value>
@@ -13153,7 +13153,7 @@ given invalid input.</doc>
             <parameter name="clock" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="../gst/gstclock.c"
-                   line="1041">a #GstClock to query</doc>
+                   line="1100">a #GstClock to query</doc>
               <type name="Clock" c:type="GstClock*"/>
             </parameter>
           </parameters>
@@ -47688,7 +47688,7 @@ into memory.</doc>
       <function name="list_free" c:identifier="gst_plugin_list_free">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1465">Unrefs each member of @list, then frees the list.</doc>
+             line="1468">Unrefs each member of @list, then frees the list.</doc>
         <source-position filename="../gst/gstplugin.h" line="396"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -47697,7 +47697,7 @@ into memory.</doc>
           <parameter name="list" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1467">list of #GstPlugin</doc>
+                 line="1470">list of #GstPlugin</doc>
             <type name="GLib.List" c:type="GList*">
               <type name="Plugin"/>
             </type>
@@ -47707,12 +47707,12 @@ into memory.</doc>
       <function name="load_by_name" c:identifier="gst_plugin_load_by_name">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1389">Load the named plugin. Refs the plugin.</doc>
+             line="1392">Load the named plugin. Refs the plugin.</doc>
         <source-position filename="../gst/gstplugin.h" line="381"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1395">a reference to a loaded plugin, or
+               line="1398">a reference to a loaded plugin, or
 %NULL on error.</doc>
           <type name="Plugin" c:type="GstPlugin*"/>
         </return-value>
@@ -47720,7 +47720,7 @@ into memory.</doc>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1391">name of plugin to load</doc>
+                 line="1394">name of plugin to load</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -47730,12 +47730,12 @@ into memory.</doc>
                 throws="1">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="673">Loads the given plugin and refs it.  Caller needs to unref after use.</doc>
+             line="676">Loads the given plugin and refs it.  Caller needs to unref after use.</doc>
         <source-position filename="../gst/gstplugin.h" line="375"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="680">a reference to the existing loaded GstPlugin, a
+               line="683">a reference to the existing loaded GstPlugin, a
 reference to the newly-loaded GstPlugin, or %NULL if an error occurred.</doc>
           <type name="Plugin" c:type="GstPlugin*"/>
         </return-value>
@@ -47743,7 +47743,7 @@ reference to the newly-loaded GstPlugin, or %NULL if an error occurred.</doc>
           <parameter name="filename" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="675">the plugin filename to load</doc>
+                 line="678">the plugin filename to load</doc>
             <type name="filename" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -47752,7 +47752,7 @@ reference to the newly-loaded GstPlugin, or %NULL if an error occurred.</doc>
                 c:identifier="gst_plugin_register_static">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="175">Registers a static plugin, ie. a plugin which is private to an application
+             line="178">Registers a static plugin, ie. a plugin which is private to an application
 or library and contained within the application or library (as opposed to
 being shipped as a separate module file).
 
@@ -47762,28 +47762,28 @@ via gst_init_get_option_group()) before calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="200">%TRUE if the plugin was registered correctly, otherwise %FALSE.</doc>
+               line="203">%TRUE if the plugin was registered correctly, otherwise %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="major_version" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="177">the major version number of the GStreamer core that the
+                 line="180">the major version number of the GStreamer core that the
     plugin was compiled for, you can just use GST_VERSION_MAJOR here</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="minor_version" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="179">the minor version number of the GStreamer core that the
+                 line="182">the minor version number of the GStreamer core that the
     plugin was compiled for, you can just use GST_VERSION_MINOR here</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="181">a unique name of the plugin (ideally prefixed with an application- or
+                 line="184">a unique name of the plugin (ideally prefixed with an application- or
     library-specific namespace prefix in order to avoid name conflicts in
     case a similar plugin with the same name ever gets added to GStreamer)</doc>
             <type name="utf8" c:type="const gchar*"/>
@@ -47791,44 +47791,44 @@ via gst_init_get_option_group()) before calling this function.</doc>
           <parameter name="description" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="184">description of the plugin</doc>
+                 line="187">description of the plugin</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="init_func" transfer-ownership="none" scope="call">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="185">pointer to the init function of this plugin.</doc>
+                 line="188">pointer to the init function of this plugin.</doc>
             <type name="PluginInitFunc" c:type="GstPluginInitFunc"/>
           </parameter>
           <parameter name="version" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="186">version string of the plugin</doc>
+                 line="189">version string of the plugin</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="license" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="187">effective license of plugin. Must be one of the approved licenses
+                 line="190">effective license of plugin. Must be one of the approved licenses
     (see #GstPluginDesc above) or the plugin will not be registered.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="189">source module plugin belongs to</doc>
+                 line="192">source module plugin belongs to</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="package" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="190">shipped package plugin belongs to</doc>
+                 line="193">shipped package plugin belongs to</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="origin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="191">URL to provider of plugin</doc>
+                 line="194">URL to provider of plugin</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -47837,7 +47837,7 @@ via gst_init_get_option_group()) before calling this function.</doc>
                 c:identifier="gst_plugin_register_static_full">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="236">Registers a static plugin, ie. a plugin which is private to an application
+             line="239">Registers a static plugin, ie. a plugin which is private to an application
 or library and contained within the application or library (as opposed to
 being shipped as a separate module file) with a #GstPluginInitFullFunc
 which allows user data to be passed to the callback function (useful
@@ -47849,28 +47849,28 @@ via gst_init_get_option_group()) before calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="265">%TRUE if the plugin was registered correctly, otherwise %FALSE.</doc>
+               line="268">%TRUE if the plugin was registered correctly, otherwise %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="major_version" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="238">the major version number of the GStreamer core that the
+                 line="241">the major version number of the GStreamer core that the
     plugin was compiled for, you can just use GST_VERSION_MAJOR here</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="minor_version" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="240">the minor version number of the GStreamer core that the
+                 line="243">the minor version number of the GStreamer core that the
     plugin was compiled for, you can just use GST_VERSION_MINOR here</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="242">a unique name of the plugin (ideally prefixed with an application- or
+                 line="245">a unique name of the plugin (ideally prefixed with an application- or
     library-specific namespace prefix in order to avoid name conflicts in
     case a similar plugin with the same name ever gets added to GStreamer)</doc>
             <type name="utf8" c:type="const gchar*"/>
@@ -47878,7 +47878,7 @@ via gst_init_get_option_group()) before calling this function.</doc>
           <parameter name="description" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="245">description of the plugin</doc>
+                 line="248">description of the plugin</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="init_full_func"
@@ -47887,39 +47887,39 @@ via gst_init_get_option_group()) before calling this function.</doc>
                      closure="10">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="246">pointer to the init function with user data
+                 line="249">pointer to the init function with user data
     of this plugin.</doc>
             <type name="PluginInitFullFunc" c:type="GstPluginInitFullFunc"/>
           </parameter>
           <parameter name="version" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="248">version string of the plugin</doc>
+                 line="251">version string of the plugin</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="license" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="249">effective license of plugin. Must be one of the approved licenses
+                 line="252">effective license of plugin. Must be one of the approved licenses
     (see #GstPluginDesc above) or the plugin will not be registered.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="251">source module plugin belongs to</doc>
+                 line="254">source module plugin belongs to</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="package" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="252">shipped package plugin belongs to</doc>
+                 line="255">shipped package plugin belongs to</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="origin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="253">URL to provider of plugin</doc>
+                 line="256">URL to provider of plugin</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="user_data"
@@ -47928,7 +47928,7 @@ via gst_init_get_option_group()) before calling this function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="254">gpointer to user data</doc>
+                 line="257">gpointer to user data</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -47936,7 +47936,7 @@ via gst_init_get_option_group()) before calling this function.</doc>
       <method name="add_dependency" c:identifier="gst_plugin_add_dependency">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1897">Make GStreamer aware of external dependencies which affect the feature
+             line="1900">Make GStreamer aware of external dependencies which affect the feature
 set of this plugin (ie. the elements or typefinders associated with it).
 
 GStreamer will re-inspect plugins with external dependencies whenever any
@@ -47953,7 +47953,7 @@ codec libraries are currently installed.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1899">a #GstPlugin</doc>
+                 line="1902">a #GstPlugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
           <parameter name="env_vars"
@@ -47962,7 +47962,7 @@ codec libraries are currently installed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1900">%NULL-terminated array of environment variables affecting the
+                 line="1903">%NULL-terminated array of environment variables affecting the
     feature set of the plugin (e.g. an environment variable containing
     paths where to look for additional modules/plugins of a library),
     or %NULL. Environment variable names may be followed by a path component
@@ -47978,7 +47978,7 @@ codec libraries are currently installed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1906">%NULL-terminated array of directories/paths where dependent files
+                 line="1909">%NULL-terminated array of directories/paths where dependent files
     may be, or %NULL.</doc>
             <array c:type="const gchar**">
               <type name="utf8" c:type="gchar*"/>
@@ -47990,7 +47990,7 @@ codec libraries are currently installed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1908">%NULL-terminated array of file names (or file name suffixes,
+                 line="1911">%NULL-terminated array of file names (or file name suffixes,
     depending on @flags) to be used in combination with the paths from
     @paths and/or the paths extracted from the environment variables in
     @env_vars, or %NULL.</doc>
@@ -48001,7 +48001,7 @@ codec libraries are currently installed.</doc>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1912">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
+                 line="1915">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
             <type name="PluginDependencyFlags"
                   c:type="GstPluginDependencyFlags"/>
           </parameter>
@@ -48011,7 +48011,7 @@ codec libraries are currently installed.</doc>
               c:identifier="gst_plugin_add_dependency_simple">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1968">Make GStreamer aware of external dependencies which affect the feature
+             line="1971">Make GStreamer aware of external dependencies which affect the feature
 set of this plugin (ie. the elements or typefinders associated with it).
 
 GStreamer will re-inspect plugins with external dependencies whenever any
@@ -48032,7 +48032,7 @@ arguments separated by predefined delimiters (see above).</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1970">the #GstPlugin</doc>
+                 line="1973">the #GstPlugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
           <parameter name="env_vars"
@@ -48041,7 +48041,7 @@ arguments separated by predefined delimiters (see above).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1971">one or more environment variables (separated by ':', ';' or ','),
+                 line="1974">one or more environment variables (separated by ':', ';' or ','),
      or %NULL. Environment variable names may be followed by a path component
      which will be added to the content of the environment variable, e.g.
      "HOME/.mystuff/plugins:MYSTUFF_PLUGINS_PATH"</doc>
@@ -48053,7 +48053,7 @@ arguments separated by predefined delimiters (see above).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1975">one ore more directory paths (separated by ':' or ';' or ','),
+                 line="1978">one ore more directory paths (separated by ':' or ';' or ','),
      or %NULL. Example: "/usr/lib/mystuff/plugins"</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -48063,14 +48063,14 @@ arguments separated by predefined delimiters (see above).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1977">one or more file names or file name suffixes (separated by commas),
+                 line="1980">one or more file names or file name suffixes (separated by commas),
      or %NULL</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1979">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
+                 line="1982">optional flags, or #GST_PLUGIN_DEPENDENCY_FLAG_NONE</doc>
             <type name="PluginDependencyFlags"
                   c:type="GstPluginDependencyFlags"/>
           </parameter>
@@ -48079,13 +48079,13 @@ arguments separated by predefined delimiters (see above).</doc>
       <method name="get_cache_data" c:identifier="gst_plugin_get_cache_data">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1187">Gets the plugin specific data cache. If it is %NULL there is no cached data
+             line="1190">Gets the plugin specific data cache. If it is %NULL there is no cached data
 stored. This is the case when the registry is getting rebuilt.</doc>
         <source-position filename="../gst/gstplugin.h" line="366"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1194">The cached data as a
+               line="1197">The cached data as a
 #GstStructure or %NULL.</doc>
           <type name="Structure" c:type="const GstStructure*"/>
         </return-value>
@@ -48093,7 +48093,7 @@ stored. This is the case when the registry is getting rebuilt.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1189">a plugin</doc>
+                 line="1192">a plugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48101,19 +48101,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_description" c:identifier="gst_plugin_get_description">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1035">Get the long descriptive name of the plugin</doc>
+             line="1038">Get the long descriptive name of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="342"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1041">the long name of the plugin</doc>
+               line="1044">the long name of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1037">plugin to get long name of</doc>
+                 line="1040">plugin to get long name of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48121,19 +48121,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_filename" c:identifier="gst_plugin_get_filename">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1051">get the filename of the plugin</doc>
+             line="1054">get the filename of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="345"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1057">the filename of the plugin</doc>
+               line="1060">the filename of the plugin</doc>
           <type name="filename" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1053">plugin to get the filename of</doc>
+                 line="1056">plugin to get the filename of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48141,19 +48141,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_license" c:identifier="gst_plugin_get_license">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1083">get the license of the plugin</doc>
+             line="1086">get the license of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="351"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1089">the license of the plugin</doc>
+               line="1092">the license of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1085">plugin to get the license of</doc>
+                 line="1088">plugin to get the license of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48161,19 +48161,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_name" c:identifier="gst_plugin_get_name">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1019">Get the short name of the plugin</doc>
+             line="1022">Get the short name of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="339"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1025">the name of the plugin</doc>
+               line="1028">the name of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1021">plugin to get the name of</doc>
+                 line="1024">plugin to get the name of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48181,19 +48181,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_origin" c:identifier="gst_plugin_get_origin">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1131">get the URL where the plugin comes from</doc>
+             line="1134">get the URL where the plugin comes from</doc>
         <source-position filename="../gst/gstplugin.h" line="360"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1137">the origin of the plugin</doc>
+               line="1140">the origin of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1133">plugin to get the origin of</doc>
+                 line="1136">plugin to get the origin of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48201,19 +48201,19 @@ stored. This is the case when the registry is getting rebuilt.</doc>
       <method name="get_package" c:identifier="gst_plugin_get_package">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1115">get the package the plugin belongs to.</doc>
+             line="1118">get the package the plugin belongs to.</doc>
         <source-position filename="../gst/gstplugin.h" line="357"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1121">the package of the plugin</doc>
+               line="1124">the package of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1117">plugin to get the package of</doc>
+                 line="1120">plugin to get the package of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48222,7 +48222,7 @@ stored. This is the case when the registry is getting rebuilt.</doc>
               c:identifier="gst_plugin_get_release_date_string">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1147">Get the release date (and possibly time) in form of a string, if available.
+             line="1150">Get the release date (and possibly time) in form of a string, if available.
 
 For normal GStreamer plugin releases this will usually just be a date in
 the form of "YYYY-MM-DD", while pre-releases and builds from git may contain
@@ -48234,7 +48234,7 @@ There may be plugins that do not have a valid release date set on them.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1160">the date string of the plugin, or %NULL if not
+               line="1163">the date string of the plugin, or %NULL if not
 available.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
@@ -48242,7 +48242,7 @@ available.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1149">plugin to get the release date of</doc>
+                 line="1152">plugin to get the release date of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48250,19 +48250,19 @@ available.</doc>
       <method name="get_source" c:identifier="gst_plugin_get_source">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1099">get the source module the plugin belongs to.</doc>
+             line="1102">get the source module the plugin belongs to.</doc>
         <source-position filename="../gst/gstplugin.h" line="354"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1105">the source of the plugin</doc>
+               line="1108">the source of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1101">plugin to get the source of</doc>
+                 line="1104">plugin to get the source of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48270,19 +48270,19 @@ available.</doc>
       <method name="get_version" c:identifier="gst_plugin_get_version">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1067">get the version of the plugin</doc>
+             line="1070">get the version of the plugin</doc>
         <source-position filename="../gst/gstplugin.h" line="348"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1073">the version of the plugin</doc>
+               line="1076">the version of the plugin</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1069">plugin to get the version of</doc>
+                 line="1072">plugin to get the version of</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48290,19 +48290,19 @@ available.</doc>
       <method name="is_loaded" c:identifier="gst_plugin_is_loaded">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1171">queries if the plugin is loaded into memory</doc>
+             line="1174">queries if the plugin is loaded into memory</doc>
         <source-position filename="../gst/gstplugin.h" line="372"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1177">%TRUE is loaded, %FALSE otherwise</doc>
+               line="1180">%TRUE is loaded, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1173">plugin to query</doc>
+                 line="1176">plugin to query</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48310,7 +48310,7 @@ available.</doc>
       <method name="load" c:identifier="gst_plugin_load">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1424">Loads @plugin. Note that the *return value* is the loaded plugin; @plugin is
+             line="1427">Loads @plugin. Note that the *return value* is the loaded plugin; @plugin is
 untouched. The normal use pattern of this function goes like this:
 
 |[
@@ -48324,7 +48324,7 @@ plugin = loaded_plugin;
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="../gst/gstplugin.c"
-               line="1439">a reference to a loaded plugin, or
+               line="1442">a reference to a loaded plugin, or
 %NULL on error.</doc>
           <type name="Plugin" c:type="GstPlugin*"/>
         </return-value>
@@ -48332,7 +48332,7 @@ plugin = loaded_plugin;
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1426">plugin to load</doc>
+                 line="1429">plugin to load</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
         </parameters>
@@ -48340,7 +48340,7 @@ plugin = loaded_plugin;
       <method name="set_cache_data" c:identifier="gst_plugin_set_cache_data">
         <doc xml:space="preserve"
              filename="../gst/gstplugin.c"
-             line="1205">Adds plugin specific data to cache. Passes the ownership of the structure to
+             line="1208">Adds plugin specific data to cache. Passes the ownership of the structure to
 the @plugin.
 
 The cache is flushed every time the registry is rebuilt.</doc>
@@ -48352,13 +48352,13 @@ The cache is flushed every time the registry is rebuilt.</doc>
           <instance-parameter name="plugin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1207">a plugin</doc>
+                 line="1210">a plugin</doc>
             <type name="Plugin" c:type="GstPlugin*"/>
           </instance-parameter>
           <parameter name="cache_data" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gst/gstplugin.c"
-                 line="1208">a structure containing the data to cache</doc>
+                 line="1211">a structure containing the data to cache</doc>
             <type name="Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -71628,7 +71628,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="../gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="2" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="3" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="../gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
