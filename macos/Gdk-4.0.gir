@@ -2289,20 +2289,20 @@ they had in @second.</doc>
               c:identifier="gdk_content_formats_union_deserialize_gtypes">
         <doc xml:space="preserve"
              filename="../gdk/gdkcontentdeserializer.c"
-             line="447">Add GTypes for mime types in @formats for which deserializers are
+             line="445">Add GTypes for mime types in @formats for which deserializers are
 registered.</doc>
         <source-position filename="../gdk/gdkcontentdeserializer.h" line="80"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="454">a new `GdkContentFormats`</doc>
+               line="452">a new `GdkContentFormats`</doc>
           <type name="ContentFormats" c:type="GdkContentFormats*"/>
         </return-value>
         <parameters>
           <instance-parameter name="formats" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gdk/gdkcontentdeserializer.c"
-                 line="449">a `GdkContentFormats`</doc>
+                 line="447">a `GdkContentFormats`</doc>
             <type name="ContentFormats" c:type="GdkContentFormats*"/>
           </instance-parameter>
         </parameters>
@@ -2311,20 +2311,20 @@ registered.</doc>
               c:identifier="gdk_content_formats_union_deserialize_mime_types">
         <doc xml:space="preserve"
              filename="../gdk/gdkcontentdeserializer.c"
-             line="482">Add mime types for GTypes in @formats for which deserializers are
+             line="480">Add mime types for GTypes in @formats for which deserializers are
 registered.</doc>
         <source-position filename="../gdk/gdkcontentdeserializer.h" line="82"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="489">a new `GdkContentFormats`</doc>
+               line="487">a new `GdkContentFormats`</doc>
           <type name="ContentFormats" c:type="GdkContentFormats*"/>
         </return-value>
         <parameters>
           <instance-parameter name="formats" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gdk/gdkcontentdeserializer.c"
-                 line="484">a `GdkContentFormats`</doc>
+                 line="482">a `GdkContentFormats`</doc>
             <type name="ContentFormats" c:type="GdkContentFormats*"/>
           </instance-parameter>
         </parameters>
@@ -2333,20 +2333,20 @@ registered.</doc>
               c:identifier="gdk_content_formats_union_serialize_gtypes">
         <doc xml:space="preserve"
              filename="../gdk/gdkcontentserializer.c"
-             line="453">Add GTypes for the mime types in @formats for which serializers are
+             line="451">Add GTypes for the mime types in @formats for which serializers are
 registered.</doc>
         <source-position filename="../gdk/gdkcontentserializer.h" line="80"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="460">a new `GdkContentFormats`</doc>
+               line="458">a new `GdkContentFormats`</doc>
           <type name="ContentFormats" c:type="GdkContentFormats*"/>
         </return-value>
         <parameters>
           <instance-parameter name="formats" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gdk/gdkcontentserializer.c"
-                 line="455">a `GdkContentFormats`</doc>
+                 line="453">a `GdkContentFormats`</doc>
             <type name="ContentFormats" c:type="GdkContentFormats*"/>
           </instance-parameter>
         </parameters>
@@ -2355,20 +2355,20 @@ registered.</doc>
               c:identifier="gdk_content_formats_union_serialize_mime_types">
         <doc xml:space="preserve"
              filename="../gdk/gdkcontentserializer.c"
-             line="488">Add mime types for GTypes in @formats for which serializers are
+             line="486">Add mime types for GTypes in @formats for which serializers are
 registered.</doc>
         <source-position filename="../gdk/gdkcontentserializer.h" line="82"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="495">a new `GdkContentFormats`</doc>
+               line="493">a new `GdkContentFormats`</doc>
           <type name="ContentFormats" c:type="GdkContentFormats*"/>
         </return-value>
         <parameters>
           <instance-parameter name="formats" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="../gdk/gdkcontentserializer.c"
-                 line="490">a `GdkContentFormats`</doc>
+                 line="488">a `GdkContentFormats`</doc>
             <type name="ContentFormats" c:type="GdkContentFormats*"/>
           </instance-parameter>
         </parameters>
@@ -30049,7 +30049,7 @@ so that the origin of @pixbuf is @pixbuf_x, @pixbuf_y.</doc>
               c:identifier="gdk_content_deserialize_async">
       <doc xml:space="preserve"
            filename="../gdk/gdkcontentdeserializer.c"
-           line="528">Read content from the given input stream and deserialize it, asynchronously.
+           line="526">Read content from the given input stream and deserialize it, asynchronously.
 
 The default I/O priority is %G_PRIORITY_DEFAULT (i.e. 0), and lower numbers
 indicate a higher priority.
@@ -30064,25 +30064,25 @@ call [func@Gdk.content_deserialize_finish] to get the result of the operation.</
         <parameter name="stream" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="530">a `GInputStream` to read the serialized content from</doc>
+               line="528">a `GInputStream` to read the serialized content from</doc>
           <type name="Gio.InputStream" c:type="GInputStream*"/>
         </parameter>
         <parameter name="mime_type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="531">the mime type to deserialize from</doc>
+               line="529">the mime type to deserialize from</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="532">the GType to deserialize from</doc>
+               line="530">the GType to deserialize from</doc>
           <type name="GType" c:type="GType"/>
         </parameter>
         <parameter name="io_priority" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="533">the I/O priority of the operation</doc>
+               line="531">the I/O priority of the operation</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="cancellable"
@@ -30091,7 +30091,7 @@ call [func@Gdk.content_deserialize_finish] to get the result of the operation.</
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="534">optional `GCancellable` object</doc>
+               line="532">optional `GCancellable` object</doc>
           <type name="Gio.Cancellable" c:type="GCancellable*"/>
         </parameter>
         <parameter name="callback"
@@ -30102,7 +30102,7 @@ call [func@Gdk.content_deserialize_finish] to get the result of the operation.</
                    closure="6">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="535">callback to call when the operation is done</doc>
+               line="533">callback to call when the operation is done</doc>
           <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
         </parameter>
         <parameter name="user_data"
@@ -30111,7 +30111,7 @@ call [func@Gdk.content_deserialize_finish] to get the result of the operation.</
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="536">data to pass to the callback function</doc>
+               line="534">data to pass to the callback function</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -30121,12 +30121,12 @@ call [func@Gdk.content_deserialize_finish] to get the result of the operation.</
               throws="1">
       <doc xml:space="preserve"
            filename="../gdk/gdkcontentdeserializer.c"
-           line="576">Finishes a content deserialization operation.</doc>
+           line="574">Finishes a content deserialization operation.</doc>
       <source-position filename="../gdk/gdkcontentdeserializer.h" line="99"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../gdk/gdkcontentdeserializer.c"
-             line="584">%TRUE if the operation was successful. In this case,
+             line="582">%TRUE if the operation was successful. In this case,
   @value is set. %FALSE if an error occurred. In this case,
   @error is set</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -30135,7 +30135,7 @@ call [func@Gdk.content_deserialize_finish] to get the result of the operation.</
         <parameter name="result" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="578">the `GAsyncResult`</doc>
+               line="576">the `GAsyncResult`</doc>
           <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
         </parameter>
         <parameter name="value"
@@ -30144,7 +30144,7 @@ call [func@Gdk.content_deserialize_finish] to get the result of the operation.</
                    transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentdeserializer.c"
-               line="579">return location for the result of the operation</doc>
+               line="577">return location for the result of the operation</doc>
           <type name="GObject.Value" c:type="GValue*"/>
         </parameter>
       </parameters>
@@ -30282,7 +30282,7 @@ is returned.</doc>
               c:identifier="gdk_content_serialize_async">
       <doc xml:space="preserve"
            filename="../gdk/gdkcontentserializer.c"
-           line="534">Serialize content and write it to the given output stream, asynchronously.
+           line="532">Serialize content and write it to the given output stream, asynchronously.
 
 The default I/O priority is %G_PRIORITY_DEFAULT (i.e. 0), and lower numbers
 indicate a higher priority.
@@ -30297,25 +30297,25 @@ call [func@Gdk.content_serialize_finish] to get the result of the operation.</do
         <parameter name="stream" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="536">a `GOutputStream` to write the serialized content to</doc>
+               line="534">a `GOutputStream` to write the serialized content to</doc>
           <type name="Gio.OutputStream" c:type="GOutputStream*"/>
         </parameter>
         <parameter name="mime_type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="537">the mime type to serialize to</doc>
+               line="535">the mime type to serialize to</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="538">the content to serialize</doc>
+               line="536">the content to serialize</doc>
           <type name="GObject.Value" c:type="const GValue*"/>
         </parameter>
         <parameter name="io_priority" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="539">the I/O priority of the operation</doc>
+               line="537">the I/O priority of the operation</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="cancellable"
@@ -30324,7 +30324,7 @@ call [func@Gdk.content_serialize_finish] to get the result of the operation.</do
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="540">optional `GCancellable` object</doc>
+               line="538">optional `GCancellable` object</doc>
           <type name="Gio.Cancellable" c:type="GCancellable*"/>
         </parameter>
         <parameter name="callback"
@@ -30335,7 +30335,7 @@ call [func@Gdk.content_serialize_finish] to get the result of the operation.</do
                    closure="6">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="541">callback to call when the operation is done</doc>
+               line="539">callback to call when the operation is done</doc>
           <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
         </parameter>
         <parameter name="user_data"
@@ -30344,7 +30344,7 @@ call [func@Gdk.content_serialize_finish] to get the result of the operation.</do
                    allow-none="1">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="542">data to pass to the callback function</doc>
+               line="540">data to pass to the callback function</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -30354,12 +30354,12 @@ call [func@Gdk.content_serialize_finish] to get the result of the operation.</do
               throws="1">
       <doc xml:space="preserve"
            filename="../gdk/gdkcontentserializer.c"
-           line="580">Finishes a content serialization operation.</doc>
+           line="578">Finishes a content serialization operation.</doc>
       <source-position filename="../gdk/gdkcontentserializer.h" line="99"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="../gdk/gdkcontentserializer.c"
-             line="587">%TRUE if the operation was successful, %FALSE if an
+             line="585">%TRUE if the operation was successful, %FALSE if an
   error occurred. In this case, @error is set</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -30367,7 +30367,7 @@ call [func@Gdk.content_serialize_finish] to get the result of the operation.</do
         <parameter name="result" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="../gdk/gdkcontentserializer.c"
-               line="582">the `GAsyncResult`</doc>
+               line="580">the `GAsyncResult`</doc>
           <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
         </parameter>
       </parameters>
