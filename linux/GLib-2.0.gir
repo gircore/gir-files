@@ -20861,7 +20861,7 @@ linked against at application run time.</doc>
       <source-position filename="gtypes.h" line="72"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="0" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="1" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="1161">The micro version number of the GLib library.
@@ -24850,40 +24850,40 @@ user data passed to g_node_traverse(). If the function returns
     <enumeration name="NormalizeMode" c:type="GNormalizeMode">
       <doc xml:space="preserve"
            filename="gunicode.h"
-           line="908">Defines how a Unicode string is transformed in a canonical
+           line="914">Defines how a Unicode string is transformed in a canonical
 form, standardizing such issues as whether a character with
 an accent is represented as a base character and combining
 accent or as a single precomposed character. Unicode strings
 should generally be normalized before comparing them.</doc>
-      <source-position filename="gunicode.h" line="941"/>
+      <source-position filename="gunicode.h" line="947"/>
       <member name="default" value="0" c:identifier="G_NORMALIZE_DEFAULT">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="910">standardize differences that do not affect the
+             line="916">standardize differences that do not affect the
     text content, such as the above-mentioned accent representation</doc>
       </member>
       <member name="nfd" value="0" c:identifier="G_NORMALIZE_NFD">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="912">another name for %G_NORMALIZE_DEFAULT</doc>
+             line="918">another name for %G_NORMALIZE_DEFAULT</doc>
       </member>
       <member name="default_compose"
               value="1"
               c:identifier="G_NORMALIZE_DEFAULT_COMPOSE">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="913">like %G_NORMALIZE_DEFAULT, but with
+             line="919">like %G_NORMALIZE_DEFAULT, but with
     composed forms rather than a maximally decomposed form</doc>
       </member>
       <member name="nfc" value="1" c:identifier="G_NORMALIZE_NFC">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="915">another name for %G_NORMALIZE_DEFAULT_COMPOSE</doc>
+             line="921">another name for %G_NORMALIZE_DEFAULT_COMPOSE</doc>
       </member>
       <member name="all" value="2" c:identifier="G_NORMALIZE_ALL">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="916">beyond %G_NORMALIZE_DEFAULT also standardize the
+             line="922">beyond %G_NORMALIZE_DEFAULT also standardize the
     "compatibility" characters in Unicode, such as SUPERSCRIPT THREE
     to the standard forms (in this case DIGIT THREE). Formatting
     information may be lost but for most text operations such
@@ -24892,20 +24892,20 @@ should generally be normalized before comparing them.</doc>
       <member name="nfkd" value="2" c:identifier="G_NORMALIZE_NFKD">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="921">another name for %G_NORMALIZE_ALL</doc>
+             line="927">another name for %G_NORMALIZE_ALL</doc>
       </member>
       <member name="all_compose"
               value="3"
               c:identifier="G_NORMALIZE_ALL_COMPOSE">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="922">like %G_NORMALIZE_ALL, but with composed
+             line="928">like %G_NORMALIZE_ALL, but with composed
     forms rather than a maximally decomposed form</doc>
       </member>
       <member name="nfkc" value="3" c:identifier="G_NORMALIZE_NFKC">
         <doc xml:space="preserve"
              filename="gunicode.h"
-             line="924">another name for %G_NORMALIZE_ALL_COMPOSE</doc>
+             line="930">another name for %G_NORMALIZE_ALL_COMPOSE</doc>
       </member>
     </enumeration>
     <enumeration name="NumberParserError"
@@ -43391,11 +43391,11 @@ that has been annotated with this macros will produce a compiler warning.</doc>
               version="2.32">
       <doc xml:space="preserve"
            filename="gunicode.h"
-           line="749">The maximum length (in codepoints) of a compatibility or canonical
+           line="755">The maximum length (in codepoints) of a compatibility or canonical
 decomposition of a single Unicode character.
 
 This is as defined by Unicode 6.1.</doc>
-      <source-position filename="gunicode.h" line="759"/>
+      <source-position filename="gunicode.h" line="765"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <function-macro name="UNLIKELY"
@@ -43776,7 +43776,7 @@ and is interchangeable with #PangoScript.
 Note that new types may be added in the future. Applications
 should be ready to handle unknown values.
 See [Unicode Standard Annex #24: Script names](http://www.unicode.org/reports/tr24/).</doc>
-      <source-position filename="gunicode.h" line="649"/>
+      <source-position filename="gunicode.h" line="655"/>
       <member name="invalid_code"
               value="-1"
               c:identifier="G_UNICODE_SCRIPT_INVALID_CODE">
@@ -44765,6 +44765,18 @@ See [Unicode Standard Annex #24: Script names](http://www.unicode.org/reports/tr
         <doc xml:space="preserve"
              filename="gunicode.h"
              line="440">Mathematical notation. Since: 2.72</doc>
+      </member>
+      <member name="kawi" value="163" c:identifier="G_UNICODE_SCRIPT_KAWI">
+        <doc xml:space="preserve"
+             filename="gunicode.h"
+             line="441">Kawi. Since 2.74</doc>
+      </member>
+      <member name="nag_mundari"
+              value="164"
+              c:identifier="G_UNICODE_SCRIPT_NAG_MUNDARI">
+        <doc xml:space="preserve"
+             filename="gunicode.h"
+             line="442">Nag Mundari. Since 2.74</doc>
       </member>
     </enumeration>
     <enumeration name="UnicodeType" c:type="GUnicodeType">
@@ -60939,7 +60951,7 @@ keys in a #GHashTable.
 
 This equality function is also appropriate for keys that are integers
 stored in pointers, such as `GINT_TO_POINTER (n)`.</doc>
-      <source-position filename="ghash.h" line="187"/>
+      <source-position filename="ghash.h" line="191"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -60977,7 +60989,7 @@ when using opaque pointers compared by pointer value as keys in a
 
 This hash function is also appropriate for keys that are integers
 stored in pointers, such as `GINT_TO_POINTER (n)`.</doc>
-      <source-position filename="ghash.h" line="185"/>
+      <source-position filename="ghash.h" line="189"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -61051,7 +61063,7 @@ proper.</doc>
 It can be passed to g_hash_table_new() as the @key_equal_func
 parameter, when using non-%NULL pointers to doubles as keys in a
 #GHashTable.</doc>
-      <source-position filename="ghash.h" line="179"/>
+      <source-position filename="ghash.h" line="183"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -61080,7 +61092,7 @@ parameter, when using non-%NULL pointers to doubles as keys in a
 It can be passed to g_hash_table_new() as the @hash_func parameter,
 It can be passed to g_hash_table_new() as the @hash_func parameter,
 when using non-%NULL pointers to doubles as keys in a #GHashTable.</doc>
-      <source-position filename="ghash.h" line="182"/>
+      <source-position filename="ghash.h" line="186"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -65056,7 +65068,7 @@ otherwise it will use g_log(). See
 It can be passed to g_hash_table_new() as the @key_equal_func
 parameter, when using non-%NULL pointers to 64-bit integers as keys in a
 #GHashTable.</doc>
-      <source-position filename="ghash.h" line="173"/>
+      <source-position filename="ghash.h" line="177"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -65086,7 +65098,7 @@ parameter, when using non-%NULL pointers to 64-bit integers as keys in a
 It can be passed to g_hash_table_new() as the @hash_func parameter,
 when using non-%NULL pointers to 64-bit integer values as keys in a
 #GHashTable.</doc>
-      <source-position filename="ghash.h" line="176"/>
+      <source-position filename="ghash.h" line="180"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -65114,7 +65126,7 @@ parameter, when using non-%NULL pointers to integers as keys in a
 Note that this function acts on pointers to #gint, not on #gint
 directly: if your hash table's keys are of the form
 `GINT_TO_POINTER (n)`, use g_direct_equal() instead.</doc>
-      <source-position filename="ghash.h" line="167"/>
+      <source-position filename="ghash.h" line="171"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -65146,7 +65158,7 @@ when using non-%NULL pointers to integer values as keys in a #GHashTable.
 Note that this function acts on pointers to #gint, not on #gint
 directly: if your hash table's keys are of the form
 `GINT_TO_POINTER (n)`, use g_direct_hash() instead.</doc>
-      <source-position filename="ghash.h" line="170"/>
+      <source-position filename="ghash.h" line="174"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -74444,7 +74456,7 @@ when using non-%NULL strings as keys in a #GHashTable.
 Note that this function may not be a perfect fit for all use cases.
 For example, it produces some hash collisions with strings as short
 as 2.</doc>
-      <source-position filename="ghash.h" line="164"/>
+      <source-position filename="ghash.h" line="168"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79297,7 +79309,7 @@ outside the range of a 32-bit integer will be mangled.</doc>
     <function-macro name="typeof"
                     c:identifier="glib_typeof"
                     introspectable="0">
-      <source-position filename="glib-typeof.h" line="38"/>
+      <source-position filename="glib-typeof.h" line="39"/>
       <parameters>
         <parameter name="t">
         </parameter>
@@ -79337,7 +79349,7 @@ any C99 compatible printf() implementation.</doc>
            filename="glib-2.0.c"
            line="36612">Convert a string from UCS-4 to UTF-16. A 0 character will be
 added to the result after the converted text.</doc>
-      <source-position filename="gunicode.h" line="873"/>
+      <source-position filename="gunicode.h" line="879"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79393,7 +79405,7 @@ added to the result after the converted text.</doc>
            filename="glib-2.0.c"
            line="36636">Convert a string from a 32-bit fixed width representation as UCS-4.
 to UTF-8. The result will be terminated with a 0 byte.</doc>
-      <source-position filename="gunicode.h" line="879"/>
+      <source-position filename="gunicode.h" line="885"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79577,7 +79589,7 @@ g_utf8_get_char()). The break type is used to find word and line
 breaks ("text boundaries"), Pango implements the Unicode boundary
 resolution algorithms and normally you would use a function such
 as pango_break() instead of caring about break types yourself.</doc>
-      <source-position filename="gunicode.h" line="716"/>
+      <source-position filename="gunicode.h" line="722"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79599,7 +79611,7 @@ as pango_break() instead of caring about break types yourself.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="36747">Determines the canonical combining class of a Unicode character.</doc>
-      <source-position filename="gunicode.h" line="720"/>
+      <source-position filename="gunicode.h" line="726"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79636,7 +79648,7 @@ If @a and @b do not compose a new character, @ch is set to zero.
 See
 [UAX#15](http://unicode.org/reports/tr15/)
 for details.</doc>
-      <source-position filename="gunicode.h" line="735"/>
+      <source-position filename="gunicode.h" line="741"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79695,7 +79707,7 @@ g_unichar_fully_decompose().
 See
 [UAX#15](http://unicode.org/reports/tr15/)
 for details.</doc>
-      <source-position filename="gunicode.h" line="739"/>
+      <source-position filename="gunicode.h" line="745"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79734,7 +79746,7 @@ for details.</doc>
            filename="glib-2.0.c"
            line="36821">Determines the numeric value of a character as a decimal
 digit.</doc>
-      <source-position filename="gunicode.h" line="705"/>
+      <source-position filename="gunicode.h" line="711"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79775,7 +79787,7 @@ as %G_UNICHAR_MAX_DECOMPOSITION_LENGTH.
 See
 [UAX#15](http://unicode.org/reports/tr15/)
 for details.</doc>
-      <source-position filename="gunicode.h" line="744"/>
+      <source-position filename="gunicode.h" line="750"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79828,7 +79840,7 @@ If @ch has the Unicode mirrored property and there is another unicode
 character that typically has a glyph that is the mirror image of @ch's
 glyph and @mirrored_ch is set, it puts that character in the address
 pointed to by @mirrored_ch.  Otherwise the original character is put.</doc>
-      <source-position filename="gunicode.h" line="723"/>
+      <source-position filename="gunicode.h" line="729"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79862,7 +79874,7 @@ result is undefined.
 
 This function is equivalent to pango_script_for_unichar() and the
 two are interchangeable.</doc>
-      <source-position filename="gunicode.h" line="727"/>
+      <source-position filename="gunicode.h" line="733"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79884,7 +79896,7 @@ two are interchangeable.</doc>
            line="36902">Determines whether a character is alphanumeric.
 Given some UTF-8 text, obtain a character value
 with g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="659"/>
+      <source-position filename="gunicode.h" line="665"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79906,7 +79918,7 @@ with g_utf8_get_char().</doc>
            line="36914">Determines whether a character is alphabetic (i.e. a letter).
 Given some UTF-8 text, obtain a character value with
 g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="661"/>
+      <source-position filename="gunicode.h" line="667"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79928,7 +79940,7 @@ g_utf8_get_char().</doc>
            line="36926">Determines whether a character is a control character.
 Given some UTF-8 text, obtain a character value with
 g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="663"/>
+      <source-position filename="gunicode.h" line="669"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79949,7 +79961,7 @@ g_utf8_get_char().</doc>
            filename="glib-2.0.c"
            line="36938">Determines if a given character is assigned in the Unicode
 standard.</doc>
-      <source-position filename="gunicode.h" line="683"/>
+      <source-position filename="gunicode.h" line="689"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79971,7 +79983,7 @@ standard.</doc>
            line="36949">Determines whether a character is numeric (i.e. a digit).  This
 covers ASCII 0-9 and also digits in other languages/scripts.  Given
 some UTF-8 text, obtain a character value with g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="665"/>
+      <source-position filename="gunicode.h" line="671"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -79995,7 +80007,7 @@ some UTF-8 text, obtain a character value with g_utf8_get_char().</doc>
 spaces). g_unichar_isprint() is similar, but returns %TRUE for
 spaces. Given some UTF-8 text, obtain a character value with
 g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="667"/>
+      <source-position filename="gunicode.h" line="673"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80017,7 +80029,7 @@ g_utf8_get_char().</doc>
            line="36975">Determines whether a character is a lowercase letter.
 Given some UTF-8 text, obtain a character value with
 g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="669"/>
+      <source-position filename="gunicode.h" line="675"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80047,7 +80059,7 @@ Note: in most cases where isalpha characters are allowed,
 ismark characters should be allowed to as they are essential
 for writing most European languages as well as many non-Latin
 scripts.</doc>
-      <source-position filename="gunicode.h" line="691"/>
+      <source-position filename="gunicode.h" line="697"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80070,7 +80082,7 @@ scripts.</doc>
 Unlike g_unichar_isgraph(), returns %TRUE for spaces.
 Given some UTF-8 text, obtain a character value with
 g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="671"/>
+      <source-position filename="gunicode.h" line="677"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80092,7 +80104,7 @@ g_utf8_get_char().</doc>
            line="37019">Determines whether a character is punctuation or a symbol.
 Given some UTF-8 text, obtain a character value with
 g_utf8_get_char().</doc>
-      <source-position filename="gunicode.h" line="673"/>
+      <source-position filename="gunicode.h" line="679"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80118,7 +80130,7 @@ character value with g_utf8_get_char().
 (Note: don't use this to do word breaking; you have to use
 Pango or equivalent to get word breaking right, the algorithm
 is fairly complex.)</doc>
-      <source-position filename="gunicode.h" line="675"/>
+      <source-position filename="gunicode.h" line="681"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80143,7 +80155,7 @@ have three case variants instead of just two. The titlecase
 form is used at the beginning of a word where only the
 first letter is capitalized. The titlecase form of the DZ
 digraph is U+01F2 LATIN CAPITAL LETTTER D WITH SMALL LETTER Z.</doc>
-      <source-position filename="gunicode.h" line="681"/>
+      <source-position filename="gunicode.h" line="687"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80163,7 +80175,7 @@ digraph is U+01F2 LATIN CAPITAL LETTTER D WITH SMALL LETTER Z.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="37062">Determines if a character is uppercase.</doc>
-      <source-position filename="gunicode.h" line="677"/>
+      <source-position filename="gunicode.h" line="683"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80184,7 +80196,7 @@ digraph is U+01F2 LATIN CAPITAL LETTTER D WITH SMALL LETTER Z.</doc>
            filename="glib-2.0.c"
            line="37072">Determines if a character is typically rendered in a double-width
 cell.</doc>
-      <source-position filename="gunicode.h" line="685"/>
+      <source-position filename="gunicode.h" line="691"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80215,7 +80227,7 @@ for details.
 If a character passes the g_unichar_iswide() test then it will also pass
 this test, but not the other way around.  Note that some characters may
 pass both this test and g_unichar_iszerowidth().</doc>
-      <source-position filename="gunicode.h" line="687"/>
+      <source-position filename="gunicode.h" line="693"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80235,7 +80247,7 @@ pass both this test and g_unichar_iszerowidth().</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="37103">Determines if a character is a hexadecimal digit.</doc>
-      <source-position filename="gunicode.h" line="679"/>
+      <source-position filename="gunicode.h" line="685"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80265,7 +80277,7 @@ A typical use of this function is with one of g_unichar_iswide() or
 g_unichar_iswide_cjk() to determine the number of cells a string occupies
 when displayed on a grid display (terminals).  However, note that not all
 terminals support zero-width rendering of zero-width marks.</doc>
-      <source-position filename="gunicode.h" line="689"/>
+      <source-position filename="gunicode.h" line="695"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80285,7 +80297,7 @@ terminals support zero-width rendering of zero-width marks.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="37132">Converts a single character to UTF-8.</doc>
-      <source-position filename="gunicode.h" line="886"/>
+      <source-position filename="gunicode.h" line="892"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80318,7 +80330,7 @@ terminals support zero-width rendering of zero-width marks.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="37145">Converts a character to lower case.</doc>
-      <source-position filename="gunicode.h" line="698"/>
+      <source-position filename="gunicode.h" line="704"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80340,7 +80352,7 @@ terminals support zero-width rendering of zero-width marks.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="37157">Converts a character to the titlecase.</doc>
-      <source-position filename="gunicode.h" line="700"/>
+      <source-position filename="gunicode.h" line="706"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80362,7 +80374,7 @@ terminals support zero-width rendering of zero-width marks.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="37169">Converts a character to uppercase.</doc>
-      <source-position filename="gunicode.h" line="696"/>
+      <source-position filename="gunicode.h" line="702"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80384,7 +80396,7 @@ terminals support zero-width rendering of zero-width marks.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="37181">Classifies a Unicode character by type.</doc>
-      <source-position filename="gunicode.h" line="712"/>
+      <source-position filename="gunicode.h" line="718"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80406,7 +80418,7 @@ terminals support zero-width rendering of zero-width marks.</doc>
            line="37191">Checks whether @ch is a valid Unicode character. Some possible
 integer values of @ch will not be valid. 0 is considered a valid
 character, though it's normally a string terminator.</doc>
-      <source-position filename="gunicode.h" line="731"/>
+      <source-position filename="gunicode.h" line="737"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80428,7 +80440,7 @@ character, though it's normally a string terminator.</doc>
            filename="glib-2.0.c"
            line="37203">Determines the numeric value of a character as a hexadecimal
 digit.</doc>
-      <source-position filename="gunicode.h" line="708"/>
+      <source-position filename="gunicode.h" line="714"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80486,7 +80498,7 @@ on the Unicode Character Data tables, which are available from
            line="37215">Computes the canonical decomposition of a Unicode character.</doc>
       <doc-deprecated xml:space="preserve">Use the more flexible g_unichar_fully_decompose()
   instead.</doc-deprecated>
-      <source-position filename="gunicode.h" line="770"/>
+      <source-position filename="gunicode.h" line="776"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80517,7 +80529,7 @@ on the Unicode Character Data tables, which are available from
 This rearranges decomposed characters in the string
 according to their combining classes.  See the Unicode
 manual for more information.</doc>
-      <source-position filename="gunicode.h" line="765"/>
+      <source-position filename="gunicode.h" line="771"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -80550,7 +80562,7 @@ big-endian fashion.  That is, the code expected for Arabic is
 See
 [Codes for the representation of names of scripts](http://unicode.org/iso15924/codelists.html)
 for details.</doc>
-      <source-position filename="gunicode.h" line="654"/>
+      <source-position filename="gunicode.h" line="660"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -80582,7 +80594,7 @@ big-endian fashion.  That is, the code returned for Arabic is
 See
 [Codes for the representation of names of scripts](http://unicode.org/iso15924/codelists.html)
 for details.</doc>
-      <source-position filename="gunicode.h" line="652"/>
+      <source-position filename="gunicode.h" line="658"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82378,7 +82390,7 @@ length of the sleep.</doc>
            filename="glib-2.0.c"
            line="38327">Convert a string from UTF-16 to UCS-4. The result will be
 nul-terminated.</doc>
-      <source-position filename="gunicode.h" line="861"/>
+      <source-position filename="gunicode.h" line="867"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82446,7 +82458,7 @@ string; it may e.g. include embedded NUL characters. The only
 validation done by this function is to ensure that the input can
 be correctly interpreted as UTF-16, i.e. it doesn't contain
 unpaired surrogates or partial character sequences.</doc>
-      <source-position filename="gunicode.h" line="867"/>
+      <source-position filename="gunicode.h" line="873"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82513,7 +82525,7 @@ ordering, though it is a fairly good one. Getting this exactly
 right would require a more sophisticated collation function that
 takes case sensitivity into account. GLib does not currently
 provide such a function.</doc>
-      <source-position filename="gunicode.h" line="905"/>
+      <source-position filename="gunicode.h" line="911"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82549,7 +82561,7 @@ the original strings.
 If the two strings are not comparable due to being in different collation
 sequences, the result is undefined. This can happen if the strings are in
 different language scripts, for example.</doc>
-      <source-position filename="gunicode.h" line="949"/>
+      <source-position filename="gunicode.h" line="955"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82584,7 +82596,7 @@ with strcmp() will always be the same as comparing the two
 original keys with g_utf8_collate().
 
 Note that this function depends on the [current locale][setlocale].</doc>
-      <source-position filename="gunicode.h" line="952"/>
+      <source-position filename="gunicode.h" line="958"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82623,7 +82635,7 @@ would like to treat numbers intelligently so that "file1" "file10" "file5"
 is sorted as "file1" "file5" "file10".
 
 Note that this function depends on the [current locale][setlocale].</doc>
-      <source-position filename="gunicode.h" line="955"/>
+      <source-position filename="gunicode.h" line="961"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82659,7 +82671,7 @@ If @end is %NULL, the return value will never be %NULL: if the end of the
 string is reached, a pointer to the terminating nul byte is returned. If
 @end is non-%NULL, the return value will be %NULL if the end of the string
 is reached.</doc>
-      <source-position filename="gunicode.h" line="810"/>
+      <source-position filename="gunicode.h" line="816"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82696,7 +82708,7 @@ UTF-8 characters are present in @str before @p.
 @p does not have to be at the beginning of a UTF-8 character. No check
 is made to see if the character found is actually valid other than
 it starts with an appropriate byte.</doc>
-      <source-position filename="gunicode.h" line="813"/>
+      <source-position filename="gunicode.h" line="819"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82727,7 +82739,7 @@ If @p does not point to a valid UTF-8 encoded character, results
 are undefined. If you are not sure that the bytes are complete
 valid Unicode characters, you should use g_utf8_get_char_validated()
 instead.</doc>
-      <source-position filename="gunicode.h" line="796"/>
+      <source-position filename="gunicode.h" line="802"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82755,7 +82767,7 @@ overlong encodings of valid characters.
 Note that g_utf8_get_char_validated() returns (gunichar)-2 if
 @max_len is positive and any of the bytes in the first UTF-8 character
 sequence are nul.</doc>
-      <source-position filename="gunicode.h" line="798"/>
+      <source-position filename="gunicode.h" line="804"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82795,7 +82807,7 @@ a string that was incorrectly declared to be UTF-8, and you need a valid
 UTF-8 version of it that can be logged or displayed to the user, with the
 assumption that it is close enough to ASCII or UTF-8 to be mostly
 readable as-is.</doc>
-      <source-position filename="gunicode.h" line="959"/>
+      <source-position filename="gunicode.h" line="965"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82823,7 +82835,7 @@ readable as-is.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gunicode.h"
-           line="777">Skips to the next character in a UTF-8 string.
+           line="783">Skips to the next character in a UTF-8 string.
 
 The string must be valid; this macro is as fast as possible, and has
 no error-checking.
@@ -82834,12 +82846,12 @@ The macro returns the start of the next UTF-8 character.
 
 Before using this macro, use g_utf8_validate() to validate strings
 that may contain invalid UTF-8.</doc>
-      <source-position filename="gunicode.h" line="793"/>
+      <source-position filename="gunicode.h" line="799"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gunicode.h"
-               line="779">Pointer to the start of a valid UTF-8 character</doc>
+               line="785">Pointer to the start of a valid UTF-8 character</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -82871,7 +82883,7 @@ than a maximally decomposed form. This is often
 useful if you intend to convert the string to
 a legacy encoding or pass it to a system with
 less capable Unicode handling.</doc>
-      <source-position filename="gunicode.h" line="944"/>
+      <source-position filename="gunicode.h" line="950"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82918,7 +82930,7 @@ Therefore you should be sure that @offset is within string boundaries
 before calling that function. Call g_utf8_strlen() when unsure.
 This limitation exists as this function is called frequently during
 text rendering and therefore has to be as fast as possible.</doc>
-      <source-position filename="gunicode.h" line="802"/>
+      <source-position filename="gunicode.h" line="808"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82949,7 +82961,7 @@ character offset.
 
 Since 2.10, this function allows @pos to be before @str, and returns
 a negative offset in this case.</doc>
-      <source-position filename="gunicode.h" line="805"/>
+      <source-position filename="gunicode.h" line="811"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -82980,7 +82992,7 @@ a negative offset in this case.</doc>
 is made to see if the character found is actually valid other than
 it starts with an appropriate byte. If @p might be the first
 character of the string, you must use g_utf8_find_prev_char() instead.</doc>
-      <source-position filename="gunicode.h" line="808"/>
+      <source-position filename="gunicode.h" line="814"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83002,7 +83014,7 @@ character of the string, you must use g_utf8_find_prev_char() instead.</doc>
            line="38663">Finds the leftmost occurrence of the given Unicode character
 in a UTF-8 encoded string, while limiting the search to @len bytes.
 If @len is -1, allow unbounded search.</doc>
-      <source-position filename="gunicode.h" line="833"/>
+      <source-position filename="gunicode.h" line="839"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83039,7 +83051,7 @@ If @len is -1, allow unbounded search.</doc>
 to lowercase. The exact manner that this is done depends
 on the current locale, and may result in the number of
 characters in the string changing.</doc>
-      <source-position filename="gunicode.h" line="902"/>
+      <source-position filename="gunicode.h" line="908"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83068,7 +83080,7 @@ characters in the string changing.</doc>
            line="38694">Computes the length of the string in characters, not including
 the terminating nul character. If the @max'th byte falls in the
 middle of a character, the last (partial) character is not counted.</doc>
-      <source-position filename="gunicode.h" line="817"/>
+      <source-position filename="gunicode.h" line="823"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83104,7 +83116,7 @@ text before trying to use UTF-8 utility functions with it.)
 
 Note you must ensure @dest is at least 4 * @n + 1 to fit the
 largest possible UTF-8 characters</doc>
-      <source-position filename="gunicode.h" line="826"/>
+      <source-position filename="gunicode.h" line="832"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83138,7 +83150,7 @@ largest possible UTF-8 characters</doc>
            line="38729">Find the rightmost occurrence of the given Unicode character
 in a UTF-8 encoded string, while limiting the search to @len bytes.
 If @len is -1, allow unbounded search.</doc>
-      <source-position filename="gunicode.h" line="837"/>
+      <source-position filename="gunicode.h" line="843"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83186,7 +83198,7 @@ for display purposes.
 Note that unlike g_strreverse(), this function returns
 newly-allocated memory, which should be freed with g_free() when
 no longer needed.</doc>
-      <source-position filename="gunicode.h" line="841"/>
+      <source-position filename="gunicode.h" line="847"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83217,7 +83229,7 @@ to uppercase. The exact manner that this is done depends
 on the current locale, and may result in the number of
 characters in the string increasing. (For instance, the
 German ess-zet will be changed to SS.)</doc>
-      <source-position filename="gunicode.h" line="899"/>
+      <source-position filename="gunicode.h" line="905"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83250,7 +83262,7 @@ The substring will contain @end_pos - @start_pos characters.
 
 Since GLib 2.72, `-1` can be passed to @end_pos to indicate the
 end of the string.</doc>
-      <source-position filename="gunicode.h" line="821"/>
+      <source-position filename="gunicode.h" line="827"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83286,7 +83298,7 @@ end of the string.</doc>
            line="38805">Convert a string from UTF-8 to a 32-bit fixed width
 representation as UCS-4. A trailing 0 character will be added to the
 string after the converted text.</doc>
-      <source-position filename="gunicode.h" line="851"/>
+      <source-position filename="gunicode.h" line="857"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83348,7 +83360,7 @@ representation as UCS-4, assuming valid UTF-8 input.
 This function is roughly twice as fast as g_utf8_to_ucs4()
 but does no error checking on the input. A trailing 0 character
 will be added to the string after the converted text.</doc>
-      <source-position filename="gunicode.h" line="857"/>
+      <source-position filename="gunicode.h" line="863"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83389,7 +83401,7 @@ will be added to the string after the converted text.</doc>
            filename="glib-2.0.c"
            line="38852">Convert a string from UTF-8 to UTF-16. A 0 character will be
 added to the result after the converted text.</doc>
-      <source-position filename="gunicode.h" line="845"/>
+      <source-position filename="gunicode.h" line="851"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83459,7 +83471,7 @@ Returns %TRUE if all of @str was valid. Many GLib and GTK+
 routines require valid UTF-8 as input; so data read from a file
 or the network should be checked with g_utf8_validate() before
 doing anything else with it.</doc>
-      <source-position filename="gunicode.h" line="890"/>
+      <source-position filename="gunicode.h" line="896"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -83503,7 +83515,7 @@ doing anything else with it.</doc>
 
 As with g_utf8_validate(), but @max_len must be set, and hence this function
 will always return %FALSE if any of the bytes of @str are nul.</doc>
-      <source-position filename="gunicode.h" line="894"/>
+      <source-position filename="gunicode.h" line="900"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
