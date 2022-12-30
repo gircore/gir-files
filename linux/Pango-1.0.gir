@@ -511,12 +511,12 @@ currently in effect can be queried.</doc>
       <method name="copy" c:identifier="pango_attr_iterator_copy">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3235">Copy a `PangoAttrIterator`.</doc>
+             line="3287">Copy a `PangoAttrIterator`.</doc>
         <source-position filename="pango/pango-attributes.h" line="728"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="3241">the newly allocated
+               line="3293">the newly allocated
   `PangoAttrIterator`, which should be freed with
   [method@Pango.AttrIterator.destroy]</doc>
           <type name="AttrIterator" c:type="PangoAttrIterator*"/>
@@ -525,7 +525,7 @@ currently in effect can be queried.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3237">a `PangoAttrIterator`</doc>
+                 line="3289">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -533,7 +533,7 @@ currently in effect can be queried.</doc>
       <method name="destroy" c:identifier="pango_attr_iterator_destroy">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3271">Destroy a `PangoAttrIterator` and free all associated memory.</doc>
+             line="3323">Destroy a `PangoAttrIterator` and free all associated memory.</doc>
         <source-position filename="pango/pango-attributes.h" line="730"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -542,7 +542,7 @@ currently in effect can be queried.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3273">a `PangoAttrIterator`</doc>
+                 line="3325">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -550,7 +550,7 @@ currently in effect can be queried.</doc>
       <method name="get" c:identifier="pango_attr_iterator_get">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3286">Find the current attribute of a particular type
+             line="3338">Find the current attribute of a particular type
 at the iterator location.
 
 When multiple attributes of the same type overlap,
@@ -560,7 +560,7 @@ current location is used.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="3298">the current
+               line="3350">the current
   attribute of the given type, or %NULL if no attribute
   of that type applies to the current location.</doc>
           <type name="Attribute" c:type="PangoAttribute*"/>
@@ -569,13 +569,13 @@ current location is used.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3288">a `PangoAttrIterator`</doc>
+                 line="3340">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3289">the type of attribute to find</doc>
+                 line="3341">the type of attribute to find</doc>
             <type name="AttrType" c:type="PangoAttrType"/>
           </parameter>
         </parameters>
@@ -585,13 +585,13 @@ current location is used.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3500">Gets a list of all attributes at the current position of the
+             line="3552">Gets a list of all attributes at the current position of the
 iterator.</doc>
         <source-position filename="pango/pango-attributes.h" line="740"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="3507">
+               line="3559">
   a list of all attributes for the current range. To free
   this value, call [method@Pango.Attribute.destroy] on each
   value and g_slist_free() on the list.</doc>
@@ -603,7 +603,7 @@ iterator.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3502">a `PangoAttrIterator`</doc>
+                 line="3554">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -611,7 +611,7 @@ iterator.</doc>
       <method name="get_font" c:identifier="pango_attr_iterator_get_font">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3324">Get the font and other attributes at the current
+             line="3376">Get the font and other attributes at the current
 iterator position.</doc>
         <source-position filename="pango/pango-attributes.h" line="735"/>
         <return-value transfer-ownership="none">
@@ -621,13 +621,13 @@ iterator position.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3326">a `PangoAttrIterator`</doc>
+                 line="3378">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
           <parameter name="desc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3327">a `PangoFontDescription` to fill in with the current
+                 line="3379">a `PangoFontDescription` to fill in with the current
   values. The family name in this structure will be set using
   [method@Pango.FontDescription.set_family_static] using
   values from an attribute in the `PangoAttrList` associated
@@ -644,7 +644,7 @@ iterator position.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3334">location to store language tag
+                 line="3386">location to store language tag
   for item, or %NULL if none is found.</doc>
             <type name="Language" c:type="PangoLanguage**"/>
           </parameter>
@@ -656,7 +656,7 @@ iterator position.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3336">
+                 line="3388">
   location in which to store a list of non-font attributes
   at the the current position; only the highest priority
   value of each attribute will be added to this list. In
@@ -671,12 +671,12 @@ iterator position.</doc>
       <method name="next" c:identifier="pango_attr_iterator_next">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3164">Advance the iterator until the next change of style.</doc>
+             line="3216">Advance the iterator until the next change of style.</doc>
         <source-position filename="pango/pango-attributes.h" line="726"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="3170">%FALSE if the iterator is at the end
+               line="3222">%FALSE if the iterator is at the end
   of the list, otherwise %TRUE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -684,7 +684,7 @@ iterator position.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3166">a `PangoAttrIterator`</doc>
+                 line="3218">a `PangoAttrIterator`</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
         </parameters>
@@ -692,7 +692,7 @@ iterator position.</doc>
       <method name="range" c:identifier="pango_attr_iterator_range">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3138">Get the range of the current segment.
+             line="3190">Get the range of the current segment.
 
 Note that the stored return values are signed, not unsigned
 like the values in `PangoAttribute`. To deal with this API
@@ -706,7 +706,7 @@ a signed integer are clamped to %G_MAXINT.</doc>
           <instance-parameter name="iterator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3140">a PangoAttrIterator</doc>
+                 line="3192">a PangoAttrIterator</doc>
             <type name="AttrIterator" c:type="PangoAttrIterator*"/>
           </instance-parameter>
           <parameter name="start"
@@ -715,7 +715,7 @@ a signed integer are clamped to %G_MAXINT.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3141">location to store the start of the range</doc>
+                 line="3193">location to store the start of the range</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
           <parameter name="end"
@@ -724,7 +724,7 @@ a signed integer are clamped to %G_MAXINT.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3142">location to store the end of the range</doc>
+                 line="3194">location to store the end of the range</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -972,14 +972,14 @@ inserts them into a new list.</doc>
       <method name="get_iterator" c:identifier="pango_attr_list_get_iterator">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="3113">Create a iterator initialized to the beginning of the list.
+             line="3165">Create a iterator initialized to the beginning of the list.
 
 @list must not be modified until this iterator is freed.</doc>
         <source-position filename="pango/pango-attributes.h" line="719"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="3121">the newly allocated
+               line="3173">the newly allocated
   `PangoAttrIterator`, which should be freed with
   [method@Pango.AttrIterator.destroy]</doc>
           <type name="AttrIterator" c:type="PangoAttrIterator*"/>
@@ -988,7 +988,7 @@ inserts them into a new list.</doc>
           <instance-parameter name="list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="3115">a `PangoAttrList`</doc>
+                 line="3167">a `PangoAttrList`</doc>
             <type name="AttrList" c:type="PangoAttrList*"/>
           </instance-parameter>
         </parameters>
@@ -1129,26 +1129,52 @@ This mode is useful for merging two lists of attributes together.</doc>
               version="1.50">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="2680">Serializes a `PangoAttrList` to a string.
+             line="2686">Serializes a `PangoAttrList` to a string.
 
-No guarantees are made about the format of the string,
-it may change between Pango versions.
+In the resulting string, serialized attributes are separated by newlines or commas.
+Individual attributes are serialized to a string of the form
 
-The intended use of this function is testing and
-debugging. The format is not meant as a permanent
-storage format.</doc>
+  START END TYPE VALUE
+
+Where START and END are the indices (with -1 being accepted in place
+of MAXUINT), TYPE is the nickname of the attribute value type, e.g.
+_weight_ or _stretch_, and the value is serialized according to its type:
+
+- enum values as nick or numeric value
+- boolean values as _true_ or _false_
+- integers and floats as numbers
+- strings as string, optionally quoted
+- font features as quoted string
+- PangoLanguage as string
+- PangoFontDescription as serialized by [method@Pango.FontDescription.to_string], quoted
+- PangoColor as serialized by [method@Pango.Color.to_string]
+
+Examples:
+
+```
+0 10 foreground red, 5 15 weight bold, 0 200 font-desc "Sans 10"
+```
+
+```
+0 -1 weight 700
+0 100 family Times
+```
+
+To parse the returned value, use [func@Pango.AttrList.from_string].
+
+Note that shape attributes can not be serialized.</doc>
         <source-position filename="pango/pango-attributes.h" line="711"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="2693">a newly allocated string</doc>
+               line="2725">a newly allocated string</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="2682">a `PangoAttrList`</doc>
+                 line="2688">a `PangoAttrList`</doc>
             <type name="AttrList" c:type="PangoAttrList*"/>
           </instance-parameter>
         </parameters>
@@ -1232,7 +1258,7 @@ behind @pos + @remove.</doc>
                 version="1.50">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="2769">Deserializes a `PangoAttrList` from a string.
+             line="2801">Deserializes a `PangoAttrList` from a string.
 
 This is the counterpart to [method@Pango.AttrList.to_string].
 See that functions for details about the format.</doc>
@@ -1240,14 +1266,14 @@ See that functions for details about the format.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="2778">a new `PangoAttrList`</doc>
+               line="2810">a new `PangoAttrList`</doc>
           <type name="AttrList" c:type="PangoAttrList*"/>
         </return-value>
         <parameters>
           <parameter name="text" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-attributes.c"
-                 line="2771">a string</doc>
+                 line="2803">a string</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -2816,7 +2842,7 @@ For instance, the GTK toolkit has, among others,
               version="1.32.4">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="745">Forces a change in the context, which will cause any `PangoLayout`
+             line="747">Forces a change in the context, which will cause any `PangoLayout`
 using this context to re-layout.
 
 This function is only useful when implementing a new backend
@@ -2831,7 +2857,7 @@ and such data is changed.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="747">a `PangoContext`</doc>
+                 line="749">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -2839,21 +2865,21 @@ and such data is changed.</doc>
       <method name="get_base_dir" c:identifier="pango_context_get_base_dir">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="445">Retrieves the base direction for the context.
+             line="447">Retrieves the base direction for the context.
 
 See [method@Pango.Context.set_base_dir].</doc>
         <source-position filename="pango/pango-context.h" line="88"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="453">the base direction for the context.</doc>
+               line="455">the base direction for the context.</doc>
           <type name="Direction" c:type="PangoDirection"/>
         </return-value>
         <parameters>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="447">a `PangoContext`</doc>
+                 line="449">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -2863,21 +2889,21 @@ See [method@Pango.Context.set_base_dir].</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="488">Retrieves the base gravity for the context.
+             line="490">Retrieves the base gravity for the context.
 
 See [method@Pango.Context.set_base_gravity].</doc>
         <source-position filename="pango/pango-context.h" line="93"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="496">the base gravity for the context.</doc>
+               line="498">the base gravity for the context.</doc>
           <type name="Gravity" c:type="PangoGravity"/>
         </return-value>
         <parameters>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="490">a `PangoContext`</doc>
+                 line="492">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -2886,12 +2912,12 @@ See [method@Pango.Context.set_base_gravity].</doc>
               c:identifier="pango_context_get_font_description">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="360">Retrieve the default font description for the context.</doc>
+             line="362">Retrieve the default font description for the context.</doc>
         <source-position filename="pango/pango-context.h" line="78"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="366">a pointer to the context's default font
+               line="368">a pointer to the context's default font
   description. This value must not be modified or freed.</doc>
           <type name="FontDescription" c:type="PangoFontDescription*"/>
         </return-value>
@@ -2899,7 +2925,7 @@ See [method@Pango.Context.set_base_gravity].</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="362">a `PangoContext`</doc>
+                 line="364">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -2909,20 +2935,21 @@ See [method@Pango.Context.set_base_gravity].</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="241">Gets the `PangoFontMap` used to look up fonts for this context.</doc>
+             line="242">Gets the `PangoFontMap` used to look up fonts for this context.</doc>
         <source-position filename="pango/pango-context.h" line="54"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="247">the font map for the `PangoContext`.
-  This value is owned by Pango and should not be unreferenced.</doc>
+               line="248">the font map for the.
+  `PangoContext` This value is owned by Pango and should not be
+  unreferenced.</doc>
           <type name="FontMap" c:type="PangoFontMap*"/>
         </return-value>
         <parameters>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="243">a `PangoContext`</doc>
+                 line="244">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -2932,7 +2959,7 @@ See [method@Pango.Context.set_base_gravity].</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="508">Retrieves the gravity for the context.
+             line="510">Retrieves the gravity for the context.
 
 This is similar to [method@Pango.Context.get_base_gravity],
 except for when the base gravity is %PANGO_GRAVITY_AUTO for
@@ -2942,14 +2969,14 @@ gravity from the current context matrix.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="519">the resolved gravity for the context.</doc>
+               line="521">the resolved gravity for the context.</doc>
           <type name="Gravity" c:type="PangoGravity"/>
         </return-value>
         <parameters>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="510">a `PangoContext`</doc>
+                 line="512">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -2959,21 +2986,21 @@ gravity from the current context matrix.</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="557">Retrieves the gravity hint for the context.
+             line="559">Retrieves the gravity hint for the context.
 
 See [method@Pango.Context.set_gravity_hint] for details.</doc>
         <source-position filename="pango/pango-context.h" line="100"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="565">the gravity hint for the context.</doc>
+               line="567">the gravity hint for the context.</doc>
           <type name="GravityHint" c:type="PangoGravityHint"/>
         </return-value>
         <parameters>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="559">a `PangoContext`</doc>
+                 line="561">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -2981,19 +3008,19 @@ See [method@Pango.Context.set_gravity_hint] for details.</doc>
       <method name="get_language" c:identifier="pango_context_get_language">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="403">Retrieves the global language tag for the context.</doc>
+             line="405">Retrieves the global language tag for the context.</doc>
         <source-position filename="pango/pango-context.h" line="80"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="409">the global language tag.</doc>
+               line="411">the global language tag.</doc>
           <type name="Language" c:type="PangoLanguage*"/>
         </return-value>
         <parameters>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="405">a `PangoContext`</doc>
+                 line="407">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -3011,9 +3038,10 @@ See [method@Pango.Context.set_matrix].</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="193">the matrix, or %NULL if no matrix has
-  been set (which is the same as the identity matrix). The returned
-  matrix is owned by Pango and must not be modified or freed.</doc>
+               line="193">the matrix, or %NULL if no
+  matrix has been set (which is the same as the identity matrix).
+  The returned matrix is owned by Pango and must not be modified
+  or freed.</doc>
           <type name="Matrix" c:type="const PangoMatrix*"/>
         </return-value>
         <parameters>
@@ -3028,7 +3056,7 @@ See [method@Pango.Context.set_matrix].</doc>
       <method name="get_metrics" c:identifier="pango_context_get_metrics">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="661">Get overall metric information for a particular font description.
+             line="663">Get overall metric information for a particular font description.
 
 Since the metrics may be substantially different for different scripts,
 a language tag can be provided to indicate that the metrics should be
@@ -3043,7 +3071,7 @@ for the individual families.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="684">a `PangoFontMetrics` object. The caller must call
+               line="686">a `PangoFontMetrics` object. The caller must call
   [method@Pango.FontMetrics.unref] when finished using the object.</doc>
           <type name="FontMetrics" c:type="PangoFontMetrics*"/>
         </return-value>
@@ -3051,7 +3079,7 @@ for the individual families.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="663">a `PangoContext`</doc>
+                 line="665">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="desc"
@@ -3060,7 +3088,7 @@ for the individual families.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="664">a `PangoFontDescription` structure. %NULL means that the
+                 line="666">a `PangoFontDescription` structure. %NULL means that the
   font description from the context will be used.</doc>
             <type name="FontDescription" c:type="const PangoFontDescription*"/>
           </parameter>
@@ -3070,7 +3098,7 @@ for the individual families.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="666">language tag used to determine which script to get
+                 line="668">language tag used to determine which script to get
   the metrics for. %NULL means that the language tag from the context
   will be used. If no language tag is set on the context, metrics
   for the default language (as determined by [func@Pango.Language.get_default]
@@ -3084,7 +3112,7 @@ for the individual families.</doc>
               version="1.44">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="835">Returns whether font rendering with this context should
+             line="837">Returns whether font rendering with this context should
 round glyph positions and widths.</doc>
         <source-position filename="pango/pango-context.h" line="112"/>
         <return-value transfer-ownership="none">
@@ -3094,7 +3122,7 @@ round glyph positions and widths.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="837">a `PangoContext`</doc>
+                 line="839">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -3104,7 +3132,7 @@ round glyph positions and widths.</doc>
               version="1.32.4">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="779">Returns the current serial number of @context.
+             line="781">Returns the current serial number of @context.
 
 The serial number is initialized to an small number larger than zero
 when a new context is created and is increased whenever the context
@@ -3120,14 +3148,14 @@ and is only useful when implementing objects that need update when their
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="796">The current serial number of @context.</doc>
+               line="798">The current serial number of @context.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="781">a `PangoContext`</doc>
+                 line="783">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
         </parameters>
@@ -3135,7 +3163,7 @@ and is only useful when implementing objects that need update when their
       <method name="list_families" c:identifier="pango_context_list_families">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="260">List all families for a context.</doc>
+             line="262">List all families for a context.</doc>
         <source-position filename="pango/pango-context.h" line="58"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -3144,7 +3172,7 @@ and is only useful when implementing objects that need update when their
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="262">a `PangoContext`</doc>
+                 line="264">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="families"
@@ -3153,7 +3181,7 @@ and is only useful when implementing objects that need update when their
                      transfer-ownership="container">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="263">location
+                 line="265">location
   to store a pointer to an array of `PangoFontFamily`. This array should
   be freed with g_free().</doc>
             <array length="1" zero-terminated="0" c:type="PangoFontFamily***">
@@ -3166,7 +3194,7 @@ and is only useful when implementing objects that need update when their
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="266">location to store the number of elements in @descs</doc>
+                 line="268">location to store the number of elements in @descs</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -3174,13 +3202,13 @@ and is only useful when implementing objects that need update when their
       <method name="load_font" c:identifier="pango_context_load_font">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="293">Loads the font in one of the fontmaps in the context
+             line="295">Loads the font in one of the fontmaps in the context
 that is the closest match for @desc.</doc>
         <source-position filename="pango/pango-context.h" line="62"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="301">the newly allocated `PangoFont`
+               line="303">the newly allocated `PangoFont`
   that was loaded, or %NULL if no font matched.</doc>
           <type name="Font" c:type="PangoFont*"/>
         </return-value>
@@ -3188,13 +3216,13 @@ that is the closest match for @desc.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="295">a `PangoContext`</doc>
+                 line="297">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="desc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="296">a `PangoFontDescription` describing the font to load</doc>
+                 line="298">a `PangoFontDescription` describing the font to load</doc>
             <type name="FontDescription" c:type="const PangoFontDescription*"/>
           </parameter>
         </parameters>
@@ -3202,13 +3230,13 @@ that is the closest match for @desc.</doc>
       <method name="load_fontset" c:identifier="pango_context_load_fontset">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="314">Load a set of fonts in the context that can be used to render
+             line="316">Load a set of fonts in the context that can be used to render
 a font matching @desc.</doc>
         <source-position filename="pango/pango-context.h" line="65"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-context.c"
-               line="323">the newly allocated
+               line="325">the newly allocated
   `PangoFontset` loaded, or %NULL if no font matched.</doc>
           <type name="Fontset" c:type="PangoFontset*"/>
         </return-value>
@@ -3216,19 +3244,19 @@ a font matching @desc.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="316">a `PangoContext`</doc>
+                 line="318">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="desc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="317">a `PangoFontDescription` describing the fonts to load</doc>
+                 line="319">a `PangoFontDescription` describing the fonts to load</doc>
             <type name="FontDescription" c:type="const PangoFontDescription*"/>
           </parameter>
           <parameter name="language" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="318">a `PangoLanguage` the fonts will be used for</doc>
+                 line="320">a `PangoLanguage` the fonts will be used for</doc>
             <type name="Language" c:type="PangoLanguage*"/>
           </parameter>
         </parameters>
@@ -3236,7 +3264,7 @@ a font matching @desc.</doc>
       <method name="set_base_dir" c:identifier="pango_context_set_base_dir">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="419">Sets the base direction for the context.
+             line="421">Sets the base direction for the context.
 
 The base direction is used in applying the Unicode bidirectional
 algorithm; if the @direction is %PANGO_DIRECTION_LTR or
@@ -3252,13 +3280,13 @@ for paragraphs that do not contain any strong characters themselves.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="421">a `PangoContext`</doc>
+                 line="423">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="direction" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="422">the new base direction</doc>
+                 line="424">the new base direction</doc>
             <type name="Direction" c:type="PangoDirection"/>
           </parameter>
         </parameters>
@@ -3268,7 +3296,7 @@ for paragraphs that do not contain any strong characters themselves.</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="463">Sets the base gravity for the context.
+             line="465">Sets the base gravity for the context.
 
 The base gravity is used in laying vertical text out.</doc>
         <source-position filename="pango/pango-context.h" line="90"/>
@@ -3279,13 +3307,13 @@ The base gravity is used in laying vertical text out.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="465">a `PangoContext`</doc>
+                 line="467">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="gravity" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="466">the new base gravity</doc>
+                 line="468">the new base gravity</doc>
             <type name="Gravity" c:type="PangoGravity"/>
           </parameter>
         </parameters>
@@ -3294,7 +3322,7 @@ The base gravity is used in laying vertical text out.</doc>
               c:identifier="pango_context_set_font_description">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="336">Set the default font description for the context</doc>
+             line="338">Set the default font description for the context</doc>
         <source-position filename="pango/pango-context.h" line="75"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -3303,13 +3331,16 @@ The base gravity is used in laying vertical text out.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="338">a `PangoContext`</doc>
+                 line="340">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
-          <parameter name="desc" transfer-ownership="none">
+          <parameter name="desc"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="339">the new pango font description</doc>
+                 line="341">the new pango font description</doc>
             <type name="FontDescription" c:type="const PangoFontDescription*"/>
           </parameter>
         </parameters>
@@ -3317,7 +3348,7 @@ The base gravity is used in laying vertical text out.</doc>
       <method name="set_font_map" c:identifier="pango_context_set_font_map">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="207">Sets the font map to be searched when fonts are looked-up
+             line="208">Sets the font map to be searched when fonts are looked-up
 in this context.
 
 This is only for internal use by Pango backends, a `PangoContext`
@@ -3331,13 +3362,16 @@ suitable font map.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="209">a `PangoContext`</doc>
+                 line="210">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
-          <parameter name="font_map" transfer-ownership="none">
+          <parameter name="font_map"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="210">the `PangoFontMap` to set.</doc>
+                 line="211">the `PangoFontMap` to set.</doc>
             <type name="FontMap" c:type="PangoFontMap*"/>
           </parameter>
         </parameters>
@@ -3347,7 +3381,7 @@ suitable font map.</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="531">Sets the gravity hint for the context.
+             line="533">Sets the gravity hint for the context.
 
 The gravity hint is used in laying vertical text out, and
 is only relevant if gravity of the context as returned by
@@ -3361,13 +3395,13 @@ or %PANGO_GRAVITY_WEST.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="533">a `PangoContext`</doc>
+                 line="535">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="hint" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="534">the new gravity hint</doc>
+                 line="536">the new gravity hint</doc>
             <type name="GravityHint" c:type="PangoGravityHint"/>
           </parameter>
         </parameters>
@@ -3375,7 +3409,7 @@ or %PANGO_GRAVITY_WEST.</doc>
       <method name="set_language" c:identifier="pango_context_set_language">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="377">Sets the global language tag for the context.
+             line="379">Sets the global language tag for the context.
 
 The default language for the locale of the running process
 can be found using [func@Pango.Language.get_default].</doc>
@@ -3387,13 +3421,16 @@ can be found using [func@Pango.Language.get_default].</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="379">a `PangoContext`</doc>
+                 line="381">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
-          <parameter name="language" transfer-ownership="none">
+          <parameter name="language"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="380">the new language tag.</doc>
+                 line="382">the new language tag.</doc>
             <type name="Language" c:type="PangoLanguage*"/>
           </parameter>
         </parameters>
@@ -3439,7 +3476,7 @@ matrix. (No matrix set is the same as setting the identity matrix.)</doc>
               version="1.44">
         <doc xml:space="preserve"
              filename="pango/pango-context.c"
-             line="807">Sets whether font rendering with this context should
+             line="809">Sets whether font rendering with this context should
 round glyph positions and widths to integral positions,
 in device units.
 
@@ -3456,13 +3493,13 @@ compatible with previous Pango behavior.</doc>
           <instance-parameter name="context" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="809">a `PangoContext`</doc>
+                 line="811">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </instance-parameter>
           <parameter name="round_positions" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-context.c"
-                 line="810">whether to round glyph positions</doc>
+                 line="812">whether to round glyph positions</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -5092,8 +5129,8 @@ a font to load.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/fonts.c"
-               line="81">the newly allocated `PangoFontDescription`, which
-  should be freed using [method@Pango.FontDescription.free].</doc>
+               line="81">the newly allocated `PangoFontDescription`,
+  which should be freed using [method@Pango.FontDescription.free].</doc>
           <type name="FontDescription" c:type="PangoFontDescription*"/>
         </return-value>
       </constructor>
@@ -5263,8 +5300,8 @@ See [method@Pango.FontDescription.set_family].</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/fonts.c"
-               line="165">the family name field for the font
-  description, or %NULL if not previously set. This has the same
+               line="165">the family name field for the
+  font description, or %NULL if not previously set. This has the same
   life-time as the font description itself and should not be freed.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -5967,7 +6004,7 @@ The filename is identical to the result from calling
 instead of characters that are untypical in filenames, and in
 lower case only.</doc>
         <source-position filename="pango/pango-font.h" line="344"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="pango/fonts.c"
                line="1517">a new string that must be freed with g_free().</doc>
@@ -9074,11 +9111,11 @@ assigned to each item, you can't create a zero-length item).
 This function is similar in function to pango_item_split() (and uses
 it internally.)</doc>
         <source-position filename="pango/pango-glyph-item.h" line="67"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-glyph-item.c"
-               line="50">the newly allocated item representing text before
-  @split_index, which should be freed
+               line="50">the newly allocated item
+  representing text before @split_index, which should be freed
   with pango_glyph_item_free().</doc>
           <type name="GlyphItem" c:type="PangoGlyphItem*"/>
         </return-value>
@@ -10617,7 +10654,7 @@ may have more values. Callers need to handle unknown values.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-language.c"
-               line="647">
+               line="646">
   An array of `PangoScript` values, with the number of entries in
   the array stored in @num_scripts, or %NULL if Pango does not have
   any information about this particular language tag (also the case
@@ -10638,14 +10675,13 @@ may have more values. Callers need to handle unknown values.</doc>
           </instance-parameter>
           <parameter name="num_scripts"
                      direction="out"
-                     caller-allocates="1"
+                     caller-allocates="0"
                      transfer-ownership="full"
                      optional="1"
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-language.c"
-                 line="620">location to
-  return number of scripts</doc>
+                 line="620">location to return number of scripts</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -10655,7 +10691,7 @@ may have more values. Callers need to handle unknown values.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="pango/pango-language.c"
-             line="688">Determines if @script is one of the scripts used to
+             line="687">Determines if @script is one of the scripts used to
 write @language.
 
 The returned value is conservative; if nothing is known about
@@ -10672,7 +10708,7 @@ This function uses [method@Pango.Language.get_scripts] internally.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-language.c"
-               line="707">%TRUE if @script is one of the scripts used
+               line="706">%TRUE if @script is one of the scripts used
   to write @language or if nothing is known about @language
   (including the case that @language is %NULL), %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -10684,13 +10720,13 @@ This function uses [method@Pango.Language.get_scripts] internally.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-language.c"
-                 line="690">a `PangoLanguage`</doc>
+                 line="689">a `PangoLanguage`</doc>
             <type name="Language" c:type="PangoLanguage*"/>
           </instance-parameter>
           <parameter name="script" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-language.c"
-                 line="691">a `PangoScript`</doc>
+                 line="690">a `PangoScript`</doc>
             <type name="Script" c:type="PangoScript"/>
           </parameter>
         </parameters>
@@ -10835,7 +10871,7 @@ just call pango_language_from_string() yourself.</doc>
                 version="1.48">
         <doc xml:space="preserve"
              filename="pango/pango-language.c"
-             line="841">Returns the list of languages that the user prefers.
+             line="840">Returns the list of languages that the user prefers.
 
 The list is specified by the `PANGO_LANGUAGE` or `LANGUAGE`
 environment variables, in order of preference. Note that this
@@ -10850,9 +10886,11 @@ languages returned by this function.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-language.c"
-               line="856">a %NULL-terminated array
+               line="855">a %NULL-terminated array
   of `PangoLanguage`*</doc>
-          <type name="Language" c:type="PangoLanguage**"/>
+          <array c:type="PangoLanguage**">
+            <type name="Language" c:type="PangoLanguage*"/>
+          </array>
         </return-value>
       </function>
     </record>
@@ -12162,7 +12200,7 @@ The X position is measured from the left edge of the line.</doc>
              line="2379">Converts from an index within a `PangoLayout` to the onscreen position
 corresponding to the grapheme at that index.
 
-The return value is represented as rectangle. Note that `pos-&gt;x` is
+The returns is represented as rectangle. Note that `pos-&gt;x` is
 always the leading edge of the grapheme and `pos-&gt;x + pos-&gt;width` the
 trailing edge of the grapheme. If the directionality of the grapheme
 is right-to-left, then `pos-&gt;width` will be negative.</doc>
@@ -13428,7 +13466,7 @@ layout, if on the %NULL run (see [method@Pango.LayoutIter.get_run]).</doc>
              filename="pango/pango-layout.c"
              line="7439">Gets the layout associated with a `PangoLayoutIter`.</doc>
         <source-position filename="pango/pango-layout.h" line="505"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-layout.c"
                line="7445">the layout associated with @iter</doc>
@@ -13492,7 +13530,7 @@ Use the faster [method@Pango.LayoutIter.get_line_readonly] if
 you do not plan to modify the contents of the line (glyphs,
 glyph widths, etc.).</doc>
         <source-position filename="pango/pango-layout.h" line="499"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-layout.c"
                line="7385">the current line</doc>
@@ -13563,7 +13601,7 @@ This is a faster alternative to [method@Pango.LayoutIter.get_line],
 but the user is not expected to modify the contents of the line
 (glyphs, glyph widths, etc.).</doc>
         <source-position filename="pango/pango-layout.h" line="501"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-layout.c"
                line="7408">the current line, that should not be
@@ -14226,7 +14264,7 @@ layout, not with respect to the line.</doc>
              filename="pango/pango-layout.c"
              line="4983">Increase the reference count of a `PangoLayoutLine` by one.</doc>
         <source-position filename="pango/pango-layout.h" line="436"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-layout.c"
                line="4989">the line passed in.</doc>
@@ -17944,7 +17982,7 @@ prepared to handle unknown values.</doc>
                 version="1.4">
         <doc xml:space="preserve"
              filename="pango/pango-language.c"
-             line="870">Finds a language tag that is reasonably representative of @script.
+             line="869">Finds a language tag that is reasonably representative of @script.
 
 The language will usually be the most widely spoken or used language
 written in that script: for instance, the sample language for
@@ -17977,7 +18015,7 @@ context language is not feasible.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="pango/pango-language.c"
-               line="904">a `PangoLanguage` that is representative
+               line="903">a `PangoLanguage` that is representative
   of the script</doc>
           <type name="Language" c:type="PangoLanguage*"/>
         </return-value>
@@ -17985,7 +18023,7 @@ context language is not feasible.</doc>
           <parameter name="script" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-language.c"
-                 line="872">a `PangoScript`</doc>
+                 line="871">a `PangoScript`</doc>
             <type name="Script" c:type="PangoScript"/>
           </parameter>
         </parameters>
@@ -19139,7 +19177,7 @@ Two encoded version numbers can be compared as integers.</doc>
       <source-position filename="pango/pango-features.h" line="4"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="11" c:type="PANGO_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="12" c:type="PANGO_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="pango/pango-utils.h"
            line="147">The micro component of the version of Pango available at compile-time.</doc>
@@ -19154,7 +19192,7 @@ Two encoded version numbers can be compared as integers.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="VERSION_STRING"
-              value="1.50.11"
+              value="1.50.12"
               c:type="PANGO_VERSION_STRING">
       <doc xml:space="preserve"
            filename="pango/pango-utils.h"
@@ -19949,7 +19987,7 @@ This affects the values returned by
               version="1.50">
       <doc xml:space="preserve"
            filename="pango/pango-attributes.c"
-           line="2769">Deserializes a `PangoAttrList` from a string.
+           line="2801">Deserializes a `PangoAttrList` from a string.
 
 This is the counterpart to [method@Pango.AttrList.to_string].
 See that functions for details about the format.</doc>
@@ -19957,14 +19995,14 @@ See that functions for details about the format.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="pango/pango-attributes.c"
-             line="2778">a new `PangoAttrList`</doc>
+             line="2810">a new `PangoAttrList`</doc>
         <type name="AttrList" c:type="PangoAttrList*"/>
       </return-value>
       <parameters>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-attributes.c"
-               line="2771">a string</doc>
+               line="2803">a string</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -20725,7 +20763,7 @@ See [func@Pango.attr_break] for attribute-based customization.</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="1028">Converts extents from Pango units to device units.
+           line="1026">Converts extents from Pango units to device units.
 
 The conversion is done by dividing by the %PANGO_SCALE factor and
 performing rounding.
@@ -20753,7 +20791,7 @@ as @nearest.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="1030">rectangle to round to pixels inclusively</doc>
+               line="1028">rectangle to round to pixels inclusively</doc>
           <type name="Rectangle" c:type="PangoRectangle*"/>
         </parameter>
         <parameter name="nearest"
@@ -20762,7 +20800,7 @@ as @nearest.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="1031">rectangle to round to nearest pixels</doc>
+               line="1029">rectangle to round to nearest pixels</doc>
           <type name="Rectangle" c:type="PangoRectangle*"/>
         </parameter>
       </parameters>
@@ -20772,13 +20810,13 @@ as @nearest.</doc>
               version="1.4">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="853">Searches a string the first character that has a strong
+           line="851">Searches a string the first character that has a strong
 direction, according to the Unicode bidirectional algorithm.</doc>
       <source-position filename="pango/pango-bidi-type.h" line="107"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="861">The direction corresponding to the first strong character.
+             line="859">The direction corresponding to the first strong character.
   If no such character is found, then %PANGO_DIRECTION_NEUTRAL is returned.</doc>
         <type name="Direction" c:type="PangoDirection"/>
       </return-value>
@@ -20786,13 +20824,13 @@ direction, according to the Unicode bidirectional algorithm.</doc>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="855">the text to process. Must be valid UTF-8</doc>
+               line="853">the text to process. Must be valid UTF-8</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="856">length of @text in bytes (may be -1 if @text is nul-terminated)</doc>
+               line="854">length of @text in bytes (may be -1 if @text is nul-terminated)</doc>
           <type name="gint" c:type="gint"/>
         </parameter>
       </parameters>
@@ -20801,7 +20839,7 @@ direction, according to the Unicode bidirectional algorithm.</doc>
               c:identifier="pango_find_paragraph_boundary">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="1158">Locates a paragraph boundary in @text.
+           line="1156">Locates a paragraph boundary in @text.
 
 A boundary is caused by delimiter characters, such as
 a newline, carriage return, carriage return-newline pair,
@@ -20823,13 +20861,13 @@ and @next_paragraph_start are filled with the length of @text
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="1160">UTF-8 text</doc>
+               line="1158">UTF-8 text</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="1161">length of @text in bytes, or -1 if nul-terminated</doc>
+               line="1159">length of @text in bytes, or -1 if nul-terminated</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="paragraph_delimiter_index"
@@ -20838,7 +20876,7 @@ and @next_paragraph_start are filled with the length of @text
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="1162">return location for index of
+               line="1160">return location for index of
   delimiter</doc>
           <type name="gint" c:type="int*"/>
         </parameter>
@@ -20848,7 +20886,7 @@ and @next_paragraph_start are filled with the length of @text
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="1164">return location for start of next
+               line="1162">return location for start of next
   paragraph</doc>
           <type name="gint" c:type="int*"/>
         </parameter>
@@ -21169,7 +21207,7 @@ you should multiply it by (180. / G_PI).</doc>
               version="1.10">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="893">Checks if a character that should not be normally rendered.
+           line="891">Checks if a character that should not be normally rendered.
 
 This includes all Unicode characters with "ZERO WIDTH" in their name,
 as well as *bidi* formatting characters, and a few other ones.
@@ -21179,14 +21217,14 @@ This is totally different from [func@GLib.unichar_iszerowidth] and is at best mi
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="904">%TRUE if @ch is a zero-width character, %FALSE otherwise</doc>
+             line="902">%TRUE if @ch is a zero-width character, %FALSE otherwise</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="ch" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="895">a Unicode character</doc>
+               line="893">a Unicode character</doc>
           <type name="gunichar" c:type="gunichar"/>
         </parameter>
       </parameters>
@@ -21194,7 +21232,7 @@ This is totally different from [func@GLib.unichar_iszerowidth] and is at best mi
     <function name="itemize" c:identifier="pango_itemize">
       <doc xml:space="preserve"
            filename="pango/itemize.c"
-           line="1627">Breaks a piece of text into segments with consistent directional
+           line="1631">Breaks a piece of text into segments with consistent directional
 level and font.
 
 Each byte of @text will be contained in exactly one of the items in the
@@ -21210,7 +21248,7 @@ in the same @cached_iter).</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="pango/itemize.c"
-             line="1651">a `GList` of
+             line="1655">a `GList` of
   [struct@Pango.Item] structures. The items should be freed using
   [method@Pango.Item.free] in combination with [func@GLib.List.free_full].</doc>
         <type name="GLib.List" c:type="GList*">
@@ -21221,33 +21259,33 @@ in the same @cached_iter).</doc>
         <parameter name="context" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1629">a structure holding information that affects
+               line="1633">a structure holding information that affects
   the itemization process.</doc>
           <type name="Context" c:type="PangoContext*"/>
         </parameter>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1631">the text to itemize. Must be valid UTF-8</doc>
+               line="1635">the text to itemize. Must be valid UTF-8</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="start_index" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1632">first byte in @text to process</doc>
+               line="1636">first byte in @text to process</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1633">the number of bytes (not characters) to process
+               line="1637">the number of bytes (not characters) to process
   after @start_index. This must be &gt;= 0.</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="attrs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1635">the set of attributes that apply to @text.</doc>
+               line="1639">the set of attributes that apply to @text.</doc>
           <type name="AttrList" c:type="PangoAttrList*"/>
         </parameter>
         <parameter name="cached_iter"
@@ -21256,7 +21294,7 @@ in the same @cached_iter).</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1636">Cached attribute iterator</doc>
+               line="1640">Cached attribute iterator</doc>
           <type name="AttrIterator" c:type="PangoAttrIterator*"/>
         </parameter>
       </parameters>
@@ -21266,7 +21304,7 @@ in the same @cached_iter).</doc>
               version="1.4">
       <doc xml:space="preserve"
            filename="pango/itemize.c"
-           line="1579">Like `pango_itemize()`, but with an explicitly specified base direction.
+           line="1583">Like `pango_itemize()`, but with an explicitly specified base direction.
 
 The base direction is used when computing bidirectional levels.
 [func@itemize] gets the base direction from the `PangoContext`
@@ -21275,7 +21313,7 @@ The base direction is used when computing bidirectional levels.
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="pango/itemize.c"
-             line="1597">a `GList` of
+             line="1601">a `GList` of
   [struct@Pango.Item] structures. The items should be freed using
   [method@Pango.Item.free] probably in combination with [func@GLib.List.free_full].</doc>
         <type name="GLib.List" c:type="GList*">
@@ -21286,39 +21324,39 @@ The base direction is used when computing bidirectional levels.
         <parameter name="context" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1581">a structure holding information that affects
+               line="1585">a structure holding information that affects
   the itemization process.</doc>
           <type name="Context" c:type="PangoContext*"/>
         </parameter>
         <parameter name="base_dir" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1583">base direction to use for bidirectional processing</doc>
+               line="1587">base direction to use for bidirectional processing</doc>
           <type name="Direction" c:type="PangoDirection"/>
         </parameter>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1584">the text to itemize.</doc>
+               line="1588">the text to itemize.</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="start_index" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1585">first byte in @text to process</doc>
+               line="1589">first byte in @text to process</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1586">the number of bytes (not characters) to process
+               line="1590">the number of bytes (not characters) to process
   after @start_index. This must be &gt;= 0.</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="attrs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1588">the set of attributes that apply to @text.</doc>
+               line="1592">the set of attributes that apply to @text.</doc>
           <type name="AttrList" c:type="PangoAttrList*"/>
         </parameter>
         <parameter name="cached_iter"
@@ -21327,7 +21365,7 @@ The base direction is used when computing bidirectional levels.
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/itemize.c"
-               line="1589">Cached attribute iterator</doc>
+               line="1593">Cached attribute iterator</doc>
           <type name="AttrIterator" c:type="PangoAttrIterator*"/>
         </parameter>
       </parameters>
@@ -21419,7 +21457,7 @@ just call pango_language_from_string() yourself.</doc>
               version="1.48">
       <doc xml:space="preserve"
            filename="pango/pango-language.c"
-           line="841">Returns the list of languages that the user prefers.
+           line="840">Returns the list of languages that the user prefers.
 
 The list is specified by the `PANGO_LANGUAGE` or `LANGUAGE`
 environment variables, in order of preference. Note that this
@@ -21434,9 +21472,11 @@ languages returned by this function.</doc>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="pango/pango-language.c"
-             line="856">a %NULL-terminated array
+             line="855">a %NULL-terminated array
   of `PangoLanguage`*</doc>
-        <type name="Language" c:type="PangoLanguage**"/>
+        <array c:type="PangoLanguage**">
+          <type name="Language" c:type="PangoLanguage*"/>
+        </array>
       </return-value>
     </function>
     <function name="layout_deserialize_error_quark"
@@ -21600,7 +21640,7 @@ destroyed with [method@GLib.MarkupParseContext.free].</doc>
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="675">Parses an enum type and stores the result in @value.
+           line="673">Parses an enum type and stores the result in @value.
 
 If @str does not match the nick name of any of the possible values
 for the enum and is not an integer, %FALSE is returned, a warning
@@ -21614,14 +21654,14 @@ be freed using g_free().</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="695">%TRUE if @str was successfully parsed</doc>
+             line="693">%TRUE if @str was successfully parsed</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="677">enum type to parse, eg. %PANGO_TYPE_ELLIPSIZE_MODE</doc>
+               line="675">enum type to parse, eg. %PANGO_TYPE_ELLIPSIZE_MODE</doc>
           <type name="GType" c:type="GType"/>
         </parameter>
         <parameter name="str"
@@ -21630,7 +21670,7 @@ be freed using g_free().</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="678">string to parse</doc>
+               line="676">string to parse</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="value"
@@ -21641,13 +21681,13 @@ be freed using g_free().</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="679">integer to store the result in</doc>
+               line="677">integer to store the result in</doc>
           <type name="gint" c:type="int*"/>
         </parameter>
         <parameter name="warn" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="680">if %TRUE, issue a g_warning() on bad input</doc>
+               line="678">if %TRUE, issue a g_warning() on bad input</doc>
           <type name="gboolean" c:type="gboolean"/>
         </parameter>
         <parameter name="possible_values"
@@ -21658,7 +21698,7 @@ be freed using g_free().</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="681">place to store list of possible
+               line="679">place to store list of possible
   values on failure</doc>
           <type name="utf8" c:type="char**"/>
         </parameter>
@@ -21908,7 +21948,7 @@ and integers. Case variations are ignored.</doc>
               version="1.12">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="953">Quantizes the thickness and position of a line to whole device pixels.
+           line="951">Quantizes the thickness and position of a line to whole device pixels.
 
 This is typically used for underline or strikethrough. The purpose of
 this function is to avoid such lines looking blurry.
@@ -21927,7 +21967,7 @@ of rounding.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="955">pointer to the thickness of a line, in Pango units</doc>
+               line="953">pointer to the thickness of a line, in Pango units</doc>
           <type name="gint" c:type="int*"/>
         </parameter>
         <parameter name="position"
@@ -21936,7 +21976,7 @@ of rounding.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="956">corresponding position</doc>
+               line="954">corresponding position</doc>
           <type name="gint" c:type="int*"/>
         </parameter>
       </parameters>
@@ -21947,7 +21987,7 @@ of rounding.</doc>
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="240">Reads an entire line from a file into a buffer.
+           line="238">Reads an entire line from a file into a buffer.
 
 Lines may be delimited with '\n', '\r', '\n\r', or '\r\n'. The delimiter
 is not written into the buffer. Text after a '#' character is treated as
@@ -21959,7 +21999,7 @@ unmodified.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="254">0 if the stream was already at an %EOF character,
+             line="252">0 if the stream was already at an %EOF character,
   otherwise the number of lines read (this is useful for maintaining
   a line number counter which doesn't combine lines with '\')</doc>
         <type name="gint" c:type="gint"/>
@@ -21971,13 +22011,13 @@ unmodified.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="242">a stdio stream</doc>
+               line="240">a stdio stream</doc>
           <type name="gpointer" c:type="FILE*"/>
         </parameter>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="243">`GString` buffer into which to write the result</doc>
+               line="241">`GString` buffer into which to write the result</doc>
           <type name="GLib.String" c:type="GString*"/>
         </parameter>
       </parameters>
@@ -22021,14 +22061,14 @@ levels of the items. The original list is unmodified.
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="515">Scans an integer.
+           line="513">Scans an integer.
 
 Leading white space is skipped.</doc>
       <source-position filename="pango/pango-utils.h" line="48"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="524">%FALSE if a parse error occurred</doc>
+             line="522">%FALSE if a parse error occurred</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
@@ -22038,7 +22078,7 @@ Leading white space is skipped.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="517">in/out string position</doc>
+               line="515">in/out string position</doc>
           <type name="utf8" c:type="const char**"/>
         </parameter>
         <parameter name="out"
@@ -22047,7 +22087,7 @@ Leading white space is skipped.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="518">an int into which to write the result</doc>
+               line="516">an int into which to write the result</doc>
           <type name="gint" c:type="int*"/>
         </parameter>
       </parameters>
@@ -22058,7 +22098,7 @@ Leading white space is skipped.</doc>
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="422">Scans a string into a `GString` buffer.
+           line="420">Scans a string into a `GString` buffer.
 
 The string may either be a sequence of non-white-space characters,
 or a quoted string with '"'. Instead a quoted string, '\"' represents
@@ -22067,7 +22107,7 @@ a literal quote. Leading white space outside of quotes is skipped.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="433">%FALSE if a parse error occurred</doc>
+             line="431">%FALSE if a parse error occurred</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
@@ -22077,13 +22117,13 @@ a literal quote. Leading white space outside of quotes is skipped.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="424">in/out string position</doc>
+               line="422">in/out string position</doc>
           <type name="utf8" c:type="const char**"/>
         </parameter>
         <parameter name="out" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="425">a `GString` into which to write the result</doc>
+               line="423">a `GString` into which to write the result</doc>
           <type name="GLib.String" c:type="GString*"/>
         </parameter>
       </parameters>
@@ -22094,7 +22134,7 @@ a literal quote. Leading white space outside of quotes is skipped.</doc>
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="377">Scans a word into a `GString` buffer.
+           line="375">Scans a word into a `GString` buffer.
 
 A word consists of [A-Za-z_] followed by zero or more
 [A-Za-z_0-9]. Leading white space is skipped.</doc>
@@ -22102,7 +22142,7 @@ A word consists of [A-Za-z_] followed by zero or more
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="387">%FALSE if a parse error occurred</doc>
+             line="385">%FALSE if a parse error occurred</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
@@ -22112,13 +22152,13 @@ A word consists of [A-Za-z_] followed by zero or more
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="379">in/out string position</doc>
+               line="377">in/out string position</doc>
           <type name="utf8" c:type="const char**"/>
         </parameter>
         <parameter name="out" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="380">a `GString` into which to write the result</doc>
+               line="378">a `GString` into which to write the result</doc>
           <type name="GLib.String" c:type="GString*"/>
         </parameter>
       </parameters>
@@ -22166,7 +22206,7 @@ prepared to handle unknown values.</doc>
               version="1.4">
       <doc xml:space="preserve"
            filename="pango/pango-language.c"
-           line="870">Finds a language tag that is reasonably representative of @script.
+           line="869">Finds a language tag that is reasonably representative of @script.
 
 The language will usually be the most widely spoken or used language
 written in that script: for instance, the sample language for
@@ -22199,7 +22239,7 @@ context language is not feasible.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="pango/pango-language.c"
-             line="904">a `PangoLanguage` that is representative
+             line="903">a `PangoLanguage` that is representative
   of the script</doc>
         <type name="Language" c:type="PangoLanguage*"/>
       </return-value>
@@ -22207,7 +22247,7 @@ context language is not feasible.</doc>
         <parameter name="script" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-language.c"
-               line="872">a `PangoScript`</doc>
+               line="871">a `PangoScript`</doc>
           <type name="Script" c:type="PangoScript"/>
         </parameter>
       </parameters>
@@ -22483,12 +22523,12 @@ to subtract the item offset from their indices before calling
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="353">Skips 0 or more characters of white space.</doc>
+           line="351">Skips 0 or more characters of white space.</doc>
       <source-position filename="pango/pango-utils.h" line="40"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="359">%FALSE if skipping the white space leaves
+             line="357">%FALSE if skipping the white space leaves
   the position at a '\0' character.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -22499,7 +22539,7 @@ to subtract the item offset from their indices before calling
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="355">in/out string position</doc>
+               line="353">in/out string position</doc>
           <type name="utf8" c:type="const char**"/>
         </parameter>
       </parameters>
@@ -22510,13 +22550,13 @@ to subtract the item offset from their indices before calling
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="174">Splits a %G_SEARCHPATH_SEPARATOR-separated list of files, stripping
+           line="172">Splits a %G_SEARCHPATH_SEPARATOR-separated list of files, stripping
 white space and substituting ~/ with $HOME/.</doc>
       <source-position filename="pango/pango-utils.h" line="32"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="181">a list of
+             line="179">a list of
   strings to be freed with g_strfreev()</doc>
         <array c:type="char**">
           <type name="utf8"/>
@@ -22526,7 +22566,7 @@ white space and substituting ~/ with $HOME/.</doc>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="176">a %G_SEARCHPATH_SEPARATOR separated list of filenames</doc>
+               line="174">a %G_SEARCHPATH_SEPARATOR separated list of filenames</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -22624,19 +22664,19 @@ to apply attributes to the whole paragraph.</doc>
               deprecated-version="1.38">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="141">Trims leading and trailing whitespace from a string.</doc>
+           line="139">Trims leading and trailing whitespace from a string.</doc>
       <source-position filename="pango/pango-utils.h" line="35"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="147">A newly-allocated string that must be freed with g_free()</doc>
+             line="145">A newly-allocated string that must be freed with g_free()</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="143">a string</doc>
+               line="141">a string</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -22674,7 +22714,7 @@ can be used instead.</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="991">Converts a floating-point number to Pango units.
+           line="989">Converts a floating-point number to Pango units.
 
 The conversion is done by multiplying @d by %PANGO_SCALE and
 rounding the result to nearest integer.</doc>
@@ -22682,14 +22722,14 @@ rounding the result to nearest integer.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="1000">the value in Pango units.</doc>
+             line="998">the value in Pango units.</doc>
         <type name="gint" c:type="int"/>
       </return-value>
       <parameters>
         <parameter name="d" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="993">double floating-point value</doc>
+               line="991">double floating-point value</doc>
           <type name="gdouble" c:type="double"/>
         </parameter>
       </parameters>
@@ -22699,21 +22739,21 @@ rounding the result to nearest integer.</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="1010">Converts a number in Pango units to floating-point.
+           line="1008">Converts a number in Pango units to floating-point.
 
 The conversion is done by dividing @i by %PANGO_SCALE.</doc>
       <source-position filename="pango/pango-types.h" line="152"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="1018">the double value.</doc>
+             line="1016">the double value.</doc>
         <type name="gdouble" c:type="double"/>
       </return-value>
       <parameters>
         <parameter name="i" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="1012">value in Pango units</doc>
+               line="1010">value in Pango units</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
@@ -22721,7 +22761,7 @@ The conversion is done by dividing @i by %PANGO_SCALE.</doc>
     <function name="version" c:identifier="pango_version" version="1.16">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="52">Returns the encoded version of Pango available at run-time.
+           line="50">Returns the encoded version of Pango available at run-time.
 
 This is similar to the macro %PANGO_VERSION except that the macro
 returns the encoded version available at compile-time. A version
@@ -22730,7 +22770,7 @@ number can be encoded into an integer using PANGO_VERSION_ENCODE().</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="61">The encoded version of Pango library available at run time.</doc>
+             line="59">The encoded version of Pango library available at run time.</doc>
         <type name="gint" c:type="int"/>
       </return-value>
     </function>
@@ -22739,7 +22779,7 @@ number can be encoded into an integer using PANGO_VERSION_ENCODE().</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="91">Checks that the Pango library in use is compatible with the
+           line="89">Checks that the Pango library in use is compatible with the
 given version.
 
 Generally you would pass in the constants %PANGO_VERSION_MAJOR,
@@ -22760,7 +22800,7 @@ For compile-time version checking use PANGO_VERSION_CHECK().</doc>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="115">%NULL if the Pango library is compatible
+             line="113">%NULL if the Pango library is compatible
   with the given version, or a string describing the version
   mismatch.  The returned string is owned by Pango and should not
   be modified or freed.</doc>
@@ -22770,19 +22810,19 @@ For compile-time version checking use PANGO_VERSION_CHECK().</doc>
         <parameter name="required_major" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="93">the required major version</doc>
+               line="91">the required major version</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="required_minor" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="94">the required minor version</doc>
+               line="92">the required minor version</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="required_micro" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/pango-utils.c"
-               line="95">the required major version</doc>
+               line="93">the required major version</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
@@ -22792,7 +22832,7 @@ For compile-time version checking use PANGO_VERSION_CHECK().</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="pango/pango-utils.c"
-           line="71">Returns the version of Pango available at run-time.
+           line="69">Returns the version of Pango available at run-time.
 
 This is similar to the macro %PANGO_VERSION_STRING except that the
 macro returns the version available at compile-time.</doc>
@@ -22800,7 +22840,7 @@ macro returns the version available at compile-time.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="pango/pango-utils.c"
-             line="79">A string containing the version of Pango library available
+             line="77">A string containing the version of Pango library available
   at run time. The returned string is owned by Pango and should not
   be modified or freed.</doc>
         <type name="utf8" c:type="const char*"/>
