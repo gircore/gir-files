@@ -31,7 +31,7 @@ jobs:
           flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
           flatpak install org.gnome.Sdk//$sdk_version --or-update -y --noninteractive
       - name: Extract gir files
-        run: flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version transfer.py /usr/share/gir-1.0/ ./linux
+        run: flatpak run --command=python3 --filesystem=home org.gnome.Sdk//$sdk_version transfer.py /usr/share/gir-1.0/ ./linux gir_files.txt,gir_files_linux.txt
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:

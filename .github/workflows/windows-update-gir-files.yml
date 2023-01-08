@@ -36,7 +36,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Extract gir files
-        run: python transfer.py D:\a\_temp\msys64\mingw64\share\gir-1.0\ .\windows
+        run: python transfer.py D:\a\_temp\msys64\mingw64\share\gir-1.0\ .\windows gir_files.txt
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
