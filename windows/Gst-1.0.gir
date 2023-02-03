@@ -230,13 +230,13 @@ allocated elsewhere.</doc>
       <function name="find" c:identifier="gst_allocator_find">
         <doc xml:space="preserve"
              filename="gst/gstallocator.c"
-             line="240">Find a previously registered allocator with @name. When @name is %NULL, the
+             line="241">Find a previously registered allocator with @name. When @name is %NULL, the
 default allocator will be returned.</doc>
         <source-position filename="gst/gstallocator.h" line="163"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstallocator.c"
-               line="247">a #GstAllocator or %NULL when
+               line="248">a #GstAllocator or %NULL when
 the allocator with @name was not registered.</doc>
           <type name="Allocator" c:type="GstAllocator*"/>
         </return-value>
@@ -247,7 +247,7 @@ the allocator with @name was not registered.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="242">the name of the allocator</doc>
+                 line="243">the name of the allocator</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -278,7 +278,7 @@ the allocator with @name was not registered.</doc>
       <virtual-method name="alloc" invoker="alloc">
         <doc xml:space="preserve"
              filename="gst/gstallocator.c"
-             line="290">Use @allocator to allocate a new memory block with memory that is at least
+             line="291">Use @allocator to allocate a new memory block with memory that is at least
 @size big.
 
 The optional @params can specify the prefix and padding for the memory. If
@@ -297,7 +297,7 @@ use an alignment of 7.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstallocator.c"
-               line="312">a new #GstMemory.</doc>
+               line="313">a new #GstMemory.</doc>
           <type name="Memory" c:type="GstMemory*"/>
         </return-value>
         <parameters>
@@ -307,13 +307,13 @@ use an alignment of 7.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="292">a #GstAllocator to use</doc>
+                 line="293">a #GstAllocator to use</doc>
             <type name="Allocator" c:type="GstAllocator*"/>
           </instance-parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="293">size of the visible memory area</doc>
+                 line="294">size of the visible memory area</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="params"
@@ -322,7 +322,7 @@ use an alignment of 7.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="294">optional parameters</doc>
+                 line="295">optional parameters</doc>
             <type name="AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
         </parameters>
@@ -330,7 +330,7 @@ use an alignment of 7.</doc>
       <virtual-method name="free" invoker="free">
         <doc xml:space="preserve"
              filename="gst/gstallocator.c"
-             line="340">Free @memory that was previously allocated with gst_allocator_alloc().</doc>
+             line="341">Free @memory that was previously allocated with gst_allocator_alloc().</doc>
         <source-position filename="gst/gstallocator.h" line="148"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -339,13 +339,13 @@ use an alignment of 7.</doc>
           <instance-parameter name="allocator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="342">a #GstAllocator to use</doc>
+                 line="343">a #GstAllocator to use</doc>
             <type name="Allocator" c:type="GstAllocator*"/>
           </instance-parameter>
           <parameter name="memory" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="343">the memory to free</doc>
+                 line="344">the memory to free</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -353,7 +353,7 @@ use an alignment of 7.</doc>
       <method name="alloc" c:identifier="gst_allocator_alloc">
         <doc xml:space="preserve"
              filename="gst/gstallocator.c"
-             line="290">Use @allocator to allocate a new memory block with memory that is at least
+             line="291">Use @allocator to allocate a new memory block with memory that is at least
 @size big.
 
 The optional @params can specify the prefix and padding for the memory. If
@@ -372,7 +372,7 @@ use an alignment of 7.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstallocator.c"
-               line="312">a new #GstMemory.</doc>
+               line="313">a new #GstMemory.</doc>
           <type name="Memory" c:type="GstMemory*"/>
         </return-value>
         <parameters>
@@ -382,13 +382,13 @@ use an alignment of 7.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="292">a #GstAllocator to use</doc>
+                 line="293">a #GstAllocator to use</doc>
             <type name="Allocator" c:type="GstAllocator*"/>
           </instance-parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="293">size of the visible memory area</doc>
+                 line="294">size of the visible memory area</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="params"
@@ -397,7 +397,7 @@ use an alignment of 7.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="294">optional parameters</doc>
+                 line="295">optional parameters</doc>
             <type name="AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
         </parameters>
@@ -405,7 +405,7 @@ use an alignment of 7.</doc>
       <method name="free" c:identifier="gst_allocator_free">
         <doc xml:space="preserve"
              filename="gst/gstallocator.c"
-             line="340">Free @memory that was previously allocated with gst_allocator_alloc().</doc>
+             line="341">Free @memory that was previously allocated with gst_allocator_alloc().</doc>
         <source-position filename="gst/gstallocator.h" line="190"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -414,13 +414,13 @@ use an alignment of 7.</doc>
           <instance-parameter name="allocator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="342">a #GstAllocator to use</doc>
+                 line="343">a #GstAllocator to use</doc>
             <type name="Allocator" c:type="GstAllocator*"/>
           </instance-parameter>
           <parameter name="memory" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="343">the memory to free</doc>
+                 line="344">the memory to free</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -428,7 +428,7 @@ use an alignment of 7.</doc>
       <method name="set_default" c:identifier="gst_allocator_set_default">
         <doc xml:space="preserve"
              filename="gst/gstallocator.c"
-             line="268">Set the default allocator.</doc>
+             line="269">Set the default allocator.</doc>
         <source-position filename="gst/gstallocator.h" line="166"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -437,7 +437,7 @@ use an alignment of 7.</doc>
           <instance-parameter name="allocator" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="270">a #GstAllocator</doc>
+                 line="271">a #GstAllocator</doc>
             <type name="Allocator" c:type="GstAllocator*"/>
           </instance-parameter>
         </parameters>
@@ -521,7 +521,7 @@ use an alignment of 7.</doc>
           <return-value transfer-ownership="full" nullable="1">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="312">a new #GstMemory.</doc>
+                 line="313">a new #GstMemory.</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </return-value>
           <parameters>
@@ -531,13 +531,13 @@ use an alignment of 7.</doc>
                        allow-none="1">
               <doc xml:space="preserve"
                    filename="gst/gstallocator.c"
-                   line="292">a #GstAllocator to use</doc>
+                   line="293">a #GstAllocator to use</doc>
               <type name="Allocator" c:type="GstAllocator*"/>
             </parameter>
             <parameter name="size" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gst/gstallocator.c"
-                   line="293">size of the visible memory area</doc>
+                   line="294">size of the visible memory area</doc>
               <type name="gsize" c:type="gsize"/>
             </parameter>
             <parameter name="params"
@@ -546,7 +546,7 @@ use an alignment of 7.</doc>
                        allow-none="1">
               <doc xml:space="preserve"
                    filename="gst/gstallocator.c"
-                   line="294">optional parameters</doc>
+                   line="295">optional parameters</doc>
               <type name="AllocationParams" c:type="GstAllocationParams*"/>
             </parameter>
           </parameters>
@@ -562,13 +562,13 @@ use an alignment of 7.</doc>
             <parameter name="allocator" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gst/gstallocator.c"
-                   line="342">a #GstAllocator to use</doc>
+                   line="343">a #GstAllocator to use</doc>
               <type name="Allocator" c:type="GstAllocator*"/>
             </parameter>
             <parameter name="memory" transfer-ownership="full">
               <doc xml:space="preserve"
                    filename="gst/gstallocator.c"
-                   line="343">the memory to free</doc>
+                   line="344">the memory to free</doc>
               <type name="Memory" c:type="GstMemory*"/>
             </parameter>
           </parameters>
@@ -8236,6 +8236,297 @@ evaluates to @def_return.</doc>
         </parameter>
       </parameters>
     </function-macro>
+    <function-macro name="CAT_DEBUG"
+                    c:identifier="GST_CAT_DEBUG"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="871">Output an debugging message in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1099"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="873">category to use</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="874">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_DEBUG_OBJECT"
+                    c:identifier="GST_CAT_DEBUG_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="780">Output an debugging message belonging to the given object in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1091"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="782">category to use</doc>
+        </parameter>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="783">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="784">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_ERROR"
+                    c:identifier="GST_CAT_ERROR"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="841">Output an error message in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1096"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="843">category to use</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="844">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_ERROR_OBJECT"
+                    c:identifier="GST_CAT_ERROR_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="746">Output an error message belonging to the given object in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1088"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="748">category to use</doc>
+        </parameter>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="749">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="750">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_FIXME"
+                    c:identifier="GST_CAT_FIXME"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="891">Output an fixme message in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1101"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="893">category to use</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="894">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_FIXME_OBJECT"
+                    c:identifier="GST_CAT_FIXME_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="802">Output a fixme message belonging to the given object in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1093"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="804">category to use</doc>
+        </parameter>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="805">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="806">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_INFO"
+                    c:identifier="GST_CAT_INFO"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="861">Output an informational message in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1098"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="863">category to use</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="864">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_INFO_OBJECT"
+                    c:identifier="GST_CAT_INFO_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="768">Output an informational message belonging to the given object in the given
+category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1090"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="770">category to use</doc>
+        </parameter>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="771">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="772">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_LEVEL_LOG"
+                    c:identifier="GST_CAT_LEVEL_LOG"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="673">Outputs a debugging message. This is the most general macro for outputting
+debugging messages. You will probably want to use one of the ones described
+below.
+
+There is no need to finish the end of the debug message with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="688"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="675">category to use</doc>
+        </parameter>
+        <parameter name="level">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="676">the severity of the message</doc>
+        </parameter>
+        <parameter name="object">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="677">the #GObject the message belongs to or %NULL if none</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="678">A printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_LOG"
+                    c:identifier="GST_CAT_LOG"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="881">Output an logging message in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1100"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="883">category to use</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="884">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_LOG_OBJECT"
+                    c:identifier="GST_CAT_LOG_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="791">Output an logging message belonging to the given object in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1092"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="793">category to use</doc>
+        </parameter>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="794">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="795">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="CAT_MEMDUMP"
                     c:identifier="GST_CAT_MEMDUMP"
                     introspectable="0">
@@ -8305,6 +8596,109 @@ character, a newline character will be added automatically.</doc>
           <doc xml:space="preserve"
                filename="gst/gstinfo.h"
                line="831">length of the data to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_TRACE"
+                    c:identifier="GST_CAT_TRACE"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="901">Output a tracing message in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1102"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="903">category to use</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="904">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_TRACE_OBJECT"
+                    c:identifier="GST_CAT_TRACE_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="813">Output a tracing message belonging to the given object in the given
+category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1094"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="815">category to use</doc>
+        </parameter>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="816">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="817">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_WARNING"
+                    c:identifier="GST_CAT_WARNING"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="851">Output an warning message in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1097"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="853">category to use</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="854">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="CAT_WARNING_OBJECT"
+                    c:identifier="GST_CAT_WARNING_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="757">Output a warning message belonging to the given object in the given category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1089"/>
+      <parameters>
+        <parameter name="cat">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="759">category to use</doc>
+        </parameter>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="760">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="761">printf-style message to output</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14893,6 +15287,22 @@ the metadata on @transbuf.</doc>
         </parameter>
       </parameters>
     </callback>
+    <function-macro name="DEBUG" c:identifier="GST_DEBUG" introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="1038">Output a debugging message in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1115"/>
+      <parameters>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="1040">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
     <constant name="DEBUG_BG_MASK" value="240" c:type="GST_DEBUG_BG_MASK">
       <source-position filename="gst/gstinfo.h" line="209"/>
       <type name="gint" c:type="gint"/>
@@ -15135,6 +15545,30 @@ freed by the caller.</doc>
           <doc xml:space="preserve"
                filename="gst/gstinfo.h"
                line="1488">address of the function of which to look up the name</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="DEBUG_OBJECT"
+                    c:identifier="GST_DEBUG_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="956">Output a debugging message belonging to the given object in the default
+category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1107"/>
+      <parameters>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="958">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="959">printf-style message to output</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -19897,6 +20331,45 @@ application will be informed.</doc>
                line="579">optional name, type, value triplets, which will be stored
          in the associated GstStructure. NULL terminator required.
          Must be enclosed within parentheses.</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="ERROR" c:identifier="GST_ERROR" introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="1011">Output an error message in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1112"/>
+      <parameters>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="1013">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="ERROR_OBJECT"
+                    c:identifier="GST_ERROR_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="925">Output an error message belonging to the given object in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1104"/>
+      <parameters>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="927">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="928">printf-style message to output</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -28123,6 +28596,45 @@ gst_event_type_get_flags() function.</doc>
                               identified by the event name.</doc>
       </member>
     </bitfield>
+    <function-macro name="FIXME" c:identifier="GST_FIXME" introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="1056">Output a fixme message in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1117"/>
+      <parameters>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="1058">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="FIXME_OBJECT"
+                    c:identifier="GST_FIXME_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="977">Output a fixme message belonging to the given object in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1109"/>
+      <parameters>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="979">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="980">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
     <constant name="FLAG_SET_MASK_EXACT"
               value="4294967295"
               c:type="GST_FLAG_SET_MASK_EXACT"
@@ -29013,6 +29525,46 @@ is unlinked and links to the new target are established. if @newtarget is
     <record name="GhostPadPrivate" c:type="GstGhostPadPrivate" disguised="1">
       <source-position filename="gst/gstghostpad.h" line="94"/>
     </record>
+    <function-macro name="INFO" c:identifier="GST_INFO" introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="1029">Output an informational message in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1114"/>
+      <parameters>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="1031">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="INFO_OBJECT"
+                    c:identifier="GST_INFO_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="945">Output an informational message belonging to the given object in the default
+category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1106"/>
+      <parameters>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="947">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="948">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="IS_ALLOCATOR"
                     c:identifier="GST_IS_ALLOCATOR"
                     introspectable="0">
@@ -30801,6 +31353,45 @@ The function will be called with the iterator lock held.</doc>
       <source-position filename="gst/gstminiobject.h" line="181"/>
       <type name="LockFlags" c:type="GstLockFlags"/>
     </constant>
+    <function-macro name="LOG" c:identifier="GST_LOG" introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="1047">Output a logging message in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1116"/>
+      <parameters>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="1049">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="LOG_OBJECT"
+                    c:identifier="GST_LOG_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="967">Output a logging message belonging to the given object in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1108"/>
+      <parameters>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="969">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="970">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
     <enumeration name="LibraryError"
                  glib:type-name="GstLibraryError"
                  glib:get-type="gst_library_error_get_type"
@@ -31897,7 +32488,7 @@ Memory can be efficiently merged when gst_memory_is_span() returns %TRUE.</doc>
       <constructor name="new_wrapped" c:identifier="gst_memory_new_wrapped">
         <doc xml:space="preserve"
              filename="gst/gstallocator.c"
-             line="637">Allocate a new memory block that wraps the given @data.
+             line="638">Allocate a new memory block that wraps the given @data.
 
 The prefix/padding must be filled with 0 if @flags contains
 #GST_MEMORY_FLAG_ZERO_PREFIXED and #GST_MEMORY_FLAG_ZERO_PADDED respectively.</doc>
@@ -31905,20 +32496,20 @@ The prefix/padding must be filled with 0 if @flags contains
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstallocator.c"
-               line="653">a new #GstMemory.</doc>
+               line="654">a new #GstMemory.</doc>
           <type name="Memory" c:type="GstMemory*"/>
         </return-value>
         <parameters>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="639">#GstMemoryFlags</doc>
+                 line="640">#GstMemoryFlags</doc>
             <type name="MemoryFlags" c:type="GstMemoryFlags"/>
           </parameter>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="640">data to
+                 line="641">data to
   wrap</doc>
             <array length="4" zero-terminated="0" c:type="gpointer">
               <type name="guint8"/>
@@ -31927,19 +32518,19 @@ The prefix/padding must be filled with 0 if @flags contains
           <parameter name="maxsize" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="642">allocated size of @data</doc>
+                 line="643">allocated size of @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="643">offset in @data</doc>
+                 line="644">offset in @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="644">size of valid data</doc>
+                 line="645">size of valid data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="user_data"
@@ -31948,7 +32539,7 @@ The prefix/padding must be filled with 0 if @flags contains
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="645">user_data</doc>
+                 line="646">user_data</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify"
@@ -31959,7 +32550,7 @@ The prefix/padding must be filled with 0 if @flags contains
                      closure="5">
             <doc xml:space="preserve"
                  filename="gst/gstallocator.c"
-                 line="646">called with @user_data when the memory is freed</doc>
+                 line="647">called with @user_data when the memory is freed</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -43430,7 +44021,7 @@ MT safe.</doc>
       <method name="push_event" c:identifier="gst_pad_push_event">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5615">Sends the event to the peer of the given pad. This function is
+             line="5613">Sends the event to the peer of the given pad. This function is
 mainly used by elements to send events to their peer
 elements.
 
@@ -43440,7 +44031,7 @@ gst_event_ref() it if you want to reuse the event after this call.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5627">%TRUE if the event was handled.
+               line="5625">%TRUE if the event was handled.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -43449,13 +44040,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5617">a #GstPad to push the event to.</doc>
+                 line="5615">a #GstPad to push the event to.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5618">the #GstEvent to send to the pad.</doc>
+                 line="5616">the #GstEvent to send to the pad.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -46568,7 +47159,7 @@ expose "stable" caps to the reader.</doc>
                  line="485">the pad template to set documented capabilities on</doc>
             <type name="PadTemplate" c:type="GstPadTemplate*"/>
           </instance-parameter>
-          <parameter name="caps" transfer-ownership="full">
+          <parameter name="caps" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpadtemplate.c"
                  line="486">the documented capabilities</doc>
@@ -62375,14 +62966,14 @@ wait operations.</doc>
       <function name="obtain" c:identifier="gst_system_clock_obtain">
         <doc xml:space="preserve"
              filename="gst/gstsystemclock.c"
-             line="606">Get a handle to the default system clock. The refcount of the
+             line="703">Get a handle to the default system clock. The refcount of the
 clock will be increased so you need to unref the clock after
 usage.</doc>
         <source-position filename="gst/gstsystemclock.h" line="88"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstsystemclock.c"
-               line="613">the default clock.
+               line="710">the default clock.
 
 MT safe.</doc>
           <type name="Clock" c:type="GstClock*"/>
@@ -62393,7 +62984,7 @@ MT safe.</doc>
                 version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstsystemclock.c"
-             line="567">Sets the default system clock that can be obtained with
+             line="664">Sets the default system clock that can be obtained with
 gst_system_clock_obtain().
 
 This is mostly used for testing and debugging purposes when you
@@ -62412,7 +63003,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstsystemclock.c"
-                 line="569">a #GstClock</doc>
+                 line="666">a #GstClock</doc>
             <type name="Clock" c:type="GstClock*"/>
           </parameter>
         </parameters>
@@ -63718,6 +64309,22 @@ returned by gst_toc_entry_set_loop() to indicate infinite looping.</doc>
         </parameter>
       </parameters>
     </function-macro>
+    <function-macro name="TRACE" c:identifier="GST_TRACE" introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="1065">Output a tracing message in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1118"/>
+      <parameters>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="1067">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="TRACER" c:identifier="GST_TRACER" introspectable="0">
       <source-position filename="gst/gsttracer.h" line="37"/>
       <parameters>
@@ -63821,6 +64428,29 @@ returned by gst_toc_entry_set_loop() to indicate infinite looping.</doc>
       <source-position filename="gst/gsttracerrecord.h" line="44"/>
       <parameters>
         <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="TRACE_OBJECT"
+                    c:identifier="GST_TRACE_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="987">Output a tracing message belonging to the given object in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1110"/>
+      <parameters>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="989">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="990">printf-style message to output</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -71629,7 +72259,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="4" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="5" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -72183,6 +72813,47 @@ Free-function: g_free</doc>
         </array>
       </field>
     </record>
+    <function-macro name="WARNING"
+                    c:identifier="GST_WARNING"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="1020">Output a warning message in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1113"/>
+      <parameters>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="1022">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="WARNING_OBJECT"
+                    c:identifier="GST_WARNING_OBJECT"
+                    introspectable="0">
+      <doc xml:space="preserve"
+           filename="gst/gstinfo.h"
+           line="935">Output a warning message belonging to the given object in the default category.
+
+There is no need to finish the end of the message string with a newline
+character, a newline character will be added automatically.</doc>
+      <source-position filename="gst/gstinfo.h" line="1105"/>
+      <parameters>
+        <parameter name="obj">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="937">the #GObject the message belongs to</doc>
+        </parameter>
+        <parameter name="...">
+          <doc xml:space="preserve"
+               filename="gst/gstinfo.h"
+               line="938">printf-style message to output</doc>
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="WRITE_UINT16_BE"
                     c:identifier="GST_WRITE_UINT16_BE"
                     introspectable="0">
