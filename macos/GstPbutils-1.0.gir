@@ -481,13 +481,13 @@ All the information is returned in a #GstDiscovererInfo structure.</doc>
       <constructor name="new" c:identifier="gst_discoverer_new" throws="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2630">Creates a new #GstDiscoverer with the provided timeout.</doc>
+             line="2606">Creates a new #GstDiscoverer with the provided timeout.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="397"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2638">The new #GstDiscoverer.
+               line="2614">The new #GstDiscoverer.
 If an error occurred when creating the discoverer, @err will be set
 accordingly and %NULL will be returned. If @err is set, the caller must
 free it when no longer needed using g_error_free().</doc>
@@ -497,7 +497,7 @@ free it when no longer needed using g_error_free().</doc>
           <parameter name="timeout" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2632">timeout per file, in nanoseconds. Allowed are values between
+                 line="2608">timeout per file, in nanoseconds. Allowed are values between
     one second (#GST_SECOND) and one hour (3600 * #GST_SECOND)</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
@@ -565,7 +565,7 @@ free it when no longer needed using g_error_free().</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2568">Synchronously discovers the given @uri.
+             line="2544">Synchronously discovers the given @uri.
 
 A copy of @uri will be made internally, so the caller can safely g_free()
 afterwards.</doc>
@@ -574,7 +574,7 @@ afterwards.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2579">the result of the scanning. Can be %NULL if an
+               line="2555">the result of the scanning. Can be %NULL if an
 error occurred.</doc>
           <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
         </return-value>
@@ -582,13 +582,13 @@ error occurred.</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2570">A #GstDiscoverer</doc>
+                 line="2546">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2571">The URI to run on.</doc>
+                 line="2547">The URI to run on.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -597,7 +597,7 @@ error occurred.</doc>
               c:identifier="gst_discoverer_discover_uri_async">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2529">Appends the given @uri to the list of URIs to discoverer. The actual
+             line="2505">Appends the given @uri to the list of URIs to discoverer. The actual
 discovery of the @uri will only take place if gst_discoverer_start() has
 been called.
 
@@ -608,7 +608,7 @@ afterwards.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2541">%TRUE if the @uri was successfully appended to the list of pending
+               line="2517">%TRUE if the @uri was successfully appended to the list of pending
 uris, else %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -616,13 +616,13 @@ uris, else %FALSE</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2531">A #GstDiscoverer</doc>
+                 line="2507">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2532">the URI to add.</doc>
+                 line="2508">the URI to add.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -630,7 +630,7 @@ uris, else %FALSE</doc>
       <method name="start" c:identifier="gst_discoverer_start">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2428">Allow asynchronous discovering of URIs to take place.
+             line="2404">Allow asynchronous discovering of URIs to take place.
 A #GMainLoop must be available for #GstDiscoverer to properly work in
 asynchronous mode.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
@@ -642,7 +642,7 @@ asynchronous mode.</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2430">A #GstDiscoverer</doc>
+                 line="2406">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
         </parameters>
@@ -650,7 +650,7 @@ asynchronous mode.</doc>
       <method name="stop" c:identifier="gst_discoverer_stop">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2471">Stop the discovery of any pending URIs and clears the list of
+             line="2447">Stop the discovery of any pending URIs and clears the list of
 pending URIS (if any).</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="405"/>
@@ -661,7 +661,7 @@ pending URIS (if any).</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2473">A #GstDiscoverer</doc>
+                 line="2449">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
         </parameters>
@@ -672,7 +672,7 @@ pending URIS (if any).</doc>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="235">The duration (in nanoseconds) after which the discovery of an individual
+             line="232">The duration (in nanoseconds) after which the discovery of an individual
 URI will timeout.
 
 If the discovery of a URI times out, the %GST_DISCOVERER_TIMEOUT will be
@@ -699,7 +699,7 @@ set on the result flags.</doc>
       <glib:signal name="discovered" when="last">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="290">Will be emitted in async mode when all information on a URI could be
+             line="287">Will be emitted in async mode when all information on a URI could be
 discovered, or an error occurred.
 
 When an error occurs, @info might still contain some partial information,
@@ -711,7 +711,7 @@ depending on the circumstances of the error.</doc>
           <parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="293">the results #GstDiscovererInfo</doc>
+                 line="290">the results #GstDiscovererInfo</doc>
             <type name="DiscovererInfo"/>
           </parameter>
           <parameter name="error"
@@ -720,7 +720,7 @@ depending on the circumstances of the error.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="294">#GError, which will be non-NULL
+                 line="291">#GError, which will be non-NULL
                                         if an error occurred during
                                         discovery. You must not free
                                         this #GError, it will be freed by
@@ -732,7 +732,7 @@ depending on the circumstances of the error.</doc>
       <glib:signal name="finished" when="last">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="268">Will be emitted in async mode when all pending URIs have been processed.</doc>
+             line="265">Will be emitted in async mode when all pending URIs have been processed.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -740,7 +740,7 @@ depending on the circumstances of the error.</doc>
       <glib:signal name="source-setup" when="last">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="312">This signal is emitted after the source element has been created for, so
+             line="309">This signal is emitted after the source element has been created for, so
 the URI being discovered, so it can be configured by setting additional
 properties (e.g. set a proxy server for an http source, or set the device
 and read speed for an audio cd source).
@@ -754,7 +754,7 @@ thread.</doc>
           <parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="315">source element</doc>
+                 line="312">source element</doc>
             <type name="Gst.Element"/>
           </parameter>
         </parameters>
@@ -762,7 +762,7 @@ thread.</doc>
       <glib:signal name="starting" when="last">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="279">Will be emitted when the discover starts analyzing the pending URIs</doc>
+             line="276">Will be emitted when the discover starts analyzing the pending URIs</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -864,7 +864,7 @@ information.</doc>
               c:identifier="gst_discoverer_audio_info_get_language">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="150"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="857">the language of the stream, or NULL if unknown.</doc>
@@ -1038,7 +1038,7 @@ Free with gst_discoverer_stream_info_list_free() after usage.</doc>
               version="1.20">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="111"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="775">tags specific to the given container. If you wish to use
@@ -1070,21 +1070,21 @@ the tags after the life-time of @info, you will need to copy them.</doc>
                 version="1.6">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2705">Parses a #GVariant as produced by gst_discoverer_info_to_variant()
+             line="2681">Parses a #GVariant as produced by gst_discoverer_info_to_variant()
 back to a #GstDiscovererInfo.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="344"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2712">A newly-allocated #GstDiscovererInfo.</doc>
+               line="2688">A newly-allocated #GstDiscovererInfo.</doc>
           <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
         </return-value>
         <parameters>
           <parameter name="variant" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2707">A #GVariant to deserialize into a #GstDiscovererInfo.</doc>
+                 line="2683">A #GVariant to deserialize into a #GstDiscovererInfo.</doc>
             <type name="GLib.Variant" c:type="GVariant*"/>
           </parameter>
         </parameters>
@@ -1121,7 +1121,7 @@ back to a #GstDiscovererInfo.</doc>
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
-            <type name="DiscovererStreamInfo"/>
+            <type name="DiscovererAudioInfo"/>
           </type>
         </return-value>
         <parameters>
@@ -1147,7 +1147,7 @@ gst_discoverer_stream_info_list_free().</doc>
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
-            <type name="DiscovererStreamInfo"/>
+            <type name="DiscovererContainerInfo"/>
           </type>
         </return-value>
         <parameters>
@@ -1205,7 +1205,7 @@ gst_discoverer_stream_info_list_free().</doc>
 #gst_discoverer_info_get_missing_elements_installer_details</doc-deprecated>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="313"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="1101">Miscellaneous information stored as a #GstStructure
@@ -1292,7 +1292,7 @@ for the missing element</doc>
               c:identifier="gst_discoverer_info_get_stream_info">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="298"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="1025">the structure (or topology) of the URI as a
@@ -1380,7 +1380,7 @@ gst_discoverer_stream_info_list_free().</doc>
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
-            <type name="DiscovererStreamInfo"/>
+            <type name="DiscovererSubtitleInfo"/>
           </type>
         </return-value>
         <parameters>
@@ -1399,7 +1399,7 @@ gst_discoverer_stream_info_list_free().</doc>
         <doc-deprecated xml:space="preserve">Use gst_discoverer_{container,stream}_info_get_tags() instead.</doc-deprecated>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="316"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="1112">all tags contained in the URI. If you wish to use
@@ -1418,7 +1418,7 @@ the tags after the life-time of @info, you will need to copy them.</doc>
       <method name="get_toc" c:identifier="gst_discoverer_info_get_toc">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="318"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="1125">TOC contained in the URI. If you wish to use
@@ -1467,7 +1467,7 @@ Copy it if you wish to use it after the life-time of @info.</doc>
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
-            <type name="DiscovererStreamInfo"/>
+            <type name="DiscovererVideoInfo"/>
           </type>
         </return-value>
         <parameters>
@@ -1484,7 +1484,7 @@ gst_discoverer_stream_info_list_free().</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2661">Serializes @info to a #GVariant that can be parsed again
+             line="2637">Serializes @info to a #GVariant that can be parsed again
 through gst_discoverer_info_from_variant().
 
 Note that any #GstToc (s) that might have been discovered will not be serialized
@@ -1494,20 +1494,20 @@ for now.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2673">A newly-allocated #GVariant representing @info.</doc>
+               line="2649">A newly-allocated #GVariant representing @info.</doc>
           <type name="GLib.Variant" c:type="GVariant*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2663">A #GstDiscovererInfo</doc>
+                 line="2639">A #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2664">A combination of #GstDiscovererSerializeFlags to specify
+                 line="2640">A combination of #GstDiscovererSerializeFlags to specify
 what needs to be serialized.</doc>
             <type name="DiscovererSerializeFlags"
                   c:type="GstDiscovererSerializeFlags"/>
@@ -1689,7 +1689,7 @@ and fress the #GList.</doc>
               c:identifier="gst_discoverer_stream_info_get_caps">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="70"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="649">the #GstCaps of the stream. Unref with
@@ -1713,7 +1713,7 @@ and fress the #GList.</doc>
 #gst_discoverer_info_get_missing_elements_installer_details</doc-deprecated>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="82"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="715">additional information regarding the stream (for
@@ -1735,7 +1735,7 @@ after the life-time of @info you will need to copy it.</doc>
               c:identifier="gst_discoverer_stream_info_get_next">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="67"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="630">the next #GstDiscovererStreamInfo in a chain. %NULL
@@ -1757,7 +1757,7 @@ Unref with #gst_discoverer_stream_info_unref after usage.</doc>
               c:identifier="gst_discoverer_stream_info_get_previous">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="64"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="612">the previous #GstDiscovererStreamInfo in a chain.
@@ -1843,7 +1843,7 @@ acts as a unique identifier as a 'int' for the stream.</doc>
               c:identifier="gst_discoverer_stream_info_get_tags">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="73"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="666">the tags contained in this stream. If you wish to
@@ -1863,7 +1863,7 @@ use the tags after the life-time of @info you will need to copy them.</doc>
       <method name="get_toc" c:identifier="gst_discoverer_stream_info_get_toc">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="76"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="681">the TOC contained in this stream. If you wish to
@@ -1895,7 +1895,7 @@ image based ones).</doc>
               c:identifier="gst_discoverer_subtitle_info_get_language">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="221"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
                line="990">the language of the stream, or NULL if unknown.</doc>
@@ -2499,20 +2499,20 @@ information like name, description, format and preset.</doc>
       <function name="find" c:identifier="gst_encoding_profile_find">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/encoding-profile.c"
-             line="1596">Find the #GstEncodingProfile with the specified name and category.</doc>
+             line="1598">Find the #GstEncodingProfile with the specified name and category.</doc>
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="204"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
-               line="1605">The matching #GstEncodingProfile or %NULL.</doc>
+               line="1607">The matching #GstEncodingProfile or %NULL.</doc>
           <type name="EncodingProfile" c:type="GstEncodingProfile*"/>
         </return-value>
         <parameters>
           <parameter name="targetname" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/encoding-profile.c"
-                 line="1598">The name of the target</doc>
+                 line="1600">The name of the target</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="profilename"
@@ -2521,7 +2521,7 @@ information like name, description, format and preset.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/encoding-profile.c"
-                 line="1599">The name of the profile, if %NULL
+                 line="1601">The name of the profile, if %NULL
 provided, it will default to the encoding profile called `default`.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -2531,7 +2531,7 @@ provided, it will default to the encoding profile called `default`.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/encoding-profile.c"
-                 line="1601">The target category. Can be %NULL</doc>
+                 line="1603">The target category. Can be %NULL</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -2540,22 +2540,22 @@ provided, it will default to the encoding profile called `default`.</doc>
                 c:identifier="gst_encoding_profile_from_discoverer">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/encoding-profile.c"
-             line="2268">Creates a #GstEncodingProfile matching the formats from the given
+             line="2266">Creates a #GstEncodingProfile matching the formats from the given
 #GstDiscovererInfo. Streams other than audio or video (eg,
 subtitles), are currently ignored.</doc>
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="264"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
-               line="2276">The new #GstEncodingProfile or %NULL.</doc>
+               line="2274">The new #GstEncodingProfile or %NULL.</doc>
           <type name="EncodingProfile" c:type="GstEncodingProfile*"/>
         </return-value>
         <parameters>
           <parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/encoding-profile.c"
-                 line="2270">The #GstDiscovererInfo to read from</doc>
+                 line="2268">The #GstDiscovererInfo to read from</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </parameter>
         </parameters>
@@ -2565,20 +2565,20 @@ subtitles), are currently ignored.</doc>
               version="1.12">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/encoding-profile.c"
-             line="2309">Makes a deep copy of @self</doc>
+             line="2302">Makes a deep copy of @self</doc>
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="267"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
-               line="2315">The copy of @self</doc>
+               line="2308">The copy of @self</doc>
           <type name="EncodingProfile" c:type="GstEncodingProfile*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/encoding-profile.c"
-                 line="2311">The #GstEncodingProfile to copy</doc>
+                 line="2304">The #GstEncodingProfile to copy</doc>
             <type name="EncodingProfile" c:type="GstEncodingProfile*"/>
           </instance-parameter>
         </parameters>
@@ -2607,7 +2607,7 @@ later during the encoding.</doc>
               c:identifier="gst_encoding_profile_get_description">
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="135"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
                line="532">the description of the profile, can be %NULL.</doc>
@@ -2647,17 +2647,17 @@ later during the encoding.</doc>
               c:identifier="gst_encoding_profile_get_file_extension">
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="201"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
-               line="1495">a suitable file extension for @profile, or NULL.</doc>
+               line="1497">a suitable file extension for @profile, or NULL.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="profile" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/encoding-profile.c"
-                 line="1493">a #GstEncodingProfile</doc>
+                 line="1495">a #GstEncodingProfile</doc>
             <type name="EncodingProfile" c:type="GstEncodingProfile*"/>
           </instance-parameter>
         </parameters>
@@ -2668,7 +2668,7 @@ later during the encoding.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
-               line="546">the #GstCaps corresponding to the media format used
+               line="546">(nullable): the #GstCaps corresponding to the media format used
 in the profile. Unref after usage.</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </return-value>
@@ -2707,7 +2707,7 @@ gst_caps_unref() when you are done with the caps.</doc>
       <method name="get_name" c:identifier="gst_encoding_profile_get_name">
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="128"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
                line="518">the name of the profile, can be %NULL.</doc>
@@ -2745,7 +2745,7 @@ container profile. If 0, it is not a mandatory stream.</doc>
       <method name="get_preset" c:identifier="gst_encoding_profile_get_preset">
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="163"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
                line="561">the name of the #GstPreset to be used in the profile.
@@ -2765,7 +2765,7 @@ This is the name that has been set when saving the preset.</doc>
               c:identifier="gst_encoding_profile_get_preset_name">
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="166"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
                line="576">the name of the #GstPreset factory to be used in the profile.</doc>
@@ -2784,7 +2784,7 @@ This is the name that has been set when saving the preset.</doc>
               c:identifier="gst_encoding_profile_get_restriction">
         <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                          line="184"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-profile.c"
                line="621">The restriction #GstCaps to apply before the encoder
@@ -3261,7 +3261,7 @@ well-defined categories, like #GST_ENCODING_CATEGORY_DEVICE, but it
 needed.</doc>
         <source-position filename="gst-libs/gst/pbutils/encoding-target.h"
                          line="125"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-target.c"
                line="312">The newly created #GstEncodingTarget or %NULL if
@@ -3456,11 +3456,11 @@ count.</doc>
               version="1.18">
         <source-position filename="gst-libs/gst/pbutils/encoding-target.h"
                          line="140"/>
-        <return-value transfer-ownership="none">
+        <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-target.c"
                line="201">The path to the @target file.</doc>
-          <type name="utf8" c:type="const gchar*"/>
+          <type name="filename" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="target" transfer-ownership="none">
@@ -3475,7 +3475,7 @@ count.</doc>
               c:identifier="gst_encoding_target_get_profile">
         <source-position filename="gst-libs/gst/pbutils/encoding-target.h"
                          line="146"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/encoding-target.c"
                line="230">The matching #GstEncodingProfile, or %NULL.</doc>
@@ -4330,7 +4330,7 @@ in debugging.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="PLUGINS_BASE_VERSION_MICRO"
-              value="5"
+              value="0"
               c:type="GST_PLUGINS_BASE_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstpluginsbaseversion.h"
@@ -4340,7 +4340,7 @@ in debugging.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="PLUGINS_BASE_VERSION_MINOR"
-              value="20"
+              value="22"
               c:type="GST_PLUGINS_BASE_VERSION_MINOR">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstpluginsbaseversion.h"
@@ -4436,6 +4436,17 @@ describe the format of the caps.</doc>
              filename="gst-libs/gst/pbutils/descriptions.h"
              line="41">Container format can store any kind of
     stream type.</doc>
+      </member>
+      <member name="metadata"
+              value="128"
+              c:identifier="GST_PBUTILS_CAPS_DESCRIPTION_FLAG_METADATA"
+              version="1.22"
+              glib:nick="metadata"
+              glib:name="GST_PBUTILS_CAPS_DESCRIPTION_FLAG_METADATA">
+        <doc xml:space="preserve"
+             filename="gst-libs/gst/pbutils/descriptions.h"
+             line="60">Caps describe a metadata format, or a container format that can store
+metadata.</doc>
       </member>
     </bitfield>
     <function name="codec_utils_aac_caps_set_level_and_profile"
@@ -4674,12 +4685,38 @@ rate.</doc>
         </parameter>
       </parameters>
     </function>
+    <function name="codec_utils_caps_from_mime_codec"
+              c:identifier="gst_codec_utils_caps_from_mime_codec"
+              version="1.22">
+      <doc xml:space="preserve"
+           filename="gst-libs/gst/pbutils/codec-utils.c"
+           line="2837">Converts a RFC 6381 compatible codec string to #GstCaps. More than one codec
+string can be present (separated by `,`).
+
+Registered codecs can be found at http://mp4ra.org/#/codecs</doc>
+      <source-position filename="gst-libs/gst/pbutils/codec-utils.h"
+                       line="160"/>
+      <return-value transfer-ownership="full" nullable="1">
+        <doc xml:space="preserve"
+             filename="gst-libs/gst/pbutils/codec-utils.c"
+             line="2846">The corresponding #GstCaps or %NULL</doc>
+        <type name="Gst.Caps" c:type="GstCaps*"/>
+      </return-value>
+      <parameters>
+        <parameter name="codecs_field" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="gst-libs/gst/pbutils/codec-utils.c"
+               line="2839">A mime codec string field</doc>
+          <type name="utf8" c:type="const gchar*"/>
+        </parameter>
+      </parameters>
+    </function>
     <function name="codec_utils_caps_get_mime_codec"
               c:identifier="gst_codec_utils_caps_get_mime_codec"
               version="1.20">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/codec-utils.c"
-           line="2467">Converts @caps to a RFC 6381 compatible codec string if possible.
+           line="2552">Converts @caps to a RFC 6381 compatible codec string if possible.
 
 Useful for providing the 'codecs' field inside the 'Content-Type' HTTP
 header for containerized formats, such as mp4 or matroska.
@@ -4690,14 +4727,14 @@ Registered codecs can be found at http://mp4ra.org/#/codecs</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/codec-utils.c"
-             line="2478">a RFC 6381 compatible codec string or %NULL</doc>
+             line="2563">a RFC 6381 compatible codec string or %NULL</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
       <parameters>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/codec-utils.c"
-               line="2469">A #GstCaps to convert to mime codec</doc>
+               line="2554">A #GstCaps to convert to mime codec</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </parameter>
       </parameters>
@@ -5202,7 +5239,7 @@ object sequence start code. Only the first byte
            line="1868">Creates Opus caps from the given parameters.</doc>
       <source-position filename="gst-libs/gst/pbutils/codec-utils.h"
                        line="124"/>
-      <return-value transfer-ownership="full">
+      <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/codec-utils.c"
              line="1879">The #GstCaps, or %NULL if the parameters would lead to
@@ -5262,7 +5299,7 @@ invalid Opus caps.</doc>
 @comments.</doc>
       <source-position filename="gst-libs/gst/pbutils/codec-utils.h"
                        line="132"/>
-      <return-value transfer-ownership="full">
+      <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/codec-utils.c"
              line="2045">The #GstCaps.</doc>
@@ -5294,7 +5331,7 @@ invalid Opus caps.</doc>
            line="2092">Creates OpusHead header from the given parameters.</doc>
       <source-position filename="gst-libs/gst/pbutils/codec-utils.h"
                        line="135"/>
-      <return-value transfer-ownership="full">
+      <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/codec-utils.c"
              line="2105">The #GstBuffer containing the OpusHead.</doc>
@@ -6541,20 +6578,20 @@ gst_install_plugins_async() instead of this function.</doc>
               c:identifier="gst_is_missing_plugin_message">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="607">Checks whether @msg is a missing plugins message.</doc>
+           line="626">Checks whether @msg is a missing plugins message.</doc>
       <source-position filename="gst-libs/gst/pbutils/missing-plugins.h"
                        line="63"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="613">%TRUE if @msg is a missing-plugins message, otherwise %FALSE.</doc>
+             line="632">%TRUE if @msg is a missing-plugins message, otherwise %FALSE.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="609">a #GstMessage</doc>
+               line="628">a #GstMessage</doc>
           <type name="Gst.Message" c:type="GstMessage*"/>
         </parameter>
       </parameters>
@@ -6563,7 +6600,7 @@ gst_install_plugins_async() instead of this function.</doc>
               c:identifier="gst_missing_decoder_installer_detail_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="745">Returns an opaque string containing all the details about the missing
+           line="764">Returns an opaque string containing all the details about the missing
 element to be passed to an external installer called via
 gst_install_plugins_async() or gst_install_plugins_sync().
 
@@ -6576,7 +6613,7 @@ missing.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="758">a newly-allocated detail string, or NULL on error. Free string
+             line="777">a newly-allocated detail string. Free string
          with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -6584,7 +6621,7 @@ missing.</doc>
         <parameter name="decode_caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="747">the (fixed) caps for which a decoder element is needed</doc>
+               line="766">the (fixed) caps for which a decoder element is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -6593,7 +6630,7 @@ missing.</doc>
               c:identifier="gst_missing_decoder_message_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="277">Creates a missing-plugin message for @element to notify the application
+           line="296">Creates a missing-plugin message for @element to notify the application
 that a decoder element for a particular set of (fixed) caps is missing.
 This function is mainly for use in plugins.</doc>
       <source-position filename="gst-libs/gst/pbutils/missing-plugins.h"
@@ -6601,20 +6638,20 @@ This function is mainly for use in plugins.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="286">a new #GstMessage, or NULL on error</doc>
+             line="305">a new #GstMessage</doc>
         <type name="Gst.Message" c:type="GstMessage*"/>
       </return-value>
       <parameters>
         <parameter name="element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="279">the #GstElement posting the message</doc>
+               line="298">the #GstElement posting the message</doc>
           <type name="Gst.Element" c:type="GstElement*"/>
         </parameter>
         <parameter name="decode_caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="280">the (fixed) caps for which a decoder element is needed</doc>
+               line="299">the (fixed) caps for which a decoder element is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -6623,7 +6660,7 @@ This function is mainly for use in plugins.</doc>
               c:identifier="gst_missing_element_installer_detail_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="717">Returns an opaque string containing all the details about the missing
+           line="736">Returns an opaque string containing all the details about the missing
 element to be passed to an external installer called via
 gst_install_plugins_async() or gst_install_plugins_sync().
 
@@ -6636,7 +6673,7 @@ missing.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="731">a newly-allocated detail string, or NULL on error. Free string
+             line="750">a newly-allocated detail string. Free string
          with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -6644,7 +6681,7 @@ missing.</doc>
         <parameter name="factory_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="719">the name of the missing element (element factory),
+               line="738">the name of the missing element (element factory),
            e.g. "videoscale" or "cdparanoiasrc"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
@@ -6654,7 +6691,7 @@ missing.</doc>
               c:identifier="gst_missing_element_message_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="244">Creates a missing-plugin message for @element to notify the application
+           line="263">Creates a missing-plugin message for @element to notify the application
 that a certain required element is missing. This function is mainly for
 use in plugins.</doc>
       <source-position filename="gst-libs/gst/pbutils/missing-plugins.h"
@@ -6662,20 +6699,20 @@ use in plugins.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="254">a new #GstMessage, or NULL on error</doc>
+             line="273">a new #GstMessage</doc>
         <type name="Gst.Message" c:type="GstMessage*"/>
       </return-value>
       <parameters>
         <parameter name="element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="246">the #GstElement posting the message</doc>
+               line="265">the #GstElement posting the message</doc>
           <type name="Gst.Element" c:type="GstElement*"/>
         </parameter>
         <parameter name="factory_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="247">the name of the missing element (element factory),
+               line="266">the name of the missing element (element factory),
            e.g. "videoscale" or "cdparanoiasrc"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
@@ -6685,7 +6722,7 @@ use in plugins.</doc>
               c:identifier="gst_missing_encoder_installer_detail_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="783">Returns an opaque string containing all the details about the missing
+           line="802">Returns an opaque string containing all the details about the missing
 element to be passed to an external installer called via
 gst_install_plugins_async() or gst_install_plugins_sync().
 
@@ -6698,7 +6735,7 @@ missing.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="796">a newly-allocated detail string, or NULL on error. Free string
+             line="815">a newly-allocated detail string. Free string
          with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -6706,7 +6743,7 @@ missing.</doc>
         <parameter name="encode_caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="785">the (fixed) caps for which an encoder element is needed</doc>
+               line="804">the (fixed) caps for which an encoder element is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -6715,7 +6752,7 @@ missing.</doc>
               c:identifier="gst_missing_encoder_message_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="317">Creates a missing-plugin message for @element to notify the application
+           line="336">Creates a missing-plugin message for @element to notify the application
 that an encoder element for a particular set of (fixed) caps is missing.
 This function is mainly for use in plugins.</doc>
       <source-position filename="gst-libs/gst/pbutils/missing-plugins.h"
@@ -6723,20 +6760,20 @@ This function is mainly for use in plugins.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="326">a new #GstMessage, or NULL on error</doc>
+             line="345">a new #GstMessage</doc>
         <type name="Gst.Message" c:type="GstMessage*"/>
       </return-value>
       <parameters>
         <parameter name="element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="319">the #GstElement posting the message</doc>
+               line="338">the #GstElement posting the message</doc>
           <type name="Gst.Element" c:type="GstElement*"/>
         </parameter>
         <parameter name="encode_caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="320">the (fixed) caps for which an encoder element is needed</doc>
+               line="339">the (fixed) caps for which an encoder element is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -6745,7 +6782,7 @@ This function is mainly for use in plugins.</doc>
               c:identifier="gst_missing_plugin_message_get_description">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="502">Returns a localised string describing the missing feature, for use in
+           line="521">Returns a localised string describing the missing feature, for use in
 error dialogs and the like. Should never return NULL unless @msg is not
 a valid missing-plugin message.
 
@@ -6757,7 +6794,7 @@ message</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="514">a newly-allocated description string, or NULL on error. Free
+             line="533">a newly-allocated description string. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -6765,7 +6802,7 @@ message</doc>
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="504">a missing-plugin #GstMessage of type #GST_MESSAGE_ELEMENT</doc>
+               line="523">a missing-plugin #GstMessage of type #GST_MESSAGE_ELEMENT</doc>
           <type name="Gst.Message" c:type="GstMessage*"/>
         </parameter>
       </parameters>
@@ -6774,7 +6811,7 @@ message</doc>
               c:identifier="gst_missing_plugin_message_get_installer_detail">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="406">Returns an opaque string containing all the details about the missing
+           line="425">Returns an opaque string containing all the details about the missing
 element to be passed to an external installer called via
 gst_install_plugins_async() or gst_install_plugins_sync().
 
@@ -6782,10 +6819,10 @@ This function is mainly for applications that call external plugin
 installation mechanisms using one of the two above-mentioned functions.</doc>
       <source-position filename="gst-libs/gst/pbutils/missing-plugins.h"
                        line="57"/>
-      <return-value transfer-ownership="full">
+      <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="417">a newly-allocated detail string, or NULL on error. Free string
+             line="436">a newly-allocated detail string, or NULL on error. Free string
          with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -6793,7 +6830,7 @@ installation mechanisms using one of the two above-mentioned functions.</doc>
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="408">a missing-plugin #GstMessage of type #GST_MESSAGE_ELEMENT</doc>
+               line="427">a missing-plugin #GstMessage of type #GST_MESSAGE_ELEMENT</doc>
           <type name="Gst.Message" c:type="GstMessage*"/>
         </parameter>
       </parameters>
@@ -6802,7 +6839,7 @@ installation mechanisms using one of the two above-mentioned functions.</doc>
               c:identifier="gst_missing_uri_sink_installer_detail_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="689">Returns an opaque string containing all the details about the missing
+           line="708">Returns an opaque string containing all the details about the missing
 element to be passed to an external installer called via
 gst_install_plugins_async() or gst_install_plugins_sync().
 
@@ -6815,7 +6852,7 @@ missing.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="703">a newly-allocated detail string, or NULL on error. Free string
+             line="722">a newly-allocated detail string. Free string
          with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -6823,7 +6860,7 @@ missing.</doc>
         <parameter name="protocol" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="691">the URI protocol the missing source needs to implement,
+               line="710">the URI protocol the missing source needs to implement,
            e.g. "http" or "mms"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
@@ -6833,7 +6870,7 @@ missing.</doc>
               c:identifier="gst_missing_uri_sink_message_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="212">Creates a missing-plugin message for @element to notify the application
+           line="231">Creates a missing-plugin message for @element to notify the application
 that a sink element for a particular URI protocol is missing. This
 function is mainly for use in plugins.</doc>
       <source-position filename="gst-libs/gst/pbutils/missing-plugins.h"
@@ -6841,20 +6878,20 @@ function is mainly for use in plugins.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="222">a new #GstMessage, or NULL on error</doc>
+             line="241">a new #GstMessage</doc>
         <type name="Gst.Message" c:type="GstMessage*"/>
       </return-value>
       <parameters>
         <parameter name="element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="214">the #GstElement posting the message</doc>
+               line="233">the #GstElement posting the message</doc>
           <type name="Gst.Element" c:type="GstElement*"/>
         </parameter>
         <parameter name="protocol" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="215">the URI protocol the missing sink needs to implement,
+               line="234">the URI protocol the missing sink needs to implement,
            e.g. "http" or "smb"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
@@ -6864,7 +6901,7 @@ function is mainly for use in plugins.</doc>
               c:identifier="gst_missing_uri_source_installer_detail_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="661">Returns an opaque string containing all the details about the missing
+           line="680">Returns an opaque string containing all the details about the missing
 element to be passed to an external installer called via
 gst_install_plugins_async() or gst_install_plugins_sync().
 
@@ -6877,7 +6914,7 @@ missing.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="675">a newly-allocated detail string, or NULL on error. Free string
+             line="694">a newly-allocated detail string. Free string
          with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -6885,7 +6922,7 @@ missing.</doc>
         <parameter name="protocol" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="663">the URI protocol the missing source needs to implement,
+               line="682">the URI protocol the missing source needs to implement,
            e.g. "http" or "mms"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
@@ -6895,7 +6932,7 @@ missing.</doc>
               c:identifier="gst_missing_uri_source_message_new">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/missing-plugins.c"
-           line="179">Creates a missing-plugin message for @element to notify the application
+           line="198">Creates a missing-plugin message for @element to notify the application
 that a source element for a particular URI protocol is missing. This
 function is mainly for use in plugins.</doc>
       <source-position filename="gst-libs/gst/pbutils/missing-plugins.h"
@@ -6903,20 +6940,20 @@ function is mainly for use in plugins.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/missing-plugins.c"
-             line="189">a new #GstMessage, or NULL on error</doc>
+             line="208">a new #GstMessage</doc>
         <type name="Gst.Message" c:type="GstMessage*"/>
       </return-value>
       <parameters>
         <parameter name="element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="181">the #GstElement posting the message</doc>
+               line="200">the #GstElement posting the message</doc>
           <type name="Gst.Element" c:type="GstElement*"/>
         </parameter>
         <parameter name="protocol" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/missing-plugins.c"
-               line="182">the URI protocol the missing source needs to implement,
+               line="201">the URI protocol the missing source needs to implement,
            e.g. "http" or "mms"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
@@ -6926,20 +6963,20 @@ function is mainly for use in plugins.</doc>
               c:identifier="gst_pb_utils_add_codec_description_to_tag_list">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="1141">Adds a codec tag describing the format specified by @caps to @taglist.</doc>
+           line="1142">Adds a codec tag describing the format specified by @caps to @taglist.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="65"/>
+                       line="78"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="1151">TRUE if a codec tag was added, FALSE otherwise.</doc>
+             line="1152">TRUE if a codec tag was added, FALSE otherwise.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="taglist" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1143">a #GstTagList</doc>
+               line="1144">a #GstTagList</doc>
           <type name="Gst.TagList" c:type="GstTagList*"/>
         </parameter>
         <parameter name="codec_tag"
@@ -6948,7 +6985,7 @@ function is mainly for use in plugins.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1144">a GStreamer codec tag such as #GST_TAG_AUDIO_CODEC,
+               line="1145">a GStreamer codec tag such as #GST_TAG_AUDIO_CODEC,
             #GST_TAG_VIDEO_CODEC or #GST_TAG_CODEC. If none is specified,
             the function will attempt to detect the appropriate category.</doc>
           <type name="utf8" c:type="const gchar*"/>
@@ -6956,7 +6993,7 @@ function is mainly for use in plugins.</doc>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1147">the (fixed) #GstCaps for which a codec tag should be added.</doc>
+               line="1148">the (fixed) #GstCaps for which a codec tag should be added.</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -6966,14 +7003,14 @@ function is mainly for use in plugins.</doc>
               version="1.20">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="1307">Returns flags that describe the format of the caps if known. No flags are
+           line="1309">Returns flags that describe the format of the caps if known. No flags are
 set for unknown caps.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="93"/>
+                       line="106"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="1314">#GstPbUtilsCapsDescriptionFlags that describe @caps, or no flags
+             line="1316">#GstPbUtilsCapsDescriptionFlags that describe @caps, or no flags
          if the caps are unknown.</doc>
         <type name="PbUtilsCapsDescriptionFlags"
               c:type="GstPbUtilsCapsDescriptionFlags"/>
@@ -6982,7 +7019,7 @@ set for unknown caps.</doc>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1309">the (fixed) #GstCaps for which flags are requested</doc>
+               line="1311">the (fixed) #GstCaps for which flags are requested</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -6991,18 +7028,18 @@ set for unknown caps.</doc>
               c:identifier="gst_pb_utils_get_codec_description">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="1192">Returns a localised (as far as this is possible) string describing the
+           line="1193">Returns a localised (as far as this is possible) string describing the
 media format specified in @caps, for use in error dialogs or other messages
 to be seen by the user. Should never return NULL unless @caps is invalid.
 
 Also see the convenience function
 gst_pb_utils_add_codec_description_to_tag_list().</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="70"/>
-      <return-value transfer-ownership="full">
+                       line="83"/>
+      <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="1203">a newly-allocated description string, or NULL on error. Free
+             line="1204">a newly-allocated description string, or NULL on error. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -7010,7 +7047,7 @@ gst_pb_utils_add_codec_description_to_tag_list().</doc>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1194">the (fixed) #GstCaps for which an format description is needed</doc>
+               line="1195">the (fixed) #GstCaps for which an format description is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -7019,19 +7056,18 @@ gst_pb_utils_add_codec_description_to_tag_list().</doc>
               c:identifier="gst_pb_utils_get_decoder_description">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="1003">Returns a localised string describing an decoder for the format specified
+           line="1007">Returns a localised string describing an decoder for the format specified
 in @caps, for use in error dialogs or other messages to be seen by the user.
-Should never return NULL unless @factory_name or @caps are invalid.
 
 This function is mainly for internal use, applications would typically
 use gst_missing_plugin_message_get_description() to get a description of
 a missing feature from a missing-plugin message.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="84"/>
+                       line="97"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="1015">a newly-allocated description string, or NULL on error. Free
+             line="1018">a newly-allocated description string. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -7039,7 +7075,7 @@ a missing feature from a missing-plugin message.</doc>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1005">the (fixed) #GstCaps for which an decoder description is needed</doc>
+               line="1009">the (fixed) #GstCaps for which an decoder description is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -7048,19 +7084,18 @@ a missing feature from a missing-plugin message.</doc>
               c:identifier="gst_pb_utils_get_element_description">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="1110">Returns a localised string describing the given element, for use in
-error dialogs or other messages to be seen by the user. Should never
-return NULL unless @factory_name is invalid.
+           line="1112">Returns a localised string describing the given element, for use in
+error dialogs or other messages to be seen by the user.
 
 This function is mainly for internal use, applications would typically
 use gst_missing_plugin_message_get_description() to get a description of
 a missing feature from a missing-plugin message.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="90"/>
+                       line="103"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="1122">a newly-allocated description string, or NULL on error. Free
+             line="1123">a newly-allocated description string. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -7068,7 +7103,7 @@ a missing feature from a missing-plugin message.</doc>
         <parameter name="factory_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1112">the name of the element, e.g. "giosrc"</doc>
+               line="1114">the name of the element, e.g. "giosrc"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -7077,19 +7112,18 @@ a missing feature from a missing-plugin message.</doc>
               c:identifier="gst_pb_utils_get_encoder_description">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="1058">Returns a localised string describing an encoder for the format specified
+           line="1061">Returns a localised string describing an encoder for the format specified
 in @caps, for use in error dialogs or other messages to be seen by the user.
-Should never return NULL unless @factory_name or @caps are invalid.
 
 This function is mainly for internal use, applications would typically
 use gst_missing_plugin_message_get_description() to get a description of
 a missing feature from a missing-plugin message.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="87"/>
+                       line="100"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="1070">a newly-allocated description string, or NULL on error. Free
+             line="1072">a newly-allocated description string. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -7097,7 +7131,7 @@ a missing feature from a missing-plugin message.</doc>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1060">the (fixed) #GstCaps for which an encoder description is needed</doc>
+               line="1063">the (fixed) #GstCaps for which an encoder description is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -7107,13 +7141,13 @@ a missing feature from a missing-plugin message.</doc>
               version="1.20">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="1290">Returns a possible file extension for the given caps, if known.</doc>
+           line="1291">Returns a possible file extension for the given caps, if known.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="96"/>
+                       line="109"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="1296">a newly-allocated file extension string, or NULL on error. Free
+             line="1297">a newly-allocated file extension string, or NULL on error. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -7121,7 +7155,7 @@ a missing feature from a missing-plugin message.</doc>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="1292">the (fixed) #GstCaps for which a file extension is needed</doc>
+               line="1293">the (fixed) #GstCaps for which a file extension is needed</doc>
           <type name="Gst.Caps" c:type="const GstCaps*"/>
         </parameter>
       </parameters>
@@ -7130,19 +7164,19 @@ a missing feature from a missing-plugin message.</doc>
               c:identifier="gst_pb_utils_get_sink_description">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="968">Returns a localised string describing a sink element handling the protocol
+           line="972">Returns a localised string describing a sink element handling the protocol
 specified in @protocol, for use in error dialogs or other messages to be
-seen by the user. Should never return NULL unless @protocol is invalid.
+seen by the user.
 
 This function is mainly for internal use, applications would typically
 use gst_missing_plugin_message_get_description() to get a description of
 a missing feature from a missing-plugin message.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="81"/>
+                       line="94"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="980">a newly-allocated description string, or NULL on error. Free
+             line="984">a newly-allocated description string. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -7150,7 +7184,7 @@ a missing feature from a missing-plugin message.</doc>
         <parameter name="protocol" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="970">the protocol the sink element needs to handle, e.g. "http"</doc>
+               line="974">the protocol the sink element needs to handle, e.g. "http"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -7159,19 +7193,19 @@ a missing feature from a missing-plugin message.</doc>
               c:identifier="gst_pb_utils_get_source_description">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/descriptions.c"
-           line="918">Returns a localised string describing a source element handling the protocol
+           line="922">Returns a localised string describing a source element handling the protocol
 specified in @protocol, for use in error dialogs or other messages to be
-seen by the user. Should never return NULL unless @protocol is invalid.
+seen by the user.
 
 This function is mainly for internal use, applications would typically
 use gst_missing_plugin_message_get_description() to get a description of
 a missing feature from a missing-plugin message.</doc>
       <source-position filename="gst-libs/gst/pbutils/descriptions.h"
-                       line="78"/>
+                       line="91"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/descriptions.c"
-             line="930">a newly-allocated description string, or NULL on error. Free
+             line="934">a newly-allocated description string. Free
          string with g_free() when not needed any longer.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -7179,7 +7213,7 @@ a missing feature from a missing-plugin message.</doc>
         <parameter name="protocol" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/descriptions.c"
-               line="920">the protocol the source element needs to handle, e.g. "http"</doc>
+               line="924">the protocol the source element needs to handle, e.g. "http"</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
