@@ -374,10 +374,10 @@ of the buffer.</doc>
               version="7.0.0">
       <doc xml:space="preserve"
            filename="src/hb-font.h"
-           line="1171">Constant signifying that a font does not have any
+           line="1176">Constant signifying that a font does not have any
 named-instance index set.  This is the default of
 a font.</doc>
-      <source-position filename="src/hb-font.h" line="1180"/>
+      <source-position filename="src/hb-font.h" line="1185"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="LANGUAGE_INVALID"
@@ -560,15 +560,15 @@ a font.</doc>
       <source-position filename="src/hb-version.h" line="44"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="1" c:type="HB_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="0" c:type="HB_VERSION_MICRO">
       <source-position filename="src/hb-version.h" line="56"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MINOR" value="0" c:type="HB_VERSION_MINOR">
+    <constant name="VERSION_MINOR" value="1" c:type="HB_VERSION_MINOR">
       <source-position filename="src/hb-version.h" line="50"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_STRING" value="7.0.1" c:type="HB_VERSION_STRING">
+    <constant name="VERSION_STRING" value="7.1.0" c:type="HB_VERSION_STRING">
       <source-position filename="src/hb-version.h" line="63"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
@@ -9920,7 +9920,7 @@ which is the same as #hb_font_get_glyph_shape_func_t.</doc>
               deprecated-version="1.2.3">
       <doc xml:space="preserve"
            filename="src/hb-font.cc"
-           line="2931">Deprecated.  Use hb_font_funcs_set_nominal_glyph_func() and
+           line="3004">Deprecated.  Use hb_font_funcs_set_nominal_glyph_func() and
 hb_font_funcs_set_variation_glyph_func() instead.</doc>
       <source-position filename="src/hb-deprecated.h" line="107"/>
       <return-value transfer-ownership="none">
@@ -9930,7 +9930,7 @@ hb_font_funcs_set_variation_glyph_func() instead.</doc>
         <parameter name="ffuncs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2933">The font-functions structure</doc>
+               line="3006">The font-functions structure</doc>
           <type name="font_funcs_t" c:type="hb_font_funcs_t*"/>
         </parameter>
         <parameter name="func"
@@ -9940,7 +9940,7 @@ hb_font_funcs_set_variation_glyph_func() instead.</doc>
                    destroy="3">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2934">callback function</doc>
+               line="3007">callback function</doc>
           <type name="font_get_glyph_func_t"
                 c:type="hb_font_get_glyph_func_t"/>
         </parameter>
@@ -9950,7 +9950,7 @@ hb_font_funcs_set_variation_glyph_func() instead.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2935">data to pass to @func</doc>
+               line="3008">data to pass to @func</doc>
           <type name="gpointer" c:type="void*"/>
         </parameter>
         <parameter name="destroy"
@@ -9960,7 +9960,7 @@ hb_font_funcs_set_variation_glyph_func() instead.</doc>
                    scope="notified">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2936">function to call when @user_data is not needed anymore</doc>
+               line="3009">function to call when @user_data is not needed anymore</doc>
           <type name="destroy_func_t" c:type="hb_destroy_func_t"/>
         </parameter>
       </parameters>
@@ -12985,7 +12985,7 @@ text segments.</doc>
               version="3.3.0">
       <doc xml:space="preserve"
            filename="src/hb-font.cc"
-           line="2817">Fetches the list of variation coordinates (in design-space units) currently
+           line="2890">Fetches the list of variation coordinates (in design-space units) currently
 set on a font.
 
 Note that this returned array may only contain values for some
@@ -12994,18 +12994,18 @@ values.
 
 Return value is valid as long as variation coordinates of the font
 are not modified.</doc>
-      <source-position filename="src/hb-font.h" line="1159"/>
+      <source-position filename="src/hb-font.h" line="1164"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-font.cc"
-             line="2832">coordinates array</doc>
+             line="2905">coordinates array</doc>
         <type name="gfloat" c:type="const float*"/>
       </return-value>
       <parameters>
         <parameter name="font" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2819">#hb_font_t to work upon</doc>
+               line="2892">#hb_font_t to work upon</doc>
           <type name="font_t" c:type="hb_font_t*"/>
         </parameter>
         <parameter name="length"
@@ -13014,7 +13014,7 @@ are not modified.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2820">Number of coordinates retrieved</doc>
+               line="2893">Number of coordinates retrieved</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
       </parameters>
@@ -13024,7 +13024,7 @@ are not modified.</doc>
               version="1.4.2">
       <doc xml:space="preserve"
            filename="src/hb-font.cc"
-           line="2789">Fetches the list of normalized variation coordinates currently
+           line="2862">Fetches the list of normalized variation coordinates currently
 set on a font.
 
 Note that this returned array may only contain values for some
@@ -13032,18 +13032,18 @@ Note that this returned array may only contain values for some
 
 Return value is valid as long as variation coordinates of the font
 are not modified.</doc>
-      <source-position filename="src/hb-font.h" line="1168"/>
+      <source-position filename="src/hb-font.h" line="1173"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-font.cc"
-             line="2803">coordinates array</doc>
+             line="2876">coordinates array</doc>
         <type name="gint" c:type="const int*"/>
       </return-value>
       <parameters>
         <parameter name="font" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2791">#hb_font_t to work upon</doc>
+               line="2864">#hb_font_t to work upon</doc>
           <type name="font_t" c:type="hb_font_t*"/>
         </parameter>
         <parameter name="length"
@@ -13052,7 +13052,7 @@ are not modified.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2792">Number of coordinates retrieved</doc>
+               line="2865">Number of coordinates retrieved</doc>
           <type name="guint" c:type="unsigned int*"/>
         </parameter>
       </parameters>
@@ -13062,19 +13062,19 @@ are not modified.</doc>
               version="7.0.0">
       <doc xml:space="preserve"
            filename="src/hb-font.cc"
-           line="2719">Returns the currently-set named-instance index of the font.</doc>
-      <source-position filename="src/hb-font.h" line="1187"/>
+           line="2792">Returns the currently-set named-instance index of the font.</doc>
+      <source-position filename="src/hb-font.h" line="1192"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-font.cc"
-             line="2725">Named-instance index or %HB_FONT_NO_VAR_NAMED_INSTANCE.</doc>
+             line="2798">Named-instance index or %HB_FONT_NO_VAR_NAMED_INSTANCE.</doc>
         <type name="guint" c:type="unsigned int"/>
       </return-value>
       <parameters>
         <parameter name="font" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2721">a font.</doc>
+               line="2794">a font.</doc>
           <type name="font_t" c:type="hb_font_t*"/>
         </parameter>
       </parameters>
@@ -13888,12 +13888,114 @@ function is slanted to reflect this value as well.&lt;/note&gt;
               version="1.4.2">
       <doc xml:space="preserve"
            filename="src/hb-font.cc"
-           line="2652">Applies a list of variation coordinates (in design-space units)
+           line="2725">Applies a list of variation coordinates (in design-space units)
 to a font.
 
 Note that this overrides all existing variations set on @font.
 Axes not included in @coords will be effectively set to their
 default values.</doc>
+      <source-position filename="src/hb-font.h" line="1159"/>
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2727">#hb_font_t to work upon</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="coords" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2728">Array of variation coordinates to apply</doc>
+          <array length="2" zero-terminated="0" c:type="const float*">
+            <type name="gfloat" c:type="float"/>
+          </array>
+        </parameter>
+        <parameter name="coords_length" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2729">Number of coordinates to apply</doc>
+          <type name="guint" c:type="unsigned int"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="font_set_var_coords_normalized"
+              c:identifier="hb_font_set_var_coords_normalized"
+              version="1.4.2">
+      <doc xml:space="preserve"
+           filename="src/hb-font.cc"
+           line="2808">Applies a list of variation coordinates (in normalized units)
+to a font.
+
+Note that this overrides all existing variations set on @font.
+Axes not included in @coords will be effectively set to their
+default values.
+
+&lt;note&gt;Note: Coordinates should be normalized to 2.14.&lt;/note&gt;</doc>
+      <source-position filename="src/hb-font.h" line="1168"/>
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2810">#hb_font_t to work upon</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="coords" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2811">Array of variation coordinates to apply</doc>
+          <array length="2" zero-terminated="0" c:type="const int*">
+            <type name="gint" c:type="int"/>
+          </array>
+        </parameter>
+        <parameter name="coords_length" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2812">Number of coordinates to apply</doc>
+          <type name="guint" c:type="unsigned int"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="font_set_var_named_instance"
+              c:identifier="hb_font_set_var_named_instance"
+              version="2.6.0">
+      <doc xml:space="preserve"
+           filename="src/hb-font.cc"
+           line="2767">Sets design coords of a font from a named-instance index.</doc>
+      <source-position filename="src/hb-font.h" line="1188"/>
+      <return-value transfer-ownership="none">
+        <type name="none" c:type="void"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2769">a font.</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="instance_index" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-font.cc"
+               line="2770">named instance index.</doc>
+          <type name="guint" c:type="unsigned int"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="font_set_variation"
+              c:identifier="hb_font_set_variation"
+              version="7.1.0">
+      <doc xml:space="preserve"
+           filename="src/hb-font.cc"
+           line="2652">Change the value of one variation axis on the font.
+
+Note: This function is expensive to be called repeatedly.
+  If you want to set multiple variation axes at the same time,
+  use hb_font_set_variations() instead.</doc>
       <source-position filename="src/hb-font.h" line="1154"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -13905,84 +14007,17 @@ default values.</doc>
                line="2654">#hb_font_t to work upon</doc>
           <type name="font_t" c:type="hb_font_t*"/>
         </parameter>
-        <parameter name="coords" transfer-ownership="none">
+        <parameter name="tag" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2655">Array of variation coordinates to apply</doc>
-          <array length="2" zero-terminated="0" c:type="const float*">
-            <type name="gfloat" c:type="float"/>
-          </array>
+               line="2655">The #hb_tag_t tag of the variation-axis name</doc>
+          <type name="tag_t" c:type="hb_tag_t"/>
         </parameter>
-        <parameter name="coords_length" transfer-ownership="none">
+        <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/hb-font.cc"
-               line="2656">Number of coordinates to apply</doc>
-          <type name="guint" c:type="unsigned int"/>
-        </parameter>
-      </parameters>
-    </function>
-    <function name="font_set_var_coords_normalized"
-              c:identifier="hb_font_set_var_coords_normalized"
-              version="1.4.2">
-      <doc xml:space="preserve"
-           filename="src/hb-font.cc"
-           line="2735">Applies a list of variation coordinates (in normalized units)
-to a font.
-
-Note that this overrides all existing variations set on @font.
-Axes not included in @coords will be effectively set to their
-default values.
-
-&lt;note&gt;Note: Coordinates should be normalized to 2.14.&lt;/note&gt;</doc>
-      <source-position filename="src/hb-font.h" line="1163"/>
-      <return-value transfer-ownership="none">
-        <type name="none" c:type="void"/>
-      </return-value>
-      <parameters>
-        <parameter name="font" transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="src/hb-font.cc"
-               line="2737">#hb_font_t to work upon</doc>
-          <type name="font_t" c:type="hb_font_t*"/>
-        </parameter>
-        <parameter name="coords" transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="src/hb-font.cc"
-               line="2738">Array of variation coordinates to apply</doc>
-          <array length="2" zero-terminated="0" c:type="const int*">
-            <type name="gint" c:type="int"/>
-          </array>
-        </parameter>
-        <parameter name="coords_length" transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="src/hb-font.cc"
-               line="2739">Number of coordinates to apply</doc>
-          <type name="guint" c:type="unsigned int"/>
-        </parameter>
-      </parameters>
-    </function>
-    <function name="font_set_var_named_instance"
-              c:identifier="hb_font_set_var_named_instance"
-              version="2.6.0">
-      <doc xml:space="preserve"
-           filename="src/hb-font.cc"
-           line="2694">Sets design coords of a font from a named-instance index.</doc>
-      <source-position filename="src/hb-font.h" line="1183"/>
-      <return-value transfer-ownership="none">
-        <type name="none" c:type="void"/>
-      </return-value>
-      <parameters>
-        <parameter name="font" transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="src/hb-font.cc"
-               line="2696">a font.</doc>
-          <type name="font_t" c:type="hb_font_t*"/>
-        </parameter>
-        <parameter name="instance_index" transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="src/hb-font.cc"
-               line="2697">named instance index.</doc>
-          <type name="guint" c:type="unsigned int"/>
+               line="2656">The value of the variation axis</doc>
+          <type name="gfloat" c:type="float"/>
         </parameter>
       </parameters>
     </function>
@@ -15791,7 +15826,7 @@ Regarding these various memory-modes:
   HarfBuzz and doing that just once (no reuse!),
 
 - If the font is mmap()ed, it's okay to use
-  @HB_MEMORY_READONLY_MAY_MAKE_WRITABLE, however, using that mode
+  @HB_MEMORY_MODE_READONLY_MAY_MAKE_WRITABLE, however, using that mode
   correctly is very tricky.  Use @HB_MEMORY_MODE_READONLY instead.</doc>
       <member name="duplicate"
               value="0"
@@ -27140,13 +27175,120 @@ will be used.</doc>
         </parameter>
       </parameters>
     </function>
+    <function name="shape_justify" c:identifier="hb_shape_justify">
+      <doc xml:space="preserve"
+           filename="src/hb-shape.cc"
+           line="227">See hb_shape_full() for basic details. If @shaper_list is not `NULL`, the specified
+shapers will be used in the given order, otherwise the default shapers list
+will be used.
+
+In addition, justify the shaping results such that the shaping results reach
+the target advance width/height, depending on the buffer direction.
+
+If the advance of the buffer shaped with hb_shape_full() is already known,
+put that in *advance. Otherwise set *advance to zero.
+
+This API is currently experimental and will probably change in the future.</doc>
+      <source-position filename="src/hb-shape.h" line="57"/>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve"
+             filename="src/hb-shape.cc"
+             line="254">false if all shapers failed, true otherwise
+
+XSince: EXPERIMENTAL</doc>
+        <type name="bool_t" c:type="hb_bool_t"/>
+      </return-value>
+      <parameters>
+        <parameter name="font" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="229">a mutable #hb_font_t to use for shaping</doc>
+          <type name="font_t" c:type="hb_font_t*"/>
+        </parameter>
+        <parameter name="buffer" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="230">an #hb_buffer_t to shape</doc>
+          <type name="buffer_t" c:type="hb_buffer_t*"/>
+        </parameter>
+        <parameter name="features"
+                   transfer-ownership="none"
+                   nullable="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="231">an array of user
+   specified #hb_feature_t or `NULL`</doc>
+          <array length="3" zero-terminated="0" c:type="const hb_feature_t*">
+            <type name="feature_t" c:type="hb_feature_t"/>
+          </array>
+        </parameter>
+        <parameter name="num_features" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="233">the length of @features array</doc>
+          <type name="guint" c:type="unsigned int"/>
+        </parameter>
+        <parameter name="shaper_list"
+                   transfer-ownership="none"
+                   nullable="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="234">a `NULL`-terminated
+   array of shapers to use or `NULL`</doc>
+          <array c:type="const char* const*">
+            <type name="utf8" c:type="char*"/>
+          </array>
+        </parameter>
+        <parameter name="min_target_advance" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="236">Minimum advance width/height to aim for.</doc>
+          <type name="gfloat" c:type="float"/>
+        </parameter>
+        <parameter name="max_target_advance" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="237">Maximum advance width/height to aim for.</doc>
+          <type name="gfloat" c:type="float"/>
+        </parameter>
+        <parameter name="advance"
+                   direction="inout"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="238">Input/output advance width/height of the buffer.</doc>
+          <type name="gfloat" c:type="float*"/>
+        </parameter>
+        <parameter name="var_tag"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="239">Variation-axis tag used for justification.</doc>
+          <type name="tag_t" c:type="hb_tag_t*"/>
+        </parameter>
+        <parameter name="var_value"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="src/hb-shape.cc"
+               line="240">Variation-axis value used to reach target justification.</doc>
+          <type name="gfloat" c:type="float*"/>
+        </parameter>
+      </parameters>
+    </function>
     <function name="shape_list_shapers"
               c:identifier="hb_shape_list_shapers"
               version="0.9.2">
       <doc xml:space="preserve"
            filename="src/hb-shape.cc"
            line="89">Retrieves the list of shapers supported by HarfBuzz.</doc>
-      <source-position filename="src/hb-shape.h" line="57"/>
+      <source-position filename="src/hb-shape.h" line="69"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/hb-shape.cc"
