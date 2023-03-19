@@ -17,11 +17,11 @@ for gir in gir_list:
   with open(gir) as file:
     gir_files.extend([tuple(line.rstrip().split(',')) for line in file])
 
-for (file,pkg,maxversion) in gir_files:
+for (file,pkg,nextversion) in gir_files:
   src = os.path.join(source_folder, file)
   dest = os.path.join(destination_folder, file)
 
-  with subprocess.Popen(["pkg-config", "--exists", f"{pkg} <= {maxversion}"]) as proc:
+  with subprocess.Popen(["pkg-config", "--exists", f"{pkg} < {nextversion}"]) as proc:
     proc.communicate()
     if proc.returncode == 1:
       print(f"Skip new version of package {pkg}")
