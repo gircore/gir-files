@@ -45,3 +45,12 @@ for (file,pkg,nextversion) in gir_files:
   except FileNotFoundError:
     print(f"Could not copy {src} to {dest}.")
     sys.exit(1)
+
+files_to_delete = glob.glob(os.path.join(backup_folder, "*"))
+for f in files_to_delete:
+  os.remove(f)
+  print(f"Deleted {f}")
+
+os.rmdir(backup_folder)
+print(f"Deleted {backup_folder}")
+
