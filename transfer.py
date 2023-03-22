@@ -37,7 +37,7 @@ for (file,pkg,nextversion) in gir_files:
   with subprocess.Popen(["pkg-config", "--modversion", f"{pkg}"], stdout=subprocess.PIPE) as proc:
     stdout, stderr = proc.communicate()
     modversion = stdout.decode('UTF-8').rstrip()
-    print(f"Found {pkg} version: {modversion}")
+    print(f"Found {pkg} version: {modversion} (must be lower than {nextversion})")
 
   with subprocess.Popen(["pkg-config", "--exists", '--print-errors', f"{pkg} < {nextversion}"]) as proc:
     proc.communicate()
