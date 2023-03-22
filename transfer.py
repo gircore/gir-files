@@ -34,6 +34,11 @@ for (file,pkg,nextversion) in gir_files:
   dest = os.path.join(destination_folder, file)
   backup = os.path.join(backup_folder, file)
 
+  with subprocess.Popen(["pkg-config", "--modversion", f"{pkg}"], stdout=subprocess.PIPE) as proc:
+    stdout, stderr = proc.communicate()
+    modversion = stdout.decode('UTF-8').rstrip()
+    print(f"Found {pkg} version: {modversion}")
+
   with subprocess.Popen(["pkg-config", "--exists", '--print-errors', f"{pkg} < {nextversion}"]) as proc:
     proc.communicate()
     if proc.returncode == 1:
@@ -53,4 +58,5 @@ for f in files_to_delete:
 
 os.rmdir(backup_folder)
 print(f"Deleted {backup_folder}")
+
 
