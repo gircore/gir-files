@@ -495,6 +495,7 @@ an integer or enumeration value.</doc>
     </record>
     <record name="AttrIterator"
             c:type="PangoAttrIterator"
+            opaque="1"
             glib:type-name="PangoAttrIterator"
             glib:get-type="pango_attr_iterator_get_type"
             c:symbol-prefix="attr_iterator">
@@ -773,6 +774,7 @@ are languages.</doc>
     </record>
     <record name="AttrList"
             c:type="PangoAttrList"
+            opaque="1"
             glib:type-name="PangoAttrList"
             glib:get-type="pango_attr_list_get_type"
             c:symbol-prefix="attr_list">
@@ -3508,6 +3510,7 @@ compatible with previous Pango behavior.</doc>
     <record name="ContextClass"
             c:type="PangoContextClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="Context">
       <source-position filename="pango/pango-context.h" line="33"/>
     </record>
@@ -5109,6 +5112,7 @@ To recreate a font from its serialized form, use [func@Pango.Font.deserialize].<
     </record>
     <record name="FontDescription"
             c:type="PangoFontDescription"
+            opaque="1"
             glib:type-name="PangoFontDescription"
             glib:get-type="pango_font_description_get_type"
             c:symbol-prefix="font_description">
@@ -6948,7 +6952,7 @@ for enumerating faces.</doc>
              line="2429">The type of items contained in this list.</doc>
         <type name="GType" c:type="GType"/>
       </property>
-      <property name="n-items" transfer-ownership="none">
+      <property name="n-items" transfer-ownership="none" default-value="0">
         <doc xml:space="preserve"
              filename="pango/fonts.c"
              line="2438">The number of items contained in this list.</doc>
@@ -7572,7 +7576,7 @@ a font matching @desc.</doc>
              line="96">The type of items contained in this list.</doc>
         <type name="GType" c:type="GType"/>
       </property>
-      <property name="n-items" transfer-ownership="none">
+      <property name="n-items" transfer-ownership="none" default-value="0">
         <doc xml:space="preserve"
              filename="pango/pango-fontmap.c"
              line="105">The number of items contained in this list.</doc>
@@ -8708,6 +8712,7 @@ The fontset takes ownership of @font.</doc>
     <record name="FontsetSimpleClass"
             c:type="PangoFontsetSimpleClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="FontsetSimple">
       <source-position filename="pango/pango-fontset-simple.h" line="47"/>
     </record>
@@ -10569,6 +10574,7 @@ the right of the glyph origin.</doc>
     </function-macro>
     <record name="Language"
             c:type="PangoLanguage"
+            opaque="1"
             glib:type-name="PangoLanguage"
             glib:get-type="pango_language_get_type"
             c:symbol-prefix="language">
@@ -13179,6 +13185,7 @@ the X or Y positions were not inside the layout, then the function returns
     <record name="LayoutClass"
             c:type="PangoLayoutClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="Layout">
       <source-position filename="pango/pango-layout.h" line="33"/>
     </record>
@@ -13259,6 +13266,7 @@ New members may be added to this enumeration over time.</doc>
     </bitfield>
     <record name="LayoutIter"
             c:type="PangoLayoutIter"
+            opaque="1"
             glib:type-name="PangoLayoutIter"
             glib:get-type="pango_layout_iter_get_type"
             c:symbol-prefix="layout_iter">
@@ -16845,7 +16853,10 @@ and must be implemented:
         </callback>
       </field>
     </record>
-    <record name="RendererPrivate" c:type="PangoRendererPrivate" disguised="1">
+    <record name="RendererPrivate"
+            c:type="PangoRendererPrivate"
+            disguised="1"
+            opaque="1">
       <source-position filename="pango/pango-renderer.h" line="37"/>
     </record>
     <constant name="SCALE" value="1024" c:type="PANGO_SCALE">
@@ -18031,6 +18042,7 @@ context language is not feasible.</doc>
     </enumeration>
     <record name="ScriptIter"
             c:type="PangoScriptIter"
+            opaque="1"
             glib:type-name="PangoScriptIter"
             glib:get-type="pango_script_iter_get_type"
             c:symbol-prefix="script_iter">
@@ -18429,6 +18441,7 @@ position.</doc>
     </enumeration>
     <record name="TabArray"
             c:type="PangoTabArray"
+            opaque="1"
             glib:type-name="PangoTabArray"
             glib:get-type="pango_tab_array_get_type"
             c:symbol-prefix="tab_array">
