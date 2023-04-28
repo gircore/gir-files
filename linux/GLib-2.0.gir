@@ -109,7 +109,7 @@ g_autofree(), so that the reference counting metadata is also freed.</doc>
            filename="glib-2.0.c"
            line="1914">A typedef alias for gchar**. This is mostly useful when used together with
 g_auto().</doc>
-      <source-position filename="gstrfuncs.h" line="357"/>
+      <source-position filename="gstrfuncs.h" line="366"/>
       <type name="utf8" c:type="gchar**"/>
     </alias>
     <alias name="Time" c:type="GTime" deprecated="1" deprecated-version="2.62">
@@ -158,7 +158,7 @@ gtime = (GTime)ttime;
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="1005">Return the minimal alignment required by the platform ABI for values of the given
+           line="1003">Return the minimal alignment required by the platform ABI for values of the given
 type. The address of a variable or struct member of the given type must always be
 a multiple of this alignment. For example, most platforms require int variables
 to be aligned at a 4-byte boundary, so `G_ALIGNOF (int)` is 4 on most platforms.
@@ -167,19 +167,19 @@ Note this is not necessarily the same as the value returned by GCC’s
 `__alignof__` operator, which returns the preferred alignment for a type.
 The preferred alignment may be a stricter alignment than the minimal
 alignment.</doc>
-      <source-position filename="gmacros.h" line="998"/>
+      <source-position filename="gmacros.h" line="996"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="1007">a type-name</doc>
+               line="1005">a type-name</doc>
         </parameter>
       </parameters>
     </function-macro>
     <constant name="ANALYZER_ANALYZING"
               value="1"
               c:type="G_ANALYZER_ANALYZING">
-      <source-position filename="gmacros.h" line="829"/>
+      <source-position filename="gmacros.h" line="830"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <function-macro name="APPROX_VALUE"
@@ -196,7 +196,7 @@ For example,
 - `G_APPROX_VALUE (3.14, 3.15, 0.001)` evaluates to false
 - `G_APPROX_VALUE (n, 0.f, FLT_EPSILON)` evaluates to true if `n` is within
   the single precision floating point epsilon from zero</doc>
-      <source-position filename="gmacros.h" line="925"/>
+      <source-position filename="gmacros.h" line="923"/>
       <parameters>
         <parameter name="a">
           <doc xml:space="preserve"
@@ -230,7 +230,7 @@ The typical usage would be something like:
 
   fprintf (out, "value=%s\n", g_ascii_dtostr (buf, sizeof (buf), value));
 ]|</doc>
-      <source-position filename="gstrfuncs.h" line="247"/>
+      <source-position filename="gstrfuncs.h" line="230"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <function-macro name="ATEXIT" c:identifier="g_ATEXIT" introspectable="0">
@@ -6205,7 +6205,7 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GObject, g_object_unref)
 
 This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</doc>
-      <source-position filename="gmacros.h" line="1379"/>
+      <source-position filename="gmacros.h" line="1377"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
@@ -6238,7 +6238,7 @@ G_DEFINE_AUTO_CLEANUP_CLEAR_FUNC(GQueue, g_queue_clear)
 
 This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</doc>
-      <source-position filename="gmacros.h" line="1380"/>
+      <source-position filename="gmacros.h" line="1378"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
@@ -6278,7 +6278,7 @@ G_DEFINE_AUTO_CLEANUP_FREE_FUNC(GStrv, g_strfreev, NULL)
 
 This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</doc>
-      <source-position filename="gmacros.h" line="1381"/>
+      <source-position filename="gmacros.h" line="1379"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
@@ -6360,7 +6360,7 @@ in the macro, so you shouldn't use double quotes.</doc>
     <function-macro name="DEPRECATED_ENUMERATOR_FOR"
                     c:identifier="GLIB_DEPRECATED_ENUMERATOR_FOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1288"/>
+      <source-position filename="gmacros.h" line="1286"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -6846,7 +6846,7 @@ in the macro, so you shouldn't use double quotes.</doc>
     <function-macro name="DEPRECATED_MACRO_FOR"
                     c:identifier="GLIB_DEPRECATED_MACRO_FOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1274"/>
+      <source-position filename="gmacros.h" line="1272"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -7089,7 +7089,7 @@ in the macro, so you shouldn't use double quotes.</doc>
     <function-macro name="DEPRECATED_TYPE_FOR"
                     c:identifier="GLIB_DEPRECATED_TYPE_FOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1300"/>
+      <source-position filename="gmacros.h" line="1298"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -11933,7 +11933,7 @@ Standard C macros like `PRIdPTR` and `SCNdPTR` should be used for
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="355">Expands to the GNU C `alloc_size` function attribute if the compiler
+           line="356">Expands to the GNU C `alloc_size` function attribute if the compiler
 is a new enough gcc. This attribute tells the compiler that the
 function returns a pointer to memory of a size that is specified
 by the @xth function parameter.
@@ -11946,12 +11946,12 @@ gpointer g_malloc (gsize n_bytes) G_GNUC_MALLOC G_GNUC_ALLOC_SIZE(1);
 ]|
 
 See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute) for more details.</doc>
-      <source-position filename="gmacros.h" line="397"/>
+      <source-position filename="gmacros.h" line="398"/>
       <parameters>
         <parameter name="x">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="357">the index of the argument specifying the allocation size</doc>
+               line="358">the index of the argument specifying the allocation size</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -11961,7 +11961,7 @@ See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="376">Expands to the GNU C `alloc_size` function attribute if the compiler is a
+           line="377">Expands to the GNU C `alloc_size` function attribute if the compiler is a
 new enough gcc. This attribute tells the compiler that the function returns
 a pointer to memory of a size that is specified by the product of two
 function parameters.
@@ -11975,17 +11975,17 @@ gpointer g_malloc_n (gsize n_blocks,
 ]|
 
 See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute) for more details.</doc>
-      <source-position filename="gmacros.h" line="398"/>
+      <source-position filename="gmacros.h" line="399"/>
       <parameters>
         <parameter name="x">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="378">the index of the argument specifying one factor of the allocation size</doc>
+               line="379">the index of the argument specifying one factor of the allocation size</doc>
         </parameter>
         <parameter name="y">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="379">the index of the argument specifying the second factor of the allocation size</doc>
+               line="380">the index of the argument specifying the second factor of the allocation size</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -12023,7 +12023,7 @@ the following would only match on compilers such as GCC 4.8 or newer.
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="712">Like %G_GNUC_DEPRECATED, but names the intended replacement for the
+           line="713">Like %G_GNUC_DEPRECATED, but names the intended replacement for the
 deprecated symbol if the version of gcc in use is new enough to support
 custom deprecation messages.
 
@@ -12038,12 +12038,12 @@ See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function
 Note that if @f is a macro, it will be expanded in the warning message.
 You can enclose it in quotes to prevent this. (The quotes will show up
 in the warning, but it's better than showing the macro expansion.)</doc>
-      <source-position filename="gmacros.h" line="728"/>
+      <source-position filename="gmacros.h" line="729"/>
       <parameters>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="714">the intended replacement for the deprecated symbol,
+               line="715">the intended replacement for the deprecated symbol,
     such as the name of a function</doc>
         </parameter>
       </parameters>
@@ -12053,7 +12053,7 @@ in the warning, but it's better than showing the macro expansion.)</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="482">Expands to the GNU C `format_arg` function attribute if the compiler
+           line="483">Expands to the GNU C `format_arg` function attribute if the compiler
 is gcc. This function attribute specifies that a function takes a
 format string for a `printf()`, `scanf()`, `strftime()` or `strfmon()` style
 function and modifies it, so that the result can be passed to a `printf()`,
@@ -12069,12 +12069,12 @@ See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function
 |[&lt;!-- language="C" --&gt;
 gchar *g_dgettext (gchar *domain_name, gchar *msgid) G_GNUC_FORMAT (2);
 ]|</doc>
-      <source-position filename="gmacros.h" line="612"/>
+      <source-position filename="gmacros.h" line="613"/>
       <parameters>
         <parameter name="arg_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="484">the index of the argument</doc>
+               line="485">the index of the argument</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -12085,10 +12085,10 @@ gchar *g_dgettext (gchar *domain_name, gchar *msgid) G_GNUC_FORMAT (2);
               deprecated-version="2.16">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="815">Expands to "" on all modern compilers, and to  __FUNCTION__ on gcc
+           line="816">Expands to "" on all modern compilers, and to  __FUNCTION__ on gcc
 version 2.x. Don't use it.</doc>
       <doc-deprecated xml:space="preserve">Use G_STRFUNC() instead</doc-deprecated>
-      <source-position filename="gmacros.h" line="824"/>
+      <source-position filename="gmacros.h" line="825"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
     <constant name="GNUC_PRETTY_FUNCTION"
@@ -12098,10 +12098,10 @@ version 2.x. Don't use it.</doc>
               deprecated-version="2.16">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="824">Expands to "" on all modern compilers, and to __PRETTY_FUNCTION__
+           line="825">Expands to "" on all modern compilers, and to __PRETTY_FUNCTION__
 on gcc version 2.x. Don't use it.</doc>
       <doc-deprecated xml:space="preserve">Use G_STRFUNC() instead</doc-deprecated>
-      <source-position filename="gmacros.h" line="825"/>
+      <source-position filename="gmacros.h" line="826"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
     <function-macro name="GNUC_PRINTF"
@@ -12109,7 +12109,7 @@ on gcc version 2.x. Don't use it.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="406">Expands to the GNU C `format` function attribute if the compiler is gcc.
+           line="407">Expands to the GNU C `format` function attribute if the compiler is gcc.
 This is used for declaring functions which take a variable number of
 arguments, with the same syntax as `printf()`. It allows the compiler
 to type-check the arguments passed to the function.
@@ -12127,18 +12127,18 @@ gint g_snprintf (gchar  *string,
                  gchar const *format,
                  ...) G_GNUC_PRINTF (3, 4);
 ]|</doc>
-      <source-position filename="gmacros.h" line="585"/>
+      <source-position filename="gmacros.h" line="586"/>
       <parameters>
         <parameter name="format_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="408">the index of the argument corresponding to the
+               line="409">the index of the argument corresponding to the
     format string (the arguments are numbered from 1)</doc>
         </parameter>
         <parameter name="arg_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="410">the index of the first of the format arguments, or 0 if
+               line="411">the index of the first of the format arguments, or 0 if
     there are no format arguments</doc>
         </parameter>
       </parameters>
@@ -12148,7 +12148,7 @@ gint g_snprintf (gchar  *string,
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="433">Expands to the GNU C `format` function attribute if the compiler is gcc.
+           line="434">Expands to the GNU C `format` function attribute if the compiler is gcc.
 This is used for declaring functions which take a variable number of
 arguments, with the same syntax as `scanf()`. It allows the compiler
 to type-check the arguments passed to the function.
@@ -12165,18 +12165,18 @@ int my_vscanf (MyStream *stream,
 See the
 [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-Wformat-3288)
 for details.</doc>
-      <source-position filename="gmacros.h" line="587"/>
+      <source-position filename="gmacros.h" line="588"/>
       <parameters>
         <parameter name="format_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="435">the index of the argument corresponding to
+               line="436">the index of the argument corresponding to
     the format string (the arguments are numbered from 1)</doc>
         </parameter>
         <parameter name="arg_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="437">the index of the first of the format arguments, or 0 if
+               line="438">the index of the first of the format arguments, or 0 if
     there are no format arguments</doc>
         </parameter>
       </parameters>
@@ -12187,7 +12187,7 @@ for details.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="459">Expands to the GNU C `strftime` format function attribute if the compiler
+           line="460">Expands to the GNU C `strftime` format function attribute if the compiler
 is gcc. This is used for declaring functions which take a format argument
 which is passed to `strftime()` or an API implementing its formats. It allows
 the compiler check the format passed to the function.
@@ -12201,12 +12201,12 @@ gsize my_strftime (MyBuffer *buffer,
 See the
 [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-Wformat-3288)
 for details.</doc>
-      <source-position filename="gmacros.h" line="589"/>
+      <source-position filename="gmacros.h" line="590"/>
       <parameters>
         <parameter name="format_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="461">the index of the argument corresponding to
+               line="462">the index of the argument corresponding to
     the format string (the arguments are numbered from 1)</doc>
         </parameter>
       </parameters>
@@ -12390,7 +12390,7 @@ Standard C macros like `PRIuPTR` and `SCNuPTR` should be used for
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="3689">Defined to 1 if gcc-style visibility handling is supported.</doc>
-      <source-position filename="gmacros.h" line="1227"/>
+      <source-position filename="gmacros.h" line="1225"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="HAVE_GROWING_STACK"
@@ -19586,7 +19586,7 @@ a true value. The compiler may use this information for optimizations.
 if (G_LIKELY (random () != 1))
   g_print ("not one");
 ]|</doc>
-      <source-position filename="gmacros.h" line="1219"/>
+      <source-position filename="gmacros.h" line="1217"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -21342,7 +21342,7 @@ preferred in new code.</doc>
       <source-position filename="gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="0" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="2" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="1161">The micro version number of the GLib library.
@@ -24542,7 +24542,7 @@ current thread leads to undefined behaviour.</doc>
 declared so the compiler knows its size at compile-time; this
 macro will not work on an array allocated on the heap, only static
 arrays or arrays on the stack.</doc>
-      <source-position filename="gmacros.h" line="932"/>
+      <source-position filename="gmacros.h" line="930"/>
       <parameters>
         <parameter name="arr">
           <doc xml:space="preserve"
@@ -25469,21 +25469,21 @@ should generally be normalized before comparing them.</doc>
                  glib:error-domain="g-number-parser-error-quark">
       <doc xml:space="preserve"
            filename="gstrfuncs.h"
-           line="404">Error codes returned by functions converting a string to a number.</doc>
-      <source-position filename="gstrfuncs.h" line="417"/>
+           line="413">Error codes returned by functions converting a string to a number.</doc>
+      <source-position filename="gstrfuncs.h" line="426"/>
       <member name="invalid"
               value="0"
               c:identifier="G_NUMBER_PARSER_ERROR_INVALID">
         <doc xml:space="preserve"
              filename="gstrfuncs.h"
-             line="406">String was not a valid number.</doc>
+             line="415">String was not a valid number.</doc>
       </member>
       <member name="out_of_bounds"
               value="1"
               c:identifier="G_NUMBER_PARSER_ERROR_OUT_OF_BOUNDS">
         <doc xml:space="preserve"
              filename="gstrfuncs.h"
-             line="407">String was a number, but out of bounds.</doc>
+             line="416">String was a number, but out of bounds.</doc>
       </member>
     </enumeration>
     <constant name="OPTION_REMAINING"
@@ -33861,19 +33861,19 @@ This is ":" on UNIX machines and ";" under Windows.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="1411">Returns the size of @member in the struct definition without having a
+           line="1409">Returns the size of @member in the struct definition without having a
 declared instance of @struct_type.</doc>
-      <source-position filename="gmacros.h" line="1397"/>
+      <source-position filename="gmacros.h" line="1395"/>
       <parameters>
         <parameter name="struct_type">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="1413">a structure type, e.g. #GOutputVector</doc>
+               line="1411">a structure type, e.g. #GOutputVector</doc>
         </parameter>
         <parameter name="member">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="1414">a field in the structure, e.g. `size`</doc>
+               line="1412">a field in the structure, e.g. `size`</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -35060,7 +35060,7 @@ is transformed by the preprocessor into (code equivalent to):
 |[&lt;!-- language="C" --&gt;
 const gchar *greeting = "27 today!";
 ]|</doc>
-      <source-position filename="gmacros.h" line="839"/>
+      <source-position filename="gmacros.h" line="840"/>
       <parameters>
         <parameter name="macro_or_string">
           <doc xml:space="preserve"
@@ -35072,7 +35072,7 @@ const gchar *greeting = "27 today!";
     <function-macro name="STRINGIFY_ARG"
                     c:identifier="G_STRINGIFY_ARG"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="840"/>
+      <source-position filename="gmacros.h" line="841"/>
       <parameters>
         <parameter name="contents">
         </parameter>
@@ -35084,7 +35084,7 @@ const gchar *greeting = "27 today!";
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="4793">Returns a member of a structure at a given offset, using the given type.</doc>
-      <source-position filename="gmacros.h" line="953"/>
+      <source-position filename="gmacros.h" line="951"/>
       <parameters>
         <parameter name="member_type">
           <doc xml:space="preserve"
@@ -35110,7 +35110,7 @@ const gchar *greeting = "27 today!";
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="4806">Returns an untyped pointer to a given offset of a struct.</doc>
-      <source-position filename="gmacros.h" line="951"/>
+      <source-position filename="gmacros.h" line="949"/>
       <parameters>
         <parameter name="struct_p">
           <doc xml:space="preserve"
@@ -35134,7 +35134,7 @@ const gchar *greeting = "27 today!";
 Consider using standard C `offsetof()`, available since at least C89
 and C++98, in new code (but note that `offsetof()` returns a `size_t`
 rather than a `long`).</doc>
-      <source-position filename="gmacros.h" line="944"/>
+      <source-position filename="gmacros.h" line="942"/>
       <parameters>
         <parameter name="struct_type">
           <doc xml:space="preserve"
@@ -44780,7 +44780,7 @@ if the passed node was already the first one.</doc>
     <function-macro name="UNAVAILABLE_ENUMERATOR"
                     c:identifier="GLIB_UNAVAILABLE_ENUMERATOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1289"/>
+      <source-position filename="gmacros.h" line="1287"/>
       <parameters>
         <parameter name="maj">
         </parameter>
@@ -44791,7 +44791,7 @@ if the passed node was already the first one.</doc>
     <function-macro name="UNAVAILABLE_MACRO"
                     c:identifier="GLIB_UNAVAILABLE_MACRO"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1276"/>
+      <source-position filename="gmacros.h" line="1274"/>
       <parameters>
         <parameter name="maj">
         </parameter>
@@ -44813,7 +44813,7 @@ if the passed node was already the first one.</doc>
     <function-macro name="UNAVAILABLE_TYPE"
                     c:identifier="GLIB_UNAVAILABLE_TYPE"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1301"/>
+      <source-position filename="gmacros.h" line="1299"/>
       <parameters>
         <parameter name="maj">
         </parameter>
@@ -44847,7 +44847,7 @@ a true value. The compiler may use this information for optimizations.
 if (G_UNLIKELY (random () == 1))
   g_print ("a random one");
 ]|</doc>
-      <source-position filename="gmacros.h" line="1220"/>
+      <source-position filename="gmacros.h" line="1218"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -44908,7 +44908,7 @@ This macro is provided for code readability.</doc>
 Since new unicode versions may add new types here, applications should be ready
 to handle unknown values. They may be regarded as %G_UNICODE_BREAK_UNKNOWN.
 
-See [Unicode Line Breaking Algorithm](http://www.unicode.org/unicode/reports/tr14/).</doc>
+See [Unicode Line Breaking Algorithm](https://www.unicode.org/reports/tr14/).</doc>
       <source-position filename="gunicode.h" line="261"/>
       <member name="mandatory"
               value="0"
@@ -55796,7 +55796,7 @@ the string back using g_ascii_strtod() gives the same machine-number
 guaranteed that the size of the resulting string will never
 be larger than %G_ASCII_DTOSTR_BUF_SIZE bytes, including the terminating
 nul character, which is always added.</doc>
-      <source-position filename="gstrfuncs.h" line="249"/>
+      <source-position filename="gstrfuncs.h" line="232"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -55839,7 +55839,7 @@ The returned buffer is guaranteed to be nul-terminated.
 
 If you just want to want to serialize the value into a
 string, use g_ascii_dtostr().</doc>
-      <source-position filename="gstrfuncs.h" line="253"/>
+      <source-position filename="gstrfuncs.h" line="236"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56128,7 +56128,7 @@ characters include all ASCII letters. If you compare two CP932
 strings using this function, you will get false matches.
 
 Both @s1 and @s2 must be non-%NULL.</doc>
-      <source-position filename="gstrfuncs.h" line="268"/>
+      <source-position filename="gstrfuncs.h" line="251"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56155,7 +56155,7 @@ Both @s1 and @s2 must be non-%NULL.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="10329">Converts all upper case ASCII letters to lower case ASCII letters.</doc>
-      <source-position filename="gstrfuncs.h" line="275"/>
+      <source-position filename="gstrfuncs.h" line="258"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56207,7 +56207,7 @@ bounds - %G_NUMBER_PARSER_ERROR_OUT_OF_BOUNDS.
 See g_ascii_strtoll() if you have more complex needs such as
 parsing a string which starts with a number, but then has other
 characters.</doc>
-      <source-position filename="gstrfuncs.h" line="433"/>
+      <source-position filename="gstrfuncs.h" line="442"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56280,7 +56280,7 @@ bounds - %G_NUMBER_PARSER_ERROR_OUT_OF_BOUNDS.
 See g_ascii_strtoull() if you have more complex needs such as
 parsing a string which starts with a number, but then has other
 characters.</doc>
-      <source-position filename="gstrfuncs.h" line="441"/>
+      <source-position filename="gstrfuncs.h" line="450"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56340,7 +56340,7 @@ characters as if they are not letters.
 The same warning as in g_ascii_strcasecmp() applies: Use this
 function only on strings known to be in encodings where bytes
 corresponding to ASCII letters always represent themselves.</doc>
-      <source-position filename="gstrfuncs.h" line="271"/>
+      <source-position filename="gstrfuncs.h" line="254"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56395,7 +56395,7 @@ zero is returned and %ERANGE is stored in %errno.
 
 This function resets %errno before calling strtod() so that
 you can reliably detect overflow and underflow.</doc>
-      <source-position filename="gstrfuncs.h" line="234"/>
+      <source-position filename="gstrfuncs.h" line="217"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56445,7 +56445,7 @@ If the base is outside the valid range, zero is returned, and
 `EINVAL` is stored in `errno`. If the
 string conversion fails, zero is returned, and @endptr returns @nptr
 (if @endptr is non-%NULL).</doc>
-      <source-position filename="gstrfuncs.h" line="241"/>
+      <source-position filename="gstrfuncs.h" line="224"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56506,7 +56506,7 @@ If the base is outside the valid range, zero is returned, and
 `EINVAL` is stored in `errno`.
 If the string conversion fails, zero is returned, and @endptr returns
 @nptr (if @endptr is non-%NULL).</doc>
-      <source-position filename="gstrfuncs.h" line="237"/>
+      <source-position filename="gstrfuncs.h" line="220"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -56544,7 +56544,7 @@ If the string conversion fails, zero is returned, and @endptr returns
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="10539">Converts all lower case ASCII letters to upper case ASCII letters.</doc>
-      <source-position filename="gstrfuncs.h" line="278"/>
+      <source-position filename="gstrfuncs.h" line="261"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -68946,13 +68946,13 @@ application domain</doc>
     <constant name="macro__has_attribute___noreturn__"
               value="0"
               c:type="g_macro__has_attribute___noreturn__">
-      <source-position filename="gmacros.h" line="182"/>
+      <source-position filename="gmacros.h" line="184"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <function-macro name="macro__has_builtin"
                     c:identifier="g_macro__has_builtin"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="344"/>
+      <source-position filename="gmacros.h" line="345"/>
       <parameters>
         <parameter name="x">
         </parameter>
@@ -68961,7 +68961,7 @@ application domain</doc>
     <function-macro name="macro__has_extension"
                     c:identifier="g_macro__has_extension"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="350"/>
+      <source-position filename="gmacros.h" line="351"/>
       <parameters>
         <parameter name="x">
         </parameter>
@@ -68970,7 +68970,7 @@ application domain</doc>
     <function-macro name="macro__has_feature"
                     c:identifier="g_macro__has_feature"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="338"/>
+      <source-position filename="gmacros.h" line="339"/>
       <parameters>
         <parameter name="x">
         </parameter>
@@ -69742,7 +69742,7 @@ from @mem. If @mem is %NULL it returns %NULL.</doc>
       <doc-deprecated xml:space="preserve">Use g_memdup2() instead, as it accepts a #gsize argument
     for @byte_size, avoiding the possibility of overflow in a #gsize → #guint
     conversion</doc-deprecated>
-      <source-position filename="gstrfuncs.h" line="341"/>
+      <source-position filename="gstrfuncs.h" line="350"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -69776,7 +69776,7 @@ from @mem. If @mem is %NULL it returns %NULL.
 
 This replaces g_memdup(), which was prone to integer overflows when
 converting the argument from a #gsize to a #guint.</doc>
-      <source-position filename="gstrfuncs.h" line="345"/>
+      <source-position filename="gstrfuncs.h" line="354"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76492,7 +76492,7 @@ early error case and also in the case that %NULL was given for
 the trailing nul byte, and returns a pointer to the trailing nul byte
 in `dest`.  The return value is useful for concatenating multiple
 strings without having to repeatedly scan for the end.</doc>
-      <source-position filename="gstrfuncs.h" line="377"/>
+      <source-position filename="gstrfuncs.h" line="386"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76641,7 +76641,7 @@ as 2.</doc>
            filename="glib-2.0.c"
            line="33285">Determines if a string is pure ASCII. A string is pure ASCII if it
 contains no bytes with the high bit set.</doc>
-      <source-position filename="gstrfuncs.h" line="282"/>
+      <source-position filename="gstrfuncs.h" line="265"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76684,7 +76684,7 @@ As some examples, searching for ‘fred’ would match the potential hit
 ‘Frédéric’ but not ‘Frederic’ (due to the one-directional nature of
 accent matching).  Searching ‘fo’ would match ‘Foo’ and ‘Bar Foo
 Baz’, but not ‘SFO’ (because no word has ‘fo’ as a prefix).</doc>
-      <source-position filename="gstrfuncs.h" line="390"/>
+      <source-position filename="gstrfuncs.h" line="399"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76733,7 +76733,7 @@ If @from_locale is %NULL then the current locale is used.
 If you want to do translation for no specific locale, and you want it
 to be done independently of the currently locale, specify `"C"` for
 @from_locale.</doc>
-      <source-position filename="gstrfuncs.h" line="381"/>
+      <source-position filename="gstrfuncs.h" line="390"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76778,7 +76778,7 @@ The number of ASCII alternatives that are generated and the method
 for doing so is unspecified, but @translit_locale (if specified) may
 improve the transliteration if the language of the source string is
 known.</doc>
-      <source-position filename="gstrfuncs.h" line="385"/>
+      <source-position filename="gstrfuncs.h" line="394"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76876,7 +76876,7 @@ In order to modify a copy, you may use g_strdup():
 strcasecmp() function on platforms which support it.</doc>
       <doc-deprecated xml:space="preserve">See g_strncasecmp() for a discussion of why this
     function is deprecated and how to replace it.</doc-deprecated>
-      <source-position filename="gstrfuncs.h" line="285"/>
+      <source-position filename="gstrfuncs.h" line="268"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76911,7 +76911,7 @@ on statically allocated strings.
 The pointer to @string is returned to allow the nesting of functions.
 
 Also see g_strchug() and g_strstrip().</doc>
-      <source-position filename="gstrfuncs.h" line="263"/>
+      <source-position filename="gstrfuncs.h" line="246"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76940,7 +76940,7 @@ statically allocated strings.
 The pointer to @string is returned to allow the nesting of functions.
 
 Also see g_strchomp() and g_strstrip().</doc>
-      <source-position filename="gstrfuncs.h" line="260"/>
+      <source-position filename="gstrfuncs.h" line="243"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -76996,7 +76996,7 @@ Comparing two %NULL pointers returns 0.</doc>
            line="33483">Replaces all escaped characters with their one byte equivalent.
 
 This function does the reverse conversion of g_strescape().</doc>
-      <source-position filename="gstrfuncs.h" line="326"/>
+      <source-position filename="gstrfuncs.h" line="335"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77025,7 +77025,7 @@ g_strconcat() will start appending random memory junk to your string.
 Note that this function is usually not the right function to use to
 assemble a translated message from pieces, since proper translation
 often requires the pieces to be reordered.</doc>
-      <source-position filename="gstrfuncs.h" line="315"/>
+      <source-position filename="gstrfuncs.h" line="298"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77111,7 +77111,7 @@ In order to modify a copy, you may use g_strdup():
       <doc-deprecated xml:space="preserve">This function is totally broken for the reasons discussed
 in the g_strncasecmp() docs - use g_ascii_strdown() or g_utf8_strdown()
 instead.</doc-deprecated>
-      <source-position filename="gstrfuncs.h" line="292"/>
+      <source-position filename="gstrfuncs.h" line="275"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77133,7 +77133,7 @@ instead.</doc-deprecated>
            line="33559">Duplicates a string. If @str is %NULL it returns %NULL.
 The returned string should be freed with g_free()
 when no longer needed.</doc>
-      <source-position filename="gstrfuncs.h" line="301"/>
+      <source-position filename="gstrfuncs.h" line="284"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77165,7 +77165,7 @@ longer needed.
 The returned string is guaranteed to be non-NULL, unless @format
 contains `%lc` or `%ls` conversions, which can fail if no multibyte
 representation is available for the given character.</doc>
-      <source-position filename="gstrfuncs.h" line="303"/>
+      <source-position filename="gstrfuncs.h" line="286"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77204,7 +77204,7 @@ representation is available for the given character.
 
 See also g_vasprintf(), which offers the same functionality, but
 additionally returns the length of the allocated string.</doc>
-      <source-position filename="gstrfuncs.h" line="306"/>
+      <source-position filename="gstrfuncs.h" line="289"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77234,7 +77234,7 @@ additionally returns the length of the allocated string.</doc>
 the new array should be freed by first freeing each string, then
 the array itself. g_strfreev() does this for you. If called
 on a %NULL value, g_strdupv() simply returns %NULL.</doc>
-      <source-position filename="gstrfuncs.h" line="372"/>
+      <source-position filename="gstrfuncs.h" line="381"/>
       <return-value nullable="1">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77305,7 +77305,7 @@ replaced with a '\' followed by their octal representation.
 Characters supplied in @exceptions are not escaped.
 
 g_strcompress() does the reverse conversion.</doc>
-      <source-position filename="gstrfuncs.h" line="337"/>
+      <source-position filename="gstrfuncs.h" line="346"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77338,7 +77338,7 @@ g_strcompress() does the reverse conversion.</doc>
 string it contains.
 
 If @str_array is %NULL, this function simply returns.</doc>
-      <source-position filename="gstrfuncs.h" line="370"/>
+      <source-position filename="gstrfuncs.h" line="379"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -77466,7 +77466,7 @@ and a guaranteed nul terminator.</doc>
            line="34346">Joins a number of strings together to form one long string, with the
 optional @separator inserted between each of them. The returned string
 should be freed with g_free().</doc>
-      <source-position filename="gstrfuncs.h" line="318"/>
+      <source-position filename="gstrfuncs.h" line="301"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77503,7 +77503,7 @@ should be freed with g_free().
 If @str_array has no items, the return value will be an
 empty string. If @str_array contains a single item, @separator will not
 appear in the resulting string.</doc>
-      <source-position filename="gstrfuncs.h" line="367"/>
+      <source-position filename="gstrfuncs.h" line="376"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77646,7 +77646,7 @@ the strings.</doc>
     which only works on ASCII and is not locale-sensitive, and
     g_utf8_casefold() followed by strcmp() on the resulting strings,
     which is good for case-insensitive sorting of UTF-8.</doc-deprecated>
-      <source-position filename="gstrfuncs.h" line="288"/>
+      <source-position filename="gstrfuncs.h" line="271"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77686,7 +77686,7 @@ needed.
 
 To copy a number of characters from a UTF-8 encoded string,
 use g_utf8_strncpy() instead.</doc>
-      <source-position filename="gstrfuncs.h" line="309"/>
+      <source-position filename="gstrfuncs.h" line="292"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77714,7 +77714,7 @@ use g_utf8_strncpy() instead.</doc>
            filename="glib-2.0.c"
            line="34481">Creates a new string @length bytes long filled with @fill_char.
 The returned string should be freed when no longer needed.</doc>
-      <source-position filename="gstrfuncs.h" line="312"/>
+      <source-position filename="gstrfuncs.h" line="295"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77866,7 +77866,7 @@ special case is that being able to represent an empty vector is typically
 more useful than consistent handling of empty elements. If you do need
 to represent empty elements, you'll need to check for the empty string
 before calling g_strsplit().</doc>
-      <source-position filename="gstrfuncs.h" line="359"/>
+      <source-position filename="gstrfuncs.h" line="368"/>
       <return-value>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -77927,7 +77927,7 @@ before calling g_strsplit_set().
 
 Note that this function works on bytes not characters, so it can't be used
 to delimit UTF-8 strings for anything but ASCII characters.</doc>
-      <source-position filename="gstrfuncs.h" line="363"/>
+      <source-position filename="gstrfuncs.h" line="372"/>
       <return-value>
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -78004,7 +78004,7 @@ to @haystack_len.</doc>
            filename="glib-2.0.c"
            line="34633">Removes leading and trailing whitespace from a string.
 See g_strchomp() and g_strchug().</doc>
-      <source-position filename="gstrfuncs.h" line="265"/>
+      <source-position filename="gstrfuncs.h" line="248"/>
       <parameters>
         <parameter name="string">
           <doc xml:space="preserve"
@@ -78027,7 +78027,7 @@ you know that you must expect both locale formatted and C formatted numbers
 should you use this. Make sure that you don't pass strings such as comma
 separated lists of values, since the commas may be interpreted as a decimal
 point in some locales, causing unexpected results.</doc>
-      <source-position filename="gstrfuncs.h" line="231"/>
+      <source-position filename="gstrfuncs.h" line="214"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -78065,7 +78065,7 @@ point in some locales, causing unexpected results.</doc>
       <doc-deprecated xml:space="preserve">This function is totally broken for the reasons
     discussed in the g_strncasecmp() docs - use g_ascii_strup()
     or g_utf8_strup() instead.</doc-deprecated>
-      <source-position filename="gstrfuncs.h" line="294"/>
+      <source-position filename="gstrfuncs.h" line="277"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -78087,7 +78087,7 @@ point in some locales, causing unexpected results.</doc>
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="34762">Checks if @strv contains @str. @strv must not be %NULL.</doc>
-      <source-position filename="gstrfuncs.h" line="395"/>
+      <source-position filename="gstrfuncs.h" line="404"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -78118,7 +78118,7 @@ of order, sort the arrays first (using g_qsort_with_data() or similar).
 
 Two empty arrays are considered equal. Neither @strv1 not @strv2 may be
 %NULL.</doc>
-      <source-position filename="gstrfuncs.h" line="399"/>
+      <source-position filename="gstrfuncs.h" line="408"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"
@@ -78151,7 +78151,7 @@ Two empty arrays are considered equal. Neither @strv1 not @strv2 may be
            filename="glib-2.0.c"
            line="34791">Returns the length of the given %NULL-terminated
 string array @str_array. @str_array must not be %NULL.</doc>
-      <source-position filename="gstrfuncs.h" line="374"/>
+      <source-position filename="gstrfuncs.h" line="383"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib-2.0.c"

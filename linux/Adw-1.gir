@@ -2541,7 +2541,7 @@ ellipsized.</doc>
              line="608">Sets the widget to activate when @self is activated.
 
 The row can be activated either by clicking on it, calling
-[method@ActionRow.activate], or via mnemonics in the title or the subtitle.
+[method@ActionRow.activate], or via mnemonics in the title.
 See the [property@PreferencesRow:use-underline] property to enable mnemonics.
 
 The target widget will be activated by emitting the
@@ -2731,7 +2731,7 @@ If the value is 0, the number of lines won't be limited.</doc>
              line="262">The widget to activate when the row is activated.
 
 The row can be activated either by clicking on it, calling
-[method@ActionRow.activate], or via mnemonics in the title or the subtitle.
+[method@ActionRow.activate], or via mnemonics in the title.
 See the [property@PreferencesRow:use-underline] property to enable
 mnemonics.
 
@@ -3743,19 +3743,19 @@ Use [property@Avatar:custom-image] to set a custom image.
       <constructor name="new" c:identifier="adw_avatar_new">
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="472">Creates a new `AdwAvatar`.</doc>
+             line="473">Creates a new `AdwAvatar`.</doc>
         <source-position filename="src/adw-avatar.h" line="25"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="480">the newly created `AdwAvatar`</doc>
+               line="481">the newly created `AdwAvatar`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="474">The size of the avatar</doc>
+                 line="475">The size of the avatar</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="text"
@@ -3764,13 +3764,13 @@ Use [property@Avatar:custom-image] to set a custom image.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="475">the text used to get the initials and color</doc>
+                 line="476">the text used to get the initials and color</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="show_initials" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="476">whether to use initials instead of an icon as fallback</doc>
+                 line="477">whether to use initials instead of an icon as fallback</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -3778,27 +3778,27 @@ Use [property@Avatar:custom-image] to set a custom image.
       <method name="draw_to_texture" c:identifier="adw_avatar_draw_to_texture">
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="743">Renders @self into a [class@Gdk.Texture] at @scale_factor.
+             line="744">Renders @self into a [class@Gdk.Texture] at @scale_factor.
 
 This can be used to export the fallback avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="60"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="752">the texture</doc>
+               line="753">the texture</doc>
           <type name="Gdk.Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="745">an avatar</doc>
+                 line="746">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="scale_factor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="746">The scale factor</doc>
+                 line="747">The scale factor</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -3809,19 +3809,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="custom-image"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="627">Gets the custom image paintable.</doc>
+             line="628">Gets the custom image paintable.</doc>
         <source-position filename="src/adw-avatar.h" line="48"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="633">the custom image</doc>
+               line="634">the custom image</doc>
           <type name="Gdk.Paintable" c:type="GdkPaintable*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="629">an avatar</doc>
+                 line="630">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3832,19 +3832,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="icon-name"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="494">Gets the name of an icon to use as a fallback.</doc>
+             line="495">Gets the name of an icon to use as a fallback.</doc>
         <source-position filename="src/adw-avatar.h" line="30"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="500">the icon name</doc>
+               line="501">the icon name</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="496">an avatar</doc>
+                 line="497">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3855,19 +3855,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="show-initials"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="584">Gets whether initials are used instead of an icon on the fallback avatar.</doc>
+             line="585">Gets whether initials are used instead of an icon on the fallback avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="590">whether initials are used instead of an icon as fallback</doc>
+               line="591">whether initials are used instead of an icon as fallback</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="586">an avatar</doc>
+                 line="587">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3878,19 +3878,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="size"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="693">Gets the size of the avatar.</doc>
+             line="694">Gets the size of the avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="54"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="699">the size of the avatar</doc>
+               line="700">the size of the avatar</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="695">an avatar</doc>
+                 line="696">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3901,12 +3901,12 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="text"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="536">Gets the text used to generate the fallback initials and color.</doc>
+             line="537">Gets the text used to generate the fallback initials and color.</doc>
         <source-position filename="src/adw-avatar.h" line="36"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="542">the text used to generate the fallback initials and
+               line="543">the text used to generate the fallback initials and
   color</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -3914,7 +3914,7 @@ This can be used to export the fallback avatar.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="538">an avatar</doc>
+                 line="539">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3925,7 +3925,7 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.set_property" value="custom-image"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="643">Sets the custom image paintable.
+             line="644">Sets the custom image paintable.
 
 Custom image is displayed instead of initials or icon.</doc>
         <source-position filename="src/adw-avatar.h" line="50"/>
@@ -3936,7 +3936,7 @@ Custom image is displayed instead of initials or icon.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="645">an avatar</doc>
+                 line="646">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="custom_image"
@@ -3945,7 +3945,7 @@ Custom image is displayed instead of initials or icon.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="646">a custom image</doc>
+                 line="647">a custom image</doc>
             <type name="Gdk.Paintable" c:type="GdkPaintable*"/>
           </parameter>
         </parameters>
@@ -3956,7 +3956,7 @@ Custom image is displayed instead of initials or icon.</doc>
         <attribute name="org.gtk.Method.set_property" value="icon-name"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="510">Sets the name of an icon to use as a fallback.
+             line="511">Sets the name of an icon to use as a fallback.
 
 If no name is set, `avatar-default-symbolic` will be used.</doc>
         <source-position filename="src/adw-avatar.h" line="32"/>
@@ -3967,7 +3967,7 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="512">an avatar</doc>
+                 line="513">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="icon_name"
@@ -3976,7 +3976,7 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="513">the icon name</doc>
+                 line="514">the icon name</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -3987,7 +3987,7 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
         <attribute name="org.gtk.Method.set_property" value="show-initials"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="600">Sets whether to use initials instead of an icon on the fallback avatar.
+             line="601">Sets whether to use initials instead of an icon on the fallback avatar.
 
 See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <source-position filename="src/adw-avatar.h" line="44"/>
@@ -3998,13 +3998,13 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="602">an avatar</doc>
+                 line="603">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="show_initials" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="603">whether to use initials instead of an icon as fallback</doc>
+                 line="604">whether to use initials instead of an icon as fallback</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4015,7 +4015,7 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <attribute name="org.gtk.Method.set_property" value="size"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="709">Sets the size of the avatar.</doc>
+             line="710">Sets the size of the avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="56"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4024,13 +4024,13 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="711">an avatar</doc>
+                 line="712">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="712">The size of the avatar</doc>
+                 line="713">The size of the avatar</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -4041,7 +4041,7 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <attribute name="org.gtk.Method.set_property" value="text"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="553">Sets the text used to generate the fallback initials and color.
+             line="554">Sets the text used to generate the fallback initials and color.
 
 It's only used to generate the color if [property@Avatar:show-initials] is
 `FALSE`.</doc>
@@ -4053,7 +4053,7 @@ It's only used to generate the color if [property@Avatar:show-initials] is
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="555">an avatar</doc>
+                 line="556">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="text"
@@ -4062,7 +4062,7 @@ It's only used to generate the color if [property@Avatar:show-initials] is
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="556">the text used to get the initials and color</doc>
+                 line="557">the text used to get the initials and color</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4078,7 +4078,7 @@ It's only used to generate the color if [property@Avatar:show-initials] is
                    value="adw_avatar_set_custom_image"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="414">A custom image paintable.
+             line="415">A custom image paintable.
 
 Custom image is displayed instead of initials or icon.</doc>
         <type name="Gdk.Paintable"/>
@@ -4095,7 +4095,7 @@ Custom image is displayed instead of initials or icon.</doc>
                    value="adw_avatar_set_icon_name"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="377">The name of an icon to use as a fallback.
+             line="378">The name of an icon to use as a fallback.
 
 If no name is set, `avatar-default-symbolic` will be used.</doc>
         <type name="utf8" c:type="gchar*"/>
@@ -4112,7 +4112,7 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
                    value="adw_avatar_set_show_initials"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="402">Whether initials are used instead of an icon on the fallback avatar.
+             line="403">Whether initials are used instead of an icon on the fallback avatar.
 
 See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -4127,7 +4127,7 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <attribute name="org.gtk.Property.set" value="adw_avatar_set_size"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="426">The size of the avatar.</doc>
+             line="427">The size of the avatar.</doc>
         <type name="gint" c:type="gint"/>
       </property>
       <property name="text"
@@ -4139,7 +4139,7 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <attribute name="org.gtk.Property.set" value="adw_avatar_set_text"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="389">Sets the text used to generate the fallback initials and color.
+             line="390">Sets the text used to generate the fallback initials and color.
 
 It's only used to generate the color if [property@Avatar:show-initials] is
 `FALSE`.</doc>
@@ -4177,7 +4177,8 @@ Banners are hidden by default, use [property@Banner:revealed] to show them.
 Banners have a title, set with [property@Banner:title]. Titles can be marked
 up with Pango markup, use [property@Banner:use-markup] to enable it.
 
-Title can be shown centered or left-aligned depending on available space.
+The title will be shown centered or left-aligned depending on available
+space.
 
 Banners can optionally have a button with text on it, set through
 [property@Banner:button-label]. The button can be used with a `GAction`,
@@ -4194,19 +4195,19 @@ or with the [signal@Banner::button-clicked] signal.
       <constructor name="new" c:identifier="adw_banner_new" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="506">Creates a new `AdwBanner`.</doc>
+             line="507">Creates a new `AdwBanner`.</doc>
         <source-position filename="src/adw-banner.h" line="26"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="512">the newly created `AdwBanner`</doc>
+               line="513">the newly created `AdwBanner`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <parameter name="title" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="508">the banner title</doc>
+                 line="509">the banner title</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4218,19 +4219,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="button-label"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="570">Gets the button label for @self.</doc>
+             line="571">Gets the button label for @self.</doc>
         <source-position filename="src/adw-banner.h" line="35"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="576">the button label for @self</doc>
+               line="577">the button label for @self</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="572">a banner</doc>
+                 line="573">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4242,19 +4243,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="revealed"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="663">Gets if a banner is revealed</doc>
+             line="664">Gets if a banner is revealed</doc>
         <source-position filename="src/adw-banner.h" line="41"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="669">Whether a banner is revealed</doc>
+               line="670">Whether a banner is revealed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="665">a banner</doc>
+                 line="666">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4266,19 +4267,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="title"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="526">Gets the title for @self.</doc>
+             line="527">Gets the title for @self.</doc>
         <source-position filename="src/adw-banner.h" line="29"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="532">the title for @self</doc>
+               line="533">the title for @self</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="528">a banner</doc>
+                 line="529">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4290,19 +4291,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="use-markup"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="618">Gets whether to use Pango markup for the banner title.</doc>
+             line="619">Gets whether to use Pango markup for the banner title.</doc>
         <source-position filename="src/adw-banner.h" line="47"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="624">whether to use markup</doc>
+               line="625">whether to use markup</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="620">a banner</doc>
+                 line="621">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4314,7 +4315,7 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.set_property" value="button-label"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="588">Sets the button label for @self.
+             line="589">Sets the button label for @self.
 
 If set to `""` or `NULL`, the button won't be shown.
 
@@ -4328,7 +4329,7 @@ The button can be used with a `GAction`, or with the
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="590">a banner</doc>
+                 line="591">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="label"
@@ -4337,7 +4338,7 @@ The button can be used with a `GAction`, or with the
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="591">the label</doc>
+                 line="592">the label</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4349,7 +4350,7 @@ The button can be used with a `GAction`, or with the
         <attribute name="org.gtk.Method.get_property" value="revealed"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="681">Sets whether a banner should be revealed</doc>
+             line="682">Sets whether a banner should be revealed</doc>
         <source-position filename="src/adw-banner.h" line="43"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4358,13 +4359,13 @@ The button can be used with a `GAction`, or with the
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="683">a banner</doc>
+                 line="684">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="revealed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="684">whether a banner should be revealed</doc>
+                 line="685">whether a banner should be revealed</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4376,7 +4377,7 @@ The button can be used with a `GAction`, or with the
         <attribute name="org.gtk.Method.set_property" value="title"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="544">Sets the title for this banner.
+             line="545">Sets the title for this banner.
 
 See also: [property@Banner:use-markup].</doc>
         <source-position filename="src/adw-banner.h" line="31"/>
@@ -4387,13 +4388,13 @@ See also: [property@Banner:use-markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="546">a banner</doc>
+                 line="547">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="title" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="547">the title</doc>
+                 line="548">the title</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4405,7 +4406,7 @@ See also: [property@Banner:use-markup].</doc>
         <attribute name="org.gtk.Method.set_property" value="use-markup"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="636">Sets whether to use Pango markup for the banner title.
+             line="637">Sets whether to use Pango markup for the banner title.
 
 See also [func@Pango.parse_markup].</doc>
         <source-position filename="src/adw-banner.h" line="49"/>
@@ -4416,13 +4417,13 @@ See also [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="638">a banner</doc>
+                 line="639">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="639">whether to use markup</doc>
+                 line="640">whether to use markup</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4439,7 +4440,7 @@ See also [func@Pango.parse_markup].</doc>
                    value="adw_banner_set_button_label"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="366">The label to show on the button.
+             line="367">The label to show on the button.
 
 If set to `""` or `NULL`, the button won't be shown.
 
@@ -4460,7 +4461,7 @@ The button can be used with a `GAction`, or with the
                    value="adw_banner_set_revealed"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="397">Whether the banner is currently revealed.</doc>
+             line="398">Whether the banner is currently revealed.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="title"
@@ -4473,7 +4474,7 @@ The button can be used with a `GAction`, or with the
         <attribute name="org.gtk.Property.set" value="adw_banner_set_title"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="352">The title for this banner.
+             line="353">The title for this banner.
 
 See also: [property@Banner:use-markup].</doc>
         <type name="utf8" c:type="gchar*"/>
@@ -4491,7 +4492,7 @@ See also: [property@Banner:use-markup].</doc>
                    value="adw_banner_set_use_markup"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="383">Whether to use Pango markup for the banner title.
+             line="384">Whether to use Pango markup for the banner title.
 
 See also [func@Pango.parse_markup].</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -4499,7 +4500,7 @@ See also [func@Pango.parse_markup].</doc>
       <glib:signal name="button-clicked" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="409">This signal is emitted after the action button has been clicked.
+             line="410">This signal is emitted after the action button has been clicked.
 
 It can be used as an alternative to setting an action.</doc>
         <return-value transfer-ownership="none">
@@ -12721,7 +12722,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="1" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="2" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -12811,7 +12812,7 @@ dialog_cb (AdwMessageDialog *dialog,
 {
   const char *response = adw_message_dialog_choose_finish (dialog, result);
 
-  ...
+  // ...
 }
 
 static void
@@ -13061,7 +13062,7 @@ adw_message_dialog_add_responses (dialog,
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2337">This function shows @self to the user.
+             line="2339">This function shows @self to the user.
 
 The @callback will be called when the alert is dismissed. It should call
 [method@MessageDialog.choose_finish] to obtain the result.</doc>
@@ -13073,7 +13074,7 @@ The @callback will be called when the alert is dismissed. It should call
           <instance-parameter name="self" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2339">a message dialog</doc>
+                 line="2341">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="cancellable"
@@ -13082,7 +13083,7 @@ The @callback will be called when the alert is dismissed. It should call
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2340">a `GCancellable` to cancel the operation</doc>
+                 line="2342">a `GCancellable` to cancel the operation</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -13093,7 +13094,7 @@ The @callback will be called when the alert is dismissed. It should call
                      closure="2">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2341">a callback to call when the operation is complete</doc>
+                 line="2343">a callback to call when the operation is complete</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -13103,7 +13104,7 @@ The @callback will be called when the alert is dismissed. It should call
                      closure="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2342">data to pass to @callback</doc>
+                 line="2344">data to pass to @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -13113,12 +13114,12 @@ The @callback will be called when the alert is dismissed. It should call
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2372">Finishes the [method@MessageDialog.choose] call and returns the response ID.</doc>
+             line="2374">Finishes the [method@MessageDialog.choose] call and returns the response ID.</doc>
         <source-position filename="src/adw-message-dialog.h" line="160"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2379">the ID of the response that was selected, or
+               line="2381">the ID of the response that was selected, or
   [property@MessageDialog:close-response] if the call was cancelled.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -13126,13 +13127,13 @@ The @callback will be called when the alert is dismissed. It should call
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2374">a message dialog</doc>
+                 line="2376">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2375">a `GAsyncResult`</doc>
+                 line="2377">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -26525,7 +26526,7 @@ forward to be shown as soon as possible.</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.3.1" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.3.2" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and

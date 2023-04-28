@@ -39,9 +39,9 @@ marshalling the signal argument into GValues.</doc>
     <alias name="Type" c:type="GType">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="409">A numerical value which represents the unique identifier of a registered
+           line="418">A numerical value which represents the unique identifier of a registered
 type.</doc>
-      <source-position filename="gtype.h" line="416"/>
+      <source-position filename="gtype.h" line="425"/>
       <type name="gsize" c:type="gsize"/>
     </alias>
     <function-macro name="ADD_PRIVATE"
@@ -50,7 +50,7 @@ type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1993">A convenience macro to ease adding private data to instances of a new type
+           line="2002">A convenience macro to ease adding private data to instances of a new type
 in the @_C_ section of G_DEFINE_TYPE_WITH_CODE() or
 G_DEFINE_ABSTRACT_TYPE_WITH_CODE().
 
@@ -115,12 +115,12 @@ name of the form `TypeNamePrivate`.
 It is safe to call the `_get_instance_private` function on %NULL or invalid
 objects since it's only adding an offset to the instance pointer. In that
 case the returned pointer must not be dereferenced.</doc>
-      <source-position filename="gtype.h" line="2065"/>
+      <source-position filename="gtype.h" line="2074"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1995">the name of the type in CamelCase</doc>
+               line="2004">the name of the type in CamelCase</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -166,7 +166,7 @@ names from that macro.</doc>
     <callback name="BaseFinalizeFunc" c:type="GBaseFinalizeFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="815">A callback function used by the type system to finalize those portions
+           line="824">A callback function used by the type system to finalize those portions
 of a derived types class structure that were setup from the corresponding
 GBaseInitFunc() function.
 
@@ -174,7 +174,7 @@ Class finalization basically works the inverse way in which class
 initialization is performed.
 
 See GClassInitFunc() for a discussion of the class initialization process.</doc>
-      <source-position filename="gtype.h" line="828"/>
+      <source-position filename="gtype.h" line="837"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -182,7 +182,7 @@ See GClassInitFunc() for a discussion of the class initialization process.</doc>
         <parameter name="g_class" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="817">The #GTypeClass structure to finalize</doc>
+               line="826">The #GTypeClass structure to finalize</doc>
           <type name="TypeClass" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -190,7 +190,7 @@ See GClassInitFunc() for a discussion of the class initialization process.</doc>
     <callback name="BaseInitFunc" c:type="GBaseInitFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="798">A callback function used by the type system to do base initialization
+           line="807">A callback function used by the type system to do base initialization
 of the class structures of derived types.
 
 This function is called as part of the initialization process of all derived
@@ -201,7 +201,7 @@ For example, class members (such as strings) that are not sufficiently
 handled by a plain memory copy of the parent class into the derived class
 have to be altered. See GClassInitFunc() for a discussion of the class
 initialization process.</doc>
-      <source-position filename="gtype.h" line="814"/>
+      <source-position filename="gtype.h" line="823"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -209,7 +209,7 @@ initialization process.</doc>
         <parameter name="g_class" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="800">The #GTypeClass structure to initialize</doc>
+               line="809">The #GTypeClass structure to initialize</doc>
           <type name="TypeClass" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -4175,7 +4175,7 @@ Use G_CALLBACK() to cast the callback function to a #GCallback.</doc>
     <callback name="ClassFinalizeFunc" c:type="GClassFinalizeFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="934">A callback function used by the type system to finalize a class.
+           line="943">A callback function used by the type system to finalize a class.
 
 This function is rarely needed, as dynamically allocated class resources
 should be handled by GBaseInitFunc() and GBaseFinalizeFunc().
@@ -4184,7 +4184,7 @@ Also, specification of a GClassFinalizeFunc() in the #GTypeInfo
 structure of a static type is invalid, because classes of static types
 will never be finalized (they are artificially kept alive when their
 reference count drops to zero).</doc>
-      <source-position filename="gtype.h" line="949"/>
+      <source-position filename="gtype.h" line="958"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -4192,7 +4192,7 @@ reference count drops to zero).</doc>
         <parameter name="g_class" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="936">The #GTypeClass structure to finalize</doc>
+               line="945">The #GTypeClass structure to finalize</doc>
           <type name="TypeClass" c:type="gpointer"/>
         </parameter>
         <parameter name="class_data"
@@ -4201,7 +4201,7 @@ reference count drops to zero).</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="937">The @class_data member supplied via the #GTypeInfo structure</doc>
+               line="946">The @class_data member supplied via the #GTypeInfo structure</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -4209,7 +4209,7 @@ reference count drops to zero).</doc>
     <callback name="ClassInitFunc" c:type="GClassInitFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="829">A callback function used by the type system to initialize the class
+           line="838">A callback function used by the type system to initialize the class
 of a specific type.
 
 This function should initialize all static class members.
@@ -4306,7 +4306,7 @@ is called to complete the initialization process with the static members
 Corresponding finalization counter parts to the GBaseInitFunc() functions
 have to be provided to release allocated resources at class finalization
 time.</doc>
-      <source-position filename="gtype.h" line="932"/>
+      <source-position filename="gtype.h" line="941"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -4314,7 +4314,7 @@ time.</doc>
         <parameter name="g_class" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="831">The #GTypeClass structure to initialize.</doc>
+               line="840">The #GTypeClass structure to initialize.</doc>
           <type name="TypeClass" c:type="gpointer"/>
         </parameter>
         <parameter name="class_data"
@@ -4323,7 +4323,7 @@ time.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="832">The @class_data member supplied via the #GTypeInfo structure.</doc>
+               line="841">The @class_data member supplied via the #GTypeInfo structure.</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -5188,7 +5188,7 @@ connection.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1494">A convenience macro for emitting the usual declarations in the
+           line="1503">A convenience macro for emitting the usual declarations in the
 header file for a type which is intended to be subclassed.
 
 You might use it in a header as follows:
@@ -5264,33 +5264,33 @@ structures, use G_DECLARE_FINAL_TYPE().
 
 If you must use G_DECLARE_DERIVABLE_TYPE() you should be sure to include some padding at the bottom of your
 class structure to leave space for the addition of future virtual functions.</doc>
-      <source-position filename="gtype.h" line="1582"/>
+      <source-position filename="gtype.h" line="1591"/>
       <parameters>
         <parameter name="ModuleObjName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1496">The name of the new type, in camel case (like `GtkWidget`)</doc>
+               line="1505">The name of the new type, in camel case (like `GtkWidget`)</doc>
         </parameter>
         <parameter name="module_obj_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1497">The name of the new type in lowercase, with words
+               line="1506">The name of the new type in lowercase, with words
  separated by `_` (like `gtk_widget`)</doc>
         </parameter>
         <parameter name="MODULE">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1499">The name of the module, in all caps (like `GTK`)</doc>
+               line="1508">The name of the module, in all caps (like `GTK`)</doc>
         </parameter>
         <parameter name="OBJ_NAME">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1500">The bare name of the type, in all caps (like `WIDGET`)</doc>
+               line="1509">The bare name of the type, in all caps (like `WIDGET`)</doc>
         </parameter>
         <parameter name="ParentName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1501">the name of the parent type, in camel case (like `GtkWidget`)</doc>
+               line="1510">the name of the parent type, in camel case (like `GtkWidget`)</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5300,7 +5300,7 @@ class structure to leave space for the addition of future virtual functions.</do
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1402">A convenience macro for emitting the usual declarations in the header file
+           line="1411">A convenience macro for emitting the usual declarations in the header file
 for a type which is not (at the present time) intended to be subclassed.
 
 You might use it in a header as follows:
@@ -5365,33 +5365,33 @@ G_DECLARE_FINAL_TYPE() to G_DECLARE_DERIVABLE_TYPE() without breaking API or ABI
 should therefore use G_DECLARE_FINAL_TYPE() until you are sure that it makes sense for your class to be
 subclassed.  Once a class structure has been exposed it is not possible to change its size or remove or
 reorder items without breaking the API and/or ABI.</doc>
-      <source-position filename="gtype.h" line="1479"/>
+      <source-position filename="gtype.h" line="1488"/>
       <parameters>
         <parameter name="ModuleObjName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1404">The name of the new type, in camel case (like `GtkWidget`)</doc>
+               line="1413">The name of the new type, in camel case (like `GtkWidget`)</doc>
         </parameter>
         <parameter name="module_obj_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1405">The name of the new type in lowercase, with words
+               line="1414">The name of the new type in lowercase, with words
  separated by `_` (like `gtk_widget`)</doc>
         </parameter>
         <parameter name="MODULE">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1407">The name of the module, in all caps (like `GTK`)</doc>
+               line="1416">The name of the module, in all caps (like `GTK`)</doc>
         </parameter>
         <parameter name="OBJ_NAME">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1408">The bare name of the type, in all caps (like `WIDGET`)</doc>
+               line="1417">The bare name of the type, in all caps (like `WIDGET`)</doc>
         </parameter>
         <parameter name="ParentName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1409">the name of the parent type, in camel case (like `GtkWidget`)</doc>
+               line="1418">the name of the parent type, in camel case (like `GtkWidget`)</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5401,7 +5401,7 @@ reorder items without breaking the API and/or ABI.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1604">A convenience macro for emitting the usual declarations in the header file for a #GInterface type.
+           line="1613">A convenience macro for emitting the usual declarations in the header file for a #GInterface type.
 
 You might use it in a header as follows:
 
@@ -5459,33 +5459,33 @@ manually define this as a macro for yourself.
 
 The declaration of the `_get_type()` function is the first thing emitted by the macro.  This allows this macro
 to be used in the usual way with export control and API versioning macros.</doc>
-      <source-position filename="gtype.h" line="1674"/>
+      <source-position filename="gtype.h" line="1683"/>
       <parameters>
         <parameter name="ModuleObjName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1606">The name of the new type, in camel case (like `GtkWidget`)</doc>
+               line="1615">The name of the new type, in camel case (like `GtkWidget`)</doc>
         </parameter>
         <parameter name="module_obj_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1607">The name of the new type in lowercase, with words
+               line="1616">The name of the new type in lowercase, with words
  separated by `_` (like `gtk_widget`)</doc>
         </parameter>
         <parameter name="MODULE">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1609">The name of the module, in all caps (like `GTK`)</doc>
+               line="1618">The name of the module, in all caps (like `GTK`)</doc>
         </parameter>
         <parameter name="OBJ_NAME">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1610">The bare name of the type, in all caps (like `WIDGET`)</doc>
+               line="1619">The bare name of the type, in all caps (like `WIDGET`)</doc>
         </parameter>
         <parameter name="PrerequisiteName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1611">the name of the prerequisite type, in camel case (like `GtkWidget`)</doc>
+               line="1620">the name of the prerequisite type, in camel case (like `GtkWidget`)</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5495,27 +5495,27 @@ to be used in the usual way with export control and API versioning macros.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1748">A convenience macro for type implementations.
+           line="1757">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE(), but defines an abstract type.
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1762"/>
+      <source-position filename="gtype.h" line="1771"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1750">The name of the new type, in Camel case.</doc>
+               line="1759">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1751">The name of the new type, in lowercase, with words
+               line="1760">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1753">The #GType of the parent type.</doc>
+               line="1762">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5525,35 +5525,35 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1763">A convenience macro for type implementations.
+           line="1772">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE_WITH_CODE(), but defines an abstract type and
 allows you to insert custom code into the `*_get_type()` function, e.g.
 interface implementations via G_IMPLEMENT_INTERFACE().
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1781"/>
+      <source-position filename="gtype.h" line="1790"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1765">The name of the new type, in Camel case.</doc>
+               line="1774">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1766">The name of the new type, in lowercase, with words
+               line="1775">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1768">The #GType of the parent type.</doc>
+               line="1777">The #GType of the parent type.</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1769">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
+               line="1778">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5563,26 +5563,26 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1782">Similar to G_DEFINE_TYPE_WITH_PRIVATE(), but defines an abstract type.
+           line="1791">Similar to G_DEFINE_TYPE_WITH_PRIVATE(), but defines an abstract type.
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1795"/>
+      <source-position filename="gtype.h" line="1804"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1784">The name of the new type, in Camel case.</doc>
+               line="1793">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1785">The name of the new type, in lowercase, with words
+               line="1794">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1787">The #GType of the parent type.</doc>
+               line="1796">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5592,7 +5592,7 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2238">A convenience macro for defining a new custom boxed type.
+           line="2247">A convenience macro for defining a new custom boxed type.
 
 Using this macro is the recommended way of defining new custom boxed
 types, over calling g_boxed_type_register_static() directly. It defines
@@ -5644,28 +5644,28 @@ foo ()
   my_struct_free (ms);
 }
 ]|</doc>
-      <source-position filename="gtype.h" line="2301"/>
+      <source-position filename="gtype.h" line="2310"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2240">The name of the new type, in Camel case</doc>
+               line="2249">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2241">The name of the new type, in lowercase, with words
+               line="2250">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
         <parameter name="copy_func">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2243">the #GBoxedCopyFunc for the new type</doc>
+               line="2252">the #GBoxedCopyFunc for the new type</doc>
         </parameter>
         <parameter name="free_func">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2244">the #GBoxedFreeFunc for the new type</doc>
+               line="2253">the #GBoxedFreeFunc for the new type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5675,7 +5675,7 @@ foo ()
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2302">A convenience macro for boxed type implementations.
+           line="2311">A convenience macro for boxed type implementations.
 
 Similar to G_DEFINE_BOXED_TYPE(), but allows to insert custom code into the
 `type_name_get_type()` function, e.g. to register value transformations with
@@ -5690,33 +5690,33 @@ G_DEFINE_BOXED_TYPE_WITH_CODE (GdkRectangle, gdk_rectangle,
 
 Similarly to the `G_DEFINE_TYPE_*` family of macros, the #GType of the newly
 defined boxed type is exposed in the `g_define_type_id` variable.</doc>
-      <source-position filename="gtype.h" line="2329"/>
+      <source-position filename="gtype.h" line="2338"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2304">The name of the new type, in Camel case</doc>
+               line="2313">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2305">The name of the new type, in lowercase, with words
+               line="2314">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
         <parameter name="copy_func">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2307">the #GBoxedCopyFunc for the new type</doc>
+               line="2316">the #GBoxedCopyFunc for the new type</doc>
         </parameter>
         <parameter name="free_func">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2308">the #GBoxedFreeFunc for the new type</doc>
+               line="2317">the #GBoxedFreeFunc for the new type</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2309">Custom code that gets inserted in the `*_get_type()` function</doc>
+               line="2318">Custom code that gets inserted in the `*_get_type()` function</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5922,28 +5922,28 @@ G_DEFINE_FLAGS_TYPE().</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1796">A convenience macro for type implementations.
+           line="1805">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE(), but defines a final type.
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1811"/>
+      <source-position filename="gtype.h" line="1820"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1798">the name of the new type, in Camel case</doc>
+               line="1807">the name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1799">the name of the new type, in lower case, with words
+               line="1808">the name of the new type, in lower case, with words
   separated by `_` (snake case)</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1801">the #GType of the parent type</doc>
+               line="1810">the #GType of the parent type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5953,35 +5953,35 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1812">A convenience macro for type implementations.
+           line="1821">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE_WITH_CODE(), but defines a final type and
 allows you to insert custom code into the `*_get_type()` function, e.g.
 interface implementations via G_IMPLEMENT_INTERFACE().
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1830"/>
+      <source-position filename="gtype.h" line="1839"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1814">the name of the new type, in Camel case</doc>
+               line="1823">the name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1815">the name of the new type, in lower case, with words
+               line="1824">the name of the new type, in lower case, with words
   separated by `_` (snake case)</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1817">the #GType of the parent type</doc>
+               line="1826">the #GType of the parent type</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1818">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
+               line="1827">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5991,28 +5991,28 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1831">A convenience macro for type implementations.
+           line="1840">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE_WITH_PRIVATE(), but defines a final type.
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1846"/>
+      <source-position filename="gtype.h" line="1855"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1833">the name of the new type, in Camel case</doc>
+               line="1842">the name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1834">the name of the new type, in lower case, with words
+               line="1843">the name of the new type, in lower case, with words
   separated by `_` (snake case)</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1836">the #GType of the parent type</doc>
+               line="1845">the #GType of the parent type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6065,7 +6065,7 @@ generate the type function.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1926">A convenience macro for #GTypeInterface definitions, which declares
+           line="1935">A convenience macro for #GTypeInterface definitions, which declares
 a default vtable initialization function and defines a `*_get_type()`
 function.
 
@@ -6078,22 +6078,22 @@ The initialization function has signature
 the full #GInterfaceInitFunc signature, for brevity and convenience. If you
 need to use an initialization function with an `iface_data` argument, you
 must write the #GTypeInterface definitions manually.</doc>
-      <source-position filename="gtype.h" line="1949"/>
+      <source-position filename="gtype.h" line="1958"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1928">The name of the new type, in Camel case.</doc>
+               line="1937">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1929">The name of the new type, in lowercase, with words separated by `_`.</doc>
+               line="1938">The name of the new type, in lowercase, with words separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1930">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
+               line="1939">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
 for no prerequisite type.</doc>
         </parameter>
       </parameters>
@@ -6104,7 +6104,7 @@ for no prerequisite type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1951">A convenience macro for #GTypeInterface definitions.
+           line="1960">A convenience macro for #GTypeInterface definitions.
 
 Similar to G_DEFINE_INTERFACE(), but allows you to insert custom code
 into the `*_get_type()` function, e.g. additional interface implementations
@@ -6112,28 +6112,28 @@ via G_IMPLEMENT_INTERFACE(), or additional prerequisite types.
 
 See G_DEFINE_TYPE_EXTENDED() for a similar example using
 G_DEFINE_TYPE_WITH_CODE().</doc>
-      <source-position filename="gtype.h" line="1970"/>
+      <source-position filename="gtype.h" line="1979"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1953">The name of the new type, in Camel case.</doc>
+               line="1962">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1954">The name of the new type, in lowercase, with words separated by `_`.</doc>
+               line="1963">The name of the new type, in lowercase, with words separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1955">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
+               line="1964">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
 for no prerequisite type.</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1957">Custom code that gets inserted in the `*_get_type()` function.</doc>
+               line="1966">Custom code that gets inserted in the `*_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6143,19 +6143,19 @@ for no prerequisite type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2399">A convenience macro for pointer type implementations, which defines a
+           line="2408">A convenience macro for pointer type implementations, which defines a
 `type_name_get_type()` function registering the pointer type.</doc>
-      <source-position filename="gtype.h" line="2410"/>
+      <source-position filename="gtype.h" line="2419"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2401">The name of the new type, in Camel case</doc>
+               line="2410">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2402">The name of the new type, in lowercase, with words
+               line="2411">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
       </parameters>
@@ -6166,26 +6166,26 @@ for no prerequisite type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2411">A convenience macro for pointer type implementations.
+           line="2420">A convenience macro for pointer type implementations.
 Similar to G_DEFINE_POINTER_TYPE(), but allows to insert
 custom code into the `type_name_get_type()` function.</doc>
-      <source-position filename="gtype.h" line="2424"/>
+      <source-position filename="gtype.h" line="2433"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2413">The name of the new type, in Camel case</doc>
+               line="2422">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2414">The name of the new type, in lowercase, with words
+               line="2423">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2416">Custom code that gets inserted in the `*_get_type()` function</doc>
+               line="2425">Custom code that gets inserted in the `*_get_type()` function</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6195,28 +6195,28 @@ custom code into the `type_name_get_type()` function.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1690">A convenience macro for type implementations, which declares a class
+           line="1699">A convenience macro for type implementations, which declares a class
 initialization function, an instance initialization function (see #GTypeInfo
 for information about these) and a static variable named `t_n_parent_class`
 pointing to the parent class. Furthermore, it defines a `*_get_type()` function.
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1705"/>
+      <source-position filename="gtype.h" line="1714"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1692">The name of the new type, in Camel case.</doc>
+               line="1701">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1693">The name of the new type, in lowercase, with words
+               line="1702">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1695">The #GType of the parent type.</doc>
+               line="1704">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6226,7 +6226,7 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1847">The most general convenience macro for type implementations, on which
+           line="1856">The most general convenience macro for type implementations, on which
 G_DEFINE_TYPE(), etc are based.
 
 |[&lt;!-- language="C" --&gt;
@@ -6291,33 +6291,33 @@ gtk_gadget_get_type (void)
 The only pieces which have to be manually provided are the definitions of
 the instance and class structure and the definitions of the instance and
 class init functions.</doc>
-      <source-position filename="gtype.h" line="1924"/>
+      <source-position filename="gtype.h" line="1933"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1849">The name of the new type, in Camel case.</doc>
+               line="1858">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1850">The name of the new type, in lowercase, with words
+               line="1859">The name of the new type, in lowercase, with words
    separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1852">The #GType of the parent type.</doc>
+               line="1861">The #GType of the parent type.</doc>
         </parameter>
         <parameter name="_f_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1853">#GTypeFlags to pass to g_type_register_static()</doc>
+               line="1862">#GTypeFlags to pass to g_type_register_static()</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1854">Custom code that gets inserted in the `*_get_type()` function.</doc>
+               line="1863">Custom code that gets inserted in the `*_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6327,32 +6327,32 @@ class init functions.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1706">A convenience macro for type implementations.
+           line="1715">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE(), but allows you to insert custom code into the
 `*_get_type()` function, e.g. interface implementations via G_IMPLEMENT_INTERFACE().
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gtype.h" line="1721"/>
+      <source-position filename="gtype.h" line="1730"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1708">The name of the new type, in Camel case.</doc>
+               line="1717">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1709">The name of the new type in lowercase, with words separated by `_`.</doc>
+               line="1718">The name of the new type in lowercase, with words separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1710">The #GType of the parent type.</doc>
+               line="1719">The #GType of the parent type.</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1711">Custom code that gets inserted in the `*_get_type()` function.</doc>
+               line="1720">Custom code that gets inserted in the `*_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6362,7 +6362,7 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1722">A convenience macro for type implementations, which declares a class
+           line="1731">A convenience macro for type implementations, which declares a class
 initialization function, an instance initialization function (see #GTypeInfo
 for information about these), a static variable named `t_n_parent_class`
 pointing to the parent class, and adds private instance data to the type.
@@ -6377,23 +6377,23 @@ The private instance data can be retrieved using the automatically generated
 getter function `t_n_get_instance_private()`.
 
 See also: G_ADD_PRIVATE()</doc>
-      <source-position filename="gtype.h" line="1747"/>
+      <source-position filename="gtype.h" line="1756"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1724">The name of the new type, in Camel case.</doc>
+               line="1733">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1725">The name of the new type, in lowercase, with words
+               line="1734">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1727">The #GType of the parent type.</doc>
+               line="1736">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6613,23 +6613,23 @@ nickname.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1972">A convenience macro to ease interface addition in the `_C_` section
+           line="1981">A convenience macro to ease interface addition in the `_C_` section
 of G_DEFINE_TYPE_WITH_CODE() or G_DEFINE_ABSTRACT_TYPE_WITH_CODE().
 See G_DEFINE_TYPE_EXTENDED() for an example.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 macros, since it depends on variable names from those macros.</doc>
-      <source-position filename="gtype.h" line="1986"/>
+      <source-position filename="gtype.h" line="1995"/>
       <parameters>
         <parameter name="TYPE_IFACE">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1974">The #GType of the interface to add</doc>
+               line="1983">The #GType of the interface to add</doc>
         </parameter>
         <parameter name="iface_init">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1975">The interface init function, of type #GInterfaceInitFunc</doc>
+               line="1984">The interface init function, of type #GInterfaceInitFunc</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -7470,7 +7470,7 @@ implementation and should never be accessed directly.</doc>
     <callback name="InstanceInitFunc" c:type="GInstanceInitFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="951">A callback function used by the type system to initialize a new
+           line="960">A callback function used by the type system to initialize a new
 instance of a type.
 
 This function initializes all instance members and allocates any resources
@@ -7483,7 +7483,7 @@ belongs to the type the current initializer was introduced for.
 
 The extended members of @instance are guaranteed to have been filled with
 zeros before this function is called.</doc>
-      <source-position filename="gtype.h" line="971"/>
+      <source-position filename="gtype.h" line="980"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -7491,13 +7491,13 @@ zeros before this function is called.</doc>
         <parameter name="instance" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="953">The instance to initialize</doc>
+               line="962">The instance to initialize</doc>
           <type name="TypeInstance" c:type="GTypeInstance*"/>
         </parameter>
         <parameter name="g_class" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="954">The class of the type the instance is
+               line="963">The class of the type the instance is
    created for</doc>
           <type name="TypeClass" c:type="gpointer"/>
         </parameter>
@@ -7506,11 +7506,11 @@ zeros before this function is called.</doc>
     <callback name="InterfaceFinalizeFunc" c:type="GInterfaceFinalizeFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="989">A callback function used by the type system to finalize an interface.
+           line="998">A callback function used by the type system to finalize an interface.
 
 This function should destroy any internal data and release any resources
 allocated by the corresponding GInterfaceInitFunc() function.</doc>
-      <source-position filename="gtype.h" line="999"/>
+      <source-position filename="gtype.h" line="1008"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -7518,7 +7518,7 @@ allocated by the corresponding GInterfaceInitFunc() function.</doc>
         <parameter name="g_iface" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="991">The interface structure to finalize</doc>
+               line="1000">The interface structure to finalize</doc>
           <type name="TypeInterface" c:type="gpointer"/>
         </parameter>
         <parameter name="iface_data"
@@ -7527,7 +7527,7 @@ allocated by the corresponding GInterfaceInitFunc() function.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="992">The @interface_data supplied via the #GInterfaceInfo structure</doc>
+               line="1001">The @interface_data supplied via the #GInterfaceInfo structure</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -7535,32 +7535,32 @@ allocated by the corresponding GInterfaceInitFunc() function.</doc>
     <record name="InterfaceInfo" c:type="GInterfaceInfo">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1143">A structure that provides information to the type system which is
+           line="1152">A structure that provides information to the type system which is
 used specifically for managing interface types.</doc>
-      <source-position filename="gtype.h" line="1157"/>
+      <source-position filename="gtype.h" line="1166"/>
       <field name="interface_init" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1145">location of the interface initialization function</doc>
+             line="1154">location of the interface initialization function</doc>
         <type name="InterfaceInitFunc" c:type="GInterfaceInitFunc"/>
       </field>
       <field name="interface_finalize" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1146">location of the interface finalization function</doc>
+             line="1155">location of the interface finalization function</doc>
         <type name="InterfaceFinalizeFunc" c:type="GInterfaceFinalizeFunc"/>
       </field>
       <field name="interface_data" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1147">user-supplied data passed to the interface init/finalize functions</doc>
+             line="1156">user-supplied data passed to the interface init/finalize functions</doc>
         <type name="gpointer" c:type="gpointer"/>
       </field>
     </record>
     <callback name="InterfaceInitFunc" c:type="GInterfaceInitFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="973">A callback function used by the type system to initialize a new
+           line="982">A callback function used by the type system to initialize a new
 interface.
 
 This function should initialize all internal data and* allocate any
@@ -7568,7 +7568,7 @@ resources required by the interface.
 
 The members of @iface_data are guaranteed to have been filled with
 zeros before this function is called.</doc>
-      <source-position filename="gtype.h" line="987"/>
+      <source-position filename="gtype.h" line="996"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -7576,7 +7576,7 @@ zeros before this function is called.</doc>
         <parameter name="g_iface" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="975">The interface structure to initialize</doc>
+               line="984">The interface structure to initialize</doc>
           <type name="TypeInterface" c:type="gpointer"/>
         </parameter>
         <parameter name="iface_data"
@@ -7585,7 +7585,7 @@ zeros before this function is called.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="976">The @interface_data supplied via the #GInterfaceInfo structure</doc>
+               line="985">The @interface_data supplied via the #GInterfaceInfo structure</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -11212,33 +11212,33 @@ Since 2.13.0</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2105">Evaluates to the @field_name inside the @inst private data
+           line="2114">Evaluates to the @field_name inside the @inst private data
 structure for @TypeName.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 and G_ADD_PRIVATE() macros, since it depends on variable names from
 those macros.</doc>
-      <source-position filename="gtype.h" line="2121"/>
+      <source-position filename="gtype.h" line="2130"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2107">the name of the type in CamelCase</doc>
+               line="2116">the name of the type in CamelCase</doc>
         </parameter>
         <parameter name="inst">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2108">the instance of @TypeName you wish to access</doc>
+               line="2117">the instance of @TypeName you wish to access</doc>
         </parameter>
         <parameter name="field_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2109">the type of the field in the private data structure</doc>
+               line="2118">the type of the field in the private data structure</doc>
         </parameter>
         <parameter name="field_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2110">the name of the field in the private data structure</doc>
+               line="2119">the name of the field in the private data structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -11248,28 +11248,28 @@ those macros.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2087">Evaluates to a pointer to the @field_name inside the @inst private data
+           line="2096">Evaluates to a pointer to the @field_name inside the @inst private data
 structure for @TypeName.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 and G_ADD_PRIVATE() macros, since it depends on variable names from
 those macros.</doc>
-      <source-position filename="gtype.h" line="2102"/>
+      <source-position filename="gtype.h" line="2111"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2089">the name of the type in CamelCase</doc>
+               line="2098">the name of the type in CamelCase</doc>
         </parameter>
         <parameter name="inst">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2090">the instance of @TypeName you wish to access</doc>
+               line="2099">the instance of @TypeName you wish to access</doc>
         </parameter>
         <parameter name="field_name">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2091">the name of the field in the private data structure</doc>
+               line="2100">the name of the field in the private data structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -11279,23 +11279,23 @@ those macros.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2070">Evaluates to the offset of the @field inside the instance private data
+           line="2079">Evaluates to the offset of the @field inside the instance private data
 structure for @TypeName.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 and G_ADD_PRIVATE() macros, since it depends on variable names from
 those macros.</doc>
-      <source-position filename="gtype.h" line="2084"/>
+      <source-position filename="gtype.h" line="2093"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2072">the name of the type in CamelCase</doc>
+               line="2081">the name of the type in CamelCase</doc>
         </parameter>
         <parameter name="field">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="2073">the name of the field in the private data structure</doc>
+               line="2082">the name of the field in the private data structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -13978,27 +13978,27 @@ See also: g_signal_query()</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="574">Checks that @g_class is a class structure of the type identified by @g_type
+           line="583">Checks that @g_class is a class structure of the type identified by @g_type
 and issues a warning if this is not the case. Returns @g_class casted
 to a pointer to @c_type. %NULL is not a valid class structure.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="586"/>
+      <source-position filename="gtype.h" line="595"/>
       <parameters>
         <parameter name="g_class">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="576">Location of a #GTypeClass structure</doc>
+               line="585">Location of a #GTypeClass structure</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="577">The type to be returned</doc>
+               line="586">The type to be returned</doc>
         </parameter>
         <parameter name="c_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="578">The corresponding C type of class structure of @g_type</doc>
+               line="587">The corresponding C type of class structure of @g_type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14007,21 +14007,21 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="587">Checks if @g_class is a class structure of the type identified by
+           line="596">Checks if @g_class is a class structure of the type identified by
 @g_type. If @g_class is %NULL, %FALSE will be returned.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="599"/>
+      <source-position filename="gtype.h" line="608"/>
       <parameters>
         <parameter name="g_class">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="589">Location of a #GTypeClass structure</doc>
+               line="598">Location of a #GTypeClass structure</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="590">The type to be checked</doc>
+               line="599">The type to be checked</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14030,17 +14030,17 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="490">Checks if @instance is a valid #GTypeInstance structure,
+           line="499">Checks if @instance is a valid #GTypeInstance structure,
 otherwise issues a warning and returns %FALSE. %NULL is not a valid
 #GTypeInstance.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="502"/>
+      <source-position filename="gtype.h" line="511"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="492">Location of a #GTypeInstance structure</doc>
+               line="501">Location of a #GTypeInstance structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14049,29 +14049,29 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="503">Checks that @instance is an instance of the type identified by @g_type
+           line="512">Checks that @instance is an instance of the type identified by @g_type
 and issues a warning if this is not the case. Returns @instance casted
 to a pointer to @c_type.
 
 No warning will be issued if @instance is %NULL, and %NULL will be returned.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="517"/>
+      <source-position filename="gtype.h" line="526"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="505">Location of a #GTypeInstance structure</doc>
+               line="514">Location of a #GTypeInstance structure</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="506">The type to be returned</doc>
+               line="515">The type to be returned</doc>
         </parameter>
         <parameter name="c_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="507">The corresponding C type of @g_type</doc>
+               line="516">The corresponding C type of @g_type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14080,21 +14080,21 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="531">Checks if @instance is an instance of the fundamental type identified by @g_type.
+           line="540">Checks if @instance is an instance of the fundamental type identified by @g_type.
 If @instance is %NULL, %FALSE will be returned.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="543"/>
+      <source-position filename="gtype.h" line="552"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="533">Location of a #GTypeInstance structure.</doc>
+               line="542">Location of a #GTypeInstance structure.</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="534">The fundamental type to be checked</doc>
+               line="543">The fundamental type to be checked</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14103,21 +14103,21 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="518">Checks if @instance is an instance of the type identified by @g_type. If
+           line="527">Checks if @instance is an instance of the type identified by @g_type. If
 @instance is %NULL, %FALSE will be returned.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="530"/>
+      <source-position filename="gtype.h" line="539"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="520">Location of a #GTypeInstance structure.</doc>
+               line="529">Location of a #GTypeInstance structure.</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="521">The type to be checked</doc>
+               line="530">The type to be checked</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14126,16 +14126,16 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="600">Checks if @value has been initialized to hold values
+           line="609">Checks if @value has been initialized to hold values
 of a value type.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="611"/>
+      <source-position filename="gtype.h" line="620"/>
       <parameters>
         <parameter name="value">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="602">a #GValue</doc>
+               line="611">a #GValue</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14144,21 +14144,21 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="612">Checks if @value has been initialized to hold values
+           line="621">Checks if @value has been initialized to hold values
 of type @g_type.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="624"/>
+      <source-position filename="gtype.h" line="633"/>
       <parameters>
         <parameter name="value">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="614">a #GValue</doc>
+               line="623">a #GValue</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="615">The type to be checked</doc>
+               line="624">The type to be checked</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14168,28 +14168,28 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="679">Gets the private class structure for a particular type.
+           line="688">Gets the private class structure for a particular type.
 
 The private structure must have been registered in the
 get_type() function with g_type_add_class_private().
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="695"/>
+      <source-position filename="gtype.h" line="704"/>
       <parameters>
         <parameter name="klass">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="681">the class of a type deriving from @private_type</doc>
+               line="690">the class of a type deriving from @private_type</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="682">the type identifying which private data to retrieve</doc>
+               line="691">the type identifying which private data to retrieve</doc>
         </parameter>
         <parameter name="c_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="683">The C type for the private structure</doc>
+               line="692">The C type for the private structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14198,8 +14198,8 @@ This macro should only be used in type implementations.</doc>
               c:type="G_TYPE_FLAG_RESERVED_ID_BIT">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="2573">A bit in the type number that's supposed to be left untouched.</doc>
-      <source-position filename="gtype.h" line="2578"/>
+           line="2582">A bit in the type number that's supposed to be left untouched.</doc>
+      <source-position filename="gtype.h" line="2587"/>
       <type name="GLib.Type" c:type="GType"/>
     </constant>
     <function-macro name="TYPE_FROM_CLASS"
@@ -14207,15 +14207,15 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="636">Get the type identifier from a given @class structure.
+           line="645">Get the type identifier from a given @class structure.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="646"/>
+      <source-position filename="gtype.h" line="655"/>
       <parameters>
         <parameter name="g_class">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="638">Location of a valid #GTypeClass structure</doc>
+               line="647">Location of a valid #GTypeClass structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14224,15 +14224,15 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="625">Get the type identifier from a given @instance structure.
+           line="634">Get the type identifier from a given @instance structure.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="635"/>
+      <source-position filename="gtype.h" line="644"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="627">Location of a valid #GTypeInstance structure</doc>
+               line="636">Location of a valid #GTypeInstance structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14241,15 +14241,15 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="647">Get the type identifier from a given @interface structure.
+           line="656">Get the type identifier from a given @interface structure.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="657"/>
+      <source-position filename="gtype.h" line="666"/>
       <parameters>
         <parameter name="g_iface">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="649">Location of a valid #GTypeInterface structure</doc>
+               line="658">Location of a valid #GTypeInterface structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14295,13 +14295,13 @@ for types that are assigned at compile-time.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="371">Checks if @type has a #GTypeValueTable.</doc>
-      <source-position filename="gtype.h" line="379"/>
+           line="380">Checks if @type has a #GTypeValueTable.</doc>
+      <source-position filename="gtype.h" line="388"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="373">A #GType value</doc>
+               line="382">A #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14310,29 +14310,29 @@ for types that are assigned at compile-time.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="544">Get the class structure of a given @instance, casted
+           line="553">Get the class structure of a given @instance, casted
 to a specified ancestor type @g_type of the instance.
 
 Note that while calling a GInstanceInitFunc(), the class pointer
 gets modified, so it might not always return the expected pointer.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="560"/>
+      <source-position filename="gtype.h" line="569"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="546">Location of the #GTypeInstance structure</doc>
+               line="555">Location of the #GTypeInstance structure</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="547">The #GType of the class to be returned</doc>
+               line="556">The #GType of the class to be returned</doc>
         </parameter>
         <parameter name="c_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="548">The C type of the class structure</doc>
+               line="557">The C type of the class structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14341,25 +14341,25 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="561">Get the interface structure for interface @g_type of a given @instance.
+           line="570">Get the interface structure for interface @g_type of a given @instance.
 
 This macro should only be used in type implementations.</doc>
-      <source-position filename="gtype.h" line="573"/>
+      <source-position filename="gtype.h" line="582"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="563">Location of the #GTypeInstance structure</doc>
+               line="572">Location of the #GTypeInstance structure</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="564">The #GType of the interface to be returned</doc>
+               line="573">The #GType of the interface to be returned</doc>
         </parameter>
         <parameter name="c_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="565">The C type of the interface structure</doc>
+               line="574">The C type of the interface structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14371,7 +14371,7 @@ This macro should only be used in type implementations.</doc>
                     deprecated-version="2.58">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="659">Gets the private structure for a particular type.
+           line="668">Gets the private structure for a particular type.
 
 The private structure must have been registered in the
 class_init function with g_type_class_add_private().
@@ -14379,22 +14379,22 @@ class_init function with g_type_class_add_private().
 This macro should only be used in type implementations.</doc>
       <doc-deprecated xml:space="preserve">Use G_ADD_PRIVATE() and the generated
   `your_type_get_instance_private()` function instead</doc-deprecated>
-      <source-position filename="gtype.h" line="677"/>
+      <source-position filename="gtype.h" line="686"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="661">the instance of a type deriving from @private_type</doc>
+               line="670">the instance of a type deriving from @private_type</doc>
         </parameter>
         <parameter name="g_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="662">the type identifying which private data to retrieve</doc>
+               line="671">the type identifying which private data to retrieve</doc>
         </parameter>
         <parameter name="c_type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="663">The C type for the private structure</doc>
+               line="672">The C type for the private structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14403,15 +14403,15 @@ This macro should only be used in type implementations.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="340">Checks if @type is an abstract type.  An abstract type cannot be
+           line="349">Checks if @type is an abstract type.  An abstract type cannot be
 instantiated and is normally used as an abstract base class for
 derived classes.</doc>
-      <source-position filename="gtype.h" line="350"/>
+      <source-position filename="gtype.h" line="359"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="342">A #GType value</doc>
+               line="351">A #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14429,8 +14429,17 @@ derived classes.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="301">Checks if @type is a classed type.</doc>
-      <source-position filename="gtype.h" line="309"/>
+           line="301">Checks if @type is a classed type.
+
+A classed type has an associated #GTypeClass which can be derived to store
+class-wide virtual function pointers and data for all instances of the type.
+This allows for subclassing. All #GObjects are classed; none of the scalar
+fundamental types built into GLib are classed.
+
+Interfaces are not classed: while their #GTypeInterface struct could be
+considered similar to #GTypeClass, and classes can derive interfaces,
+#GTypeInterface doesn’t allow for subclassing.</doc>
+      <source-position filename="gtype.h" line="318"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
@@ -14444,14 +14453,14 @@ derived classes.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="330">Checks if @type is a deep derivable type.  A deep derivable type
+           line="339">Checks if @type is a deep derivable type.  A deep derivable type
 can be used as the base class of a deep (multi-level) class hierarchy.</doc>
-      <source-position filename="gtype.h" line="339"/>
+      <source-position filename="gtype.h" line="348"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="332">A #GType value</doc>
+               line="341">A #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14461,14 +14470,14 @@ can be used as the base class of a deep (multi-level) class hierarchy.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="393">Checks if @type is deprecated. Instantiating a deprecated type will
+           line="402">Checks if @type is deprecated. Instantiating a deprecated type will
 trigger a warning if running with `G_ENABLE_DIAGNOSTIC=1`.</doc>
-      <source-position filename="gtype.h" line="404"/>
+      <source-position filename="gtype.h" line="413"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="395">a #GType value</doc>
+               line="404">a #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14477,14 +14486,14 @@ trigger a warning if running with `G_ENABLE_DIAGNOSTIC=1`.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="320">Checks if @type is a derivable type.  A derivable type can
+           line="329">Checks if @type is a derivable type.  A derivable type can
 be used as the base class of a flat (single-level) class hierarchy.</doc>
-      <source-position filename="gtype.h" line="329"/>
+      <source-position filename="gtype.h" line="338"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="322">A #GType value</doc>
+               line="331">A #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14526,14 +14535,14 @@ types).</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="380">Checks if @type is a final type. A final type cannot be derived any
+           line="389">Checks if @type is a final type. A final type cannot be derived any
 further.</doc>
-      <source-position filename="gtype.h" line="391"/>
+      <source-position filename="gtype.h" line="400"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="382">a #GType value</doc>
+               line="391">a #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14572,14 +14581,14 @@ further.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="310">Checks if @type can be instantiated.  Instantiation is the
+           line="319">Checks if @type can be instantiated.  Instantiation is the
 process of creating an instance (object) of this type.</doc>
-      <source-position filename="gtype.h" line="319"/>
+      <source-position filename="gtype.h" line="328"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="312">A #GType value</doc>
+               line="321">A #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14658,15 +14667,15 @@ of the #GTypeValueTable functions required for a type to create a #GValue of.</d
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="351">Checks if @type is an abstract value type.  An abstract value type introduces
+           line="360">Checks if @type is an abstract value type.  An abstract value type introduces
 a value table, but can't be used for g_value_init() and is normally used as
 an abstract base type for derived value types.</doc>
-      <source-position filename="gtype.h" line="361"/>
+      <source-position filename="gtype.h" line="370"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="353">A #GType value</doc>
+               line="362">A #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14675,13 +14684,13 @@ an abstract base type for derived value types.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="362">Checks if @type is a value type and can be used with g_value_init().</doc>
-      <source-position filename="gtype.h" line="370"/>
+           line="371">Checks if @type is a value type and can be used with g_value_init().</doc>
+      <source-position filename="gtype.h" line="379"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="364">A #GType value</doc>
+               line="373">A #GType value</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14844,13 +14853,13 @@ See also: g_object_add_toggle_ref()</doc>
       </parameters>
     </callback>
     <union name="TypeCValue" c:type="GTypeCValue">
-      <source-position filename="gtype.h" line="421"/>
+      <source-position filename="gtype.h" line="430"/>
     </union>
     <record name="TypeClass" c:type="GTypeClass">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="435">An opaque structure used as the base of all classes.</doc>
-      <source-position filename="gtype.h" line="444"/>
+           line="444">An opaque structure used as the base of all classes.</doc>
+      <source-position filename="gtype.h" line="453"/>
       <field name="g_type" readable="0" private="1">
         <type name="GType" c:type="GType"/>
       </field>
@@ -14925,7 +14934,7 @@ my_object_get_some_field (MyObject *my_object)
 ]|</doc>
         <doc-deprecated xml:space="preserve">Use the G_ADD_PRIVATE() macro with the `G_DEFINE_*`
   family of macros to add instance private data to a type</doc-deprecated>
-        <source-position filename="gtype.h" line="1374"/>
+        <source-position filename="gtype.h" line="1383"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -14959,7 +14968,7 @@ class in order to get the private data for the type represented by
 
 You can only call this function after you have registered a private
 data area for @g_class using g_type_class_add_private().</doc>
-        <source-position filename="gtype.h" line="1393"/>
+        <source-position filename="gtype.h" line="1402"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -14976,7 +14985,7 @@ data area for @g_class using g_type_class_add_private().</doc>
         </parameters>
       </method>
       <method name="get_private" c:identifier="g_type_class_get_private">
-        <source-position filename="gtype.h" line="1390"/>
+        <source-position filename="gtype.h" line="1399"/>
         <return-value transfer-ownership="none" nullable="1">
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
@@ -15000,7 +15009,7 @@ class will always exist.
 
 This function is essentially equivalent to:
 g_type_class_peek (g_type_parent (G_TYPE_FROM_CLASS (g_class)))</doc>
-        <source-position filename="gtype.h" line="760"/>
+        <source-position filename="gtype.h" line="769"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15025,7 +15034,7 @@ g_type_class_peek (g_type_parent (G_TYPE_FROM_CLASS (g_class)))</doc>
 Once the last reference count of a class has been released, classes
 may be finalized by the type system, so further dereferencing of a
 class pointer after g_type_class_unref() are invalid.</doc>
-        <source-position filename="gtype.h" line="758"/>
+        <source-position filename="gtype.h" line="767"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -15047,7 +15056,7 @@ class pointer after g_type_class_unref() are invalid.</doc>
 implementations. It unreferences a class without consulting the chain
 of #GTypeClassCacheFuncs, avoiding the recursion which would occur
 otherwise.</doc>
-        <source-position filename="gtype.h" line="2471"/>
+        <source-position filename="gtype.h" line="2480"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -15062,7 +15071,7 @@ otherwise.</doc>
       </method>
       <function name="adjust_private_offset"
                 c:identifier="g_type_class_adjust_private_offset">
-        <source-position filename="gtype.h" line="1383"/>
+        <source-position filename="gtype.h" line="1392"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -15086,7 +15095,7 @@ except that the classes reference count isn't incremented.
 As a consequence, this function may return %NULL if the class
 of the type passed in does not currently exist (hasn't been
 referenced before).</doc>
-        <source-position filename="gtype.h" line="754"/>
+        <source-position filename="gtype.h" line="763"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15111,7 +15120,7 @@ referenced before).</doc>
              filename="gobject-2.0.c"
              line="5983">A more efficient version of g_type_class_peek() which works only for
 static types.</doc>
-        <source-position filename="gtype.h" line="756"/>
+        <source-position filename="gtype.h" line="765"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15135,7 +15144,7 @@ static types.</doc>
              line="5997">Increments the reference count of the class structure belonging to
 @type. This function will demand-create the class if it doesn't
 exist already.</doc>
-        <source-position filename="gtype.h" line="752"/>
+        <source-position filename="gtype.h" line="761"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15156,7 +15165,7 @@ exist already.</doc>
     <callback name="TypeClassCacheFunc" c:type="GTypeClassCacheFunc">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1001">A callback function which is called when the reference count of a class
+           line="1010">A callback function which is called when the reference count of a class
 drops to zero.
 
 It may use g_type_class_ref() to prevent the class from being freed. You
@@ -15166,11 +15175,11 @@ to prevent infinite recursion, use g_type_class_unref_uncached() instead.
 The functions have to check the class id passed in to figure
 whether they actually want to cache the class of this type, since all
 classes are routed through the same #GTypeClassCacheFunc chain.</doc>
-      <source-position filename="gtype.h" line="1021"/>
+      <source-position filename="gtype.h" line="1030"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1018">%TRUE to stop further #GTypeClassCacheFuncs from being
+             line="1027">%TRUE to stop further #GTypeClassCacheFuncs from being
  called, %FALSE to continue</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -15181,13 +15190,13 @@ classes are routed through the same #GTypeClassCacheFunc chain.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1003">data that was given to the g_type_add_class_cache_func() call</doc>
+               line="1012">data that was given to the g_type_add_class_cache_func() call</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
         <parameter name="g_class" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1004">The #GTypeClass structure which is
+               line="1013">The #GTypeClass structure which is
    unreferenced</doc>
           <type name="TypeClass" c:type="GTypeClass*"/>
         </parameter>
@@ -15199,55 +15208,55 @@ classes are routed through the same #GTypeClassCacheFunc chain.</doc>
               c:type="GTypeDebugFlags">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="697">These flags used to be passed to g_type_init_with_debug_flags() which
+           line="706">These flags used to be passed to g_type_init_with_debug_flags() which
 is now deprecated.
 
 If you need to enable debugging features, use the GOBJECT_DEBUG
 environment variable.</doc>
       <doc-deprecated xml:space="preserve">g_type_init() is now done automatically</doc-deprecated>
-      <source-position filename="gtype.h" line="720"/>
+      <source-position filename="gtype.h" line="729"/>
       <member name="none" value="0" c:identifier="G_TYPE_DEBUG_NONE">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="699">Print no messages</doc>
+             line="708">Print no messages</doc>
       </member>
       <member name="objects" value="1" c:identifier="G_TYPE_DEBUG_OBJECTS">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="700">Print messages about object bookkeeping</doc>
+             line="709">Print messages about object bookkeeping</doc>
       </member>
       <member name="signals" value="2" c:identifier="G_TYPE_DEBUG_SIGNALS">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="701">Print messages about signal emissions</doc>
+             line="710">Print messages about signal emissions</doc>
       </member>
       <member name="instance_count"
               value="4"
               c:identifier="G_TYPE_DEBUG_INSTANCE_COUNT">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="703">Keep a count of instances of each type</doc>
+             line="712">Keep a count of instances of each type</doc>
       </member>
       <member name="mask" value="7" c:identifier="G_TYPE_DEBUG_MASK">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="702">Mask covering all debug flags</doc>
+             line="711">Mask covering all debug flags</doc>
       </member>
     </bitfield>
     <bitfield name="TypeFlags" c:type="GTypeFlags">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1056">Bit masks used to check or determine characteristics of a type.</doc>
-      <source-position filename="gtype.h" line="1079"/>
+           line="1065">Bit masks used to check or determine characteristics of a type.</doc>
+      <source-position filename="gtype.h" line="1088"/>
       <member name="none" value="0" c:identifier="G_TYPE_FLAG_NONE">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1058">No special flags. Since: 2.74</doc>
+             line="1067">No special flags. Since: 2.74</doc>
       </member>
       <member name="abstract" value="16" c:identifier="G_TYPE_FLAG_ABSTRACT">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1059">Indicates an abstract type. No instances can be
+             line="1068">Indicates an abstract type. No instances can be
  created for an abstract type</doc>
       </member>
       <member name="value_abstract"
@@ -15255,14 +15264,14 @@ environment variable.</doc>
               c:identifier="G_TYPE_FLAG_VALUE_ABSTRACT">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1061">Indicates an abstract value type, i.e. a type
+             line="1070">Indicates an abstract value type, i.e. a type
  that introduces a value table, but can't be used for
  g_value_init()</doc>
       </member>
       <member name="final" value="64" c:identifier="G_TYPE_FLAG_FINAL">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1064">Indicates a final type. A final type is a non-derivable
+             line="1073">Indicates a final type. A final type is a non-derivable
  leaf node in a deep derivable type hierarchy tree. Since: 2.70</doc>
       </member>
       <member name="deprecated"
@@ -15270,7 +15279,7 @@ environment variable.</doc>
               c:identifier="G_TYPE_FLAG_DEPRECATED">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1066">The type is deprecated and may be removed in a
+             line="1075">The type is deprecated and may be removed in a
  future version. A warning will be emitted if it is instantiated while
  running with `G_ENABLE_DIAGNOSTIC=1`. Since 2.76</doc>
       </member>
@@ -15278,51 +15287,51 @@ environment variable.</doc>
     <bitfield name="TypeFundamentalFlags" c:type="GTypeFundamentalFlags">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1037">Bit masks used to check or determine specific characteristics of a
+           line="1046">Bit masks used to check or determine specific characteristics of a
 fundamental type.</doc>
-      <source-position filename="gtype.h" line="1055"/>
+      <source-position filename="gtype.h" line="1064"/>
       <member name="classed" value="1" c:identifier="G_TYPE_FLAG_CLASSED">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1039">Indicates a classed type</doc>
+             line="1048">Indicates a classed type</doc>
       </member>
       <member name="instantiatable"
               value="2"
               c:identifier="G_TYPE_FLAG_INSTANTIATABLE">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1040">Indicates an instantiatable type (implies classed)</doc>
+             line="1049">Indicates an instantiatable type (implies classed)</doc>
       </member>
       <member name="derivable" value="4" c:identifier="G_TYPE_FLAG_DERIVABLE">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1041">Indicates a flat derivable type</doc>
+             line="1050">Indicates a flat derivable type</doc>
       </member>
       <member name="deep_derivable"
               value="8"
               c:identifier="G_TYPE_FLAG_DEEP_DERIVABLE">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1042">Indicates a deep derivable type (implies derivable)</doc>
+             line="1051">Indicates a deep derivable type (implies derivable)</doc>
       </member>
     </bitfield>
     <record name="TypeFundamentalInfo" c:type="GTypeFundamentalInfo">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1132">A structure that provides information to the type system which is
+           line="1141">A structure that provides information to the type system which is
 used specifically for managing fundamental types.</doc>
-      <source-position filename="gtype.h" line="1142"/>
+      <source-position filename="gtype.h" line="1151"/>
       <field name="type_flags" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1134">#GTypeFundamentalFlags describing the characteristics of the fundamental type</doc>
+             line="1143">#GTypeFundamentalFlags describing the characteristics of the fundamental type</doc>
         <type name="TypeFundamentalFlags" c:type="GTypeFundamentalFlags"/>
       </field>
     </record>
     <record name="TypeInfo" c:type="GTypeInfo">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1080">This structure is used to provide the type system with the information
+           line="1089">This structure is used to provide the type system with the information
 required to initialize and destruct (finalize) a type's class and
 its instances.
 
@@ -15331,29 +15340,29 @@ The initialized structure is passed to the g_type_register_static() function
 g_type_plugin_complete_type_info()). The type system will perform a deep
 copy of this structure, so its memory does not need to be persistent
 across invocation of g_type_register_static().</doc>
-      <source-position filename="gtype.h" line="1131"/>
+      <source-position filename="gtype.h" line="1140"/>
       <field name="class_size" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1082">Size of the class structure (required for interface, classed and instantiatable types)</doc>
+             line="1091">Size of the class structure (required for interface, classed and instantiatable types)</doc>
         <type name="guint16" c:type="guint16"/>
       </field>
       <field name="base_init" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1083">Location of the base initialization function (optional)</doc>
+             line="1092">Location of the base initialization function (optional)</doc>
         <type name="BaseInitFunc" c:type="GBaseInitFunc"/>
       </field>
       <field name="base_finalize" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1084">Location of the base finalization function (optional)</doc>
+             line="1093">Location of the base finalization function (optional)</doc>
         <type name="BaseFinalizeFunc" c:type="GBaseFinalizeFunc"/>
       </field>
       <field name="class_init" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1085">Location of the class initialization function for
+             line="1094">Location of the class initialization function for
  classed and instantiatable types. Location of the default vtable
  inititalization function for interface types. (optional) This function
  is used both to fill in virtual functions in the class or default vtable,
@@ -15364,7 +15373,7 @@ across invocation of g_type_register_static().</doc>
       <field name="class_finalize" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1091">Location of the class finalization function for
+             line="1100">Location of the class finalization function for
  classed and instantiatable types. Location of the default vtable
  finalization function for interface types. (optional)</doc>
         <type name="ClassFinalizeFunc" c:type="GClassFinalizeFunc"/>
@@ -15372,31 +15381,31 @@ across invocation of g_type_register_static().</doc>
       <field name="class_data" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1094">User-supplied data passed to the class init/finalize functions</doc>
+             line="1103">User-supplied data passed to the class init/finalize functions</doc>
         <type name="gpointer" c:type="gconstpointer"/>
       </field>
       <field name="instance_size" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1095">Size of the instance (object) structure (required for instantiatable types only)</doc>
+             line="1104">Size of the instance (object) structure (required for instantiatable types only)</doc>
         <type name="guint16" c:type="guint16"/>
       </field>
       <field name="n_preallocs" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1096">Prior to GLib 2.10, it specified the number of pre-allocated (cached) instances to reserve memory for (0 indicates no caching). Since GLib 2.10 this field is ignored.</doc>
+             line="1105">Prior to GLib 2.10, it specified the number of pre-allocated (cached) instances to reserve memory for (0 indicates no caching). Since GLib 2.10 this field is ignored.</doc>
         <type name="guint16" c:type="guint16"/>
       </field>
       <field name="instance_init" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1097">Location of the instance initialization function (optional, for instantiatable types only)</doc>
+             line="1106">Location of the instance initialization function (optional, for instantiatable types only)</doc>
         <type name="InstanceInitFunc" c:type="GInstanceInitFunc"/>
       </field>
       <field name="value_table" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1098">A #GTypeValueTable function table for generic handling of GValues
+             line="1107">A #GTypeValueTable function table for generic handling of GValues
  of this type (usually only useful for fundamental types)</doc>
         <type name="TypeValueTable" c:type="const GTypeValueTable*"/>
       </field>
@@ -15404,13 +15413,13 @@ across invocation of g_type_register_static().</doc>
     <record name="TypeInstance" c:type="GTypeInstance">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="445">An opaque structure used as the base of all type instances.</doc>
-      <source-position filename="gtype.h" line="454"/>
+           line="454">An opaque structure used as the base of all type instances.</doc>
+      <source-position filename="gtype.h" line="463"/>
       <field name="g_class" readable="0" private="1">
         <type name="TypeClass" c:type="GTypeClass*"/>
       </field>
       <method name="get_private" c:identifier="g_type_instance_get_private">
-        <source-position filename="gtype.h" line="1380"/>
+        <source-position filename="gtype.h" line="1389"/>
         <return-value transfer-ownership="none" nullable="1">
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
@@ -15427,8 +15436,8 @@ across invocation of g_type_register_static().</doc>
     <record name="TypeInterface" c:type="GTypeInterface">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="455">An opaque structure used as the base of all interface types.</doc>
-      <source-position filename="gtype.h" line="465"/>
+           line="464">An opaque structure used as the base of all interface types.</doc>
+      <source-position filename="gtype.h" line="474"/>
       <field name="g_type" readable="0" private="1">
         <type name="GType" c:type="GType"/>
       </field>
@@ -15442,7 +15451,7 @@ across invocation of g_type_register_static().</doc>
 of the instance type to which @g_iface belongs. This is useful when
 deriving the implementation of an interface from the parent type and
 then possibly overriding some methods.</doc>
-        <source-position filename="gtype.h" line="765"/>
+        <source-position filename="gtype.h" line="774"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15470,7 +15479,7 @@ This means that any type implementing @interface_type must also implement
 @prerequisite_type. Prerequisites can be thought of as an alternative to
 interface derivation (which GType doesn't support). An interface can have
 at most one instantiatable prerequisite type.</doc>
-        <source-position filename="gtype.h" line="1365"/>
+        <source-position filename="gtype.h" line="1374"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -15496,7 +15505,7 @@ at most one instantiatable prerequisite type.</doc>
 @interface_type which has been added to @instance_type, or %NULL
 if @interface_type has not been added to @instance_type or does
 not have a #GTypePlugin structure. See g_type_add_interface_dynamic().</doc>
-        <source-position filename="gtype.h" line="2453"/>
+        <source-position filename="gtype.h" line="2462"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15530,7 +15539,7 @@ prerequisite, %G_TYPE_INVALID is returned.
 
 See g_type_interface_add_prerequisite() for more information
 about prerequisites.</doc>
-        <source-position filename="gtype.h" line="1371"/>
+        <source-position filename="gtype.h" line="1380"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15551,7 +15560,7 @@ about prerequisites.</doc>
              filename="gobject-2.0.c"
              line="6317">Returns the #GTypeInterface structure of an interface to which the
 passed in class conforms.</doc>
-        <source-position filename="gtype.h" line="762"/>
+        <source-position filename="gtype.h" line="771"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15581,7 +15590,7 @@ passed in class conforms.</doc>
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
              line="6347">Returns the prerequisites of an interfaces type.</doc>
-        <source-position filename="gtype.h" line="1368"/>
+        <source-position filename="gtype.h" line="1377"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -15619,10 +15628,10 @@ passed in class conforms.</doc>
               version="2.4">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1023">A callback called after an interface vtable is initialized.
+           line="1032">A callback called after an interface vtable is initialized.
 
 See g_type_add_interface_check().</doc>
-      <source-position filename="gtype.h" line="1035"/>
+      <source-position filename="gtype.h" line="1044"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -15633,13 +15642,13 @@ See g_type_add_interface_check().</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1025">data passed to g_type_add_interface_check()</doc>
+               line="1034">data passed to g_type_add_interface_check()</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
         <parameter name="g_iface" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtype.h"
-               line="1026">the interface that has been
+               line="1035">the interface that has been
    initialized</doc>
           <type name="TypeInterface" c:type="gpointer"/>
         </parameter>
@@ -16399,44 +16408,44 @@ to increase the use count of @plugin.</doc>
     <record name="TypeQuery" c:type="GTypeQuery">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="466">A structure holding information for a specific type.
+           line="475">A structure holding information for a specific type.
 
 See also: g_type_query()</doc>
-      <source-position filename="gtype.h" line="483"/>
+      <source-position filename="gtype.h" line="492"/>
       <field name="type" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="468">the #GType value of the type</doc>
+             line="477">the #GType value of the type</doc>
         <type name="GType" c:type="GType"/>
       </field>
       <field name="type_name" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="469">the name of the type</doc>
+             line="478">the name of the type</doc>
         <type name="utf8" c:type="const gchar*"/>
       </field>
       <field name="class_size" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="470">the size of the class structure</doc>
+             line="479">the size of the class structure</doc>
         <type name="guint" c:type="guint"/>
       </field>
       <field name="instance_size" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="471">the size of the instance structure</doc>
+             line="480">the size of the instance structure</doc>
         <type name="guint" c:type="guint"/>
       </field>
     </record>
     <record name="TypeValueTable" c:type="GTypeValueTable">
       <doc xml:space="preserve"
            filename="gtype.h"
-           line="1158">The #GTypeValueTable provides the functions required by the #GValue
+           line="1167">The #GTypeValueTable provides the functions required by the #GValue
 implementation, to serve as a container for values of a type.</doc>
-      <source-position filename="gtype.h" line="1330"/>
+      <source-position filename="gtype.h" line="1339"/>
       <field name="value_init">
         <callback name="value_init">
-          <source-position filename="gtype.h" line="1314"/>
+          <source-position filename="gtype.h" line="1323"/>
           <return-value transfer-ownership="none">
             <type name="none" c:type="void"/>
           </return-value>
@@ -16449,7 +16458,7 @@ implementation, to serve as a container for values of a type.</doc>
       </field>
       <field name="value_free">
         <callback name="value_free">
-          <source-position filename="gtype.h" line="1315"/>
+          <source-position filename="gtype.h" line="1324"/>
           <return-value transfer-ownership="none">
             <type name="none" c:type="void"/>
           </return-value>
@@ -16462,7 +16471,7 @@ implementation, to serve as a container for values of a type.</doc>
       </field>
       <field name="value_copy">
         <callback name="value_copy">
-          <source-position filename="gtype.h" line="1316"/>
+          <source-position filename="gtype.h" line="1325"/>
           <return-value transfer-ownership="none">
             <type name="none" c:type="void"/>
           </return-value>
@@ -16478,7 +16487,7 @@ implementation, to serve as a container for values of a type.</doc>
       </field>
       <field name="value_peek_pointer">
         <callback name="value_peek_pointer">
-          <source-position filename="gtype.h" line="1319"/>
+          <source-position filename="gtype.h" line="1328"/>
           <return-value transfer-ownership="none">
             <type name="gpointer" c:type="gpointer"/>
           </return-value>
@@ -16492,7 +16501,7 @@ implementation, to serve as a container for values of a type.</doc>
       <field name="collect_format" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1195">A string format describing how to collect the contents of
+             line="1204">A string format describing how to collect the contents of
  this value bit-by-bit. Each character in the format represents
  an argument to be collected, and the characters themselves indicate
  the type of the argument. Currently supported arguments are:
@@ -16508,7 +16517,7 @@ implementation, to serve as a container for values of a type.</doc>
       </field>
       <field name="collect_value">
         <callback name="collect_value">
-          <source-position filename="gtype.h" line="1321"/>
+          <source-position filename="gtype.h" line="1330"/>
           <return-value transfer-ownership="full">
             <type name="utf8" c:type="gchar*"/>
           </return-value>
@@ -16531,14 +16540,14 @@ implementation, to serve as a container for values of a type.</doc>
       <field name="lcopy_format" writable="1">
         <doc xml:space="preserve"
              filename="gtype.h"
-             line="1271">Format description of the arguments to collect for @lcopy_value,
+             line="1280">Format description of the arguments to collect for @lcopy_value,
  analogous to @collect_format. Usually, @lcopy_format string consists
  only of 'p's to provide lcopy_value() with pointers to storage locations.</doc>
         <type name="utf8" c:type="const gchar*"/>
       </field>
       <field name="lcopy_value">
         <callback name="lcopy_value">
-          <source-position filename="gtype.h" line="1326"/>
+          <source-position filename="gtype.h" line="1335"/>
           <return-value transfer-ownership="full">
             <type name="utf8" c:type="gchar*"/>
           </return-value>
@@ -16568,7 +16577,7 @@ implementation, to serve as a container for values of a type.</doc>
 Note that this function should only be used from source code
 that implements or has internal knowledge of the implementation of
 @type.</doc>
-        <source-position filename="gtype.h" line="2481"/>
+        <source-position filename="gtype.h" line="2490"/>
         <return-value>
           <doc xml:space="preserve"
                filename="gobject-2.0.c"
@@ -25917,7 +25926,7 @@ until one of them returns %TRUE. The functions have to check the class id
 passed in to figure whether they actually want to cache the class of this
 type, since all classes are routed through the same #GTypeClassCacheFunc
 chain.</doc>
-      <source-position filename="gtype.h" line="2465"/>
+      <source-position filename="gtype.h" line="2474"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -25954,7 +25963,7 @@ This function should be called in the
 type's get_type() function after the type is registered.
 The private structure can be retrieved using the
 G_TYPE_CLASS_GET_PRIVATE() macro.</doc>
-      <source-position filename="gtype.h" line="1387"/>
+      <source-position filename="gtype.h" line="1396"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -25975,7 +25984,7 @@ G_TYPE_CLASS_GET_PRIVATE() macro.</doc>
     </function>
     <function name="type_add_instance_private"
               c:identifier="g_type_add_instance_private">
-      <source-position filename="gtype.h" line="1377"/>
+      <source-position filename="gtype.h" line="1386"/>
       <return-value transfer-ownership="none">
         <type name="gint" c:type="gint"/>
       </return-value>
@@ -26003,7 +26012,7 @@ that depends on the interfaces of a class. For instance, the
 implementation of #GObject uses this facility to check that an
 object implements all of the properties that are defined on its
 interfaces.</doc>
-      <source-position filename="gtype.h" line="2474"/>
+      <source-position filename="gtype.h" line="2483"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26034,7 +26043,7 @@ interfaces.</doc>
            line="5805">Adds @interface_type to the dynamic @instance_type. The information
 contained in the #GTypePlugin structure pointed to by @plugin
 is used to manage the relationship.</doc>
-      <source-position filename="gtype.h" line="1361"/>
+      <source-position filename="gtype.h" line="1370"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26066,7 +26075,7 @@ is used to manage the relationship.</doc>
            line="5817">Adds @interface_type to the static @instance_type.
 The information contained in the #GInterfaceInfo structure
 pointed to by @info is used to manage the relationship.</doc>
-      <source-position filename="gtype.h" line="1357"/>
+      <source-position filename="gtype.h" line="1366"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26095,7 +26104,7 @@ pointed to by @info is used to manage the relationship.</doc>
     <function name="type_check_class_cast"
               c:identifier="g_type_check_class_cast"
               introspectable="0">
-      <source-position filename="gtype.h" line="2497"/>
+      <source-position filename="gtype.h" line="2506"/>
       <return-value>
         <type name="TypeClass" c:type="GTypeClass*"/>
       </return-value>
@@ -26110,7 +26119,7 @@ pointed to by @info is used to manage the relationship.</doc>
     </function>
     <function name="type_check_class_is_a"
               c:identifier="g_type_check_class_is_a">
-      <source-position filename="gtype.h" line="2500"/>
+      <source-position filename="gtype.h" line="2509"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -26128,7 +26137,7 @@ pointed to by @info is used to manage the relationship.</doc>
            filename="gobject-2.0.c"
            line="5830">Private helper function to aid implementation of the
 G_TYPE_CHECK_INSTANCE() macro.</doc>
-      <source-position filename="gtype.h" line="2486"/>
+      <source-position filename="gtype.h" line="2495"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26147,7 +26156,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     <function name="type_check_instance_cast"
               c:identifier="g_type_check_instance_cast"
               introspectable="0">
-      <source-position filename="gtype.h" line="2488"/>
+      <source-position filename="gtype.h" line="2497"/>
       <return-value>
         <type name="TypeInstance" c:type="GTypeInstance*"/>
       </return-value>
@@ -26162,7 +26171,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_instance_is_a"
               c:identifier="g_type_check_instance_is_a">
-      <source-position filename="gtype.h" line="2491"/>
+      <source-position filename="gtype.h" line="2500"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -26177,7 +26186,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_instance_is_fundamentally_a"
               c:identifier="g_type_check_instance_is_fundamentally_a">
-      <source-position filename="gtype.h" line="2494"/>
+      <source-position filename="gtype.h" line="2503"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -26192,7 +26201,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_is_value_type"
               c:identifier="g_type_check_is_value_type">
-      <source-position filename="gtype.h" line="2503"/>
+      <source-position filename="gtype.h" line="2512"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -26203,7 +26212,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
       </parameters>
     </function>
     <function name="type_check_value" c:identifier="g_type_check_value">
-      <source-position filename="gtype.h" line="2505"/>
+      <source-position filename="gtype.h" line="2514"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -26215,7 +26224,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_value_holds"
               c:identifier="g_type_check_value_holds">
-      <source-position filename="gtype.h" line="2507"/>
+      <source-position filename="gtype.h" line="2516"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -26233,7 +26242,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
            filename="gobject-2.0.c"
            line="5841">Return a newly allocated and 0-terminated array of type IDs, listing
 the child types of @type.</doc>
-      <source-position filename="gtype.h" line="776"/>
+      <source-position filename="gtype.h" line="785"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26267,7 +26276,7 @@ the child types of @type.</doc>
     <function name="type_class_adjust_private_offset"
               c:identifier="g_type_class_adjust_private_offset"
               moved-to="TypeClass.adjust_private_offset">
-      <source-position filename="gtype.h" line="1383"/>
+      <source-position filename="gtype.h" line="1392"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26293,7 +26302,7 @@ except that the classes reference count isn't incremented.
 As a consequence, this function may return %NULL if the class
 of the type passed in does not currently exist (hasn't been
 referenced before).</doc>
-      <source-position filename="gtype.h" line="754"/>
+      <source-position filename="gtype.h" line="763"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26319,7 +26328,7 @@ referenced before).</doc>
            filename="gobject-2.0.c"
            line="5983">A more efficient version of g_type_class_peek() which works only for
 static types.</doc>
-      <source-position filename="gtype.h" line="756"/>
+      <source-position filename="gtype.h" line="765"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26345,7 +26354,7 @@ static types.</doc>
            line="5997">Increments the reference count of the class structure belonging to
 @type. This function will demand-create the class if it doesn't
 exist already.</doc>
-      <source-position filename="gtype.h" line="752"/>
+      <source-position filename="gtype.h" line="761"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26383,7 +26392,7 @@ with zeros.
 Note: Do not use this function, unless you're implementing a
 fundamental type. Also language bindings should not use this
 function, but g_object_new() instead.</doc>
-      <source-position filename="gtype.h" line="2460"/>
+      <source-position filename="gtype.h" line="2469"/>
       <return-value>
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26407,7 +26416,7 @@ function, but g_object_new() instead.</doc>
            filename="gobject-2.0.c"
            line="6058">If the interface type @g_type is currently in use, returns its
 default interface vtable.</doc>
-      <source-position filename="gtype.h" line="770"/>
+      <source-position filename="gtype.h" line="779"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26440,7 +26449,7 @@ the type (the @base_init and @class_init members of #GTypeInfo).
 Calling g_type_default_interface_ref() is useful when you
 want to make sure that signals and properties for an interface
 have been installed.</doc>
-      <source-position filename="gtype.h" line="768"/>
+      <source-position filename="gtype.h" line="777"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26468,7 +26477,7 @@ interface default vtable @g_iface. If the type is dynamic, then
 when no one is using the interface and all references have
 been released, the finalize function for the interface's default
 vtable (the @class_finalize member of #GTypeInfo) will be called.</doc>
-      <source-position filename="gtype.h" line="772"/>
+      <source-position filename="gtype.h" line="781"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26487,7 +26496,7 @@ vtable (the @class_finalize member of #GTypeInfo) will be called.</doc>
            filename="gobject-2.0.c"
            line="6109">Returns the length of the ancestry of the passed in type. This
 includes the type itself, so that e.g. a fundamental type has depth 1.</doc>
-      <source-position filename="gtype.h" line="740"/>
+      <source-position filename="gtype.h" line="749"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26518,7 +26527,7 @@ which _get_type() methods do on the first call). As a result, if
 you write a bare call to a _get_type() macro, it may get optimized
 out by the compiler. Using g_type_ensure() guarantees that the
 type's _get_type() method is called.</doc>
-      <source-position filename="gtype.h" line="1396"/>
+      <source-position filename="gtype.h" line="1405"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26539,7 +26548,7 @@ the type, if there is one.
 
 Like g_type_create_instance(), this function is reserved for
 implementors of fundamental types.</doc>
-      <source-position filename="gtype.h" line="2462"/>
+      <source-position filename="gtype.h" line="2471"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26559,7 +26568,7 @@ implementors of fundamental types.</doc>
 has been registered under this name (this is the preferred method
 to find out by name whether a specific type has been registered
 yet).</doc>
-      <source-position filename="gtype.h" line="736"/>
+      <source-position filename="gtype.h" line="745"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26580,7 +26589,7 @@ yet).</doc>
            filename="gobject-2.0.c"
            line="6166">Internal function, used to extract the fundamental type ID portion.
 Use G_TYPE_FUNDAMENTAL() instead.</doc>
-      <source-position filename="gtype.h" line="2458"/>
+      <source-position filename="gtype.h" line="2467"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26604,7 +26613,7 @@ Use G_TYPE_FUNDAMENTAL() instead.</doc>
 register a new fundamental type with g_type_register_fundamental().
 The returned type ID represents the highest currently registered
 fundamental type identifier.</doc>
-      <source-position filename="gtype.h" line="2456"/>
+      <source-position filename="gtype.h" line="2465"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26622,7 +26631,7 @@ fundamental type identifier.</doc>
 this is only available if GLib is built with debugging support and
 the instance_count debug flag is set (by setting the GOBJECT_DEBUG
 variable to include instance-count).</doc>
-      <source-position filename="gtype.h" line="795"/>
+      <source-position filename="gtype.h" line="804"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26643,7 +26652,7 @@ variable to include instance-count).</doc>
       <doc xml:space="preserve"
            filename="gobject-2.0.c"
            line="6205">Returns the #GTypePlugin structure for @type.</doc>
-      <source-position filename="gtype.h" line="2451"/>
+      <source-position filename="gtype.h" line="2460"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26669,7 +26678,7 @@ with g_type_set_qdata().
 Note that this does not take subtyping into account; data
 attached to one type with g_type_set_qdata() cannot
 be retrieved from a subtype using g_type_get_qdata().</doc>
-      <source-position filename="gtype.h" line="788"/>
+      <source-position filename="gtype.h" line="797"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26701,7 +26710,7 @@ of registered types. Any time a type is registered this serial changes,
 which means you can cache information based on type lookups (such as
 g_type_from_name()) and know if the cache is still valid at a later
 time by comparing the current serial with the one at the type lookup.</doc>
-      <source-position filename="gtype.h" line="1398"/>
+      <source-position filename="gtype.h" line="1407"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26719,7 +26728,7 @@ time by comparing the current serial with the one at the type lookup.</doc>
 the type system is initialised automatically and this function does
 nothing.</doc>
       <doc-deprecated xml:space="preserve">the type system is now initialised automatically</doc-deprecated>
-      <source-position filename="gtype.h" line="726"/>
+      <source-position filename="gtype.h" line="735"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26737,7 +26746,7 @@ and this function does nothing.
 If you need to enable debugging features, use the GOBJECT_DEBUG
 environment variable.</doc>
       <doc-deprecated xml:space="preserve">the type system is now initialised automatically</doc-deprecated>
-      <source-position filename="gtype.h" line="728"/>
+      <source-position filename="gtype.h" line="737"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26761,7 +26770,7 @@ This means that any type implementing @interface_type must also implement
 @prerequisite_type. Prerequisites can be thought of as an alternative to
 interface derivation (which GType doesn't support). An interface can have
 at most one instantiatable prerequisite type.</doc>
-      <source-position filename="gtype.h" line="1365"/>
+      <source-position filename="gtype.h" line="1374"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26789,7 +26798,7 @@ at most one instantiatable prerequisite type.</doc>
 @interface_type which has been added to @instance_type, or %NULL
 if @interface_type has not been added to @instance_type or does
 not have a #GTypePlugin structure. See g_type_add_interface_dynamic().</doc>
-      <source-position filename="gtype.h" line="2453"/>
+      <source-position filename="gtype.h" line="2462"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26824,7 +26833,7 @@ prerequisite, %G_TYPE_INVALID is returned.
 
 See g_type_interface_add_prerequisite() for more information
 about prerequisites.</doc>
-      <source-position filename="gtype.h" line="1371"/>
+      <source-position filename="gtype.h" line="1380"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26847,7 +26856,7 @@ about prerequisites.</doc>
            filename="gobject-2.0.c"
            line="6317">Returns the #GTypeInterface structure of an interface to which the
 passed in class conforms.</doc>
-      <source-position filename="gtype.h" line="762"/>
+      <source-position filename="gtype.h" line="771"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26878,7 +26887,7 @@ passed in class conforms.</doc>
       <doc xml:space="preserve"
            filename="gobject-2.0.c"
            line="6347">Returns the prerequisites of an interfaces type.</doc>
-      <source-position filename="gtype.h" line="1368"/>
+      <source-position filename="gtype.h" line="1377"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26915,7 +26924,7 @@ passed in class conforms.</doc>
            filename="gobject-2.0.c"
            line="6362">Return a newly allocated and 0-terminated array of type IDs, listing
 the interface types that @type conforms to.</doc>
-      <source-position filename="gtype.h" line="779"/>
+      <source-position filename="gtype.h" line="788"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26952,7 +26961,7 @@ the interface types that @type conforms to.</doc>
            line="6376">If @is_a_type is a derivable type, check whether @type is a
 descendant of @is_a_type. If @is_a_type is an interface, check
 whether @type conforms to it.</doc>
-      <source-position filename="gtype.h" line="745"/>
+      <source-position filename="gtype.h" line="754"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -26983,7 +26992,7 @@ function (like all other GType API) cannot cope with invalid type
 IDs. %G_TYPE_INVALID may be passed to this function, as may be any
 other validly registered type ID, but randomized type IDs should
 not be passed in and will most likely lead to a crash.</doc>
-      <source-position filename="gtype.h" line="732"/>
+      <source-position filename="gtype.h" line="741"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27001,7 +27010,7 @@ not be passed in and will most likely lead to a crash.</doc>
     </function>
     <function name="type_name_from_class"
               c:identifier="g_type_name_from_class">
-      <source-position filename="gtype.h" line="2518"/>
+      <source-position filename="gtype.h" line="2527"/>
       <return-value transfer-ownership="none">
         <type name="utf8" c:type="const gchar*"/>
       </return-value>
@@ -27013,7 +27022,7 @@ not be passed in and will most likely lead to a crash.</doc>
     </function>
     <function name="type_name_from_instance"
               c:identifier="g_type_name_from_instance">
-      <source-position filename="gtype.h" line="2516"/>
+      <source-position filename="gtype.h" line="2525"/>
       <return-value transfer-ownership="none">
         <type name="utf8" c:type="const gchar*"/>
       </return-value>
@@ -27033,7 +27042,7 @@ derived directly from @root_type which is also a base class of
 @leaf_type.  Given a root type and a leaf type, this function can
 be used to determine the types and order in which the leaf type is
 descended from the root type.</doc>
-      <source-position filename="gtype.h" line="742"/>
+      <source-position filename="gtype.h" line="751"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27060,7 +27069,7 @@ descended from the root type.</doc>
            filename="gobject-2.0.c"
            line="6552">Return the direct parent type of the passed in type. If the passed
 in type has no parent, i.e. is a fundamental type, 0 is returned.</doc>
-      <source-position filename="gtype.h" line="738"/>
+      <source-position filename="gtype.h" line="747"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27080,7 +27089,7 @@ in type has no parent, i.e. is a fundamental type, 0 is returned.</doc>
       <doc xml:space="preserve"
            filename="gobject-2.0.c"
            line="6610">Get the corresponding quark of the type IDs name.</doc>
-      <source-position filename="gtype.h" line="734"/>
+      <source-position filename="gtype.h" line="743"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27105,7 +27114,7 @@ type-specific information. If an invalid #GType is passed in, the
 @type member of the #GTypeQuery is 0. All members filled into the
 #GTypeQuery structure should be considered constant and have to be
 left untouched.</doc>
-      <source-position filename="gtype.h" line="791"/>
+      <source-position filename="gtype.h" line="800"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27137,7 +27146,7 @@ left untouched.</doc>
 #GTypePlugin structure pointed to by @plugin to manage the type and its
 instances (if not abstract).  The value of @flags determines the nature
 (e.g. abstract or not) of the type.</doc>
-      <source-position filename="gtype.h" line="1346"/>
+      <source-position filename="gtype.h" line="1355"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27182,7 +27191,7 @@ The type system uses the information contained in the #GTypeInfo structure
 pointed to by @info and the #GTypeFundamentalInfo structure pointed to by
 @finfo to manage the type and its instances. The value of @flags determines
 additional characteristics of the fundamental type.</doc>
-      <source-position filename="gtype.h" line="1351"/>
+      <source-position filename="gtype.h" line="1360"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27232,7 +27241,7 @@ additional characteristics of the fundamental type.</doc>
 #GTypeInfo structure pointed to by @info to manage the type and its
 instances (if not abstract). The value of @flags determines the nature
 (e.g. abstract or not) of the type.</doc>
-      <source-position filename="gtype.h" line="1332"/>
+      <source-position filename="gtype.h" line="1341"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27276,7 +27285,7 @@ instances (if not abstract). The value of @flags determines the nature
 @parent_type.  The value of @flags determines the nature (e.g.
 abstract or not) of the type. It works by filling a #GTypeInfo
 struct and calling g_type_register_static().</doc>
-      <source-position filename="gtype.h" line="1337"/>
+      <source-position filename="gtype.h" line="1346"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
@@ -27336,7 +27345,7 @@ struct and calling g_type_register_static().</doc>
            line="6709">Removes a previously installed #GTypeClassCacheFunc. The cache
 maintained by @cache_func has to be empty when calling
 g_type_remove_class_cache_func() to avoid leaks.</doc>
-      <source-position filename="gtype.h" line="2468"/>
+      <source-position filename="gtype.h" line="2477"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27366,7 +27375,7 @@ g_type_remove_class_cache_func() to avoid leaks.</doc>
            filename="gobject-2.0.c"
            line="6720">Removes an interface check function added with
 g_type_add_interface_check().</doc>
-      <source-position filename="gtype.h" line="2477"/>
+      <source-position filename="gtype.h" line="2486"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27393,7 +27402,7 @@ g_type_add_interface_check().</doc>
       <doc xml:space="preserve"
            filename="gobject-2.0.c"
            line="6732">Attaches arbitrary data to a type.</doc>
-      <source-position filename="gtype.h" line="784"/>
+      <source-position filename="gtype.h" line="793"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27422,7 +27431,7 @@ g_type_add_interface_check().</doc>
       </parameters>
     </function>
     <function name="type_test_flags" c:identifier="g_type_test_flags">
-      <source-position filename="gtype.h" line="2510"/>
+      <source-position filename="gtype.h" line="2519"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -27446,7 +27455,7 @@ g_type_add_interface_check().</doc>
 Note that this function should only be used from source code
 that implements or has internal knowledge of the implementation of
 @type.</doc>
-      <source-position filename="gtype.h" line="2481"/>
+      <source-position filename="gtype.h" line="2490"/>
       <return-value>
         <doc xml:space="preserve"
              filename="gobject-2.0.c"
