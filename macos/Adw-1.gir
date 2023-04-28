@@ -2008,7 +2008,8 @@ information for the application dependencies or other components.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_license_type"
-                getter="get_license_type">
+                getter="get_license_type"
+                default-value="GTK_LICENSE_UNKNOWN">
         <attribute name="org.gtk.Property.get"
                    value="adw_about_window_get_license_type"/>
         <attribute name="org.gtk.Property.set"
@@ -2540,7 +2541,7 @@ ellipsized.</doc>
              line="608">Sets the widget to activate when @self is activated.
 
 The row can be activated either by clicking on it, calling
-[method@ActionRow.activate], or via mnemonics in the title or the subtitle.
+[method@ActionRow.activate], or via mnemonics in the title.
 See the [property@PreferencesRow:use-underline] property to enable mnemonics.
 
 The target widget will be activated by emitting the
@@ -2730,7 +2731,7 @@ If the value is 0, the number of lines won't be limited.</doc>
              line="262">The widget to activate when the row is activated.
 
 The row can be activated either by clicking on it, calling
-[method@ActionRow.activate], or via mnemonics in the title or the subtitle.
+[method@ActionRow.activate], or via mnemonics in the title.
 See the [property@PreferencesRow:use-underline] property to enable
 mnemonics.
 
@@ -2776,7 +2777,8 @@ The subtitle is interpreted as Pango markup unless
                 writable="1"
                 transfer-ownership="none"
                 setter="set_subtitle_lines"
-                getter="get_subtitle_lines">
+                getter="get_subtitle_lines"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_action_row_get_subtitle_lines"/>
         <attribute name="org.gtk.Property.set"
@@ -2794,7 +2796,8 @@ If the value is 0, the number of lines won't be limited.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_subtitle_selectable"
-                getter="get_subtitle_selectable">
+                getter="get_subtitle_selectable"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_action_row_get_subtitle_selectable"/>
         <attribute name="org.gtk.Property.set"
@@ -2810,7 +2813,8 @@ See also [property@Gtk.Label:selectable].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_title_lines"
-                getter="get_title_lines">
+                getter="get_title_lines"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_action_row_get_title_lines"/>
         <attribute name="org.gtk.Property.set"
@@ -3232,7 +3236,8 @@ Sets [property@Animation:state] to `ADW_ANIMATION_FINISHED`.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_follow_enable_animations_setting"
-                getter="get_follow_enable_animations_setting">
+                getter="get_follow_enable_animations_setting"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_animation_get_follow_enable_animations_setting"/>
         <attribute name="org.gtk.Property.set"
@@ -3250,7 +3255,10 @@ or in demo applications. Most other animations should keep it enabled.
 See [property@Gtk.Settings:gtk-enable-animations].</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
-      <property name="state" transfer-ownership="none" getter="get_state">
+      <property name="state"
+                transfer-ownership="none"
+                getter="get_state"
+                default-value="ADW_ANIMATION_IDLE">
         <attribute name="org.gtk.Property.get"
                    value="adw_animation_get_state"/>
         <doc xml:space="preserve"
@@ -3276,7 +3284,10 @@ finished or hasn't been started yet.</doc>
              line="369">The target to animate.</doc>
         <type name="AnimationTarget"/>
       </property>
-      <property name="value" transfer-ownership="none" getter="get_value">
+      <property name="value"
+                transfer-ownership="none"
+                getter="get_value"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_animation_get_value"/>
         <doc xml:space="preserve"
@@ -3319,6 +3330,7 @@ own or via calling [method@Animation.skip].</doc>
     <record name="AnimationClass"
             c:type="AdwAnimationClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="Animation">
       <source-position filename="src/adw-animation.h" line="36"/>
     </record>
@@ -3386,6 +3398,7 @@ The state can be controlled with [method@Animation.play],
     <record name="AnimationTargetClass"
             c:type="AdwAnimationTargetClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="AnimationTarget">
       <source-position filename="src/adw-animation-target.h" line="22"/>
     </record>
@@ -3730,19 +3743,19 @@ Use [property@Avatar:custom-image] to set a custom image.
       <constructor name="new" c:identifier="adw_avatar_new">
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="472">Creates a new `AdwAvatar`.</doc>
+             line="473">Creates a new `AdwAvatar`.</doc>
         <source-position filename="src/adw-avatar.h" line="25"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="480">the newly created `AdwAvatar`</doc>
+               line="481">the newly created `AdwAvatar`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="474">The size of the avatar</doc>
+                 line="475">The size of the avatar</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="text"
@@ -3751,13 +3764,13 @@ Use [property@Avatar:custom-image] to set a custom image.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="475">the text used to get the initials and color</doc>
+                 line="476">the text used to get the initials and color</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="show_initials" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="476">whether to use initials instead of an icon as fallback</doc>
+                 line="477">whether to use initials instead of an icon as fallback</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -3765,27 +3778,27 @@ Use [property@Avatar:custom-image] to set a custom image.
       <method name="draw_to_texture" c:identifier="adw_avatar_draw_to_texture">
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="743">Renders @self into a [class@Gdk.Texture] at @scale_factor.
+             line="744">Renders @self into a [class@Gdk.Texture] at @scale_factor.
 
 This can be used to export the fallback avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="60"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="752">the texture</doc>
+               line="753">the texture</doc>
           <type name="Gdk.Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="745">an avatar</doc>
+                 line="746">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="scale_factor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="746">The scale factor</doc>
+                 line="747">The scale factor</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -3796,19 +3809,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="custom-image"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="627">Gets the custom image paintable.</doc>
+             line="628">Gets the custom image paintable.</doc>
         <source-position filename="src/adw-avatar.h" line="48"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="633">the custom image</doc>
+               line="634">the custom image</doc>
           <type name="Gdk.Paintable" c:type="GdkPaintable*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="629">an avatar</doc>
+                 line="630">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3819,19 +3832,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="icon-name"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="494">Gets the name of an icon to use as a fallback.</doc>
+             line="495">Gets the name of an icon to use as a fallback.</doc>
         <source-position filename="src/adw-avatar.h" line="30"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="500">the icon name</doc>
+               line="501">the icon name</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="496">an avatar</doc>
+                 line="497">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3842,19 +3855,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="show-initials"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="584">Gets whether initials are used instead of an icon on the fallback avatar.</doc>
+             line="585">Gets whether initials are used instead of an icon on the fallback avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="590">whether initials are used instead of an icon as fallback</doc>
+               line="591">whether initials are used instead of an icon as fallback</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="586">an avatar</doc>
+                 line="587">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3865,19 +3878,19 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="size"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="693">Gets the size of the avatar.</doc>
+             line="694">Gets the size of the avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="54"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="699">the size of the avatar</doc>
+               line="700">the size of the avatar</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="695">an avatar</doc>
+                 line="696">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3888,12 +3901,12 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.get_property" value="text"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="536">Gets the text used to generate the fallback initials and color.</doc>
+             line="537">Gets the text used to generate the fallback initials and color.</doc>
         <source-position filename="src/adw-avatar.h" line="36"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-avatar.c"
-               line="542">the text used to generate the fallback initials and
+               line="543">the text used to generate the fallback initials and
   color</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -3901,7 +3914,7 @@ This can be used to export the fallback avatar.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="538">an avatar</doc>
+                 line="539">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
         </parameters>
@@ -3912,7 +3925,7 @@ This can be used to export the fallback avatar.</doc>
         <attribute name="org.gtk.Method.set_property" value="custom-image"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="643">Sets the custom image paintable.
+             line="644">Sets the custom image paintable.
 
 Custom image is displayed instead of initials or icon.</doc>
         <source-position filename="src/adw-avatar.h" line="50"/>
@@ -3923,7 +3936,7 @@ Custom image is displayed instead of initials or icon.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="645">an avatar</doc>
+                 line="646">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="custom_image"
@@ -3932,7 +3945,7 @@ Custom image is displayed instead of initials or icon.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="646">a custom image</doc>
+                 line="647">a custom image</doc>
             <type name="Gdk.Paintable" c:type="GdkPaintable*"/>
           </parameter>
         </parameters>
@@ -3943,7 +3956,7 @@ Custom image is displayed instead of initials or icon.</doc>
         <attribute name="org.gtk.Method.set_property" value="icon-name"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="510">Sets the name of an icon to use as a fallback.
+             line="511">Sets the name of an icon to use as a fallback.
 
 If no name is set, `avatar-default-symbolic` will be used.</doc>
         <source-position filename="src/adw-avatar.h" line="32"/>
@@ -3954,7 +3967,7 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="512">an avatar</doc>
+                 line="513">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="icon_name"
@@ -3963,7 +3976,7 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="513">the icon name</doc>
+                 line="514">the icon name</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -3974,7 +3987,7 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
         <attribute name="org.gtk.Method.set_property" value="show-initials"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="600">Sets whether to use initials instead of an icon on the fallback avatar.
+             line="601">Sets whether to use initials instead of an icon on the fallback avatar.
 
 See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <source-position filename="src/adw-avatar.h" line="44"/>
@@ -3985,13 +3998,13 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="602">an avatar</doc>
+                 line="603">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="show_initials" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="603">whether to use initials instead of an icon as fallback</doc>
+                 line="604">whether to use initials instead of an icon as fallback</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4002,7 +4015,7 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <attribute name="org.gtk.Method.set_property" value="size"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="709">Sets the size of the avatar.</doc>
+             line="710">Sets the size of the avatar.</doc>
         <source-position filename="src/adw-avatar.h" line="56"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4011,13 +4024,13 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="711">an avatar</doc>
+                 line="712">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="712">The size of the avatar</doc>
+                 line="713">The size of the avatar</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -4028,7 +4041,7 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <attribute name="org.gtk.Method.set_property" value="text"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="553">Sets the text used to generate the fallback initials and color.
+             line="554">Sets the text used to generate the fallback initials and color.
 
 It's only used to generate the color if [property@Avatar:show-initials] is
 `FALSE`.</doc>
@@ -4040,7 +4053,7 @@ It's only used to generate the color if [property@Avatar:show-initials] is
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="555">an avatar</doc>
+                 line="556">an avatar</doc>
             <type name="Avatar" c:type="AdwAvatar*"/>
           </instance-parameter>
           <parameter name="text"
@@ -4049,7 +4062,7 @@ It's only used to generate the color if [property@Avatar:show-initials] is
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-avatar.c"
-                 line="556">the text used to get the initials and color</doc>
+                 line="557">the text used to get the initials and color</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4065,7 +4078,7 @@ It's only used to generate the color if [property@Avatar:show-initials] is
                    value="adw_avatar_set_custom_image"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="414">A custom image paintable.
+             line="415">A custom image paintable.
 
 Custom image is displayed instead of initials or icon.</doc>
         <type name="Gdk.Paintable"/>
@@ -4074,14 +4087,15 @@ Custom image is displayed instead of initials or icon.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_icon_name"
-                getter="get_icon_name">
+                getter="get_icon_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_avatar_get_icon_name"/>
         <attribute name="org.gtk.Property.set"
                    value="adw_avatar_set_icon_name"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="377">The name of an icon to use as a fallback.
+             line="378">The name of an icon to use as a fallback.
 
 If no name is set, `avatar-default-symbolic` will be used.</doc>
         <type name="utf8" c:type="gchar*"/>
@@ -4090,14 +4104,15 @@ If no name is set, `avatar-default-symbolic` will be used.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_show_initials"
-                getter="get_show_initials">
+                getter="get_show_initials"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_avatar_get_show_initials"/>
         <attribute name="org.gtk.Property.set"
                    value="adw_avatar_set_show_initials"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="402">Whether initials are used instead of an icon on the fallback avatar.
+             line="403">Whether initials are used instead of an icon on the fallback avatar.
 
 See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -4106,12 +4121,13 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_size"
-                getter="get_size">
+                getter="get_size"
+                default-value="-1">
         <attribute name="org.gtk.Property.get" value="adw_avatar_get_size"/>
         <attribute name="org.gtk.Property.set" value="adw_avatar_set_size"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="426">The size of the avatar.</doc>
+             line="427">The size of the avatar.</doc>
         <type name="gint" c:type="gint"/>
       </property>
       <property name="text"
@@ -4123,7 +4139,7 @@ See [property@Avatar:icon-name] for how to change the fallback icon.</doc>
         <attribute name="org.gtk.Property.set" value="adw_avatar_set_text"/>
         <doc xml:space="preserve"
              filename="src/adw-avatar.c"
-             line="389">Sets the text used to generate the fallback initials and color.
+             line="390">Sets the text used to generate the fallback initials and color.
 
 It's only used to generate the color if [property@Avatar:show-initials] is
 `FALSE`.</doc>
@@ -4161,7 +4177,8 @@ Banners are hidden by default, use [property@Banner:revealed] to show them.
 Banners have a title, set with [property@Banner:title]. Titles can be marked
 up with Pango markup, use [property@Banner:use-markup] to enable it.
 
-Title can be shown centered or left-aligned depending on available space.
+The title will be shown centered or left-aligned depending on available
+space.
 
 Banners can optionally have a button with text on it, set through
 [property@Banner:button-label]. The button can be used with a `GAction`,
@@ -4178,19 +4195,19 @@ or with the [signal@Banner::button-clicked] signal.
       <constructor name="new" c:identifier="adw_banner_new" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="506">Creates a new `AdwBanner`.</doc>
+             line="507">Creates a new `AdwBanner`.</doc>
         <source-position filename="src/adw-banner.h" line="26"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="512">the newly created `AdwBanner`</doc>
+               line="513">the newly created `AdwBanner`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <parameter name="title" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="508">the banner title</doc>
+                 line="509">the banner title</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4202,19 +4219,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="button-label"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="570">Gets the button label for @self.</doc>
+             line="571">Gets the button label for @self.</doc>
         <source-position filename="src/adw-banner.h" line="35"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="576">the button label for @self</doc>
+               line="577">the button label for @self</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="572">a banner</doc>
+                 line="573">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4226,19 +4243,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="revealed"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="663">Gets if a banner is revealed</doc>
+             line="664">Gets if a banner is revealed</doc>
         <source-position filename="src/adw-banner.h" line="41"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="669">Whether a banner is revealed</doc>
+               line="670">Whether a banner is revealed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="665">a banner</doc>
+                 line="666">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4250,19 +4267,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="title"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="526">Gets the title for @self.</doc>
+             line="527">Gets the title for @self.</doc>
         <source-position filename="src/adw-banner.h" line="29"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="532">the title for @self</doc>
+               line="533">the title for @self</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="528">a banner</doc>
+                 line="529">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4274,19 +4291,19 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.get_property" value="use-markup"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="618">Gets whether to use Pango markup for the banner title.</doc>
+             line="619">Gets whether to use Pango markup for the banner title.</doc>
         <source-position filename="src/adw-banner.h" line="47"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-banner.c"
-               line="624">whether to use markup</doc>
+               line="625">whether to use markup</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="620">a banner</doc>
+                 line="621">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
         </parameters>
@@ -4298,7 +4315,7 @@ or with the [signal@Banner::button-clicked] signal.
         <attribute name="org.gtk.Method.set_property" value="button-label"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="588">Sets the button label for @self.
+             line="589">Sets the button label for @self.
 
 If set to `""` or `NULL`, the button won't be shown.
 
@@ -4312,7 +4329,7 @@ The button can be used with a `GAction`, or with the
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="590">a banner</doc>
+                 line="591">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="label"
@@ -4321,7 +4338,7 @@ The button can be used with a `GAction`, or with the
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="591">the label</doc>
+                 line="592">the label</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4333,7 +4350,7 @@ The button can be used with a `GAction`, or with the
         <attribute name="org.gtk.Method.get_property" value="revealed"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="681">Sets whether a banner should be revealed</doc>
+             line="682">Sets whether a banner should be revealed</doc>
         <source-position filename="src/adw-banner.h" line="43"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4342,13 +4359,13 @@ The button can be used with a `GAction`, or with the
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="683">a banner</doc>
+                 line="684">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="revealed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="684">whether a banner should be revealed</doc>
+                 line="685">whether a banner should be revealed</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4360,7 +4377,7 @@ The button can be used with a `GAction`, or with the
         <attribute name="org.gtk.Method.set_property" value="title"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="544">Sets the title for this banner.
+             line="545">Sets the title for this banner.
 
 See also: [property@Banner:use-markup].</doc>
         <source-position filename="src/adw-banner.h" line="31"/>
@@ -4371,13 +4388,13 @@ See also: [property@Banner:use-markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="546">a banner</doc>
+                 line="547">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="title" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="547">the title</doc>
+                 line="548">the title</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4389,7 +4406,7 @@ See also: [property@Banner:use-markup].</doc>
         <attribute name="org.gtk.Method.set_property" value="use-markup"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="636">Sets whether to use Pango markup for the banner title.
+             line="637">Sets whether to use Pango markup for the banner title.
 
 See also [func@Pango.parse_markup].</doc>
         <source-position filename="src/adw-banner.h" line="49"/>
@@ -4400,13 +4417,13 @@ See also [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="638">a banner</doc>
+                 line="639">a banner</doc>
             <type name="Banner" c:type="AdwBanner*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-banner.c"
-                 line="639">whether to use markup</doc>
+                 line="640">whether to use markup</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4423,7 +4440,7 @@ See also [func@Pango.parse_markup].</doc>
                    value="adw_banner_set_button_label"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="366">The label to show on the button.
+             line="367">The label to show on the button.
 
 If set to `""` or `NULL`, the button won't be shown.
 
@@ -4436,14 +4453,15 @@ The button can be used with a `GAction`, or with the
                 writable="1"
                 transfer-ownership="none"
                 setter="set_revealed"
-                getter="get_revealed">
+                getter="get_revealed"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_banner_get_revealed"/>
         <attribute name="org.gtk.Property.set"
                    value="adw_banner_set_revealed"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="397">Whether the banner is currently revealed.</doc>
+             line="398">Whether the banner is currently revealed.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="title"
@@ -4456,7 +4474,7 @@ The button can be used with a `GAction`, or with the
         <attribute name="org.gtk.Property.set" value="adw_banner_set_title"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="352">The title for this banner.
+             line="353">The title for this banner.
 
 See also: [property@Banner:use-markup].</doc>
         <type name="utf8" c:type="gchar*"/>
@@ -4466,14 +4484,15 @@ See also: [property@Banner:use-markup].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_markup"
-                getter="get_use_markup">
+                getter="get_use_markup"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_banner_get_use_markup"/>
         <attribute name="org.gtk.Property.set"
                    value="adw_banner_set_use_markup"/>
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="383">Whether to use Pango markup for the banner title.
+             line="384">Whether to use Pango markup for the banner title.
 
 See also [func@Pango.parse_markup].</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -4481,7 +4500,7 @@ See also [func@Pango.parse_markup].</doc>
       <glib:signal name="button-clicked" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-banner.c"
-             line="409">This signal is emitted after the action button has been clicked.
+             line="410">This signal is emitted after the action button has been clicked.
 
 It can be used as an alternative to setting an action.</doc>
         <return-value transfer-ownership="none">
@@ -4869,7 +4888,8 @@ If empty, the icon is not shown.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_underline"
-                getter="get_use_underline">
+                getter="get_use_underline"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_button_content_get_use_underline"/>
         <attribute name="org.gtk.Property.set"
@@ -4981,6 +5001,7 @@ the animation.</doc>
     <record name="CallbackAnimationTargetClass"
             c:type="AdwCallbackAnimationTargetClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="CallbackAnimationTarget">
       <source-position filename="src/adw-animation-target.h" line="38"/>
     </record>
@@ -5637,7 +5658,8 @@ adw_spring_params_new (1, 0.5, 500)
                 writable="1"
                 transfer-ownership="none"
                 setter="set_allow_long_swipes"
-                getter="get_allow_long_swipes">
+                getter="get_allow_long_swipes"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_carousel_get_allow_long_swipes"/>
         <attribute name="org.gtk.Property.set"
@@ -5653,7 +5675,8 @@ If the value is `FALSE`, each swipe can only move to the adjacent pages.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_allow_mouse_drag"
-                getter="get_allow_mouse_drag">
+                getter="get_allow_mouse_drag"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_carousel_get_allow_mouse_drag"/>
         <attribute name="org.gtk.Property.set"
@@ -5669,7 +5692,8 @@ If the value is `FALSE`, dragging is only available on touch.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_allow_scroll_wheel"
-                getter="get_allow_scroll_wheel">
+                getter="get_allow_scroll_wheel"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_carousel_get_allow_scroll_wheel"/>
         <attribute name="org.gtk.Property.set"
@@ -5685,7 +5709,8 @@ If the value is `FALSE`, wheel events will be ignored.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_interactive"
-                getter="get_interactive">
+                getter="get_interactive"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_carousel_get_interactive"/>
         <attribute name="org.gtk.Property.set"
@@ -5698,7 +5723,10 @@ This can be used to temporarily disable the carousel to only allow
 navigating it in a certain state.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
-      <property name="n-pages" transfer-ownership="none" getter="get_n_pages">
+      <property name="n-pages"
+                transfer-ownership="none"
+                getter="get_n_pages"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_carousel_get_n_pages"/>
         <doc xml:space="preserve"
@@ -5708,7 +5736,8 @@ navigating it in a certain state.</doc>
       </property>
       <property name="position"
                 transfer-ownership="none"
-                getter="get_position">
+                getter="get_position"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_carousel_get_position"/>
         <doc xml:space="preserve"
@@ -5722,7 +5751,8 @@ navigating it in a certain state.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_reveal_duration"
-                getter="get_reveal_duration">
+                getter="get_reveal_duration"
+                default-value="0">
         <doc xml:space="preserve"
              filename="src/adw-carousel.c"
              line="984">Page reveal duration, in milliseconds.
@@ -5754,7 +5784,8 @@ adw_spring_params_new (1, 0.5, 500)
                 writable="1"
                 transfer-ownership="none"
                 setter="set_spacing"
-                getter="get_spacing">
+                getter="get_spacing"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_carousel_get_spacing"/>
         <attribute name="org.gtk.Property.set"
@@ -6306,7 +6337,8 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
                 writable="1"
                 transfer-ownership="none"
                 setter="set_maximum_size"
-                getter="get_maximum_size">
+                getter="get_maximum_size"
+                default-value="600">
         <attribute name="org.gtk.Property.get"
                    value="adw_clamp_get_maximum_size"/>
         <attribute name="org.gtk.Property.set"
@@ -6322,7 +6354,8 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
                 writable="1"
                 transfer-ownership="none"
                 setter="set_tightening_threshold"
-                getter="get_tightening_threshold">
+                getter="get_tightening_threshold"
+                default-value="400">
         <attribute name="org.gtk.Property.get"
                    value="adw_clamp_get_tightening_threshold"/>
         <attribute name="org.gtk.Property.set"
@@ -6519,7 +6552,8 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
                 writable="1"
                 transfer-ownership="none"
                 setter="set_maximum_size"
-                getter="get_maximum_size">
+                getter="get_maximum_size"
+                default-value="600">
         <attribute name="org.gtk.Property.get"
                    value="adw_clamp_layout_get_maximum_size"/>
         <attribute name="org.gtk.Property.set"
@@ -6536,7 +6570,8 @@ vertical.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_tightening_threshold"
-                getter="get_tightening_threshold">
+                getter="get_tightening_threshold"
+                default-value="400">
         <attribute name="org.gtk.Property.get"
                    value="adw_clamp_layout_get_tightening_threshold"/>
         <attribute name="org.gtk.Property.set"
@@ -6788,7 +6823,8 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
                 writable="1"
                 transfer-ownership="none"
                 setter="set_maximum_size"
-                getter="get_maximum_size">
+                getter="get_maximum_size"
+                default-value="600">
         <attribute name="org.gtk.Property.get"
                    value="adw_clamp_scrollable_get_maximum_size"/>
         <attribute name="org.gtk.Property.set"
@@ -6804,7 +6840,8 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
                 writable="1"
                 transfer-ownership="none"
                 setter="set_tightening_threshold"
-                getter="get_tightening_threshold">
+                getter="get_tightening_threshold"
+                default-value="400">
         <attribute name="org.gtk.Property.get"
                    value="adw_clamp_scrollable_get_tightening_threshold"/>
         <attribute name="org.gtk.Property.set"
@@ -7387,7 +7424,8 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_selected"
-                getter="get_selected">
+                getter="get_selected"
+                default-value="4294967295">
         <attribute name="org.gtk.Property.get"
                    value="adw_combo_row_get_selected"/>
         <attribute name="org.gtk.Property.set"
@@ -7414,7 +7452,8 @@ If no item is selected, the property has the value
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_subtitle"
-                getter="get_use_subtitle">
+                getter="get_use_subtitle"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_combo_row_get_use_subtitle"/>
         <attribute name="org.gtk.Property.set"
@@ -8361,7 +8400,8 @@ character.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_activates_default"
-                getter="get_activates_default">
+                getter="get_activates_default"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_entry_row_get_activates_default"/>
         <attribute name="org.gtk.Property.set"
@@ -8394,7 +8434,8 @@ the [class@Gtk.EntryBuffer] text, i.e. without the preedit string.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_enable_emoji_completion"
-                getter="get_enable_emoji_completion">
+                getter="get_enable_emoji_completion"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_entry_row_get_enable_emoji_completion"/>
         <attribute name="org.gtk.Property.set"
@@ -8411,7 +8452,8 @@ Emoji replacement is done with :-delimited names, like `:heart:`.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_input_hints"
-                getter="get_input_hints">
+                getter="get_input_hints"
+                default-value="GTK_INPUT_HINT_NONE">
         <attribute name="org.gtk.Property.get"
                    value="adw_entry_row_get_input_hints"/>
         <attribute name="org.gtk.Property.set"
@@ -8430,7 +8472,8 @@ See also: [property@Adw.EntryRow:input-purpose]</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_input_purpose"
-                getter="get_input_purpose">
+                getter="get_input_purpose"
+                default-value="GTK_INPUT_PURPOSE_FREE_FORM">
         <attribute name="org.gtk.Property.get"
                    value="adw_entry_row_get_input_purpose"/>
         <attribute name="org.gtk.Property.set"
@@ -8447,7 +8490,8 @@ The input purpose can be used by input methods to adjust their behavior.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_show_apply_button"
-                getter="get_show_apply_button">
+                getter="get_show_apply_button"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_entry_row_get_show_apply_button"/>
         <attribute name="org.gtk.Property.set"
@@ -8570,7 +8614,10 @@ See [property@EntryRow:show-apply-button].</doc>
           </instance-parameter>
         </parameters>
       </method>
-      <property name="name" transfer-ownership="none" getter="get_name">
+      <property name="name"
+                transfer-ownership="none"
+                getter="get_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_enum_list_item_get_name"/>
         <doc xml:space="preserve"
@@ -8578,7 +8625,10 @@ See [property@EntryRow:show-apply-button].</doc>
              line="109">The enum value name.</doc>
         <type name="utf8" c:type="gchar*"/>
       </property>
-      <property name="nick" transfer-ownership="none" getter="get_nick">
+      <property name="nick"
+                transfer-ownership="none"
+                getter="get_nick"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_enum_list_item_get_nick"/>
         <doc xml:space="preserve"
@@ -8586,7 +8636,10 @@ See [property@EntryRow:show-apply-button].</doc>
              line="119">The enum value nick.</doc>
         <type name="utf8" c:type="gchar*"/>
       </property>
-      <property name="value" transfer-ownership="none" getter="get_value">
+      <property name="value"
+                transfer-ownership="none"
+                getter="get_value"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_enum_list_item_get_value"/>
         <doc xml:space="preserve"
@@ -9216,7 +9269,8 @@ If the value is 0, the number of lines won't be limited.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_enable_expansion"
-                getter="get_enable_expansion">
+                getter="get_enable_expansion"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_expander_row_get_enable_expansion"/>
         <attribute name="org.gtk.Property.set"
@@ -9230,7 +9284,8 @@ If the value is 0, the number of lines won't be limited.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_expanded"
-                getter="get_expanded">
+                getter="get_expanded"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_expander_row_get_expanded"/>
         <attribute name="org.gtk.Property.set"
@@ -9261,7 +9316,8 @@ If the value is 0, the number of lines won't be limited.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_show_enable_switch"
-                getter="get_show_enable_switch">
+                getter="get_show_enable_switch"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_expander_row_get_show_enable_switch"/>
         <attribute name="org.gtk.Property.set"
@@ -9293,7 +9349,8 @@ The subtitle is interpreted as Pango markup unless
                 writable="1"
                 transfer-ownership="none"
                 setter="set_subtitle_lines"
-                getter="get_subtitle_lines">
+                getter="get_subtitle_lines"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_expander_row_get_subtitle_lines"/>
         <attribute name="org.gtk.Property.set"
@@ -9311,7 +9368,8 @@ If the value is 0, the number of lines won't be limited.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_title_lines"
-                getter="get_title_lines">
+                getter="get_title_lines"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_expander_row_get_title_lines"/>
         <attribute name="org.gtk.Property.set"
@@ -10249,7 +10307,8 @@ It's only visible when [property@Flap:reveal-progress] is greater than 0.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_flap_position"
-                getter="get_flap_position">
+                getter="get_flap_position"
+                default-value="GTK_PACK_START">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_flap_position"/>
         <attribute name="org.gtk.Property.set"
@@ -10266,7 +10325,8 @@ if `GTK_PACK_END`, it's displayed after the content.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_fold_duration"
-                getter="get_fold_duration">
+                getter="get_fold_duration"
+                default-value="250">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_fold_duration"/>
         <attribute name="org.gtk.Property.set"
@@ -10280,7 +10340,8 @@ if `GTK_PACK_END`, it's displayed after the content.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_fold_policy"
-                getter="get_fold_policy">
+                getter="get_fold_policy"
+                default-value="ADW_FLAP_FOLD_POLICY_AUTO">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_fold_policy"/>
         <attribute name="org.gtk.Property.set"
@@ -10294,7 +10355,8 @@ if `GTK_PACK_END`, it's displayed after the content.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_fold_threshold_policy"
-                getter="get_fold_threshold_policy">
+                getter="get_fold_threshold_policy"
+                default-value="ADW_FOLD_THRESHOLD_POLICY_MINIMUM">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_fold_threshold_policy"/>
         <attribute name="org.gtk.Property.set"
@@ -10311,7 +10373,10 @@ This can be useful if you have a long ellipsizing label and want to let it
 ellipsize instead of immediately folding.</doc>
         <type name="FoldThresholdPolicy"/>
       </property>
-      <property name="folded" transfer-ownership="none" getter="get_folded">
+      <property name="folded"
+                transfer-ownership="none"
+                getter="get_folded"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get" value="adw_flap_get_folded"/>
         <doc xml:space="preserve"
              filename="src/adw-flap.c"
@@ -10324,7 +10389,8 @@ See [property@Flap:fold-policy].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_locked"
-                getter="get_locked">
+                getter="get_locked"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get" value="adw_flap_get_locked"/>
         <attribute name="org.gtk.Property.set" value="adw_flap_set_locked"/>
         <doc xml:space="preserve"
@@ -10340,7 +10406,8 @@ unfolding it when the flap is not revealed opens it. If `TRUE`,
                 writable="1"
                 transfer-ownership="none"
                 setter="set_modal"
-                getter="get_modal">
+                getter="get_modal"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get" value="adw_flap_get_modal"/>
         <attribute name="org.gtk.Property.set" value="adw_flap_set_modal"/>
         <doc xml:space="preserve"
@@ -10356,7 +10423,8 @@ are passed through to the content widget.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_reveal_flap"
-                getter="get_reveal_flap">
+                getter="get_reveal_flap"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_reveal_flap"/>
         <attribute name="org.gtk.Property.set"
@@ -10388,7 +10456,8 @@ adw_spring_params_new (1, 0.5, 500)
       </property>
       <property name="reveal-progress"
                 transfer-ownership="none"
-                getter="get_reveal_progress">
+                getter="get_reveal_progress"
+                default-value="1.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_reveal_progress"/>
         <doc xml:space="preserve"
@@ -10420,7 +10489,8 @@ value.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_swipe_to_close"
-                getter="get_swipe_to_close">
+                getter="get_swipe_to_close"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_swipe_to_close"/>
         <attribute name="org.gtk.Property.set"
@@ -10437,7 +10507,8 @@ value.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_swipe_to_open"
-                getter="get_swipe_to_open">
+                getter="get_swipe_to_open"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_swipe_to_open"/>
         <attribute name="org.gtk.Property.set"
@@ -10454,7 +10525,8 @@ value.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_transition_type"
-                getter="get_transition_type">
+                getter="get_transition_type"
+                default-value="ADW_FLAP_TRANSITION_TYPE_OVER">
         <attribute name="org.gtk.Property.get"
                    value="adw_flap_get_transition_type"/>
         <attribute name="org.gtk.Property.set"
@@ -11069,7 +11141,8 @@ To use a different title, use [class@WindowTitle]:
                 writable="1"
                 transfer-ownership="none"
                 setter="set_centering_policy"
-                getter="get_centering_policy">
+                getter="get_centering_policy"
+                default-value="ADW_CENTERING_POLICY_LOOSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_header_bar_get_centering_policy"/>
         <attribute name="org.gtk.Property.set"
@@ -11083,7 +11156,8 @@ To use a different title, use [class@WindowTitle]:
                 writable="1"
                 transfer-ownership="none"
                 setter="set_decoration_layout"
-                getter="get_decoration_layout">
+                getter="get_decoration_layout"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_header_bar_get_decoration_layout"/>
         <attribute name="org.gtk.Property.set"
@@ -11108,7 +11182,8 @@ and minimize, maximize and close buttons at the end.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_show_end_title_buttons"
-                getter="get_show_end_title_buttons">
+                getter="get_show_end_title_buttons"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_header_bar_get_show_end_title_buttons"/>
         <attribute name="org.gtk.Property.set"
@@ -11129,7 +11204,8 @@ closed).</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_show_start_title_buttons"
-                getter="get_show_start_title_buttons">
+                getter="get_show_start_title_buttons"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_header_bar_get_show_start_title_buttons"/>
         <attribute name="org.gtk.Property.set"
@@ -12156,7 +12232,8 @@ See [property@Leaflet:visible-child].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_can_navigate_back"
-                getter="get_can_navigate_back">
+                getter="get_can_navigate_back"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_can_navigate_back"/>
         <attribute name="org.gtk.Property.set"
@@ -12186,7 +12263,8 @@ can be navigated to.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_can_navigate_forward"
-                getter="get_can_navigate_forward">
+                getter="get_can_navigate_forward"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_can_navigate_forward"/>
         <attribute name="org.gtk.Property.set"
@@ -12216,7 +12294,8 @@ can be navigated to.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_can_unfold"
-                getter="get_can_unfold">
+                getter="get_can_unfold"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_can_unfold"/>
         <attribute name="org.gtk.Property.set"
@@ -12248,7 +12327,8 @@ adw_spring_params_new (1, 0.5, 500)
       </property>
       <property name="child-transition-running"
                 transfer-ownership="none"
-                getter="get_child_transition_running">
+                getter="get_child_transition_running"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_child_transition_running"/>
         <doc xml:space="preserve"
@@ -12260,7 +12340,8 @@ adw_spring_params_new (1, 0.5, 500)
                 writable="1"
                 transfer-ownership="none"
                 setter="set_fold_threshold_policy"
-                getter="get_fold_threshold_policy">
+                getter="get_fold_threshold_policy"
+                default-value="ADW_FOLD_THRESHOLD_POLICY_MINIMUM">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_fold_threshold_policy"/>
         <attribute name="org.gtk.Property.set"
@@ -12277,7 +12358,10 @@ This can be useful if you have a long ellipsizing label and want to let it
 ellipsize instead of immediately folding.</doc>
         <type name="FoldThresholdPolicy"/>
       </property>
-      <property name="folded" transfer-ownership="none" getter="get_folded">
+      <property name="folded"
+                transfer-ownership="none"
+                getter="get_folded"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get" value="adw_leaflet_get_folded"/>
         <doc xml:space="preserve"
              filename="src/adw-leaflet.c"
@@ -12292,7 +12376,8 @@ sum of the minimum or natural sizes of the children (see
                 writable="1"
                 transfer-ownership="none"
                 setter="set_homogeneous"
-                getter="get_homogeneous">
+                getter="get_homogeneous"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_homogeneous"/>
         <attribute name="org.gtk.Property.set"
@@ -12309,7 +12394,8 @@ opposite orientation.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_mode_transition_duration"
-                getter="get_mode_transition_duration">
+                getter="get_mode_transition_duration"
+                default-value="250">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_mode_transition_duration"/>
         <attribute name="org.gtk.Property.set"
@@ -12334,7 +12420,8 @@ page.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_transition_type"
-                getter="get_transition_type">
+                getter="get_transition_type"
+                default-value="ADW_LEAFLET_TRANSITION_TYPE_OVER">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_transition_type"/>
         <attribute name="org.gtk.Property.set"
@@ -12371,7 +12458,8 @@ visible child.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_visible_child_name"
-                getter="get_visible_child_name">
+                getter="get_visible_child_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_get_visible_child_name"/>
         <attribute name="org.gtk.Property.set"
@@ -12549,7 +12637,8 @@ This can be used used to prevent switching to widgets like separators.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_name"
-                getter="get_name">
+                getter="get_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_page_get_name"/>
         <attribute name="org.gtk.Property.set"
@@ -12563,7 +12652,8 @@ This can be used used to prevent switching to widgets like separators.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_navigatable"
-                getter="get_navigatable">
+                getter="get_navigatable"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_leaflet_page_get_navigatable"/>
         <attribute name="org.gtk.Property.set"
@@ -12632,7 +12722,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="1" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="2" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -12722,7 +12812,7 @@ dialog_cb (AdwMessageDialog *dialog,
 {
   const char *response = adw_message_dialog_choose_finish (dialog, result);
 
-  ...
+  // ...
 }
 
 static void
@@ -12972,7 +13062,7 @@ adw_message_dialog_add_responses (dialog,
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2337">This function shows @self to the user.
+             line="2339">This function shows @self to the user.
 
 The @callback will be called when the alert is dismissed. It should call
 [method@MessageDialog.choose_finish] to obtain the result.</doc>
@@ -12984,7 +13074,7 @@ The @callback will be called when the alert is dismissed. It should call
           <instance-parameter name="self" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2339">a message dialog</doc>
+                 line="2341">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="cancellable"
@@ -12993,7 +13083,7 @@ The @callback will be called when the alert is dismissed. It should call
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2340">a `GCancellable` to cancel the operation</doc>
+                 line="2342">a `GCancellable` to cancel the operation</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -13004,7 +13094,7 @@ The @callback will be called when the alert is dismissed. It should call
                      closure="2">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2341">a callback to call when the operation is complete</doc>
+                 line="2343">a callback to call when the operation is complete</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -13014,7 +13104,7 @@ The @callback will be called when the alert is dismissed. It should call
                      closure="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2342">data to pass to @callback</doc>
+                 line="2344">data to pass to @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -13024,12 +13114,12 @@ The @callback will be called when the alert is dismissed. It should call
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2372">Finishes the [method@MessageDialog.choose] call and returns the response ID.</doc>
+             line="2374">Finishes the [method@MessageDialog.choose] call and returns the response ID.</doc>
         <source-position filename="src/adw-message-dialog.h" line="160"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2379">the ID of the response that was selected, or
+               line="2381">the ID of the response that was selected, or
   [property@MessageDialog:close-response] if the call was cancelled.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -13037,13 +13127,13 @@ The @callback will be called when the alert is dismissed. It should call
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2374">a message dialog</doc>
+                 line="2376">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2375">a `GAsyncResult`</doc>
+                 line="2377">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -13871,7 +13961,8 @@ indicates a mnemonic.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_body_use_markup"
-                getter="get_body_use_markup">
+                getter="get_body_use_markup"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_message_dialog_get_body_use_markup"/>
         <attribute name="org.gtk.Property.set"
@@ -13888,7 +13979,8 @@ See [func@Pango.parse_markup].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_close_response"
-                getter="get_close_response">
+                getter="get_close_response"
+                default-value="close">
         <attribute name="org.gtk.Property.get"
                    value="adw_message_dialog_get_close_response"/>
         <attribute name="org.gtk.Property.set"
@@ -13910,7 +14002,8 @@ The default close response is `close`.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_default_response"
-                getter="get_default_response">
+                getter="get_default_response"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_message_dialog_get_default_response"/>
         <attribute name="org.gtk.Property.set"
@@ -13962,7 +14055,8 @@ Displayed below the heading and body.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_heading_use_markup"
-                getter="get_heading_use_markup">
+                getter="get_heading_use_markup"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_message_dialog_get_heading_use_markup"/>
         <attribute name="org.gtk.Property.set"
@@ -14775,7 +14869,8 @@ of a preferences window.
                 writable="1"
                 transfer-ownership="none"
                 setter="set_name"
-                getter="get_name">
+                getter="get_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_preferences_page_get_name"/>
         <attribute name="org.gtk.Property.set"
@@ -14803,7 +14898,8 @@ of a preferences window.
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_underline"
-                getter="get_use_underline">
+                getter="get_use_underline"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_preferences_page_get_use_underline"/>
         <attribute name="org.gtk.Property.set"
@@ -15101,7 +15197,8 @@ The title is interpreted as Pango markup unless
                 writable="1"
                 transfer-ownership="none"
                 setter="set_title_selectable"
-                getter="get_title_selectable">
+                getter="get_title_selectable"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_preferences_row_get_title_selectable"/>
         <attribute name="org.gtk.Property.set"
@@ -15118,7 +15215,8 @@ See also [property@Gtk.Label:selectable].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_markup"
-                getter="get_use_markup">
+                getter="get_use_markup"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_preferences_row_get_use_markup"/>
         <attribute name="org.gtk.Property.set"
@@ -15136,7 +15234,8 @@ See also [func@Pango.parse_markup].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_underline"
-                getter="get_use_underline">
+                getter="get_use_underline"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_preferences_row_get_use_underline"/>
         <attribute name="org.gtk.Property.set"
@@ -15537,7 +15636,8 @@ See [property@ViewStack:visible-child].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_can_navigate_back"
-                getter="get_can_navigate_back">
+                getter="get_can_navigate_back"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_preferences_window_get_can_navigate_back"/>
         <attribute name="org.gtk.Property.set"
@@ -15562,7 +15662,8 @@ For right-to-left locales, gestures and shortcuts are reversed.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_search_enabled"
-                getter="get_search_enabled">
+                getter="get_search_enabled"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_preferences_window_get_search_enabled"/>
         <attribute name="org.gtk.Property.set"
@@ -15583,7 +15684,8 @@ For right-to-left locales, gestures and shortcuts are reversed.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_visible_page_name"
-                getter="get_visible_page_name">
+                getter="get_visible_page_name"
+                default-value="NULL">
         <type name="utf8" c:type="gchar*"/>
       </property>
       <field name="parent_instance">
@@ -15766,6 +15868,7 @@ lifetime.</doc>
     <record name="PropertyAnimationTargetClass"
             c:type="AdwPropertyAnimationTargetClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="PropertyAnimationTarget">
       <source-position filename="src/adw-animation-target.h" line="48"/>
     </record>
@@ -16367,7 +16470,8 @@ Setting the child widget will set [property@SplitButton:label] and
                 writable="1"
                 transfer-ownership="none"
                 setter="set_direction"
-                getter="get_direction">
+                getter="get_direction"
+                default-value="GTK_ARROW_DOWN">
         <attribute name="org.gtk.Property.get"
                    value="adw_split_button_get_direction"/>
         <attribute name="org.gtk.Property.set"
@@ -16405,7 +16509,8 @@ The tooltip can be marked up with the Pango text markup language.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_icon_name"
-                getter="get_icon_name">
+                getter="get_icon_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_split_button_get_icon_name"/>
         <attribute name="org.gtk.Property.set"
@@ -16422,7 +16527,8 @@ Setting the icon name will set [property@SplitButton:label] and
                 writable="1"
                 transfer-ownership="none"
                 setter="set_label"
-                getter="get_label">
+                getter="get_label"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_split_button_get_label"/>
         <attribute name="org.gtk.Property.set"
@@ -16481,7 +16587,8 @@ from the button, and the property is set to `NULL`.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_underline"
-                getter="get_use_underline">
+                getter="get_use_underline"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_split_button_get_use_underline"/>
         <attribute name="org.gtk.Property.set"
@@ -17050,7 +17157,8 @@ this value.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_clamp"
-                getter="get_clamp">
+                getter="get_clamp"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_spring_animation_get_clamp"/>
         <attribute name="org.gtk.Property.set"
@@ -17070,7 +17178,8 @@ relative negative [property@SpringAnimation:initial-velocity] is set.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_epsilon"
-                getter="get_epsilon">
+                getter="get_epsilon"
+                default-value="0.001000">
         <attribute name="org.gtk.Property.get"
                    value="adw_spring_animation_get_epsilon"/>
         <attribute name="org.gtk.Property.set"
@@ -17093,7 +17202,8 @@ The default value is 0.001.</doc>
       </property>
       <property name="estimated-duration"
                 transfer-ownership="none"
-                getter="get_estimated_duration">
+                getter="get_estimated_duration"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_spring_animation_get_estimated_duration"/>
         <doc xml:space="preserve"
@@ -17107,7 +17217,8 @@ Can be [const@DURATION_INFINITE] if the spring damping is set to 0.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_initial_velocity"
-                getter="get_initial_velocity">
+                getter="get_initial_velocity"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_spring_animation_get_initial_velocity"/>
         <attribute name="org.gtk.Property.set"
@@ -17139,7 +17250,8 @@ Initial velocity affects only the animation curve, but not its duration.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_value_from"
-                getter="get_value_from">
+                getter="get_value_from"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_spring_animation_get_value_from"/>
         <attribute name="org.gtk.Property.set"
@@ -17157,7 +17269,8 @@ The animation will start at this value and end at
                 construct="1"
                 transfer-ownership="none"
                 setter="set_value_to"
-                getter="get_value_to">
+                getter="get_value_to"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_spring_animation_get_value_to"/>
         <attribute name="org.gtk.Property.set"
@@ -17172,7 +17285,8 @@ at this value.</doc>
       </property>
       <property name="velocity"
                 transfer-ownership="none"
-                getter="get_velocity">
+                getter="get_velocity"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_spring_animation_get_velocity"/>
         <doc xml:space="preserve"
@@ -17184,11 +17298,13 @@ at this value.</doc>
     <record name="SpringAnimationClass"
             c:type="AdwSpringAnimationClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="SpringAnimation">
       <source-position filename="src/adw-spring-animation.h" line="25"/>
     </record>
     <record name="SpringParams"
             c:type="AdwSpringParams"
+            opaque="1"
             glib:type-name="AdwSpringParams"
             glib:get-type="adw_spring_params_get_type"
             c:symbol-prefix="spring_params">
@@ -18064,7 +18180,8 @@ top side aligned and overflow the bottom side, and 1 means the opposite.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_allow_none"
-                getter="get_allow_none">
+                getter="get_allow_none"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_allow_none"/>
         <attribute name="org.gtk.Property.set"
@@ -18082,7 +18199,8 @@ minimum size.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_homogeneous"
-                getter="get_homogeneous">
+                getter="get_homogeneous"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_homogeneous"/>
         <attribute name="org.gtk.Property.set"
@@ -18100,7 +18218,8 @@ change size when a different child becomes visible.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_interpolate_size"
-                getter="get_interpolate_size">
+                getter="get_interpolate_size"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_interpolate_size"/>
         <attribute name="org.gtk.Property.set"
@@ -18129,7 +18248,8 @@ This can be used to keep an up-to-date view. The model also implements
                 writable="1"
                 transfer-ownership="none"
                 setter="set_switch_threshold_policy"
-                getter="get_switch_threshold_policy">
+                getter="get_switch_threshold_policy"
+                default-value="ADW_FOLD_THRESHOLD_POLICY_NATURAL">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_switch_threshold_policy"/>
         <attribute name="org.gtk.Property.set"
@@ -18152,7 +18272,8 @@ ellipsize instead of immediately switching.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_transition_duration"
-                getter="get_transition_duration">
+                getter="get_transition_duration"
+                default-value="200">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_transition_duration"/>
         <attribute name="org.gtk.Property.set"
@@ -18164,7 +18285,8 @@ ellipsize instead of immediately switching.</doc>
       </property>
       <property name="transition-running"
                 transfer-ownership="none"
-                getter="get_transition_running">
+                getter="get_transition_running"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_transition_running"/>
         <doc xml:space="preserve"
@@ -18180,7 +18302,8 @@ to know that a transition has happened.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_transition_type"
-                getter="get_transition_type">
+                getter="get_transition_type"
+                default-value="ADW_SQUEEZER_TRANSITION_TYPE_NONE">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_transition_type"/>
         <attribute name="org.gtk.Property.set"
@@ -18204,7 +18327,8 @@ to know that a transition has happened.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_xalign"
-                getter="get_xalign">
+                getter="get_xalign"
+                default-value="0.500000">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_xalign"/>
         <attribute name="org.gtk.Property.set"
@@ -18224,7 +18348,8 @@ start side aligned and overflow the end side, and 1 means the opposite.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_yalign"
-                getter="get_yalign">
+                getter="get_yalign"
+                default-value="0.500000">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_get_yalign"/>
         <attribute name="org.gtk.Property.set"
@@ -18358,7 +18483,8 @@ window width, or any other constraint you find suitable.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_enabled"
-                getter="get_enabled">
+                getter="get_enabled"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_squeezer_page_get_enabled"/>
         <attribute name="org.gtk.Property.set"
@@ -18752,7 +18878,8 @@ The title is displayed below the icon.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_icon_name"
-                getter="get_icon_name">
+                getter="get_icon_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_status_page_get_icon_name"/>
         <attribute name="org.gtk.Property.set"
@@ -19054,7 +19181,8 @@ preference.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_color_scheme"
-                getter="get_color_scheme">
+                getter="get_color_scheme"
+                default-value="ADW_COLOR_SCHEME_DEFAULT">
         <attribute name="org.gtk.Property.get"
                    value="adw_style_manager_get_color_scheme"/>
         <attribute name="org.gtk.Property.set"
@@ -19094,7 +19222,10 @@ used to check if the current environment provides a color scheme
 preference.</doc>
         <type name="ColorScheme"/>
       </property>
-      <property name="dark" transfer-ownership="none" getter="get_dark">
+      <property name="dark"
+                transfer-ownership="none"
+                getter="get_dark"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_style_manager_get_dark"/>
         <doc xml:space="preserve"
@@ -19122,7 +19253,8 @@ The display will be `NULL` for the style manager returned by
       </property>
       <property name="high-contrast"
                 transfer-ownership="none"
-                getter="get_high_contrast">
+                getter="get_high_contrast"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_style_manager_get_high_contrast"/>
         <doc xml:space="preserve"
@@ -19134,7 +19266,8 @@ This cannot be overridden by applications.</doc>
       </property>
       <property name="system-supports-color-schemes"
                 transfer-ownership="none"
-                getter="get_system_supports_color_schemes">
+                getter="get_system_supports_color_schemes"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_style_manager_get_system_supports_color_schemes"/>
         <doc xml:space="preserve"
@@ -19462,7 +19595,8 @@ the gesture.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_allow_long_swipes"
-                getter="get_allow_long_swipes">
+                getter="get_allow_long_swipes"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_swipe_tracker_get_allow_long_swipes"/>
         <attribute name="org.gtk.Property.set"
@@ -19479,7 +19613,8 @@ points.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_allow_mouse_drag"
-                getter="get_allow_mouse_drag">
+                getter="get_allow_mouse_drag"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_swipe_tracker_get_allow_mouse_drag"/>
         <attribute name="org.gtk.Property.set"
@@ -19493,7 +19628,8 @@ points.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_enabled"
-                getter="get_enabled">
+                getter="get_enabled"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_swipe_tracker_get_enabled"/>
         <attribute name="org.gtk.Property.set"
@@ -19510,7 +19646,8 @@ want to expose this via a property.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_reversed"
-                getter="get_reversed">
+                getter="get_reversed"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_swipe_tracker_get_reversed"/>
         <attribute name="org.gtk.Property.set"
@@ -20583,7 +20720,8 @@ The [signal@TabBar::extra-drag-drop] signal can be used to handle the drop.</doc
                 writable="1"
                 transfer-ownership="none"
                 setter="set_autohide"
-                getter="get_autohide">
+                getter="get_autohide"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_bar_get_autohide"/>
         <attribute name="org.gtk.Property.set"
@@ -20616,7 +20754,8 @@ See [property@TabBar:tabs-revealed].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_expand_tabs"
-                getter="get_expand_tabs">
+                getter="get_expand_tabs"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_bar_get_expand_tabs"/>
         <attribute name="org.gtk.Property.set"
@@ -20634,7 +20773,8 @@ when possible, otherwise tabs will always have the minimum possible size.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_extra_drag_preload"
-                getter="get_extra_drag_preload">
+                getter="get_extra_drag_preload"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_bar_get_extra_drag_preload"/>
         <attribute name="org.gtk.Property.set"
@@ -20650,7 +20790,8 @@ See [property@Gtk.DropTarget:preload].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_inverted"
-                getter="get_inverted">
+                getter="get_inverted"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_bar_get_inverted"/>
         <attribute name="org.gtk.Property.set"
@@ -20665,7 +20806,8 @@ beginning and the indicator at the end rather than the opposite.</doc>
       </property>
       <property name="is-overflowing"
                 transfer-ownership="none"
-                getter="get_is_overflowing">
+                getter="get_is_overflowing"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_bar_get_is_overflowing"/>
         <doc xml:space="preserve"
@@ -20691,7 +20833,8 @@ If `TRUE`, all tabs cannot be displayed at once and require scrolling.</doc>
       </property>
       <property name="tabs-revealed"
                 transfer-ownership="none"
-                getter="get_tabs_revealed">
+                getter="get_tabs_revealed"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_bar_get_tabs_revealed"/>
         <doc xml:space="preserve"
@@ -21672,7 +21815,8 @@ drop.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_enable_new_tab"
-                getter="get_enable_new_tab">
+                getter="get_enable_new_tab"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_enable_new_tab"/>
         <attribute name="org.gtk.Property.set"
@@ -21689,7 +21833,8 @@ Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_enable_search"
-                getter="get_enable_search">
+                getter="get_enable_search"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_enable_search"/>
         <attribute name="org.gtk.Property.set"
@@ -21713,7 +21858,8 @@ currently active.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_extra_drag_preload"
-                getter="get_extra_drag_preload">
+                getter="get_extra_drag_preload"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_extra_drag_preload"/>
         <attribute name="org.gtk.Property.set"
@@ -21730,7 +21876,8 @@ See [property@Gtk.DropTarget:preload].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_inverted"
-                getter="get_inverted">
+                getter="get_inverted"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_inverted"/>
         <attribute name="org.gtk.Property.set"
@@ -21748,7 +21895,8 @@ beginning and the indicator at the end rather than the other way around.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_open"
-                getter="get_open">
+                getter="get_open"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_open"/>
         <attribute name="org.gtk.Property.set"
@@ -21761,7 +21909,8 @@ beginning and the indicator at the end rather than the other way around.</doc>
       <property name="search-active"
                 version="1.3"
                 transfer-ownership="none"
-                getter="get_search_active">
+                getter="get_search_active"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_search_active"/>
         <doc xml:space="preserve"
@@ -21793,7 +21942,8 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_show_end_title_buttons"
-                getter="get_show_end_title_buttons">
+                getter="get_show_end_title_buttons"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_show_end_title_buttons"/>
         <attribute name="org.gtk.Property.set"
@@ -21810,7 +21960,8 @@ See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_show_start_title_buttons"
-                getter="get_show_start_title_buttons">
+                getter="get_show_start_title_buttons"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_overview_get_show_start_title_buttons"/>
         <attribute name="org.gtk.Property.set"
@@ -22798,7 +22949,8 @@ unless [property@TabPage:loading] is set to `TRUE`.
                 writable="1"
                 transfer-ownership="none"
                 setter="set_indicator_activatable"
-                getter="get_indicator_activatable">
+                getter="get_indicator_activatable"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_indicator_activatable"/>
         <attribute name="org.gtk.Property.set"
@@ -22887,7 +23039,8 @@ Keywords allow to include e.g. page URLs into tab search in a web browser.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_live_thumbnail"
-                getter="get_live_thumbnail">
+                getter="get_live_thumbnail"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_live_thumbnail"/>
         <attribute name="org.gtk.Property.set"
@@ -22909,7 +23062,8 @@ selected, and otherwise it will be static and will only update when
                 writable="1"
                 transfer-ownership="none"
                 setter="set_loading"
-                getter="get_loading">
+                getter="get_loading"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_loading"/>
         <attribute name="org.gtk.Property.set"
@@ -22929,7 +23083,8 @@ loading status will not be visible with `AdwTabBar`.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_needs_attention"
-                getter="get_needs_attention">
+                getter="get_needs_attention"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_needs_attention"/>
         <attribute name="org.gtk.Property.set"
@@ -22963,7 +23118,10 @@ selected have this property set to `TRUE`.</doc>
 See [method@TabView.add_page] and [method@TabView.close_page].</doc>
         <type name="TabPage"/>
       </property>
-      <property name="pinned" transfer-ownership="none" getter="get_pinned">
+      <property name="pinned"
+                transfer-ownership="none"
+                getter="get_pinned"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_pinned"/>
         <doc xml:space="preserve"
@@ -22975,7 +23133,8 @@ See [method@TabView.set_page_pinned].</doc>
       </property>
       <property name="selected"
                 transfer-ownership="none"
-                getter="get_selected">
+                getter="get_selected"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_selected"/>
         <doc xml:space="preserve"
@@ -22988,7 +23147,8 @@ See [method@TabView.set_page_pinned].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_thumbnail_xalign"
-                getter="get_thumbnail_xalign">
+                getter="get_thumbnail_xalign"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_thumbnail_xalign"/>
         <attribute name="org.gtk.Property.set"
@@ -23012,7 +23172,8 @@ The default horizontal alignment is 0.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_thumbnail_yalign"
-                getter="get_thumbnail_yalign">
+                getter="get_thumbnail_yalign"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_page_get_thumbnail_yalign"/>
         <attribute name="org.gtk.Property.set"
@@ -24309,7 +24470,8 @@ By default, the `adw-tab-icon-missing-symbolic` icon is used.</doc>
       </property>
       <property name="is-transferring-page"
                 transfer-ownership="none"
-                getter="get_is_transferring_page">
+                getter="get_is_transferring_page"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_view_get_is_transferring_page"/>
         <doc xml:space="preserve"
@@ -24341,7 +24503,10 @@ provided menu model. Use the [signal@TabView::setup-menu] signal to set up
 the menu actions for the particular tab.</doc>
         <type name="Gio.MenuModel"/>
       </property>
-      <property name="n-pages" transfer-ownership="none" getter="get_n_pages">
+      <property name="n-pages"
+                transfer-ownership="none"
+                getter="get_n_pages"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_view_get_n_pages"/>
         <doc xml:space="preserve"
@@ -24351,7 +24516,8 @@ the menu actions for the particular tab.</doc>
       </property>
       <property name="n-pinned-pages"
                 transfer-ownership="none"
-                getter="get_n_pinned_pages">
+                getter="get_n_pinned_pages"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_view_get_n_pinned_pages"/>
         <doc xml:space="preserve"
@@ -24391,7 +24557,8 @@ page.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_shortcuts"
-                getter="get_shortcuts">
+                getter="get_shortcuts"
+                default-value="ADW_TAB_VIEW_SHORTCUT_CONTROL_TAB | ADW_TAB_VIEW_SHORTCUT_CONTROL_SHIFT_TAB | ADW_TAB_VIEW_SHORTCUT_CONTROL_PAGE_UP | ADW_TAB_VIEW_SHORTCUT_CONTROL_PAGE_DOWN | ADW_TAB_VIEW_SHORTCUT_CONTROL_HOME | ADW_TAB_VIEW_SHORTCUT_CONTROL_END | ADW_TAB_VIEW_SHORTCUT_CONTROL_SHIFT_PAGE_UP | ADW_TAB_VIEW_SHORTCUT_CONTROL_SHIFT_PAGE_DOWN | ADW_TAB_VIEW_SHORTCUT_CONTROL_SHIFT_HOME | ADW_TAB_VIEW_SHORTCUT_CONTROL_SHIFT_END | ADW_TAB_VIEW_SHORTCUT_ALT_DIGITS | ADW_TAB_VIEW_SHORTCUT_ALT_ZERO">
         <attribute name="org.gtk.Property.get"
                    value="adw_tab_view_get_shortcuts"/>
         <attribute name="org.gtk.Property.set"
@@ -25177,7 +25344,8 @@ at this value instead.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_alternate"
-                getter="get_alternate">
+                getter="get_alternate"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_timed_animation_get_alternate"/>
         <attribute name="org.gtk.Property.set"
@@ -25192,7 +25360,8 @@ at this value instead.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_duration"
-                getter="get_duration">
+                getter="get_duration"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_timed_animation_get_duration"/>
         <attribute name="org.gtk.Property.set"
@@ -25212,7 +25381,8 @@ iteration.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_easing"
-                getter="get_easing">
+                getter="get_easing"
+                default-value="ADW_EASE_OUT_CUBIC">
         <attribute name="org.gtk.Property.get"
                    value="adw_timed_animation_get_easing"/>
         <attribute name="org.gtk.Property.set"
@@ -25231,7 +25401,8 @@ See [enum@Easing] for the description of specific easing functions.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_repeat_count"
-                getter="get_repeat_count">
+                getter="get_repeat_count"
+                default-value="1">
         <attribute name="org.gtk.Property.get"
                    value="adw_timed_animation_get_repeat_count"/>
         <attribute name="org.gtk.Property.set"
@@ -25248,7 +25419,8 @@ If set to 0, the animation will repeat endlessly.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_reverse"
-                getter="get_reverse">
+                getter="get_reverse"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_timed_animation_get_reverse"/>
         <attribute name="org.gtk.Property.set"
@@ -25263,7 +25435,8 @@ If set to 0, the animation will repeat endlessly.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_value_from"
-                getter="get_value_from">
+                getter="get_value_from"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_timed_animation_get_value_from"/>
         <attribute name="org.gtk.Property.set"
@@ -25284,7 +25457,8 @@ this value instead.</doc>
                 construct="1"
                 transfer-ownership="none"
                 setter="set_value_to"
-                getter="get_value_to">
+                getter="get_value_to"
+                default-value="0.000000">
         <attribute name="org.gtk.Property.get"
                    value="adw_timed_animation_get_value_to"/>
         <attribute name="org.gtk.Property.set"
@@ -25304,6 +25478,7 @@ at this value instead.</doc>
     <record name="TimedAnimationClass"
             c:type="AdwTimedAnimationClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="TimedAnimation">
       <source-position filename="src/adw-timed-animation.h" line="25"/>
     </record>
@@ -25986,7 +26161,8 @@ If [property@Toast:custom-title] is set, it will be used instead.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_action_name"
-                getter="get_action_name">
+                getter="get_action_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_toast_get_action_name"/>
         <attribute name="org.gtk.Property.set"
@@ -26017,7 +26193,8 @@ See [property@Toast:action-target].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_button_label"
-                getter="get_button_label">
+                getter="get_button_label"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_toast_get_button_label"/>
         <attribute name="org.gtk.Property.set"
@@ -26057,7 +26234,8 @@ Setting a custom title will unset [property@Toast:title].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_priority"
-                getter="get_priority">
+                getter="get_priority"
+                default-value="ADW_TOAST_PRIORITY_NORMAL">
         <attribute name="org.gtk.Property.get" value="adw_toast_get_priority"/>
         <attribute name="org.gtk.Property.set" value="adw_toast_set_priority"/>
         <doc xml:space="preserve"
@@ -26077,7 +26255,8 @@ immediately, pushing the previous toast into the queue instead.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_timeout"
-                getter="get_timeout">
+                getter="get_timeout"
+                default-value="5">
         <attribute name="org.gtk.Property.get" value="adw_toast_get_timeout"/>
         <attribute name="org.gtk.Property.set" value="adw_toast_set_timeout"/>
         <doc xml:space="preserve"
@@ -26347,7 +26526,7 @@ forward to be shown as soon as possible.</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.3.1" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.3.2" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and
@@ -26913,7 +27092,8 @@ See [property@ViewStack:visible-child].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_hhomogeneous"
-                getter="get_hhomogeneous">
+                getter="get_hhomogeneous"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_get_hhomogeneous"/>
         <attribute name="org.gtk.Property.set"
@@ -26945,7 +27125,8 @@ page.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_vhomogeneous"
-                getter="get_vhomogeneous">
+                getter="get_vhomogeneous"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_get_vhomogeneous"/>
         <attribute name="org.gtk.Property.set"
@@ -26979,7 +27160,8 @@ visible.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_visible_child_name"
-                getter="get_visible_child_name">
+                getter="get_visible_child_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_get_visible_child_name"/>
         <attribute name="org.gtk.Property.set"
@@ -27405,7 +27587,8 @@ This is independent from the [property@Gtk.Widget:visible] property of
                 writable="1"
                 transfer-ownership="none"
                 setter="set_badge_number"
-                getter="get_badge_number">
+                getter="get_badge_number"
+                default-value="0">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_page_get_badge_number"/>
         <attribute name="org.gtk.Property.set"
@@ -27436,7 +27619,8 @@ It can be used together with [property@ViewStack{age}:needs-attention].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_icon_name"
-                getter="get_icon_name">
+                getter="get_icon_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_page_get_icon_name"/>
         <attribute name="org.gtk.Property.set"
@@ -27450,7 +27634,8 @@ It can be used together with [property@ViewStack{age}:needs-attention].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_name"
-                getter="get_name">
+                getter="get_name"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_page_get_name"/>
         <attribute name="org.gtk.Property.set"
@@ -27464,7 +27649,8 @@ It can be used together with [property@ViewStack{age}:needs-attention].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_needs_attention"
-                getter="get_needs_attention">
+                getter="get_needs_attention"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_page_get_needs_attention"/>
         <attribute name="org.gtk.Property.set"
@@ -27480,7 +27666,8 @@ It can be used together with [property@ViewStack{age}:needs-attention].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_title"
-                getter="get_title">
+                getter="get_title"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_page_get_title"/>
         <attribute name="org.gtk.Property.set"
@@ -27494,7 +27681,8 @@ It can be used together with [property@ViewStack{age}:needs-attention].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_use_underline"
-                getter="get_use_underline">
+                getter="get_use_underline"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_page_get_use_underline"/>
         <attribute name="org.gtk.Property.set"
@@ -27508,7 +27696,8 @@ It can be used together with [property@ViewStack{age}:needs-attention].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_visible"
-                getter="get_visible">
+                getter="get_visible"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_stack_page_get_visible"/>
         <attribute name="org.gtk.Property.set"
@@ -27688,7 +27877,8 @@ the style classes `.wide` and `.narrow`, matching its policy.
                 writable="1"
                 transfer-ownership="none"
                 setter="set_policy"
-                getter="get_policy">
+                getter="get_policy"
+                default-value="ADW_VIEW_SWITCHER_POLICY_NARROW">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_switcher_get_policy"/>
         <attribute name="org.gtk.Property.set"
@@ -27898,7 +28088,8 @@ switcher, as follows:
                 writable="1"
                 transfer-ownership="none"
                 setter="set_reveal"
-                getter="get_reveal">
+                getter="get_reveal"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_switcher_bar_get_reveal"/>
         <attribute name="org.gtk.Property.set"
@@ -28339,7 +28530,8 @@ generally does not use the application name.</doc>
       </property>
       <property name="title-visible"
                 transfer-ownership="none"
-                getter="get_title_visible">
+                getter="get_title_visible"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_switcher_title_get_title_visible"/>
         <doc xml:space="preserve"
@@ -28354,7 +28546,8 @@ wanted to show an alternative switcher, e.g. a [class@ViewSwitcherBar].</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_view_switcher_enabled"
-                getter="get_view_switcher_enabled">
+                getter="get_view_switcher_enabled"
+                default-value="TRUE">
         <attribute name="org.gtk.Property.get"
                    value="adw_view_switcher_title_get_view_switcher_enabled"/>
         <attribute name="org.gtk.Property.set"
