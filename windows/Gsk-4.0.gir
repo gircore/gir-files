@@ -620,6 +620,7 @@ avoided.</doc>
     <record name="CairoRendererClass"
             c:type="GskCairoRendererClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="CairoRenderer">
       <source-position filename="gsk/gskcairorenderer.h" line="46"/>
     </record>
@@ -1421,6 +1422,7 @@ Adding this node has no visual effect.</doc>
     <record name="GLRendererClass"
             c:type="GskGLRendererClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="GLRenderer">
       <source-position filename="gsk/gl/gskglrenderer.h" line="37"/>
     </record>
@@ -2178,7 +2180,8 @@ to render this shader.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_resource">
+                getter="get_resource"
+                default-value="NULL">
         <attribute name="org.gtk.Property.get"
                    value="gsk_gl_shader_get_resource"/>
         <doc xml:space="preserve"
@@ -3049,13 +3052,13 @@ the 'mask value' with the alpha of the source.</doc>
                    deprecated-version="4.4">
         <doc xml:space="preserve"
              filename="gsk/gl/gskglrenderer.c"
-             line="485">Same as gsk_gl_renderer_new().</doc>
+             line="489">Same as gsk_gl_renderer_new().</doc>
         <doc-deprecated xml:space="preserve">Use gsk_gl_renderer_new()</doc-deprecated>
         <source-position filename="gsk/gl/gskglrenderer.h" line="47"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gl/gskglrenderer.c"
-               line="490">a new GL renderer</doc>
+               line="494">a new GL renderer</doc>
           <type name="Renderer" c:type="GskRenderer*"/>
         </return-value>
       </constructor>
@@ -3851,7 +3854,7 @@ The node will not draw outside of its boundaries.</doc>
       <method name="serialize" c:identifier="gsk_render_node_serialize">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeparser.c"
-             line="3267">Serializes the @node for later deserialization via
+             line="3285">Serializes the @node for later deserialization via
 gsk_render_node_deserialize(). No guarantees are made about the format
 used other than that the same version of GTK will be able to deserialize
 the result of a call to gsk_render_node_serialize() and
@@ -3864,14 +3867,14 @@ The format is not meant as a permanent storage format.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeparser.c"
-               line="3281">a `GBytes` representing the node.</doc>
+               line="3299">a `GBytes` representing the node.</doc>
           <type name="GLib.Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeparser.c"
-                 line="3269">a `GskRenderNode`</doc>
+                 line="3287">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -4425,7 +4428,9 @@ transform node and pass that node instead.</doc>
           </instance-parameter>
         </parameters>
       </method>
-      <property name="realized" transfer-ownership="none">
+      <property name="realized"
+                transfer-ownership="none"
+                default-value="FALSE">
         <attribute name="org.gtk.Property.get"
                    value="gsk_renderer_is_realized"/>
         <doc xml:space="preserve"
@@ -4445,6 +4450,7 @@ transform node and pass that node instead.</doc>
     <record name="RendererClass"
             c:type="GskRendererClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="Renderer">
       <source-position filename="gsk/gskrenderer.h" line="36"/>
     </record>
@@ -5209,6 +5215,7 @@ rendering pipeline.</doc>
     </enumeration>
     <record name="ShaderArgsBuilder"
             c:type="GskShaderArgsBuilder"
+            opaque="1"
             glib:type-name="GskShaderArgsBuilder"
             glib:get-type="gsk_shader_args_builder_get_type"
             c:symbol-prefix="shader_args_builder">
@@ -6059,6 +6066,7 @@ of this node.</doc>
     </class>
     <record name="Transform"
             c:type="GskTransform"
+            opaque="1"
             glib:type-name="GskTransform"
             glib:get-type="gsk_transform_get_type"
             c:symbol-prefix="transform">

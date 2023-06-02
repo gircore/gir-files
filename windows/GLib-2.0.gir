@@ -158,7 +158,7 @@ gtime = (GTime)ttime;
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="1005">Return the minimal alignment required by the platform ABI for values of the given
+           line="1006">Return the minimal alignment required by the platform ABI for values of the given
 type. The address of a variable or struct member of the given type must always be
 a multiple of this alignment. For example, most platforms require int variables
 to be aligned at a 4-byte boundary, so `G_ALIGNOF (int)` is 4 on most platforms.
@@ -167,19 +167,19 @@ Note this is not necessarily the same as the value returned by GCC’s
 `__alignof__` operator, which returns the preferred alignment for a type.
 The preferred alignment may be a stricter alignment than the minimal
 alignment.</doc>
-      <source-position filename="gmacros.h" line="998"/>
+      <source-position filename="gmacros.h" line="999"/>
       <parameters>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="1007">a type-name</doc>
+               line="1008">a type-name</doc>
         </parameter>
       </parameters>
     </function-macro>
     <constant name="ANALYZER_ANALYZING"
               value="1"
               c:type="G_ANALYZER_ANALYZING">
-      <source-position filename="gmacros.h" line="829"/>
+      <source-position filename="gmacros.h" line="830"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <function-macro name="APPROX_VALUE"
@@ -196,7 +196,7 @@ For example,
 - `G_APPROX_VALUE (3.14, 3.15, 0.001)` evaluates to false
 - `G_APPROX_VALUE (n, 0.f, FLT_EPSILON)` evaluates to true if `n` is within
   the single precision floating point epsilon from zero</doc>
-      <source-position filename="gmacros.h" line="925"/>
+      <source-position filename="gmacros.h" line="926"/>
       <parameters>
         <parameter name="a">
           <doc xml:space="preserve"
@@ -6205,7 +6205,7 @@ G_DEFINE_AUTOPTR_CLEANUP_FUNC(GObject, g_object_unref)
 
 This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</doc>
-      <source-position filename="gmacros.h" line="1379"/>
+      <source-position filename="gmacros.h" line="1380"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
@@ -6238,7 +6238,7 @@ G_DEFINE_AUTO_CLEANUP_CLEAR_FUNC(GQueue, g_queue_clear)
 
 This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</doc>
-      <source-position filename="gmacros.h" line="1380"/>
+      <source-position filename="gmacros.h" line="1381"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
@@ -6278,7 +6278,7 @@ G_DEFINE_AUTO_CLEANUP_FREE_FUNC(GStrv, g_strfreev, NULL)
 
 This macro should be used unconditionally; it is a no-op on compilers
 where cleanup is not supported.</doc>
-      <source-position filename="gmacros.h" line="1381"/>
+      <source-position filename="gmacros.h" line="1382"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
@@ -6360,7 +6360,7 @@ in the macro, so you shouldn't use double quotes.</doc>
     <function-macro name="DEPRECATED_ENUMERATOR_FOR"
                     c:identifier="GLIB_DEPRECATED_ENUMERATOR_FOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1288"/>
+      <source-position filename="gmacros.h" line="1289"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -6846,7 +6846,7 @@ in the macro, so you shouldn't use double quotes.</doc>
     <function-macro name="DEPRECATED_MACRO_FOR"
                     c:identifier="GLIB_DEPRECATED_MACRO_FOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1274"/>
+      <source-position filename="gmacros.h" line="1275"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -7089,7 +7089,7 @@ in the macro, so you shouldn't use double quotes.</doc>
     <function-macro name="DEPRECATED_TYPE_FOR"
                     c:identifier="GLIB_DEPRECATED_TYPE_FOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1300"/>
+      <source-position filename="gmacros.h" line="1301"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -11933,7 +11933,7 @@ Standard C macros like `PRIdPTR` and `SCNdPTR` should be used for
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="355">Expands to the GNU C `alloc_size` function attribute if the compiler
+           line="356">Expands to the GNU C `alloc_size` function attribute if the compiler
 is a new enough gcc. This attribute tells the compiler that the
 function returns a pointer to memory of a size that is specified
 by the @xth function parameter.
@@ -11946,12 +11946,12 @@ gpointer g_malloc (gsize n_bytes) G_GNUC_MALLOC G_GNUC_ALLOC_SIZE(1);
 ]|
 
 See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute) for more details.</doc>
-      <source-position filename="gmacros.h" line="397"/>
+      <source-position filename="gmacros.h" line="398"/>
       <parameters>
         <parameter name="x">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="357">the index of the argument specifying the allocation size</doc>
+               line="358">the index of the argument specifying the allocation size</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -11961,7 +11961,7 @@ See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="376">Expands to the GNU C `alloc_size` function attribute if the compiler is a
+           line="377">Expands to the GNU C `alloc_size` function attribute if the compiler is a
 new enough gcc. This attribute tells the compiler that the function returns
 a pointer to memory of a size that is specified by the product of two
 function parameters.
@@ -11975,17 +11975,17 @@ gpointer g_malloc_n (gsize n_blocks,
 ]|
 
 See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-alloc_005fsize-function-attribute) for more details.</doc>
-      <source-position filename="gmacros.h" line="398"/>
+      <source-position filename="gmacros.h" line="399"/>
       <parameters>
         <parameter name="x">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="378">the index of the argument specifying one factor of the allocation size</doc>
+               line="379">the index of the argument specifying one factor of the allocation size</doc>
         </parameter>
         <parameter name="y">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="379">the index of the argument specifying the second factor of the allocation size</doc>
+               line="380">the index of the argument specifying the second factor of the allocation size</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -12023,7 +12023,7 @@ the following would only match on compilers such as GCC 4.8 or newer.
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="712">Like %G_GNUC_DEPRECATED, but names the intended replacement for the
+           line="713">Like %G_GNUC_DEPRECATED, but names the intended replacement for the
 deprecated symbol if the version of gcc in use is new enough to support
 custom deprecation messages.
 
@@ -12038,12 +12038,12 @@ See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function
 Note that if @f is a macro, it will be expanded in the warning message.
 You can enclose it in quotes to prevent this. (The quotes will show up
 in the warning, but it's better than showing the macro expansion.)</doc>
-      <source-position filename="gmacros.h" line="728"/>
+      <source-position filename="gmacros.h" line="729"/>
       <parameters>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="714">the intended replacement for the deprecated symbol,
+               line="715">the intended replacement for the deprecated symbol,
     such as the name of a function</doc>
         </parameter>
       </parameters>
@@ -12053,7 +12053,7 @@ in the warning, but it's better than showing the macro expansion.)</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="482">Expands to the GNU C `format_arg` function attribute if the compiler
+           line="483">Expands to the GNU C `format_arg` function attribute if the compiler
 is gcc. This function attribute specifies that a function takes a
 format string for a `printf()`, `scanf()`, `strftime()` or `strfmon()` style
 function and modifies it, so that the result can be passed to a `printf()`,
@@ -12069,12 +12069,12 @@ See the [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function
 |[&lt;!-- language="C" --&gt;
 gchar *g_dgettext (gchar *domain_name, gchar *msgid) G_GNUC_FORMAT (2);
 ]|</doc>
-      <source-position filename="gmacros.h" line="612"/>
+      <source-position filename="gmacros.h" line="613"/>
       <parameters>
         <parameter name="arg_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="484">the index of the argument</doc>
+               line="485">the index of the argument</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -12085,10 +12085,10 @@ gchar *g_dgettext (gchar *domain_name, gchar *msgid) G_GNUC_FORMAT (2);
               deprecated-version="2.16">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="815">Expands to "" on all modern compilers, and to  __FUNCTION__ on gcc
+           line="816">Expands to "" on all modern compilers, and to  __FUNCTION__ on gcc
 version 2.x. Don't use it.</doc>
       <doc-deprecated xml:space="preserve">Use G_STRFUNC() instead</doc-deprecated>
-      <source-position filename="gmacros.h" line="824"/>
+      <source-position filename="gmacros.h" line="825"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
     <constant name="GNUC_PRETTY_FUNCTION"
@@ -12098,10 +12098,10 @@ version 2.x. Don't use it.</doc>
               deprecated-version="2.16">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="824">Expands to "" on all modern compilers, and to __PRETTY_FUNCTION__
+           line="825">Expands to "" on all modern compilers, and to __PRETTY_FUNCTION__
 on gcc version 2.x. Don't use it.</doc>
       <doc-deprecated xml:space="preserve">Use G_STRFUNC() instead</doc-deprecated>
-      <source-position filename="gmacros.h" line="825"/>
+      <source-position filename="gmacros.h" line="826"/>
       <type name="utf8" c:type="gchar*"/>
     </constant>
     <function-macro name="GNUC_PRINTF"
@@ -12109,7 +12109,7 @@ on gcc version 2.x. Don't use it.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="406">Expands to the GNU C `format` function attribute if the compiler is gcc.
+           line="407">Expands to the GNU C `format` function attribute if the compiler is gcc.
 This is used for declaring functions which take a variable number of
 arguments, with the same syntax as `printf()`. It allows the compiler
 to type-check the arguments passed to the function.
@@ -12127,18 +12127,18 @@ gint g_snprintf (gchar  *string,
                  gchar const *format,
                  ...) G_GNUC_PRINTF (3, 4);
 ]|</doc>
-      <source-position filename="gmacros.h" line="585"/>
+      <source-position filename="gmacros.h" line="586"/>
       <parameters>
         <parameter name="format_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="408">the index of the argument corresponding to the
+               line="409">the index of the argument corresponding to the
     format string (the arguments are numbered from 1)</doc>
         </parameter>
         <parameter name="arg_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="410">the index of the first of the format arguments, or 0 if
+               line="411">the index of the first of the format arguments, or 0 if
     there are no format arguments</doc>
         </parameter>
       </parameters>
@@ -12148,7 +12148,7 @@ gint g_snprintf (gchar  *string,
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="433">Expands to the GNU C `format` function attribute if the compiler is gcc.
+           line="434">Expands to the GNU C `format` function attribute if the compiler is gcc.
 This is used for declaring functions which take a variable number of
 arguments, with the same syntax as `scanf()`. It allows the compiler
 to type-check the arguments passed to the function.
@@ -12165,18 +12165,18 @@ int my_vscanf (MyStream *stream,
 See the
 [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-Wformat-3288)
 for details.</doc>
-      <source-position filename="gmacros.h" line="587"/>
+      <source-position filename="gmacros.h" line="588"/>
       <parameters>
         <parameter name="format_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="435">the index of the argument corresponding to
+               line="436">the index of the argument corresponding to
     the format string (the arguments are numbered from 1)</doc>
         </parameter>
         <parameter name="arg_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="437">the index of the first of the format arguments, or 0 if
+               line="438">the index of the first of the format arguments, or 0 if
     there are no format arguments</doc>
         </parameter>
       </parameters>
@@ -12187,7 +12187,7 @@ for details.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="459">Expands to the GNU C `strftime` format function attribute if the compiler
+           line="460">Expands to the GNU C `strftime` format function attribute if the compiler
 is gcc. This is used for declaring functions which take a format argument
 which is passed to `strftime()` or an API implementing its formats. It allows
 the compiler check the format passed to the function.
@@ -12201,12 +12201,12 @@ gsize my_strftime (MyBuffer *buffer,
 See the
 [GNU C documentation](https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html#index-Wformat-3288)
 for details.</doc>
-      <source-position filename="gmacros.h" line="589"/>
+      <source-position filename="gmacros.h" line="590"/>
       <parameters>
         <parameter name="format_idx">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="461">the index of the argument corresponding to
+               line="462">the index of the argument corresponding to
     the format string (the arguments are numbered from 1)</doc>
         </parameter>
       </parameters>
@@ -12390,7 +12390,7 @@ Standard C macros like `PRIuPTR` and `SCNuPTR` should be used for
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="3689">Defined to 1 if gcc-style visibility handling is supported.</doc>
-      <source-position filename="gmacros.h" line="1227"/>
+      <source-position filename="gmacros.h" line="1228"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="HAVE_GROWING_STACK"
@@ -19753,7 +19753,7 @@ a true value. The compiler may use this information for optimizations.
 if (G_LIKELY (random () != 1))
   g_print ("not one");
 ]|</doc>
-      <source-position filename="gmacros.h" line="1219"/>
+      <source-position filename="gmacros.h" line="1220"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -21509,7 +21509,7 @@ preferred in new code.</doc>
       <source-position filename="gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="0" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="1" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="1161">The micro version number of the GLib library.
@@ -24709,7 +24709,7 @@ current thread leads to undefined behaviour.</doc>
 declared so the compiler knows its size at compile-time; this
 macro will not work on an array allocated on the heap, only static
 arrays or arrays on the stack.</doc>
-      <source-position filename="gmacros.h" line="932"/>
+      <source-position filename="gmacros.h" line="933"/>
       <parameters>
         <parameter name="arr">
           <doc xml:space="preserve"
@@ -34028,19 +34028,19 @@ This is ":" on UNIX machines and ";" under Windows.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gmacros.h"
-           line="1411">Returns the size of @member in the struct definition without having a
+           line="1412">Returns the size of @member in the struct definition without having a
 declared instance of @struct_type.</doc>
-      <source-position filename="gmacros.h" line="1397"/>
+      <source-position filename="gmacros.h" line="1398"/>
       <parameters>
         <parameter name="struct_type">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="1413">a structure type, e.g. #GOutputVector</doc>
+               line="1414">a structure type, e.g. #GOutputVector</doc>
         </parameter>
         <parameter name="member">
           <doc xml:space="preserve"
                filename="gmacros.h"
-               line="1414">a field in the structure, e.g. `size`</doc>
+               line="1415">a field in the structure, e.g. `size`</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -35227,7 +35227,7 @@ is transformed by the preprocessor into (code equivalent to):
 |[&lt;!-- language="C" --&gt;
 const gchar *greeting = "27 today!";
 ]|</doc>
-      <source-position filename="gmacros.h" line="839"/>
+      <source-position filename="gmacros.h" line="840"/>
       <parameters>
         <parameter name="macro_or_string">
           <doc xml:space="preserve"
@@ -35239,7 +35239,7 @@ const gchar *greeting = "27 today!";
     <function-macro name="STRINGIFY_ARG"
                     c:identifier="G_STRINGIFY_ARG"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="840"/>
+      <source-position filename="gmacros.h" line="841"/>
       <parameters>
         <parameter name="contents">
         </parameter>
@@ -35251,7 +35251,7 @@ const gchar *greeting = "27 today!";
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="4793">Returns a member of a structure at a given offset, using the given type.</doc>
-      <source-position filename="gmacros.h" line="953"/>
+      <source-position filename="gmacros.h" line="954"/>
       <parameters>
         <parameter name="member_type">
           <doc xml:space="preserve"
@@ -35277,7 +35277,7 @@ const gchar *greeting = "27 today!";
       <doc xml:space="preserve"
            filename="glib-2.0.c"
            line="4806">Returns an untyped pointer to a given offset of a struct.</doc>
-      <source-position filename="gmacros.h" line="951"/>
+      <source-position filename="gmacros.h" line="952"/>
       <parameters>
         <parameter name="struct_p">
           <doc xml:space="preserve"
@@ -35301,7 +35301,7 @@ const gchar *greeting = "27 today!";
 Consider using standard C `offsetof()`, available since at least C89
 and C++98, in new code (but note that `offsetof()` returns a `size_t`
 rather than a `long`).</doc>
-      <source-position filename="gmacros.h" line="944"/>
+      <source-position filename="gmacros.h" line="945"/>
       <parameters>
         <parameter name="struct_type">
           <doc xml:space="preserve"
@@ -44789,7 +44789,7 @@ if the passed node was already the first one.</doc>
     <function-macro name="UNAVAILABLE_ENUMERATOR"
                     c:identifier="GLIB_UNAVAILABLE_ENUMERATOR"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1289"/>
+      <source-position filename="gmacros.h" line="1290"/>
       <parameters>
         <parameter name="maj">
         </parameter>
@@ -44800,7 +44800,7 @@ if the passed node was already the first one.</doc>
     <function-macro name="UNAVAILABLE_MACRO"
                     c:identifier="GLIB_UNAVAILABLE_MACRO"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1276"/>
+      <source-position filename="gmacros.h" line="1277"/>
       <parameters>
         <parameter name="maj">
         </parameter>
@@ -44822,7 +44822,7 @@ if the passed node was already the first one.</doc>
     <function-macro name="UNAVAILABLE_TYPE"
                     c:identifier="GLIB_UNAVAILABLE_TYPE"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="1301"/>
+      <source-position filename="gmacros.h" line="1302"/>
       <parameters>
         <parameter name="maj">
         </parameter>
@@ -44856,7 +44856,7 @@ a true value. The compiler may use this information for optimizations.
 if (G_UNLIKELY (random () == 1))
   g_print ("a random one");
 ]|</doc>
-      <source-position filename="gmacros.h" line="1220"/>
+      <source-position filename="gmacros.h" line="1221"/>
       <parameters>
         <parameter name="expr">
           <doc xml:space="preserve"
@@ -69199,13 +69199,13 @@ See your C library manual for more details about lstat().</doc>
     <constant name="macro__has_attribute___noreturn__"
               value="0"
               c:type="g_macro__has_attribute___noreturn__">
-      <source-position filename="gmacros.h" line="182"/>
+      <source-position filename="gmacros.h" line="184"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <function-macro name="macro__has_builtin"
                     c:identifier="g_macro__has_builtin"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="344"/>
+      <source-position filename="gmacros.h" line="345"/>
       <parameters>
         <parameter name="x">
         </parameter>
@@ -69214,7 +69214,7 @@ See your C library manual for more details about lstat().</doc>
     <function-macro name="macro__has_extension"
                     c:identifier="g_macro__has_extension"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="350"/>
+      <source-position filename="gmacros.h" line="351"/>
       <parameters>
         <parameter name="x">
         </parameter>
@@ -69223,7 +69223,7 @@ See your C library manual for more details about lstat().</doc>
     <function-macro name="macro__has_feature"
                     c:identifier="g_macro__has_feature"
                     introspectable="0">
-      <source-position filename="gmacros.h" line="338"/>
+      <source-position filename="gmacros.h" line="339"/>
       <parameters>
         <parameter name="x">
         </parameter>
