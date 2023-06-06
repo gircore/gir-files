@@ -40,7 +40,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Extract gir files
-        run: python transfer.py /mingw64/share/gir-1.0/ ./windows gir_files.txt
+        run: python transfer.py /mingw64/share/gir-1.0/ ./windows gir_files.txt,gir_files_windows.txt
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
