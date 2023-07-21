@@ -3949,7 +3949,8 @@ the new value is ignored and `FALSE` is returned.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_bits_per_sample">
+                getter="get_bits_per_sample"
+                default-value="8">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf.c"
              line="281">The number of bits per sample.
@@ -3961,7 +3962,8 @@ Currently only 8 bit per sample are supported.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_colorspace">
+                getter="get_colorspace"
+                default-value="GDK_COLORSPACE_RGB">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf.c"
              line="254">The color space of the pixbuf.
@@ -3973,7 +3975,8 @@ Currently, only `GDK_COLORSPACE_RGB` is supported.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_has_alpha">
+                getter="get_has_alpha"
+                default-value="FALSE">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf.c"
              line="269">Whether the pixbuf has an alpha channel.</doc>
@@ -3983,7 +3986,8 @@ Currently, only `GDK_COLORSPACE_RGB` is supported.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_height">
+                getter="get_height"
+                default-value="1">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf.c"
              line="311">The number of rows of the pixbuf.</doc>
@@ -3993,7 +3997,8 @@ Currently, only `GDK_COLORSPACE_RGB` is supported.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_n_channels">
+                getter="get_n_channels"
+                default-value="3">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf.c"
              line="238">The number of samples per pixel.
@@ -4021,7 +4026,8 @@ Currently, only 3 or 4 samples per pixel are supported.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_rowstride">
+                getter="get_rowstride"
+                default-value="1">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf.c"
              line="325">The number of bytes between the start of a row and
@@ -4035,7 +4041,8 @@ width of the pixbuf.</doc>
                 writable="1"
                 construct-only="1"
                 transfer-ownership="none"
-                getter="get_width">
+                getter="get_width"
+                default-value="1">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf.c"
              line="297">The number of columns of the pixbuf.</doc>
@@ -7320,7 +7327,8 @@ was constructed.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_loop"
-                getter="get_loop">
+                getter="get_loop"
+                default-value="FALSE">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf-simple-anim.c"
              line="152">Whether the animation should loop when it reaches the end.</doc>
@@ -7330,6 +7338,7 @@ was constructed.</doc>
     <record name="PixbufSimpleAnimClass"
             c:type="GdkPixbufSimpleAnimClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="PixbufSimpleAnim">
       <source-position filename="gdk-pixbuf/gdk-pixbuf-simple-anim.h"
                        line="39"/>
