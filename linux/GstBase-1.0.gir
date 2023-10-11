@@ -1320,6 +1320,7 @@ buffer in the list before freeing the list after usage.</doc>
     <record name="AdapterClass"
             c:type="GstAdapterClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="Adapter">
       <source-position filename="libs/gst/base/gstadapter.h" line="49"/>
     </record>
@@ -1387,6 +1388,8 @@ Control is given to the subclass when all pads have data.
    these into gap buffers with matching PTS and duration. It will also
    flag these buffers with GST_BUFFER_FLAG_GAP and GST_BUFFER_FLAG_DROPPABLE
    to ease their identification and subsequent processing.
+   In addition, if the gap event was flagged with GST_GAP_FLAG_MISSING_DATA,
+   a custom meta is added to the resulting gap buffer (GstAggregatorMissingDataMeta).
 
  * Subclasses must use (a subclass of) #GstAggregatorPad for both their
    sink and source pads.
@@ -1462,7 +1465,7 @@ This class used to live in gst-plugins-bad and was moved to core.</doc>
       <virtual-method name="finish_buffer" invoker="finish_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="714">This method will push the provided output buffer downstream. If needed,
+             line="735">This method will push the provided output buffer downstream. If needed,
 mandatory events such as stream-start, caps, and segment events will be
 sent before pushing the buffer.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="271"/>
@@ -1473,13 +1476,13 @@ sent before pushing the buffer.</doc>
           <instance-parameter name="aggregator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="716">The #GstAggregator</doc>
+                 line="737">The #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="717">the #GstBuffer to push.</doc>
+                 line="738">the #GstBuffer to push.</doc>
             <type name="Gst.Buffer" c:type="GstBuffer*"/>
           </parameter>
         </parameters>
@@ -1489,7 +1492,7 @@ sent before pushing the buffer.</doc>
                       version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="753">This method will push the provided output buffer list downstream. If needed,
+             line="774">This method will push the provided output buffer list downstream. If needed,
 mandatory events such as stream-start, caps, and segment events will be
 sent before pushing the buffer.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="344"/>
@@ -1500,13 +1503,13 @@ sent before pushing the buffer.</doc>
           <instance-parameter name="aggregator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="755">The #GstAggregator</doc>
+                 line="776">The #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="bufferlist" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="756">the #GstBufferList to push.</doc>
+                 line="777">the #GstBufferList to push.</doc>
             <type name="Gst.BufferList" c:type="GstBufferList*"/>
           </parameter>
         </parameters>
@@ -1550,21 +1553,21 @@ sent before pushing the buffer.</doc>
       <virtual-method name="negotiate" invoker="negotiate" version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="1328">Negotiates src pad caps with downstream elements.
+             line="1349">Negotiates src pad caps with downstream elements.
 Unmarks GST_PAD_FLAG_NEED_RECONFIGURE in any case. But marks it again
 if #GstAggregatorClass::negotiate fails.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="326"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="1336">%TRUE if the negotiation succeeded, else %FALSE.</doc>
+               line="1357">%TRUE if the negotiation succeeded, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="1330">a #GstAggregator</doc>
+                 line="1351">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -1588,7 +1591,7 @@ if #GstAggregatorClass::negotiate fails.</doc>
                       version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="323">Use this function to determine what input buffers will be aggregated
+             line="325">Use this function to determine what input buffers will be aggregated
 to produce the next output buffer. This should only be called from
 a #GstAggregator::samples-selected handler, and can be used to precisely
 control aggregating parameters for a given set of input samples.</doc>
@@ -1596,7 +1599,7 @@ control aggregating parameters for a given set of input samples.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="331">The sample that is about to be aggregated. It may hold a #GstBuffer
+               line="333">The sample that is about to be aggregated. It may hold a #GstBuffer
   or a #GstBufferList. The contents of its info structure is subclass-dependent,
   and documented on a subclass basis. The buffers held by the sample are
   not writable.</doc>
@@ -1791,7 +1794,7 @@ control aggregating parameters for a given set of input samples.</doc>
       <method name="finish_buffer" c:identifier="gst_aggregator_finish_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="714">This method will push the provided output buffer downstream. If needed,
+             line="735">This method will push the provided output buffer downstream. If needed,
 mandatory events such as stream-start, caps, and segment events will be
 sent before pushing the buffer.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="379"/>
@@ -1802,13 +1805,13 @@ sent before pushing the buffer.</doc>
           <instance-parameter name="aggregator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="716">The #GstAggregator</doc>
+                 line="737">The #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="717">the #GstBuffer to push.</doc>
+                 line="738">the #GstBuffer to push.</doc>
             <type name="Gst.Buffer" c:type="GstBuffer*"/>
           </parameter>
         </parameters>
@@ -1818,7 +1821,7 @@ sent before pushing the buffer.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="753">This method will push the provided output buffer list downstream. If needed,
+             line="774">This method will push the provided output buffer list downstream. If needed,
 mandatory events such as stream-start, caps, and segment events will be
 sent before pushing the buffer.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="383"/>
@@ -1829,13 +1832,13 @@ sent before pushing the buffer.</doc>
           <instance-parameter name="aggregator" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="755">The #GstAggregator</doc>
+                 line="776">The #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="bufferlist" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="756">the #GstBufferList to push.</doc>
+                 line="777">the #GstBufferList to push.</doc>
             <type name="Gst.BufferList" c:type="GstBufferList*"/>
           </parameter>
         </parameters>
@@ -1843,7 +1846,7 @@ sent before pushing the buffer.</doc>
       <method name="get_allocator" c:identifier="gst_aggregator_get_allocator">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3732">Lets #GstAggregator sub-classes get the memory @allocator
+             line="3818">Lets #GstAggregator sub-classes get the memory @allocator
 acquired by the base class and its @params.
 
 Unref the @allocator after use it.</doc>
@@ -1855,7 +1858,7 @@ Unref the @allocator after use it.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3734">a #GstAggregator</doc>
+                 line="3820">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="allocator"
@@ -1867,7 +1870,7 @@ Unref the @allocator after use it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3735">the #GstAllocator
+                 line="3821">the #GstAllocator
 used</doc>
             <type name="Gst.Allocator" c:type="GstAllocator**"/>
           </parameter>
@@ -1879,7 +1882,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3737">the
+                 line="3823">the
 #GstAllocationParams of @allocator</doc>
             <type name="Gst.AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
@@ -1891,7 +1894,7 @@ used</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3713">the instance of the #GstBufferPool used
+               line="3799">the instance of the #GstBufferPool used
 by @trans; free it after use it</doc>
           <type name="Gst.BufferPool" c:type="GstBufferPool*"/>
         </return-value>
@@ -1899,7 +1902,27 @@ by @trans; free it after use it</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3711">a #GstAggregator</doc>
+                 line="3797">a #GstAggregator</doc>
+            <type name="Aggregator" c:type="GstAggregator*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_force_live"
+              c:identifier="gst_aggregator_get_force_live"
+              version="1.22">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gstaggregator.c"
+             line="3991">Subclasses may use the return value to inform whether they should return
+%GST_FLOW_EOS from their aggregate implementation.</doc>
+        <source-position filename="libs/gst/base/gstaggregator.h" line="438"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gstaggregator.c"
+               line="3997">whether live status was forced on @self.</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -1911,7 +1934,7 @@ by @trans; free it after use it</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3888">whether inactive pads will not be waited on</doc>
+               line="3974">whether inactive pads will not be waited on</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -1925,7 +1948,7 @@ by @trans; free it after use it</doc>
               glib:get-property="latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2198">Retrieves the latency values reported by @self in response to the latency
+             line="2246">Retrieves the latency values reported by @self in response to the latency
 query, or %GST_CLOCK_TIME_NONE if there is not live source connected and the element
 will not wait for the clock.
 
@@ -1934,14 +1957,14 @@ Typically only called by subclasses.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="2208">The latency or %GST_CLOCK_TIME_NONE if the element does not sync</doc>
+               line="2256">The latency or %GST_CLOCK_TIME_NONE if the element does not sync</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2200">a #GstAggregator</doc>
+                 line="2248">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -1951,21 +1974,21 @@ Typically only called by subclasses.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="1328">Negotiates src pad caps with downstream elements.
+             line="1349">Negotiates src pad caps with downstream elements.
 Unmarks GST_PAD_FLAG_NEED_RECONFIGURE in any case. But marks it again
 if #GstAggregatorClass::negotiate fails.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="391"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="1336">%TRUE if the negotiation succeeded, else %FALSE.</doc>
+               line="1357">%TRUE if the negotiation succeeded, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="1330">a #GstAggregator</doc>
+                 line="1351">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -1975,7 +1998,7 @@ if #GstAggregatorClass::negotiate fails.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="323">Use this function to determine what input buffers will be aggregated
+             line="325">Use this function to determine what input buffers will be aggregated
 to produce the next output buffer. This should only be called from
 a #GstAggregator::samples-selected handler, and can be used to precisely
 control aggregating parameters for a given set of input samples.</doc>
@@ -1983,7 +2006,7 @@ control aggregating parameters for a given set of input samples.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="331">The sample that is about to be aggregated. It may hold a #GstBuffer
+               line="333">The sample that is about to be aggregated. It may hold a #GstBuffer
   or a #GstBufferList. The contents of its info structure is subclass-dependent,
   and documented on a subclass basis. The buffers held by the sample are
   not writable.</doc>
@@ -2003,7 +2026,7 @@ control aggregating parameters for a given set of input samples.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3826">Subclasses should call this when they have prepared the
+             line="3912">Subclasses should call this when they have prepared the
 buffers they will aggregate for each of their sink pads, but
 before using any of the properties of the pads that govern
 *how* aggregation should be performed, for example z-index
@@ -2025,19 +2048,19 @@ function.</doc>
           <parameter name="pts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3828">The presentation timestamp of the next output buffer</doc>
+                 line="3914">The presentation timestamp of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="dts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3829">The decoding timestamp of the next output buffer</doc>
+                 line="3915">The decoding timestamp of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3830">The duration of the next output buffer</doc>
+                 line="3916">The duration of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="info"
@@ -2046,8 +2069,28 @@ function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3831">a #GstStructure containing additional information</doc>
+                 line="3917">a #GstStructure containing additional information</doc>
             <type name="Gst.Structure" c:type="GstStructure*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_force_live"
+              c:identifier="gst_aggregator_set_force_live"
+              version="1.22">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gstaggregator.c"
+             line="4007">Subclasses should call this at construction time in order for @self to
+aggregate on a timeout even when no live source is connected.</doc>
+        <source-position filename="libs/gst/base/gstaggregator.h" line="441"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <type name="Aggregator" c:type="GstAggregator*"/>
+          </instance-parameter>
+          <parameter name="force_live" transfer-ownership="none">
+            <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
       </method>
@@ -2056,7 +2099,7 @@ function.</doc>
               version="1.20">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3862">Subclasses should call this when they don't want to time out
+             line="3948">Subclasses should call this when they don't want to time out
 waiting for a pad that hasn't yet received any buffers in live
 mode.
 
@@ -2073,7 +2116,7 @@ sure upstream has had a fair chance to start up.</doc>
           <parameter name="ignore" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3864">whether inactive pads should not be waited on</doc>
+                 line="3950">whether inactive pads should not be waited on</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -2083,7 +2126,7 @@ sure upstream has had a fair chance to start up.</doc>
               glib:set-property="latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3665">Lets #GstAggregator sub-classes tell the baseclass what their internal
+             line="3751">Lets #GstAggregator sub-classes tell the baseclass what their internal
 latency is. Will also post a LATENCY message on the bus so the pipeline
 can reconfigure its global latency if the values changed.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="394"/>
@@ -2094,19 +2137,19 @@ can reconfigure its global latency if the values changed.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3667">a #GstAggregator</doc>
+                 line="3753">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="min_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3668">minimum latency</doc>
+                 line="3754">minimum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="max_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3669">maximum latency</doc>
+                 line="3755">maximum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -2114,7 +2157,7 @@ can reconfigure its global latency if the values changed.</doc>
       <method name="set_src_caps" c:identifier="gst_aggregator_set_src_caps">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="664">Sets the caps to be used on the src pad.</doc>
+             line="685">Sets the caps to be used on the src pad.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="387"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -2123,13 +2166,13 @@ can reconfigure its global latency if the values changed.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="666">The #GstAggregator</doc>
+                 line="687">The #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="caps" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="667">The #GstCaps to set on the src pad.</doc>
+                 line="688">The #GstCaps to set on the src pad.</doc>
             <type name="Gst.Caps" c:type="GstCaps*"/>
           </parameter>
         </parameters>
@@ -2139,7 +2182,7 @@ can reconfigure its global latency if the values changed.</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3759">This is a simple #GstAggregatorClass::get_next_time implementation that
+             line="3845">This is a simple #GstAggregatorClass::get_next_time implementation that
 just looks at the #GstSegment on the srcpad of the aggregator and bases
 the next time on the running time there.
 
@@ -2149,14 +2192,14 @@ and you have a dead line based aggregator subclass.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3770">The running time based on the position</doc>
+               line="3856">The running time based on the position</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3761">A #GstAggregator</doc>
+                 line="3847">A #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -2166,7 +2209,7 @@ and you have a dead line based aggregator subclass.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3796">Subclasses should use this to update the segment on their
+             line="3882">Subclasses should use this to update the segment on their
 source pad, instead of directly pushing new segment events
 downstream.
 
@@ -2188,38 +2231,45 @@ if it is used at all.</doc>
       <property name="emit-signals"
                 version="1.18"
                 writable="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2846">Enables the emission of signals such as #GstAggregator::samples-selected</doc>
+             line="2915">Enables the emission of signals such as #GstAggregator::samples-selected</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="latency"
                 writable="1"
                 transfer-ownership="none"
                 setter="set_latency"
-                getter="get_latency">
+                getter="get_latency"
+                default-value="0">
         <type name="guint64" c:type="guint64"/>
       </property>
       <property name="min-upstream-latency"
                 version="1.16"
                 writable="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2812">Force minimum upstream latency (in nanoseconds). When sources with a
+             line="2881">Force minimum upstream latency (in nanoseconds). When sources with a
 higher latency are expected to be plugged in dynamically after the
 aggregator has started playing, this allows overriding the minimum
 latency reported by the initial source(s). This is only taken into
 account when larger than the actually reported minimum latency.</doc>
         <type name="guint64" c:type="guint64"/>
       </property>
-      <property name="start-time" writable="1" transfer-ownership="none">
+      <property name="start-time"
+                writable="1"
+                transfer-ownership="none"
+                default-value="18446744073709551615">
         <type name="guint64" c:type="guint64"/>
       </property>
       <property name="start-time-selection"
                 writable="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="GST_AGGREGATOR_START_TIME_SELECTION_ZERO">
         <type name="AggregatorStartTimeSelection"/>
       </property>
       <field name="parent">
@@ -2242,7 +2292,7 @@ account when larger than the actually reported minimum latency.</doc>
       <glib:signal name="samples-selected" when="first" version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2858">Signals that the #GstAggregator subclass has selected the next set
+             line="2927">Signals that the #GstAggregator subclass has selected the next set
 of input samples it will aggregate. Handlers may call
 gst_aggregator_peek_next_sample() at that point.</doc>
         <return-value transfer-ownership="none">
@@ -2252,25 +2302,25 @@ gst_aggregator_peek_next_sample() at that point.</doc>
           <parameter name="segment" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2861">The #GstSegment the next output buffer is part of</doc>
+                 line="2930">The #GstSegment the next output buffer is part of</doc>
             <type name="Gst.Segment"/>
           </parameter>
           <parameter name="pts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2862">The presentation timestamp of the next output buffer</doc>
+                 line="2931">The presentation timestamp of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="dts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2863">The decoding timestamp of the next output buffer</doc>
+                 line="2932">The decoding timestamp of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2864">The duration of the next output buffer</doc>
+                 line="2933">The duration of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="info"
@@ -2279,7 +2329,7 @@ gst_aggregator_peek_next_sample() at that point.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2865">a #GstStructure containing additional information</doc>
+                 line="2934">a #GstStructure containing additional information</doc>
             <type name="Gst.Structure"/>
           </parameter>
         </parameters>
@@ -2349,13 +2399,13 @@ _finish_buffer from inside that function.</doc>
             <parameter name="aggregator" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libs/gst/base/gstaggregator.c"
-                   line="716">The #GstAggregator</doc>
+                   line="737">The #GstAggregator</doc>
               <type name="Aggregator" c:type="GstAggregator*"/>
             </parameter>
             <parameter name="buffer" transfer-ownership="full">
               <doc xml:space="preserve"
                    filename="libs/gst/base/gstaggregator.c"
-                   line="717">the #GstBuffer to push.</doc>
+                   line="738">the #GstBuffer to push.</doc>
               <type name="Gst.Buffer" c:type="GstBuffer*"/>
             </parameter>
           </parameters>
@@ -2643,14 +2693,14 @@ _finish_buffer from inside that function.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="1336">%TRUE if the negotiation succeeded, else %FALSE.</doc>
+                 line="1357">%TRUE if the negotiation succeeded, else %FALSE.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
           <parameters>
             <parameter name="self" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libs/gst/base/gstaggregator.c"
-                   line="1330">a #GstAggregator</doc>
+                   line="1351">a #GstAggregator</doc>
               <type name="Aggregator" c:type="GstAggregator*"/>
             </parameter>
           </parameters>
@@ -2707,13 +2757,13 @@ _finish_buffer from inside that function.</doc>
             <parameter name="aggregator" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libs/gst/base/gstaggregator.c"
-                   line="755">The #GstAggregator</doc>
+                   line="776">The #GstAggregator</doc>
               <type name="Aggregator" c:type="GstAggregator*"/>
             </parameter>
             <parameter name="bufferlist" transfer-ownership="full">
               <doc xml:space="preserve"
                    filename="libs/gst/base/gstaggregator.c"
-                   line="756">the #GstBufferList to push.</doc>
+                   line="777">the #GstBufferList to push.</doc>
               <type name="Gst.BufferList" c:type="GstBufferList*"/>
             </parameter>
           </parameters>
@@ -2726,7 +2776,7 @@ _finish_buffer from inside that function.</doc>
           <return-value transfer-ownership="full" nullable="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="331">The sample that is about to be aggregated. It may hold a #GstBuffer
+                 line="333">The sample that is about to be aggregated. It may hold a #GstBuffer
   or a #GstBufferList. The contents of its info structure is subclass-dependent,
   and documented on a subclass basis. The buffers held by the sample are
   not writable.</doc>
@@ -2758,7 +2808,7 @@ _finish_buffer from inside that function.</doc>
            glib:type-struct="AggregatorPadClass">
       <doc xml:space="preserve"
            filename="libs/gst/base/gstaggregator.c"
-           line="92">Pads managed by a #GstAggregator subclass.
+           line="94">Pads managed by a #GstAggregator subclass.
 
 This class used to live in gst-plugins-bad and was moved to core.</doc>
       <source-position filename="libs/gst/base/gstaggregator.h" line="100"/>
@@ -2796,19 +2846,19 @@ This class used to live in gst-plugins-bad and was moved to core.</doc>
       <method name="drop_buffer" c:identifier="gst_aggregator_pad_drop_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3489">Drop the buffer currently queued in @pad.</doc>
+             line="3575">Drop the buffer currently queued in @pad.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="116"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3495">TRUE if there was a buffer queued in @pad, or FALSE if not.</doc>
+               line="3581">TRUE if there was a buffer queued in @pad, or FALSE if not.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3491">the pad where to drop any pending buffer</doc>
+                 line="3577">the pad where to drop any pending buffer</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2818,21 +2868,21 @@ This class used to live in gst-plugins-bad and was moved to core.</doc>
               version="1.14.1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3548">This checks if a pad has a buffer available that will be returned by
+             line="3634">This checks if a pad has a buffer available that will be returned by
 a call to gst_aggregator_pad_peek_buffer() or
 gst_aggregator_pad_pop_buffer().</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="119"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3556">%TRUE if the pad has a buffer available as the next thing.</doc>
+               line="3642">%TRUE if the pad has a buffer available as the next thing.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3550">the pad to check the buffer on</doc>
+                 line="3636">the pad to check the buffer on</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2842,14 +2892,14 @@ gst_aggregator_pad_pop_buffer().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3584">%TRUE if the pad is EOS, otherwise %FALSE.</doc>
+               line="3670">%TRUE if the pad is EOS, otherwise %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3582">an aggregator pad</doc>
+                 line="3668">an aggregator pad</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2859,12 +2909,12 @@ gst_aggregator_pad_pop_buffer().</doc>
               version="1.20">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3598">It is only valid to call this method from #GstAggregatorClass::aggregate()</doc>
+             line="3684">It is only valid to call this method from #GstAggregatorClass::aggregate()</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="125"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3604">%TRUE if the pad is inactive, %FALSE otherwise.
+               line="3690">%TRUE if the pad is inactive, %FALSE otherwise.
   See gst_aggregator_ignore_inactive_pads() for more info.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -2872,7 +2922,7 @@ gst_aggregator_pad_pop_buffer().</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3600">an aggregator pad</doc>
+                 line="3686">an aggregator pad</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2882,7 +2932,7 @@ gst_aggregator_pad_pop_buffer().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3515">A reference to the buffer in @pad or
+               line="3601">A reference to the buffer in @pad or
 NULL if no buffer was queued. You should unref the buffer after
 usage.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
@@ -2891,7 +2941,7 @@ usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3513">the pad to get buffer from</doc>
+                 line="3599">the pad to get buffer from</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2899,12 +2949,12 @@ usage.</doc>
       <method name="pop_buffer" c:identifier="gst_aggregator_pad_pop_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3431">Steal the ref to the buffer currently queued in @pad.</doc>
+             line="3517">Steal the ref to the buffer currently queued in @pad.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="110"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3437">The buffer in @pad or NULL if no buffer was
+               line="3523">The buffer in @pad or NULL if no buffer was
   queued. You should unref the buffer after usage.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </return-value>
@@ -2912,7 +2962,7 @@ usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3433">the pad to get buffer from</doc>
+                 line="3519">the pad to get buffer from</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2920,10 +2970,11 @@ usage.</doc>
       <property name="emit-signals"
                 version="1.16"
                 writable="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3342">Enables the emission of signals such as #GstAggregatorPad::buffer-consumed</doc>
+             line="3428">Enables the emission of signals such as #GstAggregatorPad::buffer-consumed</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <field name="parent">
@@ -3005,12 +3056,14 @@ usage.</doc>
     </record>
     <record name="AggregatorPadPrivate"
             c:type="GstAggregatorPadPrivate"
-            disguised="1">
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstaggregator.h" line="55"/>
     </record>
     <record name="AggregatorPrivate"
             c:type="GstAggregatorPrivate"
-            disguised="1">
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstaggregator.h" line="34"/>
     </record>
     <enumeration name="AggregatorStartTimeSelection"
@@ -3025,7 +3078,7 @@ usage.</doc>
               glib:name="GST_AGGREGATOR_START_TIME_SELECTION_ZERO">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.h"
-             line="439">Start at running time 0.</doc>
+             line="446">Start at running time 0.</doc>
       </member>
       <member name="first"
               value="1"
@@ -3034,7 +3087,7 @@ usage.</doc>
               glib:name="GST_AGGREGATOR_START_TIME_SELECTION_FIRST">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.h"
-             line="440">Start at the running time of
+             line="447">Start at the running time of
 the first buffer that is received.</doc>
       </member>
       <member name="set"
@@ -3044,7 +3097,7 @@ the first buffer that is received.</doc>
               glib:name="GST_AGGREGATOR_START_TIME_SELECTION_SET">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.h"
-             line="442">Start at the running time
+             line="449">Start at the running time
 selected by the `start-time` property.</doc>
       </member>
     </enumeration>
@@ -3883,7 +3936,7 @@ if desired.</doc>
               c:identifier="gst_base_parse_add_index_entry">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="1978">Adds an entry to the index associating @offset to @ts.  It is recommended
+             line="1988">Adds an entry to the index associating @offset to @ts.  It is recommended
 to only add keyframe entries.  @force allows to bypass checks, such as
 whether the stream is (upstream) seekable, another entry is already "close"
 to the new entry, etc.</doc>
@@ -3891,38 +3944,38 @@ to the new entry, etc.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="1991">#gboolean indicating whether entry was added</doc>
+               line="2001">#gboolean indicating whether entry was added</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1980">#GstBaseParse.</doc>
+                 line="1990">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1981">offset of entry</doc>
+                 line="1991">offset of entry</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="ts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1982">timestamp associated with offset</doc>
+                 line="1992">timestamp associated with offset</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="key" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1983">whether entry refers to keyframe</doc>
+                 line="1993">whether entry refers to keyframe</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
           <parameter name="force" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1984">add entry disregarding sanity checks</doc>
+                 line="1994">add entry disregarding sanity checks</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -3931,37 +3984,37 @@ to the new entry, etc.</doc>
               c:identifier="gst_base_parse_convert_default">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="1741">Default implementation of #GstBaseParseClass::convert.</doc>
+             line="1751">Default implementation of #GstBaseParseClass::convert.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="360"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="1751">%TRUE if conversion was successful.</doc>
+               line="1761">%TRUE if conversion was successful.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1743">#GstBaseParse.</doc>
+                 line="1753">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="src_format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1744">#GstFormat describing the source format.</doc>
+                 line="1754">#GstFormat describing the source format.</doc>
             <type name="Gst.Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="src_value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1745">Source value to be converted.</doc>
+                 line="1755">Source value to be converted.</doc>
             <type name="gint64" c:type="gint64"/>
           </parameter>
           <parameter name="dest_format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1746">#GstFormat defining the converted format.</doc>
+                 line="1756">#GstFormat defining the converted format.</doc>
             <type name="Gst.Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="dest_value"
@@ -3970,7 +4023,7 @@ to the new entry, etc.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1747">Pointer where the conversion result will be put.</doc>
+                 line="1757">Pointer where the conversion result will be put.</doc>
             <type name="gint64" c:type="gint64*"/>
           </parameter>
         </parameters>
@@ -3978,7 +4031,7 @@ to the new entry, etc.</doc>
       <method name="drain" c:identifier="gst_base_parse_drain" version="1.12">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="2761">Drains the adapter until it is empty. It decreases the min_frame_size to
+             line="2771">Drains the adapter until it is empty. It decreases the min_frame_size to
 match the current adapter size and calls chain method until the adapter
 is emptied or chain returns with error.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="335"/>
@@ -3989,7 +4042,7 @@ is emptied or chain returns with error.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2763">a #GstBaseParse</doc>
+                 line="2773">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
         </parameters>
@@ -3997,7 +4050,7 @@ is emptied or chain returns with error.</doc>
       <method name="finish_frame" c:identifier="gst_base_parse_finish_frame">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="2665">Collects parsed data and pushes this downstream.
+             line="2675">Collects parsed data and pushes this downstream.
 Source pad caps must be set when this is called.
 
 If @frame's out_buffer is set, that will be used as subsequent frame data.
@@ -4012,26 +4065,26 @@ caller retains ownership of @frame.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="2683">a #GstFlowReturn that should be escalated to caller (of caller)</doc>
+               line="2693">a #GstFlowReturn that should be escalated to caller (of caller)</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2667">a #GstBaseParse</doc>
+                 line="2677">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2668">a #GstBaseParseFrame</doc>
+                 line="2678">a #GstBaseParseFrame</doc>
             <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2669">consumed input data represented by frame</doc>
+                 line="2679">consumed input data represented by frame</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -4041,7 +4094,7 @@ caller retains ownership of @frame.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="5018">Sets the parser subclass's tags and how they should be merged with any
+             line="5028">Sets the parser subclass's tags and how they should be merged with any
 upstream stream tags. This will override any tags previously-set
 with gst_base_parse_merge_tags().
 
@@ -4055,7 +4108,7 @@ not required to use this and can still do tag handling on its own.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="5020">a #GstBaseParse</doc>
+                 line="5030">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="tags"
@@ -4064,14 +4117,14 @@ not required to use this and can still do tag handling on its own.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="5021">a #GstTagList to merge, or NULL to unset
+                 line="5031">a #GstTagList to merge, or NULL to unset
     previously-set tags</doc>
             <type name="Gst.TagList" c:type="GstTagList*"/>
           </parameter>
           <parameter name="mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="5023">the #GstTagMergeMode to use, usually #GST_TAG_MERGE_REPLACE</doc>
+                 line="5033">the #GstTagMergeMode to use, usually #GST_TAG_MERGE_REPLACE</doc>
             <type name="Gst.TagMergeMode" c:type="GstTagMergeMode"/>
           </parameter>
         </parameters>
@@ -4079,7 +4132,7 @@ not required to use this and can still do tag handling on its own.</doc>
       <method name="push_frame" c:identifier="gst_base_parse_push_frame">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="2451">Pushes the frame's buffer downstream, sends any pending events and
+             line="2461">Pushes the frame's buffer downstream, sends any pending events and
 does some timestamp and segment handling. Takes ownership of
 frame's buffer, though caller retains ownership of @frame.
 
@@ -4088,20 +4141,20 @@ This must be called with sinkpad STREAM_LOCK held.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="2462">#GstFlowReturn</doc>
+               line="2472">#GstFlowReturn</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2453">#GstBaseParse.</doc>
+                 line="2463">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2454">a #GstBaseParseFrame</doc>
+                 line="2464">a #GstBaseParseFrame</doc>
             <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
           </parameter>
         </parameters>
@@ -4110,7 +4163,7 @@ This must be called with sinkpad STREAM_LOCK held.</doc>
               c:identifier="gst_base_parse_set_average_bitrate">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3887">Optionally sets the average bitrate detected in media (if non-zero),
+             line="3897">Optionally sets the average bitrate detected in media (if non-zero),
 e.g. based on metadata, as it will be posted to the application.
 
 By default, announced average bitrate is estimated. The average bitrate
@@ -4125,13 +4178,13 @@ a seek position, if there's no index and the format is syncable
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3889">#GstBaseParse.</doc>
+                 line="3899">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="bitrate" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3890">average bitrate in bits/second</doc>
+                 line="3900">average bitrate in bits/second</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4139,7 +4192,7 @@ a seek position, if there's no index and the format is syncable
       <method name="set_duration" c:identifier="gst_base_parse_set_duration">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3836">Sets the duration of the currently playing media. Subclass can use this
+             line="3846">Sets the duration of the currently playing media. Subclass can use this
 when it is able to determine duration and/or notices a change in the media
 duration.  Alternatively, if @interval is non-zero (default), then stream
 duration is determined based on estimated bitrate, and updated every @interval
@@ -4152,25 +4205,25 @@ frames.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3838">#GstBaseParse.</doc>
+                 line="3848">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="fmt" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3839">#GstFormat.</doc>
+                 line="3849">#GstFormat.</doc>
             <type name="Gst.Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3840">duration value.</doc>
+                 line="3850">duration value.</doc>
             <type name="gint64" c:type="gint64"/>
           </parameter>
           <parameter name="interval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3841">how often to update the duration estimate based on bitrate, or 0.</doc>
+                 line="3851">how often to update the duration estimate based on bitrate, or 0.</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -4179,7 +4232,7 @@ frames.</doc>
               c:identifier="gst_base_parse_set_frame_rate">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3925">If frames per second is configured, parser can take care of buffer duration
+             line="3935">If frames per second is configured, parser can take care of buffer duration
 and timestamping.  When performing segment clipping, or seeking to a specific
 location, a corresponding decoder might need an initial @lead_in and a
 following @lead_out number of frames to ensure the desired segment is
@@ -4192,31 +4245,31 @@ entirely filled upon decoding.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3927">the #GstBaseParse to set</doc>
+                 line="3937">the #GstBaseParse to set</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="fps_num" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3928">frames per second (numerator).</doc>
+                 line="3938">frames per second (numerator).</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="fps_den" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3929">frames per second (denominator).</doc>
+                 line="3939">frames per second (denominator).</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="lead_in" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3930">frames needed before a segment for subsequent decode</doc>
+                 line="3940">frames needed before a segment for subsequent decode</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="lead_out" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3931">frames needed after a segment</doc>
+                 line="3941">frames needed after a segment</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4225,7 +4278,7 @@ entirely filled upon decoding.</doc>
               c:identifier="gst_base_parse_set_has_timing_info">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3982">Set if frames carry timing information which the subclass can (generally)
+             line="3992">Set if frames carry timing information which the subclass can (generally)
 parse and provide.  In particular, intrinsic (rather than estimated) time
 can be obtained following a seek.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="332"/>
@@ -4236,13 +4289,13 @@ can be obtained following a seek.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3984">a #GstBaseParse</doc>
+                 line="3994">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="has_timing" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3985">whether frames carry timing information</doc>
+                 line="3995">whether frames carry timing information</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4250,7 +4303,7 @@ can be obtained following a seek.</doc>
       <method name="set_infer_ts" c:identifier="gst_base_parse_set_infer_ts">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4053">By default, the base class might try to infer PTS from DTS and vice
+             line="4063">By default, the base class might try to infer PTS from DTS and vice
 versa.  While this is generally correct for audio data, it may not
 be otherwise. Sub-classes implementing such formats should disable
 timestamp inferring.</doc>
@@ -4262,13 +4315,13 @@ timestamp inferring.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4055">a #GstBaseParse</doc>
+                 line="4065">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="infer_ts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4056">%TRUE if parser should infer DTS/PTS from each other</doc>
+                 line="4066">%TRUE if parser should infer DTS/PTS from each other</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4276,7 +4329,7 @@ timestamp inferring.</doc>
       <method name="set_latency" c:identifier="gst_base_parse_set_latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4070">Sets the minimum and maximum (which may likely be equal) latency introduced
+             line="4080">Sets the minimum and maximum (which may likely be equal) latency introduced
 by the parsing process. If there is such a latency, which depends on the
 particular parsing of the format, it typically corresponds to 1 frame duration.
 
@@ -4291,19 +4344,19 @@ global latency.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4072">a #GstBaseParse</doc>
+                 line="4082">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="min_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4073">minimum parse latency</doc>
+                 line="4083">minimum parse latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="max_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4074">maximum parse latency</doc>
+                 line="4084">maximum parse latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -4312,7 +4365,7 @@ global latency.</doc>
               c:identifier="gst_base_parse_set_min_frame_size">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3907">Subclass can use this function to tell the base class that it needs to
+             line="3917">Subclass can use this function to tell the base class that it needs to
 be given buffers of at least @min_size bytes.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="329"/>
         <return-value transfer-ownership="none">
@@ -4322,13 +4375,13 @@ be given buffers of at least @min_size bytes.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3909">#GstBaseParse.</doc>
+                 line="3919">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="min_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3910">Minimum size in bytes of the data that this base class should
+                 line="3920">Minimum size in bytes of the data that this base class should
       give to subclass.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -4338,7 +4391,7 @@ be given buffers of at least @min_size bytes.</doc>
               c:identifier="gst_base_parse_set_passthrough">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4014">Set if the nature of the format or configuration does not allow (much)
+             line="4024">Set if the nature of the format or configuration does not allow (much)
 parsing, and the parser should operate in passthrough mode (which only
 applies when operating in push mode). That is, incoming buffers are
 pushed through unmodified, i.e. no #GstBaseParseClass::handle_frame
@@ -4353,13 +4406,13 @@ passthrough semantics in #GstBaseParseClass::pre_push_frame.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4016">a #GstBaseParse</doc>
+                 line="4026">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="passthrough" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4017">%TRUE if parser should run in passthrough mode</doc>
+                 line="4027">%TRUE if parser should run in passthrough mode</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4368,7 +4421,7 @@ passthrough semantics in #GstBaseParseClass::pre_push_frame.</doc>
               c:identifier="gst_base_parse_set_pts_interpolation">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4034">By default, the base class will guess PTS timestamps using a simple
+             line="4044">By default, the base class will guess PTS timestamps using a simple
 interpolation (previous timestamp + duration), which is incorrect for
 data streams with reordering, where PTS can go backward. Sub-classes
 implementing such formats should disable PTS interpolation.</doc>
@@ -4380,13 +4433,13 @@ implementing such formats should disable PTS interpolation.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4036">a #GstBaseParse</doc>
+                 line="4046">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="pts_interpolate" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4037">%TRUE if parser should interpolate PTS timestamps</doc>
+                 line="4047">%TRUE if parser should interpolate PTS timestamps</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4394,7 +4447,7 @@ implementing such formats should disable PTS interpolation.</doc>
       <method name="set_syncable" c:identifier="gst_base_parse_set_syncable">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3998">Set if frame starts can be identified. This is set by default and
+             line="4008">Set if frame starts can be identified. This is set by default and
 determines whether seeking based on bitrate averages
 is possible for a format/stream.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="338"/>
@@ -4405,13 +4458,13 @@ is possible for a format/stream.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4000">a #GstBaseParse</doc>
+                 line="4010">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="syncable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4001">set if frame starts can be identified</doc>
+                 line="4011">set if frame starts can be identified</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4421,7 +4474,7 @@ is possible for a format/stream.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4978">This function should only be called from a @handle_frame implementation.
+             line="4988">This function should only be called from a @handle_frame implementation.
 
 #GstBaseParse creates initial timestamps for frames by using the last
 timestamp seen in the stream before the frame starts.  In certain
@@ -4437,20 +4490,21 @@ into the frame data that the picture starts.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4980">a #GstBaseParse</doc>
+                 line="4990">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4981">offset into current buffer</doc>
+                 line="4991">offset into current buffer</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
       </method>
       <property name="disable-passthrough"
                 writable="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
              line="554">If set to %TRUE, baseparse will unconditionally force parsing of the
@@ -4932,7 +4986,10 @@ allocated on the stack.</doc>
    when the first non-queued frame is finished</doc>
       </member>
     </bitfield>
-    <record name="BaseParsePrivate" c:type="GstBaseParsePrivate" disguised="1">
+    <record name="BaseParsePrivate"
+            c:type="GstBaseParsePrivate"
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstbaseparse.h" line="152"/>
     </record>
     <class name="BaseSink"
@@ -5102,6 +5159,9 @@ with non-synchronized streams or sparse streams.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="get_caps">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gstbasesink.h"
+             line="154">Called to get sink pad caps from the subclass.</doc>
         <source-position filename="libs/gst/base/gstbasesink.h" line="160"/>
         <return-value transfer-ownership="full">
           <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -5110,12 +5170,18 @@ with non-synchronized streams or sparse streams.</doc>
           <instance-parameter name="sink" transfer-ownership="none">
             <type name="BaseSink" c:type="GstBaseSink*"/>
           </instance-parameter>
-          <parameter name="filter" transfer-ownership="none">
+          <parameter name="filter"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
             <type name="Gst.Caps" c:type="GstCaps*"/>
           </parameter>
         </parameters>
       </virtual-method>
       <virtual-method name="get_times">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gstbasesink.h"
+             line="169">Get the start and end times for syncing on this buffer.</doc>
         <source-position filename="libs/gst/base/gstbasesink.h" line="176"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -5127,10 +5193,22 @@ with non-synchronized streams or sparse streams.</doc>
           <parameter name="buffer" transfer-ownership="none">
             <type name="Gst.Buffer" c:type="GstBuffer*"/>
           </parameter>
-          <parameter name="start" transfer-ownership="none">
+          <parameter name="start"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gstbasesink.h"
+                 line="171">the start #GstClockTime</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime*"/>
           </parameter>
-          <parameter name="end" transfer-ownership="none">
+          <parameter name="end"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="full">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gstbasesink.h"
+                 line="172">the end #GstClockTime</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime*"/>
           </parameter>
         </parameters>
@@ -5535,7 +5613,7 @@ information about the render delay.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
-             line="5890">Return various #GstBaseSink statistics. This function returns a #GstStructure
+             line="5893">Return various #GstBaseSink statistics. This function returns a #GstStructure
 with name `application/x-gst-base-sink-stats` with the following fields:
 
 - "average-rate" G_TYPE_DOUBLE   average frame rate
@@ -5545,14 +5623,14 @@ with name `application/x-gst-base-sink-stats` with the following fields:
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesink.c"
-               line="5901">pointer to #GstStructure</doc>
+               line="5904">pointer to #GstStructure</doc>
           <type name="Gst.Structure" c:type="GstStructure*"/>
         </return-value>
         <parameters>
           <instance-parameter name="sink" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="5892">#GstBaseSink</doc>
+                 line="5895">#GstBaseSink</doc>
             <type name="BaseSink" c:type="GstBaseSink*"/>
           </instance-parameter>
         </parameters>
@@ -6229,7 +6307,10 @@ continue. Any other return value should be returned from the render vmethod.</do
           </instance-parameter>
         </parameters>
       </method>
-      <property name="async" writable="1" transfer-ownership="none">
+      <property name="async"
+                writable="1"
+                transfer-ownership="none"
+                default-value="TRUE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="467">If set to %TRUE, the basesink will perform asynchronous state changes.
@@ -6242,7 +6323,8 @@ not required.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_blocksize"
-                getter="get_blocksize">
+                getter="get_blocksize"
+                default-value="4096">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="515">The amount of bytes to pull when operating in pull mode.</doc>
@@ -6250,7 +6332,8 @@ not required.</doc>
       </property>
       <property name="enable-last-sample"
                 writable="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="TRUE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="491">Enable the last-sample property. If %FALSE, basesink doesn't keep a
@@ -6274,7 +6357,8 @@ can be %NULL when the sink has not yet received a buffer.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_max_bitrate"
-                getter="get_max_bitrate">
+                getter="get_max_bitrate"
+                default-value="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="548">Control the maximum amount of bits that will be rendered per second.
@@ -6286,7 +6370,8 @@ rendering of the buffers when it would exceed to max-bitrate.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_max_lateness"
-                getter="get_max_lateness">
+                getter="get_max_lateness"
+                default-value="-1">
         <type name="gint64" c:type="gint64"/>
       </property>
       <property name="processing-deadline"
@@ -6294,7 +6379,8 @@ rendering of the buffers when it would exceed to max-bitrate.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_processing_deadline"
-                getter="get_processing_deadline">
+                getter="get_processing_deadline"
+                default-value="20000000">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="562">Maximum amount of time (in nanoseconds) that the pipeline can take
@@ -6302,14 +6388,18 @@ for processing the buffer. This is added to the latency of live
 pipelines.</doc>
         <type name="guint64" c:type="guint64"/>
       </property>
-      <property name="qos" writable="1" transfer-ownership="none">
+      <property name="qos"
+                writable="1"
+                transfer-ownership="none"
+                default-value="FALSE">
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="render-delay"
                 writable="1"
                 transfer-ownership="none"
                 setter="set_render_delay"
-                getter="get_render_delay">
+                getter="get_render_delay"
+                default-value="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="525">The additional delay between synchronisation and actual rendering of the
@@ -6335,14 +6425,16 @@ with name `application/x-gst-base-sink-stats` with the following fields:
                 writable="1"
                 transfer-ownership="none"
                 setter="set_sync"
-                getter="get_sync">
+                getter="get_sync"
+                default-value="TRUE">
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="throttle-time"
                 writable="1"
                 transfer-ownership="none"
                 setter="set_throttle_time"
-                getter="get_throttle_time">
+                getter="get_throttle_time"
+                default-value="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="536">The time to insert between buffers. This property can be used to control
@@ -6354,7 +6446,8 @@ to a value bigger than 0 will make the sink create THROTTLE QoS events.</doc>
                 writable="1"
                 transfer-ownership="none"
                 setter="set_ts_offset"
-                getter="get_ts_offset">
+                getter="get_ts_offset"
+                default-value="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
              line="479">Controls the final synchronisation, a negative value will render the buffer
@@ -6453,7 +6546,10 @@ output/present buffers.</doc>
             <parameter name="sink" transfer-ownership="none">
               <type name="BaseSink" c:type="GstBaseSink*"/>
             </parameter>
-            <parameter name="filter" transfer-ownership="none">
+            <parameter name="filter"
+                       transfer-ownership="none"
+                       nullable="1"
+                       allow-none="1">
               <type name="Gst.Caps" c:type="GstCaps*"/>
             </parameter>
           </parameters>
@@ -6520,10 +6616,22 @@ output/present buffers.</doc>
             <parameter name="buffer" transfer-ownership="none">
               <type name="Gst.Buffer" c:type="GstBuffer*"/>
             </parameter>
-            <parameter name="start" transfer-ownership="none">
+            <parameter name="start"
+                       direction="out"
+                       caller-allocates="0"
+                       transfer-ownership="full">
+              <doc xml:space="preserve"
+                   filename="libs/gst/base/gstbasesink.h"
+                   line="171">the start #GstClockTime</doc>
               <type name="Gst.ClockTime" c:type="GstClockTime*"/>
             </parameter>
-            <parameter name="end" transfer-ownership="none">
+            <parameter name="end"
+                       direction="out"
+                       caller-allocates="0"
+                       transfer-ownership="full">
+              <doc xml:space="preserve"
+                   filename="libs/gst/base/gstbasesink.h"
+                   line="172">the end #GstClockTime</doc>
               <type name="Gst.ClockTime" c:type="GstClockTime*"/>
             </parameter>
           </parameters>
@@ -6731,7 +6839,10 @@ output/present buffers.</doc>
         </array>
       </field>
     </record>
-    <record name="BaseSinkPrivate" c:type="GstBaseSinkPrivate" disguised="1">
+    <record name="BaseSinkPrivate"
+            c:type="GstBaseSinkPrivate"
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstbasesink.h" line="63"/>
     </record>
     <class name="BaseSrc"
@@ -6856,13 +6967,13 @@ with the gst_element_send_event() function on the element or its parent bin.
 After the EOS has been sent to the element, the application should wait for
 an EOS message to be posted on the pipeline's bus. Once this EOS message is
 received, it may safely shut down the entire pipeline.</doc>
-      <source-position filename="libs/gst/base/gstbasesrc.h" line="266"/>
+      <source-position filename="libs/gst/base/gstbasesrc.h" line="274"/>
       <virtual-method name="alloc">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.h"
-             line="251">Ask the subclass to allocate an output buffer with @offset and @size, the default
+             line="259">Ask the subclass to allocate an output buffer with @offset and @size, the default
 implementation will use the negotiated allocator.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="258"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="266"/>
         <return-value transfer-ownership="none">
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -6879,7 +6990,8 @@ implementation will use the negotiated allocator.</doc>
           <parameter name="buf"
                      direction="out"
                      caller-allocates="0"
-                     transfer-ownership="full">
+                     transfer-ownership="full"
+                     nullable="1">
             <type name="Gst.Buffer" c:type="GstBuffer**"/>
           </parameter>
         </parameters>
@@ -6887,9 +6999,9 @@ implementation will use the negotiated allocator.</doc>
       <virtual-method name="create">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.h"
-             line="242">Ask the subclass to create a buffer with @offset and @size, the default
+             line="250">Ask the subclass to create a buffer with @offset and @size, the default
 implementation will call alloc if no allocated @buf is provided and then call fill.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="249"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="257"/>
         <return-value transfer-ownership="none">
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -6906,13 +7018,15 @@ implementation will call alloc if no allocated @buf is provided and then call fi
           <parameter name="buf"
                      direction="inout"
                      caller-allocates="0"
-                     transfer-ownership="full">
+                     transfer-ownership="full"
+                     nullable="1"
+                     allow-none="1">
             <type name="Gst.Buffer" c:type="GstBuffer**"/>
           </parameter>
         </parameters>
       </virtual-method>
       <virtual-method name="decide_allocation">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="192"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="200"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -6926,7 +7040,7 @@ implementation will call alloc if no allocated @buf is provided and then call fi
         </parameters>
       </virtual-method>
       <virtual-method name="do_seek">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="228"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="236"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -6940,7 +7054,7 @@ implementation will call alloc if no allocated @buf is provided and then call fi
         </parameters>
       </virtual-method>
       <virtual-method name="event">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="240"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="248"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -6954,7 +7068,7 @@ implementation will call alloc if no allocated @buf is provided and then call fi
         </parameters>
       </virtual-method>
       <virtual-method name="fill">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="261"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="269"/>
         <return-value transfer-ownership="none">
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -6974,15 +7088,21 @@ implementation will call alloc if no allocated @buf is provided and then call fi
         </parameters>
       </virtual-method>
       <virtual-method name="fixate">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="187"/>
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gstbasesrc.h"
+             line="187">Called if, in negotiation, caps need fixating.</doc>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="195"/>
         <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gstbasesrc.h"
+               line="193">the fixated caps</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </return-value>
         <parameters>
           <instance-parameter name="src" transfer-ownership="none">
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
-          <parameter name="caps" transfer-ownership="none">
+          <parameter name="caps" transfer-ownership="full">
             <type name="Gst.Caps" c:type="GstCaps*"/>
           </parameter>
         </parameters>
@@ -7010,13 +7130,13 @@ implementation will call alloc if no allocated @buf is provided and then call fi
       <virtual-method name="get_size">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.h"
-             line="209">Get the total size of the resource in the format set by
+             line="217">Get the total size of the resource in the format set by
 gst_base_src_set_format().</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="218"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="226"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.h"
-               line="216">%TRUE if the size is available and has been set.</doc>
+               line="224">%TRUE if the size is available and has been set.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -7034,9 +7154,9 @@ gst_base_src_set_format().</doc>
       <virtual-method name="get_times">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.h"
-             line="198">Given @buffer, return @start and @end time when it should be pushed
+             line="206">Given @buffer, return @start and @end time when it should be pushed
 out. The base class will sync on the clock using these times.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="206"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="214"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7062,7 +7182,7 @@ out. The base class will sync on the clock using these times.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="is_seekable">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="221"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="229"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7075,7 +7195,7 @@ out. The base class will sync on the clock using these times.</doc>
       <virtual-method name="negotiate" invoker="negotiate" version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
-             line="3459">Negotiates src pad caps with downstream elements.
+             line="3464">Negotiates src pad caps with downstream elements.
 Unmarks GST_PAD_FLAG_NEED_RECONFIGURE in any case. But marks it again
 if #GstBaseSrcClass::negotiate fails.
 
@@ -7086,20 +7206,20 @@ buffer is allocated.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
-               line="3471">%TRUE if the negotiation succeeded, else %FALSE.</doc>
+               line="3476">%TRUE if the negotiation succeeded, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="3461">base source instance</doc>
+                 line="3466">base source instance</doc>
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
         </parameters>
       </virtual-method>
       <virtual-method name="prepare_seek_segment">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="225"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="233"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7116,7 +7236,7 @@ buffer is allocated.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="query">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="237"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="245"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7133,7 +7253,7 @@ buffer is allocated.</doc>
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
              line="981">Set new caps on the basesrc source pad.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="189"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="197"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7156,7 +7276,7 @@ buffer is allocated.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="start">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="195"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="203"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7167,7 +7287,7 @@ buffer is allocated.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="stop">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="196"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="204"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7178,7 +7298,7 @@ buffer is allocated.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="unlock">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="232"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="240"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7189,7 +7309,7 @@ buffer is allocated.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="unlock_stop">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="234"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="242"/>
         <return-value transfer-ownership="none">
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7202,11 +7322,11 @@ buffer is allocated.</doc>
       <method name="get_allocator" c:identifier="gst_base_src_get_allocator">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
-             line="4075">Lets #GstBaseSrc sub-classes to know the memory @allocator
+             line="4080">Lets #GstBaseSrc sub-classes to know the memory @allocator
 used by the base class and its @params.
 
 Unref the @allocator after usage.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="334"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="342"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7214,7 +7334,7 @@ Unref the @allocator after usage.</doc>
           <instance-parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="4077">a #GstBaseSrc</doc>
+                 line="4082">a #GstBaseSrc</doc>
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
           <parameter name="allocator"
@@ -7226,7 +7346,7 @@ Unref the @allocator after usage.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="4078">the #GstAllocator
+                 line="4083">the #GstAllocator
 used</doc>
             <type name="Gst.Allocator" c:type="GstAllocator**"/>
           </parameter>
@@ -7238,7 +7358,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="4080">the #GstAllocationParams of @allocator</doc>
+                 line="4085">the #GstAllocationParams of @allocator</doc>
             <type name="Gst.AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
         </parameters>
@@ -7249,7 +7369,7 @@ used</doc>
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
              line="785">Get the number of bytes that @src will push out with each buffer.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="312"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="320"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7267,11 +7387,11 @@ used</doc>
       </method>
       <method name="get_buffer_pool"
               c:identifier="gst_base_src_get_buffer_pool">
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="331"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="339"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
-               line="4057">the instance of the #GstBufferPool used
+               line="4062">the instance of the #GstBufferPool used
 by the src; unref it after usage.</doc>
           <type name="Gst.BufferPool" c:type="GstBufferPool*"/>
         </return-value>
@@ -7279,7 +7399,7 @@ by the src; unref it after usage.</doc>
           <instance-parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="4055">a #GstBaseSrc</doc>
+                 line="4060">a #GstBaseSrc</doc>
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
         </parameters>
@@ -7290,7 +7410,7 @@ by the src; unref it after usage.</doc>
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
              line="829">Query if @src timestamps outgoing buffers based on the current running_time.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="318"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="326"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7310,7 +7430,7 @@ by the src; unref it after usage.</doc>
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
              line="695">Get the current async behaviour of @src. See also gst_base_src_set_async().</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="293"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="301"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7330,7 +7450,7 @@ by the src; unref it after usage.</doc>
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
              line="586">Check if an element is in live mode.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="278"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="286"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7351,25 +7471,25 @@ by the src; unref it after usage.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
-             line="3459">Negotiates src pad caps with downstream elements.
+             line="3464">Negotiates src pad caps with downstream elements.
 Unmarks GST_PAD_FLAG_NEED_RECONFIGURE in any case. But marks it again
 if #GstBaseSrcClass::negotiate fails.
 
 Do not call this in the #GstBaseSrcClass::fill vmethod. Call this in
 #GstBaseSrcClass::create or in #GstBaseSrcClass::alloc, _before_ any
 buffer is allocated.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="296"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="304"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
-               line="3471">%TRUE if the negotiation succeeded, else %FALSE.</doc>
+               line="3476">%TRUE if the negotiation succeeded, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="3461">base source instance</doc>
+                 line="3466">base source instance</doc>
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
         </parameters>
@@ -7387,7 +7507,7 @@ as the stream-lock needs to be held.
 The format for the new segment will be the current format of the source, as
 configured with gst_base_src_set_format()</doc>
         <doc-deprecated xml:space="preserve">Use gst_base_src_new_segment()</doc-deprecated>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="321"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="329"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7435,7 +7555,7 @@ of the source, as configured with gst_base_src_set_format().
 
 The format of @src must not be %GST_FORMAT_UNDEFINED and the format
 should be configured via gst_base_src_set_format() before calling this method.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="324"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="332"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7466,7 +7586,7 @@ to the difference between the running time and the timestamp of the first
 buffer.
 
 This function is mostly used by subclasses.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="305"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="313"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7522,7 +7642,7 @@ This function is mostly used by subclasses.</doc>
 close, start, stop, play and pause virtual methods will be executed in a
 different thread and are thus allowed to perform blocking operations. Any
 blocking operation should be unblocked with the unlock vmethod.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="290"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="298"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7556,7 +7676,7 @@ when a buffer outside of the currently configured segment is pushed if
 @automatic_eos is %TRUE. Since 1.16, if @automatic_eos is %FALSE an
 EOS will be pushed only when the #GstBaseSrcClass::create implementation
 returns %GST_FLOW_EOS.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="287"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="295"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7582,7 +7702,7 @@ returns %GST_FLOW_EOS.</doc>
              filename="libs/gst/base/gstbasesrc.c"
              line="767">Set the number of bytes that @src will push out with each buffer. When
 @blocksize is set to -1, a default length will be used.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="309"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="317"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7605,7 +7725,7 @@ returns %GST_FLOW_EOS.</doc>
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
              line="981">Set new caps on the basesrc source pad.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="328"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="336"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7635,7 +7755,7 @@ returns %GST_FLOW_EOS.</doc>
              line="808">Configure @src to automatically timestamp outgoing buffers based on the
 current running_time of the pipeline. This property is mostly useful for live
 sources.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="315"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="323"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7661,7 +7781,7 @@ sources.</doc>
              line="632">If not @dynamic, size is only updated when needed, such as when trying to
 read past current tracked size.  Otherwise, size is checked for upon each
 read.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="284"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="292"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7690,7 +7810,7 @@ If a format of GST_FORMAT_BYTES is set, the element will be able to
 operate in pull mode if the #GstBaseSrcClass::is_seekable returns %TRUE.
 
 This function must only be called in states &lt; %GST_STATE_PAUSED.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="281"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="289"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7720,7 +7840,7 @@ will therefore not be able to participate in the PREROLL phase
 of a pipeline. To signal this fact to the application and the
 pipeline, the state change return value of the live source will
 be GST_STATE_CHANGE_NO_PREROLL.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="275"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="283"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7742,11 +7862,11 @@ be GST_STATE_CHANGE_NO_PREROLL.</doc>
       <method name="start_complete" c:identifier="gst_base_src_start_complete">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
-             line="3563">Complete an asynchronous start operation. When the subclass overrides the
+             line="3568">Complete an asynchronous start operation. When the subclass overrides the
 start method, it should call gst_base_src_start_complete() when the start
 operation completes either from the same thread or from an asynchronous
 helper thread.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="299"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="307"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7754,13 +7874,13 @@ helper thread.</doc>
           <instance-parameter name="basesrc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="3565">base source instance</doc>
+                 line="3570">base source instance</doc>
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
           <parameter name="ret" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="3566">a #GstFlowReturn</doc>
+                 line="3571">a #GstFlowReturn</doc>
             <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
           </parameter>
         </parameters>
@@ -7768,19 +7888,19 @@ helper thread.</doc>
       <method name="start_wait" c:identifier="gst_base_src_start_wait">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
-             line="3703">Wait until the start operation completes.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="302"/>
+             line="3708">Wait until the start operation completes.</doc>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="310"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
-               line="3709">a #GstFlowReturn.</doc>
+               line="3714">a #GstFlowReturn.</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="basesrc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="3705">base source instance</doc>
+                 line="3710">base source instance</doc>
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
         </parameters>
@@ -7790,7 +7910,7 @@ helper thread.</doc>
               version="1.14">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.c"
-             line="4103">Subclasses can call this from their create virtual method implementation
+             line="4108">Subclasses can call this from their create virtual method implementation
 to submit a buffer list to be pushed out later. This is useful in
 cases where the create function wants to produce multiple buffers to be
 pushed out in one go in form of a #GstBufferList, which can reduce overhead
@@ -7806,7 +7926,7 @@ function the behaviour is undefined.
 Subclasses must only call this function once per create function call and
 subclasses must only call this function when the source operates in push
 mode.</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="339"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="347"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -7814,13 +7934,13 @@ mode.</doc>
           <instance-parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="4105">a #GstBaseSrc</doc>
+                 line="4110">a #GstBaseSrc</doc>
             <type name="BaseSrc" c:type="GstBaseSrc*"/>
           </instance-parameter>
           <parameter name="buffer_list" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="4106">a #GstBufferList</doc>
+                 line="4111">a #GstBufferList</doc>
             <type name="Gst.BufferList" c:type="GstBufferList*"/>
           </parameter>
         </parameters>
@@ -7836,7 +7956,7 @@ This function will block until a state change to PLAYING happens (in which
 case this function returns %GST_FLOW_OK) or the processing must be stopped due
 to a state change to READY or a FLUSH event (in which case this function
 returns %GST_FLOW_FLUSHING).</doc>
-        <source-position filename="libs/gst/base/gstbasesrc.h" line="272"/>
+        <source-position filename="libs/gst/base/gstbasesrc.h" line="280"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesrc.c"
@@ -7857,20 +7977,28 @@ continue. Any other return value should be returned from the create vmethod.</do
                 writable="1"
                 transfer-ownership="none"
                 setter="set_blocksize"
-                getter="get_blocksize">
+                getter="get_blocksize"
+                default-value="4096">
         <type name="guint" c:type="guint"/>
       </property>
       <property name="do-timestamp"
                 writable="1"
                 transfer-ownership="none"
                 setter="set_do_timestamp"
-                getter="get_do_timestamp">
+                getter="get_do_timestamp"
+                default-value="FALSE">
         <type name="gboolean" c:type="gboolean"/>
       </property>
-      <property name="num-buffers" writable="1" transfer-ownership="none">
+      <property name="num-buffers"
+                writable="1"
+                transfer-ownership="none"
+                default-value="-1">
         <type name="gint" c:type="gint"/>
       </property>
-      <property name="typefind" writable="1" transfer-ownership="none">
+      <property name="typefind"
+                writable="1"
+                transfer-ownership="none"
+                default-value="FALSE">
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <field name="element">
@@ -7941,7 +8069,7 @@ continue. Any other return value should be returned from the create vmethod.</do
            line="117">Subclasses can override any of the available virtual methods or not, as
 needed. At the minimum, the @create method should be overridden to produce
 buffers.</doc>
-      <source-position filename="libs/gst/base/gstbasesrc.h" line="266"/>
+      <source-position filename="libs/gst/base/gstbasesrc.h" line="274"/>
       <field name="parent_class">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesrc.h"
@@ -7973,14 +8101,14 @@ buffers.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
-                 line="3471">%TRUE if the negotiation succeeded, else %FALSE.</doc>
+                 line="3476">%TRUE if the negotiation succeeded, else %FALSE.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
           <parameters>
             <parameter name="src" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libs/gst/base/gstbasesrc.c"
-                   line="3461">base source instance</doc>
+                   line="3466">base source instance</doc>
               <type name="BaseSrc" c:type="GstBaseSrc*"/>
             </parameter>
           </parameters>
@@ -7988,15 +8116,18 @@ buffers.</doc>
       </field>
       <field name="fixate">
         <callback name="fixate">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="187"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="195"/>
           <return-value transfer-ownership="full">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gstbasesrc.h"
+                 line="193">the fixated caps</doc>
             <type name="Gst.Caps" c:type="GstCaps*"/>
           </return-value>
           <parameters>
             <parameter name="src" transfer-ownership="none">
               <type name="BaseSrc" c:type="GstBaseSrc*"/>
             </parameter>
-            <parameter name="caps" transfer-ownership="none">
+            <parameter name="caps" transfer-ownership="full">
               <type name="Gst.Caps" c:type="GstCaps*"/>
             </parameter>
           </parameters>
@@ -8004,7 +8135,7 @@ buffers.</doc>
       </field>
       <field name="set_caps">
         <callback name="set_caps">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="189"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="197"/>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.c"
@@ -8029,7 +8160,7 @@ buffers.</doc>
       </field>
       <field name="decide_allocation">
         <callback name="decide_allocation">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="192"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="200"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8045,7 +8176,7 @@ buffers.</doc>
       </field>
       <field name="start">
         <callback name="start">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="195"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="203"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8058,7 +8189,7 @@ buffers.</doc>
       </field>
       <field name="stop">
         <callback name="stop">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="196"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="204"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8071,7 +8202,7 @@ buffers.</doc>
       </field>
       <field name="get_times">
         <callback name="get_times">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="206"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="214"/>
           <return-value transfer-ownership="none">
             <type name="none" c:type="void"/>
           </return-value>
@@ -8099,11 +8230,11 @@ buffers.</doc>
       </field>
       <field name="get_size">
         <callback name="get_size">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="218"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="226"/>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesrc.h"
-                 line="216">%TRUE if the size is available and has been set.</doc>
+                 line="224">%TRUE if the size is available and has been set.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
           <parameters>
@@ -8121,7 +8252,7 @@ buffers.</doc>
       </field>
       <field name="is_seekable">
         <callback name="is_seekable">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="221"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="229"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8134,7 +8265,7 @@ buffers.</doc>
       </field>
       <field name="prepare_seek_segment">
         <callback name="prepare_seek_segment">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="225"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="233"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8153,7 +8284,7 @@ buffers.</doc>
       </field>
       <field name="do_seek">
         <callback name="do_seek">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="228"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="236"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8169,7 +8300,7 @@ buffers.</doc>
       </field>
       <field name="unlock">
         <callback name="unlock">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="232"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="240"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8182,7 +8313,7 @@ buffers.</doc>
       </field>
       <field name="unlock_stop">
         <callback name="unlock_stop">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="234"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="242"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8195,7 +8326,7 @@ buffers.</doc>
       </field>
       <field name="query">
         <callback name="query">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="237"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="245"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8211,7 +8342,7 @@ buffers.</doc>
       </field>
       <field name="event">
         <callback name="event">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="240"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="248"/>
           <return-value transfer-ownership="none">
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -8227,7 +8358,7 @@ buffers.</doc>
       </field>
       <field name="create">
         <callback name="create">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="249"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="257"/>
           <return-value transfer-ownership="none">
             <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
           </return-value>
@@ -8244,7 +8375,9 @@ buffers.</doc>
             <parameter name="buf"
                        direction="inout"
                        caller-allocates="0"
-                       transfer-ownership="full">
+                       transfer-ownership="full"
+                       nullable="1"
+                       allow-none="1">
               <type name="Gst.Buffer" c:type="GstBuffer**"/>
             </parameter>
           </parameters>
@@ -8252,7 +8385,7 @@ buffers.</doc>
       </field>
       <field name="alloc">
         <callback name="alloc">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="258"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="266"/>
           <return-value transfer-ownership="none">
             <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
           </return-value>
@@ -8269,7 +8402,8 @@ buffers.</doc>
             <parameter name="buf"
                        direction="out"
                        caller-allocates="0"
-                       transfer-ownership="full">
+                       transfer-ownership="full"
+                       nullable="1">
               <type name="Gst.Buffer" c:type="GstBuffer**"/>
             </parameter>
           </parameters>
@@ -8277,7 +8411,7 @@ buffers.</doc>
       </field>
       <field name="fill">
         <callback name="fill">
-          <source-position filename="libs/gst/base/gstbasesrc.h" line="261"/>
+          <source-position filename="libs/gst/base/gstbasesrc.h" line="269"/>
           <return-value transfer-ownership="none">
             <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
           </return-value>
@@ -8330,7 +8464,10 @@ buffers.</doc>
              line="44">offset to define more flags</doc>
       </member>
     </bitfield>
-    <record name="BaseSrcPrivate" c:type="GstBaseSrcPrivate" disguised="1">
+    <record name="BaseSrcPrivate"
+            c:type="GstBaseSrcPrivate"
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstbasesrc.h" line="60"/>
     </record>
     <class name="BaseTransform"
@@ -8851,7 +8988,7 @@ It provides for:
               c:identifier="gst_base_transform_get_allocator">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2871">Lets #GstBaseTransform sub-classes know the memory @allocator
+             line="2879">Lets #GstBaseTransform sub-classes know the memory @allocator
 used by the base class and its @params.
 
 Unref the @allocator after use.</doc>
@@ -8864,7 +9001,7 @@ Unref the @allocator after use.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2873">a #GstBaseTransform</doc>
+                 line="2881">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="allocator"
@@ -8876,7 +9013,7 @@ Unref the @allocator after use.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2874">the #GstAllocator
+                 line="2882">the #GstAllocator
 used</doc>
             <type name="Gst.Allocator" c:type="GstAllocator**"/>
           </parameter>
@@ -8888,7 +9025,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2876">the #GstAllocationParams of @allocator</doc>
+                 line="2884">the #GstAllocationParams of @allocator</doc>
             <type name="Gst.AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
         </parameters>
@@ -8900,7 +9037,7 @@ used</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasetransform.c"
-               line="2857">the instance of the #GstBufferPool used
+               line="2865">the instance of the #GstBufferPool used
 by @trans; free it after use</doc>
           <type name="Gst.BufferPool" c:type="GstBufferPool*"/>
         </return-value>
@@ -8908,7 +9045,7 @@ by @trans; free it after use</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2855">a #GstBaseTransform</doc>
+                 line="2863">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
         </parameters>
@@ -8916,13 +9053,13 @@ by @trans; free it after use</doc>
       <method name="is_in_place" c:identifier="gst_base_transform_is_in_place">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2662">See if @trans is configured as a in_place transform.</doc>
+             line="2670">See if @trans is configured as a in_place transform.</doc>
         <source-position filename="libs/gst/base/gstbasetransform.h"
                          line="329"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasetransform.c"
-               line="2668">%TRUE if the transform is configured in in_place mode.
+               line="2676">%TRUE if the transform is configured in in_place mode.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -8931,7 +9068,7 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2664">the #GstBaseTransform to query</doc>
+                 line="2672">the #GstBaseTransform to query</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
         </parameters>
@@ -8940,13 +9077,13 @@ MT safe.</doc>
               c:identifier="gst_base_transform_is_passthrough">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2598">See if @trans is configured as a passthrough transform.</doc>
+             line="2606">See if @trans is configured as a passthrough transform.</doc>
         <source-position filename="libs/gst/base/gstbasetransform.h"
                          line="323"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasetransform.c"
-               line="2604">%TRUE if the transform is configured in passthrough mode.
+               line="2612">%TRUE if the transform is configured in passthrough mode.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -8955,7 +9092,7 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2600">the #GstBaseTransform to query</doc>
+                 line="2608">the #GstBaseTransform to query</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
         </parameters>
@@ -8964,13 +9101,13 @@ MT safe.</doc>
               c:identifier="gst_base_transform_is_qos_enabled">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2738">Queries if the transform will handle QoS.</doc>
+             line="2746">Queries if the transform will handle QoS.</doc>
         <source-position filename="libs/gst/base/gstbasetransform.h"
                          line="340"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasetransform.c"
-               line="2744">%TRUE if QoS is enabled.
+               line="2752">%TRUE if QoS is enabled.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -8979,7 +9116,7 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2740">a #GstBaseTransform</doc>
+                 line="2748">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
         </parameters>
@@ -9024,7 +9161,7 @@ implementation.</doc>
               c:identifier="gst_base_transform_reconfigure_sink">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2818">Instructs @trans to request renegotiation upstream. This function is
+             line="2826">Instructs @trans to request renegotiation upstream. This function is
 typically called after properties on the transform were set that
 influence the input format.</doc>
         <source-position filename="libs/gst/base/gstbasetransform.h"
@@ -9036,7 +9173,7 @@ influence the input format.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2820">a #GstBaseTransform</doc>
+                 line="2828">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
         </parameters>
@@ -9045,7 +9182,7 @@ influence the input format.</doc>
               c:identifier="gst_base_transform_reconfigure_src">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2837">Instructs @trans to renegotiate a new downstream transform on the next
+             line="2845">Instructs @trans to renegotiate a new downstream transform on the next
 buffer. This function is typically called after properties on the transform
 were set that influence the output format.</doc>
         <source-position filename="libs/gst/base/gstbasetransform.h"
@@ -9057,7 +9194,7 @@ were set that influence the output format.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2839">a #GstBaseTransform</doc>
+                 line="2847">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
         </parameters>
@@ -9066,7 +9203,7 @@ were set that influence the output format.</doc>
               c:identifier="gst_base_transform_set_gap_aware">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2762">If @gap_aware is %FALSE (the default), output buffers will have the
+             line="2770">If @gap_aware is %FALSE (the default), output buffers will have the
 %GST_BUFFER_FLAG_GAP flag unset.
 
 If set to %TRUE, the element must handle output buffers with this flag set
@@ -9083,13 +9220,13 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2764">a #GstBaseTransform</doc>
+                 line="2772">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="gap_aware" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2765">New state</doc>
+                 line="2773">New state</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9098,7 +9235,7 @@ MT safe.</doc>
               c:identifier="gst_base_transform_set_in_place">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2622">Determines whether a non-writable buffer will be copied before passing
+             line="2630">Determines whether a non-writable buffer will be copied before passing
 to the transform_ip function.
 
   * Always %TRUE if no transform function is implemented.
@@ -9114,13 +9251,13 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2624">the #GstBaseTransform to modify</doc>
+                 line="2632">the #GstBaseTransform to modify</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="in_place" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2625">Boolean value indicating that we would like to operate
+                 line="2633">Boolean value indicating that we would like to operate
 on in_place buffers.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
@@ -9130,7 +9267,7 @@ on in_place buffers.</doc>
               c:identifier="gst_base_transform_set_passthrough">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2562">Set passthrough mode for this filter by default. This is mostly
+             line="2570">Set passthrough mode for this filter by default. This is mostly
 useful for filters that do not care about negotiation.
 
 Always %TRUE for filters which don't implement either a transform
@@ -9146,13 +9283,13 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2564">the #GstBaseTransform to set</doc>
+                 line="2572">the #GstBaseTransform to set</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="passthrough" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2565">boolean indicating passthrough mode.</doc>
+                 line="2573">boolean indicating passthrough mode.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9162,7 +9299,7 @@ MT safe.</doc>
               version="1.0.1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2787">If @prefer_passthrough is %TRUE (the default), @trans will check and
+             line="2795">If @prefer_passthrough is %TRUE (the default), @trans will check and
 prefer passthrough caps from the list of caps returned by the
 transform_caps vmethod.
 
@@ -9182,13 +9319,13 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2789">a #GstBaseTransform</doc>
+                 line="2797">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="prefer_passthrough" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2790">New state</doc>
+                 line="2798">New state</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9197,7 +9334,7 @@ MT safe.</doc>
               c:identifier="gst_base_transform_set_qos_enabled">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2717">Enable or disable QoS handling in the transform.
+             line="2725">Enable or disable QoS handling in the transform.
 
 MT safe.</doc>
         <source-position filename="libs/gst/base/gstbasetransform.h"
@@ -9209,13 +9346,13 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2719">a #GstBaseTransform</doc>
+                 line="2727">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2720">new state</doc>
+                 line="2728">new state</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9223,7 +9360,7 @@ MT safe.</doc>
       <method name="update_qos" c:identifier="gst_base_transform_update_qos">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2686">Set the QoS parameters in the transform. This function is called internally
+             line="2694">Set the QoS parameters in the transform. This function is called internally
 when a QOS event is received but subclasses can provide custom information
 when needed.
 
@@ -9237,25 +9374,25 @@ MT safe.</doc>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2688">a #GstBaseTransform</doc>
+                 line="2696">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="proportion" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2689">the proportion</doc>
+                 line="2697">the proportion</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
           <parameter name="diff" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2690">the diff against the clock</doc>
+                 line="2698">the diff against the clock</doc>
             <type name="Gst.ClockTimeDiff" c:type="GstClockTimeDiff"/>
           </parameter>
           <parameter name="timestamp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2691">the timestamp of the buffer generating the QoS expressed in
+                 line="2699">the timestamp of the buffer generating the QoS expressed in
 running_time.</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
@@ -9266,7 +9403,7 @@ running_time.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasetransform.c"
-             line="2897">Updates the srcpad caps and sends the caps downstream. This function
+             line="2905">Updates the srcpad caps and sends the caps downstream. This function
 can be used by subclasses when they have already negotiated their caps
 but found a change in them (or computed new information). This way,
 they can notify downstream about that change without losing any
@@ -9276,26 +9413,29 @@ buffer.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasetransform.c"
-               line="2909">%TRUE if the caps could be sent downstream %FALSE otherwise</doc>
+               line="2917">%TRUE if the caps could be sent downstream %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="trans" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2899">a #GstBaseTransform</doc>
+                 line="2907">a #GstBaseTransform</doc>
             <type name="BaseTransform" c:type="GstBaseTransform*"/>
           </instance-parameter>
           <parameter name="updated_caps" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasetransform.c"
-                 line="2900">An updated version of the srcpad caps to be pushed
+                 line="2908">An updated version of the srcpad caps to be pushed
 downstream</doc>
             <type name="Gst.Caps" c:type="GstCaps*"/>
           </parameter>
         </parameters>
       </method>
-      <property name="qos" writable="1" transfer-ownership="none">
+      <property name="qos"
+                writable="1"
+                transfer-ownership="none"
+                default-value="FALSE">
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <field name="element">
@@ -9810,7 +9950,8 @@ same type and quantity) it should provide @transform_ip.</doc>
     </record>
     <record name="BaseTransformPrivate"
             c:type="GstBaseTransformPrivate"
-            disguised="1">
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstbasetransform.h" line="76"/>
     </record>
     <record name="BitReader" c:type="GstBitReader">
@@ -14631,7 +14772,8 @@ memory and resources allocated for it.</doc>
     </callback>
     <record name="CollectDataPrivate"
             c:type="GstCollectDataPrivate"
-            disguised="1">
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstcollectpads.h" line="39"/>
     </record>
     <class name="CollectPads"
@@ -15877,7 +16019,8 @@ gst_collect_pads_set_flushing nor gst_collect_pads_clear from this function.</do
     </callback>
     <record name="CollectPadsPrivate"
             c:type="GstCollectPadsPrivate"
-            disguised="1">
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstcollectpads.h" line="41"/>
     </record>
     <callback name="CollectPadsQueryFunction"
@@ -16398,13 +16541,19 @@ MT Safe.</doc>
           </parameter>
         </parameters>
       </method>
-      <property name="current-level-bytes" transfer-ownership="none">
+      <property name="current-level-bytes"
+                transfer-ownership="none"
+                default-value="0">
         <type name="guint" c:type="guint"/>
       </property>
-      <property name="current-level-time" transfer-ownership="none">
+      <property name="current-level-time"
+                transfer-ownership="none"
+                default-value="0">
         <type name="guint64" c:type="guint64"/>
       </property>
-      <property name="current-level-visible" transfer-ownership="none">
+      <property name="current-level-visible"
+                transfer-ownership="none"
+                default-value="0">
         <type name="guint" c:type="guint"/>
       </property>
       <field name="object">
@@ -16612,7 +16761,10 @@ This function should also drop the reference to @object the owner of the
         </array>
       </field>
     </record>
-    <record name="DataQueuePrivate" c:type="GstDataQueuePrivate" disguised="1">
+    <record name="DataQueuePrivate"
+            c:type="GstDataQueuePrivate"
+            disguised="1"
+            opaque="1">
       <source-position filename="libs/gst/base/gstdataqueue.h" line="45"/>
     </record>
     <record name="DataQueueSize" c:type="GstDataQueueSize" introspectable="0">
@@ -16641,6 +16793,7 @@ This function should also drop the reference to @object the owner of the
     </record>
     <record name="FlowCombiner"
             c:type="GstFlowCombiner"
+            opaque="1"
             version="1.4"
             glib:type-name="GstFlowCombiner"
             glib:get-type="gst_flow_combiner_get_type"
@@ -17162,7 +17315,8 @@ base class.</doc>
           <parameter name="buf"
                      direction="out"
                      caller-allocates="0"
-                     transfer-ownership="full">
+                     transfer-ownership="full"
+                     nullable="1">
             <type name="Gst.Buffer" c:type="GstBuffer**"/>
           </parameter>
         </parameters>
@@ -17183,7 +17337,9 @@ no allocated @buf is provided and then call fill.</doc>
           <parameter name="buf"
                      direction="inout"
                      caller-allocates="0"
-                     transfer-ownership="full">
+                     transfer-ownership="full"
+                     nullable="1"
+                     allow-none="1">
             <type name="Gst.Buffer" c:type="GstBuffer**"/>
           </parameter>
         </parameters>
@@ -17239,7 +17395,9 @@ buffers.</doc>
             <parameter name="buf"
                        direction="inout"
                        caller-allocates="0"
-                       transfer-ownership="full">
+                       transfer-ownership="full"
+                       nullable="1"
+                       allow-none="1">
               <type name="Gst.Buffer" c:type="GstBuffer**"/>
             </parameter>
           </parameters>
@@ -17258,7 +17416,8 @@ buffers.</doc>
             <parameter name="buf"
                        direction="out"
                        caller-allocates="0"
-                       transfer-ownership="full">
+                       transfer-ownership="full"
+                       nullable="1">
               <type name="Gst.Buffer" c:type="GstBuffer**"/>
             </parameter>
           </parameters>
@@ -17289,6 +17448,7 @@ buffers.</doc>
     <record name="QueueArray"
             c:type="GstQueueArray"
             disguised="1"
+            opaque="1"
             introspectable="0">
       <doc xml:space="preserve"
            filename="libs/gst/base/gstqueuearray.c"
@@ -17870,29 +18030,173 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
         </parameters>
       </function>
     </record>
+    <record name="TypeFindData"
+            c:type="GstTypeFindData"
+            disguised="1"
+            opaque="1"
+            version="1.22">
+      <doc xml:space="preserve"
+           filename="libs/gst/base/gsttypefindhelper.c"
+           line="501">The opaque #GstTypeFindData structure.</doc>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="32"/>
+      <method name="free"
+              c:identifier="gst_type_find_data_free"
+              version="1.22"
+              introspectable="0">
+        <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                         line="39"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="data" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gsttypefindhelper.c"
+                 line="1142">GstTypeFindData * to free</doc>
+            <type name="TypeFindData" c:type="GstTypeFindData*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_caps"
+              c:identifier="gst_type_find_data_get_caps"
+              version="1.22"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="1083">Returns #GstCaps associated with #GstTypeFindData</doc>
+        <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                         line="36"/>
+        <return-value transfer-ownership="full" nullable="1">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="1089">#GstCaps.</doc>
+          <type name="Gst.Caps" c:type="GstCaps*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="data" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gsttypefindhelper.c"
+                 line="1085">GstTypeFindData *</doc>
+            <type name="TypeFindData" c:type="GstTypeFindData*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_probability"
+              c:identifier="gst_type_find_data_get_probability"
+              version="1.22"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="1102">Returns #GstTypeFindProbability associated with #GstTypeFindData</doc>
+        <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                         line="37"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="1108">#GstTypeFindProbability.</doc>
+          <type name="Gst.TypeFindProbability"
+                c:type="GstTypeFindProbability"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="data" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gsttypefindhelper.c"
+                 line="1104">GstTypeFindData *</doc>
+            <type name="TypeFindData" c:type="GstTypeFindData*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_typefind"
+              c:identifier="gst_type_find_data_get_typefind"
+              version="1.22"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="1121">Returns #GstTypeFind associated with #GstTypeFindData</doc>
+        <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                         line="38"/>
+        <return-value>
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="1127">#GstTypeFind.</doc>
+          <type name="Gst.TypeFind" c:type="GstTypeFind*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="data" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gsttypefindhelper.c"
+                 line="1123">GstTypeFindData *</doc>
+            <type name="TypeFindData" c:type="GstTypeFindData*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <function name="new"
+                c:identifier="gst_type_find_data_new"
+                version="1.22"
+                introspectable="0">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="1045">Free-function: gst_type_find_data_free</doc>
+        <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                         line="34"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="1053">the #GstTypeFindData. The caller should free
+         the returned #GstTypeFindData with gst_type_find_data_free().</doc>
+          <type name="TypeFindData" c:type="GstTypeFindData*"/>
+        </return-value>
+        <parameters>
+          <parameter name="obj"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gsttypefindhelper.c"
+                 line="1047">object doing the typefinding, or %NULL (used for logging)</doc>
+            <type name="Gst.Object" c:type="GstObject*"/>
+          </parameter>
+          <parameter name="data" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gsttypefindhelper.c"
+                 line="1048">a pointer with data to typefind</doc>
+            <array length="2" zero-terminated="0" c:type="const guint8*">
+              <type name="guint8" c:type="guint8"/>
+            </array>
+          </parameter>
+          <parameter name="size" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libs/gst/base/gsttypefindhelper.c"
+                 line="1049">the size of @data</doc>
+            <type name="gsize" c:type="gsize"/>
+          </parameter>
+        </parameters>
+      </function>
+    </record>
     <callback name="TypeFindHelperGetRangeFunction"
               c:type="GstTypeFindHelperGetRangeFunction">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.h"
-           line="63">This function will be called by gst_type_find_helper_get_range() when
+           line="89">This function will be called by gst_type_find_helper_get_range() when
 typefinding functions request to peek at the data of a stream at certain
 offsets. If this function returns GST_FLOW_OK, the result buffer will be
 stored in @buffer. The  contents of @buffer is invalid for any other
 return value.
 
 This function is supposed to behave exactly like a #GstPadGetRangeFunction.</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="81"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                       line="107"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.h"
-             line="79">GST_FLOW_OK for success</doc>
+             line="105">GST_FLOW_OK for success</doc>
         <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
       </return-value>
       <parameters>
         <parameter name="obj" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.h"
-               line="65">a #GstObject that will handle the getrange request</doc>
+               line="91">a #GstObject that will handle the getrange request</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="parent"
@@ -17901,19 +18205,19 @@ This function is supposed to behave exactly like a #GstPadGetRangeFunction.</doc
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.h"
-               line="66">the parent of @obj or %NULL</doc>
+               line="92">the parent of @obj or %NULL</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="offset" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.h"
-               line="67">the offset of the range</doc>
+               line="93">the offset of the range</doc>
           <type name="guint64" c:type="guint64"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.h"
-               line="68">the length of the range</doc>
+               line="94">the length of the range</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
         <parameter name="buffer"
@@ -17922,7 +18226,7 @@ This function is supposed to behave exactly like a #GstPadGetRangeFunction.</doc
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.h"
-               line="69">a memory location to hold the result buffer</doc>
+               line="95">a memory location to hold the result buffer</doc>
           <type name="Gst.Buffer" c:type="GstBuffer**"/>
         </parameter>
       </parameters>
@@ -18327,13 +18631,55 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
         </parameter>
       </parameters>
     </function>
+    <function name="type_find_data_new"
+              c:identifier="gst_type_find_data_new"
+              moved-to="TypeFindData.new"
+              version="1.22"
+              introspectable="0">
+      <doc xml:space="preserve"
+           filename="libs/gst/base/gsttypefindhelper.c"
+           line="1045">Free-function: gst_type_find_data_free</doc>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="34"/>
+      <return-value transfer-ownership="full">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="1053">the #GstTypeFindData. The caller should free
+         the returned #GstTypeFindData with gst_type_find_data_free().</doc>
+        <type name="TypeFindData" c:type="GstTypeFindData*"/>
+      </return-value>
+      <parameters>
+        <parameter name="obj"
+                   transfer-ownership="none"
+                   nullable="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="1047">object doing the typefinding, or %NULL (used for logging)</doc>
+          <type name="Gst.Object" c:type="GstObject*"/>
+        </parameter>
+        <parameter name="data" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="1048">a pointer with data to typefind</doc>
+          <array length="2" zero-terminated="0" c:type="const guint8*">
+            <type name="guint8" c:type="guint8"/>
+          </array>
+        </parameter>
+        <parameter name="size" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="1049">the size of @data</doc>
+          <type name="gsize" c:type="gsize"/>
+        </parameter>
+      </parameters>
+    </function>
     <function name="type_find_helper" c:identifier="gst_type_find_helper">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
            line="463">Tries to find what type of data is flowing from the given source #GstPad.
 
 Free-function: gst_caps_unref</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="33"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="42"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
@@ -18360,7 +18706,7 @@ Free-function: gst_caps_unref</doc>
               c:identifier="gst_type_find_helper_for_buffer">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="684">Tries to find what type of data is contained in the given #GstBuffer, the
+           line="785">Tries to find what type of data is contained in the given #GstBuffer, the
 assumption being that the buffer represents the beginning of the stream or
 file.
 
@@ -18372,11 +18718,11 @@ and the caps with the highest probability will be returned, or %NULL if
 the content of the buffer could not be identified.
 
 Free-function: gst_caps_unref</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="49"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="65"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="704">the #GstCaps corresponding to the data,
+             line="805">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -18388,13 +18734,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="686">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="787">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="buf" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="687">a #GstBuffer with data to typefind</doc>
+               line="788">a #GstBuffer with data to typefind</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </parameter>
         <parameter name="prob"
@@ -18405,7 +18751,71 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="688">location to store the probability of the found
+               line="789">location to store the probability of the found
+    caps, or %NULL</doc>
+          <type name="Gst.TypeFindProbability"
+                c:type="GstTypeFindProbability*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="type_find_helper_for_buffer_with_caps"
+              c:identifier="gst_type_find_helper_for_buffer_with_caps"
+              version="1.22">
+      <doc xml:space="preserve"
+           filename="libs/gst/base/gsttypefindhelper.c"
+           line="870">Tries to find if type of media contained in the given #GstBuffer, matches
+@caps specified, assumption being that the buffer represents the beginning
+of the stream or file.
+
+Tries to find what type of data is contained in the given @data, the
+assumption being that the data represents the beginning of the stream or
+file.
+
+Only the typefinder matching the given caps will be called, if found. The
+caps with the highest probability will be returned, or %NULL if the content
+of the @data could not be identified.
+
+Free-function: gst_caps_unref</doc>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="76"/>
+      <return-value transfer-ownership="full" nullable="1">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="892">the #GstCaps corresponding to the data,
+    or %NULL if no type could be found. The caller should free the caps
+    returned with gst_caps_unref().</doc>
+        <type name="Gst.Caps" c:type="GstCaps*"/>
+      </return-value>
+      <parameters>
+        <parameter name="obj"
+                   transfer-ownership="none"
+                   nullable="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="872">object doing the typefinding, or %NULL (used for logging)</doc>
+          <type name="Gst.Object" c:type="GstObject*"/>
+        </parameter>
+        <parameter name="buf" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="873">a #GstBuffer with data to typefind</doc>
+          <type name="Gst.Buffer" c:type="GstBuffer*"/>
+        </parameter>
+        <parameter name="caps" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="874">caps of the media</doc>
+          <type name="Gst.Caps" c:type="GstCaps*"/>
+        </parameter>
+        <parameter name="prob"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full"
+                   optional="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="875">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -18417,7 +18827,7 @@ Free-function: gst_caps_unref</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="715">Tries to find what type of data is contained in the given #GstBuffer, the
+           line="816">Tries to find what type of data is contained in the given #GstBuffer, the
 assumption being that the buffer represents the beginning of the stream or
 file.
 
@@ -18433,11 +18843,11 @@ functions for the given extension, which might speed up the typefinding
 in many cases.
 
 Free-function: gst_caps_unref</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="54"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="70"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="740">the #GstCaps corresponding to the data,
+             line="841">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -18449,13 +18859,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="717">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="818">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="buf" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="718">a #GstBuffer with data to typefind</doc>
+               line="819">a #GstBuffer with data to typefind</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </parameter>
         <parameter name="extension"
@@ -18464,7 +18874,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="719">extension of the media, or %NULL</doc>
+               line="820">extension of the media, or %NULL</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="prob"
@@ -18475,7 +18885,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="720">location to store the probability of the found
+               line="821">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -18486,7 +18896,7 @@ Free-function: gst_caps_unref</doc>
               c:identifier="gst_type_find_helper_for_data">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="569">Tries to find what type of data is contained in the given @data, the
+           line="582">Tries to find what type of data is contained in the given @data, the
 assumption being that the data represents the beginning of the stream or
 file.
 
@@ -18498,11 +18908,11 @@ and the caps with the highest probability will be returned, or %NULL if
 the content of @data could not be identified.
 
 Free-function: gst_caps_unref</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="36"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="45"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="590">the #GstCaps corresponding to the data,
+             line="603">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -18514,13 +18924,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="571">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="584">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="572">* a pointer with data to typefind</doc>
+               line="585">* a pointer with data to typefind</doc>
           <array length="2" zero-terminated="0" c:type="const guint8*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -18528,7 +18938,7 @@ Free-function: gst_caps_unref</doc>
         <parameter name="size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="573">the size of @data</doc>
+               line="586">the size of @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="prob"
@@ -18539,7 +18949,75 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="574">location to store the probability of the found
+               line="587">location to store the probability of the found
+    caps, or %NULL</doc>
+          <type name="Gst.TypeFindProbability"
+                c:type="GstTypeFindProbability*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="type_find_helper_for_data_with_caps"
+              c:identifier="gst_type_find_helper_for_data_with_caps"
+              version="1.22">
+      <doc xml:space="preserve"
+           filename="libs/gst/base/gsttypefindhelper.c"
+           line="698">Tries to find if type of media contained in the given @data, matches the
+@caps specified, assumption being that the data represents the beginning
+of the stream or file.
+
+Only the typefinder matching the given caps will be called, if found. The
+caps with the highest probability will be returned, or %NULL if the content
+of the @data could not be identified.
+
+Free-function: gst_caps_unref</doc>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="58"/>
+      <return-value transfer-ownership="full" nullable="1">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="717">the #GstCaps corresponding to the data,
+    or %NULL if no type could be found. The caller should free the caps
+    returned with gst_caps_unref().</doc>
+        <type name="Gst.Caps" c:type="GstCaps*"/>
+      </return-value>
+      <parameters>
+        <parameter name="obj"
+                   transfer-ownership="none"
+                   nullable="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="700">object doing the typefinding, or %NULL (used for logging)</doc>
+          <type name="Gst.Object" c:type="GstObject*"/>
+        </parameter>
+        <parameter name="data" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="701">a pointer with data to typefind</doc>
+          <array length="2" zero-terminated="0" c:type="const guint8*">
+            <type name="guint8" c:type="guint8"/>
+          </array>
+        </parameter>
+        <parameter name="size" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="702">the size of @data</doc>
+          <type name="gsize" c:type="gsize"/>
+        </parameter>
+        <parameter name="caps" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="703">caps of the media</doc>
+          <type name="Gst.Caps" c:type="GstCaps*"/>
+        </parameter>
+        <parameter name="prob"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="full"
+                   optional="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="704">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -18551,7 +19029,7 @@ Free-function: gst_caps_unref</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="602">Tries to find what type of data is contained in the given @data, the
+           line="615">Tries to find what type of data is contained in the given @data, the
 assumption being that the data represents the beginning of the stream or
 file.
 
@@ -18567,11 +19045,11 @@ functions for the given extension, which might speed up the typefinding
 in many cases.
 
 Free-function: gst_caps_unref</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="42"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="51"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="628">the #GstCaps corresponding to the data,
+             line="641">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -18583,13 +19061,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="604">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="617">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="605">* a pointer with data to typefind</doc>
+               line="618">* a pointer with data to typefind</doc>
           <array length="2" zero-terminated="0" c:type="const guint8*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -18597,7 +19075,7 @@ Free-function: gst_caps_unref</doc>
         <parameter name="size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="606">the size of @data</doc>
+               line="619">the size of @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="extension"
@@ -18606,7 +19084,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="607">extension of the media, or %NULL</doc>
+               line="620">extension of the media, or %NULL</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="prob"
@@ -18617,7 +19095,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="608">location to store the probability of the found
+               line="621">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -18628,18 +19106,18 @@ Free-function: gst_caps_unref</doc>
               c:identifier="gst_type_find_helper_for_extension">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="769">Tries to find the best #GstCaps associated with @extension.
+           line="924">Tries to find the best #GstCaps associated with @extension.
 
 All available typefinders will be checked against the extension in order
 of rank. The caps of the first typefinder that can handle @extension will be
 returned.
 
 Free-function: gst_caps_unref</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="60"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="82"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="782">the #GstCaps corresponding to
+             line="937">the #GstCaps corresponding to
     @extension, or %NULL if no type could be found. The caller should free
     the caps returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -18651,13 +19129,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="771">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="926">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="extension" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="772">an extension</doc>
+               line="927">an extension</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -18680,7 +19158,8 @@ functions for the given extension, which might speed up the typefinding
 in many cases.
 
 Free-function: gst_caps_unref</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="87"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                       line="113"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
@@ -18759,7 +19238,8 @@ tag size, for example).
 When @extension is not %NULL, this function will first try the typefind
 functions for the given extension, which might speed up the typefinding
 in many cases.</doc>
-      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="95"/>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h"
+                       line="121"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
@@ -18827,6 +19307,46 @@ in many cases.</doc>
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="type_find_list_factories_for_caps"
+              c:identifier="gst_type_find_list_factories_for_caps"
+              version="1.22">
+      <doc xml:space="preserve"
+           filename="libs/gst/base/gsttypefindhelper.c"
+           line="989">Tries to find the best #GstTypeFindFactory associated with @caps.
+
+The typefinder that can handle @caps will be returned.
+
+Free-function: g_list_free</doc>
+      <source-position filename="libs/gst/base/gsttypefindhelper.h" line="86"/>
+      <return-value transfer-ownership="full" nullable="1">
+        <doc xml:space="preserve"
+             filename="libs/gst/base/gsttypefindhelper.c"
+             line="1000">the list of #GstTypeFindFactory
+         corresponding to @caps, or %NULL if no typefinder could be
+         found. Caller should free the returned list with g_list_free()
+         and list elements with gst_object_unref().</doc>
+        <type name="GLib.List" c:type="GList*">
+          <type name="Gst.TypeFindFactory"/>
+        </type>
+      </return-value>
+      <parameters>
+        <parameter name="obj"
+                   transfer-ownership="none"
+                   nullable="1"
+                   allow-none="1">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="991">object doing the typefinding, or %NULL (used for logging)</doc>
+          <type name="Gst.Object" c:type="GstObject*"/>
+        </parameter>
+        <parameter name="caps" transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libs/gst/base/gsttypefindhelper.c"
+               line="992">caps of the media</doc>
+          <type name="Gst.Caps" c:type="GstCaps*"/>
         </parameter>
       </parameters>
     </function>
