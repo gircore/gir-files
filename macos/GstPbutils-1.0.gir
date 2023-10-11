@@ -151,10 +151,16 @@ new frame.</doc>
           </instance-parameter>
         </parameters>
       </virtual-method>
-      <property name="shade-amount" writable="1" transfer-ownership="none">
+      <property name="shade-amount"
+                writable="1"
+                transfer-ownership="none"
+                default-value="657930">
         <type name="guint" c:type="guint"/>
       </property>
-      <property name="shader" writable="1" transfer-ownership="none">
+      <property name="shader"
+                writable="1"
+                transfer-ownership="none"
+                default-value="GST_AUDIO_VISUALIZER_SHADER_FADE">
         <type name="AudioVisualizerShader"/>
       </property>
       <field name="parent">
@@ -236,7 +242,8 @@ new frame.</doc>
     </record>
     <record name="AudioVisualizerPrivate"
             c:type="GstAudioVisualizerPrivate"
-            disguised="1">
+            disguised="1"
+            opaque="1">
       <source-position filename="gst-libs/gst/pbutils/gstaudiovisualizer.h"
                        line="43"/>
     </record>
@@ -669,7 +676,8 @@ pending URIS (if any).</doc>
       <property name="timeout"
                 writable="1"
                 construct="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="15000000000">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
              line="232">The duration (in nanoseconds) after which the discovery of an individual
@@ -682,7 +690,8 @@ set on the result flags.</doc>
       <property name="use-cache"
                 writable="1"
                 construct="1"
-                transfer-ownership="none">
+                transfer-ownership="none"
+                default-value="FALSE">
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <field name="parent">
@@ -1517,7 +1526,8 @@ what needs to be serialized.</doc>
     </class>
     <record name="DiscovererPrivate"
             c:type="GstDiscovererPrivate"
-            disguised="1">
+            disguised="1"
+            opaque="1">
       <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                        line="362"/>
     </record>
@@ -2322,6 +2332,7 @@ NULL. See gst_encoding_profile_get_restriction() for more details.</doc>
     <record name="EncodingAudioProfileClass"
             c:type="GstEncodingAudioProfileClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="EncodingAudioProfile">
       <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                        line="102"/>
@@ -2479,6 +2490,7 @@ the list of contained #GstEncodingProfile.</doc>
     <record name="EncodingContainerProfileClass"
             c:type="GstEncodingContainerProfileClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="EncodingContainerProfile">
       <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                        line="64"/>
@@ -3230,6 +3242,7 @@ element-properties,row-mt=true, end-usage=vbr
     <record name="EncodingProfileClass"
             c:type="GstEncodingProfileClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="EncodingProfile">
       <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                        line="45"/>
@@ -3746,6 +3759,7 @@ constance framerate.</doc>
     <record name="EncodingVideoProfileClass"
             c:type="GstEncodingVideoProfileClass"
             disguised="1"
+            opaque="1"
             glib:is-gtype-struct-for="EncodingVideoProfile">
       <source-position filename="gst-libs/gst/pbutils/encoding-profile.h"
                        line="83"/>
@@ -3902,6 +3916,7 @@ constance framerate.</doc>
     </function-macro>
     <record name="InstallPluginsContext"
             c:type="GstInstallPluginsContext"
+            opaque="1"
             glib:type-name="GstInstallPluginsContext"
             glib:get-type="gst_install_plugins_context_get_type"
             c:symbol-prefix="install_plugins_context">
@@ -4330,7 +4345,7 @@ in debugging.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="PLUGINS_BASE_VERSION_MICRO"
-              value="0"
+              value="5"
               c:type="GST_PLUGINS_BASE_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstpluginsbaseversion.h"
