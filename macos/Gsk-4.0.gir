@@ -3713,21 +3713,21 @@ properties during construction.</doc>
       <function name="deserialize" c:identifier="gsk_render_node_deserialize">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="542">Loads data previously created via [method@Gsk.RenderNode.serialize].
+             line="547">Loads data previously created via [method@Gsk.RenderNode.serialize].
 
 For a discussion of the supported format, see that function.</doc>
         <source-position filename="gsk/gskrendernode.h" line="137"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="552">a new `GskRenderNode`</doc>
+               line="557">a new `GskRenderNode`</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <parameter name="bytes" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="544">the bytes containing the data</doc>
+                 line="549">the bytes containing the data</doc>
             <type name="GLib.Bytes" c:type="GBytes*"/>
           </parameter>
           <parameter name="error_func"
@@ -3738,7 +3738,7 @@ For a discussion of the supported format, see that function.</doc>
                      closure="2">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="545">Callback on parsing errors</doc>
+                 line="550">Callback on parsing errors</doc>
             <type name="ParseErrorFunc" c:type="GskParseErrorFunc"/>
           </parameter>
           <parameter name="user_data"
@@ -3748,7 +3748,7 @@ For a discussion of the supported format, see that function.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="546">user_data for @error_func</doc>
+                 line="551">user_data for @error_func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -3756,7 +3756,7 @@ For a discussion of the supported format, see that function.</doc>
       <method name="draw" c:identifier="gsk_render_node_draw">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="360">Draw the contents of @node to the given cairo context.
+             line="365">Draw the contents of @node to the given cairo context.
 
 Typically, you'll use this function to implement fallback rendering
 of `GskRenderNode`s on an intermediate Cairo context, instead of using
@@ -3772,13 +3772,13 @@ for nodes doing 3D operations, this function may fail.</doc>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="362">a `GskRenderNode`</doc>
+                 line="367">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </instance-parameter>
           <parameter name="cr" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="363">cairo context to draw to</doc>
+                 line="368">cairo context to draw to</doc>
             <type name="cairo.Context" c:type="cairo_t*"/>
           </parameter>
         </parameters>
@@ -3786,7 +3786,7 @@ for nodes doing 3D operations, this function may fail.</doc>
       <method name="get_bounds" c:identifier="gsk_render_node_get_bounds">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="341">Retrieves the boundaries of the @node.
+             line="346">Retrieves the boundaries of the @node.
 
 The node will not draw outside of its boundaries.</doc>
         <source-position filename="gsk/gskrendernode.h" line="123"/>
@@ -3797,7 +3797,7 @@ The node will not draw outside of its boundaries.</doc>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="343">a `GskRenderNode`</doc>
+                 line="348">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </instance-parameter>
           <parameter name="bounds"
@@ -3806,7 +3806,7 @@ The node will not draw outside of its boundaries.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="344">return location for the boundaries</doc>
+                 line="349">return location for the boundaries</doc>
             <type name="Graphene.Rect" c:type="graphene_rect_t*"/>
           </parameter>
         </parameters>
@@ -3815,19 +3815,19 @@ The node will not draw outside of its boundaries.</doc>
               c:identifier="gsk_render_node_get_node_type">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="318">Returns the type of the @node.</doc>
+             line="323">Returns the type of the @node.</doc>
         <source-position filename="gsk/gskrendernode.h" line="120"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="324">the type of the `GskRenderNode`</doc>
+               line="329">the type of the `GskRenderNode`</doc>
           <type name="RenderNodeType" c:type="GskRenderNodeType"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="320">a `GskRenderNode`</doc>
+                 line="325">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -3883,7 +3883,7 @@ The format is not meant as a permanent storage format.</doc>
       <method name="unref" c:identifier="gsk_render_node_unref">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="299">Releases a reference on the given `GskRenderNode`.
+             line="305">Releases a reference on the given `GskRenderNode`.
 
 If the reference was the last, the resources associated to the @node are
 freed.</doc>
@@ -3895,7 +3895,7 @@ freed.</doc>
           <instance-parameter name="node" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="301">a `GskRenderNode`</doc>
+                 line="307">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -3905,7 +3905,7 @@ freed.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="504">This function is equivalent to calling [method@Gsk.RenderNode.serialize]
+             line="509">This function is equivalent to calling [method@Gsk.RenderNode.serialize]
 followed by [func@GLib.file_set_contents].
 
 See those two functions for details on the arguments.
@@ -3916,20 +3916,20 @@ node to a file for later inspection.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="518">%TRUE if saving was successful</doc>
+               line="523">%TRUE if saving was successful</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="506">a `GskRenderNode`</doc>
+                 line="511">a `GskRenderNode`</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </instance-parameter>
           <parameter name="filename" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernode.c"
-                 line="507">the file to save it to.</doc>
+                 line="512">the file to save it to.</doc>
             <type name="filename" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -7287,20 +7287,20 @@ returned and %NULL is put in @out_transform.</doc>
               version="4.6">
       <doc xml:space="preserve"
            filename="gsk/gskrendernode.c"
-           line="656">Retrieves the `GskRenderNode` stored inside the given `value`, and acquires
+           line="661">Retrieves the `GskRenderNode` stored inside the given `value`, and acquires
 a reference to it.</doc>
       <source-position filename="gsk/gskrendernode.h" line="581"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="663">a `GskRenderNode`</doc>
+             line="668">a `GskRenderNode`</doc>
         <type name="RenderNode" c:type="GskRenderNode*"/>
       </return-value>
       <parameters>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="658">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
+               line="663">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
           <type name="GObject.Value" c:type="const GValue*"/>
         </parameter>
       </parameters>
@@ -7310,19 +7310,19 @@ a reference to it.</doc>
               version="4.6">
       <doc xml:space="preserve"
            filename="gsk/gskrendernode.c"
-           line="638">Retrieves the `GskRenderNode` stored inside the given `value`.</doc>
+           line="643">Retrieves the `GskRenderNode` stored inside the given `value`.</doc>
       <source-position filename="gsk/gskrendernode.h" line="579"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="gsk/gskrendernode.c"
-             line="644">a `GskRenderNode`</doc>
+             line="649">a `GskRenderNode`</doc>
         <type name="RenderNode" c:type="GskRenderNode*"/>
       </return-value>
       <parameters>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="640">a `GValue` initialized with type `GSK_TYPE_RENDER_NODE`</doc>
+               line="645">a `GValue` initialized with type `GSK_TYPE_RENDER_NODE`</doc>
           <type name="GObject.Value" c:type="const GValue*"/>
         </parameter>
       </parameters>
@@ -7332,7 +7332,7 @@ a reference to it.</doc>
               version="4.6">
       <doc xml:space="preserve"
            filename="gsk/gskrendernode.c"
-           line="566">Stores the given `GskRenderNode` inside `value`.
+           line="571">Stores the given `GskRenderNode` inside `value`.
 
 The [struct@GObject.Value] will acquire a reference to the `node`.</doc>
       <source-position filename="gsk/gskrendernode.h" line="573"/>
@@ -7343,13 +7343,13 @@ The [struct@GObject.Value] will acquire a reference to the `node`.</doc>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="568">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
+               line="573">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
           <type name="GObject.Value" c:type="GValue*"/>
         </parameter>
         <parameter name="node" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="569">a `GskRenderNode`</doc>
+               line="574">a `GskRenderNode`</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </parameter>
       </parameters>
@@ -7359,7 +7359,7 @@ The [struct@GObject.Value] will acquire a reference to the `node`.</doc>
               version="4.6">
       <doc xml:space="preserve"
            filename="gsk/gskrendernode.c"
-           line="602">Stores the given `GskRenderNode` inside `value`.
+           line="607">Stores the given `GskRenderNode` inside `value`.
 
 This function transfers the ownership of the `node` to the `GValue`.</doc>
       <source-position filename="gsk/gskrendernode.h" line="576"/>
@@ -7370,7 +7370,7 @@ This function transfers the ownership of the `node` to the `GValue`.</doc>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="604">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
+               line="609">a [struct@GObject.Value] initialized with type `GSK_TYPE_RENDER_NODE`</doc>
           <type name="GObject.Value" c:type="GValue*"/>
         </parameter>
         <parameter name="node"
@@ -7379,7 +7379,7 @@ This function transfers the ownership of the `node` to the `GValue`.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gsk/gskrendernode.c"
-               line="605">a `GskRenderNode`</doc>
+               line="610">a `GskRenderNode`</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </parameter>
       </parameters>
