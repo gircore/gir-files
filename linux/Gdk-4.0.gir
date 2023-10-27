@@ -5581,14 +5581,14 @@ This is a convenience function for:
       <function name="open" c:identifier="gdk_display_open">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1120">Opens a display.
+             line="1119">Opens a display.
 
 If opening the display fails, `NULL` is returned.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="42"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1128">a `GdkDisplay`</doc>
+               line="1127">a `GdkDisplay`</doc>
           <type name="Display" c:type="GdkDisplay*"/>
         </return-value>
         <parameters>
@@ -5598,7 +5598,7 @@ If opening the display fails, `NULL` is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1122">the name of the display to open</doc>
+                 line="1121">the name of the display to open</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -5606,7 +5606,7 @@ If opening the display fails, `NULL` is returned.</doc>
       <method name="beep" c:identifier="gdk_display_beep">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="951">Emits a short beep on @display</doc>
+             line="950">Emits a short beep on @display</doc>
         <source-position filename="gdk/gdkdisplay.h" line="51"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -5615,7 +5615,7 @@ If opening the display fails, `NULL` is returned.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="953">a `GdkDisplay`</doc>
+                 line="952">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5645,7 +5645,7 @@ This cleans up associated resources.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1359">Creates a new `GdkGLContext` for the `GdkDisplay`.
+             line="1358">Creates a new `GdkGLContext` for the `GdkDisplay`.
 
 The context is disconnected from any particular surface or surface
 and cannot be used to draw to any surface. It can only be used to
@@ -5658,14 +5658,14 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1374">the newly created `GdkGLContext`</doc>
+               line="1373">the newly created `GdkGLContext`</doc>
           <type name="GLContext" c:type="GdkGLContext*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1361">a `GdkDisplay`</doc>
+                 line="1360">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5674,25 +5674,25 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
               c:identifier="gdk_display_device_is_grabbed">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="908">Returns %TRUE if there is an ongoing grab on @device for @display.</doc>
+             line="907">Returns %TRUE if there is an ongoing grab on @device for @display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="48"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="915">%TRUE if there is a grab in effect for @device.</doc>
+               line="914">%TRUE if there is a grab in effect for @device.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="910">a `GdkDisplay`</doc>
+                 line="909">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="911">a `GdkDevice`</doc>
+                 line="910">a `GdkDevice`</doc>
             <type name="Device" c:type="GdkDevice*"/>
           </parameter>
         </parameters>
@@ -5700,7 +5700,7 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
       <method name="flush" c:identifier="gdk_display_flush">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="988">Flushes any requests queued for the windowing system.
+             line="987">Flushes any requests queued for the windowing system.
 
 This happens automatically when the main loop blocks waiting for new events,
 but if your application is drawing without returning control to the main loop,
@@ -5718,7 +5718,7 @@ handled synchronously, this function will do nothing.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="990">a `GdkDisplay`</doc>
+                 line="989">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5727,20 +5727,20 @@ handled synchronously, this function will do nothing.</doc>
               c:identifier="gdk_display_get_app_launch_context">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1103">Returns a `GdkAppLaunchContext` suitable for launching
+             line="1102">Returns a `GdkAppLaunchContext` suitable for launching
 applications on the given display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="91"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1110">a new `GdkAppLaunchContext` for @display</doc>
+               line="1109">a new `GdkAppLaunchContext` for @display</doc>
           <type name="AppLaunchContext" c:type="GdkAppLaunchContext*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1105">a `GdkDisplay`</doc>
+                 line="1104">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5748,19 +5748,19 @@ applications on the given display.</doc>
       <method name="get_clipboard" c:identifier="gdk_display_get_clipboard">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1011">Gets the clipboard used for copy/paste operations.</doc>
+             line="1010">Gets the clipboard used for copy/paste operations.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="80"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1017">the display's clipboard</doc>
+               line="1016">the display's clipboard</doc>
           <type name="Clipboard" c:type="GdkClipboard*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1013">a `GdkDisplay`</doc>
+                 line="1012">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5769,7 +5769,7 @@ applications on the given display.</doc>
               c:identifier="gdk_display_get_default_seat">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1981">Returns the default `GdkSeat` for this display.
+             line="1980">Returns the default `GdkSeat` for this display.
 
 Note that a display may not have a seat. In this case,
 this function will return %NULL.</doc>
@@ -5777,14 +5777,14 @@ this function will return %NULL.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1990">the default seat.</doc>
+               line="1989">the default seat.</doc>
           <type name="Seat" c:type="GdkSeat*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1983">a `GdkDisplay`</doc>
+                 line="1982">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5793,13 +5793,13 @@ this function will return %NULL.</doc>
               c:identifier="gdk_display_get_monitor_at_surface">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2043">Gets the monitor in which the largest area of @surface
+             line="2042">Gets the monitor in which the largest area of @surface
 resides.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="102"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2051">the monitor with the largest
+               line="2050">the monitor with the largest
   overlap with @surface</doc>
           <type name="Monitor" c:type="GdkMonitor*"/>
         </return-value>
@@ -5807,13 +5807,13 @@ resides.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2045">a `GdkDisplay`</doc>
+                 line="2044">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2046">a `GdkSurface`</doc>
+                 line="2045">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </parameter>
         </parameters>
@@ -5821,7 +5821,7 @@ resides.</doc>
       <method name="get_monitors" c:identifier="gdk_display_get_monitors">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2021">Gets the list of monitors associated with this display.
+             line="2020">Gets the list of monitors associated with this display.
 
 Subsequent calls to this function will always return the
 same list for the same display.
@@ -5832,14 +5832,14 @@ this list to monitor changes to the monitor of this display.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2033">a `GListModel` of `GdkMonitor`</doc>
+               line="2032">a `GListModel` of `GdkMonitor`</doc>
           <type name="Gio.ListModel" c:type="GListModel*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2023">a `GdkDisplay`</doc>
+                 line="2022">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5847,12 +5847,12 @@ this list to monitor changes to the monitor of this display.</doc>
       <method name="get_name" c:identifier="gdk_display_get_name">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="934">Gets the name of the display.</doc>
+             line="933">Gets the name of the display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="45"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="940">a string representing the display name. This string is owned
+               line="939">a string representing the display name. This string is owned
   by GDK and should not be modified or freed.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -5860,7 +5860,7 @@ this list to monitor changes to the monitor of this display.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="936">a `GdkDisplay`</doc>
+                 line="935">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5869,7 +5869,7 @@ this list to monitor changes to the monitor of this display.</doc>
               c:identifier="gdk_display_get_primary_clipboard">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1030">Gets the clipboard used for the primary selection.
+             line="1029">Gets the clipboard used for the primary selection.
 
 On backends where the primary clipboard is not supported natively,
 GDK emulates this clipboard locally.</doc>
@@ -5877,14 +5877,14 @@ GDK emulates this clipboard locally.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1039">the primary clipboard</doc>
+               line="1038">the primary clipboard</doc>
           <type name="Clipboard" c:type="GdkClipboard*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1032">a `GdkDisplay`</doc>
+                 line="1031">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5892,13 +5892,13 @@ GDK emulates this clipboard locally.</doc>
       <method name="get_setting" c:identifier="gdk_display_get_setting">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2108">Retrieves a desktop-wide setting such as double-click time
+             line="2107">Retrieves a desktop-wide setting such as double-click time
 for the @display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="133"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2117">%TRUE if the setting existed and a value was stored
+               line="2116">%TRUE if the setting existed and a value was stored
   in @value, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -5906,19 +5906,19 @@ for the @display.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2110">a `GdkDisplay`</doc>
+                 line="2109">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2111">the name of the setting</doc>
+                 line="2110">the name of the setting</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2112">location to store the value of the setting</doc>
+                 line="2111">location to store the value of the setting</doc>
             <type name="GObject.Value" c:type="GValue*"/>
           </parameter>
         </parameters>
@@ -5929,20 +5929,20 @@ for the @display.</doc>
               deprecated-version="4.10">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1168">Gets the startup notification ID for a Wayland display, or %NULL
+             line="1167">Gets the startup notification ID for a Wayland display, or %NULL
 if no ID has been defined.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="88"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1175">the startup notification ID for @display</doc>
+               line="1174">the startup notification ID for @display</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1170">a `GdkDisplay`</doc>
+                 line="1169">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -5971,7 +5971,7 @@ if no ID has been defined.</doc>
         <attribute name="org.gtk.Method.get_property" value="composited"/>
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1845">Returns whether surfaces can reasonably be expected to have
+             line="1844">Returns whether surfaces can reasonably be expected to have
 their alpha channel drawn correctly on the screen.
 
 Check [method@Gdk.Display.is_rgba] for whether the display
@@ -5985,7 +5985,7 @@ On modern displays, this value is always %TRUE.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1860">Whether surfaces with RGBA visuals can reasonably
+               line="1859">Whether surfaces with RGBA visuals can reasonably
   be expected to have their alpha channels drawn correctly
   on the screen.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -5994,7 +5994,7 @@ On modern displays, this value is always %TRUE.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1847">a `GdkDisplay`</doc>
+                 line="1846">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6003,7 +6003,7 @@ On modern displays, this value is always %TRUE.</doc>
         <attribute name="org.gtk.Method.get_property" value="rgba"/>
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1890">Returns whether surfaces on this @display are created with an
+             line="1889">Returns whether surfaces on this @display are created with an
 alpha channel.
 
 Even if a %TRUE is returned, it is possible that the
@@ -6018,7 +6018,7 @@ On modern displays, this value is always %TRUE.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1906">%TRUE if surfaces are created with an alpha channel or
+               line="1905">%TRUE if surfaces are created with an alpha channel or
   %FALSE if the display does not support this functionality.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -6026,7 +6026,7 @@ On modern displays, this value is always %TRUE.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1892">a `GdkDisplay`</doc>
+                 line="1891">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6034,12 +6034,12 @@ On modern displays, this value is always %TRUE.</doc>
       <method name="list_seats" c:identifier="gdk_display_list_seats">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2004">Returns the list of seats known to @display.</doc>
+             line="2003">Returns the list of seats known to @display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="97"/>
         <return-value transfer-ownership="container">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2010">the
+               line="2009">the
   list of seats known to the `GdkDisplay`</doc>
           <type name="GLib.List" c:type="GList*">
             <type name="Seat"/>
@@ -6049,7 +6049,7 @@ On modern displays, this value is always %TRUE.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2006">a `GdkDisplay`</doc>
+                 line="2005">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6057,7 +6057,7 @@ On modern displays, this value is always %TRUE.</doc>
       <method name="map_keycode" c:identifier="gdk_display_map_keycode">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2200">Returns the keyvals bound to @keycode.
+             line="2199">Returns the keyvals bound to @keycode.
 
 The Nth `GdkKeymapKey` in @keys is bound to the Nth keyval in @keyvals.
 
@@ -6070,20 +6070,20 @@ Free the returned arrays with g_free().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2220">%TRUE if there were any entries</doc>
+               line="2219">%TRUE if there were any entries</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2202">a `GdkDisplay`</doc>
+                 line="2201">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="keycode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2203">a keycode</doc>
+                 line="2202">a keycode</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="keys"
@@ -6094,7 +6094,7 @@ Free the returned arrays with g_free().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2204">return
+                 line="2203">return
   location for array of `GdkKeymapKey`</doc>
             <array length="3" zero-terminated="0" c:type="GdkKeymapKey**">
               <type name="KeymapKey" c:type="GdkKeymapKey*"/>
@@ -6108,7 +6108,7 @@ Free the returned arrays with g_free().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2206">return
+                 line="2205">return
   location for array of keyvals</doc>
             <array length="3" zero-terminated="0" c:type="guint**">
               <type name="guint" c:type="guint*"/>
@@ -6120,7 +6120,7 @@ Free the returned arrays with g_free().</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2208">length of @keys and @keyvals</doc>
+                 line="2207">length of @keys and @keyvals</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -6128,7 +6128,7 @@ Free the returned arrays with g_free().</doc>
       <method name="map_keyval" c:identifier="gdk_display_map_keyval">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2162">Obtains a list of keycode/group/level combinations that will
+             line="2161">Obtains a list of keycode/group/level combinations that will
 generate @keyval.
 
 Groups and levels are two kinds of keyboard mode; in general, the level
@@ -6147,20 +6147,20 @@ The returned array should be freed with g_free().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2186">%TRUE if keys were found and returned</doc>
+               line="2185">%TRUE if keys were found and returned</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2164">a `GdkDisplay`</doc>
+                 line="2163">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="keyval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2165">a keyval, such as %GDK_KEY_a, %GDK_KEY_Up, %GDK_KEY_Return, etc.</doc>
+                 line="2164">a keyval, such as %GDK_KEY_a, %GDK_KEY_Up, %GDK_KEY_Return, etc.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="keys"
@@ -6169,7 +6169,7 @@ The returned array should be freed with g_free().</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2166">return location
+                 line="2165">return location
   for an array of `GdkKeymapKey`</doc>
             <array length="2" zero-terminated="0" c:type="GdkKeymapKey**">
               <type name="KeymapKey" c:type="GdkKeymapKey*"/>
@@ -6181,7 +6181,7 @@ The returned array should be freed with g_free().</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2168">return location for number of elements in returned array</doc>
+                 line="2167">return location for number of elements in returned array</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -6192,7 +6192,7 @@ The returned array should be freed with g_free().</doc>
               deprecated-version="4.10">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1143">Indicates to the GUI environment that the application has
+             line="1142">Indicates to the GUI environment that the application has
 finished loading, using a given identifier.
 
 GTK will call this function automatically for [class@Gtk.Window]
@@ -6208,13 +6208,13 @@ is called to disable that feature.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1145">a `GdkDisplay`</doc>
+                 line="1144">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="startup_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1146">a startup-notification identifier, for which
+                 line="1145">a startup-notification identifier, for which
   notification process should be completed</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
@@ -6226,7 +6226,7 @@ is called to disable that feature.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1306">Checks that OpenGL is available for @self and ensures that it is
+             line="1305">Checks that OpenGL is available for @self and ensures that it is
 properly initialized.
 When this fails, an @error will be set describing the error and this
 function returns %FALSE.
@@ -6244,14 +6244,14 @@ might make use of OpenGL.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1326">%TRUE if the display supports OpenGL</doc>
+               line="1325">%TRUE if the display supports OpenGL</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1308">a `GdkDisplay`</doc>
+                 line="1307">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6262,8 +6262,7 @@ might make use of OpenGL.</doc>
               deprecated-version="4.10">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="471">Appends the given event onto the front of the event
-queue for @display.</doc>
+             line="471">Adds the given event to the event queue for @display.</doc>
         <doc-deprecated xml:space="preserve">This function is only useful in very
 special situations and should not be used by applications.</doc-deprecated>
         <source-position filename="gdk/gdkdisplay.h" line="106"/>
@@ -6290,7 +6289,7 @@ special situations and should not be used by applications.</doc-deprecated>
         <attribute name="org.gtk.Method.get_property" value="input-shapes"/>
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1052">Returns %TRUE if the display supports input shapes.
+             line="1051">Returns %TRUE if the display supports input shapes.
 
 This means that [method@Gdk.Surface.set_input_region] can
 be used to modify the input shape of surfaces on @display.
@@ -6300,14 +6299,14 @@ On modern displays, this value is always %TRUE.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1063">%TRUE if surfaces with modified input shape are supported</doc>
+               line="1062">%TRUE if surfaces with modified input shape are supported</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1054">a `GdkDisplay`</doc>
+                 line="1053">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6315,7 +6314,7 @@ On modern displays, this value is always %TRUE.</doc>
       <method name="sync" c:identifier="gdk_display_sync">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="965">Flushes any requests queued for the windowing system and waits until all
+             line="964">Flushes any requests queued for the windowing system and waits until all
 requests have been handled.
 
 This is often used for making sure that the display is synchronized
@@ -6333,7 +6332,7 @@ handled synchronously, this function will do nothing.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="967">a `GdkDisplay`</doc>
+                 line="966">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6341,7 +6340,7 @@ handled synchronously, this function will do nothing.</doc>
       <method name="translate_key" c:identifier="gdk_display_translate_key">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2236">Translates the contents of a `GdkEventKey` into a keyval, effective group,
+             line="2235">Translates the contents of a `GdkEventKey` into a keyval, effective group,
 and level.
 
 Modifiers that affected the translation and are thus unavailable for
@@ -6364,32 +6363,32 @@ virtualized test environments.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2268">%TRUE if there was a keyval bound to keycode/state/group.</doc>
+               line="2267">%TRUE if there was a keyval bound to keycode/state/group.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2238">a `GdkDisplay`</doc>
+                 line="2237">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="keycode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2239">a keycode</doc>
+                 line="2238">a keycode</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="state" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2240">a modifier state</doc>
+                 line="2239">a modifier state</doc>
             <type name="ModifierType" c:type="GdkModifierType"/>
           </parameter>
           <parameter name="group" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2241">active keyboard group</doc>
+                 line="2240">active keyboard group</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="keyval"
@@ -6400,7 +6399,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2242">return location for keyval</doc>
+                 line="2241">return location for keyval</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
           <parameter name="effective_group"
@@ -6411,7 +6410,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2243">return location for effective group</doc>
+                 line="2242">return location for effective group</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
           <parameter name="level"
@@ -6422,7 +6421,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2244">return location for level</doc>
+                 line="2243">return location for level</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
           <parameter name="consumed"
@@ -6433,7 +6432,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2245">return location for modifiers that were used
+                 line="2244">return location for modifiers that were used
   to determine the group or level</doc>
             <type name="ModifierType" c:type="GdkModifierType*"/>
           </parameter>
@@ -24895,7 +24894,7 @@ a pad event.</doc>
                glib:type-struct="PaintableInterface">
       <doc xml:space="preserve"
            filename="gdk/gdkpaintable.c"
-           line="35">`GdkPaintable` is a simple interface used by GTK to represent content that
+           line="38">`GdkPaintable` is a simple interface used by GTK to represent content that
 can be painted.
 
 The content of a `GdkPaintable` can be painted anywhere at any size
@@ -24944,7 +24943,7 @@ useful for implementing subclasses and should not be used by applications:
       <function name="new_empty" c:identifier="gdk_paintable_new_empty">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="671">Returns a paintable that has the given intrinsic size and draws nothing.
+             line="674">Returns a paintable that has the given intrinsic size and draws nothing.
 
 This is often useful for implementing the
 [vfunc@Gdk.Paintable.get_current_image] virtual function
@@ -24954,20 +24953,20 @@ when the paintable is in an incomplete state (like a
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="683">a `GdkPaintable`</doc>
+               line="686">a `GdkPaintable`</doc>
           <type name="Paintable" c:type="GdkPaintable*"/>
         </return-value>
         <parameters>
           <parameter name="intrinsic_width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="673">The intrinsic width to report. Can be 0 for no width.</doc>
+                 line="676">The intrinsic width to report. Can be 0 for no width.</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="intrinsic_height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="674">The intrinsic height to report. Can be 0 for no height.</doc>
+                 line="677">The intrinsic height to report. Can be 0 for no height.</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -24975,7 +24974,7 @@ when the paintable is in an incomplete state (like a
       <virtual-method name="get_current_image" invoker="get_current_image">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="263">Gets an immutable paintable for the current contents displayed by @paintable.
+             line="266">Gets an immutable paintable for the current contents displayed by @paintable.
 
 This is useful when you want to retain the current state of an animation,
 for example to take a screenshot of a running animation.
@@ -24985,7 +24984,7 @@ If the @paintable is already immutable, it will return itself.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="274">An immutable paintable for the current
+               line="277">An immutable paintable for the current
   contents of @paintable</doc>
           <type name="Paintable" c:type="GdkPaintable*"/>
         </return-value>
@@ -24993,7 +24992,7 @@ If the @paintable is already immutable, it will return itself.</doc>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="265">a `GdkPaintable`</doc>
+                 line="268">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25001,7 +25000,7 @@ If the @paintable is already immutable, it will return itself.</doc>
       <virtual-method name="get_flags" invoker="get_flags">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="291">Get flags for the paintable.
+             line="294">Get flags for the paintable.
 
 This is oftentimes useful for optimizations.
 
@@ -25010,14 +25009,14 @@ See [flags@Gdk.PaintableFlags] for the flags and what they mean.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="301">The `GdkPaintableFlags` for this paintable</doc>
+               line="304">The `GdkPaintableFlags` for this paintable</doc>
           <type name="PaintableFlags" c:type="GdkPaintableFlags"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="293">a `GdkPaintable`</doc>
+                 line="296">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25026,7 +25025,7 @@ See [flags@Gdk.PaintableFlags] for the flags and what they mean.</doc>
                       invoker="get_intrinsic_aspect_ratio">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="370">Gets the preferred aspect ratio the @paintable would like to be displayed at.
+             line="373">Gets the preferred aspect ratio the @paintable would like to be displayed at.
 
 The aspect ratio is the width divided by the height, so a value of 0.5
 means that the @paintable prefers to be displayed twice as high as it
@@ -25047,14 +25046,14 @@ it returns 0. Negative values are never returned.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="392">the intrinsic aspect ratio of @paintable or 0 if none.</doc>
+               line="395">the intrinsic aspect ratio of @paintable or 0 if none.</doc>
           <type name="gdouble" c:type="double"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="372">a `GdkPaintable`</doc>
+                 line="375">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25063,7 +25062,7 @@ it returns 0. Negative values are never returned.</doc>
                       invoker="get_intrinsic_height">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="342">Gets the preferred height the @paintable would like to be displayed at.
+             line="345">Gets the preferred height the @paintable would like to be displayed at.
 
 Consumers of this interface can use this to reserve enough space to draw
 the paintable.
@@ -25077,14 +25076,14 @@ Negative values are never returned.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="357">the intrinsic height of @paintable or 0 if none.</doc>
+               line="360">the intrinsic height of @paintable or 0 if none.</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="344">a `GdkPaintable`</doc>
+                 line="347">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25092,7 +25091,7 @@ Negative values are never returned.</doc>
       <virtual-method name="get_intrinsic_width" invoker="get_intrinsic_width">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="314">Gets the preferred width the @paintable would like to be displayed at.
+             line="317">Gets the preferred width the @paintable would like to be displayed at.
 
 Consumers of this interface can use this to reserve enough space to draw
 the paintable.
@@ -25106,14 +25105,14 @@ Negative values are never returned.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="329">the intrinsic width of @paintable or 0 if none.</doc>
+               line="332">the intrinsic width of @paintable or 0 if none.</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="316">a `GdkPaintable`</doc>
+                 line="319">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25121,7 +25120,7 @@ Negative values are never returned.</doc>
       <virtual-method name="snapshot" invoker="snapshot">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="221">Snapshots the given paintable with the given @width and @height.
+             line="224">Snapshots the given paintable with the given @width and @height.
 
 The paintable is drawn at the current (0,0) offset of the @snapshot.
 If @width and @height are not larger than zero, this function will
@@ -25134,25 +25133,25 @@ do nothing.</doc>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="223">a `GdkPaintable`</doc>
+                 line="226">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
           <parameter name="snapshot" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="224">a `GdkSnapshot` to snapshot to</doc>
+                 line="227">a `GdkSnapshot` to snapshot to</doc>
             <type name="Snapshot" c:type="GdkSnapshot*"/>
           </parameter>
           <parameter name="width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="225">width to snapshot in</doc>
+                 line="228">width to snapshot in</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="226">height to snapshot in</doc>
+                 line="229">height to snapshot in</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
         </parameters>
@@ -25161,7 +25160,7 @@ do nothing.</doc>
               c:identifier="gdk_paintable_compute_concrete_size">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="453">Compute a concrete size for the `GdkPaintable`.
+             line="456">Compute a concrete size for the `GdkPaintable`.
 
 Applies the sizing algorithm outlined in the
 [CSS Image spec](https://drafts.csswg.org/css-images-3/#default-sizing)
@@ -25179,34 +25178,34 @@ other dimension when only one dimension is given.</doc>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="455">a `GdkPaintable`</doc>
+                 line="458">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
           <parameter name="specified_width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="456">the width @paintable could be drawn into or
+                 line="459">the width @paintable could be drawn into or
   0.0 if unknown</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="specified_height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="458">the height @paintable could be drawn into or
+                 line="461">the height @paintable could be drawn into or
   0.0 if unknown</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="default_width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="460">the width @paintable would be drawn into if
+                 line="463">the width @paintable would be drawn into if
   no other constraints were given</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="default_height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="462">the height @paintable would be drawn into if
+                 line="465">the height @paintable would be drawn into if
   no other constraints were given</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
@@ -25216,7 +25215,7 @@ other dimension when only one dimension is given.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="464">will be set to the concrete width computed</doc>
+                 line="467">will be set to the concrete width computed</doc>
             <type name="gdouble" c:type="double*"/>
           </parameter>
           <parameter name="concrete_height"
@@ -25225,7 +25224,7 @@ other dimension when only one dimension is given.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="465">will be set to the concrete height computed</doc>
+                 line="468">will be set to the concrete height computed</doc>
             <type name="gdouble" c:type="double*"/>
           </parameter>
         </parameters>
@@ -25234,7 +25233,7 @@ other dimension when only one dimension is given.</doc>
               c:identifier="gdk_paintable_get_current_image">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="263">Gets an immutable paintable for the current contents displayed by @paintable.
+             line="266">Gets an immutable paintable for the current contents displayed by @paintable.
 
 This is useful when you want to retain the current state of an animation,
 for example to take a screenshot of a running animation.
@@ -25244,7 +25243,7 @@ If the @paintable is already immutable, it will return itself.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="274">An immutable paintable for the current
+               line="277">An immutable paintable for the current
   contents of @paintable</doc>
           <type name="Paintable" c:type="GdkPaintable*"/>
         </return-value>
@@ -25252,7 +25251,7 @@ If the @paintable is already immutable, it will return itself.</doc>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="265">a `GdkPaintable`</doc>
+                 line="268">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25260,7 +25259,7 @@ If the @paintable is already immutable, it will return itself.</doc>
       <method name="get_flags" c:identifier="gdk_paintable_get_flags">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="291">Get flags for the paintable.
+             line="294">Get flags for the paintable.
 
 This is oftentimes useful for optimizations.
 
@@ -25269,14 +25268,14 @@ See [flags@Gdk.PaintableFlags] for the flags and what they mean.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="301">The `GdkPaintableFlags` for this paintable</doc>
+               line="304">The `GdkPaintableFlags` for this paintable</doc>
           <type name="PaintableFlags" c:type="GdkPaintableFlags"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="293">a `GdkPaintable`</doc>
+                 line="296">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25285,7 +25284,7 @@ See [flags@Gdk.PaintableFlags] for the flags and what they mean.</doc>
               c:identifier="gdk_paintable_get_intrinsic_aspect_ratio">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="370">Gets the preferred aspect ratio the @paintable would like to be displayed at.
+             line="373">Gets the preferred aspect ratio the @paintable would like to be displayed at.
 
 The aspect ratio is the width divided by the height, so a value of 0.5
 means that the @paintable prefers to be displayed twice as high as it
@@ -25306,14 +25305,14 @@ it returns 0. Negative values are never returned.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="392">the intrinsic aspect ratio of @paintable or 0 if none.</doc>
+               line="395">the intrinsic aspect ratio of @paintable or 0 if none.</doc>
           <type name="gdouble" c:type="double"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="372">a `GdkPaintable`</doc>
+                 line="375">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25322,7 +25321,7 @@ it returns 0. Negative values are never returned.</doc>
               c:identifier="gdk_paintable_get_intrinsic_height">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="342">Gets the preferred height the @paintable would like to be displayed at.
+             line="345">Gets the preferred height the @paintable would like to be displayed at.
 
 Consumers of this interface can use this to reserve enough space to draw
 the paintable.
@@ -25336,14 +25335,14 @@ Negative values are never returned.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="357">the intrinsic height of @paintable or 0 if none.</doc>
+               line="360">the intrinsic height of @paintable or 0 if none.</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="344">a `GdkPaintable`</doc>
+                 line="347">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25352,7 +25351,7 @@ Negative values are never returned.</doc>
               c:identifier="gdk_paintable_get_intrinsic_width">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="314">Gets the preferred width the @paintable would like to be displayed at.
+             line="317">Gets the preferred width the @paintable would like to be displayed at.
 
 Consumers of this interface can use this to reserve enough space to draw
 the paintable.
@@ -25366,14 +25365,14 @@ Negative values are never returned.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="329">the intrinsic width of @paintable or 0 if none.</doc>
+               line="332">the intrinsic width of @paintable or 0 if none.</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="316">a `GdkPaintable`</doc>
+                 line="319">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25382,7 +25381,7 @@ Negative values are never returned.</doc>
               c:identifier="gdk_paintable_invalidate_contents">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="405">Called by implementations of `GdkPaintable` to invalidate their contents.
+             line="408">Called by implementations of `GdkPaintable` to invalidate their contents.
 
 Unless the contents are invalidated, implementations must guarantee that
 multiple calls of [method@Gdk.Paintable.snapshot] produce the same output.
@@ -25400,7 +25399,7 @@ it must not call this function.</doc>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="407">a `GdkPaintable`</doc>
+                 line="410">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25409,7 +25408,7 @@ it must not call this function.</doc>
               c:identifier="gdk_paintable_invalidate_size">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="429">Called by implementations of `GdkPaintable` to invalidate their size.
+             line="432">Called by implementations of `GdkPaintable` to invalidate their size.
 
 As long as the size is not invalidated, @paintable must return the same
 values for its intrinsic width, height and aspect ratio.
@@ -25427,7 +25426,7 @@ it must not call this function.</doc>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="431">a `GdkPaintable`</doc>
+                 line="434">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
         </parameters>
@@ -25435,7 +25434,7 @@ it must not call this function.</doc>
       <method name="snapshot" c:identifier="gdk_paintable_snapshot">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="221">Snapshots the given paintable with the given @width and @height.
+             line="224">Snapshots the given paintable with the given @width and @height.
 
 The paintable is drawn at the current (0,0) offset of the @snapshot.
 If @width and @height are not larger than zero, this function will
@@ -25448,25 +25447,25 @@ do nothing.</doc>
           <instance-parameter name="paintable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="223">a `GdkPaintable`</doc>
+                 line="226">a `GdkPaintable`</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </instance-parameter>
           <parameter name="snapshot" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="224">a `GdkSnapshot` to snapshot to</doc>
+                 line="227">a `GdkSnapshot` to snapshot to</doc>
             <type name="Snapshot" c:type="GdkSnapshot*"/>
           </parameter>
           <parameter name="width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="225">width to snapshot in</doc>
+                 line="228">width to snapshot in</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="226">height to snapshot in</doc>
+                 line="229">height to snapshot in</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
         </parameters>
@@ -25474,7 +25473,7 @@ do nothing.</doc>
       <glib:signal name="invalidate-contents" when="last">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="178">Emitted when the contents of the @paintable change.
+             line="181">Emitted when the contents of the @paintable change.
 
 Examples for such an event would be videos changing to the next frame or
 the icon theme for an icon changing.</doc>
@@ -25485,7 +25484,7 @@ the icon theme for an icon changing.</doc>
       <glib:signal name="invalidate-size" when="last">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="196">Emitted when the intrinsic size of the @paintable changes.
+             line="199">Emitted when the intrinsic size of the @paintable changes.
 
 This means the values reported by at least one of
 [method@Gdk.Paintable.get_intrinsic_width],
@@ -25560,25 +25559,25 @@ that will make the implementation likely quite slow.</doc>
             <parameter name="paintable" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="223">a `GdkPaintable`</doc>
+                   line="226">a `GdkPaintable`</doc>
               <type name="Paintable" c:type="GdkPaintable*"/>
             </parameter>
             <parameter name="snapshot" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="224">a `GdkSnapshot` to snapshot to</doc>
+                   line="227">a `GdkSnapshot` to snapshot to</doc>
               <type name="Snapshot" c:type="GdkSnapshot*"/>
             </parameter>
             <parameter name="width" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="225">width to snapshot in</doc>
+                   line="228">width to snapshot in</doc>
               <type name="gdouble" c:type="double"/>
             </parameter>
             <parameter name="height" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="226">height to snapshot in</doc>
+                   line="229">height to snapshot in</doc>
               <type name="gdouble" c:type="double"/>
             </parameter>
           </parameters>
@@ -25590,7 +25589,7 @@ that will make the implementation likely quite slow.</doc>
           <return-value transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="274">An immutable paintable for the current
+                 line="277">An immutable paintable for the current
   contents of @paintable</doc>
             <type name="Paintable" c:type="GdkPaintable*"/>
           </return-value>
@@ -25598,7 +25597,7 @@ that will make the implementation likely quite slow.</doc>
             <parameter name="paintable" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="265">a `GdkPaintable`</doc>
+                   line="268">a `GdkPaintable`</doc>
               <type name="Paintable" c:type="GdkPaintable*"/>
             </parameter>
           </parameters>
@@ -25610,14 +25609,14 @@ that will make the implementation likely quite slow.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="301">The `GdkPaintableFlags` for this paintable</doc>
+                 line="304">The `GdkPaintableFlags` for this paintable</doc>
             <type name="PaintableFlags" c:type="GdkPaintableFlags"/>
           </return-value>
           <parameters>
             <parameter name="paintable" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="293">a `GdkPaintable`</doc>
+                   line="296">a `GdkPaintable`</doc>
               <type name="Paintable" c:type="GdkPaintable*"/>
             </parameter>
           </parameters>
@@ -25629,14 +25628,14 @@ that will make the implementation likely quite slow.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="329">the intrinsic width of @paintable or 0 if none.</doc>
+                 line="332">the intrinsic width of @paintable or 0 if none.</doc>
             <type name="gint" c:type="int"/>
           </return-value>
           <parameters>
             <parameter name="paintable" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="316">a `GdkPaintable`</doc>
+                   line="319">a `GdkPaintable`</doc>
               <type name="Paintable" c:type="GdkPaintable*"/>
             </parameter>
           </parameters>
@@ -25648,14 +25647,14 @@ that will make the implementation likely quite slow.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="357">the intrinsic height of @paintable or 0 if none.</doc>
+                 line="360">the intrinsic height of @paintable or 0 if none.</doc>
             <type name="gint" c:type="int"/>
           </return-value>
           <parameters>
             <parameter name="paintable" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="344">a `GdkPaintable`</doc>
+                   line="347">a `GdkPaintable`</doc>
               <type name="Paintable" c:type="GdkPaintable*"/>
             </parameter>
           </parameters>
@@ -25667,14 +25666,14 @@ that will make the implementation likely quite slow.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkpaintable.c"
-                 line="392">the intrinsic aspect ratio of @paintable or 0 if none.</doc>
+                 line="395">the intrinsic aspect ratio of @paintable or 0 if none.</doc>
             <type name="gdouble" c:type="double"/>
           </return-value>
           <parameters>
             <parameter name="paintable" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gdk/gdkpaintable.c"
-                   line="372">a `GdkPaintable`</doc>
+                   line="375">a `GdkPaintable`</doc>
               <type name="Paintable" c:type="GdkPaintable*"/>
             </parameter>
           </parameters>
@@ -28716,7 +28715,7 @@ anything about it other than increasing the reference count via
                    c:identifier="gdk_texture_new_for_pixbuf">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="379">Creates a new texture object representing the `GdkPixbuf`.
+             line="381">Creates a new texture object representing the `GdkPixbuf`.
 
 This function is threadsafe, so that you can e.g. use GTask
 and [method@Gio.Task.run_in_thread] to avoid blocking the main thread
@@ -28725,14 +28724,14 @@ while loading a big image.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="389">a new `GdkTexture`</doc>
+               line="391">a new `GdkTexture`</doc>
           <type name="Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <parameter name="pixbuf" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="381">a `GdkPixbuf`</doc>
+                 line="383">a `GdkPixbuf`</doc>
             <type name="GdkPixbuf.Pixbuf" c:type="GdkPixbuf*"/>
           </parameter>
         </parameters>
@@ -28743,7 +28742,7 @@ while loading a big image.</doc>
                    throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="554">Creates a new texture by loading an image from memory,
+             line="556">Creates a new texture by loading an image from memory,
 
 The file format is detected automatically. The supported formats
 are PNG, JPEG and TIFF, though more formats might be available.
@@ -28757,14 +28756,14 @@ while loading a big image.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="570">A newly-created `GdkTexture`</doc>
+               line="572">A newly-created `GdkTexture`</doc>
           <type name="Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <parameter name="bytes" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="556">a `GBytes` containing the data to load</doc>
+                 line="558">a `GBytes` containing the data to load</doc>
             <type name="GLib.Bytes" c:type="GBytes*"/>
           </parameter>
         </parameters>
@@ -28774,7 +28773,7 @@ while loading a big image.</doc>
                    throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="461">Creates a new texture by loading an image from a file.
+             line="463">Creates a new texture by loading an image from a file.
 
 The file format is detected automatically. The supported formats
 are PNG, JPEG and TIFF, though more formats might be available.
@@ -28788,14 +28787,14 @@ while loading a big image.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="477">A newly-created `GdkTexture`</doc>
+               line="479">A newly-created `GdkTexture`</doc>
           <type name="Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <parameter name="file" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="463">`GFile` to load</doc>
+                 line="465">`GFile` to load</doc>
             <type name="Gio.File" c:type="GFile*"/>
           </parameter>
         </parameters>
@@ -28806,7 +28805,7 @@ while loading a big image.</doc>
                    throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="600">Creates a new texture by loading an image from a file.
+             line="602">Creates a new texture by loading an image from a file.
 
 The file format is detected automatically. The supported formats
 are PNG, JPEG and TIFF, though more formats might be available.
@@ -28820,14 +28819,14 @@ while loading a big image.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="616">A newly-created `GdkTexture`</doc>
+               line="618">A newly-created `GdkTexture`</doc>
           <type name="Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="602">the filename to load</doc>
+                 line="604">the filename to load</doc>
             <type name="filename" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -28836,7 +28835,7 @@ while loading a big image.</doc>
                    c:identifier="gdk_texture_new_from_resource">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="417">Creates a new texture by loading an image from a resource.
+             line="419">Creates a new texture by loading an image from a resource.
 
 The file format is detected automatically. The supported formats
 are PNG and JPEG, though more formats might be available.
@@ -28853,14 +28852,14 @@ while loading a big image.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="435">A newly-created `GdkTexture`</doc>
+               line="437">A newly-created `GdkTexture`</doc>
           <type name="Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <parameter name="resource_path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="419">the path of the resource file</doc>
+                 line="421">the path of the resource file</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -28868,7 +28867,7 @@ while loading a big image.</doc>
       <method name="download" c:identifier="gdk_texture_download">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="744">Downloads the @texture into local memory.
+             line="746">Downloads the @texture into local memory.
 
 This may be an expensive operation, as the actual texture data
 may reside on a GPU or on a remote display server.
@@ -28898,13 +28897,13 @@ For more flexible download capabilites, see
           <instance-parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="746">a `GdkTexture`</doc>
+                 line="748">a `GdkTexture`</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="747">pointer to enough memory to be filled with the
+                 line="749">pointer to enough memory to be filled with the
   downloaded data of @texture</doc>
             <array zero-terminated="0" c:type="guchar*">
               <type name="guint8" c:type="guchar"/>
@@ -28913,7 +28912,7 @@ For more flexible download capabilites, see
           <parameter name="stride" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="749">rowstride in bytes</doc>
+                 line="751">rowstride in bytes</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -28923,7 +28922,7 @@ For more flexible download capabilites, see
               version="4.10">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="789">Gets the memory format most closely associated with the data of
+             line="791">Gets the memory format most closely associated with the data of
 the texture.
 
 Note that it may not be an exact match for texture data
@@ -28936,14 +28935,14 @@ downloading the texture.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="803">the preferred format for the texture's data</doc>
+               line="805">the preferred format for the texture's data</doc>
           <type name="MemoryFormat" c:type="GdkMemoryFormat"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="791">a GdkTexture</doc>
+                 line="793">a GdkTexture</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
         </parameters>
@@ -28954,19 +28953,19 @@ downloading the texture.</doc>
         <attribute name="org.gtk.Method.get_property" value="height"/>
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="655">Returns the height of the @texture, in pixels.</doc>
+             line="657">Returns the height of the @texture, in pixels.</doc>
         <source-position filename="gdk/gdktexture.h" line="82"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="661">the height of the `GdkTexture`</doc>
+               line="663">the height of the `GdkTexture`</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="657">a `GdkTexture`</doc>
+                 line="659">a `GdkTexture`</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
         </parameters>
@@ -28977,19 +28976,19 @@ downloading the texture.</doc>
         <attribute name="org.gtk.Method.get_property" value="width"/>
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="639">Returns the width of @texture, in pixels.</doc>
+             line="641">Returns the width of @texture, in pixels.</doc>
         <source-position filename="gdk/gdktexture.h" line="80"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="645">the width of the `GdkTexture`</doc>
+               line="647">the width of the `GdkTexture`</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="641">a `GdkTexture`</doc>
+                 line="643">a `GdkTexture`</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
         </parameters>
@@ -28997,7 +28996,7 @@ downloading the texture.</doc>
       <method name="save_to_png" c:identifier="gdk_texture_save_to_png">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="854">Store the given @texture to the @filename as a PNG file.
+             line="856">Store the given @texture to the @filename as a PNG file.
 
 This is a utility function intended for debugging and testing.
 If you want more control over formats, proper error handling or
@@ -29008,20 +29007,20 @@ gdk-pixbuf library.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="867">%TRUE if saving succeeded, %FALSE on failure.</doc>
+               line="869">%TRUE if saving succeeded, %FALSE on failure.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="856">a `GdkTexture`</doc>
+                 line="858">a `GdkTexture`</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
           <parameter name="filename" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="857">the filename to store to</doc>
+                 line="859">the filename to store to</doc>
             <type name="filename" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -29031,7 +29030,7 @@ gdk-pixbuf library.</doc>
               version="4.6">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="889">Store the given @texture in memory as a PNG file.
+             line="891">Store the given @texture in memory as a PNG file.
 
 Use [ctor@Gdk.Texture.new_from_bytes] to read it back.
 
@@ -29049,14 +29048,14 @@ instead.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="908">a newly allocated `GBytes` containing PNG data</doc>
+               line="910">a newly allocated `GBytes` containing PNG data</doc>
           <type name="GLib.Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
           <instance-parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="891">a `GdkTexture`</doc>
+                 line="893">a `GdkTexture`</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
         </parameters>
@@ -29066,27 +29065,27 @@ instead.</doc>
               version="4.6">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="920">Store the given @texture to the @filename as a TIFF file.
+             line="922">Store the given @texture to the @filename as a TIFF file.
 
 GTK will attempt to store data without loss.</doc>
         <source-position filename="gdk/gdktexture.h" line="96"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="928">%TRUE if saving succeeded, %FALSE on failure.</doc>
+               line="930">%TRUE if saving succeeded, %FALSE on failure.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="922">a `GdkTexture`</doc>
+                 line="924">a `GdkTexture`</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
           <parameter name="filename" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="923">the filename to store to</doc>
+                 line="925">the filename to store to</doc>
             <type name="filename" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -29096,7 +29095,7 @@ GTK will attempt to store data without loss.</doc>
               version="4.6">
         <doc xml:space="preserve"
              filename="gdk/gdktexture.c"
-             line="952">Store the given @texture in memory as a TIFF file.
+             line="954">Store the given @texture in memory as a TIFF file.
 
 Use [ctor@Gdk.Texture.new_from_bytes] to read it back.
 
@@ -29112,14 +29111,14 @@ use [method@Gdk.Texture.save_to_png_bytes].</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdktexture.c"
-               line="969">a newly allocated `GBytes` containing TIFF data</doc>
+               line="971">a newly allocated `GBytes` containing TIFF data</doc>
           <type name="GLib.Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
           <instance-parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdktexture.c"
-                 line="954">a `GdkTexture`</doc>
+                 line="956">a `GdkTexture`</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </instance-parameter>
         </parameters>
@@ -32184,7 +32183,7 @@ keyvals, such as %GDK_KEY_KP_Decimal.</doc>
               moved-to="Paintable.new_empty">
       <doc xml:space="preserve"
            filename="gdk/gdkpaintable.c"
-           line="671">Returns a paintable that has the given intrinsic size and draws nothing.
+           line="674">Returns a paintable that has the given intrinsic size and draws nothing.
 
 This is often useful for implementing the
 [vfunc@Gdk.Paintable.get_current_image] virtual function
@@ -32194,20 +32193,20 @@ when the paintable is in an incomplete state (like a
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gdk/gdkpaintable.c"
-             line="683">a `GdkPaintable`</doc>
+             line="686">a `GdkPaintable`</doc>
         <type name="Paintable" c:type="GdkPaintable*"/>
       </return-value>
       <parameters>
         <parameter name="intrinsic_width" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="673">The intrinsic width to report. Can be 0 for no width.</doc>
+               line="676">The intrinsic width to report. Can be 0 for no width.</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="intrinsic_height" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkpaintable.c"
-               line="674">The intrinsic height to report. Can be 0 for no height.</doc>
+               line="677">The intrinsic height to report. Can be 0 for no height.</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
