@@ -1846,7 +1846,7 @@ sent before pushing the buffer.</doc>
       <method name="get_allocator" c:identifier="gst_aggregator_get_allocator">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3818">Lets #GstAggregator sub-classes get the memory @allocator
+             line="3821">Lets #GstAggregator sub-classes get the memory @allocator
 acquired by the base class and its @params.
 
 Unref the @allocator after use it.</doc>
@@ -1858,7 +1858,7 @@ Unref the @allocator after use it.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3820">a #GstAggregator</doc>
+                 line="3823">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="allocator"
@@ -1870,7 +1870,7 @@ Unref the @allocator after use it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3821">the #GstAllocator
+                 line="3824">the #GstAllocator
 used</doc>
             <type name="Gst.Allocator" c:type="GstAllocator**"/>
           </parameter>
@@ -1882,7 +1882,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3823">the
+                 line="3826">the
 #GstAllocationParams of @allocator</doc>
             <type name="Gst.AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
@@ -1894,7 +1894,7 @@ used</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3799">the instance of the #GstBufferPool used
+               line="3802">the instance of the #GstBufferPool used
 by @trans; free it after use it</doc>
           <type name="Gst.BufferPool" c:type="GstBufferPool*"/>
         </return-value>
@@ -1902,7 +1902,7 @@ by @trans; free it after use it</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3797">a #GstAggregator</doc>
+                 line="3800">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -1912,13 +1912,13 @@ by @trans; free it after use it</doc>
               version="1.22">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3991">Subclasses may use the return value to inform whether they should return
+             line="3994">Subclasses may use the return value to inform whether they should return
 %GST_FLOW_EOS from their aggregate implementation.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="438"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3997">whether live status was forced on @self.</doc>
+               line="4000">whether live status was forced on @self.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -1934,7 +1934,7 @@ by @trans; free it after use it</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3974">whether inactive pads will not be waited on</doc>
+               line="3977">whether inactive pads will not be waited on</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -1948,7 +1948,7 @@ by @trans; free it after use it</doc>
               glib:get-property="latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2246">Retrieves the latency values reported by @self in response to the latency
+             line="2249">Retrieves the latency values reported by @self in response to the latency
 query, or %GST_CLOCK_TIME_NONE if there is not live source connected and the element
 will not wait for the clock.
 
@@ -1957,14 +1957,14 @@ Typically only called by subclasses.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="2256">The latency or %GST_CLOCK_TIME_NONE if the element does not sync</doc>
+               line="2259">The latency or %GST_CLOCK_TIME_NONE if the element does not sync</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2248">a #GstAggregator</doc>
+                 line="2251">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -2026,7 +2026,7 @@ control aggregating parameters for a given set of input samples.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3912">Subclasses should call this when they have prepared the
+             line="3915">Subclasses should call this when they have prepared the
 buffers they will aggregate for each of their sink pads, but
 before using any of the properties of the pads that govern
 *how* aggregation should be performed, for example z-index
@@ -2048,19 +2048,19 @@ function.</doc>
           <parameter name="pts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3914">The presentation timestamp of the next output buffer</doc>
+                 line="3917">The presentation timestamp of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="dts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3915">The decoding timestamp of the next output buffer</doc>
+                 line="3918">The decoding timestamp of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3916">The duration of the next output buffer</doc>
+                 line="3919">The duration of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="info"
@@ -2069,7 +2069,7 @@ function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3917">a #GstStructure containing additional information</doc>
+                 line="3920">a #GstStructure containing additional information</doc>
             <type name="Gst.Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -2079,7 +2079,7 @@ function.</doc>
               version="1.22">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="4007">Subclasses should call this at construction time in order for @self to
+             line="4010">Subclasses should call this at construction time in order for @self to
 aggregate on a timeout even when no live source is connected.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="441"/>
         <return-value transfer-ownership="none">
@@ -2099,7 +2099,7 @@ aggregate on a timeout even when no live source is connected.</doc>
               version="1.20">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3948">Subclasses should call this when they don't want to time out
+             line="3951">Subclasses should call this when they don't want to time out
 waiting for a pad that hasn't yet received any buffers in live
 mode.
 
@@ -2116,7 +2116,7 @@ sure upstream has had a fair chance to start up.</doc>
           <parameter name="ignore" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3950">whether inactive pads should not be waited on</doc>
+                 line="3953">whether inactive pads should not be waited on</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -2126,7 +2126,7 @@ sure upstream has had a fair chance to start up.</doc>
               glib:set-property="latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3751">Lets #GstAggregator sub-classes tell the baseclass what their internal
+             line="3754">Lets #GstAggregator sub-classes tell the baseclass what their internal
 latency is. Will also post a LATENCY message on the bus so the pipeline
 can reconfigure its global latency if the values changed.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="394"/>
@@ -2137,19 +2137,19 @@ can reconfigure its global latency if the values changed.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3753">a #GstAggregator</doc>
+                 line="3756">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="min_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3754">minimum latency</doc>
+                 line="3757">minimum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="max_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3755">maximum latency</doc>
+                 line="3758">maximum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -2182,7 +2182,7 @@ can reconfigure its global latency if the values changed.</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3845">This is a simple #GstAggregatorClass::get_next_time implementation that
+             line="3848">This is a simple #GstAggregatorClass::get_next_time implementation that
 just looks at the #GstSegment on the srcpad of the aggregator and bases
 the next time on the running time there.
 
@@ -2192,14 +2192,14 @@ and you have a dead line based aggregator subclass.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3856">The running time based on the position</doc>
+               line="3859">The running time based on the position</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3847">A #GstAggregator</doc>
+                 line="3850">A #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -2209,7 +2209,7 @@ and you have a dead line based aggregator subclass.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3882">Subclasses should use this to update the segment on their
+             line="3885">Subclasses should use this to update the segment on their
 source pad, instead of directly pushing new segment events
 downstream.
 
@@ -2235,7 +2235,7 @@ if it is used at all.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2915">Enables the emission of signals such as #GstAggregator::samples-selected</doc>
+             line="2918">Enables the emission of signals such as #GstAggregator::samples-selected</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="latency"
@@ -2253,7 +2253,7 @@ if it is used at all.</doc>
                 default-value="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2881">Force minimum upstream latency (in nanoseconds). When sources with a
+             line="2884">Force minimum upstream latency (in nanoseconds). When sources with a
 higher latency are expected to be plugged in dynamically after the
 aggregator has started playing, this allows overriding the minimum
 latency reported by the initial source(s). This is only taken into
@@ -2292,7 +2292,7 @@ account when larger than the actually reported minimum latency.</doc>
       <glib:signal name="samples-selected" when="first" version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2927">Signals that the #GstAggregator subclass has selected the next set
+             line="2930">Signals that the #GstAggregator subclass has selected the next set
 of input samples it will aggregate. Handlers may call
 gst_aggregator_peek_next_sample() at that point.</doc>
         <return-value transfer-ownership="none">
@@ -2302,25 +2302,25 @@ gst_aggregator_peek_next_sample() at that point.</doc>
           <parameter name="segment" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2930">The #GstSegment the next output buffer is part of</doc>
+                 line="2933">The #GstSegment the next output buffer is part of</doc>
             <type name="Gst.Segment"/>
           </parameter>
           <parameter name="pts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2931">The presentation timestamp of the next output buffer</doc>
+                 line="2934">The presentation timestamp of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="dts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2932">The decoding timestamp of the next output buffer</doc>
+                 line="2935">The decoding timestamp of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2933">The duration of the next output buffer</doc>
+                 line="2936">The duration of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="info"
@@ -2329,7 +2329,7 @@ gst_aggregator_peek_next_sample() at that point.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2934">a #GstStructure containing additional information</doc>
+                 line="2937">a #GstStructure containing additional information</doc>
             <type name="Gst.Structure"/>
           </parameter>
         </parameters>
@@ -2846,19 +2846,19 @@ This class used to live in gst-plugins-bad and was moved to core.</doc>
       <method name="drop_buffer" c:identifier="gst_aggregator_pad_drop_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3575">Drop the buffer currently queued in @pad.</doc>
+             line="3578">Drop the buffer currently queued in @pad.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="116"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3581">TRUE if there was a buffer queued in @pad, or FALSE if not.</doc>
+               line="3584">TRUE if there was a buffer queued in @pad, or FALSE if not.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3577">the pad where to drop any pending buffer</doc>
+                 line="3580">the pad where to drop any pending buffer</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2868,21 +2868,21 @@ This class used to live in gst-plugins-bad and was moved to core.</doc>
               version="1.14.1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3634">This checks if a pad has a buffer available that will be returned by
+             line="3637">This checks if a pad has a buffer available that will be returned by
 a call to gst_aggregator_pad_peek_buffer() or
 gst_aggregator_pad_pop_buffer().</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="119"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3642">%TRUE if the pad has a buffer available as the next thing.</doc>
+               line="3645">%TRUE if the pad has a buffer available as the next thing.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3636">the pad to check the buffer on</doc>
+                 line="3639">the pad to check the buffer on</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2892,14 +2892,14 @@ gst_aggregator_pad_pop_buffer().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3670">%TRUE if the pad is EOS, otherwise %FALSE.</doc>
+               line="3673">%TRUE if the pad is EOS, otherwise %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3668">an aggregator pad</doc>
+                 line="3671">an aggregator pad</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2909,12 +2909,12 @@ gst_aggregator_pad_pop_buffer().</doc>
               version="1.20">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3684">It is only valid to call this method from #GstAggregatorClass::aggregate()</doc>
+             line="3687">It is only valid to call this method from #GstAggregatorClass::aggregate()</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="125"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3690">%TRUE if the pad is inactive, %FALSE otherwise.
+               line="3693">%TRUE if the pad is inactive, %FALSE otherwise.
   See gst_aggregator_ignore_inactive_pads() for more info.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -2922,7 +2922,7 @@ gst_aggregator_pad_pop_buffer().</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3686">an aggregator pad</doc>
+                 line="3689">an aggregator pad</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2932,7 +2932,7 @@ gst_aggregator_pad_pop_buffer().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3601">A reference to the buffer in @pad or
+               line="3604">A reference to the buffer in @pad or
 NULL if no buffer was queued. You should unref the buffer after
 usage.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
@@ -2941,7 +2941,7 @@ usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3599">the pad to get buffer from</doc>
+                 line="3602">the pad to get buffer from</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2949,12 +2949,12 @@ usage.</doc>
       <method name="pop_buffer" c:identifier="gst_aggregator_pad_pop_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3517">Steal the ref to the buffer currently queued in @pad.</doc>
+             line="3520">Steal the ref to the buffer currently queued in @pad.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="110"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3523">The buffer in @pad or NULL if no buffer was
+               line="3526">The buffer in @pad or NULL if no buffer was
   queued. You should unref the buffer after usage.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </return-value>
@@ -2962,7 +2962,7 @@ usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3519">the pad to get buffer from</doc>
+                 line="3522">the pad to get buffer from</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -2974,7 +2974,7 @@ usage.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3428">Enables the emission of signals such as #GstAggregatorPad::buffer-consumed</doc>
+             line="3431">Enables the emission of signals such as #GstAggregatorPad::buffer-consumed</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <field name="parent">
