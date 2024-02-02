@@ -2793,19 +2793,19 @@ for re-use. (Since: 1.6)</doc>
       <constructor name="new" c:identifier="gst_buffer_new">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="867">Creates a newly allocated buffer without any data.</doc>
+             line="851">Creates a newly allocated buffer without any data.</doc>
         <source-position filename="gst/gstbuffer.h" line="308"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="872">the new #GstBuffer.</doc>
+               line="856">the new #GstBuffer.</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
       </constructor>
       <constructor name="new_allocate" c:identifier="gst_buffer_new_allocate">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="887">Tries to create a newly allocated buffer with data of the given size and
+             line="871">Tries to create a newly allocated buffer with data of the given size and
 extra parameters from @allocator. If the requested amount of memory can't be
 allocated, %NULL will be returned. The allocated buffer memory is not cleared.
 
@@ -2816,7 +2816,7 @@ Note that when @size == 0, the buffer will not have memory associated with it.</
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="902">a new #GstBuffer</doc>
+               line="886">a new #GstBuffer</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
@@ -2826,14 +2826,14 @@ Note that when @size == 0, the buffer will not have memory associated with it.</
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="889">the #GstAllocator to use, or %NULL to use the
+                 line="873">the #GstAllocator to use, or %NULL to use the
     default allocator</doc>
             <type name="Allocator" c:type="GstAllocator*"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="891">the size in bytes of the new buffer's data.</doc>
+                 line="875">the size in bytes of the new buffer's data.</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="params"
@@ -2842,7 +2842,7 @@ Note that when @size == 0, the buffer will not have memory associated with it.</
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="892">optional parameters</doc>
+                 line="876">optional parameters</doc>
             <type name="AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
         </parameters>
@@ -2852,19 +2852,19 @@ Note that when @size == 0, the buffer will not have memory associated with it.</
                    version="1.20">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1071">Creates a new buffer of size @size and fills it with a copy of @data.</doc>
+             line="1055">Creates a new buffer of size @size and fills it with a copy of @data.</doc>
         <source-position filename="gst/gstbuffer.h" line="324"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1078">a new #GstBuffer</doc>
+               line="1062">a new #GstBuffer</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1073">data to copy into new buffer</doc>
+                 line="1057">data to copy into new buffer</doc>
             <array length="1" zero-terminated="0" c:type="gconstpointer">
               <type name="guint8"/>
             </array>
@@ -2872,7 +2872,7 @@ Note that when @size == 0, the buffer will not have memory associated with it.</
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1074">size of @data in bytes</doc>
+                 line="1058">size of @data in bytes</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -2880,20 +2880,20 @@ Note that when @size == 0, the buffer will not have memory associated with it.</
       <constructor name="new_wrapped" c:identifier="gst_buffer_new_wrapped">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1030">Creates a new buffer that wraps the given @data. The memory will be freed
+             line="1014">Creates a new buffer that wraps the given @data. The memory will be freed
 with g_free() and will be marked writable.</doc>
         <source-position filename="gst/gstbuffer.h" line="318"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1038">a new #GstBuffer</doc>
+               line="1022">a new #GstBuffer</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <parameter name="data" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1032">data to wrap</doc>
+                 line="1016">data to wrap</doc>
             <array length="1" zero-terminated="0" c:type="gpointer">
               <type name="guint8"/>
             </array>
@@ -2901,7 +2901,7 @@ with g_free() and will be marked writable.</doc>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1033">allocated size of @data</doc>
+                 line="1017">allocated size of @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -2911,20 +2911,20 @@ with g_free() and will be marked writable.</doc>
                    version="1.16">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1046">Creates a new #GstBuffer that wraps the given @bytes. The data inside
+             line="1030">Creates a new #GstBuffer that wraps the given @bytes. The data inside
 @bytes cannot be %NULL and the resulting buffer will be marked as read only.</doc>
         <source-position filename="gst/gstbuffer.h" line="321"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1053">a new #GstBuffer wrapping @bytes</doc>
+               line="1037">a new #GstBuffer wrapping @bytes</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <parameter name="bytes" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1048">a #GBytes to wrap</doc>
+                 line="1032">a #GBytes to wrap</doc>
             <type name="GLib.Bytes" c:type="GBytes*"/>
           </parameter>
         </parameters>
@@ -2933,7 +2933,7 @@ with g_free() and will be marked writable.</doc>
                    c:identifier="gst_buffer_new_wrapped_full">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="990">Allocates a new buffer that wraps the given memory. @data must point to
+             line="974">Allocates a new buffer that wraps the given memory. @data must point to
 @maxsize of memory, the wrapped buffer will have the region from @offset and
 @size visible.
 
@@ -2945,20 +2945,20 @@ The prefix/padding must be filled with 0 if @flags contains
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1009">a new #GstBuffer</doc>
+               line="993">a new #GstBuffer</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="992">#GstMemoryFlags</doc>
+                 line="976">#GstMemoryFlags</doc>
             <type name="MemoryFlags" c:type="GstMemoryFlags"/>
           </parameter>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="993">data to wrap</doc>
+                 line="977">data to wrap</doc>
             <array length="4" zero-terminated="0" c:type="gpointer">
               <type name="guint8"/>
             </array>
@@ -2966,19 +2966,19 @@ The prefix/padding must be filled with 0 if @flags contains
           <parameter name="maxsize" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="994">allocated size of @data</doc>
+                 line="978">allocated size of @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="995">offset in @data</doc>
+                 line="979">offset in @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="996">size of valid data</doc>
+                 line="980">size of valid data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="user_data"
@@ -2987,7 +2987,7 @@ The prefix/padding must be filled with 0 if @flags contains
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="997">user_data</doc>
+                 line="981">user_data</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify"
@@ -2998,7 +2998,7 @@ The prefix/padding must be filled with 0 if @flags contains
                      closure="5">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="998">called with @user_data when the memory is freed</doc>
+                 line="982">called with @user_data when the memory is freed</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -3008,26 +3008,26 @@ The prefix/padding must be filled with 0 if @flags contains
               version="1.20">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2906">Creates and adds a #GstCustomMeta for the desired @name. @name must have
+             line="2890">Creates and adds a #GstCustomMeta for the desired @name. @name must have
 been successfully registered with gst_meta_register_custom().</doc>
         <source-position filename="gst/gstbuffer.h" line="650"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2914">The #GstCustomMeta that was added to the buffer</doc>
+               line="2898">The #GstCustomMeta that was added to the buffer</doc>
           <type name="CustomMeta" c:type="GstCustomMeta*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2908">a #GstBuffer</doc>
+                 line="2892">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2909">the registered name of the desired custom meta</doc>
+                 line="2893">the registered name of the desired custom meta</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -3035,25 +3035,25 @@ been successfully registered with gst_meta_register_custom().</doc>
       <method name="add_meta" c:identifier="gst_buffer_add_meta">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2302">Adds metadata for @info to @buffer using the parameters in @params.</doc>
+             line="2286">Adds metadata for @info to @buffer using the parameters in @params.</doc>
         <source-position filename="gst/gstbuffer.h" line="632"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2310">the metadata for the api in @info on @buffer.</doc>
+               line="2294">the metadata for the api in @info on @buffer.</doc>
           <type name="Meta" c:type="GstMeta*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2304">a #GstBuffer</doc>
+                 line="2288">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2305">a #GstMetaInfo</doc>
+                 line="2289">a #GstMetaInfo</doc>
             <type name="MetaInfo" c:type="const GstMetaInfo*"/>
           </parameter>
           <parameter name="params"
@@ -3062,7 +3062,7 @@ been successfully registered with gst_meta_register_custom().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2306">params for @info</doc>
+                 line="2290">params for @info</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -3072,26 +3072,26 @@ been successfully registered with gst_meta_register_custom().</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2605">Adds a #GstParentBufferMeta to @buffer that holds a reference on
+             line="2589">Adds a #GstParentBufferMeta to @buffer that holds a reference on
 @ref until the buffer is freed.</doc>
         <source-position filename="gst/gstbuffer.h" line="735"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2613">The #GstParentBufferMeta that was added to the buffer</doc>
+               line="2597">The #GstParentBufferMeta that was added to the buffer</doc>
           <type name="ParentBufferMeta" c:type="GstParentBufferMeta*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2607">a #GstBuffer</doc>
+                 line="2591">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="ref" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2608">a #GstBuffer to ref</doc>
+                 line="2592">a #GstBuffer to ref</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
         </parameters>
@@ -3132,14 +3132,14 @@ been successfully registered with gst_meta_register_custom().</doc>
               version="1.14">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2736">Adds a #GstReferenceTimestampMeta to @buffer that holds a @timestamp and
+             line="2720">Adds a #GstReferenceTimestampMeta to @buffer that holds a @timestamp and
 optionally @duration based on a specific timestamp @reference. See the
 documentation of #GstReferenceTimestampMeta for details.</doc>
         <source-position filename="gst/gstbuffer.h" line="788"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2747">The #GstReferenceTimestampMeta that was added to the buffer</doc>
+               line="2731">The #GstReferenceTimestampMeta that was added to the buffer</doc>
           <type name="ReferenceTimestampMeta"
                 c:type="GstReferenceTimestampMeta*"/>
         </return-value>
@@ -3147,25 +3147,25 @@ documentation of #GstReferenceTimestampMeta for details.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2738">a #GstBuffer</doc>
+                 line="2722">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="reference" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2739">identifier for the timestamp reference.</doc>
+                 line="2723">identifier for the timestamp reference.</doc>
             <type name="Caps" c:type="GstCaps*"/>
           </parameter>
           <parameter name="timestamp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2740">timestamp</doc>
+                 line="2724">timestamp</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2741">duration, or %GST_CLOCK_TIME_NONE</doc>
+                 line="2725">duration, or %GST_CLOCK_TIME_NONE</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -3173,13 +3173,13 @@ documentation of #GstReferenceTimestampMeta for details.</doc>
       <method name="append" c:identifier="gst_buffer_append">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2184">Appends all the memory from @buf2 to @buf1. The result buffer will contain a
+             line="2168">Appends all the memory from @buf2 to @buf1. The result buffer will contain a
 concatenation of the memory of @buf1 and @buf2.</doc>
         <source-position filename="gst/gstbuffer.h" line="599"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2192">the new #GstBuffer that contains the memory
+               line="2176">the new #GstBuffer that contains the memory
     of the two source buffers.</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
@@ -3187,13 +3187,13 @@ concatenation of the memory of @buf1 and @buf2.</doc>
           <instance-parameter name="buf1" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2186">the first source #GstBuffer to append.</doc>
+                 line="2170">the first source #GstBuffer to append.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="buf2" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2187">the second source #GstBuffer to append.</doc>
+                 line="2171">the second source #GstBuffer to append.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
         </parameters>
@@ -3201,7 +3201,7 @@ concatenation of the memory of @buf1 and @buf2.</doc>
       <method name="append_memory" c:identifier="gst_buffer_append_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1124">Appends the memory block @mem to @buffer. This function takes
+             line="1108">Appends the memory block @mem to @buffer. This function takes
 ownership of @mem and thus doesn't increase its refcount.
 
 This function is identical to gst_buffer_insert_memory() with an index of -1.
@@ -3214,13 +3214,13 @@ See gst_buffer_insert_memory() for more details.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1126">a #GstBuffer.</doc>
+                 line="1110">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="mem" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1127">a #GstMemory.</doc>
+                 line="1111">a #GstMemory.</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -3228,14 +3228,14 @@ See gst_buffer_insert_memory() for more details.</doc>
       <method name="append_region" c:identifier="gst_buffer_append_region">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2201">Appends @size bytes at @offset from @buf2 to @buf1. The result buffer will
+             line="2185">Appends @size bytes at @offset from @buf2 to @buf1. The result buffer will
 contain a concatenation of the memory of @buf1 and the requested region of
 @buf2.</doc>
         <source-position filename="gst/gstbuffer.h" line="596"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2212">the new #GstBuffer that contains the memory
+               line="2196">the new #GstBuffer that contains the memory
     of the two source buffers.</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
@@ -3243,25 +3243,25 @@ contain a concatenation of the memory of @buf1 and the requested region of
           <instance-parameter name="buf1" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2203">the first source #GstBuffer to append.</doc>
+                 line="2187">the first source #GstBuffer to append.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="buf2" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2204">the second source #GstBuffer to append.</doc>
+                 line="2188">the second source #GstBuffer to append.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2205">the offset in @buf2</doc>
+                 line="2189">the offset in @buf2</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2206">the size or -1 of @buf2</doc>
+                 line="2190">the size or -1 of @buf2</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
         </parameters>
@@ -3269,7 +3269,7 @@ contain a concatenation of the memory of @buf1 and the requested region of
       <method name="copy" c:identifier="gst_buffer_copy" introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="3019">Creates a copy of the given buffer. This will only copy the buffer's
+             line="3003">Creates a copy of the given buffer. This will only copy the buffer's
 data to a newly allocated memory if needed (if the type of memory
 requires it), otherwise the underlying data is just referenced.
 Check gst_buffer_copy_deep() if you want to force the data
@@ -3278,14 +3278,14 @@ to be copied to newly allocated memory.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="3029">a new copy of @buf if the copy succeeded, %NULL otherwise.</doc>
+               line="3013">a new copy of @buf if the copy succeeded, %NULL otherwise.</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buf" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="3021">a #GstBuffer.</doc>
+                 line="3005">a #GstBuffer.</doc>
             <type name="Buffer" c:type="const GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -3295,20 +3295,20 @@ to be copied to newly allocated memory.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="759">Creates a copy of the given buffer. This will make a newly allocated
+             line="743">Creates a copy of the given buffer. This will make a newly allocated
 copy of the data the source buffer contains.</doc>
         <source-position filename="gst/gstbuffer.h" line="476"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="766">a new copy of @buf if the copy succeeded, %NULL otherwise.</doc>
+               line="750">a new copy of @buf if the copy succeeded, %NULL otherwise.</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buf" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="761">a #GstBuffer.</doc>
+                 line="745">a #GstBuffer.</doc>
             <type name="Buffer" c:type="const GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -3365,7 +3365,7 @@ the memory from @src will be appended to @dest.
       <method name="copy_region" c:identifier="gst_buffer_copy_region">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2143">Creates a sub-buffer from @parent at @offset and @size.
+             line="2127">Creates a sub-buffer from @parent at @offset and @size.
 This sub-buffer uses the actual memory space of the parent buffer.
 This function will copy the offset and timestamp fields when the
 offset is 0. If not, they will be set to #GST_CLOCK_TIME_NONE and
@@ -3377,7 +3377,7 @@ to #GST_CLOCK_TIME_NONE and #GST_BUFFER_OFFSET_NONE.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2161">the new #GstBuffer or %NULL if copying
+               line="2145">the new #GstBuffer or %NULL if copying
     failed.</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
@@ -3385,26 +3385,26 @@ to #GST_CLOCK_TIME_NONE and #GST_BUFFER_OFFSET_NONE.</doc>
           <instance-parameter name="parent" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2145">a #GstBuffer.</doc>
+                 line="2129">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2146">the #GstBufferCopyFlags</doc>
+                 line="2130">the #GstBufferCopyFlags</doc>
             <type name="BufferCopyFlags" c:type="GstBufferCopyFlags"/>
           </parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2147">the offset into parent #GstBuffer at which the new sub-buffer
+                 line="2131">the offset into parent #GstBuffer at which the new sub-buffer
          begins.</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2149">the size of the new #GstBuffer sub-buffer, in bytes. If -1, all
+                 line="2133">the size of the new #GstBuffer sub-buffer, in bytes. If -1, all
        data is copied.</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
@@ -3413,12 +3413,12 @@ to #GST_CLOCK_TIME_NONE and #GST_BUFFER_OFFSET_NONE.</doc>
       <method name="extract" c:identifier="gst_buffer_extract">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1991">Copies @size bytes starting from @offset in @buffer to @dest.</doc>
+             line="1975">Copies @size bytes starting from @offset in @buffer to @dest.</doc>
         <source-position filename="gst/gstbuffer.h" line="383"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2001">The amount of bytes extracted. This value can be lower than @size
+               line="1985">The amount of bytes extracted. This value can be lower than @size
    when @buffer did not contain enough data.</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
@@ -3426,13 +3426,13 @@ to #GST_CLOCK_TIME_NONE and #GST_BUFFER_OFFSET_NONE.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1993">a #GstBuffer.</doc>
+                 line="1977">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1994">the offset to extract</doc>
+                 line="1978">the offset to extract</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="dest"
@@ -3441,7 +3441,7 @@ to #GST_CLOCK_TIME_NONE and #GST_BUFFER_OFFSET_NONE.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1995">
+                 line="1979">
     the destination address</doc>
             <array length="2" zero-terminated="0" c:type="gpointer">
               <type name="guint8"/>
@@ -3453,7 +3453,7 @@ to #GST_CLOCK_TIME_NONE and #GST_BUFFER_OFFSET_NONE.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1997">the size to extract</doc>
+                 line="1981">the size to extract</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -3463,7 +3463,7 @@ to #GST_CLOCK_TIME_NONE and #GST_BUFFER_OFFSET_NONE.</doc>
               version="1.0.10">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2570">Extracts a copy of at most @size bytes the data at @offset into
+             line="2554">Extracts a copy of at most @size bytes the data at @offset into
 newly-allocated memory. @dest must be freed using g_free() when done.</doc>
         <source-position filename="gst/gstbuffer.h" line="419"/>
         <return-value transfer-ownership="none">
@@ -3473,19 +3473,19 @@ newly-allocated memory. @dest must be freed using g_free() when done.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2572">a #GstBuffer</doc>
+                 line="2556">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2573">the offset to extract</doc>
+                 line="2557">the offset to extract</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2574">the size to extract</doc>
+                 line="2558">the size to extract</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="dest"
@@ -3494,7 +3494,7 @@ newly-allocated memory. @dest must be freed using g_free() when done.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2575">A pointer where
+                 line="2559">A pointer where
  the destination array will be written. Might be %NULL if the size is 0.</doc>
             <array length="3" zero-terminated="0" c:type="gpointer*">
               <type name="guint8"/>
@@ -3506,7 +3506,7 @@ newly-allocated memory. @dest must be freed using g_free() when done.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2577">A location where the size of @dest can be written</doc>
+                 line="2561">A location where the size of @dest can be written</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
         </parameters>
@@ -3514,12 +3514,12 @@ newly-allocated memory. @dest must be freed using g_free() when done.</doc>
       <method name="fill" c:identifier="gst_buffer_fill">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1939">Copies @size bytes from @src to @buffer at @offset.</doc>
+             line="1923">Copies @size bytes from @src to @buffer at @offset.</doc>
         <source-position filename="gst/gstbuffer.h" line="380"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1948">The amount of bytes copied. This value can be lower than @size
+               line="1932">The amount of bytes copied. This value can be lower than @size
    when @buffer did not contain enough data.</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
@@ -3527,19 +3527,19 @@ newly-allocated memory. @dest must be freed using g_free() when done.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1941">a #GstBuffer.</doc>
+                 line="1925">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1942">the offset to fill</doc>
+                 line="1926">the offset to fill</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="src" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1943">the source address</doc>
+                 line="1927">the source address</doc>
             <array length="2" zero-terminated="0" c:type="gconstpointer">
               <type name="guint8"/>
             </array>
@@ -3547,7 +3547,7 @@ newly-allocated memory. @dest must be freed using g_free() when done.</doc>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1944">the size to fill</doc>
+                 line="1928">the size to fill</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -3555,7 +3555,7 @@ newly-allocated memory. @dest must be freed using g_free() when done.</doc>
       <method name="find_memory" c:identifier="gst_buffer_find_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1399">Finds the memory blocks that span @size bytes starting from @offset
+             line="1383">Finds the memory blocks that span @size bytes starting from @offset
 in @buffer.
 
 When this function returns %TRUE, @idx will contain the index of the first
@@ -3569,7 +3569,7 @@ for @offset.
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1419">%TRUE when @size bytes starting from @offset could be found in
+               line="1403">%TRUE when @size bytes starting from @offset could be found in
 @buffer and @idx, @length and @skip will be filled.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -3577,19 +3577,19 @@ for @offset.
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1401">a #GstBuffer.</doc>
+                 line="1385">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1402">an offset</doc>
+                 line="1386">an offset</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1403">a size</doc>
+                 line="1387">a size</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="idx"
@@ -3598,7 +3598,7 @@ for @offset.
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1404">pointer to index</doc>
+                 line="1388">pointer to index</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
           <parameter name="length"
@@ -3607,7 +3607,7 @@ for @offset.
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1405">pointer to length</doc>
+                 line="1389">pointer to length</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
           <parameter name="skip"
@@ -3616,7 +3616,7 @@ for @offset.
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1406">pointer to skip</doc>
+                 line="1390">pointer to skip</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
         </parameters>
@@ -3624,7 +3624,7 @@ for @offset.
       <method name="foreach_meta" c:identifier="gst_buffer_foreach_meta">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2498">Calls @func with @user_data for each meta in @buffer.
+             line="2482">Calls @func with @user_data for each meta in @buffer.
 
 @func can modify the passed meta pointer or its contents. The return value
 of @func defines if this function returns or if the remaining metadata items
@@ -3633,14 +3633,14 @@ in the buffer should be skipped.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2510">%FALSE when @func returned %FALSE for one of the metadata.</doc>
+               line="2494">%FALSE when @func returned %FALSE for one of the metadata.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2500">a #GstBuffer</doc>
+                 line="2484">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="func"
@@ -3649,7 +3649,7 @@ in the buffer should be skipped.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2501">a #GstBufferForeachMetaFunc to call</doc>
+                 line="2485">a #GstBufferForeachMetaFunc to call</doc>
             <type name="BufferForeachMetaFunc"
                   c:type="GstBufferForeachMetaFunc"/>
           </parameter>
@@ -3659,7 +3659,7 @@ in the buffer should be skipped.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2502">user data passed to @func</doc>
+                 line="2486">user data passed to @func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -3667,20 +3667,20 @@ in the buffer should be skipped.</doc>
       <method name="get_all_memory" c:identifier="gst_buffer_get_all_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1234">Gets all the memory blocks in @buffer. The memory blocks will be merged
+             line="1218">Gets all the memory blocks in @buffer. The memory blocks will be merged
 into one large #GstMemory.</doc>
         <source-position filename="gst/gstbuffer.h" line="362"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1241">a #GstMemory that contains the merged memory.</doc>
+               line="1225">a #GstMemory that contains the merged memory.</doc>
           <type name="Memory" c:type="GstMemory*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1236">a #GstBuffer.</doc>
+                 line="1220">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -3690,25 +3690,25 @@ into one large #GstMemory.</doc>
               version="1.20">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2937">Finds the first #GstCustomMeta on @buffer for the desired @name.</doc>
+             line="2921">Finds the first #GstCustomMeta on @buffer for the desired @name.</doc>
         <source-position filename="gst/gstbuffer.h" line="654"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2944">the #GstCustomMeta</doc>
+               line="2928">the #GstCustomMeta</doc>
           <type name="CustomMeta" c:type="GstCustomMeta*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2939">a #GstBuffer</doc>
+                 line="2923">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2940">the registered name of the custom meta to retrieve.</doc>
+                 line="2924">the registered name of the custom meta to retrieve.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -3738,12 +3738,12 @@ into one large #GstMemory.</doc>
       <method name="get_memory" c:identifier="gst_buffer_get_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1218">Gets the memory block at index @idx in @buffer.</doc>
+             line="1202">Gets the memory block at index @idx in @buffer.</doc>
         <source-position filename="gst/gstbuffer.h" line="359"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1225">a #GstMemory that contains the data of the
+               line="1209">a #GstMemory that contains the data of the
 memory block at @idx.</doc>
           <type name="Memory" c:type="GstMemory*"/>
         </return-value>
@@ -3751,13 +3751,13 @@ memory block at @idx.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1220">a #GstBuffer.</doc>
+                 line="1204">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1221">an index</doc>
+                 line="1205">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -3766,7 +3766,7 @@ memory block at @idx.</doc>
               c:identifier="gst_buffer_get_memory_range">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1249">Gets @length memory blocks in @buffer starting at @idx. The memory blocks will
+             line="1233">Gets @length memory blocks in @buffer starting at @idx. The memory blocks will
 be merged into one large #GstMemory.
 
 If @length is -1, all memory starting from @idx is merged.</doc>
@@ -3774,7 +3774,7 @@ If @length is -1, all memory starting from @idx is merged.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1260">a #GstMemory that contains the merged data of @length
+               line="1244">a #GstMemory that contains the merged data of @length
    blocks starting at @idx.</doc>
           <type name="Memory" c:type="GstMemory*"/>
         </return-value>
@@ -3782,19 +3782,19 @@ If @length is -1, all memory starting from @idx is merged.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1251">a #GstBuffer.</doc>
+                 line="1235">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1252">an index</doc>
+                 line="1236">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1253">a length</doc>
+                 line="1237">a length</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -3802,7 +3802,7 @@ If @length is -1, all memory starting from @idx is merged.</doc>
       <method name="get_meta" c:identifier="gst_buffer_get_meta">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2247">Gets the metadata for @api on buffer. When there is no such metadata, %NULL is
+             line="2231">Gets the metadata for @api on buffer. When there is no such metadata, %NULL is
 returned. If multiple metadata with the given @api are attached to this
 buffer only the first one is returned.  To handle multiple metadata with a
 given API use gst_buffer_iterate_meta() or gst_buffer_foreach_meta() instead
@@ -3811,20 +3811,20 @@ and check the `meta-&gt;info.api` member for the API type.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2258">the metadata for @api on @buffer.</doc>
+               line="2242">the metadata for @api on @buffer.</doc>
           <type name="Meta" c:type="GstMeta*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2249">a #GstBuffer</doc>
+                 line="2233">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="api" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2250">the #GType of an API</doc>
+                 line="2234">the #GType of an API</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -3836,20 +3836,20 @@ and check the `meta-&gt;info.api` member for the API type.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2285">number of metas of type @api_type on @buffer.</doc>
+               line="2269">number of metas of type @api_type on @buffer.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2282">a #GstBuffer</doc>
+                 line="2266">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="api_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2283">the #GType of an API</doc>
+                 line="2267">the #GType of an API</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -3859,7 +3859,7 @@ and check the `meta-&gt;info.api` member for the API type.</doc>
               version="1.14">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2774">Finds the first #GstReferenceTimestampMeta on @buffer that conforms to
+             line="2758">Finds the first #GstReferenceTimestampMeta on @buffer that conforms to
 @reference. Conformance is tested by checking if the meta's reference is a
 subset of @reference.
 
@@ -3868,7 +3868,7 @@ Buffers can contain multiple #GstReferenceTimestampMeta metadata items.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2785">the #GstReferenceTimestampMeta or %NULL when there
+               line="2769">the #GstReferenceTimestampMeta or %NULL when there
 is no such metadata on @buffer.</doc>
           <type name="ReferenceTimestampMeta"
                 c:type="GstReferenceTimestampMeta*"/>
@@ -3877,7 +3877,7 @@ is no such metadata on @buffer.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2776">a #GstBuffer</doc>
+                 line="2760">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="reference"
@@ -3886,7 +3886,7 @@ is no such metadata on @buffer.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2777">a reference #GstCaps</doc>
+                 line="2761">a reference #GstCaps</doc>
             <type name="Caps" c:type="GstCaps*"/>
           </parameter>
         </parameters>
@@ -3894,19 +3894,19 @@ is no such metadata on @buffer.</doc>
       <method name="get_size" c:identifier="gst_buffer_get_size">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1556">Gets the total size of the memory blocks in @buffer.</doc>
+             line="1540">Gets the total size of the memory blocks in @buffer.</doc>
         <source-position filename="gst/gstbuffer.h" line="401"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1562">total size of the memory blocks in @buffer.</doc>
+               line="1546">total size of the memory blocks in @buffer.</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1558">a #GstBuffer.</doc>
+                 line="1542">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -3914,7 +3914,7 @@ is no such metadata on @buffer.</doc>
       <method name="get_sizes" c:identifier="gst_buffer_get_sizes">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1534">Gets the total size of the memory blocks in @buffer.
+             line="1518">Gets the total size of the memory blocks in @buffer.
 
 When not %NULL, @offset will contain the offset of the data in the
 first memory block in @buffer and @maxsize will contain the sum of
@@ -3925,14 +3925,14 @@ buffer memory blocks with gst_buffer_resize().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1548">total size of the memory blocks in @buffer.</doc>
+               line="1532">total size of the memory blocks in @buffer.</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1536">a #GstBuffer.</doc>
+                 line="1520">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset"
@@ -3943,7 +3943,7 @@ buffer memory blocks with gst_buffer_resize().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1537">a pointer to the offset</doc>
+                 line="1521">a pointer to the offset</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
           <parameter name="maxsize"
@@ -3954,7 +3954,7 @@ buffer memory blocks with gst_buffer_resize().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1538">a pointer to the maxsize</doc>
+                 line="1522">a pointer to the maxsize</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
         </parameters>
@@ -3962,7 +3962,7 @@ buffer memory blocks with gst_buffer_resize().</doc>
       <method name="get_sizes_range" c:identifier="gst_buffer_get_sizes_range">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1579">Gets the total size of @length memory blocks stating from @idx in @buffer.
+             line="1563">Gets the total size of @length memory blocks stating from @idx in @buffer.
 
 When not %NULL, @offset will contain the offset of the data in the
 memory block in @buffer at @idx and @maxsize will contain the sum of the size
@@ -3974,26 +3974,26 @@ gst_buffer_resize_range().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1596">total size of @length memory blocks starting at @idx in @buffer.</doc>
+               line="1580">total size of @length memory blocks starting at @idx in @buffer.</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1581">a #GstBuffer.</doc>
+                 line="1565">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1582">an index</doc>
+                 line="1566">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1583">a length</doc>
+                 line="1567">a length</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="offset"
@@ -4004,7 +4004,7 @@ gst_buffer_resize_range().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1584">a pointer to the offset</doc>
+                 line="1568">a pointer to the offset</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
           <parameter name="maxsize"
@@ -4015,7 +4015,7 @@ gst_buffer_resize_range().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1585">a pointer to the maxsize</doc>
+                 line="1569">a pointer to the maxsize</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
         </parameters>
@@ -4051,7 +4051,7 @@ gst_buffer_resize_range().</doc>
       <method name="insert_memory" c:identifier="gst_buffer_insert_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1141">Inserts the memory block @mem into @buffer at @idx. This function takes ownership
+             line="1125">Inserts the memory block @mem into @buffer at @idx. This function takes ownership
 of @mem and thus doesn't increase its refcount.
 
 Only gst_buffer_get_max_memory() can be added to a buffer. If more memory is
@@ -4065,19 +4065,19 @@ the new memory.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1143">a #GstBuffer.</doc>
+                 line="1127">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1144">the index to add the memory at, or -1 to append it to the end</doc>
+                 line="1128">the index to add the memory at, or -1 to append it to the end</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="mem" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1145">a #GstMemory.</doc>
+                 line="1129">a #GstMemory.</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -4087,7 +4087,7 @@ the new memory.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1515">Checks if all memory blocks in @buffer are writable.
+             line="1499">Checks if all memory blocks in @buffer are writable.
 
 Note that this function does not check if @buffer is writable, use
 gst_buffer_is_writable() to check that if needed.</doc>
@@ -4095,14 +4095,14 @@ gst_buffer_is_writable() to check that if needed.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1524">%TRUE if all memory blocks in @buffer are writable</doc>
+               line="1508">%TRUE if all memory blocks in @buffer are writable</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1517">a #GstBuffer.</doc>
+                 line="1501">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -4112,7 +4112,7 @@ gst_buffer_is_writable() to check that if needed.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1472">Checks if @length memory blocks in @buffer starting from @idx are writable.
+             line="1456">Checks if @length memory blocks in @buffer starting from @idx are writable.
 
 @length can be -1 to check all the memory blocks after @idx.
 
@@ -4122,26 +4122,26 @@ gst_buffer_is_writable() to check that if needed.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1485">%TRUE if the memory range is writable</doc>
+               line="1469">%TRUE if the memory range is writable</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1474">a #GstBuffer.</doc>
+                 line="1458">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1475">an index</doc>
+                 line="1459">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1476">a length, should not be 0</doc>
+                 line="1460">a length, should not be 0</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -4151,7 +4151,7 @@ gst_buffer_is_writable() to check that if needed.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2420">Retrieves the next #GstMeta after @current. If @state points
+             line="2404">Retrieves the next #GstMeta after @current. If @state points
 to %NULL, the first metadata is returned.
 
 @state will be updated with an opaque state pointer</doc>
@@ -4159,7 +4159,7 @@ to %NULL, the first metadata is returned.
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2430">The next #GstMeta or %NULL
+               line="2414">The next #GstMeta or %NULL
 when there are no more items.</doc>
           <type name="Meta" c:type="GstMeta*"/>
         </return-value>
@@ -4167,7 +4167,7 @@ when there are no more items.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2422">a #GstBuffer</doc>
+                 line="2406">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="state"
@@ -4177,7 +4177,7 @@ when there are no more items.</doc>
                      nullable="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2423">an opaque state pointer</doc>
+                 line="2407">an opaque state pointer</doc>
             <type name="gpointer" c:type="gpointer*"/>
           </parameter>
         </parameters>
@@ -4188,7 +4188,7 @@ when there are no more items.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2455">Retrieves the next #GstMeta of type @meta_api_type after the current one
+             line="2439">Retrieves the next #GstMeta of type @meta_api_type after the current one
 according to @state. If @state points to %NULL, the first metadata of
 type @meta_api_type is returned.
 
@@ -4197,7 +4197,7 @@ type @meta_api_type is returned.
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2467">The next #GstMeta of type
+               line="2451">The next #GstMeta of type
 @meta_api_type or %NULL when there are no more items.</doc>
           <type name="Meta" c:type="GstMeta*"/>
         </return-value>
@@ -4205,7 +4205,7 @@ type @meta_api_type is returned.
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2457">a #GstBuffer</doc>
+                 line="2441">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="state"
@@ -4215,13 +4215,13 @@ type @meta_api_type is returned.
                      nullable="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2458">an opaque state pointer</doc>
+                 line="2442">an opaque state pointer</doc>
             <type name="gpointer" c:type="gpointer*"/>
           </parameter>
           <parameter name="meta_api_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2459">only return #GstMeta of this type</doc>
+                 line="2443">only return #GstMeta of this type</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -4229,7 +4229,7 @@ type @meta_api_type is returned.
       <method name="map" c:identifier="gst_buffer_map">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1796">Fills @info with the #GstMapInfo of all merged memory blocks in @buffer.
+             line="1780">Fills @info with the #GstMapInfo of all merged memory blocks in @buffer.
 
 @flags describe the desired access of the memory. When @flags is
 #GST_MAP_WRITE, @buffer should be writable (as returned from
@@ -4245,14 +4245,14 @@ usage.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1815">%TRUE if the map succeeded and @info contains valid data.</doc>
+               line="1799">%TRUE if the map succeeded and @info contains valid data.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1798">a #GstBuffer.</doc>
+                 line="1782">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="info"
@@ -4261,13 +4261,13 @@ usage.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1799">info about the mapping</doc>
+                 line="1783">info about the mapping</doc>
             <type name="MapInfo" c:type="GstMapInfo*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1800">flags for the mapping</doc>
+                 line="1784">flags for the mapping</doc>
             <type name="MapFlags" c:type="GstMapFlags"/>
           </parameter>
         </parameters>
@@ -4275,7 +4275,7 @@ usage.</doc>
       <method name="map_range" c:identifier="gst_buffer_map_range">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1823">Fills @info with the #GstMapInfo of @length merged memory blocks
+             line="1807">Fills @info with the #GstMapInfo of @length merged memory blocks
 starting at @idx in @buffer. When @length is -1, all memory blocks starting
 from @idx are merged and mapped.
 
@@ -4292,7 +4292,7 @@ The memory in @info should be unmapped with gst_buffer_unmap() after usage.</doc
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1845">%TRUE if the map succeeded and @info contains valid
+               line="1829">%TRUE if the map succeeded and @info contains valid
 data.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -4300,19 +4300,19 @@ data.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1825">a #GstBuffer.</doc>
+                 line="1809">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1826">an index</doc>
+                 line="1810">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1827">a length</doc>
+                 line="1811">a length</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="info"
@@ -4321,13 +4321,13 @@ data.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1828">info about the mapping</doc>
+                 line="1812">info about the mapping</doc>
             <type name="MapInfo" c:type="GstMapInfo*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1829">flags for the mapping</doc>
+                 line="1813">flags for the mapping</doc>
             <type name="MapFlags" c:type="GstMapFlags"/>
           </parameter>
         </parameters>
@@ -4335,31 +4335,31 @@ data.</doc>
       <method name="memcmp" c:identifier="gst_buffer_memcmp">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2042">Compares @size bytes starting from @offset in @buffer with the memory in @mem.</doc>
+             line="2026">Compares @size bytes starting from @offset in @buffer with the memory in @mem.</doc>
         <source-position filename="gst/gstbuffer.h" line="386"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2051">0 if the memory is equal.</doc>
+               line="2035">0 if the memory is equal.</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2044">a #GstBuffer.</doc>
+                 line="2028">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2045">the offset in @buffer</doc>
+                 line="2029">the offset in @buffer</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="mem" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2046">the memory to compare</doc>
+                 line="2030">the memory to compare</doc>
             <array length="2" zero-terminated="0" c:type="gconstpointer">
               <type name="guint8"/>
             </array>
@@ -4367,7 +4367,7 @@ data.</doc>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2047">the size to compare</doc>
+                 line="2031">the size to compare</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -4375,12 +4375,12 @@ data.</doc>
       <method name="memset" c:identifier="gst_buffer_memset">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2095">Fills @buf with @size bytes with @val starting from @offset.</doc>
+             line="2079">Fills @buf with @size bytes with @val starting from @offset.</doc>
         <source-position filename="gst/gstbuffer.h" line="389"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2104">The amount of bytes filled. This value can be lower than @size
+               line="2088">The amount of bytes filled. This value can be lower than @size
    when @buffer did not contain enough data.</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
@@ -4388,25 +4388,25 @@ data.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2097">a #GstBuffer.</doc>
+                 line="2081">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2098">the offset in @buffer</doc>
+                 line="2082">the offset in @buffer</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2099">the value to set</doc>
+                 line="2083">the value to set</doc>
             <type name="guint8" c:type="guint8"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2100">the size to set</doc>
+                 line="2084">the size to set</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -4414,20 +4414,20 @@ data.</doc>
       <method name="n_memory" c:identifier="gst_buffer_n_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1090">Gets the amount of memory blocks that this buffer has. This amount is never
+             line="1074">Gets the amount of memory blocks that this buffer has. This amount is never
 larger than what gst_buffer_get_max_memory() returns.</doc>
         <source-position filename="gst/gstbuffer.h" line="329"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1097">the number of memory blocks this buffer is made of.</doc>
+               line="1081">the number of memory blocks this buffer is made of.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1092">a #GstBuffer.</doc>
+                 line="1076">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -4435,27 +4435,27 @@ larger than what gst_buffer_get_max_memory() returns.</doc>
       <method name="peek_memory" c:identifier="gst_buffer_peek_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1198">Gets the memory block at @idx in @buffer. The memory block stays valid until
+             line="1182">Gets the memory block at @idx in @buffer. The memory block stays valid until
 the memory block in @buffer is removed, replaced or merged, typically with
 any call that modifies the memory in @buffer.</doc>
         <source-position filename="gst/gstbuffer.h" line="338"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1207">the #GstMemory at @idx.</doc>
+               line="1191">the #GstMemory at @idx.</doc>
           <type name="Memory" c:type="GstMemory*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1200">a #GstBuffer.</doc>
+                 line="1184">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1201">an index</doc>
+                 line="1185">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4463,7 +4463,7 @@ any call that modifies the memory in @buffer.</doc>
       <method name="prepend_memory" c:identifier="gst_buffer_prepend_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1107">Prepends the memory block @mem to @buffer. This function takes
+             line="1091">Prepends the memory block @mem to @buffer. This function takes
 ownership of @mem and thus doesn't increase its refcount.
 
 This function is identical to gst_buffer_insert_memory() with an index of 0.
@@ -4476,13 +4476,13 @@ See gst_buffer_insert_memory() for more details.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1109">a #GstBuffer.</doc>
+                 line="1093">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="mem" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1110">a #GstMemory.</doc>
+                 line="1094">a #GstMemory.</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -4490,7 +4490,7 @@ See gst_buffer_insert_memory() for more details.</doc>
       <method name="ref" c:identifier="gst_buffer_ref" introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2967">Increases the refcount of the given buffer by one.
+             line="2951">Increases the refcount of the given buffer by one.
 
 Note that the refcount affects the writability
 of @buf and its metadata, see gst_buffer_is_writable().
@@ -4501,14 +4501,14 @@ of `memcpy` operations in a pipeline.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2979">@buf</doc>
+               line="2963">@buf</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <instance-parameter name="buf" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2969">a #GstBuffer.</doc>
+                 line="2953">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -4517,7 +4517,7 @@ of `memcpy` operations in a pipeline.</doc>
               c:identifier="gst_buffer_remove_all_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1356">Removes all the memory blocks in @buffer.</doc>
+             line="1340">Removes all the memory blocks in @buffer.</doc>
         <source-position filename="gst/gstbuffer.h" line="368"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4526,7 +4526,7 @@ of `memcpy` operations in a pipeline.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1358">a #GstBuffer.</doc>
+                 line="1342">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -4534,7 +4534,7 @@ of `memcpy` operations in a pipeline.</doc>
       <method name="remove_memory" c:identifier="gst_buffer_remove_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1343">Removes the memory block in @b at index @i.</doc>
+             line="1327">Removes the memory block in @b at index @i.</doc>
         <source-position filename="gst/gstbuffer.h" line="365"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4543,13 +4543,13 @@ of `memcpy` operations in a pipeline.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1345">a #GstBuffer.</doc>
+                 line="1329">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1346">an index</doc>
+                 line="1330">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4558,7 +4558,7 @@ of `memcpy` operations in a pipeline.</doc>
               c:identifier="gst_buffer_remove_memory_range">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1369">Removes @length memory blocks in @buffer starting from @idx.
+             line="1353">Removes @length memory blocks in @buffer starting from @idx.
 
 @length can be -1, in which case all memory starting from @idx is removed.</doc>
         <source-position filename="gst/gstbuffer.h" line="344"/>
@@ -4569,19 +4569,19 @@ of `memcpy` operations in a pipeline.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1371">a #GstBuffer.</doc>
+                 line="1355">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1372">an index</doc>
+                 line="1356">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1373">a length</doc>
+                 line="1357">a length</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -4589,12 +4589,12 @@ of `memcpy` operations in a pipeline.</doc>
       <method name="remove_meta" c:identifier="gst_buffer_remove_meta">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2366">Removes the metadata for @meta on @buffer.</doc>
+             line="2350">Removes the metadata for @meta on @buffer.</doc>
         <source-position filename="gst/gstbuffer.h" line="635"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2373">%TRUE if the metadata existed and was removed, %FALSE if no such
+               line="2357">%TRUE if the metadata existed and was removed, %FALSE if no such
 metadata was on @buffer.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -4602,13 +4602,13 @@ metadata was on @buffer.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2368">a #GstBuffer</doc>
+                 line="2352">a #GstBuffer</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="meta" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2369">a #GstMeta</doc>
+                 line="2353">a #GstMeta</doc>
             <type name="Meta" c:type="GstMeta*"/>
           </parameter>
         </parameters>
@@ -4617,7 +4617,7 @@ metadata was on @buffer.</doc>
               c:identifier="gst_buffer_replace_all_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1295">Replaces all memory in @buffer with @mem.</doc>
+             line="1279">Replaces all memory in @buffer with @mem.</doc>
         <source-position filename="gst/gstbuffer.h" line="356"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4626,13 +4626,13 @@ metadata was on @buffer.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1297">a #GstBuffer.</doc>
+                 line="1281">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="mem" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1298">a #GstMemory</doc>
+                 line="1282">a #GstMemory</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -4640,7 +4640,7 @@ metadata was on @buffer.</doc>
       <method name="replace_memory" c:identifier="gst_buffer_replace_memory">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1281">Replaces the memory block at index @idx in @buffer with @mem.</doc>
+             line="1265">Replaces the memory block at index @idx in @buffer with @mem.</doc>
         <source-position filename="gst/gstbuffer.h" line="353"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4649,19 +4649,19 @@ metadata was on @buffer.</doc>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1283">a #GstBuffer.</doc>
+                 line="1267">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1284">an index</doc>
+                 line="1268">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="mem" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1285">a #GstMemory</doc>
+                 line="1269">a #GstMemory</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -4670,7 +4670,7 @@ metadata was on @buffer.</doc>
               c:identifier="gst_buffer_replace_memory_range">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1308">Replaces @length memory blocks in @buffer starting at @idx with @mem.
+             line="1292">Replaces @length memory blocks in @buffer starting at @idx with @mem.
 
 If @length is -1, all memory starting from @idx will be removed and
 replaced with @mem.
@@ -4684,25 +4684,25 @@ replaced with @mem.
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1310">a #GstBuffer.</doc>
+                 line="1294">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1311">an index</doc>
+                 line="1295">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1312">a length, should not be 0</doc>
+                 line="1296">a length, should not be 0</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="mem" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1313">a #GstMemory</doc>
+                 line="1297">a #GstMemory</doc>
             <type name="Memory" c:type="GstMemory*"/>
           </parameter>
         </parameters>
@@ -4710,7 +4710,7 @@ replaced with @mem.
       <method name="resize" c:identifier="gst_buffer_resize">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1661">Sets the offset and total size of the memory blocks in @buffer.</doc>
+             line="1645">Sets the offset and total size of the memory blocks in @buffer.</doc>
         <source-position filename="gst/gstbuffer.h" line="404"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4719,19 +4719,19 @@ replaced with @mem.
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1663">a #GstBuffer.</doc>
+                 line="1647">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1664">the offset adjustment</doc>
+                 line="1648">the offset adjustment</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1665">the new size or -1 to just adjust the offset</doc>
+                 line="1649">the new size or -1 to just adjust the offset</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
         </parameters>
@@ -4739,44 +4739,44 @@ replaced with @mem.
       <method name="resize_range" c:identifier="gst_buffer_resize_range">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1688">Sets the total size of the @length memory blocks starting at @idx in
+             line="1672">Sets the total size of the @length memory blocks starting at @idx in
 @buffer</doc>
         <source-position filename="gst/gstbuffer.h" line="395"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="1699">%TRUE if resizing succeeded, %FALSE otherwise.</doc>
+               line="1683">%TRUE if resizing succeeded, %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1690">a #GstBuffer.</doc>
+                 line="1674">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1691">an index</doc>
+                 line="1675">an index</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="length" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1692">a length</doc>
+                 line="1676">a length</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1693">the offset adjustment</doc>
+                 line="1677">the offset adjustment</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1694">the new size or -1 to just adjust the offset</doc>
+                 line="1678">the new size or -1 to just adjust the offset</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
         </parameters>
@@ -4812,7 +4812,7 @@ replaced with @mem.
       <method name="set_size" c:identifier="gst_buffer_set_size">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1675">Sets the total size of the memory blocks in @buffer.</doc>
+             line="1659">Sets the total size of the memory blocks in @buffer.</doc>
         <source-position filename="gst/gstbuffer.h" line="407"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4821,13 +4821,13 @@ replaced with @mem.
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1677">a #GstBuffer.</doc>
+                 line="1661">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1678">the new size</doc>
+                 line="1662">the new size</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
         </parameters>
@@ -4835,7 +4835,7 @@ replaced with @mem.
       <method name="unmap" c:identifier="gst_buffer_unmap">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="1923">Releases the memory previously mapped with gst_buffer_map().</doc>
+             line="1907">Releases the memory previously mapped with gst_buffer_map().</doc>
         <source-position filename="gst/gstbuffer.h" line="416"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -4844,13 +4844,13 @@ replaced with @mem.
           <instance-parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1925">a #GstBuffer.</doc>
+                 line="1909">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
           <parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="1926">a #GstMapInfo</doc>
+                 line="1910">a #GstMapInfo</doc>
             <type name="MapInfo" c:type="GstMapInfo*"/>
           </parameter>
         </parameters>
@@ -4858,7 +4858,7 @@ replaced with @mem.
       <method name="unref" c:identifier="gst_buffer_unref" introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2987">Decreases the refcount of the buffer. If the refcount reaches 0, the buffer
+             line="2971">Decreases the refcount of the buffer. If the refcount reaches 0, the buffer
 with the associated metadata and memory will be freed.</doc>
         <source-position filename="gst/gstbuffer.h" line="466"/>
         <return-value transfer-ownership="none">
@@ -4868,7 +4868,7 @@ with the associated metadata and memory will be freed.</doc>
           <instance-parameter name="buf" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="2989">a #GstBuffer.</doc>
+                 line="2973">a #GstBuffer.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </instance-parameter>
         </parameters>
@@ -4924,7 +4924,7 @@ together to make room for the new block.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="3037">Modifies a pointer to a #GstBuffer to point to a different #GstBuffer. The
+             line="3021">Modifies a pointer to a #GstBuffer to point to a different #GstBuffer. The
 modification is done atomically (so this is useful for ensuring thread safety
 in some cases), and the reference counts are updated appropriately (the old
 buffer is unreffed, the new is reffed).
@@ -4934,7 +4934,7 @@ Either @nbuf or the #GstBuffer pointed to by @obuf may be %NULL.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="3051">%TRUE when @obuf was different from @nbuf.</doc>
+               line="3035">%TRUE when @obuf was different from @nbuf.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -4946,7 +4946,7 @@ Either @nbuf or the #GstBuffer pointed to by @obuf may be %NULL.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="3039">pointer to a pointer to
+                 line="3023">pointer to a pointer to
     a #GstBuffer to be replaced.</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
@@ -4956,7 +4956,7 @@ Either @nbuf or the #GstBuffer pointed to by @obuf may be %NULL.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstbuffer.c"
-                 line="3041">pointer to a #GstBuffer that will
+                 line="3025">pointer to a #GstBuffer that will
     replace the buffer pointed to by @obuf.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
@@ -43784,26 +43784,26 @@ MT safe.</doc>
       <method name="can_link" c:identifier="gst_pad_can_link">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2474">Checks if the source pad and the sink pad are compatible so they can be
+             line="2451">Checks if the source pad and the sink pad are compatible so they can be
 linked.</doc>
         <source-position filename="gst/gstpad.h" line="1440"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2482">%TRUE if the pads can be linked.</doc>
+               line="2459">%TRUE if the pads can be linked.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="srcpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2476">the source #GstPad.</doc>
+                 line="2453">the source #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="sinkpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2477">the sink #GstPad.</doc>
+                 line="2454">the sink #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </parameter>
         </parameters>
@@ -43811,7 +43811,7 @@ linked.</doc>
       <method name="chain" c:identifier="gst_pad_chain">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4603">Chain a buffer to @pad.
+             line="4580">Chain a buffer to @pad.
 
 The function returns #GST_FLOW_FLUSHING if the pad was flushing.
 
@@ -43830,7 +43830,7 @@ after calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4625">a #GstFlowReturn from the pad.
+               line="4602">a #GstFlowReturn from the pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -43839,13 +43839,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4605">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
+                 line="4582">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4606">the #GstBuffer to send, return GST_FLOW_ERROR
+                 line="4583">the #GstBuffer to send, return GST_FLOW_ERROR
     if not.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
@@ -43854,7 +43854,7 @@ MT safe.</doc>
       <method name="chain_list" c:identifier="gst_pad_chain_list">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4667">Chain a bufferlist to @pad.
+             line="4644">Chain a bufferlist to @pad.
 
 The function returns #GST_FLOW_FLUSHING if the pad was flushing.
 
@@ -43874,20 +43874,20 @@ MT safe.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4690">a #GstFlowReturn from the pad.</doc>
+               line="4667">a #GstFlowReturn from the pad.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4669">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
+                 line="4646">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="list" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4670">the #GstBufferList to send, return GST_FLOW_ERROR
+                 line="4647">the #GstBufferList to send, return GST_FLOW_ERROR
     if not.</doc>
             <type name="BufferList" c:type="GstBufferList*"/>
           </parameter>
@@ -44079,7 +44079,7 @@ stream-id manually instead.</doc>
       <method name="event_default" c:identifier="gst_pad_event_default">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3161">Invokes the default event handler for the given pad.
+             line="3138">Invokes the default event handler for the given pad.
 
 The EOS event will pause the task associated with @pad before it is forwarded
 to all internally linked pads,
@@ -44090,14 +44090,14 @@ takes ownership of @event.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3175">%TRUE if the event was sent successfully.</doc>
+               line="3152">%TRUE if the event was sent successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3163">a #GstPad to call the default event handler on.</doc>
+                 line="3140">a #GstPad to call the default event handler on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -44106,13 +44106,13 @@ takes ownership of @event.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3164">the parent of @pad or %NULL</doc>
+                 line="3141">the parent of @pad or %NULL</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="event" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3165">the #GstEvent to handle.</doc>
+                 line="3142">the #GstEvent to handle.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -44120,7 +44120,7 @@ takes ownership of @event.</doc>
       <method name="forward" c:identifier="gst_pad_forward">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3062">Calls @forward for all internally linked pads of @pad. This function deals with
+             line="3039">Calls @forward for all internally linked pads of @pad. This function deals with
 dynamically changing internal pads and will make sure that the @forward
 function is only called once for each pad.
 
@@ -44129,14 +44129,14 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3074">%TRUE if one of the dispatcher functions returned %TRUE.</doc>
+               line="3051">%TRUE if one of the dispatcher functions returned %TRUE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3064">a #GstPad</doc>
+                 line="3041">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="forward"
@@ -44145,7 +44145,7 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3065">a #GstPadForwardFunction</doc>
+                 line="3042">a #GstPadForwardFunction</doc>
             <type name="PadForwardFunction" c:type="GstPadForwardFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -44154,7 +44154,7 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3066">user data passed to @forward</doc>
+                 line="3043">user data passed to @forward</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -44162,7 +44162,7 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
       <method name="get_allowed_caps" c:identifier="gst_pad_get_allowed_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2819">Gets the capabilities of the allowed media types that can flow through
+             line="2796">Gets the capabilities of the allowed media types that can flow through
 @pad and its peer.
 
 The allowed capabilities is calculated as the intersection of the results of
@@ -44172,7 +44172,7 @@ on the resulting caps.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2830">the allowed #GstCaps of the
+               line="2807">the allowed #GstCaps of the
     pad link. Unref the caps when you no longer need it. This
     function returns %NULL when @pad has no peer.
 
@@ -44183,7 +44183,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2821">a #GstPad.</doc>
+                 line="2798">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44191,13 +44191,13 @@ MT safe.</doc>
       <method name="get_current_caps" c:identifier="gst_pad_get_current_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2745">Gets the capabilities currently configured on @pad with the last
+             line="2722">Gets the capabilities currently configured on @pad with the last
 #GST_EVENT_CAPS event.</doc>
         <source-position filename="gst/gstpad.h" line="1463"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2752">the current caps of the pad with
+               line="2729">the current caps of the pad with
 incremented ref-count or %NULL when pad has no caps. Unref after usage.</doc>
           <type name="Caps" c:type="GstCaps*"/>
         </return-value>
@@ -44205,7 +44205,7 @@ incremented ref-count or %NULL when pad has no caps. Unref after usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2747">a  #GstPad to get the current capabilities of.</doc>
+                 line="2724">a  #GstPad to get the current capabilities of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44240,20 +44240,20 @@ MT safe.</doc>
               c:identifier="gst_pad_get_element_private">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6170">Gets the private data of a pad.
+             line="6147">Gets the private data of a pad.
 No locking is performed in this function.</doc>
         <source-position filename="gst/gstpad.h" line="1360"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6177">a #gpointer to the private data.</doc>
+               line="6154">a #gpointer to the private data.</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6172">the #GstPad to get the private data of.</doc>
+                 line="6149">the #GstPad to get the private data of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44263,7 +44263,7 @@ No locking is performed in this function.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6605">Gets the #GstFlowReturn return from the last data passed by this pad.</doc>
+             line="6582">Gets the #GstFlowReturn return from the last data passed by this pad.</doc>
         <source-position filename="gst/gstpad.h" line="1499"/>
         <return-value transfer-ownership="none">
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -44272,7 +44272,7 @@ No locking is performed in this function.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6607">the #GstPad</doc>
+                 line="6584">the #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44282,20 +44282,20 @@ No locking is performed in this function.</doc>
               glib:get-property="offset">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3979">Get the offset applied to the running time of @pad. @pad has to be a source
+             line="3956">Get the offset applied to the running time of @pad. @pad has to be a source
 pad.</doc>
         <source-position filename="gst/gstpad.h" line="1476"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3986">the offset.</doc>
+               line="3963">the offset.</doc>
           <type name="gint64" c:type="gint64"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3981">a #GstPad</doc>
+                 line="3958">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44303,12 +44303,12 @@ pad.</doc>
       <method name="get_pad_template" c:identifier="gst_pad_get_pad_template">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2697">Gets the template for @pad.</doc>
+             line="2674">Gets the template for @pad.</doc>
         <source-position filename="gst/gstpad.h" line="1363"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2703">the #GstPadTemplate from which
+               line="2680">the #GstPadTemplate from which
     this pad was instantiated, or %NULL if this pad has no
     template. Unref after usage.</doc>
           <type name="PadTemplate" c:type="GstPadTemplate*"/>
@@ -44317,7 +44317,7 @@ pad.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2699">a #GstPad.</doc>
+                 line="2676">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44326,12 +44326,12 @@ pad.</doc>
               c:identifier="gst_pad_get_pad_template_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2772">Gets the capabilities for @pad's template.</doc>
+             line="2749">Gets the capabilities for @pad's template.</doc>
         <source-position filename="gst/gstpad.h" line="1458"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2778">the #GstCaps of this pad template.
+               line="2755">the #GstCaps of this pad template.
 Unref after usage.</doc>
           <type name="Caps" c:type="GstCaps*"/>
         </return-value>
@@ -44339,7 +44339,7 @@ Unref after usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2774">a #GstPad to get the template capabilities from.</doc>
+                 line="2751">a #GstPad to get the template capabilities from.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44373,13 +44373,13 @@ MT safe.</doc>
       <method name="get_peer" c:identifier="gst_pad_get_peer">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2792">Gets the peer of @pad. This function refs the peer pad so
+             line="2769">Gets the peer of @pad. This function refs the peer pad so
 you need to unref it after use.</doc>
         <source-position filename="gst/gstpad.h" line="1455"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2799">the peer #GstPad. Unref after usage.
+               line="2776">the peer #GstPad. Unref after usage.
 
 MT safe.</doc>
           <type name="Pad" c:type="GstPad*"/>
@@ -44388,7 +44388,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2794">a #GstPad to get the peer of.</doc>
+                 line="2771">a #GstPad to get the peer of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44396,7 +44396,7 @@ MT safe.</doc>
       <method name="get_range" c:identifier="gst_pad_get_range">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5088">When @pad is flushing this function returns #GST_FLOW_FLUSHING
+             line="5065">When @pad is flushing this function returns #GST_FLOW_FLUSHING
 immediately and @buffer is %NULL.
 
 Calls the getrange function of @pad, see #GstPadGetRangeFunction for a
@@ -44426,7 +44426,7 @@ This is a lowlevel function. Usually gst_pad_pull_range() is used.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5123">a #GstFlowReturn from the pad.
+               line="5100">a #GstFlowReturn from the pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -44435,19 +44435,19 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5090">a src #GstPad, returns #GST_FLOW_ERROR if not.</doc>
+                 line="5067">a src #GstPad, returns #GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5091">The start offset of the buffer</doc>
+                 line="5068">The start offset of the buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5092">The length of the buffer</doc>
+                 line="5069">The length of the buffer</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="buffer"
@@ -44456,7 +44456,7 @@ MT safe.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5093">a pointer to hold the #GstBuffer,
+                 line="5070">a pointer to hold the #GstBuffer,
     returns #GST_FLOW_ERROR if %NULL.</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
@@ -44467,13 +44467,13 @@ MT safe.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2886">If there is a single internal link of the given pad, this function will
+             line="2863">If there is a single internal link of the given pad, this function will
 return it. Otherwise, it will return NULL.</doc>
         <source-position filename="gst/gstpad.h" line="1546"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2893">a #GstPad, or %NULL if @pad has none
+               line="2870">a #GstPad, or %NULL if @pad has none
 or more than one internal links. Unref returned pad with
 gst_object_unref().</doc>
           <type name="Pad" c:type="GstPad*"/>
@@ -44482,7 +44482,7 @@ gst_object_unref().</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2888">the #GstPad to get the internal link of.</doc>
+                 line="2865">the #GstPad to get the internal link of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44490,13 +44490,13 @@ gst_object_unref().</doc>
       <method name="get_sticky_event" c:identifier="gst_pad_get_sticky_event">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6185">Returns a new reference of the sticky event of type @event_type
+             line="6162">Returns a new reference of the sticky event of type @event_type
 from the event.</doc>
         <source-position filename="gst/gstpad.h" line="1369"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6194">a #GstEvent of type
+               line="6171">a #GstEvent of type
 @event_type or %NULL when no event of @event_type was on
 @pad. Unref after usage.</doc>
           <type name="Event" c:type="GstEvent*"/>
@@ -44505,19 +44505,19 @@ from the event.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6187">the #GstPad to get the event from.</doc>
+                 line="6164">the #GstPad to get the event from.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6188">the #GstEventType that should be retrieved.</doc>
+                 line="6165">the #GstEventType that should be retrieved.</doc>
             <type name="EventType" c:type="GstEventType"/>
           </parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6189">the index of the event</doc>
+                 line="6166">the index of the event</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -44585,20 +44585,20 @@ contents should not be interpreted.</doc>
               version="1.12">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6432">Get @pad task state. If no task is currently
+             line="6409">Get @pad task state. If no task is currently
 set, #GST_TASK_STOPPED is returned.</doc>
         <source-position filename="gst/gstpad.h" line="1527"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6439">The current state of @pad's task.</doc>
+               line="6416">The current state of @pad's task.</doc>
           <type name="TaskState" c:type="GstTaskState"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6434">the #GstPad to get task state from</doc>
+                 line="6411">the #GstPad to get task state from</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44606,19 +44606,19 @@ set, #GST_TASK_STOPPED is returned.</doc>
       <method name="has_current_caps" c:identifier="gst_pad_has_current_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2719">Check if @pad has caps set on it with a #GST_EVENT_CAPS event.</doc>
+             line="2696">Check if @pad has caps set on it with a #GST_EVENT_CAPS event.</doc>
         <source-position filename="gst/gstpad.h" line="1466"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2725">%TRUE when @pad has caps associated with it.</doc>
+               line="2702">%TRUE when @pad has caps associated with it.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2721">a  #GstPad to check</doc>
+                 line="2698">a  #GstPad to check</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44718,7 +44718,7 @@ MT safe.</doc>
               c:identifier="gst_pad_iterate_internal_links">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3018">Gets an iterator for the pads to which the given pad is linked to inside
+             line="2995">Gets an iterator for the pads to which the given pad is linked to inside
 of the parent element.
 
 Each #GstPad element yielded by the iterator will have its refcount increased,
@@ -44729,7 +44729,7 @@ Free-function: gst_iterator_free</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3030">a new #GstIterator of #GstPad
+               line="3007">a new #GstIterator of #GstPad
     or %NULL when the pad does not have an iterator function
     configured. Use gst_iterator_free() after usage.</doc>
           <type name="Iterator" c:type="GstIterator*"/>
@@ -44738,7 +44738,7 @@ Free-function: gst_iterator_free</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3020">the GstPad to get the internal links of.</doc>
+                 line="2997">the GstPad to get the internal links of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44747,7 +44747,7 @@ Free-function: gst_iterator_free</doc>
               c:identifier="gst_pad_iterate_internal_links_default">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2952">Iterate the list of pads to which the given pad is linked to inside of
+             line="2929">Iterate the list of pads to which the given pad is linked to inside of
 the parent element.
 This is the default handler, and thus returns an iterator of all of the
 pads inside the parent element with opposite direction.
@@ -44757,7 +44757,7 @@ The caller must free this iterator after use with gst_iterator_free().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2964">a #GstIterator of #GstPad, or %NULL if @pad
+               line="2941">a #GstIterator of #GstPad, or %NULL if @pad
 has no parent. Unref each returned pad with gst_object_unref().</doc>
           <type name="Iterator" c:type="GstIterator*"/>
         </return-value>
@@ -44765,7 +44765,7 @@ has no parent. Unref each returned pad with gst_object_unref().</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2954">the #GstPad to get the internal links of.</doc>
+                 line="2931">the #GstPad to get the internal links of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -44774,7 +44774,7 @@ has no parent. Unref each returned pad with gst_object_unref().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2955">the parent of @pad or %NULL</doc>
+                 line="2932">the parent of @pad or %NULL</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
         </parameters>
@@ -44782,12 +44782,12 @@ has no parent. Unref each returned pad with gst_object_unref().</doc>
       <method name="link" c:identifier="gst_pad_link">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2663">Links the source pad and the sink pad.</doc>
+             line="2640">Links the source pad and the sink pad.</doc>
         <source-position filename="gst/gstpad.h" line="1443"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2670">A result code indicating if the connection worked or
+               line="2647">A result code indicating if the connection worked or
          what went wrong.
 
 MT Safe.</doc>
@@ -44797,13 +44797,13 @@ MT Safe.</doc>
           <instance-parameter name="srcpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2665">the source #GstPad to link.</doc>
+                 line="2642">the source #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="sinkpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2666">the sink #GstPad to link.</doc>
+                 line="2643">the sink #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </parameter>
         </parameters>
@@ -44811,7 +44811,7 @@ MT Safe.</doc>
       <method name="link_full" c:identifier="gst_pad_link_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2510">Links the source pad and the sink pad.
+             line="2487">Links the source pad and the sink pad.
 
 This variant of #gst_pad_link provides a more granular control on the
 checks being done when linking. While providing some considerable speedups
@@ -44824,7 +44824,7 @@ MT Safe.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2526">A result code indicating if the connection worked or
+               line="2503">A result code indicating if the connection worked or
          what went wrong.</doc>
           <type name="PadLinkReturn" c:type="GstPadLinkReturn"/>
         </return-value>
@@ -44832,19 +44832,19 @@ MT Safe.</doc>
           <instance-parameter name="srcpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2512">the source #GstPad to link.</doc>
+                 line="2489">the source #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="sinkpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2513">the sink #GstPad to link.</doc>
+                 line="2490">the sink #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2514">the checks to validate when linking</doc>
+                 line="2491">the checks to validate when linking</doc>
             <type name="PadLinkCheck" c:type="GstPadLinkCheck"/>
           </parameter>
         </parameters>
@@ -44970,14 +44970,14 @@ if the flag was set.</doc>
       <method name="pause_task" c:identifier="gst_pad_pause_task">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6386">Pause the task of @pad. This function will also wait until the
+             line="6363">Pause the task of @pad. This function will also wait until the
 function executed by the task is finished if this function is not
 called from the task function.</doc>
         <source-position filename="gst/gstpad.h" line="1521"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6394">a %TRUE if the task could be paused or %FALSE when the pad
+               line="6371">a %TRUE if the task could be paused or %FALSE when the pad
 has no task.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -44985,7 +44985,7 @@ has no task.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6388">the #GstPad to pause the task of</doc>
+                 line="6365">the #GstPad to pause the task of</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44993,7 +44993,7 @@ has no task.</doc>
       <method name="peer_query" c:identifier="gst_pad_peer_query">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4298">Performs gst_pad_query() on the peer of @pad.
+             line="4275">Performs gst_pad_query() on the peer of @pad.
 
 The caller is responsible for both the allocation and deallocation of
 the query structure.</doc>
@@ -45001,7 +45001,7 @@ the query structure.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4308">%TRUE if the query could be performed. This function returns %FALSE
+               line="4285">%TRUE if the query could be performed. This function returns %FALSE
 if @pad has no peer.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -45009,13 +45009,13 @@ if @pad has no peer.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4300">a #GstPad to invoke the peer query on.</doc>
+                 line="4277">a #GstPad to invoke the peer query on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="query" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4301">the #GstQuery to perform.</doc>
+                 line="4278">the #GstQuery to perform.</doc>
             <type name="Query" c:type="GstQuery*"/>
           </parameter>
         </parameters>
@@ -45282,7 +45282,7 @@ the same caps.  Two such elements are tee and adder.</doc>
       <method name="pull_range" c:identifier="gst_pad_pull_range">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5140">Pulls a @buffer from the peer pad or fills up a provided buffer.
+             line="5117">Pulls a @buffer from the peer pad or fills up a provided buffer.
 
 This function will first trigger the pad block signal if it was
 installed.
@@ -45311,7 +45311,7 @@ bytes. The caller should check the result buffer size to get the result size.</d
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5174">a #GstFlowReturn from the peer pad.
+               line="5151">a #GstFlowReturn from the peer pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -45320,19 +45320,19 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5142">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
+                 line="5119">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5143">The start offset of the buffer</doc>
+                 line="5120">The start offset of the buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5144">The length of the buffer</doc>
+                 line="5121">The length of the buffer</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="buffer"
@@ -45341,7 +45341,7 @@ MT safe.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5145">a pointer to hold the #GstBuffer, returns
+                 line="5122">a pointer to hold the #GstBuffer, returns
     GST_FLOW_ERROR if %NULL.</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
@@ -45350,7 +45350,7 @@ MT safe.</doc>
       <method name="push" c:identifier="gst_pad_push">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4849">Pushes a buffer to the peer of @pad.
+             line="4826">Pushes a buffer to the peer of @pad.
 
 This function will call installed block probes before triggering any
 installed data probes.
@@ -45365,7 +45365,7 @@ after calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4867">a #GstFlowReturn from the peer pad.
+               line="4844">a #GstFlowReturn from the peer pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -45374,13 +45374,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4851">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
+                 line="4828">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4852">the #GstBuffer to push returns GST_FLOW_ERROR
+                 line="4829">the #GstBuffer to push returns GST_FLOW_ERROR
     if not.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
@@ -45389,7 +45389,7 @@ MT safe.</doc>
       <method name="push_event" c:identifier="gst_pad_push_event">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5666">Sends the event to the peer of the given pad. This function is
+             line="5643">Sends the event to the peer of the given pad. This function is
 mainly used by elements to send events to their peer
 elements.
 
@@ -45399,7 +45399,7 @@ gst_event_ref() it if you want to reuse the event after this call.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5678">%TRUE if the event was handled.
+               line="5655">%TRUE if the event was handled.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -45408,13 +45408,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5668">a #GstPad to push the event to.</doc>
+                 line="5645">a #GstPad to push the event to.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5669">the #GstEvent to send to the pad.</doc>
+                 line="5646">the #GstEvent to send to the pad.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -45422,7 +45422,7 @@ MT safe.</doc>
       <method name="push_list" c:identifier="gst_pad_push_list">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4887">Pushes a buffer list to the peer of @pad.
+             line="4864">Pushes a buffer list to the peer of @pad.
 
 This function will call installed block probes before triggering any
 installed data probes.
@@ -45439,7 +45439,7 @@ after calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4907">a #GstFlowReturn from the peer pad.
+               line="4884">a #GstFlowReturn from the peer pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -45448,13 +45448,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4889">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
+                 line="4866">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="list" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4890">the #GstBufferList to push returns GST_FLOW_ERROR
+                 line="4867">the #GstBufferList to push returns GST_FLOW_ERROR
     if not.</doc>
             <type name="BufferList" c:type="GstBufferList*"/>
           </parameter>
@@ -45463,7 +45463,7 @@ MT safe.</doc>
       <method name="query" c:identifier="gst_pad_query">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4165">Dispatches a query to a pad. The query should have been allocated by the
+             line="4142">Dispatches a query to a pad. The query should have been allocated by the
 caller via one of the type-specific allocation functions. The element that
 the pad belongs to is responsible for filling the query with an appropriate
 response, which should then be parsed with a type-specific query parsing
@@ -45477,20 +45477,20 @@ Please also note that some queries might need a running pipeline to work.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4181">%TRUE if the query could be performed.</doc>
+               line="4158">%TRUE if the query could be performed.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4167">a #GstPad to invoke the default query on.</doc>
+                 line="4144">a #GstPad to invoke the default query on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="query" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4168">the #GstQuery to perform.</doc>
+                 line="4145">the #GstQuery to perform.</doc>
             <type name="Query" c:type="GstQuery*"/>
           </parameter>
         </parameters>
@@ -45615,7 +45615,7 @@ gst_caps_make_writable() before modifying the caps.</doc>
       <method name="query_default" c:identifier="gst_pad_query_default">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3489">Invokes the default query handler for the given pad.
+             line="3466">Invokes the default query handler for the given pad.
 The query is sent to all pads internally linked to @pad. Note that
 if there are many possible sink pads that are internally linked to
 @pad, only one will be sent the query.
@@ -45624,14 +45624,14 @@ Multi-sinkpad elements should implement custom query handlers.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3501">%TRUE if the query was performed successfully.</doc>
+               line="3478">%TRUE if the query was performed successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3491">a #GstPad to call the default query handler on.</doc>
+                 line="3468">a #GstPad to call the default query handler on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -45640,13 +45640,13 @@ Multi-sinkpad elements should implement custom query handlers.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3492">the parent of @pad or %NULL</doc>
+                 line="3469">the parent of @pad or %NULL</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="query" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3493">the #GstQuery to handle.</doc>
+                 line="3470">the #GstQuery to handle.</doc>
             <type name="Query" c:type="GstQuery*"/>
           </parameter>
         </parameters>
@@ -45754,7 +45754,7 @@ MT safe.</doc>
       <method name="send_event" c:identifier="gst_pad_send_event">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6084">Sends the event to the pad. This function can be used
+             line="6061">Sends the event to the pad. This function can be used
 by applications to send events in the pipeline.
 
 If @pad is a source pad, @event should be an upstream event. If @pad is a
@@ -45778,20 +45778,20 @@ gst_event_ref() it if you want to reuse the event after this call.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6110">%TRUE if the event was handled.</doc>
+               line="6087">%TRUE if the event was handled.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6086">a #GstPad to send the event to.</doc>
+                 line="6063">a #GstPad to send the event to.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6087">the #GstEvent to send to the pad.</doc>
+                 line="6064">the #GstEvent to send to the pad.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -46018,7 +46018,7 @@ called to process a #GstBufferList input buffer list. See
               c:identifier="gst_pad_set_element_private">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6155">Set the given private data gpointer on the pad.
+             line="6132">Set the given private data gpointer on the pad.
 This function can only be used by the element that owns the pad.
 No locking is performed in this function.</doc>
         <source-position filename="gst/gstpad.h" line="1357"/>
@@ -46029,7 +46029,7 @@ No locking is performed in this function.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6157">the #GstPad to set the private data of.</doc>
+                 line="6134">the #GstPad to set the private data of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="priv"
@@ -46038,7 +46038,7 @@ No locking is performed in this function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6158">The private data to attach to the pad.</doc>
+                 line="6135">The private data to attach to the pad.</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -46278,7 +46278,7 @@ of the peer sink pad, if present.</doc>
               glib:set-property="offset">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4009">Set the offset that will be applied to the running time of @pad.</doc>
+             line="3986">Set the offset that will be applied to the running time of @pad.</doc>
         <source-position filename="gst/gstpad.h" line="1479"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -46287,13 +46287,13 @@ of the peer sink pad, if present.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4011">a #GstPad</doc>
+                 line="3988">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4012">the offset</doc>
+                 line="3989">the offset</doc>
             <type name="gint64" c:type="gint64"/>
           </parameter>
         </parameters>
@@ -46392,7 +46392,7 @@ from within the callback.</doc>
       <method name="start_task" c:identifier="gst_pad_start_task">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6320">Starts a task that repeatedly calls @func with @user_data. This function
+             line="6297">Starts a task that repeatedly calls @func with @user_data. This function
 is mostly used in pad activation functions to start the dataflow.
 The #GST_PAD_STREAM_LOCK of @pad will automatically be acquired
 before @func is called.</doc>
@@ -46400,14 +46400,14 @@ before @func is called.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6332">a %TRUE if the task could be started.</doc>
+               line="6309">a %TRUE if the task could be started.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6322">the #GstPad to start the task of</doc>
+                 line="6299">the #GstPad to start the task of</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="func"
@@ -46417,7 +46417,7 @@ before @func is called.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6323">the task function to call</doc>
+                 line="6300">the task function to call</doc>
             <type name="TaskFunction" c:type="GstTaskFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -46426,13 +46426,13 @@ before @func is called.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6324">user data passed to the task function</doc>
+                 line="6301">user data passed to the task function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6325">called when @user_data is no longer referenced</doc>
+                 line="6302">called when @user_data is no longer referenced</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46441,7 +46441,7 @@ before @func is called.</doc>
               c:identifier="gst_pad_sticky_events_foreach">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6239">Iterates all sticky events on @pad and calls @foreach_func for every
+             line="6216">Iterates all sticky events on @pad and calls @foreach_func for every
 event. If @foreach_func returns %FALSE the iteration is immediately stopped.</doc>
         <source-position filename="gst/gstpad.h" line="1373"/>
         <return-value transfer-ownership="none">
@@ -46451,7 +46451,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6241">the #GstPad that should be used for iteration.</doc>
+                 line="6218">the #GstPad that should be used for iteration.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="foreach_func"
@@ -46460,7 +46460,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
                      closure="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6242">the #GstPadStickyEventsForeachFunction that
+                 line="6219">the #GstPadStickyEventsForeachFunction that
                should be called for every event.</doc>
             <type name="PadStickyEventsForeachFunction"
                   c:type="GstPadStickyEventsForeachFunction"/>
@@ -46471,7 +46471,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6244">the optional user data.</doc>
+                 line="6221">the optional user data.</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -46479,7 +46479,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
       <method name="stop_task" c:identifier="gst_pad_stop_task">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6468">Stop the task of @pad. This function will also make sure that the
+             line="6445">Stop the task of @pad. This function will also make sure that the
 function executed by the task will effectively stop if not called
 from the GstTaskFunction.
 
@@ -46492,14 +46492,14 @@ released so as to ensure that streaming through this pad has finished.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6482">a %TRUE if the task could be stopped or %FALSE on error.</doc>
+               line="6459">a %TRUE if the task could be stopped or %FALSE on error.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6470">the #GstPad to stop the task of</doc>
+                 line="6447">the #GstPad to stop the task of</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -46509,12 +46509,12 @@ released so as to ensure that streaming through this pad has finished.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5445">Store the sticky @event on @pad</doc>
+             line="5422">Store the sticky @event on @pad</doc>
         <source-position filename="gst/gstpad.h" line="1366"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5452">#GST_FLOW_OK on success, #GST_FLOW_FLUSHING when the pad
+               line="5429">#GST_FLOW_OK on success, #GST_FLOW_FLUSHING when the pad
 was flushing or #GST_FLOW_EOS when the pad was EOS.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -46522,13 +46522,13 @@ was flushing or #GST_FLOW_EOS when the pad was EOS.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5447">a #GstPad</doc>
+                 line="5424">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5448">a #GstEvent</doc>
+                 line="5425">a #GstEvent</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -47800,14 +47800,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6579">The #GstBuffer from the probe</doc>
+               line="6556">The #GstBuffer from the probe</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6577">a #GstPadProbeInfo</doc>
+                 line="6554">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -47818,14 +47818,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6594">The #GstBufferList from the probe</doc>
+               line="6571">The #GstBufferList from the probe</doc>
           <type name="BufferList" c:type="GstBufferList*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6592">a #GstPadProbeInfo</doc>
+                 line="6569">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -47835,14 +47835,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6546">The #GstEvent from the probe</doc>
+               line="6523">The #GstEvent from the probe</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6544">a #GstPadProbeInfo</doc>
+                 line="6521">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -47852,14 +47852,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6563">The #GstQuery from the probe</doc>
+               line="6540">The #GstQuery from the probe</doc>
           <type name="Query" c:type="GstQuery*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6561">a #GstPadProbeInfo</doc>
+                 line="6538">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -48838,12 +48838,12 @@ for re-use.</doc>
                 version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2706">Gets the global #GstMetaInfo describing  the #GstParentBufferMeta meta.</doc>
+             line="2690">Gets the global #GstMetaInfo describing  the #GstParentBufferMeta meta.</doc>
         <source-position filename="gst/gstbuffer.h" line="729"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2711">The #GstMetaInfo</doc>
+               line="2695">The #GstMetaInfo</doc>
           <type name="MetaInfo" c:type="const GstMetaInfo*"/>
         </return-value>
       </function>
@@ -57207,12 +57207,12 @@ references would be
                 version="1.14">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2878">Gets the global #GstMetaInfo describing the #GstReferenceTimestampMeta meta.</doc>
+             line="2862">Gets the global #GstMetaInfo describing the #GstReferenceTimestampMeta meta.</doc>
         <source-position filename="gst/gstbuffer.h" line="782"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="2883">The #GstMetaInfo</doc>
+               line="2867">The #GstMetaInfo</doc>
           <type name="MetaInfo" c:type="const GstMetaInfo*"/>
         </return-value>
       </function>
@@ -74306,7 +74306,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="8" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="7" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -75348,7 +75348,7 @@ you have an additional reference to it.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstbuffer.c"
-           line="3037">Modifies a pointer to a #GstBuffer to point to a different #GstBuffer. The
+           line="3021">Modifies a pointer to a #GstBuffer to point to a different #GstBuffer. The
 modification is done atomically (so this is useful for ensuring thread safety
 in some cases), and the reference counts are updated appropriately (the old
 buffer is unreffed, the new is reffed).
@@ -75358,7 +75358,7 @@ Either @nbuf or the #GstBuffer pointed to by @obuf may be %NULL.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="3051">%TRUE when @obuf was different from @nbuf.</doc>
+             line="3035">%TRUE when @obuf was different from @nbuf.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
@@ -75370,7 +75370,7 @@ Either @nbuf or the #GstBuffer pointed to by @obuf may be %NULL.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="3039">pointer to a pointer to
+               line="3023">pointer to a pointer to
     a #GstBuffer to be replaced.</doc>
           <type name="Buffer" c:type="GstBuffer**"/>
         </parameter>
@@ -75380,7 +75380,7 @@ Either @nbuf or the #GstBuffer pointed to by @obuf may be %NULL.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="3041">pointer to a #GstBuffer that will
+               line="3025">pointer to a #GstBuffer that will
     replace the buffer pointed to by @obuf.</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </parameter>
@@ -75660,7 +75660,7 @@ of @new_caps.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstbuffer.c"
-           line="3000">Clears a reference to a #GstBuffer.
+           line="2984">Clears a reference to a #GstBuffer.
 
 @buf_ptr must not be %NULL.
 
@@ -75674,7 +75674,7 @@ reference count of the buffer is decreased and the pointer is set to %NULL.</doc
         <parameter name="buf_ptr" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstbuffer.c"
-               line="3002">a pointer to a #GstBuffer reference</doc>
+               line="2986">a pointer to a #GstBuffer reference</doc>
           <type name="Buffer" c:type="GstBuffer**"/>
         </parameter>
       </parameters>
@@ -79518,12 +79518,12 @@ instance_init function.</doc>
               version="1.6">
       <doc xml:space="preserve"
            filename="gst/gstbuffer.c"
-           line="2706">Gets the global #GstMetaInfo describing  the #GstParentBufferMeta meta.</doc>
+           line="2690">Gets the global #GstMetaInfo describing  the #GstParentBufferMeta meta.</doc>
       <source-position filename="gst/gstbuffer.h" line="729"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2711">The #GstMetaInfo</doc>
+             line="2695">The #GstMetaInfo</doc>
         <type name="MetaInfo" c:type="const GstMetaInfo*"/>
       </return-value>
     </function>
@@ -80349,12 +80349,12 @@ Either @new_query or the #GstQuery pointed to by @old_query may be %NULL.</doc>
               version="1.14">
       <doc xml:space="preserve"
            filename="gst/gstbuffer.c"
-           line="2878">Gets the global #GstMetaInfo describing the #GstReferenceTimestampMeta meta.</doc>
+           line="2862">Gets the global #GstMetaInfo describing the #GstReferenceTimestampMeta meta.</doc>
       <source-position filename="gst/gstbuffer.h" line="782"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gstbuffer.c"
-             line="2883">The #GstMetaInfo</doc>
+             line="2867">The #GstMetaInfo</doc>
         <type name="MetaInfo" c:type="const GstMetaInfo*"/>
       </return-value>
     </function>
