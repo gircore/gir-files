@@ -43533,7 +43533,7 @@ respectively.</doc>
       <constructor name="new" c:identifier="gst_pad_new">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="829">Creates a new pad with the given name in the given direction.
+             line="832">Creates a new pad with the given name in the given direction.
 If name is %NULL, a guaranteed unique name (across all pads)
 will be assigned.
 This function makes a copy of the name so you can safely free the name.</doc>
@@ -43541,7 +43541,7 @@ This function makes a copy of the name so you can safely free the name.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="839">a new #GstPad.
+               line="842">a new #GstPad.
 
 MT safe.</doc>
           <type name="Pad" c:type="GstPad*"/>
@@ -43553,13 +43553,13 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="831">the name of the new pad.</doc>
+                 line="834">the name of the new pad.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="direction" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="832">the #GstPadDirection of the pad.</doc>
+                 line="835">the #GstPadDirection of the pad.</doc>
             <type name="PadDirection" c:type="GstPadDirection"/>
           </parameter>
         </parameters>
@@ -43568,7 +43568,7 @@ MT safe.</doc>
                    c:identifier="gst_pad_new_from_static_template">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="875">Creates a new pad with the given name from the given static template.
+             line="878">Creates a new pad with the given name from the given static template.
 If name is %NULL, a guaranteed unique name (across all pads)
 will be assigned.
 This function makes a copy of the name so you can safely free the name.</doc>
@@ -43576,20 +43576,20 @@ This function makes a copy of the name so you can safely free the name.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="885">a new #GstPad.</doc>
+               line="888">a new #GstPad.</doc>
           <type name="Pad" c:type="GstPad*"/>
         </return-value>
         <parameters>
           <parameter name="templ" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="877">the #GstStaticPadTemplate to use</doc>
+                 line="880">the #GstStaticPadTemplate to use</doc>
             <type name="StaticPadTemplate" c:type="GstStaticPadTemplate*"/>
           </parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="878">the name of the pad</doc>
+                 line="881">the name of the pad</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -43598,7 +43598,7 @@ This function makes a copy of the name so you can safely free the name.</doc>
                    c:identifier="gst_pad_new_from_template">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="850">Creates a new pad with the given name from the given template.
+             line="853">Creates a new pad with the given name from the given template.
 If name is %NULL, a guaranteed unique name (across all pads)
 will be assigned.
 This function makes a copy of the name so you can safely free the name.</doc>
@@ -43606,14 +43606,14 @@ This function makes a copy of the name so you can safely free the name.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="860">a new #GstPad.</doc>
+               line="863">a new #GstPad.</doc>
           <type name="Pad" c:type="GstPad*"/>
         </return-value>
         <parameters>
           <parameter name="templ" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="852">the pad template to use</doc>
+                 line="855">the pad template to use</doc>
             <type name="PadTemplate" c:type="GstPadTemplate*"/>
           </parameter>
           <parameter name="name"
@@ -43622,7 +43622,7 @@ This function makes a copy of the name so you can safely free the name.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="853">the name of the pad</doc>
+                 line="856">the name of the pad</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -43680,7 +43680,7 @@ This function makes a copy of the name so you can safely free the name.</doc>
       <method name="activate_mode" c:identifier="gst_pad_activate_mode">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1291">Activates or deactivates the given pad in @mode via dispatching to the
+             line="1294">Activates or deactivates the given pad in @mode via dispatching to the
 pad's activatemodefunc. For use from within pad activation functions only.
 
 If you don't know what this is, you probably don't want to call it.</doc>
@@ -43688,7 +43688,7 @@ If you don't know what this is, you probably don't want to call it.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1302">%TRUE if the operation was successful.
+               line="1305">%TRUE if the operation was successful.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -43697,19 +43697,19 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1293">the #GstPad to activate or deactivate.</doc>
+                 line="1296">the #GstPad to activate or deactivate.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1294">the requested activation mode</doc>
+                 line="1297">the requested activation mode</doc>
             <type name="PadMode" c:type="GstPadMode"/>
           </parameter>
           <parameter name="active" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1295">whether or not the pad should be active.</doc>
+                 line="1298">whether or not the pad should be active.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -43717,7 +43717,7 @@ MT safe.</doc>
       <method name="add_probe" c:identifier="gst_pad_add_probe">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1404">Be notified of different states of pads. The provided callback is called for
+             line="1407">Be notified of different states of pads. The provided callback is called for
 every state that matches @mask.
 
 Probes are called in groups: First GST_PAD_PROBE_TYPE_BLOCK probes are
@@ -43730,7 +43730,7 @@ added.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1423">an id or 0 if no probe is pending. The id can be used to remove the
+               line="1426">an id or 0 if no probe is pending. The id can be used to remove the
 probe with gst_pad_remove_probe(). When using GST_PAD_PROBE_TYPE_IDLE it can
 happen that the probe can be run immediately and if the probe returns
 GST_PAD_PROBE_REMOVE this functions returns 0.
@@ -43742,13 +43742,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1406">the #GstPad to add the probe to</doc>
+                 line="1409">the #GstPad to add the probe to</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="mask" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1407">the probe mask</doc>
+                 line="1410">the probe mask</doc>
             <type name="PadProbeType" c:type="GstPadProbeType"/>
           </parameter>
           <parameter name="callback"
@@ -43758,7 +43758,7 @@ MT safe.</doc>
                      destroy="3">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1408">#GstPadProbeCallback that will be called with notifications of
+                 line="1411">#GstPadProbeCallback that will be called with notifications of
           the pad state</doc>
             <type name="PadProbeCallback" c:type="GstPadProbeCallback"/>
           </parameter>
@@ -43768,7 +43768,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1410">user data passed to the callback</doc>
+                 line="1413">user data passed to the callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="destroy_data"
@@ -43776,7 +43776,7 @@ MT safe.</doc>
                      scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1411">#GDestroyNotify for user_data</doc>
+                 line="1414">#GDestroyNotify for user_data</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -43784,26 +43784,26 @@ MT safe.</doc>
       <method name="can_link" c:identifier="gst_pad_can_link">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2474">Checks if the source pad and the sink pad are compatible so they can be
+             line="2477">Checks if the source pad and the sink pad are compatible so they can be
 linked.</doc>
         <source-position filename="gst/gstpad.h" line="1440"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2482">%TRUE if the pads can be linked.</doc>
+               line="2485">%TRUE if the pads can be linked.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="srcpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2476">the source #GstPad.</doc>
+                 line="2479">the source #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="sinkpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2477">the sink #GstPad.</doc>
+                 line="2480">the sink #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </parameter>
         </parameters>
@@ -43811,7 +43811,7 @@ linked.</doc>
       <method name="chain" c:identifier="gst_pad_chain">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4603">Chain a buffer to @pad.
+             line="4606">Chain a buffer to @pad.
 
 The function returns #GST_FLOW_FLUSHING if the pad was flushing.
 
@@ -43830,7 +43830,7 @@ after calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4625">a #GstFlowReturn from the pad.
+               line="4628">a #GstFlowReturn from the pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -43839,13 +43839,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4605">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
+                 line="4608">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4606">the #GstBuffer to send, return GST_FLOW_ERROR
+                 line="4609">the #GstBuffer to send, return GST_FLOW_ERROR
     if not.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
@@ -43854,7 +43854,7 @@ MT safe.</doc>
       <method name="chain_list" c:identifier="gst_pad_chain_list">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4667">Chain a bufferlist to @pad.
+             line="4670">Chain a bufferlist to @pad.
 
 The function returns #GST_FLOW_FLUSHING if the pad was flushing.
 
@@ -43874,20 +43874,20 @@ MT safe.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4690">a #GstFlowReturn from the pad.</doc>
+               line="4693">a #GstFlowReturn from the pad.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4669">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
+                 line="4672">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="list" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4670">the #GstBufferList to send, return GST_FLOW_ERROR
+                 line="4673">the #GstBufferList to send, return GST_FLOW_ERROR
     if not.</doc>
             <type name="BufferList" c:type="GstBufferList*"/>
           </parameter>
@@ -43897,20 +43897,20 @@ MT safe.</doc>
               c:identifier="gst_pad_check_reconfigure">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1664">Check and clear the #GST_PAD_FLAG_NEED_RECONFIGURE flag on @pad and return %TRUE
+             line="1667">Check and clear the #GST_PAD_FLAG_NEED_RECONFIGURE flag on @pad and return %TRUE
 if the flag was set.</doc>
         <source-position filename="gst/gstpad.h" line="1354"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1671">%TRUE is the GST_PAD_FLAG_NEED_RECONFIGURE flag was set on @pad.</doc>
+               line="1674">%TRUE is the GST_PAD_FLAG_NEED_RECONFIGURE flag was set on @pad.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1666">the #GstPad to check</doc>
+                 line="1669">the #GstPad to check</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44079,7 +44079,7 @@ stream-id manually instead.</doc>
       <method name="event_default" c:identifier="gst_pad_event_default">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3161">Invokes the default event handler for the given pad.
+             line="3164">Invokes the default event handler for the given pad.
 
 The EOS event will pause the task associated with @pad before it is forwarded
 to all internally linked pads,
@@ -44090,14 +44090,14 @@ takes ownership of @event.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3175">%TRUE if the event was sent successfully.</doc>
+               line="3178">%TRUE if the event was sent successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3163">a #GstPad to call the default event handler on.</doc>
+                 line="3166">a #GstPad to call the default event handler on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -44106,13 +44106,13 @@ takes ownership of @event.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3164">the parent of @pad or %NULL</doc>
+                 line="3167">the parent of @pad or %NULL</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="event" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3165">the #GstEvent to handle.</doc>
+                 line="3168">the #GstEvent to handle.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -44120,7 +44120,7 @@ takes ownership of @event.</doc>
       <method name="forward" c:identifier="gst_pad_forward">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3062">Calls @forward for all internally linked pads of @pad. This function deals with
+             line="3065">Calls @forward for all internally linked pads of @pad. This function deals with
 dynamically changing internal pads and will make sure that the @forward
 function is only called once for each pad.
 
@@ -44129,14 +44129,14 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3074">%TRUE if one of the dispatcher functions returned %TRUE.</doc>
+               line="3077">%TRUE if one of the dispatcher functions returned %TRUE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3064">a #GstPad</doc>
+                 line="3067">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="forward"
@@ -44145,7 +44145,7 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3065">a #GstPadForwardFunction</doc>
+                 line="3068">a #GstPadForwardFunction</doc>
             <type name="PadForwardFunction" c:type="GstPadForwardFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -44154,7 +44154,7 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3066">user data passed to @forward</doc>
+                 line="3069">user data passed to @forward</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -44162,7 +44162,7 @@ When @forward returns %TRUE, no further pads will be processed.</doc>
       <method name="get_allowed_caps" c:identifier="gst_pad_get_allowed_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2819">Gets the capabilities of the allowed media types that can flow through
+             line="2822">Gets the capabilities of the allowed media types that can flow through
 @pad and its peer.
 
 The allowed capabilities is calculated as the intersection of the results of
@@ -44172,7 +44172,7 @@ on the resulting caps.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2830">the allowed #GstCaps of the
+               line="2833">the allowed #GstCaps of the
     pad link. Unref the caps when you no longer need it. This
     function returns %NULL when @pad has no peer.
 
@@ -44183,7 +44183,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2821">a #GstPad.</doc>
+                 line="2824">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44191,13 +44191,13 @@ MT safe.</doc>
       <method name="get_current_caps" c:identifier="gst_pad_get_current_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2745">Gets the capabilities currently configured on @pad with the last
+             line="2748">Gets the capabilities currently configured on @pad with the last
 #GST_EVENT_CAPS event.</doc>
         <source-position filename="gst/gstpad.h" line="1463"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2752">the current caps of the pad with
+               line="2755">the current caps of the pad with
 incremented ref-count or %NULL when pad has no caps. Unref after usage.</doc>
           <type name="Caps" c:type="GstCaps*"/>
         </return-value>
@@ -44205,7 +44205,7 @@ incremented ref-count or %NULL when pad has no caps. Unref after usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2747">a  #GstPad to get the current capabilities of.</doc>
+                 line="2750">a  #GstPad to get the current capabilities of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44215,14 +44215,14 @@ incremented ref-count or %NULL when pad has no caps. Unref after usage.</doc>
               glib:get-property="direction">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="914">Gets the direction of the pad. The direction of the pad is
+             line="917">Gets the direction of the pad. The direction of the pad is
 decided at construction time so this function does not take
 the LOCK.</doc>
         <source-position filename="gst/gstpad.h" line="1321"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="922">the #GstPadDirection of the pad.
+               line="925">the #GstPadDirection of the pad.
 
 MT safe.</doc>
           <type name="PadDirection" c:type="GstPadDirection"/>
@@ -44231,7 +44231,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="916">a #GstPad to get the direction of.</doc>
+                 line="919">a #GstPad to get the direction of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44240,20 +44240,20 @@ MT safe.</doc>
               c:identifier="gst_pad_get_element_private">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6170">Gets the private data of a pad.
+             line="6173">Gets the private data of a pad.
 No locking is performed in this function.</doc>
         <source-position filename="gst/gstpad.h" line="1360"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6177">a #gpointer to the private data.</doc>
+               line="6180">a #gpointer to the private data.</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6172">the #GstPad to get the private data of.</doc>
+                 line="6175">the #GstPad to get the private data of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44263,7 +44263,7 @@ No locking is performed in this function.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6605">Gets the #GstFlowReturn return from the last data passed by this pad.</doc>
+             line="6608">Gets the #GstFlowReturn return from the last data passed by this pad.</doc>
         <source-position filename="gst/gstpad.h" line="1499"/>
         <return-value transfer-ownership="none">
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -44272,7 +44272,7 @@ No locking is performed in this function.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6607">the #GstPad</doc>
+                 line="6610">the #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44282,20 +44282,20 @@ No locking is performed in this function.</doc>
               glib:get-property="offset">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3979">Get the offset applied to the running time of @pad. @pad has to be a source
+             line="3982">Get the offset applied to the running time of @pad. @pad has to be a source
 pad.</doc>
         <source-position filename="gst/gstpad.h" line="1476"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3986">the offset.</doc>
+               line="3989">the offset.</doc>
           <type name="gint64" c:type="gint64"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3981">a #GstPad</doc>
+                 line="3984">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44303,12 +44303,12 @@ pad.</doc>
       <method name="get_pad_template" c:identifier="gst_pad_get_pad_template">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2697">Gets the template for @pad.</doc>
+             line="2700">Gets the template for @pad.</doc>
         <source-position filename="gst/gstpad.h" line="1363"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2703">the #GstPadTemplate from which
+               line="2706">the #GstPadTemplate from which
     this pad was instantiated, or %NULL if this pad has no
     template. Unref after usage.</doc>
           <type name="PadTemplate" c:type="GstPadTemplate*"/>
@@ -44317,7 +44317,7 @@ pad.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2699">a #GstPad.</doc>
+                 line="2702">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44326,12 +44326,12 @@ pad.</doc>
               c:identifier="gst_pad_get_pad_template_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2772">Gets the capabilities for @pad's template.</doc>
+             line="2775">Gets the capabilities for @pad's template.</doc>
         <source-position filename="gst/gstpad.h" line="1458"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2778">the #GstCaps of this pad template.
+               line="2781">the #GstCaps of this pad template.
 Unref after usage.</doc>
           <type name="Caps" c:type="GstCaps*"/>
         </return-value>
@@ -44339,7 +44339,7 @@ Unref after usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2774">a #GstPad to get the template capabilities from.</doc>
+                 line="2777">a #GstPad to get the template capabilities from.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44373,13 +44373,13 @@ MT safe.</doc>
       <method name="get_peer" c:identifier="gst_pad_get_peer">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2792">Gets the peer of @pad. This function refs the peer pad so
+             line="2795">Gets the peer of @pad. This function refs the peer pad so
 you need to unref it after use.</doc>
         <source-position filename="gst/gstpad.h" line="1455"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2799">the peer #GstPad. Unref after usage.
+               line="2802">the peer #GstPad. Unref after usage.
 
 MT safe.</doc>
           <type name="Pad" c:type="GstPad*"/>
@@ -44388,7 +44388,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2794">a #GstPad to get the peer of.</doc>
+                 line="2797">a #GstPad to get the peer of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44396,7 +44396,7 @@ MT safe.</doc>
       <method name="get_range" c:identifier="gst_pad_get_range">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5088">When @pad is flushing this function returns #GST_FLOW_FLUSHING
+             line="5091">When @pad is flushing this function returns #GST_FLOW_FLUSHING
 immediately and @buffer is %NULL.
 
 Calls the getrange function of @pad, see #GstPadGetRangeFunction for a
@@ -44426,7 +44426,7 @@ This is a lowlevel function. Usually gst_pad_pull_range() is used.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5123">a #GstFlowReturn from the pad.
+               line="5126">a #GstFlowReturn from the pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -44435,19 +44435,19 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5090">a src #GstPad, returns #GST_FLOW_ERROR if not.</doc>
+                 line="5093">a src #GstPad, returns #GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5091">The start offset of the buffer</doc>
+                 line="5094">The start offset of the buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5092">The length of the buffer</doc>
+                 line="5095">The length of the buffer</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="buffer"
@@ -44456,7 +44456,7 @@ MT safe.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5093">a pointer to hold the #GstBuffer,
+                 line="5096">a pointer to hold the #GstBuffer,
     returns #GST_FLOW_ERROR if %NULL.</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
@@ -44467,13 +44467,13 @@ MT safe.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2886">If there is a single internal link of the given pad, this function will
+             line="2889">If there is a single internal link of the given pad, this function will
 return it. Otherwise, it will return NULL.</doc>
         <source-position filename="gst/gstpad.h" line="1546"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2893">a #GstPad, or %NULL if @pad has none
+               line="2896">a #GstPad, or %NULL if @pad has none
 or more than one internal links. Unref returned pad with
 gst_object_unref().</doc>
           <type name="Pad" c:type="GstPad*"/>
@@ -44482,7 +44482,7 @@ gst_object_unref().</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2888">the #GstPad to get the internal link of.</doc>
+                 line="2891">the #GstPad to get the internal link of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44490,13 +44490,13 @@ gst_object_unref().</doc>
       <method name="get_sticky_event" c:identifier="gst_pad_get_sticky_event">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6185">Returns a new reference of the sticky event of type @event_type
+             line="6188">Returns a new reference of the sticky event of type @event_type
 from the event.</doc>
         <source-position filename="gst/gstpad.h" line="1369"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6194">a #GstEvent of type
+               line="6197">a #GstEvent of type
 @event_type or %NULL when no event of @event_type was on
 @pad. Unref after usage.</doc>
           <type name="Event" c:type="GstEvent*"/>
@@ -44505,19 +44505,19 @@ from the event.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6187">the #GstPad to get the event from.</doc>
+                 line="6190">the #GstPad to get the event from.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6188">the #GstEventType that should be retrieved.</doc>
+                 line="6191">the #GstEventType that should be retrieved.</doc>
             <type name="EventType" c:type="GstEventType"/>
           </parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6189">the index of the event</doc>
+                 line="6192">the index of the event</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -44585,20 +44585,20 @@ contents should not be interpreted.</doc>
               version="1.12">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6432">Get @pad task state. If no task is currently
+             line="6435">Get @pad task state. If no task is currently
 set, #GST_TASK_STOPPED is returned.</doc>
         <source-position filename="gst/gstpad.h" line="1527"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6439">The current state of @pad's task.</doc>
+               line="6442">The current state of @pad's task.</doc>
           <type name="TaskState" c:type="GstTaskState"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6434">the #GstPad to get task state from</doc>
+                 line="6437">the #GstPad to get task state from</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44606,19 +44606,19 @@ set, #GST_TASK_STOPPED is returned.</doc>
       <method name="has_current_caps" c:identifier="gst_pad_has_current_caps">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2719">Check if @pad has caps set on it with a #GST_EVENT_CAPS event.</doc>
+             line="2722">Check if @pad has caps set on it with a #GST_EVENT_CAPS event.</doc>
         <source-position filename="gst/gstpad.h" line="1466"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2725">%TRUE when @pad has caps associated with it.</doc>
+               line="2728">%TRUE when @pad has caps associated with it.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2721">a  #GstPad to check</doc>
+                 line="2724">a  #GstPad to check</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44626,12 +44626,12 @@ set, #GST_TASK_STOPPED is returned.</doc>
       <method name="is_active" c:identifier="gst_pad_is_active">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1347">Query if a pad is active</doc>
+             line="1350">Query if a pad is active</doc>
         <source-position filename="gst/gstpad.h" line="1327"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1353">%TRUE if the pad is active.
+               line="1356">%TRUE if the pad is active.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -44640,7 +44640,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1349">the #GstPad to query</doc>
+                 line="1352">the #GstPad to query</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44648,14 +44648,14 @@ MT safe.</doc>
       <method name="is_blocked" c:identifier="gst_pad_is_blocked">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1588">Checks if the pad is blocked or not. This function returns the
+             line="1591">Checks if the pad is blocked or not. This function returns the
 last requested state of the pad. It is not certain that the pad
 is actually blocking at this point (see gst_pad_is_blocking()).</doc>
         <source-position filename="gst/gstpad.h" line="1342"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1596">%TRUE if the pad is blocked.
+               line="1599">%TRUE if the pad is blocked.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -44664,7 +44664,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1590">the #GstPad to query</doc>
+                 line="1593">the #GstPad to query</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44672,13 +44672,13 @@ MT safe.</doc>
       <method name="is_blocking" c:identifier="gst_pad_is_blocking">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1614">Checks if the pad is blocking or not. This is a guaranteed state
+             line="1617">Checks if the pad is blocking or not. This is a guaranteed state
 of whether the pad is actually blocking on a #GstBuffer or a #GstEvent.</doc>
         <source-position filename="gst/gstpad.h" line="1345"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1621">%TRUE if the pad is blocking.
+               line="1624">%TRUE if the pad is blocking.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -44687,7 +44687,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1616">the #GstPad to query</doc>
+                 line="1619">the #GstPad to query</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44695,12 +44695,12 @@ MT safe.</doc>
       <method name="is_linked" c:identifier="gst_pad_is_linked">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2223">Checks if a @pad is linked to another pad or not.</doc>
+             line="2226">Checks if a @pad is linked to another pad or not.</doc>
         <source-position filename="gst/gstpad.h" line="1452"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2229">%TRUE if the pad is linked, %FALSE otherwise.
+               line="2232">%TRUE if the pad is linked, %FALSE otherwise.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -44709,7 +44709,7 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2225">pad to check</doc>
+                 line="2228">pad to check</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44718,7 +44718,7 @@ MT safe.</doc>
               c:identifier="gst_pad_iterate_internal_links">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3018">Gets an iterator for the pads to which the given pad is linked to inside
+             line="3021">Gets an iterator for the pads to which the given pad is linked to inside
 of the parent element.
 
 Each #GstPad element yielded by the iterator will have its refcount increased,
@@ -44729,7 +44729,7 @@ Free-function: gst_iterator_free</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3030">a new #GstIterator of #GstPad
+               line="3033">a new #GstIterator of #GstPad
     or %NULL when the pad does not have an iterator function
     configured. Use gst_iterator_free() after usage.</doc>
           <type name="Iterator" c:type="GstIterator*"/>
@@ -44738,7 +44738,7 @@ Free-function: gst_iterator_free</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3020">the GstPad to get the internal links of.</doc>
+                 line="3023">the GstPad to get the internal links of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44747,7 +44747,7 @@ Free-function: gst_iterator_free</doc>
               c:identifier="gst_pad_iterate_internal_links_default">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2952">Iterate the list of pads to which the given pad is linked to inside of
+             line="2955">Iterate the list of pads to which the given pad is linked to inside of
 the parent element.
 This is the default handler, and thus returns an iterator of all of the
 pads inside the parent element with opposite direction.
@@ -44757,7 +44757,7 @@ The caller must free this iterator after use with gst_iterator_free().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2964">a #GstIterator of #GstPad, or %NULL if @pad
+               line="2967">a #GstIterator of #GstPad, or %NULL if @pad
 has no parent. Unref each returned pad with gst_object_unref().</doc>
           <type name="Iterator" c:type="GstIterator*"/>
         </return-value>
@@ -44765,7 +44765,7 @@ has no parent. Unref each returned pad with gst_object_unref().</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2954">the #GstPad to get the internal links of.</doc>
+                 line="2957">the #GstPad to get the internal links of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -44774,7 +44774,7 @@ has no parent. Unref each returned pad with gst_object_unref().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2955">the parent of @pad or %NULL</doc>
+                 line="2958">the parent of @pad or %NULL</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
         </parameters>
@@ -44782,12 +44782,12 @@ has no parent. Unref each returned pad with gst_object_unref().</doc>
       <method name="link" c:identifier="gst_pad_link">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2663">Links the source pad and the sink pad.</doc>
+             line="2666">Links the source pad and the sink pad.</doc>
         <source-position filename="gst/gstpad.h" line="1443"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2670">A result code indicating if the connection worked or
+               line="2673">A result code indicating if the connection worked or
          what went wrong.
 
 MT Safe.</doc>
@@ -44797,13 +44797,13 @@ MT Safe.</doc>
           <instance-parameter name="srcpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2665">the source #GstPad to link.</doc>
+                 line="2668">the source #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="sinkpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2666">the sink #GstPad to link.</doc>
+                 line="2669">the sink #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </parameter>
         </parameters>
@@ -44811,7 +44811,7 @@ MT Safe.</doc>
       <method name="link_full" c:identifier="gst_pad_link_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2510">Links the source pad and the sink pad.
+             line="2513">Links the source pad and the sink pad.
 
 This variant of #gst_pad_link provides a more granular control on the
 checks being done when linking. While providing some considerable speedups
@@ -44824,7 +44824,7 @@ MT Safe.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2526">A result code indicating if the connection worked or
+               line="2529">A result code indicating if the connection worked or
          what went wrong.</doc>
           <type name="PadLinkReturn" c:type="GstPadLinkReturn"/>
         </return-value>
@@ -44832,19 +44832,19 @@ MT Safe.</doc>
           <instance-parameter name="srcpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2512">the source #GstPad to link.</doc>
+                 line="2515">the source #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="sinkpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2513">the sink #GstPad to link.</doc>
+                 line="2516">the sink #GstPad to link.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2514">the checks to validate when linking</doc>
+                 line="2517">the checks to validate when linking</doc>
             <type name="PadLinkCheck" c:type="GstPadLinkCheck"/>
           </parameter>
         </parameters>
@@ -44930,7 +44930,7 @@ pads with safety checks applied.</doc>
       <method name="mark_reconfigure" c:identifier="gst_pad_mark_reconfigure">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1691">Mark a pad for needing reconfiguration. The next call to
+             line="1694">Mark a pad for needing reconfiguration. The next call to
 gst_pad_check_reconfigure() will return %TRUE after this call.</doc>
         <source-position filename="gst/gstpad.h" line="1348"/>
         <return-value transfer-ownership="none">
@@ -44940,7 +44940,7 @@ gst_pad_check_reconfigure() will return %TRUE after this call.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1693">the #GstPad to mark</doc>
+                 line="1696">the #GstPad to mark</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44949,20 +44949,20 @@ gst_pad_check_reconfigure() will return %TRUE after this call.</doc>
               c:identifier="gst_pad_needs_reconfigure">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1640">Check the #GST_PAD_FLAG_NEED_RECONFIGURE flag on @pad and return %TRUE
+             line="1643">Check the #GST_PAD_FLAG_NEED_RECONFIGURE flag on @pad and return %TRUE
 if the flag was set.</doc>
         <source-position filename="gst/gstpad.h" line="1351"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1647">%TRUE is the GST_PAD_FLAG_NEED_RECONFIGURE flag is set on @pad.</doc>
+               line="1650">%TRUE is the GST_PAD_FLAG_NEED_RECONFIGURE flag is set on @pad.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1642">the #GstPad to check</doc>
+                 line="1645">the #GstPad to check</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44970,14 +44970,14 @@ if the flag was set.</doc>
       <method name="pause_task" c:identifier="gst_pad_pause_task">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6386">Pause the task of @pad. This function will also wait until the
+             line="6389">Pause the task of @pad. This function will also wait until the
 function executed by the task is finished if this function is not
 called from the task function.</doc>
         <source-position filename="gst/gstpad.h" line="1521"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6394">a %TRUE if the task could be paused or %FALSE when the pad
+               line="6397">a %TRUE if the task could be paused or %FALSE when the pad
 has no task.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -44985,7 +44985,7 @@ has no task.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6388">the #GstPad to pause the task of</doc>
+                 line="6391">the #GstPad to pause the task of</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -44993,7 +44993,7 @@ has no task.</doc>
       <method name="peer_query" c:identifier="gst_pad_peer_query">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4298">Performs gst_pad_query() on the peer of @pad.
+             line="4301">Performs gst_pad_query() on the peer of @pad.
 
 The caller is responsible for both the allocation and deallocation of
 the query structure.</doc>
@@ -45001,7 +45001,7 @@ the query structure.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4308">%TRUE if the query could be performed. This function returns %FALSE
+               line="4311">%TRUE if the query could be performed. This function returns %FALSE
 if @pad has no peer.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -45009,13 +45009,13 @@ if @pad has no peer.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4300">a #GstPad to invoke the peer query on.</doc>
+                 line="4303">a #GstPad to invoke the peer query on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="query" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4301">the #GstQuery to perform.</doc>
+                 line="4304">the #GstQuery to perform.</doc>
             <type name="Query" c:type="GstQuery*"/>
           </parameter>
         </parameters>
@@ -45282,7 +45282,7 @@ the same caps.  Two such elements are tee and adder.</doc>
       <method name="pull_range" c:identifier="gst_pad_pull_range">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5140">Pulls a @buffer from the peer pad or fills up a provided buffer.
+             line="5143">Pulls a @buffer from the peer pad or fills up a provided buffer.
 
 This function will first trigger the pad block signal if it was
 installed.
@@ -45311,7 +45311,7 @@ bytes. The caller should check the result buffer size to get the result size.</d
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5174">a #GstFlowReturn from the peer pad.
+               line="5177">a #GstFlowReturn from the peer pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -45320,19 +45320,19 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5142">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
+                 line="5145">a sink #GstPad, returns GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5143">The start offset of the buffer</doc>
+                 line="5146">The start offset of the buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5144">The length of the buffer</doc>
+                 line="5147">The length of the buffer</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="buffer"
@@ -45341,7 +45341,7 @@ MT safe.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5145">a pointer to hold the #GstBuffer, returns
+                 line="5148">a pointer to hold the #GstBuffer, returns
     GST_FLOW_ERROR if %NULL.</doc>
             <type name="Buffer" c:type="GstBuffer**"/>
           </parameter>
@@ -45350,7 +45350,7 @@ MT safe.</doc>
       <method name="push" c:identifier="gst_pad_push">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4849">Pushes a buffer to the peer of @pad.
+             line="4852">Pushes a buffer to the peer of @pad.
 
 This function will call installed block probes before triggering any
 installed data probes.
@@ -45365,7 +45365,7 @@ after calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4867">a #GstFlowReturn from the peer pad.
+               line="4870">a #GstFlowReturn from the peer pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -45374,13 +45374,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4851">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
+                 line="4854">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="buffer" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4852">the #GstBuffer to push returns GST_FLOW_ERROR
+                 line="4855">the #GstBuffer to push returns GST_FLOW_ERROR
     if not.</doc>
             <type name="Buffer" c:type="GstBuffer*"/>
           </parameter>
@@ -45389,7 +45389,7 @@ MT safe.</doc>
       <method name="push_event" c:identifier="gst_pad_push_event">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5666">Sends the event to the peer of the given pad. This function is
+             line="5669">Sends the event to the peer of the given pad. This function is
 mainly used by elements to send events to their peer
 elements.
 
@@ -45399,7 +45399,7 @@ gst_event_ref() it if you want to reuse the event after this call.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5678">%TRUE if the event was handled.
+               line="5681">%TRUE if the event was handled.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -45408,13 +45408,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5668">a #GstPad to push the event to.</doc>
+                 line="5671">a #GstPad to push the event to.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5669">the #GstEvent to send to the pad.</doc>
+                 line="5672">the #GstEvent to send to the pad.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -45422,7 +45422,7 @@ MT safe.</doc>
       <method name="push_list" c:identifier="gst_pad_push_list">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4887">Pushes a buffer list to the peer of @pad.
+             line="4890">Pushes a buffer list to the peer of @pad.
 
 This function will call installed block probes before triggering any
 installed data probes.
@@ -45439,7 +45439,7 @@ after calling this function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4907">a #GstFlowReturn from the peer pad.
+               line="4910">a #GstFlowReturn from the peer pad.
 
 MT safe.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
@@ -45448,13 +45448,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4889">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
+                 line="4892">a source #GstPad, returns #GST_FLOW_ERROR if not.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="list" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4890">the #GstBufferList to push returns GST_FLOW_ERROR
+                 line="4893">the #GstBufferList to push returns GST_FLOW_ERROR
     if not.</doc>
             <type name="BufferList" c:type="GstBufferList*"/>
           </parameter>
@@ -45463,7 +45463,7 @@ MT safe.</doc>
       <method name="query" c:identifier="gst_pad_query">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4165">Dispatches a query to a pad. The query should have been allocated by the
+             line="4168">Dispatches a query to a pad. The query should have been allocated by the
 caller via one of the type-specific allocation functions. The element that
 the pad belongs to is responsible for filling the query with an appropriate
 response, which should then be parsed with a type-specific query parsing
@@ -45477,20 +45477,20 @@ Please also note that some queries might need a running pipeline to work.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="4181">%TRUE if the query could be performed.</doc>
+               line="4184">%TRUE if the query could be performed.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4167">a #GstPad to invoke the default query on.</doc>
+                 line="4170">a #GstPad to invoke the default query on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="query" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4168">the #GstQuery to perform.</doc>
+                 line="4171">the #GstQuery to perform.</doc>
             <type name="Query" c:type="GstQuery*"/>
           </parameter>
         </parameters>
@@ -45615,7 +45615,7 @@ gst_caps_make_writable() before modifying the caps.</doc>
       <method name="query_default" c:identifier="gst_pad_query_default">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="3489">Invokes the default query handler for the given pad.
+             line="3492">Invokes the default query handler for the given pad.
 The query is sent to all pads internally linked to @pad. Note that
 if there are many possible sink pads that are internally linked to
 @pad, only one will be sent the query.
@@ -45624,14 +45624,14 @@ Multi-sinkpad elements should implement custom query handlers.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="3501">%TRUE if the query was performed successfully.</doc>
+               line="3504">%TRUE if the query was performed successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3491">a #GstPad to call the default query handler on.</doc>
+                 line="3494">a #GstPad to call the default query handler on.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -45640,13 +45640,13 @@ Multi-sinkpad elements should implement custom query handlers.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3492">the parent of @pad or %NULL</doc>
+                 line="3495">the parent of @pad or %NULL</doc>
             <type name="Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="query" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="3493">the #GstQuery to handle.</doc>
+                 line="3496">the #GstQuery to handle.</doc>
             <type name="Query" c:type="GstQuery*"/>
           </parameter>
         </parameters>
@@ -45729,7 +45729,7 @@ Multi-sinkpad elements should implement custom query handlers.</doc>
       <method name="remove_probe" c:identifier="gst_pad_remove_probe">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1551">Remove the probe with @id from @pad.
+             line="1554">Remove the probe with @id from @pad.
 
 MT safe.</doc>
         <source-position filename="gst/gstpad.h" line="1339"/>
@@ -45740,13 +45740,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1553">the #GstPad with the probe</doc>
+                 line="1556">the #GstPad with the probe</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1554">the probe id to remove</doc>
+                 line="1557">the probe id to remove</doc>
             <type name="gulong" c:type="gulong"/>
           </parameter>
         </parameters>
@@ -45754,7 +45754,7 @@ MT safe.</doc>
       <method name="send_event" c:identifier="gst_pad_send_event">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6084">Sends the event to the pad. This function can be used
+             line="6087">Sends the event to the pad. This function can be used
 by applications to send events in the pipeline.
 
 If @pad is a source pad, @event should be an upstream event. If @pad is a
@@ -45778,20 +45778,20 @@ gst_event_ref() it if you want to reuse the event after this call.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6110">%TRUE if the event was handled.</doc>
+               line="6113">%TRUE if the event was handled.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6086">a #GstPad to send the event to.</doc>
+                 line="6089">a #GstPad to send the event to.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6087">the #GstEvent to send to the pad.</doc>
+                 line="6090">the #GstEvent to send to the pad.</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -45800,7 +45800,7 @@ gst_event_ref() it if you want to reuse the event after this call.</doc>
               c:identifier="gst_pad_set_activate_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1716">Sets the given activate function for @pad. The activate function will
+             line="1719">Sets the given activate function for @pad. The activate function will
 dispatch to gst_pad_activate_mode() to perform the actual activation.
 Only makes sense to set on sink pads.
 
@@ -45813,7 +45813,7 @@ Call this function if your sink pad can start a pull-based task.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1718">a #GstPad.</doc>
+                 line="1721">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="activate"
@@ -45823,7 +45823,7 @@ Call this function if your sink pad can start a pull-based task.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1719">the #GstPadActivateFunction to set.</doc>
+                 line="1722">the #GstPadActivateFunction to set.</doc>
             <type name="PadActivateFunction" c:type="GstPadActivateFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -45832,13 +45832,13 @@ Call this function if your sink pad can start a pull-based task.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1720">user_data passed to @notify</doc>
+                 line="1723">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1721">notify called when @activate will not be used anymore.</doc>
+                 line="1724">notify called when @activate will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -45847,7 +45847,7 @@ Call this function if your sink pad can start a pull-based task.</doc>
               c:identifier="gst_pad_set_activatemode_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1753">Sets the given activate_mode function for the pad. An activate_mode function
+             line="1756">Sets the given activate_mode function for the pad. An activate_mode function
 prepares the element for data passing.</doc>
         <source-position filename="gst/gstpad.h" line="1383"/>
         <return-value transfer-ownership="none">
@@ -45857,7 +45857,7 @@ prepares the element for data passing.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1755">a #GstPad.</doc>
+                 line="1758">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="activatemode"
@@ -45867,7 +45867,7 @@ prepares the element for data passing.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1756">the #GstPadActivateModeFunction to set.</doc>
+                 line="1759">the #GstPadActivateModeFunction to set.</doc>
             <type name="PadActivateModeFunction"
                   c:type="GstPadActivateModeFunction"/>
           </parameter>
@@ -45877,13 +45877,13 @@ prepares the element for data passing.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1757">user_data passed to @notify</doc>
+                 line="1760">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1758">notify called when @activatemode will not be used anymore.</doc>
+                 line="1761">notify called when @activatemode will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -45891,7 +45891,7 @@ prepares the element for data passing.</doc>
       <method name="set_active" c:identifier="gst_pad_set_active">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1068">Activates or deactivates the given pad.
+             line="1071">Activates or deactivates the given pad.
 Normally called from within core state change functions.
 
 If @active, makes sure the pad is active. If it is already active, either in
@@ -45904,7 +45904,7 @@ and a %FALSE argument.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1083">%TRUE if the operation was successful.
+               line="1086">%TRUE if the operation was successful.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -45913,13 +45913,13 @@ MT safe.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1070">the #GstPad to activate or deactivate.</doc>
+                 line="1073">the #GstPad to activate or deactivate.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="active" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1071">whether or not the pad should be active.</doc>
+                 line="1074">whether or not the pad should be active.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -45928,7 +45928,7 @@ MT safe.</doc>
               c:identifier="gst_pad_set_chain_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1788">Sets the given chain function for the pad. The chain function is called to
+             line="1791">Sets the given chain function for the pad. The chain function is called to
 process a #GstBuffer input buffer. see #GstPadChainFunction for more details.</doc>
         <source-position filename="gst/gstpad.h" line="1390"/>
         <return-value transfer-ownership="none">
@@ -45938,7 +45938,7 @@ process a #GstBuffer input buffer. see #GstPadChainFunction for more details.</d
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1790">a sink #GstPad.</doc>
+                 line="1793">a sink #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="chain"
@@ -45948,7 +45948,7 @@ process a #GstBuffer input buffer. see #GstPadChainFunction for more details.</d
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1791">the #GstPadChainFunction to set.</doc>
+                 line="1794">the #GstPadChainFunction to set.</doc>
             <type name="PadChainFunction" c:type="GstPadChainFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -45957,13 +45957,13 @@ process a #GstBuffer input buffer. see #GstPadChainFunction for more details.</d
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1792">user_data passed to @notify</doc>
+                 line="1795">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1793">notify called when @chain will not be used anymore.</doc>
+                 line="1796">notify called when @chain will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -45972,7 +45972,7 @@ process a #GstBuffer input buffer. see #GstPadChainFunction for more details.</d
               c:identifier="gst_pad_set_chain_list_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1823">Sets the given chain list function for the pad. The chainlist function is
+             line="1826">Sets the given chain list function for the pad. The chainlist function is
 called to process a #GstBufferList input buffer list. See
 #GstPadChainListFunction for more details.</doc>
         <source-position filename="gst/gstpad.h" line="1395"/>
@@ -45983,7 +45983,7 @@ called to process a #GstBufferList input buffer list. See
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1825">a sink #GstPad.</doc>
+                 line="1828">a sink #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="chainlist"
@@ -45993,7 +45993,7 @@ called to process a #GstBufferList input buffer list. See
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1826">the #GstPadChainListFunction to set.</doc>
+                 line="1829">the #GstPadChainListFunction to set.</doc>
             <type name="PadChainListFunction"
                   c:type="GstPadChainListFunction"/>
           </parameter>
@@ -46003,13 +46003,13 @@ called to process a #GstBufferList input buffer list. See
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1827">user_data passed to @notify</doc>
+                 line="1830">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1828">notify called when @chainlist will not be used anymore.</doc>
+                 line="1831">notify called when @chainlist will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46018,7 +46018,7 @@ called to process a #GstBufferList input buffer list. See
               c:identifier="gst_pad_set_element_private">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6155">Set the given private data gpointer on the pad.
+             line="6158">Set the given private data gpointer on the pad.
 This function can only be used by the element that owns the pad.
 No locking is performed in this function.</doc>
         <source-position filename="gst/gstpad.h" line="1357"/>
@@ -46029,7 +46029,7 @@ No locking is performed in this function.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6157">the #GstPad to set the private data of.</doc>
+                 line="6160">the #GstPad to set the private data of.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="priv"
@@ -46038,7 +46038,7 @@ No locking is performed in this function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6158">The private data to attach to the pad.</doc>
+                 line="6161">The private data to attach to the pad.</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -46048,7 +46048,7 @@ No locking is performed in this function.</doc>
               version="1.8">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1940">Sets the given event handler for the pad.</doc>
+             line="1943">Sets the given event handler for the pad.</doc>
         <source-position filename="gst/gstpad.h" line="1410"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -46057,7 +46057,7 @@ No locking is performed in this function.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1942">a #GstPad of either direction.</doc>
+                 line="1945">a #GstPad of either direction.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event"
@@ -46067,7 +46067,7 @@ No locking is performed in this function.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1943">the #GstPadEventFullFunction to set.</doc>
+                 line="1946">the #GstPadEventFullFunction to set.</doc>
             <type name="PadEventFullFunction"
                   c:type="GstPadEventFullFunction"/>
           </parameter>
@@ -46077,13 +46077,13 @@ No locking is performed in this function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1944">user_data passed to @notify</doc>
+                 line="1947">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1945">notify called when @event will not be used anymore.</doc>
+                 line="1948">notify called when @event will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46092,7 +46092,7 @@ No locking is performed in this function.</doc>
               c:identifier="gst_pad_set_event_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1896">Sets the given event handler for the pad.</doc>
+             line="1899">Sets the given event handler for the pad.</doc>
         <source-position filename="gst/gstpad.h" line="1405"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -46101,7 +46101,7 @@ No locking is performed in this function.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1898">a #GstPad of either direction.</doc>
+                 line="1901">a #GstPad of either direction.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event"
@@ -46111,7 +46111,7 @@ No locking is performed in this function.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1899">the #GstPadEventFunction to set.</doc>
+                 line="1902">the #GstPadEventFunction to set.</doc>
             <type name="PadEventFunction" c:type="GstPadEventFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -46120,13 +46120,13 @@ No locking is performed in this function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1900">user_data passed to @notify</doc>
+                 line="1903">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1901">notify called when @event will not be used anymore.</doc>
+                 line="1904">notify called when @event will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46135,7 +46135,7 @@ No locking is performed in this function.</doc>
               c:identifier="gst_pad_set_getrange_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1860">Sets the given getrange function for the pad. The getrange function is
+             line="1863">Sets the given getrange function for the pad. The getrange function is
 called to produce a new #GstBuffer to start the processing pipeline. see
 #GstPadGetRangeFunction for a description of the getrange function.</doc>
         <source-position filename="gst/gstpad.h" line="1400"/>
@@ -46146,7 +46146,7 @@ called to produce a new #GstBuffer to start the processing pipeline. see
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1862">a source #GstPad.</doc>
+                 line="1865">a source #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="get"
@@ -46156,7 +46156,7 @@ called to produce a new #GstBuffer to start the processing pipeline. see
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1863">the #GstPadGetRangeFunction to set.</doc>
+                 line="1866">the #GstPadGetRangeFunction to set.</doc>
             <type name="PadGetRangeFunction" c:type="GstPadGetRangeFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -46165,13 +46165,13 @@ called to produce a new #GstBuffer to start the processing pipeline. see
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1864">user_data passed to @notify</doc>
+                 line="1867">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1865">notify called when @get will not be used anymore.</doc>
+                 line="1868">notify called when @get will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46180,7 +46180,7 @@ called to produce a new #GstBuffer to start the processing pipeline. see
               c:identifier="gst_pad_set_iterate_internal_links_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2009">Sets the given internal link iterator function for the pad.</doc>
+             line="2012">Sets the given internal link iterator function for the pad.</doc>
         <source-position filename="gst/gstpad.h" line="1532"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -46189,7 +46189,7 @@ called to produce a new #GstBuffer to start the processing pipeline. see
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2011">a #GstPad of either direction.</doc>
+                 line="2014">a #GstPad of either direction.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="iterintlink"
@@ -46199,7 +46199,7 @@ called to produce a new #GstBuffer to start the processing pipeline. see
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2012">the #GstPadIterIntLinkFunction to set.</doc>
+                 line="2015">the #GstPadIterIntLinkFunction to set.</doc>
             <type name="PadIterIntLinkFunction"
                   c:type="GstPadIterIntLinkFunction"/>
           </parameter>
@@ -46209,13 +46209,13 @@ called to produce a new #GstBuffer to start the processing pipeline. see
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2013">user_data passed to @notify</doc>
+                 line="2016">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2014">notify called when @iterintlink will not be used anymore.</doc>
+                 line="2017">notify called when @iterintlink will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46224,7 +46224,7 @@ called to produce a new #GstBuffer to start the processing pipeline. see
               c:identifier="gst_pad_set_link_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2043">Sets the given link function for the pad. It will be called when
+             line="2046">Sets the given link function for the pad. It will be called when
 the pad is linked with another pad.
 
 The return value #GST_PAD_LINK_OK should be used when the connection can be
@@ -46243,7 +46243,7 @@ of the peer sink pad, if present.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2045">a #GstPad.</doc>
+                 line="2048">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="link"
@@ -46253,7 +46253,7 @@ of the peer sink pad, if present.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2046">the #GstPadLinkFunction to set.</doc>
+                 line="2049">the #GstPadLinkFunction to set.</doc>
             <type name="PadLinkFunction" c:type="GstPadLinkFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -46262,13 +46262,13 @@ of the peer sink pad, if present.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2047">user_data passed to @notify</doc>
+                 line="2050">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2048">notify called when @link will not be used anymore.</doc>
+                 line="2051">notify called when @link will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46278,7 +46278,7 @@ of the peer sink pad, if present.</doc>
               glib:set-property="offset">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="4009">Set the offset that will be applied to the running time of @pad.</doc>
+             line="4012">Set the offset that will be applied to the running time of @pad.</doc>
         <source-position filename="gst/gstpad.h" line="1479"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -46287,13 +46287,13 @@ of the peer sink pad, if present.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4011">a #GstPad</doc>
+                 line="4014">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="4012">the offset</doc>
+                 line="4015">the offset</doc>
             <type name="gint64" c:type="gint64"/>
           </parameter>
         </parameters>
@@ -46302,7 +46302,7 @@ of the peer sink pad, if present.</doc>
               c:identifier="gst_pad_set_query_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="1976">Set the given query function for the pad.</doc>
+             line="1979">Set the given query function for the pad.</doc>
         <source-position filename="gst/gstpad.h" line="1557"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -46311,7 +46311,7 @@ of the peer sink pad, if present.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1978">a #GstPad of either direction.</doc>
+                 line="1981">a #GstPad of either direction.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="query"
@@ -46321,7 +46321,7 @@ of the peer sink pad, if present.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1979">the #GstPadQueryFunction to set.</doc>
+                 line="1982">the #GstPadQueryFunction to set.</doc>
             <type name="PadQueryFunction" c:type="GstPadQueryFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -46330,13 +46330,13 @@ of the peer sink pad, if present.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1980">user_data passed to @notify</doc>
+                 line="1983">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="1981">notify called when @query will not be used anymore.</doc>
+                 line="1984">notify called when @query will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46345,7 +46345,7 @@ of the peer sink pad, if present.</doc>
               c:identifier="gst_pad_set_unlink_function_full">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2086">Sets the given unlink function for the pad. It will be called
+             line="2089">Sets the given unlink function for the pad. It will be called
 when the pad is unlinked.
 
 Note that the pad's lock is already held when the unlink
@@ -46359,7 +46359,7 @@ from within the callback.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2088">a #GstPad.</doc>
+                 line="2091">a #GstPad.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="unlink"
@@ -46369,7 +46369,7 @@ from within the callback.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2089">the #GstPadUnlinkFunction to set.</doc>
+                 line="2092">the #GstPadUnlinkFunction to set.</doc>
             <type name="PadUnlinkFunction" c:type="GstPadUnlinkFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -46378,13 +46378,13 @@ from within the callback.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2090">user_data passed to @notify</doc>
+                 line="2093">user_data passed to @notify</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2091">notify called when @unlink will not be used anymore.</doc>
+                 line="2094">notify called when @unlink will not be used anymore.</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46392,7 +46392,7 @@ from within the callback.</doc>
       <method name="start_task" c:identifier="gst_pad_start_task">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6320">Starts a task that repeatedly calls @func with @user_data. This function
+             line="6323">Starts a task that repeatedly calls @func with @user_data. This function
 is mostly used in pad activation functions to start the dataflow.
 The #GST_PAD_STREAM_LOCK of @pad will automatically be acquired
 before @func is called.</doc>
@@ -46400,14 +46400,14 @@ before @func is called.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6332">a %TRUE if the task could be started.</doc>
+               line="6335">a %TRUE if the task could be started.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6322">the #GstPad to start the task of</doc>
+                 line="6325">the #GstPad to start the task of</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="func"
@@ -46417,7 +46417,7 @@ before @func is called.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6323">the task function to call</doc>
+                 line="6326">the task function to call</doc>
             <type name="TaskFunction" c:type="GstTaskFunction"/>
           </parameter>
           <parameter name="user_data"
@@ -46426,13 +46426,13 @@ before @func is called.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6324">user data passed to the task function</doc>
+                 line="6327">user data passed to the task function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="notify" transfer-ownership="none" scope="async">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6325">called when @user_data is no longer referenced</doc>
+                 line="6328">called when @user_data is no longer referenced</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -46441,7 +46441,7 @@ before @func is called.</doc>
               c:identifier="gst_pad_sticky_events_foreach">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6239">Iterates all sticky events on @pad and calls @foreach_func for every
+             line="6242">Iterates all sticky events on @pad and calls @foreach_func for every
 event. If @foreach_func returns %FALSE the iteration is immediately stopped.</doc>
         <source-position filename="gst/gstpad.h" line="1373"/>
         <return-value transfer-ownership="none">
@@ -46451,7 +46451,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6241">the #GstPad that should be used for iteration.</doc>
+                 line="6244">the #GstPad that should be used for iteration.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="foreach_func"
@@ -46460,7 +46460,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
                      closure="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6242">the #GstPadStickyEventsForeachFunction that
+                 line="6245">the #GstPadStickyEventsForeachFunction that
                should be called for every event.</doc>
             <type name="PadStickyEventsForeachFunction"
                   c:type="GstPadStickyEventsForeachFunction"/>
@@ -46471,7 +46471,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6244">the optional user data.</doc>
+                 line="6247">the optional user data.</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -46479,7 +46479,7 @@ event. If @foreach_func returns %FALSE the iteration is immediately stopped.</do
       <method name="stop_task" c:identifier="gst_pad_stop_task">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="6468">Stop the task of @pad. This function will also make sure that the
+             line="6471">Stop the task of @pad. This function will also make sure that the
 function executed by the task will effectively stop if not called
 from the GstTaskFunction.
 
@@ -46492,14 +46492,14 @@ released so as to ensure that streaming through this pad has finished.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6482">a %TRUE if the task could be stopped or %FALSE on error.</doc>
+               line="6485">a %TRUE if the task could be stopped or %FALSE on error.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6470">the #GstPad to stop the task of</doc>
+                 line="6473">the #GstPad to stop the task of</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
         </parameters>
@@ -46509,12 +46509,12 @@ released so as to ensure that streaming through this pad has finished.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="5445">Store the sticky @event on @pad</doc>
+             line="5448">Store the sticky @event on @pad</doc>
         <source-position filename="gst/gstpad.h" line="1366"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="5452">#GST_FLOW_OK on success, #GST_FLOW_FLUSHING when the pad
+               line="5455">#GST_FLOW_OK on success, #GST_FLOW_FLUSHING when the pad
 was flushing or #GST_FLOW_EOS when the pad was EOS.</doc>
           <type name="FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -46522,13 +46522,13 @@ was flushing or #GST_FLOW_EOS when the pad was EOS.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5447">a #GstPad</doc>
+                 line="5450">a #GstPad</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="5448">a #GstEvent</doc>
+                 line="5451">a #GstEvent</doc>
             <type name="Event" c:type="GstEvent*"/>
           </parameter>
         </parameters>
@@ -46536,13 +46536,13 @@ was flushing or #GST_FLOW_EOS when the pad was EOS.</doc>
       <method name="unlink" c:identifier="gst_pad_unlink">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="2116">Unlinks the source pad from the sink pad. Will emit the #GstPad::unlinked
+             line="2119">Unlinks the source pad from the sink pad. Will emit the #GstPad::unlinked
 signal on both pads.</doc>
         <source-position filename="gst/gstpad.h" line="1449"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2124">%TRUE if the pads were unlinked. This function returns %FALSE if
+               line="2127">%TRUE if the pads were unlinked. This function returns %FALSE if
 the pads were not linked together.
 
 MT safe.</doc>
@@ -46552,13 +46552,13 @@ MT safe.</doc>
           <instance-parameter name="srcpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2118">the source #GstPad to unlink.</doc>
+                 line="2121">the source #GstPad to unlink.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </instance-parameter>
           <parameter name="sinkpad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="2119">the sink #GstPad to unlink.</doc>
+                 line="2122">the sink #GstPad to unlink.</doc>
             <type name="Pad" c:type="GstPad*"/>
           </parameter>
         </parameters>
@@ -47647,19 +47647,19 @@ pad operates in push or pull mode.</doc>
       <function name="get_name" c:identifier="gst_pad_mode_get_name">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="948">Return the name of a pad mode, for use in debug messages mostly.</doc>
+             line="951">Return the name of a pad mode, for use in debug messages mostly.</doc>
         <source-position filename="gst/gstpad.h" line="67"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="954">short mnemonic for pad mode @mode</doc>
+               line="957">short mnemonic for pad mode @mode</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <parameter name="mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="950">the pad mode</doc>
+                 line="953">the pad mode</doc>
             <type name="PadMode" c:type="GstPadMode"/>
           </parameter>
         </parameters>
@@ -47800,14 +47800,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6579">The #GstBuffer from the probe</doc>
+               line="6582">The #GstBuffer from the probe</doc>
           <type name="Buffer" c:type="GstBuffer*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6577">a #GstPadProbeInfo</doc>
+                 line="6580">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -47818,14 +47818,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6594">The #GstBufferList from the probe</doc>
+               line="6597">The #GstBufferList from the probe</doc>
           <type name="BufferList" c:type="GstBufferList*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6592">a #GstPadProbeInfo</doc>
+                 line="6595">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -47835,14 +47835,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6546">The #GstEvent from the probe</doc>
+               line="6549">The #GstEvent from the probe</doc>
           <type name="Event" c:type="GstEvent*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6544">a #GstPadProbeInfo</doc>
+                 line="6547">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -47852,14 +47852,14 @@ The callback is allowed to modify the data pointer in @info.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="6563">The #GstQuery from the probe</doc>
+               line="6566">The #GstQuery from the probe</doc>
           <type name="Query" c:type="GstQuery*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpad.c"
-                 line="6561">a #GstPadProbeInfo</doc>
+                 line="6564">a #GstPadProbeInfo</doc>
             <type name="PadProbeInfo" c:type="GstPadProbeInfo*"/>
           </instance-parameter>
         </parameters>
@@ -74306,7 +74306,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="9" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="10" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -79120,19 +79120,19 @@ MT safe.</doc>
               moved-to="PadMode.get_name">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="948">Return the name of a pad mode, for use in debug messages mostly.</doc>
+           line="951">Return the name of a pad mode, for use in debug messages mostly.</doc>
       <source-position filename="gst/gstpad.h" line="67"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gstpad.c"
-             line="954">short mnemonic for pad mode @mode</doc>
+             line="957">short mnemonic for pad mode @mode</doc>
         <type name="utf8" c:type="const gchar*"/>
       </return-value>
       <parameters>
         <parameter name="mode" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="950">the pad mode</doc>
+               line="953">the pad mode</doc>
           <type name="PadMode" c:type="GstPadMode"/>
         </parameter>
       </parameters>
@@ -79151,19 +79151,19 @@ MT safe.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1708">Calls gst_pad_set_activate_function_full() with %NULL for the user_data and
+           line="1711">Calls gst_pad_set_activate_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1415"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1710">a #GstPad.</doc>
+               line="1713">a #GstPad.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1711">the #GstPadActivateFunction to set.</doc>
+               line="1714">the #GstPadActivateFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79172,19 +79172,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1745">Calls gst_pad_set_activatemode_function_full() with %NULL for the user_data and
+           line="1748">Calls gst_pad_set_activatemode_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1416"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1747">a #GstPad.</doc>
+               line="1750">a #GstPad.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1748">the #GstPadActivateModeFunction to set.</doc>
+               line="1751">the #GstPadActivateModeFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79193,19 +79193,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1780">Calls gst_pad_set_chain_function_full() with %NULL for the user_data and
+           line="1783">Calls gst_pad_set_chain_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1417"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1782">a sink #GstPad.</doc>
+               line="1785">a sink #GstPad.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1783">the #GstPadChainFunction to set.</doc>
+               line="1786">the #GstPadChainFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79214,19 +79214,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1815">Calls gst_pad_set_chain_list_function_full() with %NULL for the user_data and
+           line="1818">Calls gst_pad_set_chain_list_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1418"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1817">a sink #GstPad.</doc>
+               line="1820">a sink #GstPad.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1818">the #GstPadChainListFunction to set.</doc>
+               line="1821">the #GstPadChainListFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79235,19 +79235,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1932">Calls gst_pad_set_event_full_function_full() with %NULL for the user_data and
+           line="1935">Calls gst_pad_set_event_full_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1421"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1934">a #GstPad of either direction.</doc>
+               line="1937">a #GstPad of either direction.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1935">the #GstPadEventFullFunction to set.</doc>
+               line="1938">the #GstPadEventFullFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79256,19 +79256,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1888">Calls gst_pad_set_event_function_full() with %NULL for the user_data and
+           line="1891">Calls gst_pad_set_event_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1420"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1890">a #GstPad of either direction.</doc>
+               line="1893">a #GstPad of either direction.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1891">the #GstPadEventFunction to set.</doc>
+               line="1894">the #GstPadEventFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79277,19 +79277,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1852">Calls gst_pad_set_getrange_function_full() with %NULL for the user_data and
+           line="1855">Calls gst_pad_set_getrange_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1419"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1854">a source #GstPad.</doc>
+               line="1857">a source #GstPad.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1855">the #GstPadGetRangeFunction to set.</doc>
+               line="1858">the #GstPadGetRangeFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79298,19 +79298,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="2001">Calls gst_pad_set_iterate_internal_links_function_full() with %NULL
+           line="2004">Calls gst_pad_set_iterate_internal_links_function_full() with %NULL
 for the user_data and notify.</doc>
       <source-position filename="gst/gstpad.h" line="1543"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2003">a #GstPad of either direction.</doc>
+               line="2006">a #GstPad of either direction.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2004">the #GstPadIterIntLinkFunction to set.</doc>
+               line="2007">the #GstPadIterIntLinkFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79319,19 +79319,19 @@ for the user_data and notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="2035">Calls gst_pad_set_link_function_full() with %NULL
+           line="2038">Calls gst_pad_set_link_function_full() with %NULL
 for the user_data and notify.</doc>
       <source-position filename="gst/gstpad.h" line="1436"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2037">a #GstPad.</doc>
+               line="2040">a #GstPad.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2038">the #GstPadLinkFunction to set.</doc>
+               line="2041">the #GstPadLinkFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79340,19 +79340,19 @@ for the user_data and notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="1968">Calls gst_pad_set_query_function_full() with %NULL for the user_data and
+           line="1971">Calls gst_pad_set_query_function_full() with %NULL for the user_data and
 notify.</doc>
       <source-position filename="gst/gstpad.h" line="1564"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1970">a #GstPad of either direction.</doc>
+               line="1973">a #GstPad of either direction.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="1971">the #GstPadQueryFunction to set.</doc>
+               line="1974">the #GstPadQueryFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79361,19 +79361,19 @@ notify.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstpad.c"
-           line="2078">Calls gst_pad_set_unlink_function_full() with %NULL
+           line="2081">Calls gst_pad_set_unlink_function_full() with %NULL
 for the user_data and notify.</doc>
       <source-position filename="gst/gstpad.h" line="1437"/>
       <parameters>
         <parameter name="p">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2080">a #GstPad.</doc>
+               line="2083">a #GstPad.</doc>
         </parameter>
         <parameter name="f">
           <doc xml:space="preserve"
                filename="gst/gstpad.c"
-               line="2081">the #GstPadUnlinkFunction to set.</doc>
+               line="2084">the #GstPadUnlinkFunction to set.</doc>
         </parameter>
       </parameters>
     </function-macro>

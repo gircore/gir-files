@@ -5386,7 +5386,7 @@ with non-synchronized streams or sparse streams.</doc>
       <method name="do_preroll" c:identifier="gst_base_sink_do_preroll">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
-             line="2461">If the @sink spawns its own thread for pulling buffers from upstream it
+             line="2465">If the @sink spawns its own thread for pulling buffers from upstream it
 should call this method after it has pulled a buffer. If the element needed
 to preroll, this function will perform the preroll and will then block
 until the element state is changed.
@@ -5396,7 +5396,7 @@ This function should be called with the PREROLL_LOCK held.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesink.c"
-               line="2473">%GST_FLOW_OK if the preroll completed and processing can
+               line="2477">%GST_FLOW_OK if the preroll completed and processing can
 continue. Any other return value should be returned from the render vmethod.</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -5404,13 +5404,13 @@ continue. Any other return value should be returned from the render vmethod.</do
           <instance-parameter name="sink" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2463">the sink</doc>
+                 line="2467">the sink</doc>
             <type name="BaseSink" c:type="GstBaseSink*"/>
           </instance-parameter>
           <parameter name="obj" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2464">the mini object that caused the preroll</doc>
+                 line="2468">the mini object that caused the preroll</doc>
             <type name="Gst.MiniObject" c:type="GstMiniObject*"/>
           </parameter>
         </parameters>
@@ -5613,7 +5613,7 @@ information about the render delay.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
-             line="5893">Return various #GstBaseSink statistics. This function returns a #GstStructure
+             line="5897">Return various #GstBaseSink statistics. This function returns a #GstStructure
 with name `application/x-gst-base-sink-stats` with the following fields:
 
 - "average-rate" G_TYPE_DOUBLE   average frame rate
@@ -5623,14 +5623,14 @@ with name `application/x-gst-base-sink-stats` with the following fields:
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesink.c"
-               line="5904">pointer to #GstStructure</doc>
+               line="5908">pointer to #GstStructure</doc>
           <type name="Gst.Structure" c:type="GstStructure*"/>
         </return-value>
         <parameters>
           <instance-parameter name="sink" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="5895">#GstBaseSink</doc>
+                 line="5899">#GstBaseSink</doc>
             <type name="BaseSink" c:type="GstBaseSink*"/>
           </instance-parameter>
         </parameters>
@@ -6174,7 +6174,7 @@ buffers.</doc>
       <method name="wait" c:identifier="gst_base_sink_wait">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
-             line="2563">This function will wait for preroll to complete and will then block until @time
+             line="2567">This function will wait for preroll to complete and will then block until @time
 is reached. It is usually called by subclasses that use their own internal
 synchronisation but want to let some synchronization (like EOS) be handled
 by the base class.
@@ -6189,20 +6189,20 @@ and will be adjusted with any latency and offset configured in the sink.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesink.c"
-               line="2581">#GstFlowReturn</doc>
+               line="2585">#GstFlowReturn</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="sink" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2565">the sink</doc>
+                 line="2569">the sink</doc>
             <type name="BaseSink" c:type="GstBaseSink*"/>
           </instance-parameter>
           <parameter name="time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2566">the running_time to be reached</doc>
+                 line="2570">the running_time to be reached</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="jitter"
@@ -6213,7 +6213,7 @@ and will be adjusted with any latency and offset configured in the sink.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2567">the jitter to be filled with time diff, or %NULL</doc>
+                 line="2571">the jitter to be filled with time diff, or %NULL</doc>
             <type name="Gst.ClockTimeDiff" c:type="GstClockTimeDiff*"/>
           </parameter>
         </parameters>
@@ -6221,7 +6221,7 @@ and will be adjusted with any latency and offset configured in the sink.</doc>
       <method name="wait_clock" c:identifier="gst_base_sink_wait_clock">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
-             line="2305">This function will block until @time is reached. It is usually called by
+             line="2309">This function will block until @time is reached. It is usually called by
 subclasses that use their own internal synchronisation.
 
 If @time is not valid, no synchronisation is done and %GST_CLOCK_BADTIME is
@@ -6240,20 +6240,20 @@ sink.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesink.c"
-               line="2327">#GstClockReturn</doc>
+               line="2331">#GstClockReturn</doc>
           <type name="Gst.ClockReturn" c:type="GstClockReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="sink" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2307">the sink</doc>
+                 line="2311">the sink</doc>
             <type name="BaseSink" c:type="GstBaseSink*"/>
           </instance-parameter>
           <parameter name="time" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2308">the running_time to be reached</doc>
+                 line="2312">the running_time to be reached</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="jitter"
@@ -6264,7 +6264,7 @@ sink.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2309">the jitter to be filled with time diff, or %NULL</doc>
+                 line="2313">the jitter to be filled with time diff, or %NULL</doc>
             <type name="Gst.ClockTimeDiff" c:type="GstClockTimeDiff*"/>
           </parameter>
         </parameters>
@@ -6272,7 +6272,7 @@ sink.</doc>
       <method name="wait_preroll" c:identifier="gst_base_sink_wait_preroll">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbasesink.c"
-             line="2405">If the #GstBaseSinkClass::render method performs its own synchronisation
+             line="2409">If the #GstBaseSinkClass::render method performs its own synchronisation
 against the clock it must unblock when going from PLAYING to the PAUSED state
 and call this method before continuing to render the remaining data.
 
@@ -6294,7 +6294,7 @@ render function.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbasesink.c"
-               line="2428">%GST_FLOW_OK if the preroll completed and processing can
+               line="2432">%GST_FLOW_OK if the preroll completed and processing can
 continue. Any other return value should be returned from the render vmethod.</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
@@ -6302,7 +6302,7 @@ continue. Any other return value should be returned from the render vmethod.</do
           <instance-parameter name="sink" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbasesink.c"
-                 line="2407">the sink</doc>
+                 line="2411">the sink</doc>
             <type name="BaseSink" c:type="GstBaseSink*"/>
           </instance-parameter>
         </parameters>
