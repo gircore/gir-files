@@ -14823,25 +14823,25 @@ New values may be added to this enumeration over time.</doc>
                 version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-length-unit.c"
-             line="81">Converts @value from pixels to @unit.</doc>
+             line="84">Converts @value from pixels to @unit.</doc>
         <source-position filename="src/adw-length-unit.h" line="33"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="89">the length in @unit</doc>
+               line="92">the length in @unit</doc>
           <type name="gdouble" c:type="double"/>
         </return-value>
         <parameters>
           <parameter name="unit" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-length-unit.c"
-                 line="83">a length unit</doc>
+                 line="86">a length unit</doc>
             <type name="LengthUnit" c:type="AdwLengthUnit"/>
           </parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-length-unit.c"
-                 line="84">a value in pixels</doc>
+                 line="87">a value in pixels</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="settings"
@@ -14850,7 +14850,7 @@ New values may be added to this enumeration over time.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-length-unit.c"
-                 line="85">settings to use, or `NULL` for default settings</doc>
+                 line="88">settings to use, or `NULL` for default settings</doc>
             <type name="Gtk.Settings" c:type="GtkSettings*"/>
           </parameter>
         </parameters>
@@ -14860,25 +14860,25 @@ New values may be added to this enumeration over time.</doc>
                 version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-length-unit.c"
-             line="42">Converts @value from @unit to pixels.</doc>
+             line="45">Converts @value from @unit to pixels.</doc>
         <source-position filename="src/adw-length-unit.h" line="28"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="50">the length in pixels</doc>
+               line="53">the length in pixels</doc>
           <type name="gdouble" c:type="double"/>
         </return-value>
         <parameters>
           <parameter name="unit" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-length-unit.c"
-                 line="44">a length unit</doc>
+                 line="47">a length unit</doc>
             <type name="LengthUnit" c:type="AdwLengthUnit"/>
           </parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-length-unit.c"
-                 line="45">a value in @unit</doc>
+                 line="48">a value in @unit</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="settings"
@@ -14887,7 +14887,7 @@ New values may be added to this enumeration over time.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-length-unit.c"
-                 line="46">settings to use, or `NULL` for default settings</doc>
+                 line="49">settings to use, or `NULL` for default settings</doc>
             <type name="Gtk.Settings" c:type="GtkSettings*"/>
           </parameter>
         </parameters>
@@ -14900,7 +14900,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="3" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="4" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -18238,7 +18238,7 @@ See [method@NavigationView.pop_to_page] and [property@NavigationPage:tag].</doc>
 If [method@NavigationView.add] hasn't been called, the page is automatically
 removed once it's popped.
 
-[signal@NavigationView::popped] will be emitted for @page.
+[signal@NavigationView::pushed] will be emitted for @page.
 
 See [method@NavigationView.push_by_tag].</doc>
         <source-position filename="src/adw-navigation-view.h" line="132"/>
@@ -18270,7 +18270,7 @@ See [method@NavigationView.push_by_tag].</doc>
 If [method@NavigationView.add] hasn't been called, the page is automatically
 removed once it's popped.
 
-[signal@NavigationView::popped] will be emitted for pushed page.
+[signal@NavigationView::pushed] will be emitted for the page.
 
 See [method@NavigationView.push] and [property@NavigationPage:tag].</doc>
         <source-position filename="src/adw-navigation-view.h" line="136"/>
@@ -27985,12 +27985,12 @@ bar, typically opening an [class@TabOverview] on click, e.g. via the
       <constructor name="new" c:identifier="adw_tab_button_new" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-button.c"
-             line="429">Creates a new `AdwTabButton`.</doc>
+             line="432">Creates a new `AdwTabButton`.</doc>
         <source-position filename="src/adw-tab-button.h" line="28"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-button.c"
-               line="434">the newly created `AdwTabButton`</doc>
+               line="437">the newly created `AdwTabButton`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -28001,19 +28001,19 @@ bar, typically opening an [class@TabOverview] on click, e.g. via the
         <attribute name="org.gtk.Method.get_property" value="view"/>
         <doc xml:space="preserve"
              filename="src/adw-tab-button.c"
-             line="444">Gets the tab view @self displays.</doc>
+             line="447">Gets the tab view @self displays.</doc>
         <source-position filename="src/adw-tab-button.h" line="31"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-tab-button.c"
-               line="450">the tab view</doc>
+               line="453">the tab view</doc>
           <type name="TabView" c:type="AdwTabView*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-button.c"
-                 line="446">a tab button</doc>
+                 line="449">a tab button</doc>
             <type name="TabButton" c:type="AdwTabButton*"/>
           </instance-parameter>
         </parameters>
@@ -28025,7 +28025,7 @@ bar, typically opening an [class@TabOverview] on click, e.g. via the
         <attribute name="org.gtk.Method.set_property" value="view"/>
         <doc xml:space="preserve"
              filename="src/adw-tab-button.c"
-             line="462">Sets the tab view to display.</doc>
+             line="465">Sets the tab view to display.</doc>
         <source-position filename="src/adw-tab-button.h" line="33"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -28034,7 +28034,7 @@ bar, typically opening an [class@TabOverview] on click, e.g. via the
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-button.c"
-                 line="464">a tab button</doc>
+                 line="467">a tab button</doc>
             <type name="TabButton" c:type="AdwTabButton*"/>
           </instance-parameter>
           <parameter name="view"
@@ -28043,7 +28043,7 @@ bar, typically opening an [class@TabOverview] on click, e.g. via the
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-button.c"
-                 line="465">a tab view</doc>
+                 line="468">a tab view</doc>
             <type name="TabView" c:type="AdwTabView*"/>
           </parameter>
         </parameters>
@@ -28060,13 +28060,13 @@ bar, typically opening an [class@TabOverview] on click, e.g. via the
                    value="adw_tab_button_set_view"/>
         <doc xml:space="preserve"
              filename="src/adw-tab-button.c"
-             line="283">The view the tab button displays.</doc>
+             line="286">The view the tab button displays.</doc>
         <type name="TabView"/>
       </property>
       <glib:signal name="activate" when="first" action="1" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-button.c"
-             line="321">Emitted to animate press then release.
+             line="324">Emitted to animate press then release.
 
 This is an action signal. Applications should never connect to this signal,
 but use the [signal@TabButton::clicked] signal.</doc>
@@ -28077,7 +28077,7 @@ but use the [signal@TabButton::clicked] signal.</doc>
       <glib:signal name="clicked" when="first" action="1" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-button.c"
-             line="300">Emitted when the button has been activated (pressed and released).</doc>
+             line="303">Emitted when the button has been activated (pressed and released).</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -33763,8 +33763,8 @@ The following kinds of top and bottom bars are supported:
 
 By default, top and bottom bars are flat and scrolling content has a subtle
 undershoot shadow, same as when using the
-[`.undershoot-top`](style-classes.html#undershot-indicators) and
-[`.undershoot-bottom`](style-classes.html#undershot-indicators) style
+[`.undershoot-top`](style-classes.html#undershoot-indicators) and
+[`.undershoot-bottom`](style-classes.html#undershoot-indicators) style
 classes. This works well in most cases, e.g. with [class@StatusPage] or
 [class@PreferencesPage], where the background at the top and bottom parts of
 the page is uniform. Additionally, windows with sidebars should always use
@@ -34159,7 +34159,7 @@ See [method@ToolbarView.get_bottom_bar_height].</doc>
 
 If set to `ADW_TOOLBAR_FLAT`, bottom bars are flat and scrolling content has
 a subtle undershoot shadow when touching them, same as the
-[`.undershoot-bottom`](style-classes.html#undershot-indicators)
+[`.undershoot-bottom`](style-classes.html#undershoot-indicators)
 style class. This works well for simple content, e.g. [class@StatusPage] or
 [class@PreferencesPage], where the background at the bottom of the page is
 uniform. Additionally, windows with sidebars should always use this style.
@@ -34376,7 +34376,7 @@ See [method@ToolbarView.set_reveal_bottom_bars].</doc>
 
 If set to `ADW_TOOLBAR_FLAT`, top bars are flat and scrolling content has a
 subtle undershoot shadow when touching them, same as the
-[`.undershoot-top`](style-classes.html#undershot-indicators)
+[`.undershoot-top`](style-classes.html#undershoot-indicators)
 style class. This works well for simple content, e.g. [class@StatusPage] or
 [class@PreferencesPage], where the background at the top of the page is
 uniform. Additionally, windows with sidebars should always use this style.
@@ -34449,7 +34449,7 @@ See [property@ToolbarView:top-bar-height].</doc>
 
 If set to `ADW_TOOLBAR_FLAT`, bottom bars are flat and scrolling content
 has a subtle undershoot shadow when touching them, same as the
-[`.undershoot-bottom`](style-classes.html#undershot-indicators)
+[`.undershoot-bottom`](style-classes.html#undershoot-indicators)
 style class. This works well for simple content, e.g. [class@StatusPage] or
 [class@PreferencesPage], where the background at the bottom of the page is
 uniform. Additionally, windows with sidebars should always use this style.
@@ -34611,7 +34611,7 @@ See [property@ToolbarView:bottom-bar-height].</doc>
 
 If set to `ADW_TOOLBAR_FLAT`, top bars are flat and scrolling content has a
 subtle undershoot shadow when touching them, same as the
-[`.undershoot-top`](style-classes.html#undershot-indicators)
+[`.undershoot-top`](style-classes.html#undershoot-indicators)
 style class. This works well for simple content, e.g. [class@StatusPage] or
 [class@PreferencesPage], where the background at the top of the page is
 uniform. Additionally, windows with sidebars should always use this style.
@@ -34653,7 +34653,7 @@ See also [property@ToolbarView:bottom-bar-style].</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.4.3" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.4.4" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and
@@ -37570,25 +37570,25 @@ library are set up properly.</doc>
               version="1.4">
       <doc xml:space="preserve"
            filename="src/adw-length-unit.c"
-           line="81">Converts @value from pixels to @unit.</doc>
+           line="84">Converts @value from pixels to @unit.</doc>
       <source-position filename="src/adw-length-unit.h" line="33"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/adw-length-unit.c"
-             line="89">the length in @unit</doc>
+             line="92">the length in @unit</doc>
         <type name="gdouble" c:type="double"/>
       </return-value>
       <parameters>
         <parameter name="unit" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="83">a length unit</doc>
+               line="86">a length unit</doc>
           <type name="LengthUnit" c:type="AdwLengthUnit"/>
         </parameter>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="84">a value in pixels</doc>
+               line="87">a value in pixels</doc>
           <type name="gdouble" c:type="double"/>
         </parameter>
         <parameter name="settings"
@@ -37597,7 +37597,7 @@ library are set up properly.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="85">settings to use, or `NULL` for default settings</doc>
+               line="88">settings to use, or `NULL` for default settings</doc>
           <type name="Gtk.Settings" c:type="GtkSettings*"/>
         </parameter>
       </parameters>
@@ -37608,25 +37608,25 @@ library are set up properly.</doc>
               version="1.4">
       <doc xml:space="preserve"
            filename="src/adw-length-unit.c"
-           line="42">Converts @value from @unit to pixels.</doc>
+           line="45">Converts @value from @unit to pixels.</doc>
       <source-position filename="src/adw-length-unit.h" line="28"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/adw-length-unit.c"
-             line="50">the length in pixels</doc>
+             line="53">the length in pixels</doc>
         <type name="gdouble" c:type="double"/>
       </return-value>
       <parameters>
         <parameter name="unit" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="44">a length unit</doc>
+               line="47">a length unit</doc>
           <type name="LengthUnit" c:type="AdwLengthUnit"/>
         </parameter>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="45">a value in @unit</doc>
+               line="48">a value in @unit</doc>
           <type name="gdouble" c:type="double"/>
         </parameter>
         <parameter name="settings"
@@ -37635,7 +37635,7 @@ library are set up properly.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="src/adw-length-unit.c"
-               line="46">settings to use, or `NULL` for default settings</doc>
+               line="49">settings to use, or `NULL` for default settings</doc>
           <type name="Gtk.Settings" c:type="GtkSettings*"/>
         </parameter>
       </parameters>
