@@ -560,6 +560,9 @@ use an alignment of 7.</doc>
         <type name="ObjectClass" c:type="GstObjectClass"/>
       </field>
       <field name="alloc">
+        <doc xml:space="preserve"
+             filename="gst/gstallocator.h"
+             line="137">implementation that acquires memory</doc>
         <callback name="alloc">
           <source-position filename="gst/gstallocator.h" line="146"/>
           <return-value transfer-ownership="full" nullable="1">
@@ -597,6 +600,9 @@ use an alignment of 7.</doc>
         </callback>
       </field>
       <field name="free">
+        <doc xml:space="preserve"
+             filename="gst/gstallocator.h"
+             line="138">implementation that releases memory</doc>
         <callback name="free">
           <source-position filename="gst/gstallocator.h" line="148"/>
           <return-value transfer-ownership="none">
@@ -12025,6 +12031,9 @@ usage. For plain #GObject @target is the same as @object.</doc>
         <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
       </field>
       <field name="get_child_by_name">
+        <doc xml:space="preserve"
+             filename="gst/gstchildproxy.h"
+             line="56">Fetch a child object by name</doc>
         <callback name="get_child_by_name">
           <source-position filename="gst/gstchildproxy.h" line="65"/>
           <return-value transfer-ownership="full" nullable="1">
@@ -12051,6 +12060,9 @@ usage. For plain #GObject @target is the same as @object.</doc>
         </callback>
       </field>
       <field name="get_child_by_index">
+        <doc xml:space="preserve"
+             filename="gst/gstchildproxy.h"
+             line="67">Fetch a child object by index</doc>
         <callback name="get_child_by_index">
           <source-position filename="gst/gstchildproxy.h" line="76"/>
           <return-value transfer-ownership="full" nullable="1">
@@ -12077,6 +12089,9 @@ usage. For plain #GObject @target is the same as @object.</doc>
         </callback>
       </field>
       <field name="get_children_count">
+        <doc xml:space="preserve"
+             filename="gst/gstchildproxy.h"
+             line="78">Get the number of children in @parent</doc>
         <callback name="get_children_count">
           <source-position filename="gst/gstchildproxy.h" line="86"/>
           <return-value transfer-ownership="none">
@@ -12096,6 +12111,9 @@ usage. For plain #GObject @target is the same as @object.</doc>
         </callback>
       </field>
       <field name="child_added">
+        <doc xml:space="preserve"
+             filename="gst/gstchildproxy.h"
+             line="91">Called when @child is added to @parent</doc>
         <callback name="child_added">
           <source-position filename="gst/gstchildproxy.h" line="99"/>
           <return-value transfer-ownership="none">
@@ -12124,6 +12142,9 @@ usage. For plain #GObject @target is the same as @object.</doc>
         </callback>
       </field>
       <field name="child_removed">
+        <doc xml:space="preserve"
+             filename="gst/gstchildproxy.h"
+             line="101">Called when @child is removed from @parent</doc>
         <callback name="child_removed">
           <source-position filename="gst/gstchildproxy.h" line="109"/>
           <return-value transfer-ownership="none">
@@ -17990,6 +18011,10 @@ device in the PLAYING state.</doc>
         <type name="ObjectClass" c:type="GstObjectClass"/>
       </field>
       <field name="create_element">
+        <doc xml:space="preserve"
+             filename="gst/gstdevice.h"
+             line="66">Creates the fully configured element to access this device.
+ Subclasses need to override this and return a new element.</doc>
         <callback name="create_element">
           <source-position filename="gst/gstdevice.h" line="80"/>
           <return-value transfer-ownership="none" nullable="1">
@@ -18020,6 +18045,11 @@ create a unique name.</doc>
         </callback>
       </field>
       <field name="reconfigure_element">
+        <doc xml:space="preserve"
+             filename="gst/gstdevice.h"
+             line="68">This only needs to be implemented by subclasses if the
+ element can be reconfigured to use a different device. See the documentation
+ for gst_device_reconfigure_element().</doc>
         <callback name="reconfigure_element">
           <source-position filename="gst/gstdevice.h" line="81"/>
           <return-value transfer-ownership="none">
@@ -18504,6 +18534,11 @@ from all relevant providers.</doc>
         </parameters>
       </function>
       <virtual-method name="probe" introspectable="0">
+        <doc xml:space="preserve"
+             filename="gst/gstdeviceprovider.h"
+             line="156">Returns a list of devices that are currently available.
+ This should never block. The devices should not have a parent and should
+ be floating.</doc>
         <source-position filename="gst/gstdeviceprovider.h" line="174"/>
         <return-value>
           <type name="GLib.List" c:type="GList*">
@@ -18996,6 +19031,11 @@ all devices again.</doc>
         <type name="DeviceProviderFactory" c:type="GstDeviceProviderFactory*"/>
       </field>
       <field name="probe" introspectable="0">
+        <doc xml:space="preserve"
+             filename="gst/gstdeviceprovider.h"
+             line="156">Returns a list of devices that are currently available.
+ This should never block. The devices should not have a parent and should
+ be floating.</doc>
         <callback name="probe" introspectable="0">
           <source-position filename="gst/gstdeviceprovider.h" line="174"/>
           <return-value>
@@ -19011,6 +19051,10 @@ all devices again.</doc>
         </callback>
       </field>
       <field name="start">
+        <doc xml:space="preserve"
+             filename="gst/gstdeviceprovider.h"
+             line="159">Starts monitoring for new devices. Only subclasses that can know
+ that devices have been added or remove need to implement this method.</doc>
         <callback name="start">
           <source-position filename="gst/gstdeviceprovider.h" line="176"/>
           <return-value transfer-ownership="none">
@@ -19030,6 +19074,10 @@ all devices again.</doc>
         </callback>
       </field>
       <field name="stop">
+        <doc xml:space="preserve"
+             filename="gst/gstdeviceprovider.h"
+             line="161">Stops monitoring for new devices. Only subclasses that implement
+ the start() method need to implement this method.</doc>
         <callback name="stop">
           <source-position filename="gst/gstdeviceprovider.h" line="177"/>
           <return-value transfer-ownership="none">
@@ -21304,6 +21352,9 @@ MT safe.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="release_pad">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="805">called when a request pad is to be released</doc>
         <source-position filename="gst/gstelement.h" line="852"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -21532,6 +21583,9 @@ MT safe.</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="state_changed">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="814">called immediately after a new state was set.</doc>
         <source-position filename="gst/gstelement.h" line="859"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -24359,6 +24413,9 @@ functionality.</doc>
         </callback>
       </field>
       <field name="request_new_pad">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="804">called when a new pad is requested</doc>
         <callback name="request_new_pad">
           <source-position filename="gst/gstelement.h" line="849"/>
           <return-value transfer-ownership="full" nullable="1">
@@ -24405,6 +24462,9 @@ request. Can be %NULL.</doc>
         </callback>
       </field>
       <field name="release_pad">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="805">called when a request pad is to be released</doc>
         <callback name="release_pad">
           <source-position filename="gst/gstelement.h" line="852"/>
           <return-value transfer-ownership="none">
@@ -24421,6 +24481,9 @@ request. Can be %NULL.</doc>
         </callback>
       </field>
       <field name="get_state">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="806">get the state of the element</doc>
         <callback name="get_state">
           <source-position filename="gst/gstelement.h" line="855"/>
           <return-value transfer-ownership="none">
@@ -24476,6 +24539,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="set_state">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="807">set a new state on the element</doc>
         <callback name="set_state">
           <source-position filename="gst/gstelement.h" line="857"/>
           <return-value transfer-ownership="none">
@@ -24503,6 +24569,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="change_state">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="808">called by @set_state to perform an incremental state change</doc>
         <callback name="change_state">
           <source-position filename="gst/gstelement.h" line="858"/>
           <return-value transfer-ownership="none">
@@ -24528,6 +24597,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="state_changed">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="814">called immediately after a new state was set.</doc>
         <callback name="state_changed">
           <source-position filename="gst/gstelement.h" line="859"/>
           <return-value transfer-ownership="none">
@@ -24550,6 +24622,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="set_bus">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="809">set a #GstBus on the element</doc>
         <callback name="set_bus">
           <source-position filename="gst/gstelement.h" line="863"/>
           <return-value transfer-ownership="none">
@@ -24575,6 +24650,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="provide_clock">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="810">gets the #GstClock provided by the element</doc>
         <callback name="provide_clock">
           <source-position filename="gst/gstelement.h" line="866"/>
           <return-value transfer-ownership="full" nullable="1">
@@ -24597,6 +24675,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="set_clock">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="811">set the #GstClock on the element</doc>
         <callback name="set_clock">
           <source-position filename="gst/gstelement.h" line="867"/>
           <return-value transfer-ownership="none">
@@ -24629,6 +24710,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="send_event">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="812">send a #GstEvent to the element</doc>
         <callback name="send_event">
           <source-position filename="gst/gstelement.h" line="870"/>
           <return-value transfer-ownership="none">
@@ -24655,6 +24739,9 @@ as flushing seeks and steps) will emit %GST_MESSAGE_ASYNC_DONE.</doc>
         </callback>
       </field>
       <field name="query">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="813">perform a #GstQuery on the element</doc>
         <callback name="query">
           <source-position filename="gst/gstelement.h" line="872"/>
           <return-value transfer-ownership="none">
@@ -24682,6 +24769,10 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="post_message">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="815">called when a message is posted on the element. Chain up to
+               the parent class' handler to have it posted on the bus.</doc>
         <callback name="post_message">
           <source-position filename="gst/gstelement.h" line="874"/>
           <return-value transfer-ownership="none">
@@ -24710,6 +24801,9 @@ MT safe.</doc>
         </callback>
       </field>
       <field name="set_context">
+        <doc xml:space="preserve"
+             filename="gst/gstelement.h"
+             line="817">set a #GstContext on the element</doc>
         <callback name="set_context">
           <source-position filename="gst/gstelement.h" line="876"/>
           <return-value transfer-ownership="none">
@@ -40110,6 +40204,9 @@ Either @newobj and the value pointed to by @oldobj may be %NULL.</doc>
         </parameters>
       </function>
       <virtual-method name="deep_notify">
+        <doc xml:space="preserve"
+             filename="gst/gstobject.h"
+             line="193">default signal handler</doc>
         <source-position filename="gst/gstobject.h" line="203"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -41026,6 +41123,9 @@ the elements contained in that bin.</doc>
         <type name="utf8" c:type="const gchar*"/>
       </field>
       <field name="deep_notify">
+        <doc xml:space="preserve"
+             filename="gst/gstobject.h"
+             line="193">default signal handler</doc>
         <callback name="deep_notify">
           <source-position filename="gst/gstobject.h" line="203"/>
           <return-value transfer-ownership="none">
@@ -51416,6 +51516,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
       </field>
       <field name="get_preset_names">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="46">virtual method to get list of presets</doc>
         <callback name="get_preset_names">
           <source-position filename="gst/gstpreset.h" line="62"/>
           <return-value transfer-ownership="full">
@@ -51438,6 +51541,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         </callback>
       </field>
       <field name="get_property_names">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="47">virtual methods to get properties that are persistent</doc>
         <callback name="get_property_names">
           <source-position filename="gst/gstpreset.h" line="64"/>
           <return-value transfer-ownership="full">
@@ -51460,6 +51566,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         </callback>
       </field>
       <field name="load_preset">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="48">virtual methods to load a preset into properties</doc>
         <callback name="load_preset">
           <source-position filename="gst/gstpreset.h" line="66"/>
           <return-value transfer-ownership="none">
@@ -51485,6 +51594,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         </callback>
       </field>
       <field name="save_preset">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="49">virtual methods to save properties into a preset</doc>
         <callback name="save_preset">
           <source-position filename="gst/gstpreset.h" line="67"/>
           <return-value transfer-ownership="none">
@@ -51510,6 +51622,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         </callback>
       </field>
       <field name="rename_preset">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="50">virtual methods to rename a preset</doc>
         <callback name="rename_preset">
           <source-position filename="gst/gstpreset.h" line="68"/>
           <return-value transfer-ownership="none">
@@ -51541,6 +51656,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         </callback>
       </field>
       <field name="delete_preset">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="51">virtual methods to remove a preset</doc>
         <callback name="delete_preset">
           <source-position filename="gst/gstpreset.h" line="70"/>
           <return-value transfer-ownership="none">
@@ -51566,6 +51684,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         </callback>
       </field>
       <field name="set_meta">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="52">virtual methods to set textual meta data to a preset</doc>
         <callback name="set_meta">
           <source-position filename="gst/gstpreset.h" line="72"/>
           <return-value transfer-ownership="none">
@@ -51606,6 +51727,9 @@ data @tag names can be something like e.g. "comment". Supplying %NULL for the
         </callback>
       </field>
       <field name="get_meta">
+        <doc xml:space="preserve"
+             filename="gst/gstpreset.h"
+             line="53">virtual methods to get textual meta data from a preset</doc>
         <callback name="get_meta">
           <source-position filename="gst/gstpreset.h" line="74"/>
           <return-value transfer-ownership="none">
@@ -60378,6 +60502,9 @@ Applications can activate streams from a collection by using the
         </parameters>
       </constructor>
       <virtual-method name="stream_notify">
+        <doc xml:space="preserve"
+             filename="gst/gststreamcollection.h"
+             line="82">default signal handler for the stream-notify signal</doc>
         <source-position filename="gst/gststreamcollection.h" line="90"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -60552,6 +60679,9 @@ The caller should not modify the returned #GstStream</doc>
         <type name="ObjectClass" c:type="GstObjectClass"/>
       </field>
       <field name="stream_notify">
+        <doc xml:space="preserve"
+             filename="gst/gststreamcollection.h"
+             line="82">default signal handler for the stream-notify signal</doc>
         <callback name="stream_notify">
           <source-position filename="gst/gststreamcollection.h" line="90"/>
           <return-value transfer-ownership="none">
@@ -68664,6 +68794,9 @@ instead.</doc>
         <type name="ObjectClass" c:type="GstObjectClass"/>
       </field>
       <field name="prepare">
+        <doc xml:space="preserve"
+             filename="gst/gsttaskpool.h"
+             line="66">prepare the threadpool</doc>
         <callback name="prepare" throws="1">
           <source-position filename="gst/gsttaskpool.h" line="77"/>
           <return-value transfer-ownership="none">
@@ -68680,6 +68813,9 @@ instead.</doc>
         </callback>
       </field>
       <field name="cleanup">
+        <doc xml:space="preserve"
+             filename="gst/gsttaskpool.h"
+             line="67">make sure all threads are stopped</doc>
         <callback name="cleanup">
           <source-position filename="gst/gsttaskpool.h" line="78"/>
           <return-value transfer-ownership="none">
@@ -68696,6 +68832,9 @@ instead.</doc>
         </callback>
       </field>
       <field name="push">
+        <doc xml:space="preserve"
+             filename="gst/gsttaskpool.h"
+             line="68">start a new thread</doc>
         <callback name="push" throws="1">
           <source-position filename="gst/gsttaskpool.h" line="80"/>
           <return-value transfer-ownership="full" nullable="1">
@@ -68738,6 +68877,9 @@ instead.</doc>
         </callback>
       </field>
       <field name="join">
+        <doc xml:space="preserve"
+             filename="gst/gsttaskpool.h"
+             line="69">join a thread</doc>
         <callback name="join">
           <source-position filename="gst/gsttaskpool.h" line="82"/>
           <return-value transfer-ownership="none">
@@ -70227,6 +70369,9 @@ events may contain values for different #GstPads.</doc>
 stream.</doc>
       <source-position filename="gst/gsttypefind.h" line="177"/>
       <field name="peek">
+        <doc xml:space="preserve"
+             filename="gst/gsttypefind.h"
+             line="153">Method to peek data.</doc>
         <callback name="peek">
           <source-position filename="gst/gsttypefind.h" line="162"/>
           <return-value transfer-ownership="none">
@@ -70246,6 +70391,9 @@ stream.</doc>
         </callback>
       </field>
       <field name="suggest">
+        <doc xml:space="preserve"
+             filename="gst/gsttypefind.h"
+             line="154">Method to suggest #GstCaps with a given probability.</doc>
         <callback name="suggest">
           <source-position filename="gst/gsttypefind.h" line="166"/>
           <return-value transfer-ownership="none">
@@ -70271,6 +70419,9 @@ stream.</doc>
         <type name="gpointer" c:type="gpointer"/>
       </field>
       <field name="get_length">
+        <doc xml:space="preserve"
+             filename="gst/gsttypefind.h"
+             line="156">Returns the length of current data.</doc>
         <callback name="get_length">
           <source-position filename="gst/gsttypefind.h" line="173"/>
           <return-value transfer-ownership="none">
@@ -71071,6 +71222,9 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
         <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
       </field>
       <field name="get_type">
+        <doc xml:space="preserve"
+             filename="gst/gsturi.h"
+             line="111">Method to tell whether the element handles source or sink URI.</doc>
         <callback name="get_type">
           <source-position filename="gst/gsturi.h" line="124"/>
           <return-value transfer-ownership="none">
@@ -71084,6 +71238,9 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
         </callback>
       </field>
       <field name="get_protocols">
+        <doc xml:space="preserve"
+             filename="gst/gsturi.h"
+             line="112">Method to return the list of protocols handled by the element.</doc>
         <callback name="get_protocols">
           <source-position filename="gst/gsturi.h" line="125"/>
           <return-value transfer-ownership="none">
@@ -71099,6 +71256,9 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
         </callback>
       </field>
       <field name="get_uri">
+        <doc xml:space="preserve"
+             filename="gst/gsturi.h"
+             line="113">Method to return the URI currently handled by the element.</doc>
         <callback name="get_uri">
           <source-position filename="gst/gsturi.h" line="128"/>
           <return-value transfer-ownership="full" nullable="1">
@@ -71121,6 +71281,9 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
         </callback>
       </field>
       <field name="set_uri">
+        <doc xml:space="preserve"
+             filename="gst/gsturi.h"
+             line="114">Method to set a new URI.</doc>
         <callback name="set_uri" throws="1">
           <source-position filename="gst/gsturi.h" line="129"/>
           <return-value transfer-ownership="none">
@@ -76734,10 +76897,10 @@ returned.</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <function name="message_replace"
-              c:identifier="gst_message_replace"
-              moved-to="Message.replace"
-              introspectable="0">
+    <function-inline name="message_replace"
+                     c:identifier="gst_message_replace"
+                     moved-to="Message.replace"
+                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstmessage.c"
            line="3398">Modifies a pointer to a #GstMessage to point to a different #GstMessage. The
@@ -76777,7 +76940,7 @@ Either @new_message or the #GstMessage pointed to by @old_message may be %NULL.<
           <type name="Message" c:type="GstMessage*"/>
         </parameter>
       </parameters>
-    </function>
+    </function-inline>
     <function name="message_type_get_name"
               c:identifier="gst_message_type_get_name"
               moved-to="MessageType.get_name">
