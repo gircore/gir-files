@@ -1427,7 +1427,8 @@ image values without needing to create a `GdkPixbuf`.</doc>
       </function>
       <function name="get_file_info"
                 c:identifier="gdk_pixbuf_get_file_info"
-                version="2.4">
+                version="2.4"
+                glib:async-func="get_file_info_async">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="1964">Parses an image file far enough to determine its format and size.</doc>
@@ -1472,7 +1473,9 @@ image values without needing to create a `GdkPixbuf`.</doc>
       </function>
       <function name="get_file_info_async"
                 c:identifier="gdk_pixbuf_get_file_info_async"
-                version="2.32">
+                version="2.32"
+                glib:finish-func="get_file_info_finish"
+                glib:sync-func="get_file_info">
         <doc xml:space="preserve"
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="2062">Asynchronously parses an image file far enough to determine its
@@ -4294,6 +4297,9 @@ A delay time of -1 is possible, indicating "infinite".</doc>
         </parameters>
       </virtual-method>
       <virtual-method name="get_size">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="128">fills @width and @height with the frame size of the animation.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                          line="157"/>
         <return-value transfer-ownership="none">
@@ -4602,6 +4608,9 @@ virtual functions.</doc>
         <type name="GObject.ObjectClass" c:type="GObjectClass"/>
       </field>
       <field name="is_static_image">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="126">returns whether the given animation is just a static image.</doc>
         <callback name="is_static_image">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="153"/>
@@ -4622,6 +4631,9 @@ virtual functions.</doc>
         </callback>
       </field>
       <field name="get_static_image">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="127">returns a static image representing the given animation.</doc>
         <callback name="get_static_image">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="155"/>
@@ -4642,6 +4654,9 @@ virtual functions.</doc>
         </callback>
       </field>
       <field name="get_size">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="128">fills @width and @height with the frame size of the animation.</doc>
         <callback name="get_size">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="157"/>
@@ -4662,6 +4677,9 @@ virtual functions.</doc>
         </callback>
       </field>
       <field name="get_iter">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="129">returns an iterator for the given animation.</doc>
         <callback name="get_iter">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="161"/>
@@ -5009,6 +5027,10 @@ virtual functions.</doc>
         <type name="GObject.ObjectClass" c:type="GObjectClass"/>
       </field>
       <field name="get_delay_time">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="171">returns the time in milliseconds that the current frame
+ should be shown.</doc>
         <callback name="get_delay_time">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="200"/>
@@ -5030,6 +5052,9 @@ virtual functions.</doc>
         </callback>
       </field>
       <field name="get_pixbuf">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="173">returns the current frame.</doc>
         <callback name="get_pixbuf">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="202"/>
@@ -5051,6 +5076,10 @@ virtual functions.</doc>
         </callback>
       </field>
       <field name="on_currently_loading_frame">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="174">returns whether the current frame of @iter is
+ being loaded.</doc>
         <callback name="on_currently_loading_frame">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="204"/>
@@ -5072,6 +5101,10 @@ virtual functions.</doc>
         </callback>
       </field>
       <field name="advance">
+        <doc xml:space="preserve"
+             filename="gdk-pixbuf/gdk-pixbuf-animation.h"
+             line="176">advances the iterator to @current_time, possibly changing the
+ current frame.</doc>
         <callback name="advance">
           <source-position filename="gdk-pixbuf/gdk-pixbuf-animation.h"
                            line="206"/>
