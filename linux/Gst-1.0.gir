@@ -20950,12 +20950,12 @@ specific situations.</doc>
                 throws="1">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="615">Creates an element for handling the given URI.</doc>
+             line="619">Creates an element for handling the given URI.</doc>
         <source-position filename="gst/gsturi.h" line="161"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="624">a new element or %NULL if none
+               line="628">a new element or %NULL if none
 could be created</doc>
           <type name="Element" c:type="GstElement*"/>
         </return-value>
@@ -20963,13 +20963,13 @@ could be created</doc>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="617">Whether to create a source or a sink</doc>
+                 line="621">Whether to create a source or a sink</doc>
             <type name="URIType" c:type="const GstURIType"/>
           </parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="618">URI to create an element for</doc>
+                 line="622">URI to create an element for</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="elementname"
@@ -20978,7 +20978,7 @@ could be created</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="619">Name of created element, can be %NULL.</doc>
+                 line="623">Name of created element, can be %NULL.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71064,12 +71064,12 @@ Source and Sink plugins should implement this interface when possible.</doc>
       <virtual-method name="get_uri" invoker="get_uri">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="757">Gets the currently handled URI.</doc>
+             line="761">Gets the currently handled URI.</doc>
         <source-position filename="gst/gsturi.h" line="128"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="763">the URI currently handled by
+               line="767">the URI currently handled by
   the @handler.  Returns %NULL if there are no URI currently
   handled. The returned string must be freed with g_free() when no
   longer needed.</doc>
@@ -71079,7 +71079,7 @@ Source and Sink plugins should implement this interface when possible.</doc>
           <instance-parameter name="handler" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="759">A #GstURIHandler</doc>
+                 line="763">A #GstURIHandler</doc>
             <type name="URIHandler" c:type="GstURIHandler*"/>
           </instance-parameter>
         </parameters>
@@ -71087,25 +71087,25 @@ Source and Sink plugins should implement this interface when possible.</doc>
       <virtual-method name="set_uri" invoker="set_uri" throws="1">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="786">Tries to set the URI of the given handler.</doc>
+             line="790">Tries to set the URI of the given handler.</doc>
         <source-position filename="gst/gsturi.h" line="129"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="795">%TRUE if the URI was set successfully, else %FALSE.</doc>
+               line="799">%TRUE if the URI was set successfully, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="handler" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="788">A #GstURIHandler</doc>
+                 line="792">A #GstURIHandler</doc>
             <type name="URIHandler" c:type="GstURIHandler*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="789">URI to set</doc>
+                 line="793">URI to set</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71114,13 +71114,13 @@ Source and Sink plugins should implement this interface when possible.</doc>
               c:identifier="gst_uri_handler_get_protocols">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="727">Gets the list of protocols supported by @handler. This list may not be
+             line="731">Gets the list of protocols supported by @handler. This list may not be
 modified.</doc>
         <source-position filename="gst/gsturi.h" line="175"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="734">the
+               line="738">the
     supported protocols.  Returns %NULL if the @handler isn't
     implemented properly, or the @handler doesn't support any
     protocols.</doc>
@@ -71132,7 +71132,7 @@ modified.</doc>
           <instance-parameter name="handler" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="729">A #GstURIHandler.</doc>
+                 line="733">A #GstURIHandler.</doc>
             <type name="URIHandler" c:type="GstURIHandler*"/>
           </instance-parameter>
         </parameters>
@@ -71140,12 +71140,12 @@ modified.</doc>
       <method name="get_uri" c:identifier="gst_uri_handler_get_uri">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="757">Gets the currently handled URI.</doc>
+             line="761">Gets the currently handled URI.</doc>
         <source-position filename="gst/gsturi.h" line="178"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="763">the URI currently handled by
+               line="767">the URI currently handled by
   the @handler.  Returns %NULL if there are no URI currently
   handled. The returned string must be freed with g_free() when no
   longer needed.</doc>
@@ -71155,7 +71155,7 @@ modified.</doc>
           <instance-parameter name="handler" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="759">A #GstURIHandler</doc>
+                 line="763">A #GstURIHandler</doc>
             <type name="URIHandler" c:type="GstURIHandler*"/>
           </instance-parameter>
         </parameters>
@@ -71163,12 +71163,12 @@ modified.</doc>
       <method name="get_uri_type" c:identifier="gst_uri_handler_get_uri_type">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="700">Gets the type of the given URI handler</doc>
+             line="704">Gets the type of the given URI handler</doc>
         <source-position filename="gst/gsturi.h" line="172"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="706">the #GstURIType of the URI handler.
+               line="710">the #GstURIType of the URI handler.
 Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
           <type name="URIType" c:type="GstURIType"/>
         </return-value>
@@ -71176,7 +71176,7 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
           <instance-parameter name="handler" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="702">A #GstURIHandler.</doc>
+                 line="706">A #GstURIHandler.</doc>
             <type name="URIHandler" c:type="GstURIHandler*"/>
           </instance-parameter>
         </parameters>
@@ -71184,25 +71184,25 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
       <method name="set_uri" c:identifier="gst_uri_handler_set_uri" throws="1">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="786">Tries to set the URI of the given handler.</doc>
+             line="790">Tries to set the URI of the given handler.</doc>
         <source-position filename="gst/gsturi.h" line="181"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="795">%TRUE if the URI was set successfully, else %FALSE.</doc>
+               line="799">%TRUE if the URI was set successfully, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="handler" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="788">A #GstURIHandler</doc>
+                 line="792">A #GstURIHandler</doc>
             <type name="URIHandler" c:type="GstURIHandler*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="789">URI to set</doc>
+                 line="793">URI to set</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71264,7 +71264,7 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
           <return-value transfer-ownership="full" nullable="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="763">the URI currently handled by
+                 line="767">the URI currently handled by
   the @handler.  Returns %NULL if there are no URI currently
   handled. The returned string must be freed with g_free() when no
   longer needed.</doc>
@@ -71274,7 +71274,7 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
             <parameter name="handler" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gst/gsturi.c"
-                   line="759">A #GstURIHandler</doc>
+                   line="763">A #GstURIHandler</doc>
               <type name="URIHandler" c:type="GstURIHandler*"/>
             </parameter>
           </parameters>
@@ -71289,20 +71289,20 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="795">%TRUE if the URI was set successfully, else %FALSE.</doc>
+                 line="799">%TRUE if the URI was set successfully, else %FALSE.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
           <parameters>
             <parameter name="handler" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gst/gsturi.c"
-                   line="788">A #GstURIHandler</doc>
+                   line="792">A #GstURIHandler</doc>
               <type name="URIHandler" c:type="GstURIHandler*"/>
             </parameter>
             <parameter name="uri" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="gst/gsturi.c"
-                   line="789">URI to set</doc>
+                   line="793">URI to set</doc>
               <type name="utf8" c:type="const gchar*"/>
             </parameter>
           </parameters>
@@ -71417,21 +71417,21 @@ Returns #GST_URI_UNKNOWN if the @handler isn't implemented correctly.</doc>
             c:symbol-prefix="uri">
       <doc xml:space="preserve"
            filename="gst/gsturi.c"
-           line="967">A #GstUri object can be used to parse and split a URI string into its
+           line="971">A #GstUri object can be used to parse and split a URI string into its
 constituent parts. Two #GstUri objects can be joined to make a new #GstUri
 using the algorithm described in RFC3986.</doc>
       <source-position filename="gst/gsturi.h" line="200"/>
       <constructor name="new" c:identifier="gst_uri_new" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1434">Creates a new #GstUri object with the given URI parts. The path and query
+             line="1438">Creates a new #GstUri object with the given URI parts. The path and query
 strings will be broken down into their elements. All strings should not be
 escaped except where indicated.</doc>
         <source-position filename="gst/gsturi.h" line="219"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1451">A new #GstUri object.</doc>
+               line="1455">A new #GstUri object.</doc>
           <type name="Uri" c:type="GstUri*"/>
         </return-value>
         <parameters>
@@ -71441,7 +71441,7 @@ escaped except where indicated.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1436">The scheme for the new URI.</doc>
+                 line="1440">The scheme for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="userinfo"
@@ -71450,7 +71450,7 @@ escaped except where indicated.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1437">The user-info for the new URI.</doc>
+                 line="1441">The user-info for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="host"
@@ -71459,13 +71459,13 @@ escaped except where indicated.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1438">The host name for the new URI.</doc>
+                 line="1442">The host name for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="port" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1439">The port number for the new URI or %GST_URI_NO_PORT.</doc>
+                 line="1443">The port number for the new URI or %GST_URI_NO_PORT.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="path"
@@ -71474,7 +71474,7 @@ escaped except where indicated.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1440">The path for the new URI with '/' separating path
+                 line="1444">The path for the new URI with '/' separating path
                      elements.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -71484,7 +71484,7 @@ escaped except where indicated.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1442">The query string for the new URI with '&amp;' separating
+                 line="1446">The query string for the new URI with '&amp;' separating
                       query elements. Elements containing '&amp;' characters
                       should encode them as "&amp;percnt;26".</doc>
             <type name="utf8" c:type="const gchar*"/>
@@ -71495,7 +71495,7 @@ escaped except where indicated.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1445">The fragment name for the new URI.</doc>
+                 line="1449">The fragment name for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71505,13 +71505,13 @@ escaped except where indicated.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2502">Append a path onto the end of the path in the URI. The path is not
+             line="2506">Append a path onto the end of the path in the URI. The path is not
 normalized, call #gst_uri_normalize() to normalize the path.</doc>
         <source-position filename="gst/gsturi.h" line="311"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2510">%TRUE if the path was appended successfully.</doc>
+               line="2514">%TRUE if the path was appended successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -71521,7 +71521,7 @@ normalized, call #gst_uri_normalize() to normalize the path.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2504">The #GstUri to modify.</doc>
+                 line="2508">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="relative_path"
@@ -71530,7 +71530,7 @@ normalized, call #gst_uri_normalize() to normalize the path.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2505">Relative path to append to the end of the current path.</doc>
+                 line="2509">Relative path to append to the end of the current path.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71540,12 +71540,12 @@ normalized, call #gst_uri_normalize() to normalize the path.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2540">Append a single path segment onto the end of the URI path.</doc>
+             line="2544">Append a single path segment onto the end of the URI path.</doc>
         <source-position filename="gst/gsturi.h" line="314"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2547">%TRUE if the path was appended successfully.</doc>
+               line="2551">%TRUE if the path was appended successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -71555,7 +71555,7 @@ normalized, call #gst_uri_normalize() to normalize the path.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2542">The #GstUri to modify.</doc>
+                 line="2546">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="path_segment"
@@ -71564,7 +71564,7 @@ normalized, call #gst_uri_normalize() to normalize the path.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2543">The path segment string to append to the URI path.</doc>
+                 line="2547">The path segment string to append to the URI path.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71572,26 +71572,26 @@ normalized, call #gst_uri_normalize() to normalize the path.</doc>
       <method name="equal" c:identifier="gst_uri_equal" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1714">Compares two #GstUri objects to see if they represent the same normalized
+             line="1718">Compares two #GstUri objects to see if they represent the same normalized
 URI.</doc>
         <source-position filename="gst/gsturi.h" line="245"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1722">%TRUE if the normalized versions of the two URI's would be equal.</doc>
+               line="1726">%TRUE if the normalized versions of the two URI's would be equal.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="first" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1716">First #GstUri to compare.</doc>
+                 line="1720">First #GstUri to compare.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
           <parameter name="second" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1717">Second #GstUri to compare.</doc>
+                 line="1721">Second #GstUri to compare.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </parameter>
         </parameters>
@@ -71601,12 +71601,12 @@ URI.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1685">Like gst_uri_from_string() but also joins with a base URI.</doc>
+             line="1689">Like gst_uri_from_string() but also joins with a base URI.</doc>
         <source-position filename="gst/gsturi.h" line="242"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1692">A new #GstUri object.</doc>
+               line="1696">A new #GstUri object.</doc>
           <type name="Uri" c:type="GstUri*"/>
         </return-value>
         <parameters>
@@ -71616,13 +71616,13 @@ URI.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1687">The base URI to join the new URI with.</doc>
+                 line="1691">The base URI to join the new URI with.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1688">The URI string to parse.</doc>
+                 line="1692">The URI string to parse.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71632,13 +71632,13 @@ URI.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2840">Get the fragment name from the URI or %NULL if it doesn't exist.
+             line="2844">Get the fragment name from the URI or %NULL if it doesn't exist.
 If @uri is %NULL then returns %NULL.</doc>
         <source-position filename="gst/gsturi.h" line="346"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2847">The host name from the #GstUri object or %NULL.</doc>
+               line="2851">The host name from the #GstUri object or %NULL.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
@@ -71648,7 +71648,7 @@ If @uri is %NULL then returns %NULL.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2842">This #GstUri object.</doc>
+                 line="2846">This #GstUri object.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71656,13 +71656,13 @@ If @uri is %NULL then returns %NULL.</doc>
       <method name="get_host" c:identifier="gst_uri_get_host" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2232">Get the host name from the URI or %NULL if it doesn't exist.
+             line="2236">Get the host name from the URI or %NULL if it doesn't exist.
 If @uri is %NULL then returns %NULL.</doc>
         <source-position filename="gst/gsturi.h" line="281"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2239">The host name from the #GstUri object or %NULL.</doc>
+               line="2243">The host name from the #GstUri object or %NULL.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
@@ -71672,7 +71672,7 @@ If @uri is %NULL then returns %NULL.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2234">This #GstUri object.</doc>
+                 line="2238">This #GstUri object.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71682,7 +71682,7 @@ If @uri is %NULL then returns %NULL.</doc>
               version="1.12">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2885">Get the media fragment table from the URI, as defined by "Media Fragments URI 1.0".
+             line="2889">Get the media fragment table from the URI, as defined by "Media Fragments URI 1.0".
 Hash table returned by this API is a list of "key-value" pairs, and the each
 pair is generated by splitting "URI fragment" per "&amp;" sub-delims, then "key"
 and "value" are split by "=" sub-delims. The "key" returned by this API may
@@ -71697,7 +71697,7 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2901">The
+               line="2905">The
          fragment hash table from the URI.</doc>
           <type name="GLib.HashTable" c:type="GHashTable*">
             <type name="utf8"/>
@@ -71711,7 +71711,7 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2887">The #GstUri to get the fragment table from.</doc>
+                 line="2891">The #GstUri to get the fragment table from.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71719,12 +71719,12 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
       <method name="get_path" c:identifier="gst_uri_get_path" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2318">Extract the path string from the URI object.</doc>
+             line="2322">Extract the path string from the URI object.</doc>
         <source-position filename="gst/gsturi.h" line="293"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2324">The path from the URI. Once finished
+               line="2328">The path from the URI. Once finished
                                      with the string should be g_free()'d.</doc>
           <type name="utf8" c:type="gchar*"/>
         </return-value>
@@ -71735,7 +71735,7 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2320">The #GstUri to get the path from.</doc>
+                 line="2324">The #GstUri to get the path from.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71745,12 +71745,12 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2446">Get a list of path segments from the URI.</doc>
+             line="2450">Get a list of path segments from the URI.</doc>
         <source-position filename="gst/gsturi.h" line="305"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2452">A #GList of path segment
+               line="2456">A #GList of path segment
          strings or %NULL if no path segments are available. Free the list
          when no longer needed with g_list_free_full(list, g_free).</doc>
           <type name="GLib.List" c:type="GList*">
@@ -71764,7 +71764,7 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2448">The #GstUri to get the path from.</doc>
+                 line="2452">The #GstUri to get the path from.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71774,12 +71774,12 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2381">Extract the path string from the URI object as a percent encoded URI path.</doc>
+             line="2385">Extract the path string from the URI object as a percent encoded URI path.</doc>
         <source-position filename="gst/gsturi.h" line="299"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2387">The path from the URI. Once finished
+               line="2391">The path from the URI. Once finished
                                      with the string should be g_free()'d.</doc>
           <type name="utf8" c:type="gchar*"/>
         </return-value>
@@ -71790,7 +71790,7 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2383">The #GstUri to get the path from.</doc>
+                 line="2387">The #GstUri to get the path from.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71798,13 +71798,13 @@ See more about Media Fragments URI 1.0 (W3C) at https://www.w3.org/TR/media-frag
       <method name="get_port" c:identifier="gst_uri_get_port" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2277">Get the port number from the URI or %GST_URI_NO_PORT if it doesn't exist.
+             line="2281">Get the port number from the URI or %GST_URI_NO_PORT if it doesn't exist.
 If @uri is %NULL then returns %GST_URI_NO_PORT.</doc>
         <source-position filename="gst/gsturi.h" line="287"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2284">The port number from the #GstUri object or %GST_URI_NO_PORT.</doc>
+               line="2288">The port number from the #GstUri object or %GST_URI_NO_PORT.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
@@ -71814,7 +71814,7 @@ If @uri is %NULL then returns %GST_URI_NO_PORT.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2279">This #GstUri object.</doc>
+                 line="2283">This #GstUri object.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71824,12 +71824,12 @@ If @uri is %NULL then returns %GST_URI_NO_PORT.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2817">Get a list of the query keys from the URI.</doc>
+             line="2821">Get a list of the query keys from the URI.</doc>
         <source-position filename="gst/gsturi.h" line="343"/>
         <return-value transfer-ownership="container">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2823">A list of keys from
+               line="2827">A list of keys from
          the URI query. Free the list with g_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
             <type name="utf8"/>
@@ -71842,7 +71842,7 @@ If @uri is %NULL then returns %GST_URI_NO_PORT.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2819">The #GstUri to examine.</doc>
+                 line="2823">The #GstUri to examine.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71852,12 +71852,12 @@ If @uri is %NULL then returns %GST_URI_NO_PORT.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2568">Get a percent encoded URI query string from the @uri.</doc>
+             line="2572">Get a percent encoded URI query string from the @uri.</doc>
         <source-position filename="gst/gsturi.h" line="317"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2574">A percent encoded query string. Use
+               line="2578">A percent encoded query string. Use
                                      g_free() when no longer needed.</doc>
           <type name="utf8" c:type="gchar*"/>
         </return-value>
@@ -71868,7 +71868,7 @@ If @uri is %NULL then returns %GST_URI_NO_PORT.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2570">The #GstUri to get the query string from.</doc>
+                 line="2574">The #GstUri to get the query string from.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71878,7 +71878,7 @@ If @uri is %NULL then returns %GST_URI_NO_PORT.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2639">Get the query table from the URI. Keys and values in the table are freed
+             line="2643">Get the query table from the URI. Keys and values in the table are freed
 with g_free when they are deleted. A value may be %NULL to indicate that
 the key should appear in the query string in the URI, but does not have a
 value. Free the returned #GHashTable with #g_hash_table_unref() when it is
@@ -71888,7 +71888,7 @@ URI.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2650">The query
+               line="2654">The query
          hash table from the URI.</doc>
           <type name="GLib.HashTable" c:type="GHashTable*">
             <type name="utf8"/>
@@ -71902,7 +71902,7 @@ URI.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2641">The #GstUri to get the query table from.</doc>
+                 line="2645">The #GstUri to get the query table from.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71912,7 +71912,7 @@ URI.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2790">Get the value associated with the @query_key key. Will return %NULL if the
+             line="2794">Get the value associated with the @query_key key. Will return %NULL if the
 key has no value or if the key does not exist in the URI query table. Because
 %NULL is returned for both missing keys and keys with no value, you should
 use gst_uri_query_has_key() to determine if a key is present in the URI
@@ -71921,7 +71921,7 @@ query.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2801">The value for the given key, or %NULL if not found.</doc>
+               line="2805">The value for the given key, or %NULL if not found.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
@@ -71931,13 +71931,13 @@ query.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2792">The #GstUri to examine.</doc>
+                 line="2796">The #GstUri to examine.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
           <parameter name="query_key" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2793">The key to lookup.</doc>
+                 line="2797">The key to lookup.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -71945,13 +71945,13 @@ query.</doc>
       <method name="get_scheme" c:identifier="gst_uri_get_scheme">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2145">Get the scheme name from the URI or %NULL if it doesn't exist.
+             line="2149">Get the scheme name from the URI or %NULL if it doesn't exist.
 If @uri is %NULL then returns %NULL.</doc>
         <source-position filename="gst/gsturi.h" line="269"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2152">The scheme from the #GstUri object or %NULL.</doc>
+               line="2156">The scheme from the #GstUri object or %NULL.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
@@ -71961,7 +71961,7 @@ If @uri is %NULL then returns %NULL.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2147">This #GstUri object.</doc>
+                 line="2151">This #GstUri object.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71971,13 +71971,13 @@ If @uri is %NULL then returns %NULL.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2188">Get the userinfo (usually in the form "username:password") from the URI
+             line="2192">Get the userinfo (usually in the form "username:password") from the URI
 or %NULL if it doesn't exist. If @uri is %NULL then returns %NULL.</doc>
         <source-position filename="gst/gsturi.h" line="275"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2195">The userinfo from the #GstUri object or %NULL.</doc>
+               line="2199">The userinfo from the #GstUri object or %NULL.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
@@ -71987,7 +71987,7 @@ or %NULL if it doesn't exist. If @uri is %NULL then returns %NULL.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2190">This #GstUri object.</doc>
+                 line="2194">This #GstUri object.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -71997,13 +71997,13 @@ or %NULL if it doesn't exist. If @uri is %NULL then returns %NULL.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2070">Tests the @uri to see if it is normalized. A %NULL @uri is considered to be
+             line="2074">Tests the @uri to see if it is normalized. A %NULL @uri is considered to be
 normalized.</doc>
         <source-position filename="gst/gsturi.h" line="263"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2077">TRUE if the URI is normalized or is %NULL.</doc>
+               line="2081">TRUE if the URI is normalized or is %NULL.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72013,7 +72013,7 @@ normalized.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2072">The #GstUri to test to see if it is normalized.</doc>
+                 line="2076">The #GstUri to test to see if it is normalized.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -72023,7 +72023,7 @@ normalized.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1950">Check if it is safe to write to this #GstUri.
+             line="1954">Check if it is safe to write to this #GstUri.
 
 Check if the refcount of @uri is exactly 1, meaning that no other
 reference exists to the #GstUri and that the #GstUri is therefore writable.
@@ -72034,14 +72034,14 @@ writable.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1962">%TRUE if it is safe to write to the object.</doc>
+               line="1966">%TRUE if it is safe to write to the object.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1952">The #GstUri object to test.</doc>
+                 line="1956">The #GstUri object to test.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -72049,14 +72049,14 @@ writable.</doc>
       <method name="join" c:identifier="gst_uri_join" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1825">Join a reference URI onto a base URI using the method from RFC 3986.
+             line="1829">Join a reference URI onto a base URI using the method from RFC 3986.
 If either URI is %NULL then the other URI will be returned with the ref count
 increased.</doc>
         <source-position filename="gst/gsturi.h" line="248"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1835">A #GstUri which represents the base
+               line="1839">A #GstUri which represents the base
                                      with the reference URI joined on.</doc>
           <type name="Uri" c:type="GstUri*"/>
         </return-value>
@@ -72067,7 +72067,7 @@ increased.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1827">The base URI to join another to.</doc>
+                 line="1831">The base URI to join another to.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="ref_uri"
@@ -72076,7 +72076,7 @@ increased.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1828">The reference URI to join onto the
+                 line="1832">The reference URI to join onto the
                                       base URI.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </parameter>
@@ -72087,7 +72087,7 @@ increased.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1973">Make the #GstUri writable.
+             line="1977">Make the #GstUri writable.
 
 Checks if @uri is writable, and if so the original object is returned. If
 not, then a writable copy is made and returned. This gives away the
@@ -72097,14 +72097,14 @@ If @uri is %NULL then %NULL is returned.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1984">A writable version of @uri.</doc>
+               line="1988">A writable version of @uri.</doc>
           <type name="Uri" c:type="GstUri*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1975">The #GstUri object to make writable.</doc>
+                 line="1979">The #GstUri object to make writable.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -72114,12 +72114,12 @@ If @uri is %NULL then %NULL is returned.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1475">Like gst_uri_new(), but joins the new URI onto a base URI.</doc>
+             line="1479">Like gst_uri_new(), but joins the new URI onto a base URI.</doc>
         <source-position filename="gst/gsturi.h" line="227"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1491">The new URI joined onto @base.</doc>
+               line="1495">The new URI joined onto @base.</doc>
           <type name="Uri" c:type="GstUri*"/>
         </return-value>
         <parameters>
@@ -72129,7 +72129,7 @@ If @uri is %NULL then %NULL is returned.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1477">The base URI to join the new URI to.</doc>
+                 line="1481">The base URI to join the new URI to.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="scheme"
@@ -72138,7 +72138,7 @@ If @uri is %NULL then %NULL is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1478">The scheme for the new URI.</doc>
+                 line="1482">The scheme for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="userinfo"
@@ -72147,7 +72147,7 @@ If @uri is %NULL then %NULL is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1479">The user-info for the new URI.</doc>
+                 line="1483">The user-info for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="host"
@@ -72156,13 +72156,13 @@ If @uri is %NULL then %NULL is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1480">The host name for the new URI.</doc>
+                 line="1484">The host name for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="port" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1481">The port number for the new URI or %GST_URI_NO_PORT.</doc>
+                 line="1485">The port number for the new URI or %GST_URI_NO_PORT.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="path"
@@ -72171,7 +72171,7 @@ If @uri is %NULL then %NULL is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1482">The path for the new URI with '/' separating path
+                 line="1486">The path for the new URI with '/' separating path
                      elements.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -72181,7 +72181,7 @@ If @uri is %NULL then %NULL is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1484">The query string for the new URI with '&amp;' separating
+                 line="1488">The query string for the new URI with '&amp;' separating
                       query elements. Elements containing '&amp;' characters
                       should encode them as "&amp;percnt;26".</doc>
             <type name="utf8" c:type="const gchar*"/>
@@ -72192,7 +72192,7 @@ If @uri is %NULL then %NULL is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1487">The fragment name for the new URI.</doc>
+                 line="1491">The fragment name for the new URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72200,7 +72200,7 @@ If @uri is %NULL then %NULL is returned.</doc>
       <method name="normalize" c:identifier="gst_uri_normalize" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2117">Normalization will remove extra path segments ("." and "..") from the URI. It
+             line="2121">Normalization will remove extra path segments ("." and "..") from the URI. It
 will also convert the scheme and host name to lower case and any
 percent-encoded values to uppercase.
 
@@ -72210,14 +72210,14 @@ gst_uri_make_writable() first.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2128">TRUE if the URI was modified.</doc>
+               line="2132">TRUE if the URI was modified.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2119">The #GstUri to normalize.</doc>
+                 line="2123">The #GstUri to normalize.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -72227,12 +72227,12 @@ gst_uri_make_writable() first.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2767">Check if there is a query table entry for the @query_key key.</doc>
+             line="2771">Check if there is a query table entry for the @query_key key.</doc>
         <source-position filename="gst/gsturi.h" line="335"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2774">%TRUE if @query_key exists in the URI query table.</doc>
+               line="2778">%TRUE if @query_key exists in the URI query table.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72242,13 +72242,13 @@ gst_uri_make_writable() first.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2769">The #GstUri to examine.</doc>
+                 line="2773">The #GstUri to examine.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
           <parameter name="query_key" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2770">The key to lookup.</doc>
+                 line="2774">The key to lookup.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72258,12 +72258,12 @@ gst_uri_make_writable() first.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2736">Remove an entry from the query table by key.</doc>
+             line="2740">Remove an entry from the query table by key.</doc>
         <source-position filename="gst/gsturi.h" line="332"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2743">%TRUE if the key existed in the table and was removed.</doc>
+               line="2747">%TRUE if the key existed in the table and was removed.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72273,13 +72273,13 @@ gst_uri_make_writable() first.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2738">The #GstUri to modify.</doc>
+                 line="2742">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="query_key" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2739">The key to remove.</doc>
+                 line="2743">The key to remove.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72289,13 +72289,13 @@ gst_uri_make_writable() first.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2858">Sets the fragment string in the URI. Use a value of %NULL in @fragment to
+             line="2862">Sets the fragment string in the URI. Use a value of %NULL in @fragment to
 unset the fragment string.</doc>
         <source-position filename="gst/gsturi.h" line="349"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2866">%TRUE if the fragment was set/unset successfully.</doc>
+               line="2870">%TRUE if the fragment was set/unset successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72305,7 +72305,7 @@ unset the fragment string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2860">The #GstUri to modify.</doc>
+                 line="2864">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="fragment"
@@ -72314,7 +72314,7 @@ unset the fragment string.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2861">The fragment string to set.</doc>
+                 line="2865">The fragment string to set.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72322,12 +72322,12 @@ unset the fragment string.</doc>
       <method name="set_host" c:identifier="gst_uri_set_host" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2250">Set or unset the host for the URI.</doc>
+             line="2254">Set or unset the host for the URI.</doc>
         <source-position filename="gst/gsturi.h" line="284"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2257">%TRUE if the host was set/unset successfully.</doc>
+               line="2261">%TRUE if the host was set/unset successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72337,13 +72337,13 @@ unset the fragment string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2252">The #GstUri to modify.</doc>
+                 line="2256">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="host" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2253">The new host string to set or %NULL to unset.</doc>
+                 line="2257">The new host string to set or %NULL to unset.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72351,12 +72351,12 @@ unset the fragment string.</doc>
       <method name="set_path" c:identifier="gst_uri_set_path" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2356">Sets or unsets the path in the URI.</doc>
+             line="2360">Sets or unsets the path in the URI.</doc>
         <source-position filename="gst/gsturi.h" line="296"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2364">%TRUE if the path was set successfully.</doc>
+               line="2368">%TRUE if the path was set successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72366,7 +72366,7 @@ unset the fragment string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2358">The #GstUri to modify.</doc>
+                 line="2362">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="path"
@@ -72375,7 +72375,7 @@ unset the fragment string.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2359">The new path to set with path segments separated by '/', or use %NULL
+                 line="2363">The new path to set with path segments separated by '/', or use %NULL
        to unset the path.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -72386,12 +72386,12 @@ unset the fragment string.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2472">Replace the path segments list in the URI.</doc>
+             line="2476">Replace the path segments list in the URI.</doc>
         <source-position filename="gst/gsturi.h" line="308"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2480">%TRUE if the path segments were set successfully.</doc>
+               line="2484">%TRUE if the path segments were set successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72401,7 +72401,7 @@ unset the fragment string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2474">The #GstUri to modify.</doc>
+                 line="2478">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="path_segments"
@@ -72410,7 +72410,7 @@ unset the fragment string.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2475">The new
+                 line="2479">The new
                 path list to set.</doc>
             <type name="GLib.List" c:type="GList*">
               <type name="utf8"/>
@@ -72423,12 +72423,12 @@ unset the fragment string.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2422">Sets or unsets the path in the URI.</doc>
+             line="2426">Sets or unsets the path in the URI.</doc>
         <source-position filename="gst/gsturi.h" line="302"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2430">%TRUE if the path was set successfully.</doc>
+               line="2434">%TRUE if the path was set successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72438,13 +72438,13 @@ unset the fragment string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2424">The #GstUri to modify.</doc>
+                 line="2428">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2425">The new percent encoded path to set with path segments separated by
+                 line="2429">The new percent encoded path to set with path segments separated by
 '/', or use %NULL to unset the path.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -72453,12 +72453,12 @@ unset the fragment string.</doc>
       <method name="set_port" c:identifier="gst_uri_set_port" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2295">Set or unset the port number for the URI.</doc>
+             line="2299">Set or unset the port number for the URI.</doc>
         <source-position filename="gst/gsturi.h" line="290"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2302">%TRUE if the port number was set/unset successfully.</doc>
+               line="2306">%TRUE if the port number was set/unset successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72468,13 +72468,13 @@ unset the fragment string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2297">The #GstUri to modify.</doc>
+                 line="2301">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="port" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2298">The new port number to set or %GST_URI_NO_PORT to unset.</doc>
+                 line="2302">The new port number to set or %GST_URI_NO_PORT to unset.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -72484,12 +72484,12 @@ unset the fragment string.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2612">Sets or unsets the query table in the URI.</doc>
+             line="2616">Sets or unsets the query table in the URI.</doc>
         <source-position filename="gst/gsturi.h" line="320"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2620">%TRUE if the query table was set successfully.</doc>
+               line="2624">%TRUE if the query table was set successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72499,7 +72499,7 @@ unset the fragment string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2614">The #GstUri to modify.</doc>
+                 line="2618">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="query"
@@ -72508,7 +72508,7 @@ unset the fragment string.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2615">The new percent encoded query string to use to populate the query
+                 line="2619">The new percent encoded query string to use to populate the query
        table, or use %NULL to unset the query table.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -72519,14 +72519,14 @@ unset the fragment string.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2667">Set the query table to use in the URI. The old table is unreferenced and a
+             line="2671">Set the query table to use in the URI. The old table is unreferenced and a
 reference to the new one is used instead. A value if %NULL for @query_table
 will remove the query string from the URI.</doc>
         <source-position filename="gst/gsturi.h" line="326"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2677">%TRUE if the new table was successfully used for the query table.</doc>
+               line="2681">%TRUE if the new table was successfully used for the query table.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72536,7 +72536,7 @@ will remove the query string from the URI.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2669">The #GstUri to modify.</doc>
+                 line="2673">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="query_table"
@@ -72545,7 +72545,7 @@ will remove the query string from the URI.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2670">The new
+                 line="2674">The new
               query table to use.</doc>
             <type name="GLib.HashTable" c:type="GHashTable*">
               <type name="utf8"/>
@@ -72559,14 +72559,14 @@ will remove the query string from the URI.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2704">This inserts or replaces a key in the query table. A @query_value of %NULL
+             line="2708">This inserts or replaces a key in the query table. A @query_value of %NULL
 indicates that the key has no associated value, but will still be present in
 the query string.</doc>
         <source-position filename="gst/gsturi.h" line="329"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2714">%TRUE if the query table was successfully updated.</doc>
+               line="2718">%TRUE if the query table was successfully updated.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72576,13 +72576,13 @@ the query string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2706">The #GstUri to modify.</doc>
+                 line="2710">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="query_key" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2707">The key for the query entry.</doc>
+                 line="2711">The key for the query entry.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="query_value"
@@ -72591,7 +72591,7 @@ the query string.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2708">The value for the key.</doc>
+                 line="2712">The value for the key.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72601,12 +72601,12 @@ the query string.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2161">Set or unset the scheme for the URI.</doc>
+             line="2165">Set or unset the scheme for the URI.</doc>
         <source-position filename="gst/gsturi.h" line="272"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2168">%TRUE if the scheme was set/unset successfully.</doc>
+               line="2172">%TRUE if the scheme was set/unset successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72616,13 +72616,13 @@ the query string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2163">The #GstUri to modify.</doc>
+                 line="2167">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="scheme" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2164">The new scheme to set or %NULL to unset the scheme.</doc>
+                 line="2168">The new scheme to set or %NULL to unset the scheme.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72632,12 +72632,12 @@ the query string.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="2206">Set or unset the user information for the URI.</doc>
+             line="2210">Set or unset the user information for the URI.</doc>
         <source-position filename="gst/gsturi.h" line="278"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2213">%TRUE if the user information was set/unset successfully.</doc>
+               line="2217">%TRUE if the user information was set/unset successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -72647,13 +72647,13 @@ the query string.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2208">The #GstUri to modify.</doc>
+                 line="2212">The #GstUri to modify.</doc>
             <type name="Uri" c:type="GstUri*"/>
           </instance-parameter>
           <parameter name="userinfo" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="2209">The new user-information string to set or %NULL to unset.</doc>
+                 line="2213">The new user-information string to set or %NULL to unset.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72661,7 +72661,7 @@ the query string.</doc>
       <method name="to_string" c:identifier="gst_uri_to_string" version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1996">Convert the URI to a string.
+             line="2000">Convert the URI to a string.
 
 Returns the URI as held in this object as a #gchar* nul-terminated string.
 The caller should g_free() the string once they are finished with it.
@@ -72670,14 +72670,14 @@ The string is put together as described in RFC 3986.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="2006">The string version of the URI.</doc>
+               line="2010">The string version of the URI.</doc>
           <type name="utf8" c:type="gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1998">This #GstUri to convert to a string.</doc>
+                 line="2002">This #GstUri to convert to a string.</doc>
             <type name="Uri" c:type="const GstUri*"/>
           </instance-parameter>
         </parameters>
@@ -72718,20 +72718,20 @@ Free-function: g_free</doc>
                 version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1640">Parses a URI string into a new #GstUri object. Will return NULL if the URI
+             line="1644">Parses a URI string into a new #GstUri object. Will return NULL if the URI
 cannot be parsed.</doc>
         <source-position filename="gst/gsturi.h" line="236"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1647">A new #GstUri object, or NULL.</doc>
+               line="1651">A new #GstUri object, or NULL.</doc>
           <type name="Uri" c:type="GstUri*"/>
         </return-value>
         <parameters>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1642">The URI string to parse.</doc>
+                 line="1646">The URI string to parse.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72741,7 +72741,7 @@ cannot be parsed.</doc>
                 version="1.18">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1657">Parses a URI string into a new #GstUri object. Will return NULL if the URI
+             line="1661">Parses a URI string into a new #GstUri object. Will return NULL if the URI
 cannot be parsed. This is identical to gst_uri_from_string() except that
 the userinfo and fragment components of the URI will not be unescaped while
 parsing.
@@ -72758,14 +72758,14 @@ https://example.com/path#fragment which may contain a URI-escaped '#'.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1675">A new #GstUri object, or NULL.</doc>
+               line="1679">A new #GstUri object, or NULL.</doc>
           <type name="Uri" c:type="GstUri*"/>
         </return-value>
         <parameters>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1659">The URI string to parse.</doc>
+                 line="1663">The URI string to parse.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72870,13 +72870,13 @@ scheme followed by ":" and maybe a string identifying the location.</doc>
                 version="1.6">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1914">This is a convenience function to join two URI strings and return the result.
+             line="1918">This is a convenience function to join two URI strings and return the result.
 The returned string should be g_free()'d after use.</doc>
         <source-position filename="gst/gsturi.h" line="251"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1922">A string representing the percent-encoded join of
+               line="1926">A string representing the percent-encoded join of
          the two URIs.</doc>
           <type name="utf8" c:type="gchar*"/>
         </return-value>
@@ -72884,13 +72884,13 @@ The returned string should be g_free()'d after use.</doc>
           <parameter name="base_uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1916">The percent-encoded base URI.</doc>
+                 line="1920">The percent-encoded base URI.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="ref_uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="1917">The percent-encoded reference URI to join to the @base_uri.</doc>
+                 line="1921">The percent-encoded reference URI to join to the @base_uri.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -72899,27 +72899,27 @@ The returned string should be g_free()'d after use.</doc>
                 c:identifier="gst_uri_protocol_is_supported">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="588">Checks if an element exists that supports the given URI protocol. Note
+             line="592">Checks if an element exists that supports the given URI protocol. Note
 that a positive return value does not imply that a subsequent call to
 gst_element_make_from_uri() is guaranteed to work.</doc>
         <source-position filename="gst/gsturi.h" line="140"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="597">%TRUE</doc>
+               line="601">%TRUE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="590">Whether to check for a source or a sink</doc>
+                 line="594">Whether to check for a source or a sink</doc>
             <type name="URIType" c:type="const GstURIType"/>
           </parameter>
           <parameter name="protocol" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gsturi.c"
-                 line="591">Protocol that should be checked for (e.g. "http" or "smb")</doc>
+                 line="595">Protocol that should be checked for (e.g. "http" or "smb")</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -73215,7 +73215,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="10" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="11" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -75925,7 +75925,7 @@ A lower value represents a higher-priority event.</doc>
               throws="1">
       <doc xml:space="preserve"
            filename="gst/gsturi.c"
-           line="906">Similar to g_filename_to_uri(), but attempts to handle relative file paths
+           line="910">Similar to g_filename_to_uri(), but attempts to handle relative file paths
 as well. Before converting @filename into an URI, it will be prefixed by
 the current working directory if it is a relative path, and then the path
 will be canonicalised so that it doesn't contain any './' or '../' segments.
@@ -75935,7 +75935,7 @@ On Windows @filename should be in UTF-8 encoding.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="918">newly-allocated URI string, or NULL on error. The caller must
+             line="922">newly-allocated URI string, or NULL on error. The caller must
   free the URI string with g_free() when no longer needed.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -75943,7 +75943,7 @@ On Windows @filename should be in UTF-8 encoding.</doc>
         <parameter name="filename" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="908">absolute or relative file name path</doc>
+               line="912">absolute or relative file name path</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -79531,20 +79531,20 @@ Free-function: g_free</doc>
               version="1.6">
       <doc xml:space="preserve"
            filename="gst/gsturi.c"
-           line="1640">Parses a URI string into a new #GstUri object. Will return NULL if the URI
+           line="1644">Parses a URI string into a new #GstUri object. Will return NULL if the URI
 cannot be parsed.</doc>
       <source-position filename="gst/gsturi.h" line="236"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1647">A new #GstUri object, or NULL.</doc>
+             line="1651">A new #GstUri object, or NULL.</doc>
         <type name="Uri" c:type="GstUri*"/>
       </return-value>
       <parameters>
         <parameter name="uri" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1642">The URI string to parse.</doc>
+               line="1646">The URI string to parse.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -79555,7 +79555,7 @@ cannot be parsed.</doc>
               version="1.18">
       <doc xml:space="preserve"
            filename="gst/gsturi.c"
-           line="1657">Parses a URI string into a new #GstUri object. Will return NULL if the URI
+           line="1661">Parses a URI string into a new #GstUri object. Will return NULL if the URI
 cannot be parsed. This is identical to gst_uri_from_string() except that
 the userinfo and fragment components of the URI will not be unescaped while
 parsing.
@@ -79572,14 +79572,14 @@ https://example.com/path#fragment which may contain a URI-escaped '#'.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1675">A new #GstUri object, or NULL.</doc>
+             line="1679">A new #GstUri object, or NULL.</doc>
         <type name="Uri" c:type="GstUri*"/>
       </return-value>
       <parameters>
         <parameter name="uri" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1659">The URI string to parse.</doc>
+               line="1663">The URI string to parse.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -79693,13 +79693,13 @@ scheme followed by ":" and maybe a string identifying the location.</doc>
               version="1.6">
       <doc xml:space="preserve"
            filename="gst/gsturi.c"
-           line="1914">This is a convenience function to join two URI strings and return the result.
+           line="1918">This is a convenience function to join two URI strings and return the result.
 The returned string should be g_free()'d after use.</doc>
       <source-position filename="gst/gsturi.h" line="251"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="1922">A string representing the percent-encoded join of
+             line="1926">A string representing the percent-encoded join of
          the two URIs.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -79707,13 +79707,13 @@ The returned string should be g_free()'d after use.</doc>
         <parameter name="base_uri" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1916">The percent-encoded base URI.</doc>
+               line="1920">The percent-encoded base URI.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="ref_uri" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="1917">The percent-encoded reference URI to join to the @base_uri.</doc>
+               line="1921">The percent-encoded reference URI to join to the @base_uri.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -79723,27 +79723,27 @@ The returned string should be g_free()'d after use.</doc>
               moved-to="Uri.protocol_is_supported">
       <doc xml:space="preserve"
            filename="gst/gsturi.c"
-           line="588">Checks if an element exists that supports the given URI protocol. Note
+           line="592">Checks if an element exists that supports the given URI protocol. Note
 that a positive return value does not imply that a subsequent call to
 gst_element_make_from_uri() is guaranteed to work.</doc>
       <source-position filename="gst/gsturi.h" line="140"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gsturi.c"
-             line="597">%TRUE</doc>
+             line="601">%TRUE</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="590">Whether to check for a source or a sink</doc>
+               line="594">Whether to check for a source or a sink</doc>
           <type name="URIType" c:type="const GstURIType"/>
         </parameter>
         <parameter name="protocol" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gsturi.c"
-               line="591">Protocol that should be checked for (e.g. "http" or "smb")</doc>
+               line="595">Protocol that should be checked for (e.g. "http" or "smb")</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
