@@ -7618,7 +7618,7 @@ a font matching @desc.</doc>
               version="1.52">
         <doc xml:space="preserve"
              filename="pango/pango-fontmap.c"
-             line="540">Returns a new font that is like @font, except that its size
+             line="537">Returns a new font that is like @font, except that its size
 is multiplied by @scale, its backend-dependent configuration
 (e.g. cairo font options) is replaced by the one in @context,
 and its variations are replaced by @variations.</doc>
@@ -7626,26 +7626,26 @@ and its variations are replaced by @variations.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="pango/pango-fontmap.c"
-               line="553">the modified font</doc>
+               line="550">the modified font</doc>
           <type name="Font" c:type="PangoFont*"/>
         </return-value>
         <parameters>
           <instance-parameter name="fontmap" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-fontmap.c"
-                 line="542">a `PangoFontMap`</doc>
+                 line="539">a `PangoFontMap`</doc>
             <type name="FontMap" c:type="PangoFontMap*"/>
           </instance-parameter>
           <parameter name="font" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-fontmap.c"
-                 line="543">a font in @fontmap</doc>
+                 line="540">a font in @fontmap</doc>
             <type name="Font" c:type="PangoFont*"/>
           </parameter>
           <parameter name="scale" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="pango/pango-fontmap.c"
-                 line="544">the scale factor to apply</doc>
+                 line="541">the scale factor to apply</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="context"
@@ -7654,7 +7654,7 @@ and its variations are replaced by @variations.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-fontmap.c"
-                 line="545">a `PangoContext`</doc>
+                 line="542">a `PangoContext`</doc>
             <type name="Context" c:type="PangoContext*"/>
           </parameter>
           <parameter name="variations"
@@ -7663,7 +7663,7 @@ and its variations are replaced by @variations.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="pango/pango-fontmap.c"
-                 line="546">font variations to use</doc>
+                 line="543">font variations to use</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -19377,7 +19377,7 @@ Two encoded version numbers can be compared as integers.</doc>
       <source-position filename="pango/pango-features.h" line="4"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="1" c:type="PANGO_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="2" c:type="PANGO_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="pango/pango-utils.h"
            line="147">The micro component of the version of Pango available at compile-time.</doc>
@@ -19392,7 +19392,7 @@ Two encoded version numbers can be compared as integers.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="VERSION_STRING"
-              value="1.52.1"
+              value="1.52.2"
               c:type="PANGO_VERSION_STRING">
       <doc xml:space="preserve"
            filename="pango/pango-utils.h"
@@ -19763,7 +19763,7 @@ relative to the run of preceding run.
     <function name="attr_break" c:identifier="pango_attr_break" version="1.50">
       <doc xml:space="preserve"
            filename="pango/break.c"
-           line="2277">Apply customization from attributes to the breaks in @attrs.
+           line="2432">Apply customization from attributes to the breaks in @attrs.
 
 The line breaks are assumed to have been produced
 by [func@Pango.default_break] and [func@Pango.tailor_break].</doc>
@@ -19775,31 +19775,31 @@ by [func@Pango.default_break] and [func@Pango.tailor_break].</doc>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2279">text to break. Must be valid UTF-8</doc>
+               line="2434">text to break. Must be valid UTF-8</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2280">length of text in bytes (may be -1 if @text is nul-terminated)</doc>
+               line="2435">length of text in bytes (may be -1 if @text is nul-terminated)</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="attr_list" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2281">`PangoAttrList` to apply</doc>
+               line="2436">`PangoAttrList` to apply</doc>
           <type name="AttrList" c:type="PangoAttrList*"/>
         </parameter>
         <parameter name="offset" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2282">Byte offset of @text from the beginning of the paragraph</doc>
+               line="2437">Byte offset of @text from the beginning of the paragraph</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="attrs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2283">array with one `PangoLogAttr`
+               line="2438">array with one `PangoLogAttr`
   per character in @text, plus one extra, to be filled in</doc>
           <array length="5" zero-terminated="0" c:type="PangoLogAttr*">
             <type name="LogAttr" c:type="PangoLogAttr"/>
@@ -19808,7 +19808,7 @@ by [func@Pango.default_break] and [func@Pango.tailor_break].</doc>
         <parameter name="attrs_len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2285">length of @attrs array</doc>
+               line="2440">length of @attrs array</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
@@ -20861,7 +20861,7 @@ Unicode bidirectional algorithm.</doc>
               deprecated-version="1.44">
       <doc xml:space="preserve"
            filename="pango/break.c"
-           line="2199">Determines possible line, word, and character breaks
+           line="2354">Determines possible line, word, and character breaks
 for a string of Unicode text with a single analysis.
 
 For most purposes you may want to use [func@Pango.get_log_attrs].</doc>
@@ -20875,25 +20875,25 @@ For most purposes you may want to use [func@Pango.get_log_attrs].</doc>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2201">the text to process. Must be valid UTF-8</doc>
+               line="2356">the text to process. Must be valid UTF-8</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2202">length of @text in bytes (may be -1 if @text is nul-terminated)</doc>
+               line="2357">length of @text in bytes (may be -1 if @text is nul-terminated)</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="analysis" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2203">`PangoAnalysis` structure for @text</doc>
+               line="2358">`PangoAnalysis` structure for @text</doc>
           <type name="Analysis" c:type="PangoAnalysis*"/>
         </parameter>
         <parameter name="attrs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2204">an array to store character information in</doc>
+               line="2359">an array to store character information in</doc>
           <array length="4" zero-terminated="0" c:type="PangoLogAttr*">
             <type name="LogAttr" c:type="PangoLogAttr"/>
           </array>
@@ -20901,7 +20901,7 @@ For most purposes you may want to use [func@Pango.get_log_attrs].</doc>
         <parameter name="attrs_len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2205">size of the array passed as @attrs</doc>
+               line="2360">size of the array passed as @attrs</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
@@ -20909,7 +20909,7 @@ For most purposes you may want to use [func@Pango.get_log_attrs].</doc>
     <function name="default_break" c:identifier="pango_default_break">
       <doc xml:space="preserve"
            filename="pango/break.c"
-           line="2165">This is the default break algorithm.
+           line="2320">This is the default break algorithm.
 
 It applies rules from the [Unicode Line Breaking Algorithm](http://www.unicode.org/unicode/reports/tr14/)
 without language-specific tailoring, therefore the @analyis argument is unused
@@ -20926,13 +20926,13 @@ See [func@Pango.attr_break] for attribute-based customization.</doc>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2167">text to break. Must be valid UTF-8</doc>
+               line="2322">text to break. Must be valid UTF-8</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2168">length of text in bytes (may be -1 if @text is nul-terminated)</doc>
+               line="2323">length of text in bytes (may be -1 if @text is nul-terminated)</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="analysis"
@@ -20941,19 +20941,19 @@ See [func@Pango.attr_break] for attribute-based customization.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2169">a `PangoAnalysis` structure for the @text</doc>
+               line="2324">a `PangoAnalysis` structure for the @text</doc>
           <type name="Analysis" c:type="PangoAnalysis*"/>
         </parameter>
         <parameter name="attrs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2170">logical attributes to fill in</doc>
+               line="2325">logical attributes to fill in</doc>
           <type name="LogAttr" c:type="PangoLogAttr*"/>
         </parameter>
         <parameter name="attrs_len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2171">size of the array passed as @attrs</doc>
+               line="2326">size of the array passed as @attrs</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
@@ -21160,7 +21160,7 @@ A typical example:
     <function name="get_log_attrs" c:identifier="pango_get_log_attrs">
       <doc xml:space="preserve"
            filename="pango/break.c"
-           line="2323">Computes a `PangoLogAttr` for each character in @text.
+           line="2478">Computes a `PangoLogAttr` for each character in @text.
 
 The @attrs array must have one `PangoLogAttr` for
 each position in @text; if @text contains N characters,
@@ -21177,31 +21177,31 @@ a word to know the word is a word).</doc>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2325">text to process. Must be valid UTF-8</doc>
+               line="2480">text to process. Must be valid UTF-8</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2326">length in bytes of @text</doc>
+               line="2481">length in bytes of @text</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2327">embedding level, or -1 if unknown</doc>
+               line="2482">embedding level, or -1 if unknown</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="language" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2328">language tag</doc>
+               line="2483">language tag</doc>
           <type name="Language" c:type="PangoLanguage*"/>
         </parameter>
         <parameter name="attrs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2329">array with one `PangoLogAttr`
+               line="2484">array with one `PangoLogAttr`
   per character in @text, plus one extra, to be filled in</doc>
           <array length="5" zero-terminated="0" c:type="PangoLogAttr*">
             <type name="LogAttr" c:type="PangoLogAttr"/>
@@ -21210,7 +21210,7 @@ a word to know the word is a word).</doc>
         <parameter name="attrs_len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2331">length of @attrs array</doc>
+               line="2486">length of @attrs array</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
@@ -22802,7 +22802,7 @@ See that functions for details about the format.</doc>
               version="1.44">
       <doc xml:space="preserve"
            filename="pango/break.c"
-           line="2229">Apply language-specific tailoring to the breaks in @attrs.
+           line="2384">Apply language-specific tailoring to the breaks in @attrs.
 
 The line breaks are assumed to have been produced by [func@Pango.default_break].
 
@@ -22819,32 +22819,32 @@ to apply attributes to the whole paragraph.</doc>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2231">text to process. Must be valid UTF-8</doc>
+               line="2386">text to process. Must be valid UTF-8</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="length" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2232">length in bytes of @text</doc>
+               line="2387">length in bytes of @text</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="analysis" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2233">`PangoAnalysis` for @text</doc>
+               line="2388">`PangoAnalysis` for @text</doc>
           <type name="Analysis" c:type="PangoAnalysis*"/>
         </parameter>
         <parameter name="offset" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2234">Byte offset of @text from the beginning of the
+               line="2389">Byte offset of @text from the beginning of the
   paragraph, or -1 to ignore attributes from @analysis</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="attrs" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2236">array with one `PangoLogAttr`
+               line="2391">array with one `PangoLogAttr`
   per character in @text, plus one extra, to be filled in</doc>
           <array length="5" zero-terminated="0" c:type="PangoLogAttr*">
             <type name="LogAttr" c:type="PangoLogAttr"/>
@@ -22853,7 +22853,7 @@ to apply attributes to the whole paragraph.</doc>
         <parameter name="attrs_len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="pango/break.c"
-               line="2238">length of @attrs array</doc>
+               line="2393">length of @attrs array</doc>
           <type name="gint" c:type="int"/>
         </parameter>
       </parameters>
