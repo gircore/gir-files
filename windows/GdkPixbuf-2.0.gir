@@ -504,7 +504,7 @@ interpolation is just as fast and results in higher quality.</doc>
       <source-position filename="gdk-pixbuf/gdk-pixbuf-features.h" line="37"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="PIXBUF_MICRO" value="10" c:type="GDK_PIXBUF_MICRO">
+    <constant name="PIXBUF_MICRO" value="11" c:type="GDK_PIXBUF_MICRO">
       <doc xml:space="preserve"
            filename="gdk-pixbuf/gdk-pixbuf-features.h"
            line="22">Micro version of gdk-pixbuf library, that is the "2" in
@@ -551,7 +551,7 @@ interpolation is just as fast and results in higher quality.</doc>
       </parameters>
     </function-macro>
     <constant name="PIXBUF_VERSION"
-              value="2.42.10"
+              value="2.42.11"
               c:type="GDK_PIXBUF_VERSION">
       <doc xml:space="preserve"
            filename="gdk-pixbuf/gdk-pixbuf-features.h"
@@ -1014,11 +1014,11 @@ allowed since 2.8.</doc>
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="1469">Same as gdk_pixbuf_new_from_file_at_scale().</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-core.h" line="244"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
-               line="1479">A newly-created pixbuf with a reference count of 1, or `NULL`
-if any of several error conditions occurred:  the file could not be opened,
+               line="1479">A newly-created pixbuf with a reference count of 1,
+or `NULL` if any of several error conditions occurred:  the file could not be opened,
 there was no loader for the file's format, there was not enough memory to
 allocate the image buffer, or the image file contained invalid data.</doc>
           <type name="Pixbuf" c:type="GdkPixbuf*"/>
@@ -1111,7 +1111,7 @@ and image at the requested size, regardless of aspect ratio, use
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="1254">Same as gdk_pixbuf_new_from_file_at_size()</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-core.h" line="239"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="1263">A newly-created pixbuf with a reference count of 1, or
@@ -1149,11 +1149,11 @@ invalid data.</doc>
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="1188">Same as gdk_pixbuf_new_from_file()</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-core.h" line="236"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
-               line="1195">A newly-created pixbuf with a reference count of 1, or `NULL` if
-any of several error conditions occurred:  the file could not be opened,
+               line="1195">A newly-created pixbuf with a reference count of 1,
+or `NULL` if any of several error conditions occurred:  the file could not be opened,
 there was no loader for the file's format, there was not enough memory to
 allocate the image buffer, or the image file contained invalid data.</doc>
           <type name="Pixbuf" c:type="GdkPixbuf*"/>
@@ -1466,7 +1466,7 @@ gdk_pixbuf_new_from_stream_async().</doc>
 This data is commonly the result of including an XPM file into a
 program's C source.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-core.h" line="294"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="2157">A newly-created pixbuf</doc>
@@ -1895,7 +1895,7 @@ pixels will become fully transparent.
 If `substitute_color` is `FALSE`, then the (`r`, `g`, `b`) arguments
 will be ignored.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-core.h" line="482"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-util.c"
                line="51">A newly-created pixbuf</doc>
@@ -5396,7 +5396,7 @@ use the `gdk_pixbuf_format_*` family of functions.</doc>
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="3452">Creates a copy of `format`.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-io.h" line="92"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="3458">the newly allocated copy of a `GdkPixbufFormat`. Use
@@ -5437,7 +5437,7 @@ using gdk_pixbuf_format_copy()</doc>
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="3249">Returns a description of the format.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-io.h" line="56"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="3255">a description of the format.</doc>
@@ -5460,7 +5460,7 @@ using gdk_pixbuf_format_copy()</doc>
              line="3293">Returns the filename extensions typically used for files in the
 given format.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-io.h" line="60"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="3300">an array of
@@ -5488,7 +5488,7 @@ given format.</doc>
 The returned string should be a shorthand for a well known license, e.g.
 "LGPL", "GPL", "QPL", "GPL/QPL", or "other" to indicate some other license.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-io.h" line="74"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="3406">a string describing the license of the pixbuf format</doc>
@@ -5510,7 +5510,7 @@ The returned string should be a shorthand for a well known license, e.g.
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="3275">Returns the mime types supported by the format.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-io.h" line="58"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="3281">an array of mime types</doc>
@@ -5534,7 +5534,7 @@ The returned string should be a shorthand for a well known license, e.g.
              filename="gdk-pixbuf/gdk-pixbuf-io.c"
              line="3231">Returns the name of the format.</doc>
         <source-position filename="gdk-pixbuf/gdk-pixbuf-io.h" line="54"/>
-        <return-value transfer-ownership="full">
+        <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk-pixbuf/gdk-pixbuf-io.c"
                line="3237">the name of the format.</doc>
