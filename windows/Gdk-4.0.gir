@@ -875,7 +875,9 @@ even on a local clipboard. In this case the clipboard is empty.</doc>
           </instance-parameter>
         </parameters>
       </method>
-      <method name="read_async" c:identifier="gdk_clipboard_read_async">
+      <method name="read_async"
+              c:identifier="gdk_clipboard_read_async"
+              glib:finish-func="read_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
              line="629">Asynchronously requests an input stream to read the @clipboard's
@@ -985,7 +987,8 @@ See [method@Gdk.Clipboard.read_async].</doc>
         </parameters>
       </method>
       <method name="read_text_async"
-              c:identifier="gdk_clipboard_read_text_async">
+              c:identifier="gdk_clipboard_read_text_async"
+              glib:finish-func="read_text_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
              line="954">Asynchronously request the @clipboard contents converted to a string.
@@ -1069,7 +1072,8 @@ See [method@Gdk.Clipboard.read_text_async].</doc>
         </parameters>
       </method>
       <method name="read_texture_async"
-              c:identifier="gdk_clipboard_read_texture_async">
+              c:identifier="gdk_clipboard_read_texture_async"
+              glib:finish-func="read_texture_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
              line="889">Asynchronously request the @clipboard contents converted to a `GdkPixbuf`.
@@ -1153,7 +1157,8 @@ See [method@Gdk.Clipboard.read_texture_async].</doc>
         </parameters>
       </method>
       <method name="read_value_async"
-              c:identifier="gdk_clipboard_read_value_async">
+              c:identifier="gdk_clipboard_read_value_async"
+              glib:finish-func="read_value_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
              line="825">Asynchronously request the @clipboard contents converted to the given
@@ -1438,7 +1443,9 @@ transfer the contents and then request that format from @provider.</doc>
           </parameter>
         </parameters>
       </method>
-      <method name="store_async" c:identifier="gdk_clipboard_store_async">
+      <method name="store_async"
+              c:identifier="gdk_clipboard_store_async"
+              glib:finish-func="store_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
              line="513">Asynchronously instructs the @clipboard to store its contents remotely.
@@ -2906,7 +2913,8 @@ This can be assumed to be a subset of [method@Gdk.ContentProvider.ref_formats].<
         </parameters>
       </virtual-method>
       <virtual-method name="write_mime_type_async"
-                      invoker="write_mime_type_async">
+                      invoker="write_mime_type_async"
+                      glib:finish-func="write_mime_type_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkcontentprovider.c"
              line="269">Asynchronously writes the contents of @provider to @stream in the given
@@ -3120,7 +3128,8 @@ This can be assumed to be a subset of [method@Gdk.ContentProvider.ref_formats].<
         </parameters>
       </method>
       <method name="write_mime_type_async"
-              c:identifier="gdk_content_provider_write_mime_type_async">
+              c:identifier="gdk_content_provider_write_mime_type_async"
+              glib:finish-func="write_mime_type_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkcontentprovider.c"
              line="269">Asynchronously writes the contents of @provider to @stream in the given
@@ -3265,6 +3274,9 @@ See [method@Gdk.ContentProvider.write_mime_type_async].</doc>
         <type name="GObject.ObjectClass" c:type="GObjectClass"/>
       </field>
       <field name="content_changed">
+        <doc xml:space="preserve"
+             filename="gdk/gdkcontentprovider.h"
+             line="45">Signal class closure for `GdkContentProvider::content-changed`</doc>
         <callback name="content_changed">
           <source-position filename="gdk/gdkcontentprovider.h" line="54"/>
           <return-value transfer-ownership="none">
@@ -6945,13 +6957,13 @@ Note that DMA buffers only exist on Linux.</doc>
               version="4.14">
         <doc xml:space="preserve"
              filename="gdk/gdkdmabufformats.c"
-             line="221">Returns whether @formats1 and @formats2 contain the
+             line="222">Returns whether @formats1 and @formats2 contain the
 same dmabuf formats, in the same order.</doc>
         <source-position filename="gdk/gdkdmabufformats.h" line="55"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdmabufformats.c"
-               line="229">`TRUE` if @formats1 and @formats2 are equal</doc>
+               line="230">`TRUE` if @formats1 and @formats2 are equal</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -6961,7 +6973,7 @@ same dmabuf formats, in the same order.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdmabufformats.c"
-                 line="223">a `GdkDmabufFormats`</doc>
+                 line="224">a `GdkDmabufFormats`</doc>
             <type name="DmabufFormats" c:type="const GdkDmabufFormats*"/>
           </instance-parameter>
           <parameter name="formats2"
@@ -6970,7 +6982,7 @@ same dmabuf formats, in the same order.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdmabufformats.c"
-                 line="224">another `GdkDmabufFormats`</doc>
+                 line="225">another `GdkDmabufFormats`</doc>
             <type name="DmabufFormats" c:type="const GdkDmabufFormats*"/>
           </parameter>
         </parameters>
@@ -8124,7 +8136,7 @@ and so they are not normally needed in GTK applications. See the
       <function name="begin" c:identifier="gdk_drag_begin">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2345">Starts a drag and creates a new drag context for it.
+             line="2347">Starts a drag and creates a new drag context for it.
 
 This function is called by the drag source. After this call, you
 probably want to set up the drag icon using the surface returned
@@ -8142,44 +8154,44 @@ the source if [method@Gdk.Drag.get_selected_action] returns
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="2369">a newly created `GdkDrag`</doc>
+               line="2371">a newly created `GdkDrag`</doc>
           <type name="Drag" c:type="GdkDrag*"/>
         </return-value>
         <parameters>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2347">the source surface for this drag</doc>
+                 line="2349">the source surface for this drag</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2348">the device that controls this drag</doc>
+                 line="2350">the device that controls this drag</doc>
             <type name="Device" c:type="GdkDevice*"/>
           </parameter>
           <parameter name="content" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2349">the offered content</doc>
+                 line="2351">the offered content</doc>
             <type name="ContentProvider" c:type="GdkContentProvider*"/>
           </parameter>
           <parameter name="actions" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2350">the actions supported by this drag</doc>
+                 line="2352">the actions supported by this drag</doc>
             <type name="DragAction" c:type="GdkDragAction"/>
           </parameter>
           <parameter name="dx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2351">the x offset to @device's position where the drag nominally started</doc>
+                 line="2353">the x offset to @device's position where the drag nominally started</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
           <parameter name="dy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2352">the y offset to @device's position where the drag nominally started</doc>
+                 line="2354">the y offset to @device's position where the drag nominally started</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
         </parameters>
@@ -9193,7 +9205,9 @@ to be read in.</doc>
           </instance-parameter>
         </parameters>
       </method>
-      <method name="read_async" c:identifier="gdk_drop_read_async">
+      <method name="read_async"
+              c:identifier="gdk_drop_read_async"
+              glib:finish-func="read_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkdrop.c"
              line="647">Asynchronously read the dropped data from a `GdkDrop`
@@ -9300,7 +9314,9 @@ See [method@Gdk.Drop.read_async].</doc>
           </parameter>
         </parameters>
       </method>
-      <method name="read_value_async" c:identifier="gdk_drop_read_value_async">
+      <method name="read_value_async"
+              c:identifier="gdk_drop_read_value_async"
+              glib:finish-func="read_value_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkdrop.c"
              line="840">Asynchronously request the drag operation's contents converted
@@ -11432,7 +11448,7 @@ that is currently set by calling [func@Gdk.GLContext.clear_current].</doc>
                 c:identifier="gdk_gl_context_clear_current">
         <doc xml:space="preserve"
              filename="gdk/gdkglcontext.c"
-             line="1971">Clears the current `GdkGLContext`.
+             line="1969">Clears the current `GdkGLContext`.
 
 Any OpenGL call after this function returns will be ignored
 until [method@Gdk.GLContext.make_current] is called.</doc>
@@ -11444,12 +11460,12 @@ until [method@Gdk.GLContext.make_current] is called.</doc>
       <function name="get_current" c:identifier="gdk_gl_context_get_current">
         <doc xml:space="preserve"
              filename="gdk/gdkglcontext.c"
-             line="2019">Retrieves the current `GdkGLContext`.</doc>
+             line="2017">Retrieves the current `GdkGLContext`.</doc>
         <source-position filename="gdk/gdkglcontext.h" line="97"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkglcontext.c"
-               line="2024">the current `GdkGLContext`</doc>
+               line="2022">the current `GdkGLContext`</doc>
           <type name="GLContext" c:type="GdkGLContext*"/>
         </return-value>
       </function>
@@ -27045,6 +27061,12 @@ that will make the implementation likely quite slow.</doc>
         <type name="GObject.TypeInterface" c:type="GTypeInterface"/>
       </field>
       <field name="snapshot">
+        <doc xml:space="preserve"
+             filename="gdk/gdkpaintable.h"
+             line="55">Snapshot the paintable. The given @width and @height are
+  guaranteed to be larger than 0.0. The resulting snapshot must modify
+  only the area in the rectangle from (0,0) to (width, height).
+  This is the only function that must be implemented for this interface.</doc>
         <callback name="snapshot">
           <source-position filename="gdk/gdkpaintable.h" line="92"/>
           <return-value transfer-ownership="none">
@@ -27079,6 +27101,11 @@ that will make the implementation likely quite slow.</doc>
         </callback>
       </field>
       <field name="get_current_image">
+        <doc xml:space="preserve"
+             filename="gdk/gdkpaintable.h"
+             line="59">return a `GdkPaintable` that does not change over
+  time. This means the `GDK_PAINTABLE_STATIC_SIZE` and
+  `GDK_PAINTABLE_STATIC_CONTENTS` flag are set.</doc>
         <callback name="get_current_image">
           <source-position filename="gdk/gdkpaintable.h" line="97"/>
           <return-value transfer-ownership="full">
@@ -27099,6 +27126,10 @@ that will make the implementation likely quite slow.</doc>
         </callback>
       </field>
       <field name="get_flags">
+        <doc xml:space="preserve"
+             filename="gdk/gdkpaintable.h"
+             line="62">Get the flags for this instance. See [flags@Gdk.PaintableFlags]
+  for details.</doc>
         <callback name="get_flags">
           <source-position filename="gdk/gdkpaintable.h" line="100"/>
           <return-value transfer-ownership="none">
@@ -27118,6 +27149,11 @@ that will make the implementation likely quite slow.</doc>
         </callback>
       </field>
       <field name="get_intrinsic_width">
+        <doc xml:space="preserve"
+             filename="gdk/gdkpaintable.h"
+             line="64">The preferred width for this object to be
+  snapshot at or 0 if none. This is purely a hint. The object must still
+  be able to render at any size.</doc>
         <callback name="get_intrinsic_width">
           <source-position filename="gdk/gdkpaintable.h" line="102"/>
           <return-value transfer-ownership="none">
@@ -27137,6 +27173,11 @@ that will make the implementation likely quite slow.</doc>
         </callback>
       </field>
       <field name="get_intrinsic_height">
+        <doc xml:space="preserve"
+             filename="gdk/gdkpaintable.h"
+             line="67">The preferred height for this object to be
+  snapshot at or 0 if none. This is purely a hint. The object must still
+  be able to render at any size.</doc>
         <callback name="get_intrinsic_height">
           <source-position filename="gdk/gdkpaintable.h" line="104"/>
           <return-value transfer-ownership="none">
@@ -27156,6 +27197,12 @@ that will make the implementation likely quite slow.</doc>
         </callback>
       </field>
       <field name="get_intrinsic_aspect_ratio">
+        <doc xml:space="preserve"
+             filename="gdk/gdkpaintable.h"
+             line="70">The preferred aspect ratio for this object
+  or 0 if none. If both [vfunc@Gdk.Paintable.get_intrinsic_width]
+  and [vfunc@Gdk.Paintable.get_intrinsic_height] return non-zero
+  values, this function should return the aspect ratio computed from those.</doc>
         <callback name="get_intrinsic_aspect_ratio">
           <source-position filename="gdk/gdkpaintable.h" line="106"/>
           <return-value transfer-ownership="none">
@@ -29120,7 +29167,7 @@ relative to it using [method@Gdk.Popup.present].</doc>
       <method name="beep" c:identifier="gdk_surface_beep">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2130">Emits a short beep associated to @surface.
+             line="2132">Emits a short beep associated to @surface.
 
 If the display of @surface does not support per-surface beeps,
 emits a short beep on the display just as [method@Gdk.Display.beep].</doc>
@@ -29132,7 +29179,7 @@ emits a short beep on the display just as [method@Gdk.Display.beep].</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2132">a toplevel `GdkSurface`</doc>
+                 line="2134">a toplevel `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29141,19 +29188,19 @@ emits a short beep on the display just as [method@Gdk.Display.beep].</doc>
               c:identifier="gdk_surface_create_cairo_context">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1222">Creates a new `GdkCairoContext` for rendering on @surface.</doc>
+             line="1224">Creates a new `GdkCairoContext` for rendering on @surface.</doc>
         <source-position filename="gdk/gdksurface.h" line="133"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1228">the newly created `GdkCairoContext`</doc>
+               line="1230">the newly created `GdkCairoContext`</doc>
           <type name="CairoContext" c:type="GdkCairoContext*"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1224">a `GdkSurface`</doc>
+                 line="1226">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29163,7 +29210,7 @@ emits a short beep on the display just as [method@Gdk.Display.beep].</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1195">Creates a new `GdkGLContext` for the `GdkSurface`.
+             line="1197">Creates a new `GdkGLContext` for the `GdkSurface`.
 
 The context is disconnected from any particular surface or surface.
 If the creation of the `GdkGLContext` failed, @error will be set.
@@ -29173,14 +29220,14 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1207">the newly created `GdkGLContext`</doc>
+               line="1209">the newly created `GdkGLContext`</doc>
           <type name="GLContext" c:type="GdkGLContext*"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1197">a `GdkSurface`</doc>
+                 line="1199">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29191,7 +29238,7 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
               deprecated-version="4.12">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2287">Create a new Cairo surface that is as compatible as possible with the
+             line="2289">Create a new Cairo surface that is as compatible as possible with the
 given @surface.
 
 For example the new surface will have the same fallback resolution
@@ -29211,7 +29258,7 @@ or any other error occurs.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="2310">a pointer to the newly allocated surface. The caller
+               line="2312">a pointer to the newly allocated surface. The caller
   owns the surface and should call cairo_surface_destroy() when done
   with it.</doc>
           <type name="cairo.Surface" c:type="cairo_surface_t*"/>
@@ -29220,25 +29267,25 @@ or any other error occurs.</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2289">surface to make new surface similar to</doc>
+                 line="2291">surface to make new surface similar to</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="content" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2290">the content for the new surface</doc>
+                 line="2292">the content for the new surface</doc>
             <type name="cairo.Content" c:type="cairo_content_t"/>
           </parameter>
           <parameter name="width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2291">width of the new surface</doc>
+                 line="2293">width of the new surface</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2292">height of the new surface</doc>
+                 line="2294">height of the new surface</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -29250,21 +29297,21 @@ or any other error occurs.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1244">Sets an error and returns %NULL.</doc>
+             line="1246">Sets an error and returns %NULL.</doc>
         <doc-deprecated xml:space="preserve">GTK does not expose any Vulkan internals. This
   function is a leftover that was accidentally exposed.</doc-deprecated>
         <source-position filename="gdk/gdksurface.h" line="139"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1251">%NULL</doc>
+               line="1253">%NULL</doc>
           <type name="VulkanContext" c:type="GdkVulkanContext*"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1246">a `GdkSurface`</doc>
+                 line="1248">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29300,7 +29347,7 @@ before that happens.</doc>
         <attribute name="org.gtk.Method.get_property" value="cursor"/>
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1775">Retrieves a `GdkCursor` pointer for the cursor currently set on the
+             line="1777">Retrieves a `GdkCursor` pointer for the cursor currently set on the
 `GdkSurface`.
 
 If the return value is %NULL then there is no custom cursor set on
@@ -29311,14 +29358,14 @@ Use [method@Gdk.Surface.set_cursor] to unset the cursor of the surface.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1787">a `GdkCursor`</doc>
+               line="1789">a `GdkCursor`</doc>
           <type name="Cursor" c:type="GdkCursor*"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1777">a `GdkSurface`</doc>
+                 line="1779">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29327,7 +29374,7 @@ Use [method@Gdk.Surface.set_cursor] to unset the cursor of the surface.</doc>
               c:identifier="gdk_surface_get_device_cursor">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1854">Retrieves a `GdkCursor` pointer for the @device currently set on the
+             line="1856">Retrieves a `GdkCursor` pointer for the @device currently set on the
 specified `GdkSurface`.
 
 If the return value is %NULL then there is no custom cursor set on the
@@ -29338,20 +29385,20 @@ Use [method@Gdk.Surface.set_cursor] to unset the cursor of the surface.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1867">a `GdkCursor`</doc>
+               line="1869">a `GdkCursor`</doc>
           <type name="Cursor" c:type="GdkCursor*"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1856">a `GdkSurface`</doc>
+                 line="1858">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1857">a pointer `GdkDevice`</doc>
+                 line="1859">a pointer `GdkDevice`</doc>
             <type name="Device" c:type="GdkDevice*"/>
           </parameter>
         </parameters>
@@ -29360,7 +29407,7 @@ Use [method@Gdk.Surface.set_cursor] to unset the cursor of the surface.</doc>
               c:identifier="gdk_surface_get_device_position">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1638">Obtains the current device position and modifier state.
+             line="1640">Obtains the current device position and modifier state.
 
 The position is given in coordinates relative to the upper
 left corner of @surface.</doc>
@@ -29368,20 +29415,20 @@ left corner of @surface.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1651">%TRUE if the device is over the surface</doc>
+               line="1653">%TRUE if the device is over the surface</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1640">a `GdkSurface`</doc>
+                 line="1642">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1641">pointer `GdkDevice` to query to</doc>
+                 line="1643">pointer `GdkDevice` to query to</doc>
             <type name="Device" c:type="GdkDevice*"/>
           </parameter>
           <parameter name="x"
@@ -29392,7 +29439,7 @@ left corner of @surface.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1642">return location for the X coordinate of @device</doc>
+                 line="1644">return location for the X coordinate of @device</doc>
             <type name="gdouble" c:type="double*"/>
           </parameter>
           <parameter name="y"
@@ -29403,7 +29450,7 @@ left corner of @surface.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1643">return location for the Y coordinate of @device</doc>
+                 line="1645">return location for the Y coordinate of @device</doc>
             <type name="gdouble" c:type="double*"/>
           </parameter>
           <parameter name="mask"
@@ -29414,7 +29461,7 @@ left corner of @surface.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1644">return location for the modifier mask</doc>
+                 line="1646">return location for the modifier mask</doc>
             <type name="ModifierType" c:type="GdkModifierType*"/>
           </parameter>
         </parameters>
@@ -29448,7 +29495,7 @@ left corner of @surface.</doc>
         <attribute name="org.gtk.Method.get_property" value="frame-clock"/>
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2520">Gets the frame clock for the surface.
+             line="2522">Gets the frame clock for the surface.
 
 The frame clock for a surface never changes unless the surface is
 reparented to a new toplevel surface.</doc>
@@ -29456,14 +29503,14 @@ reparented to a new toplevel surface.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="2529">the frame clock</doc>
+               line="2531">the frame clock</doc>
           <type name="FrameClock" c:type="GdkFrameClock*"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2522">surface to get frame clock for</doc>
+                 line="2524">surface to get frame clock for</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29474,7 +29521,7 @@ reparented to a new toplevel surface.</doc>
         <attribute name="org.gtk.Method.get_property" value="height"/>
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1976">Returns the height of the given @surface.
+             line="1978">Returns the height of the given @surface.
 
 Surface size is reported in ”application pixels”, not
 ”device pixels” (see [method@Gdk.Surface.get_scale_factor]).</doc>
@@ -29482,14 +29529,14 @@ Surface size is reported in ”application pixels”, not
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1985">The height of @surface</doc>
+               line="1987">The height of @surface</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1978">a `GdkSurface`</doc>
+                 line="1980">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29527,7 +29574,7 @@ or [method@Gdk.Popup.present].</doc>
         <attribute name="org.gtk.Method.get_property" value="scale"/>
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2565">Returns the internal scale that maps from surface coordinates
+             line="2567">Returns the internal scale that maps from surface coordinates
 to the actual device pixels.
 
 When the scale is bigger than 1, the windowing system prefers to get
@@ -29542,14 +29589,14 @@ The scale may change during the lifetime of the surface.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="2581">the scale</doc>
+               line="2583">the scale</doc>
           <type name="gdouble" c:type="double"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2567">surface to get scale for</doc>
+                 line="2569">surface to get scale for</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29560,7 +29607,7 @@ The scale may change during the lifetime of the surface.</doc>
         <attribute name="org.gtk.Method.get_property" value="scale-factor"/>
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2539">Returns the internal scale factor that maps from surface coordinates
+             line="2541">Returns the internal scale factor that maps from surface coordinates
 to the actual device pixels.
 
 On traditional systems this is 1, but on very high density outputs
@@ -29575,14 +29622,14 @@ The scale factor may change during the lifetime of the surface.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="2555">the scale factor</doc>
+               line="2557">the scale factor</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2541">surface to get scale factor for</doc>
+                 line="2543">surface to get scale factor for</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29593,7 +29640,7 @@ The scale factor may change during the lifetime of the surface.</doc>
         <attribute name="org.gtk.Method.get_property" value="width"/>
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1957">Returns the width of the given @surface.
+             line="1959">Returns the width of the given @surface.
 
 Surface size is reported in ”application pixels”, not
 ”device pixels” (see [method@Gdk.Surface.get_scale_factor]).</doc>
@@ -29601,14 +29648,14 @@ Surface size is reported in ”application pixels”, not
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="1966">The width of @surface</doc>
+               line="1968">The width of @surface</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1959">a `GdkSurface`</doc>
+                 line="1961">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29616,7 +29663,7 @@ Surface size is reported in ”application pixels”, not
       <method name="hide" c:identifier="gdk_surface_hide">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1687">Hide the surface.
+             line="1689">Hide the surface.
 
 For toplevel surfaces, withdraws them, so they will no longer be
 known to the window manager; for all surfaces, unmaps them, so
@@ -29630,7 +29677,7 @@ part of [gtk_widget_hide()](../gtk4/method.Widget.hide.html).</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1689">a `GdkSurface`</doc>
+                 line="1691">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29658,7 +29705,7 @@ part of [gtk_widget_hide()](../gtk4/method.Widget.hide.html).</doc>
       <method name="queue_render" c:identifier="gdk_surface_queue_render">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1428">Forces a [signal@Gdk.Surface::render] signal emission for @surface
+             line="1430">Forces a [signal@Gdk.Surface::render] signal emission for @surface
 to be scheduled.
 
 This function is useful for implementations that track invalid
@@ -29671,7 +29718,7 @@ regions on their own.</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1430">a `GdkSurface`</doc>
+                 line="1432">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29679,7 +29726,7 @@ regions on their own.</doc>
       <method name="request_layout" c:identifier="gdk_surface_request_layout">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1320">Request a layout phase from the surface's frame clock.
+             line="1322">Request a layout phase from the surface's frame clock.
 
 See [method@Gdk.FrameClock.request_phase].</doc>
         <source-position filename="gdk/gdksurface.h" line="123"/>
@@ -29690,7 +29737,7 @@ See [method@Gdk.FrameClock.request_phase].</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1322">a `GdkSurface`</doc>
+                 line="1324">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -29701,7 +29748,7 @@ See [method@Gdk.FrameClock.request_phase].</doc>
         <attribute name="org.gtk.Method.set_property" value="cursor"/>
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1797">Sets the default mouse pointer for a `GdkSurface`.
+             line="1799">Sets the default mouse pointer for a `GdkSurface`.
 
 Passing %NULL for the @cursor argument means that @surface will use
 the cursor of its parent surface. Most surfaces should use this default.
@@ -29717,7 +29764,7 @@ to create the cursor. To make the cursor invisible, use %GDK_BLANK_CURSOR.</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1799">a `GdkSurface`</doc>
+                 line="1801">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="cursor"
@@ -29726,7 +29773,7 @@ to create the cursor. To make the cursor invisible, use %GDK_BLANK_CURSOR.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1800">a `GdkCursor`</doc>
+                 line="1802">a `GdkCursor`</doc>
             <type name="Cursor" c:type="GdkCursor*"/>
           </parameter>
         </parameters>
@@ -29735,7 +29782,7 @@ to create the cursor. To make the cursor invisible, use %GDK_BLANK_CURSOR.</doc>
               c:identifier="gdk_surface_set_device_cursor">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="1880">Sets a specific `GdkCursor` for a given device when it gets inside @surface.
+             line="1882">Sets a specific `GdkCursor` for a given device when it gets inside @surface.
 
 Passing %NULL for the @cursor argument means that @surface will use the
 cursor of its parent surface. Most surfaces should use this default.
@@ -29750,19 +29797,19 @@ to create the cursor. To make the cursor invisible, use %GDK_BLANK_CURSOR.</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1882">a `GdkSurface`</doc>
+                 line="1884">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1883">a pointer `GdkDevice`</doc>
+                 line="1885">a pointer `GdkDevice`</doc>
             <type name="Device" c:type="GdkDevice*"/>
           </parameter>
           <parameter name="cursor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="1884">a `GdkCursor`</doc>
+                 line="1886">a `GdkCursor`</doc>
             <type name="Cursor" c:type="GdkCursor*"/>
           </parameter>
         </parameters>
@@ -29771,7 +29818,7 @@ to create the cursor. To make the cursor invisible, use %GDK_BLANK_CURSOR.</doc>
               c:identifier="gdk_surface_set_input_region">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2049">Apply the region to the surface for the purpose of event
+             line="2051">Apply the region to the surface for the purpose of event
 handling.
 
 Mouse events which happen while the pointer position corresponds
@@ -29793,13 +29840,13 @@ a particular backend supports input regions.</doc>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2051">a `GdkSurface`</doc>
+                 line="2053">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="region" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2052">region of surface to be reactive</doc>
+                 line="2054">region of surface to be reactive</doc>
             <type name="cairo.Region" c:type="cairo_region_t*"/>
           </parameter>
         </parameters>
@@ -29808,7 +29855,7 @@ a particular backend supports input regions.</doc>
               c:identifier="gdk_surface_set_opaque_region">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2596">Marks a region of the `GdkSurface` as opaque.
+             line="2598">Marks a region of the `GdkSurface` as opaque.
 
 For optimisation purposes, compositing window managers may
 like to not draw obscured regions of surfaces, or turn off blending
@@ -29831,7 +29878,7 @@ background is not opaque, please update this property in your
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2598">a top-level `GdkSurface`</doc>
+                 line="2600">a top-level `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="region"
@@ -29840,7 +29887,7 @@ background is not opaque, please update this property in your
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2599">a region, or %NULL to make the entire
+                 line="2601">a region, or %NULL to make the entire
   surface opaque</doc>
             <type name="cairo.Region" c:type="cairo_region_t*"/>
           </parameter>
@@ -29850,7 +29897,7 @@ background is not opaque, please update this property in your
               c:identifier="gdk_surface_translate_coordinates">
         <doc xml:space="preserve"
              filename="gdk/gdksurface.c"
-             line="2957">Translates coordinates between two surfaces.
+             line="2959">Translates coordinates between two surfaces.
 
 Note that this only works if @to and @from are popups or
 transient-for to the same toplevel (directly or indirectly).</doc>
@@ -29858,20 +29905,20 @@ transient-for to the same toplevel (directly or indirectly).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdksurface.c"
-               line="2969">%TRUE if the coordinates were successfully translated</doc>
+               line="2971">%TRUE if the coordinates were successfully translated</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="from" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2959">the origin surface</doc>
+                 line="2961">the origin surface</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="to" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2960">the target surface</doc>
+                 line="2962">the target surface</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </parameter>
           <parameter name="x"
@@ -29880,7 +29927,7 @@ transient-for to the same toplevel (directly or indirectly).</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2961">coordinates to translate</doc>
+                 line="2963">coordinates to translate</doc>
             <type name="gdouble" c:type="double*"/>
           </parameter>
           <parameter name="y"
@@ -29889,7 +29936,7 @@ transient-for to the same toplevel (directly or indirectly).</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdksurface.c"
-                 line="2962">coordinates to translate</doc>
+                 line="2964">coordinates to translate</doc>
             <type name="gdouble" c:type="double*"/>
           </parameter>
         </parameters>
@@ -32695,7 +32742,7 @@ can fail, returning %NULL context.</doc>
       <glib:signal name="images-updated" when="last">
         <doc xml:space="preserve"
              filename="gdk/gdkvulkancontext.c"
-             line="756">Emitted when the images managed by this context have changed.
+             line="775">Emitted when the images managed by this context have changed.
 
 Usually this means that the swapchain had to be recreated,
 for example in response to a change of the surface size.</doc>
