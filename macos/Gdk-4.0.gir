@@ -6241,14 +6241,14 @@ This is a convenience function for:
       <function name="open" c:identifier="gdk_display_open">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1186">Opens a display.
+             line="1188">Opens a display.
 
 If opening the display fails, `NULL` is returned.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="42"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1194">a `GdkDisplay`</doc>
+               line="1196">a `GdkDisplay`</doc>
           <type name="Display" c:type="GdkDisplay*"/>
         </return-value>
         <parameters>
@@ -6258,7 +6258,7 @@ If opening the display fails, `NULL` is returned.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1188">the name of the display to open</doc>
+                 line="1190">the name of the display to open</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6266,7 +6266,7 @@ If opening the display fails, `NULL` is returned.</doc>
       <method name="beep" c:identifier="gdk_display_beep">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1017">Emits a short beep on @display</doc>
+             line="1019">Emits a short beep on @display</doc>
         <source-position filename="gdk/gdkdisplay.h" line="51"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6275,7 +6275,7 @@ If opening the display fails, `NULL` is returned.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1019">a `GdkDisplay`</doc>
+                 line="1021">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6283,7 +6283,7 @@ If opening the display fails, `NULL` is returned.</doc>
       <method name="close" c:identifier="gdk_display_close">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="477">Closes the connection to the windowing system for the given display.
+             line="479">Closes the connection to the windowing system for the given display.
 
 This cleans up associated resources.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="58"/>
@@ -6294,7 +6294,7 @@ This cleans up associated resources.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="479">a `GdkDisplay`</doc>
+                 line="481">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6305,7 +6305,7 @@ This cleans up associated resources.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1451">Creates a new `GdkGLContext` for the `GdkDisplay`.
+             line="1453">Creates a new `GdkGLContext` for the `GdkDisplay`.
 
 The context is disconnected from any particular surface or surface
 and cannot be used to draw to any surface. It can only be used to
@@ -6318,14 +6318,14 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1466">the newly created `GdkGLContext`</doc>
+               line="1468">the newly created `GdkGLContext`</doc>
           <type name="GLContext" c:type="GdkGLContext*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1453">a `GdkDisplay`</doc>
+                 line="1455">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6334,25 +6334,25 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
               c:identifier="gdk_display_device_is_grabbed">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="974">Returns %TRUE if there is an ongoing grab on @device for @display.</doc>
+             line="976">Returns %TRUE if there is an ongoing grab on @device for @display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="48"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="981">%TRUE if there is a grab in effect for @device.</doc>
+               line="983">%TRUE if there is a grab in effect for @device.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="976">a `GdkDisplay`</doc>
+                 line="978">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="device" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="977">a `GdkDevice`</doc>
+                 line="979">a `GdkDevice`</doc>
             <type name="Device" c:type="GdkDevice*"/>
           </parameter>
         </parameters>
@@ -6360,7 +6360,7 @@ call [method@Gdk.GLContext.make_current] or [method@Gdk.GLContext.realize].</doc
       <method name="flush" c:identifier="gdk_display_flush">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1054">Flushes any requests queued for the windowing system.
+             line="1056">Flushes any requests queued for the windowing system.
 
 This happens automatically when the main loop blocks waiting for new events,
 but if your application is drawing without returning control to the main loop,
@@ -6378,7 +6378,7 @@ handled synchronously, this function will do nothing.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1056">a `GdkDisplay`</doc>
+                 line="1058">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6387,20 +6387,20 @@ handled synchronously, this function will do nothing.</doc>
               c:identifier="gdk_display_get_app_launch_context">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1169">Returns a `GdkAppLaunchContext` suitable for launching
+             line="1171">Returns a `GdkAppLaunchContext` suitable for launching
 applications on the given display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="93"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1176">a new `GdkAppLaunchContext` for @display</doc>
+               line="1178">a new `GdkAppLaunchContext` for @display</doc>
           <type name="AppLaunchContext" c:type="GdkAppLaunchContext*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1171">a `GdkDisplay`</doc>
+                 line="1173">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6408,19 +6408,19 @@ applications on the given display.</doc>
       <method name="get_clipboard" c:identifier="gdk_display_get_clipboard">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1077">Gets the clipboard used for copy/paste operations.</doc>
+             line="1079">Gets the clipboard used for copy/paste operations.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="82"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1083">the display's clipboard</doc>
+               line="1085">the display's clipboard</doc>
           <type name="Clipboard" c:type="GdkClipboard*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1079">a `GdkDisplay`</doc>
+                 line="1081">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6429,7 +6429,7 @@ applications on the given display.</doc>
               c:identifier="gdk_display_get_default_seat">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2253">Returns the default `GdkSeat` for this display.
+             line="2231">Returns the default `GdkSeat` for this display.
 
 Note that a display may not have a seat. In this case,
 this function will return %NULL.</doc>
@@ -6437,14 +6437,14 @@ this function will return %NULL.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2262">the default seat.</doc>
+               line="2240">the default seat.</doc>
           <type name="Seat" c:type="GdkSeat*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2255">a `GdkDisplay`</doc>
+                 line="2233">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6455,7 +6455,7 @@ this function will return %NULL.</doc>
               version="4.14">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2031">Returns the dma-buf formats that are supported on this display.
+             line="2009">Returns the dma-buf formats that are supported on this display.
 
 GTK may use OpenGL or Vulkan to support some formats.
 Calling this function will then initialize them if they aren't yet.
@@ -6468,14 +6468,14 @@ To learn more about dma-bufs, see [class@Gdk.DmabufTextureBuilder].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2045">a `GdkDmabufFormats` object</doc>
+               line="2023">a `GdkDmabufFormats` object</doc>
           <type name="DmabufFormats" c:type="GdkDmabufFormats*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2033">a `GdkDisplay`</doc>
+                 line="2011">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6484,13 +6484,13 @@ To learn more about dma-bufs, see [class@Gdk.DmabufTextureBuilder].</doc>
               c:identifier="gdk_display_get_monitor_at_surface">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2315">Gets the monitor in which the largest area of @surface
+             line="2293">Gets the monitor in which the largest area of @surface
 resides.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="104"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2323">the monitor with the largest
+               line="2301">the monitor with the largest
   overlap with @surface</doc>
           <type name="Monitor" c:type="GdkMonitor*"/>
         </return-value>
@@ -6498,13 +6498,13 @@ resides.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2317">a `GdkDisplay`</doc>
+                 line="2295">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2318">a `GdkSurface`</doc>
+                 line="2296">a `GdkSurface`</doc>
             <type name="Surface" c:type="GdkSurface*"/>
           </parameter>
         </parameters>
@@ -6512,7 +6512,7 @@ resides.</doc>
       <method name="get_monitors" c:identifier="gdk_display_get_monitors">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2293">Gets the list of monitors associated with this display.
+             line="2271">Gets the list of monitors associated with this display.
 
 Subsequent calls to this function will always return the
 same list for the same display.
@@ -6523,14 +6523,14 @@ this list to monitor changes to the monitor of this display.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2305">a `GListModel` of `GdkMonitor`</doc>
+               line="2283">a `GListModel` of `GdkMonitor`</doc>
           <type name="Gio.ListModel" c:type="GListModel*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2295">a `GdkDisplay`</doc>
+                 line="2273">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6538,12 +6538,12 @@ this list to monitor changes to the monitor of this display.</doc>
       <method name="get_name" c:identifier="gdk_display_get_name">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1000">Gets the name of the display.</doc>
+             line="1002">Gets the name of the display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="45"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1006">a string representing the display name. This string is owned
+               line="1008">a string representing the display name. This string is owned
   by GDK and should not be modified or freed.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -6551,7 +6551,7 @@ this list to monitor changes to the monitor of this display.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1002">a `GdkDisplay`</doc>
+                 line="1004">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6560,7 +6560,7 @@ this list to monitor changes to the monitor of this display.</doc>
               c:identifier="gdk_display_get_primary_clipboard">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1096">Gets the clipboard used for the primary selection.
+             line="1098">Gets the clipboard used for the primary selection.
 
 On backends where the primary clipboard is not supported natively,
 GDK emulates this clipboard locally.</doc>
@@ -6568,14 +6568,14 @@ GDK emulates this clipboard locally.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1105">the primary clipboard</doc>
+               line="1107">the primary clipboard</doc>
           <type name="Clipboard" c:type="GdkClipboard*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1098">a `GdkDisplay`</doc>
+                 line="1100">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6583,13 +6583,13 @@ GDK emulates this clipboard locally.</doc>
       <method name="get_setting" c:identifier="gdk_display_get_setting">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2380">Retrieves a desktop-wide setting such as double-click time
+             line="2358">Retrieves a desktop-wide setting such as double-click time
 for the @display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="135"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2389">%TRUE if the setting existed and a value was stored
+               line="2367">%TRUE if the setting existed and a value was stored
   in @value, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -6597,19 +6597,19 @@ for the @display.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2382">a `GdkDisplay`</doc>
+                 line="2360">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2383">the name of the setting</doc>
+                 line="2361">the name of the setting</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2384">location to store the value of the setting</doc>
+                 line="2362">location to store the value of the setting</doc>
             <type name="GObject.Value" c:type="GValue*"/>
           </parameter>
         </parameters>
@@ -6620,20 +6620,20 @@ for the @display.</doc>
               deprecated-version="4.10">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1234">Gets the startup notification ID for a Wayland display, or %NULL
+             line="1236">Gets the startup notification ID for a Wayland display, or %NULL
 if no ID has been defined.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="90"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1241">the startup notification ID for @display</doc>
+               line="1243">the startup notification ID for @display</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1236">a `GdkDisplay`</doc>
+                 line="1238">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6641,19 +6641,19 @@ if no ID has been defined.</doc>
       <method name="is_closed" c:identifier="gdk_display_is_closed">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="501">Finds out if the display has been closed.</doc>
+             line="503">Finds out if the display has been closed.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="60"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="507">%TRUE if the display is closed.</doc>
+               line="509">%TRUE if the display is closed.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="503">a `GdkDisplay`</doc>
+                 line="505">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6663,7 +6663,7 @@ if no ID has been defined.</doc>
               glib:get-property="composited">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2077">Returns whether surfaces can reasonably be expected to have
+             line="2055">Returns whether surfaces can reasonably be expected to have
 their alpha channel drawn correctly on the screen.
 
 Check [method@Gdk.Display.is_rgba] for whether the display
@@ -6677,7 +6677,7 @@ On modern displays, this value is always %TRUE.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2092">Whether surfaces with RGBA visuals can reasonably
+               line="2070">Whether surfaces with RGBA visuals can reasonably
   be expected to have their alpha channels drawn correctly
   on the screen.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -6686,7 +6686,7 @@ On modern displays, this value is always %TRUE.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2079">a `GdkDisplay`</doc>
+                 line="2057">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6696,7 +6696,7 @@ On modern displays, this value is always %TRUE.</doc>
               glib:get-property="rgba">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2122">Returns whether surfaces on this @display are created with an
+             line="2100">Returns whether surfaces on this @display are created with an
 alpha channel.
 
 Even if a %TRUE is returned, it is possible that the
@@ -6711,7 +6711,7 @@ On modern displays, this value is always %TRUE.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2138">%TRUE if surfaces are created with an alpha channel or
+               line="2116">%TRUE if surfaces are created with an alpha channel or
   %FALSE if the display does not support this functionality.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -6719,7 +6719,7 @@ On modern displays, this value is always %TRUE.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2124">a `GdkDisplay`</doc>
+                 line="2102">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6727,12 +6727,12 @@ On modern displays, this value is always %TRUE.</doc>
       <method name="list_seats" c:identifier="gdk_display_list_seats">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2276">Returns the list of seats known to @display.</doc>
+             line="2254">Returns the list of seats known to @display.</doc>
         <source-position filename="gdk/gdkdisplay.h" line="99"/>
         <return-value transfer-ownership="container">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2282">the
+               line="2260">the
   list of seats known to the `GdkDisplay`</doc>
           <type name="GLib.List" c:type="GList*">
             <type name="Seat"/>
@@ -6742,7 +6742,7 @@ On modern displays, this value is always %TRUE.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2278">a `GdkDisplay`</doc>
+                 line="2256">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6750,7 +6750,7 @@ On modern displays, this value is always %TRUE.</doc>
       <method name="map_keycode" c:identifier="gdk_display_map_keycode">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2472">Returns the keyvals bound to @keycode.
+             line="2450">Returns the keyvals bound to @keycode.
 
 The Nth `GdkKeymapKey` in @keys is bound to the Nth keyval in @keyvals.
 
@@ -6763,20 +6763,20 @@ Free the returned arrays with g_free().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2492">%TRUE if there were any entries</doc>
+               line="2470">%TRUE if there were any entries</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2474">a `GdkDisplay`</doc>
+                 line="2452">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="keycode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2475">a keycode</doc>
+                 line="2453">a keycode</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="keys"
@@ -6787,7 +6787,7 @@ Free the returned arrays with g_free().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2476">return
+                 line="2454">return
   location for array of `GdkKeymapKey`</doc>
             <array length="3" zero-terminated="0" c:type="GdkKeymapKey**">
               <type name="KeymapKey" c:type="GdkKeymapKey*"/>
@@ -6801,7 +6801,7 @@ Free the returned arrays with g_free().</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2478">return
+                 line="2456">return
   location for array of keyvals</doc>
             <array length="3" zero-terminated="0" c:type="guint**">
               <type name="guint" c:type="guint*"/>
@@ -6813,7 +6813,7 @@ Free the returned arrays with g_free().</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2480">length of @keys and @keyvals</doc>
+                 line="2458">length of @keys and @keyvals</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -6821,7 +6821,7 @@ Free the returned arrays with g_free().</doc>
       <method name="map_keyval" c:identifier="gdk_display_map_keyval">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2434">Obtains a list of keycode/group/level combinations that will
+             line="2412">Obtains a list of keycode/group/level combinations that will
 generate @keyval.
 
 Groups and levels are two kinds of keyboard mode; in general, the level
@@ -6840,20 +6840,20 @@ The returned array should be freed with g_free().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2458">%TRUE if keys were found and returned</doc>
+               line="2436">%TRUE if keys were found and returned</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2436">a `GdkDisplay`</doc>
+                 line="2414">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="keyval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2437">a keyval, such as %GDK_KEY_a, %GDK_KEY_Up, %GDK_KEY_Return, etc.</doc>
+                 line="2415">a keyval, such as %GDK_KEY_a, %GDK_KEY_Up, %GDK_KEY_Return, etc.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="keys"
@@ -6862,7 +6862,7 @@ The returned array should be freed with g_free().</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2438">return location
+                 line="2416">return location
   for an array of `GdkKeymapKey`</doc>
             <array length="2" zero-terminated="0" c:type="GdkKeymapKey**">
               <type name="KeymapKey" c:type="GdkKeymapKey*"/>
@@ -6874,7 +6874,7 @@ The returned array should be freed with g_free().</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2440">return location for number of elements in returned array</doc>
+                 line="2418">return location for number of elements in returned array</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -6885,7 +6885,7 @@ The returned array should be freed with g_free().</doc>
               deprecated-version="4.10">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1209">Indicates to the GUI environment that the application has
+             line="1211">Indicates to the GUI environment that the application has
 finished loading, using a given identifier.
 
 GTK will call this function automatically for [GtkWindow](../gtk4/class.Window.html)
@@ -6901,13 +6901,13 @@ is called to disable that feature.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1211">a `GdkDisplay`</doc>
+                 line="1213">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="startup_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1212">a startup-notification identifier, for which
+                 line="1214">a startup-notification identifier, for which
   notification process should be completed</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
@@ -6919,7 +6919,7 @@ is called to disable that feature.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1398">Checks that OpenGL is available for @self and ensures that it is
+             line="1400">Checks that OpenGL is available for @self and ensures that it is
 properly initialized.
 When this fails, an @error will be set describing the error and this
 function returns %FALSE.
@@ -6937,14 +6937,14 @@ might make use of OpenGL.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1418">%TRUE if the display supports OpenGL</doc>
+               line="1420">%TRUE if the display supports OpenGL</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1400">a `GdkDisplay`</doc>
+                 line="1402">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -6955,7 +6955,7 @@ might make use of OpenGL.</doc>
               deprecated-version="4.10">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="538">Adds the given event to the event queue for @display.</doc>
+             line="540">Adds the given event to the event queue for @display.</doc>
         <doc-deprecated xml:space="preserve">This function is only useful in very
 special situations and should not be used by applications.</doc-deprecated>
         <source-position filename="gdk/gdkdisplay.h" line="108"/>
@@ -6966,13 +6966,13 @@ special situations and should not be used by applications.</doc-deprecated>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="540">a `GdkDisplay`</doc>
+                 line="542">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="event" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="541">a `GdkEvent`</doc>
+                 line="543">a `GdkEvent`</doc>
             <type name="Event" c:type="GdkEvent*"/>
           </parameter>
         </parameters>
@@ -6982,7 +6982,7 @@ special situations and should not be used by applications.</doc-deprecated>
               glib:get-property="input-shapes">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1118">Returns %TRUE if the display supports input shapes.
+             line="1120">Returns %TRUE if the display supports input shapes.
 
 This means that [method@Gdk.Surface.set_input_region] can
 be used to modify the input shape of surfaces on @display.
@@ -6992,14 +6992,14 @@ On modern displays, this value is always %TRUE.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="1129">%TRUE if surfaces with modified input shape are supported</doc>
+               line="1131">%TRUE if surfaces with modified input shape are supported</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1120">a `GdkDisplay`</doc>
+                 line="1122">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -7010,7 +7010,7 @@ On modern displays, this value is always %TRUE.</doc>
               version="4.14">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2167">Returns whether it's possible for a surface to draw outside of the window area.
+             line="2145">Returns whether it's possible for a surface to draw outside of the window area.
 
 If %TRUE is returned the application decides if it wants to draw shadows.
 If %FALSE is returned, the compositor decides if it wants to draw shadows.</doc>
@@ -7018,7 +7018,7 @@ If %FALSE is returned, the compositor decides if it wants to draw shadows.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2176">%TRUE if surfaces can draw shadows or
+               line="2154">%TRUE if surfaces can draw shadows or
   %FALSE if the display does not support this functionality.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -7026,7 +7026,7 @@ If %FALSE is returned, the compositor decides if it wants to draw shadows.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2169">a `GdkDisplay`</doc>
+                 line="2147">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -7034,7 +7034,7 @@ If %FALSE is returned, the compositor decides if it wants to draw shadows.</doc>
       <method name="sync" c:identifier="gdk_display_sync">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="1031">Flushes any requests queued for the windowing system and waits until all
+             line="1033">Flushes any requests queued for the windowing system and waits until all
 requests have been handled.
 
 This is often used for making sure that the display is synchronized
@@ -7052,7 +7052,7 @@ handled synchronously, this function will do nothing.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="1033">a `GdkDisplay`</doc>
+                 line="1035">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -7060,7 +7060,7 @@ handled synchronously, this function will do nothing.</doc>
       <method name="translate_key" c:identifier="gdk_display_translate_key">
         <doc xml:space="preserve"
              filename="gdk/gdkdisplay.c"
-             line="2508">Translates the contents of a `GdkEventKey` into a keyval, effective group,
+             line="2486">Translates the contents of a `GdkEventKey` into a keyval, effective group,
 and level.
 
 Modifiers that affected the translation and are thus unavailable for
@@ -7083,32 +7083,32 @@ virtualized test environments.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkdisplay.c"
-               line="2540">%TRUE if there was a keyval bound to keycode/state/group.</doc>
+               line="2518">%TRUE if there was a keyval bound to keycode/state/group.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2510">a `GdkDisplay`</doc>
+                 line="2488">a `GdkDisplay`</doc>
             <type name="Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="keycode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2511">a keycode</doc>
+                 line="2489">a keycode</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="state" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2512">a modifier state</doc>
+                 line="2490">a modifier state</doc>
             <type name="ModifierType" c:type="GdkModifierType"/>
           </parameter>
           <parameter name="group" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2513">active keyboard group</doc>
+                 line="2491">active keyboard group</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="keyval"
@@ -7119,7 +7119,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2514">return location for keyval</doc>
+                 line="2492">return location for keyval</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
           <parameter name="effective_group"
@@ -7130,7 +7130,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2515">return location for effective group</doc>
+                 line="2493">return location for effective group</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
           <parameter name="level"
@@ -7141,7 +7141,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2516">return location for level</doc>
+                 line="2494">return location for level</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
           <parameter name="consumed"
@@ -7152,7 +7152,7 @@ virtualized test environments.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkdisplay.c"
-                 line="2517">return location for modifiers that were used
+                 line="2495">return location for modifiers that were used
   to determine the group or level</doc>
             <type name="ModifierType" c:type="GdkModifierType*"/>
           </parameter>

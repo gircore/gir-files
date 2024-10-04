@@ -61878,7 +61878,11 @@ gst_element_set_state(). Only @GST_STATE_CHANGE_FAILURE is a real failure.</doc>
                               This typically happens with live sources.</doc>
       </member>
     </enumeration>
-    <record name="StaticCaps" c:type="GstStaticCaps">
+    <record name="StaticCaps"
+            c:type="GstStaticCaps"
+            glib:type-name="GstStaticCaps"
+            glib:get-type="gst_static_caps_get_type"
+            c:symbol-prefix="static_caps">
       <doc xml:space="preserve"
            filename="gst/gstcaps.h"
            line="290">Data structure to initialize #GstCaps from a string description usually
@@ -61942,7 +61946,11 @@ instantiate a #GstCaps.</doc>
         </parameters>
       </method>
     </record>
-    <record name="StaticPadTemplate" c:type="GstStaticPadTemplate">
+    <record name="StaticPadTemplate"
+            c:type="GstStaticPadTemplate"
+            glib:type-name="GstStaticPadTemplate"
+            glib:get-type="gst_static_pad_template_get_type"
+            c:symbol-prefix="static_pad_template">
       <doc xml:space="preserve"
            filename="gst/gstpadtemplate.h"
            line="159">Structure describing the #GstStaticPadTemplate.</doc>
@@ -72501,7 +72509,11 @@ events may contain values for different #GstPads.</doc>
              line="57">the value is related to a #GstPad</doc>
       </member>
     </enumeration>
-    <record name="TypeFind" c:type="GstTypeFind">
+    <record name="TypeFind"
+            c:type="GstTypeFind"
+            glib:type-name="GstTypeFind"
+            glib:get-type="gst_type_find_get_type"
+            c:symbol-prefix="type_find">
       <doc xml:space="preserve"
            filename="gst/gsttypefind.c"
            line="22">The following functions allow you to detect the media type of an unknown
@@ -75502,7 +75514,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="7" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="8" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
@@ -76588,7 +76600,7 @@ Either @nbuf or the #GstBuffer pointed to by @obuf may be %NULL.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="gst/gstutils.c"
-           line="4511">Calculates the linear regression of the values @xy and places the
+           line="4517">Calculates the linear regression of the values @xy and places the
 result in @m_num, @m_denom, @b and @xbase, representing the function
   y(x) = m_num/m_denom * (x - xbase) + b
 that has the least-square distance from all points @x and @y.
@@ -76608,26 +76620,26 @@ amount of memory allocated as @xy, i.e. 2*n*sizeof(GstClockTime).
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gstutils.c"
-             line="4539">%TRUE if the linear regression was successfully calculated</doc>
+             line="4545">%TRUE if the linear regression was successfully calculated</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="xy" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4513">Pairs of (x,y) values</doc>
+               line="4519">Pairs of (x,y) values</doc>
           <type name="ClockTime" c:type="const GstClockTime*"/>
         </parameter>
         <parameter name="temp" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4514">Temporary scratch space used by the function</doc>
+               line="4520">Temporary scratch space used by the function</doc>
           <type name="ClockTime" c:type="GstClockTime*"/>
         </parameter>
         <parameter name="n" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4515">number of (x,y) pairs</doc>
+               line="4521">number of (x,y) pairs</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
         <parameter name="m_num"
@@ -76636,7 +76648,7 @@ amount of memory allocated as @xy, i.e. 2*n*sizeof(GstClockTime).
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4516">numerator of calculated slope</doc>
+               line="4522">numerator of calculated slope</doc>
           <type name="ClockTime" c:type="GstClockTime*"/>
         </parameter>
         <parameter name="m_denom"
@@ -76645,7 +76657,7 @@ amount of memory allocated as @xy, i.e. 2*n*sizeof(GstClockTime).
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4517">denominator of calculated slope</doc>
+               line="4523">denominator of calculated slope</doc>
           <type name="ClockTime" c:type="GstClockTime*"/>
         </parameter>
         <parameter name="b"
@@ -76654,7 +76666,7 @@ amount of memory allocated as @xy, i.e. 2*n*sizeof(GstClockTime).
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4518">Offset at Y-axis</doc>
+               line="4524">Offset at Y-axis</doc>
           <type name="ClockTime" c:type="GstClockTime*"/>
         </parameter>
         <parameter name="xbase"
@@ -76663,7 +76675,7 @@ amount of memory allocated as @xy, i.e. 2*n*sizeof(GstClockTime).
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4519">Offset at X-axis</doc>
+               line="4525">Offset at X-axis</doc>
           <type name="ClockTime" c:type="GstClockTime*"/>
         </parameter>
         <parameter name="r_squared"
@@ -76672,7 +76684,7 @@ amount of memory allocated as @xy, i.e. 2*n*sizeof(GstClockTime).
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4520">R-squared</doc>
+               line="4526">R-squared</doc>
           <type name="gdouble" c:type="gdouble*"/>
         </parameter>
       </parameters>
@@ -81894,22 +81906,6 @@ the GStreamer core. See gst_segtrap_is_enabled() for more information.</doc>
         </parameter>
       </parameters>
     </function>
-    <function name="static_caps_get_type"
-              c:identifier="gst_static_caps_get_type">
-      <attribute name="doc.skip" value="true"/>
-      <source-position filename="gst/gstcaps.h" line="386"/>
-      <return-value transfer-ownership="none">
-        <type name="GType" c:type="GType"/>
-      </return-value>
-    </function>
-    <function name="static_pad_template_get_type"
-              c:identifier="gst_static_pad_template_get_type">
-      <attribute name="doc.skip" value="true"/>
-      <source-position filename="gst/gstpadtemplate.h" line="208"/>
-      <return-value transfer-ownership="none">
-        <type name="GType" c:type="GType"/>
-      </return-value>
-    </function>
     <function name="stream_error_quark"
               c:identifier="gst_stream_error_quark"
               moved-to="StreamError.quark">
@@ -82630,13 +82626,6 @@ Use %NULL for @detail to register to all hooks.</doc>
         </parameter>
       </parameters>
     </function>
-    <function name="type_find_get_type" c:identifier="gst_type_find_get_type">
-      <attribute name="doc.skip" value="true"/>
-      <source-position filename="gst/gsttypefind.h" line="183"/>
-      <return-value transfer-ownership="none">
-        <type name="GType" c:type="GType"/>
-      </return-value>
-    </function>
     <function name="type_find_register"
               c:identifier="gst_type_find_register"
               moved-to="TypeFind.register">
@@ -82728,20 +82717,20 @@ This function is typically called during an element's plugin initialization.</do
               version="1.18">
       <doc xml:space="preserve"
            filename="gst/gstutils.c"
-           line="4780">Checks if @type is plugin API. See gst_type_mark_as_plugin_api() for
+           line="4796">Checks if @type is plugin API. See gst_type_mark_as_plugin_api() for
 details.</doc>
       <source-position filename="gst/gstutils.h" line="1241"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gstutils.c"
-             line="4788">%TRUE if @type is plugin API or %FALSE otherwise.</doc>
+             line="4804">%TRUE if @type is plugin API or %FALSE otherwise.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4782">a GType</doc>
+               line="4798">a GType</doc>
           <type name="GType" c:type="GType"/>
         </parameter>
         <parameter name="flags"
@@ -82752,7 +82741,7 @@ details.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4783">What #GstPluginAPIFlags the plugin was marked with</doc>
+               line="4799">What #GstPluginAPIFlags the plugin was marked with</doc>
           <type name="PluginAPIFlags" c:type="GstPluginAPIFlags*"/>
         </parameter>
       </parameters>
@@ -82762,7 +82751,7 @@ details.</doc>
               version="1.18">
       <doc xml:space="preserve"
            filename="gst/gstutils.c"
-           line="4754">Marks @type as plugin API. This should be called in `class_init` of
+           line="4770">Marks @type as plugin API. This should be called in `class_init` of
 elements that expose new types (i.e. enums, flags or internal GObjects) via
 properties, signals or pad templates.
 
@@ -82780,13 +82769,13 @@ the plugin that defines it.</doc>
         <parameter name="type" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4756">a GType</doc>
+               line="4772">a GType</doc>
           <type name="GType" c:type="GType"/>
         </parameter>
         <parameter name="flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4757">a set of #GstPluginAPIFlags to further inform cache generation.</doc>
+               line="4773">a set of #GstPluginAPIFlags to further inform cache generation.</doc>
           <type name="PluginAPIFlags" c:type="GstPluginAPIFlags"/>
         </parameter>
       </parameters>
@@ -83187,19 +83176,19 @@ element or %NULL if nothing was found</doc>
               version="1.24">
       <doc xml:space="preserve"
            filename="gst/gstutils.c"
-           line="4477">Return a max num of log2.</doc>
+           line="4483">Return a max num of log2.</doc>
       <source-position filename="gst/gstutils.h" line="1244"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst/gstutils.c"
-             line="4483">a computed #guint val.</doc>
+             line="4489">a computed #guint val.</doc>
         <type name="guint" c:type="guint"/>
       </return-value>
       <parameters>
         <parameter name="v" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4479">a #guint32 value.</doc>
+               line="4485">a #guint32 value.</doc>
           <type name="guint32" c:type="guint32"/>
         </parameter>
       </parameters>
@@ -83290,7 +83279,7 @@ the result.</doc>
               version="1.24">
       <doc xml:space="preserve"
            filename="gst/gstutils.c"
-           line="4806">Compares the given filenames using natural ordering.</doc>
+           line="4822">Compares the given filenames using natural ordering.</doc>
       <source-position filename="gst/gstutils.h" line="1247"/>
       <return-value transfer-ownership="none">
         <type name="gint" c:type="gint"/>
@@ -83299,13 +83288,13 @@ the result.</doc>
         <parameter name="a" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4808">a filename to compare with @b</doc>
+               line="4824">a filename to compare with @b</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
         <parameter name="b" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstutils.c"
-               line="4809">a filename to compare with @a</doc>
+               line="4825">a filename to compare with @a</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
