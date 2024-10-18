@@ -5405,7 +5405,7 @@ Example of an `AdwAlertDialog` UI definition:
                    version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1335">Creates a new `AdwAlertDialog`.
+             line="1339">Creates a new `AdwAlertDialog`.
 
 @heading and @body can be set to `NULL`. This can be useful if they need to
 be formatted or use markup. In that case, set them to `NULL` and call
@@ -5423,7 +5423,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1355">the newly created `AdwAlertDialog`</doc>
+               line="1359">the newly created `AdwAlertDialog`</doc>
           <type name="Dialog" c:type="AdwDialog*"/>
         </return-value>
         <parameters>
@@ -5433,7 +5433,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1337">the heading</doc>
+                 line="1341">the heading</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="body"
@@ -5442,7 +5442,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1338">the body text</doc>
+                 line="1342">the body text</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -5466,7 +5466,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1903">Adds a response with @id and @label to @self.
+             line="1907">Adds a response with @id and @label to @self.
 
 Responses are represented as buttons in the dialog.
 
@@ -5490,19 +5490,19 @@ responses further.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1905">an alert dialog</doc>
+                 line="1909">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1906">the response ID</doc>
+                 line="1910">the response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="label" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1907">the response label</doc>
+                 line="1911">the response label</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -5513,7 +5513,7 @@ responses further.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1966">Adds multiple responses to @self.
+             line="1970">Adds multiple responses to @self.
 
 This is the same as calling [method@AlertDialog.add_response] repeatedly. The
 variable argument list should be `NULL`-terminated list of response IDs and
@@ -5536,19 +5536,19 @@ adw_alert_dialog_add_responses (dialog,
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1968">an alert dialog</doc>
+                 line="1972">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="first_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1969">response id</doc>
+                 line="1973">response id</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1970">label for first response, then more id-label pairs</doc>
+                 line="1974">label for first response, then more id-label pairs</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5559,7 +5559,7 @@ adw_alert_dialog_add_responses (dialog,
               glib:finish-func="choose_finish">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2450">This function shows @self to the user.
+             line="2454">This function shows @self to the user.
 
 If the window is an [class@Window] or [class@ApplicationWindow], the dialog
 will be shown within it. Otherwise, it will be a separate window.</doc>
@@ -5571,7 +5571,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2452">an alert dialog</doc>
+                 line="2456">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -5580,7 +5580,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2453">the parent widget</doc>
+                 line="2457">the parent widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
           <parameter name="cancellable"
@@ -5589,7 +5589,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2454">a `GCancellable` to cancel the operation</doc>
+                 line="2458">a `GCancellable` to cancel the operation</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -5600,7 +5600,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      closure="3">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2455">a callback to call when the operation is complete</doc>
+                 line="2459">a callback to call when the operation is complete</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -5609,7 +5609,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2456">data to pass to @callback</doc>
+                 line="2460">data to pass to @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -5619,12 +5619,12 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2488">Finishes the [method@AlertDialog.choose] call and returns the response ID.</doc>
+             line="2492">Finishes the [method@AlertDialog.choose] call and returns the response ID.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="168"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2495">the ID of the response that was selected, or
+               line="2499">the ID of the response that was selected, or
   [property@AlertDialog:close-response] if the call was cancelled.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -5632,13 +5632,13 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2490">an alert dialog</doc>
+                 line="2494">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2491">a `GAsyncResult`</doc>
+                 line="2495">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -5649,7 +5649,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1698">Sets the formatted body text of @self.
+             line="1702">Sets the formatted body text of @self.
 
 See [property@AlertDialog:body].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="86"/>
@@ -5660,19 +5660,19 @@ See [property@AlertDialog:body].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1700">an alert dialog</doc>
+                 line="1704">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1701">the formatted string for the body text</doc>
+                 line="1705">the formatted string for the body text</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1702">the parameters to insert into @format</doc>
+                 line="1706">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5683,7 +5683,7 @@ See [property@AlertDialog:body].</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1741">Sets the formatted body text of @self with Pango markup.
+             line="1745">Sets the formatted body text of @self with Pango markup.
 
 The @format is assumed to contain Pango markup.
 
@@ -5700,19 +5700,19 @@ See [property@AlertDialog:body].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1743">an alert dialog</doc>
+                 line="1747">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1744">the formatted string for the body text with Pango markup</doc>
+                 line="1748">the formatted string for the body text with Pango markup</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1745">the parameters to insert into @format</doc>
+                 line="1749">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5723,7 +5723,7 @@ See [property@AlertDialog:body].</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1495">Sets the formatted heading of @self.
+             line="1499">Sets the formatted heading of @self.
 
 See [property@AlertDialog:heading].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="64"/>
@@ -5734,19 +5734,19 @@ See [property@AlertDialog:heading].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1497">an alert dialog</doc>
+                 line="1501">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1498">the formatted string for the heading</doc>
+                 line="1502">the formatted string for the heading</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1499">the parameters to insert into @format</doc>
+                 line="1503">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5757,7 +5757,7 @@ See [property@AlertDialog:heading].</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1538">Sets the formatted heading of @self with Pango markup.
+             line="1542">Sets the formatted heading of @self with Pango markup.
 
 The @format is assumed to contain Pango markup.
 
@@ -5774,19 +5774,19 @@ See [property@AlertDialog:heading].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1540">an alert dialog</doc>
+                 line="1544">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1541">the formatted string for the heading with Pango markup</doc>
+                 line="1545">the formatted string for the heading with Pango markup</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1542">the parameters to insert into @format</doc>
+                 line="1546">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5797,19 +5797,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1587">Gets the body text of @self.</doc>
+             line="1591">Gets the body text of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="74"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1593">the body of @self.</doc>
+               line="1597">the body of @self.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1589">an alert dialog</doc>
+                 line="1593">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5820,19 +5820,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1643">Gets whether the body text of @self includes Pango markup.</doc>
+             line="1647">Gets whether the body text of @self includes Pango markup.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="80"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1649">whether @self uses markup for body text</doc>
+               line="1653">whether @self uses markup for body text</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1645">an alert dialog</doc>
+                 line="1649">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5843,19 +5843,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2341">Gets the ID of the close response of @self.</doc>
+             line="2345">Gets the ID of the close response of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="152"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2347">the close response ID</doc>
+               line="2351">the close response ID</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2343">an alert dialog</doc>
+                 line="2347">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5866,19 +5866,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2276">Gets the ID of the default response of @self.</doc>
+             line="2280">Gets the ID of the default response of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="146"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2282">the default response ID</doc>
+               line="2286">the default response ID</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2278">an alert dialog</doc>
+                 line="2282">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5889,19 +5889,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1790">Gets the child widget of @self.</doc>
+             line="1794">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="96"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1796">the child widget of @self.</doc>
+               line="1800">the child widget of @self.</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1792">an alert dialog</doc>
+                 line="1796">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5912,19 +5912,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1376">Gets the heading of @self.</doc>
+             line="1380">Gets the heading of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="52"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1382">the heading of @self.</doc>
+               line="1386">the heading of @self.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1378">an alert dialog</doc>
+                 line="1382">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5935,19 +5935,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1436">Gets whether the heading of @self includes Pango markup.</doc>
+             line="1440">Gets whether the heading of @self includes Pango markup.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="58"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1442">whether @self uses markup for heading</doc>
+               line="1446">whether @self uses markup for heading</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1438">an alert dialog</doc>
+                 line="1442">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5958,19 +5958,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1847">Gets whether @self prefers wide layout.</doc>
+             line="1851">Gets whether @self prefers wide layout.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="102"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1853">whether to prefer wide layout</doc>
+               line="1857">whether to prefer wide layout</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1849">an alert dialog</doc>
+                 line="1853">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5980,27 +5980,27 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2121">Gets the appearance of @response.
+             line="2125">Gets the appearance of @response.
 
 See [method@AlertDialog.set_response_appearance].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="130"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2130">the appearance of @response</doc>
+               line="2134">the appearance of @response</doc>
           <type name="ResponseAppearance" c:type="AdwResponseAppearance"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2123">an alert dialog</doc>
+                 line="2127">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2124">a response ID</doc>
+                 line="2128">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6010,27 +6010,27 @@ See [method@AlertDialog.set_response_appearance].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2206">Gets whether @response is enabled.
+             line="2210">Gets whether @response is enabled.
 
 See [method@AlertDialog.set_response_enabled].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="138"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2215">whether @response is enabled</doc>
+               line="2219">whether @response is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2208">an alert dialog</doc>
+                 line="2212">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2209">a response ID</doc>
+                 line="2213">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6040,27 +6040,27 @@ See [method@AlertDialog.set_response_enabled].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2061">Gets the label of @response.
+             line="2065">Gets the label of @response.
 
 See [method@AlertDialog.set_response_label].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="122"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2070">the label of @response</doc>
+               line="2074">the label of @response</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2063">an alert dialog</doc>
+                 line="2067">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2064">a response ID</doc>
+                 line="2068">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6070,25 +6070,25 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2400">Gets whether @self has a response with the ID @response.</doc>
+             line="2404">Gets whether @self has a response with the ID @response.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="158"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2407">whether @self has a response with the ID @response.</doc>
+               line="2411">whether @self has a response with the ID @response.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2402">an alert dialog</doc>
+                 line="2406">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2403">response ID</doc>
+                 line="2407">response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6098,7 +6098,7 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2021">Removes a response from @self.</doc>
+             line="2025">Removes a response from @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="118"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6107,13 +6107,13 @@ See [method@AlertDialog.set_response_label].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2023">an alert dialog</doc>
+                 line="2027">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2024">the response ID</doc>
+                 line="2028">the response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6124,7 +6124,7 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1609">Sets the body text of @self.</doc>
+             line="1613">Sets the body text of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="76"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6133,13 +6133,13 @@ See [method@AlertDialog.set_response_label].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1611">an alert dialog</doc>
+                 line="1615">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="body" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1612">the body of @self</doc>
+                 line="1616">the body of @self</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6150,7 +6150,7 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1665">Sets whether the body text of @self includes Pango markup.
+             line="1669">Sets whether the body text of @self includes Pango markup.
 
 See [func@Pango.parse_markup].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="82"/>
@@ -6161,13 +6161,13 @@ See [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1667">an alert dialog</doc>
+                 line="1671">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1668">whether to use markup for body text</doc>
+                 line="1672">whether to use markup for body text</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6178,7 +6178,7 @@ See [func@Pango.parse_markup].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2363">Sets the ID of the close response of @self.
+             line="2367">Sets the ID of the close response of @self.
 
 It will be passed to [signal@AlertDialog::response] if the dialog is closed
 by pressing &lt;kbd&gt;Escape&lt;/kbd&gt; or with a system action.
@@ -6194,13 +6194,13 @@ The default close response is `close`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2365">an alert dialog</doc>
+                 line="2369">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2366">the close response ID</doc>
+                 line="2370">the close response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6211,7 +6211,7 @@ The default close response is `close`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2301">Sets the ID of the default response of @self.
+             line="2305">Sets the ID of the default response of @self.
 
 If set, pressing &lt;kbd&gt;Enter&lt;/kbd&gt; will activate the corresponding button.
 
@@ -6225,7 +6225,7 @@ will do nothing.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2303">an alert dialog</doc>
+                 line="2307">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response"
@@ -6234,7 +6234,7 @@ will do nothing.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2304">the default response ID</doc>
+                 line="2308">the default response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6245,7 +6245,7 @@ will do nothing.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1812">Sets the child widget of @self.
+             line="1816">Sets the child widget of @self.
 
 The child widget is displayed below the heading and body.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="98"/>
@@ -6256,7 +6256,7 @@ The child widget is displayed below the heading and body.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1814">an alert dialog</doc>
+                 line="1818">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="child"
@@ -6265,7 +6265,7 @@ The child widget is displayed below the heading and body.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1815">the child widget</doc>
+                 line="1819">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -6276,7 +6276,7 @@ The child widget is displayed below the heading and body.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1398">Sets the heading of @self.</doc>
+             line="1402">Sets the heading of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="54"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6285,7 +6285,7 @@ The child widget is displayed below the heading and body.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1400">an alert dialog</doc>
+                 line="1404">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="heading"
@@ -6294,7 +6294,7 @@ The child widget is displayed below the heading and body.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1401">the heading of @self</doc>
+                 line="1405">the heading of @self</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6305,7 +6305,7 @@ The child widget is displayed below the heading and body.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1458">Sets whether the heading of @self includes Pango markup.
+             line="1462">Sets whether the heading of @self includes Pango markup.
 
 See [func@Pango.parse_markup].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="60"/>
@@ -6316,13 +6316,13 @@ See [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1460">an alert dialog</doc>
+                 line="1464">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1461">whether to use markup for heading</doc>
+                 line="1465">whether to use markup for heading</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6333,7 +6333,7 @@ See [func@Pango.parse_markup].</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1869">Sets whether @self prefers wide layout.
+             line="1873">Sets whether @self prefers wide layout.
 
 Prefer horizontal button layout when possible, and wider dialog width
 otherwise.</doc>
@@ -6345,13 +6345,13 @@ otherwise.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1871">an alert dialog</doc>
+                 line="1875">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="prefer_wide_layout" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1872">whether to prefer wide layout</doc>
+                 line="1876">whether to prefer wide layout</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6361,7 +6361,7 @@ otherwise.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2149">Sets the appearance for @response.
+             line="2153">Sets the appearance for @response.
 
 &lt;picture&gt;
   &lt;source srcset="alert-dialog-appearance-dark.png" media="(prefers-color-scheme: dark)"&gt;
@@ -6386,19 +6386,19 @@ Negative responses like Cancel or Close should use the default appearance.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2151">an alert dialog</doc>
+                 line="2155">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2152">a response ID</doc>
+                 line="2156">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="appearance" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2153">appearance for @response</doc>
+                 line="2157">appearance for @response</doc>
             <type name="ResponseAppearance" c:type="AdwResponseAppearance"/>
           </parameter>
         </parameters>
@@ -6408,7 +6408,7 @@ Negative responses like Cancel or Close should use the default appearance.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2234">Sets whether @response is enabled.
+             line="2238">Sets whether @response is enabled.
 
 If @response is not enabled, the corresponding button will have
 [property@Gtk.Widget:sensitive] set to `FALSE` and it can't be activated as
@@ -6426,19 +6426,19 @@ Responses are enabled by default.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2236">an alert dialog</doc>
+                 line="2240">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2237">a response ID</doc>
+                 line="2241">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2238">whether to enable @response</doc>
+                 line="2242">whether to enable @response</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6448,7 +6448,7 @@ Responses are enabled by default.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2089">Sets the label of @response to @label.
+             line="2093">Sets the label of @response to @label.
 
 Labels are displayed on the dialog buttons. An embedded underline in @label
 indicates a mnemonic.</doc>
@@ -6460,19 +6460,19 @@ indicates a mnemonic.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2091">an alert dialog</doc>
+                 line="2095">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2092">a response ID</doc>
+                 line="2096">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="label" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2093">the label of @response</doc>
+                 line="2097">the label of @response</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -8552,12 +8552,12 @@ setting the content child.</doc>
                    version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1330">Creates a new `AdwBottomSheet`.</doc>
+             line="1333">Creates a new `AdwBottomSheet`.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="27"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1335">the new created `AdwBottomSheet`</doc>
+               line="1338">the new created `AdwBottomSheet`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -8567,19 +8567,19 @@ setting the content child.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1642">Gets horizontal alignment of the bottom sheet.</doc>
+             line="1645">Gets horizontal alignment of the bottom sheet.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="54"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1648">the horizontal alignment</doc>
+               line="1651">the horizontal alignment</doc>
           <type name="gfloat" c:type="float"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1644">a bottom sheet</doc>
+                 line="1647">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8590,19 +8590,19 @@ setting the content child.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1448">Gets the bottom bar widget for @self.</doc>
+             line="1451">Gets the bottom bar widget for @self.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="42"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1454">the bottom bar widget</doc>
+               line="1457">the bottom bar widget</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1450">a bottom sheet</doc>
+                 line="1453">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8613,7 +8613,7 @@ setting the content child.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1975">Gets the current bottom bar height.
+             line="1978">Gets the current bottom bar height.
 
 It can be used to shift the content upwards permanently to accommodate for
 the bottom bar.</doc>
@@ -8621,14 +8621,14 @@ the bottom bar.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1984">the bottom bar height</doc>
+               line="1987">the bottom bar height</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1977">a bottom sheet</doc>
+                 line="1980">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8639,19 +8639,19 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1905">Gets whether the bottom sheet can be closed by user.</doc>
+             line="1908">Gets whether the bottom sheet can be closed by user.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="84"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1911">whether the sheet can be closed by user</doc>
+               line="1914">whether the sheet can be closed by user</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1907">a bottom sheet</doc>
+                 line="1910">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8662,19 +8662,19 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1849">Gets whether the bottom sheet can be opened by user.</doc>
+             line="1852">Gets whether the bottom sheet can be opened by user.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="78"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1855">whether the sheet can be opened by user.</doc>
+               line="1858">whether the sheet can be opened by user.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1851">a bottom sheet</doc>
+                 line="1854">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8685,19 +8685,19 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1345">Gets the content widget for @self.</doc>
+             line="1348">Gets the content widget for @self.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="30"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1351">the content widget</doc>
+               line="1354">the content widget</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1347">a bottom sheet</doc>
+                 line="1350">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8708,19 +8708,19 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1690">Gets whether the bottom sheet takes the full width.</doc>
+             line="1693">Gets whether the bottom sheet takes the full width.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="60"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1696">whether the sheet takes up the full width</doc>
+               line="1699">whether the sheet takes up the full width</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1692">a bottom sheet</doc>
+                 line="1695">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8731,19 +8731,19 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1797">Gets whether the bottom sheet is modal.</doc>
+             line="1800">Gets whether the bottom sheet is modal.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="72"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1803">whether the sheet is modal</doc>
+               line="1806">whether the sheet is modal</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1799">a bottom sheet</doc>
+                 line="1802">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8754,19 +8754,19 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1512">Gets whether the bottom sheet is open.</doc>
+             line="1515">Gets whether the bottom sheet is open.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="48"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1518">whether the sheet is open</doc>
+               line="1521">whether the sheet is open</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1514">a bottom sheet</doc>
+                 line="1517">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8777,19 +8777,19 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1395">Gets the bottom sheet widget for @self.</doc>
+             line="1398">Gets the bottom sheet widget for @self.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="36"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1401">the sheet widget</doc>
+               line="1404">the sheet widget</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1397">a bottom sheet</doc>
+                 line="1400">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8800,21 +8800,21 @@ the bottom bar.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1955">Gets the current bottom sheet height.
+             line="1958">Gets the current bottom sheet height.
 
 It can be used to shift the content upwards when the bottom sheet is open.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="90"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1963">the sheet height</doc>
+               line="1966">the sheet height</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1957">a bottom sheet</doc>
+                 line="1960">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8825,19 +8825,19 @@ It can be used to shift the content upwards when the bottom sheet is open.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1737">Gets whether to show a drag handle in the bottom sheet.</doc>
+             line="1740">Gets whether to show a drag handle in the bottom sheet.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="66"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-bottom-sheet.c"
-               line="1743">whether to show the drag handle</doc>
+               line="1746">whether to show the drag handle</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1739">a bottom sheet</doc>
+                 line="1742">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
         </parameters>
@@ -8848,7 +8848,7 @@ It can be used to shift the content upwards when the bottom sheet is open.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1660">Sets horizontal alignment of the bottom sheet.
+             line="1663">Sets horizontal alignment of the bottom sheet.
 
 0 means the bottom sheet is flush with the start edge, 1 means it's flush
 with the end edge. 0.5 means it's centered.
@@ -8862,13 +8862,13 @@ Only used when [property@BottomSheet:full-width] is set to `FALSE`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1662">a bottom sheet</doc>
+                 line="1665">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="align" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1663">the new alignment</doc>
+                 line="1666">the new alignment</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
         </parameters>
@@ -8879,7 +8879,7 @@ Only used when [property@BottomSheet:full-width] is set to `FALSE`.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1466">Sets the bottom bar widget for @self.
+             line="1469">Sets the bottom bar widget for @self.
 
 Shown when [property@BottomSheet:open] is `FALSE`. When open, morphs into
 the [property@BottomSheet:sheet].</doc>
@@ -8891,7 +8891,7 @@ the [property@BottomSheet:sheet].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1468">a bottom sheet</doc>
+                 line="1471">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="bottom_bar"
@@ -8900,7 +8900,7 @@ the [property@BottomSheet:sheet].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1469">the bottom bar widget</doc>
+                 line="1472">the bottom bar widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -8911,7 +8911,7 @@ the [property@BottomSheet:sheet].</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1923">Sets whether the bottom sheet can be closed by user.
+             line="1926">Sets whether the bottom sheet can be closed by user.
 
 It can be closed via the close button, swiping down, pressing
 &lt;kbd&gt;Escape&lt;/kbd&gt; or clicking the content dimming (when modal).
@@ -8925,13 +8925,13 @@ Bottom sheet can still be closed using [property@BottomSheet:open].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1925">a bottom sheet</doc>
+                 line="1928">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="can_close" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1926">whether the sheet can be closed by user</doc>
+                 line="1929">whether the sheet can be closed by user</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -8942,7 +8942,7 @@ Bottom sheet can still be closed using [property@BottomSheet:open].</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1867">Sets whether the bottom sheet can be opened by user.
+             line="1870">Sets whether the bottom sheet can be opened by user.
 
 It can be opened via clicking or swiping up from the bottom bar.
 
@@ -8957,13 +8957,13 @@ Bottom sheet can still be opened using [property@BottomSheet:open].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1869">a bottom sheet</doc>
+                 line="1872">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="can_open" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1870">whether the sheet can be opened by user.</doc>
+                 line="1873">whether the sheet can be opened by user.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -8974,7 +8974,7 @@ Bottom sheet can still be opened using [property@BottomSheet:open].</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1363">Sets the content widget for @self.
+             line="1366">Sets the content widget for @self.
 
 It's always shown, and the bottom sheet is overlaid over it.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="32"/>
@@ -8985,7 +8985,7 @@ It's always shown, and the bottom sheet is overlaid over it.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1365">a bottom sheet</doc>
+                 line="1368">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="content"
@@ -8994,7 +8994,7 @@ It's always shown, and the bottom sheet is overlaid over it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1366">the content widget</doc>
+                 line="1369">the content widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -9005,7 +9005,7 @@ It's always shown, and the bottom sheet is overlaid over it.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1708">Sets whether the bottom sheet takes the full width.
+             line="1711">Sets whether the bottom sheet takes the full width.
 
 When full width, [property@BottomSheet:align] is ignored.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="62"/>
@@ -9016,13 +9016,13 @@ When full width, [property@BottomSheet:align] is ignored.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1710">a bottom sheet</doc>
+                 line="1713">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="full_width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1711">whether the sheet takes up the full width</doc>
+                 line="1714">whether the sheet takes up the full width</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9033,7 +9033,7 @@ When full width, [property@BottomSheet:align] is ignored.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1815">Sets whether the bottom sheet is modal.
+             line="1818">Sets whether the bottom sheet is modal.
 
 When modal, [property@BottomSheet:content] will be dimmed when the bottom
 sheet is open, and clicking it will close the bottom sheet. It also cannot be
@@ -9048,13 +9048,13 @@ Otherwise, the content is accessible even when the bottom sheet is open.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1817">a bottom sheet</doc>
+                 line="1820">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="modal" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1818">whether the sheet is modal</doc>
+                 line="1821">whether the sheet is modal</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9065,7 +9065,7 @@ Otherwise, the content is accessible even when the bottom sheet is open.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1530">Sets whether the bottom sheet is open.</doc>
+             line="1533">Sets whether the bottom sheet is open.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="50"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -9074,13 +9074,13 @@ Otherwise, the content is accessible even when the bottom sheet is open.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1532">a bottom sheet</doc>
+                 line="1535">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="open" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1533">whether to open the sheet</doc>
+                 line="1536">whether to open the sheet</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9091,7 +9091,7 @@ Otherwise, the content is accessible even when the bottom sheet is open.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1413">Sets the bottom sheet widget for @self.
+             line="1416">Sets the bottom sheet widget for @self.
 
 Only shown when [property@BottomSheet:open] is `TRUE`.</doc>
         <source-position filename="src/adw-bottom-sheet.h" line="38"/>
@@ -9102,7 +9102,7 @@ Only shown when [property@BottomSheet:open] is `TRUE`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1415">a bottom sheet</doc>
+                 line="1418">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="sheet"
@@ -9111,7 +9111,7 @@ Only shown when [property@BottomSheet:open] is `TRUE`.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1416">the sheet widget</doc>
+                 line="1419">the sheet widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -9122,7 +9122,7 @@ Only shown when [property@BottomSheet:open] is `TRUE`.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-bottom-sheet.c"
-             line="1755">Sets whether to show a drag handle in the bottom sheet.
+             line="1758">Sets whether to show a drag handle in the bottom sheet.
 
 The handle will be overlaid over [property@BottomSheet:sheet].
 
@@ -9139,13 +9139,13 @@ the bottom bar up) with a pointer, instead of just touchscreen.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1757">a bottom sheet</doc>
+                 line="1760">a bottom sheet</doc>
             <type name="BottomSheet" c:type="AdwBottomSheet*"/>
           </instance-parameter>
           <parameter name="show_drag_handle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-bottom-sheet.c"
-                 line="1758">whether to show the drag handle</doc>
+                 line="1761">whether to show the drag handle</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -9866,12 +9866,12 @@ See [class@Breakpoint] documentation for details.</doc>
                    version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="646">Creates a new `AdwBreakpointBin`.</doc>
+             line="642">Creates a new `AdwBreakpointBin`.</doc>
         <source-position filename="src/adw-breakpoint-bin.h" line="37"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-breakpoint-bin.c"
-               line="651">the newly created `AdwBreakpointBin`</doc>
+               line="647">the newly created `AdwBreakpointBin`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -9880,7 +9880,7 @@ See [class@Breakpoint] documentation for details.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="724">Adds @breakpoint to @self.</doc>
+             line="720">Adds @breakpoint to @self.</doc>
         <source-position filename="src/adw-breakpoint-bin.h" line="46"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -9889,13 +9889,13 @@ See [class@Breakpoint] documentation for details.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="726">a breakpoint bin</doc>
+                 line="722">a breakpoint bin</doc>
             <type name="BreakpointBin" c:type="AdwBreakpointBin*"/>
           </instance-parameter>
           <parameter name="breakpoint" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="727">the breakpoint to add</doc>
+                 line="723">the breakpoint to add</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </parameter>
         </parameters>
@@ -9906,19 +9906,19 @@ See [class@Breakpoint] documentation for details.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="661">Gets the child widget of @self.</doc>
+             line="657">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-breakpoint-bin.h" line="40"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-breakpoint-bin.c"
-               line="667">the child widget of @self</doc>
+               line="663">the child widget of @self</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="663">a breakpoint bin</doc>
+                 line="659">a breakpoint bin</doc>
             <type name="BreakpointBin" c:type="AdwBreakpointBin*"/>
           </instance-parameter>
         </parameters>
@@ -9929,19 +9929,19 @@ See [class@Breakpoint] documentation for details.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="779">Gets the current breakpoint.</doc>
+             line="775">Gets the current breakpoint.</doc>
         <source-position filename="src/adw-breakpoint-bin.h" line="54"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-breakpoint-bin.c"
-               line="785">the current breakpoint</doc>
+               line="781">the current breakpoint</doc>
           <type name="Breakpoint" c:type="AdwBreakpoint*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="781">a breakpoint bin</doc>
+                 line="777">a breakpoint bin</doc>
             <type name="BreakpointBin" c:type="AdwBreakpointBin*"/>
           </instance-parameter>
         </parameters>
@@ -9951,7 +9951,7 @@ See [class@Breakpoint] documentation for details.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="752">Removes @breakpoint from @self.</doc>
+             line="748">Removes @breakpoint from @self.</doc>
         <source-position filename="src/adw-breakpoint-bin.h" line="50"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -9960,13 +9960,13 @@ See [class@Breakpoint] documentation for details.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="754">a breakpoint bin</doc>
+                 line="750">a breakpoint bin</doc>
             <type name="BreakpointBin" c:type="AdwBreakpointBin*"/>
           </instance-parameter>
           <parameter name="breakpoint" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="755">a breakpoint to remove</doc>
+                 line="751">a breakpoint to remove</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </parameter>
         </parameters>
@@ -9977,7 +9977,7 @@ See [class@Breakpoint] documentation for details.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="683">Sets the child widget of @self.</doc>
+             line="679">Sets the child widget of @self.</doc>
         <source-position filename="src/adw-breakpoint-bin.h" line="42"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -9986,7 +9986,7 @@ See [class@Breakpoint] documentation for details.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="685">a breakpoint bin</doc>
+                 line="681">a breakpoint bin</doc>
             <type name="BreakpointBin" c:type="AdwBreakpointBin*"/>
           </instance-parameter>
           <parameter name="child"
@@ -9995,7 +9995,7 @@ See [class@Breakpoint] documentation for details.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint-bin.c"
-                 line="686">the child widget</doc>
+                 line="682">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -10008,7 +10008,7 @@ See [class@Breakpoint] documentation for details.</doc>
                 getter="get_child">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="581">The child widget.</doc>
+             line="577">The child widget.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="current-breakpoint"
@@ -10017,7 +10017,7 @@ See [class@Breakpoint] documentation for details.</doc>
                 getter="get_current_breakpoint">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint-bin.c"
-             line="593">The current breakpoint.</doc>
+             line="589">The current breakpoint.</doc>
         <type name="Breakpoint"/>
       </property>
       <field name="parent_instance">
@@ -12122,7 +12122,9 @@ If the child requires more than the requested maximum size, it will be
 allocated the minimum size it can fit in instead.
 
 `AdwClamp` can scale with the text scale factor, use the
-[property@ClampLayout:unit] property to enable that behavior.
+[property@Clamp:unit] property to enable that behavior.
+
+See also: [class@ClampLayout], [class@ClampScrollable].
 
 ## CSS nodes
 
@@ -12135,12 +12137,12 @@ allocated the minimum size it can fit in instead.
       <constructor name="new" c:identifier="adw_clamp_new">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="269">Creates a new `AdwClamp`.</doc>
+             line="271">Creates a new `AdwClamp`.</doc>
         <source-position filename="src/adw-clamp.h" line="27"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp.c"
-               line="274">the newly created `AdwClamp`</doc>
+               line="276">the newly created `AdwClamp`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -12149,19 +12151,19 @@ allocated the minimum size it can fit in instead.
               glib:get-property="child">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="282">Gets the child widget of @self.</doc>
+             line="284">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-clamp.h" line="30"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-clamp.c"
-               line="288">the child widget of @self</doc>
+               line="290">the child widget of @self</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="284">a clamp</doc>
+                 line="286">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
         </parameters>
@@ -12171,19 +12173,19 @@ allocated the minimum size it can fit in instead.
               glib:get-property="maximum-size">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="328">Gets the maximum size allocated to the child.</doc>
+             line="330">Gets the maximum size allocated to the child.</doc>
         <source-position filename="src/adw-clamp.h" line="36"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp.c"
-               line="334">the maximum size to allocate to the child</doc>
+               line="336">the maximum size to allocate to the child</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="330">a clamp</doc>
+                 line="332">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
         </parameters>
@@ -12193,19 +12195,19 @@ allocated the minimum size it can fit in instead.
               glib:get-property="tightening-threshold">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="375">Gets the size above which the child is clamped.</doc>
+             line="377">Gets the size above which the child is clamped.</doc>
         <source-position filename="src/adw-clamp.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp.c"
-               line="381">the size above which the child is clamped</doc>
+               line="383">the size above which the child is clamped</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="377">a clamp</doc>
+                 line="379">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
         </parameters>
@@ -12216,19 +12218,19 @@ allocated the minimum size it can fit in instead.
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="433">Gets the length unit for maximum size and tightening threshold.</doc>
+             line="435">Gets the length unit for maximum size and tightening threshold.</doc>
         <source-position filename="src/adw-clamp.h" line="48"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp.c"
-               line="439">the length unit</doc>
+               line="441">the length unit</doc>
           <type name="LengthUnit" c:type="AdwLengthUnit"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="435">a clamp</doc>
+                 line="437">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
         </parameters>
@@ -12238,7 +12240,7 @@ allocated the minimum size it can fit in instead.
               glib:set-property="child">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="298">Sets the child widget of @self.</doc>
+             line="300">Sets the child widget of @self.</doc>
         <source-position filename="src/adw-clamp.h" line="32"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -12247,7 +12249,7 @@ allocated the minimum size it can fit in instead.
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="300">a clamp</doc>
+                 line="302">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
           <parameter name="child"
@@ -12256,7 +12258,7 @@ allocated the minimum size it can fit in instead.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="301">the child widget</doc>
+                 line="303">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -12266,7 +12268,7 @@ allocated the minimum size it can fit in instead.
               glib:set-property="maximum-size">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="348">Sets the maximum size allocated to the child.
+             line="350">Sets the maximum size allocated to the child.
 
 It is the width if the clamp is horizontal, or the height if it is vertical.</doc>
         <source-position filename="src/adw-clamp.h" line="38"/>
@@ -12277,13 +12279,13 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="350">a clamp</doc>
+                 line="352">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
           <parameter name="maximum_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="351">the maximum size</doc>
+                 line="353">the maximum size</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -12293,7 +12295,7 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
               glib:set-property="tightening-threshold">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="395">Sets the size above which the child is clamped.
+             line="397">Sets the size above which the child is clamped.
 
 Starting from this size, the clamp will tighten its grip on the child, slowly
 allocating less and less of the available size up to the maximum allocated
@@ -12315,13 +12317,13 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="397">a clamp</doc>
+                 line="399">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
           <parameter name="tightening_threshold" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="398">the tightening threshold</doc>
+                 line="400">the tightening threshold</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -12332,7 +12334,7 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="455">Sets the length unit for maximum size and tightening threshold.
+             line="457">Sets the length unit for maximum size and tightening threshold.
 
 Allows the sizes to vary depending on the text scale factor.</doc>
         <source-position filename="src/adw-clamp.h" line="50"/>
@@ -12343,13 +12345,13 @@ Allows the sizes to vary depending on the text scale factor.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="457">a clamp</doc>
+                 line="459">a clamp</doc>
             <type name="Clamp" c:type="AdwClamp*"/>
           </instance-parameter>
           <parameter name="unit" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp.c"
-                 line="458">the length unit</doc>
+                 line="460">the length unit</doc>
             <type name="LengthUnit" c:type="AdwLengthUnit"/>
           </parameter>
         </parameters>
@@ -12361,7 +12363,7 @@ Allows the sizes to vary depending on the text scale factor.</doc>
                 getter="get_child">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="177">The child widget of the `AdwClamp`.</doc>
+             line="179">The child widget of the `AdwClamp`.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="maximum-size"
@@ -12372,7 +12374,7 @@ Allows the sizes to vary depending on the text scale factor.</doc>
                 default-value="600">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="187">The maximum size allocated to the child.
+             line="189">The maximum size allocated to the child.
 
 It is the width if the clamp is horizontal, or the height if it is vertical.</doc>
         <type name="gint" c:type="gint"/>
@@ -12385,7 +12387,7 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
                 default-value="400">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="199">The size above which the child is clamped.
+             line="201">The size above which the child is clamped.
 
 Starting from this size, the clamp will tighten its grip on the child,
 slowly allocating less and less of the available size up to the maximum
@@ -12410,7 +12412,7 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
                 default-value="ADW_LENGTH_UNIT_SP">
         <doc xml:space="preserve"
              filename="src/adw-clamp.c"
-             line="222">The length unit for maximum size and tightening threshold.
+             line="224">The length unit for maximum size and tightening threshold.
 
 Allows the sizes to vary depending on the text scale factor.</doc>
         <type name="LengthUnit"/>
@@ -12454,18 +12456,20 @@ If a child requires more than the requested maximum size, it will be
 allocated the minimum size it can fit in instead.
 
 `AdwClampLayout` can scale with the text scale factor, use the
-[property@ClampLayout:unit] property to enable that behavior.</doc>
+[property@ClampLayout:unit] property to enable that behavior.
+
+See also: [class@Clamp], [class@ClampScrollable].</doc>
       <source-position filename="src/adw-clamp-layout.h" line="24"/>
       <implements name="Gtk.Orientable"/>
       <constructor name="new" c:identifier="adw_clamp_layout_new">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="432">Creates a new `AdwClampLayout`.</doc>
+             line="434">Creates a new `AdwClampLayout`.</doc>
         <source-position filename="src/adw-clamp-layout.h" line="27"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-clamp-layout.c"
-               line="437">the newly created `AdwClampLayout`</doc>
+               line="439">the newly created `AdwClampLayout`</doc>
           <type name="Gtk.LayoutManager" c:type="GtkLayoutManager*"/>
         </return-value>
       </constructor>
@@ -12474,19 +12478,19 @@ allocated the minimum size it can fit in instead.
               glib:get-property="maximum-size">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="445">Gets the maximum size allocated to the children.</doc>
+             line="447">Gets the maximum size allocated to the children.</doc>
         <source-position filename="src/adw-clamp-layout.h" line="30"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp-layout.c"
-               line="451">the maximum size to allocate to the children</doc>
+               line="453">the maximum size to allocate to the children</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="447">a clamp layout</doc>
+                 line="449">a clamp layout</doc>
             <type name="ClampLayout" c:type="AdwClampLayout*"/>
           </instance-parameter>
         </parameters>
@@ -12496,19 +12500,19 @@ allocated the minimum size it can fit in instead.
               glib:get-property="tightening-threshold">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="486">Gets the size above which the children are clamped.</doc>
+             line="488">Gets the size above which the children are clamped.</doc>
         <source-position filename="src/adw-clamp-layout.h" line="36"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp-layout.c"
-               line="492">the size above which the children are clamped</doc>
+               line="494">the size above which the children are clamped</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="488">a clamp layout</doc>
+                 line="490">a clamp layout</doc>
             <type name="ClampLayout" c:type="AdwClampLayout*"/>
           </instance-parameter>
         </parameters>
@@ -12519,19 +12523,19 @@ allocated the minimum size it can fit in instead.
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="538">Gets the length unit for maximum size and tightening threshold.</doc>
+             line="540">Gets the length unit for maximum size and tightening threshold.</doc>
         <source-position filename="src/adw-clamp-layout.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp-layout.c"
-               line="544">the length unit</doc>
+               line="546">the length unit</doc>
           <type name="LengthUnit" c:type="AdwLengthUnit"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="540">a clamp layout</doc>
+                 line="542">a clamp layout</doc>
             <type name="ClampLayout" c:type="AdwClampLayout*"/>
           </instance-parameter>
         </parameters>
@@ -12541,7 +12545,7 @@ allocated the minimum size it can fit in instead.
               glib:set-property="maximum-size">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="461">Sets the maximum size allocated to the children.
+             line="463">Sets the maximum size allocated to the children.
 
 It is the width if the layout is horizontal, or the height if it is vertical.</doc>
         <source-position filename="src/adw-clamp-layout.h" line="32"/>
@@ -12552,13 +12556,13 @@ It is the width if the layout is horizontal, or the height if it is vertical.</d
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="463">a clamp layout</doc>
+                 line="465">a clamp layout</doc>
             <type name="ClampLayout" c:type="AdwClampLayout*"/>
           </instance-parameter>
           <parameter name="maximum_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="464">the maximum size</doc>
+                 line="466">the maximum size</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -12568,7 +12572,7 @@ It is the width if the layout is horizontal, or the height if it is vertical.</d
               glib:set-property="tightening-threshold">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="502">Sets the size above which the children are clamped.
+             line="504">Sets the size above which the children are clamped.
 
 Starting from this size, the layout will tighten its grip on the children,
 slowly allocating less and less of the available size up to the maximum
@@ -12590,13 +12594,13 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="504">a clamp layout</doc>
+                 line="506">a clamp layout</doc>
             <type name="ClampLayout" c:type="AdwClampLayout*"/>
           </instance-parameter>
           <parameter name="tightening_threshold" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="505">the tightening threshold</doc>
+                 line="507">the tightening threshold</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -12607,7 +12611,7 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="556">Sets the length unit for maximum size and tightening threshold.
+             line="558">Sets the length unit for maximum size and tightening threshold.
 
 Allows the sizes to vary depending on the text scale factor.</doc>
         <source-position filename="src/adw-clamp-layout.h" line="44"/>
@@ -12618,13 +12622,13 @@ Allows the sizes to vary depending on the text scale factor.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="558">a clamp layout</doc>
+                 line="560">a clamp layout</doc>
             <type name="ClampLayout" c:type="AdwClampLayout*"/>
           </instance-parameter>
           <parameter name="unit" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-layout.c"
-                 line="559">the length unit</doc>
+                 line="561">the length unit</doc>
             <type name="LengthUnit" c:type="AdwLengthUnit"/>
           </parameter>
         </parameters>
@@ -12637,7 +12641,7 @@ Allows the sizes to vary depending on the text scale factor.</doc>
                 default-value="600">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="370">The maximum size to allocate to the children.
+             line="372">The maximum size to allocate to the children.
 
 It is the width if the layout is horizontal, or the height if it is
 vertical.</doc>
@@ -12651,7 +12655,7 @@ vertical.</doc>
                 default-value="400">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="383">The size above which the children are clamped.
+             line="385">The size above which the children are clamped.
 
 Starting from this size, the layout will tighten its grip on the children,
 slowly allocating less and less of the available size up to the maximum
@@ -12676,7 +12680,7 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
                 default-value="ADW_LENGTH_UNIT_SP">
         <doc xml:space="preserve"
              filename="src/adw-clamp-layout.c"
-             line="406">The length unit for maximum size and tightening threshold.
+             line="408">The length unit for maximum size and tightening threshold.
 
 Allows the sizes to vary depending on the text scale factor.</doc>
         <type name="LengthUnit"/>
@@ -12706,7 +12710,9 @@ Allows the sizes to vary depending on the text scale factor.</doc>
 [iface@Gtk.Scrollable] interface.
 
 The primary use case for `AdwClampScrollable` is clamping
-[class@Gtk.ListView].</doc>
+[class@Gtk.ListView].
+
+See also: [class@ClampLayout].</doc>
       <source-position filename="src/adw-clamp-scrollable.h" line="24"/>
       <implements name="Gtk.Accessible"/>
       <implements name="Gtk.Buildable"/>
@@ -12716,12 +12722,12 @@ The primary use case for `AdwClampScrollable` is clamping
       <constructor name="new" c:identifier="adw_clamp_scrollable_new">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="353">Creates a new `AdwClampScrollable`.</doc>
+             line="355">Creates a new `AdwClampScrollable`.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="27"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp-scrollable.c"
-               line="358">the newly created `AdwClampScrollable`</doc>
+               line="360">the newly created `AdwClampScrollable`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -12730,19 +12736,19 @@ The primary use case for `AdwClampScrollable` is clamping
               glib:get-property="child">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="366">Gets the child widget of @self.</doc>
+             line="368">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="30"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-clamp-scrollable.c"
-               line="372">the child widget of @self</doc>
+               line="374">the child widget of @self</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="368">a clamp scrollable</doc>
+                 line="370">a clamp scrollable</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
         </parameters>
@@ -12752,19 +12758,19 @@ The primary use case for `AdwClampScrollable` is clamping
               glib:get-property="maximum-size">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="437">Gets the maximum size allocated to the child.</doc>
+             line="439">Gets the maximum size allocated to the child.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="36"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp-scrollable.c"
-               line="443">the maximum size to allocate to the child</doc>
+               line="445">the maximum size to allocate to the child</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="439">a clamp scrollable</doc>
+                 line="441">a clamp scrollable</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
         </parameters>
@@ -12774,19 +12780,19 @@ The primary use case for `AdwClampScrollable` is clamping
               glib:get-property="tightening-threshold">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="484">Gets the size above which the child is clamped.</doc>
+             line="486">Gets the size above which the child is clamped.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp-scrollable.c"
-               line="490">the size above which the child is clamped</doc>
+               line="492">the size above which the child is clamped</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="486">a clamp scrollable</doc>
+                 line="488">a clamp scrollable</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
         </parameters>
@@ -12797,19 +12803,19 @@ The primary use case for `AdwClampScrollable` is clamping
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="542">Gets the length unit for maximum size and tightening threshold.</doc>
+             line="544">Gets the length unit for maximum size and tightening threshold.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="48"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-clamp-scrollable.c"
-               line="548">the length unit</doc>
+               line="550">the length unit</doc>
           <type name="LengthUnit" c:type="AdwLengthUnit"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="544">a clamp scrollable</doc>
+                 line="546">a clamp scrollable</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
         </parameters>
@@ -12819,7 +12825,7 @@ The primary use case for `AdwClampScrollable` is clamping
               glib:set-property="child">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="382">Sets the child widget of @self.</doc>
+             line="384">Sets the child widget of @self.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="32"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -12828,7 +12834,7 @@ The primary use case for `AdwClampScrollable` is clamping
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="384">a clamp scrollable</doc>
+                 line="386">a clamp scrollable</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
           <parameter name="child"
@@ -12837,7 +12843,7 @@ The primary use case for `AdwClampScrollable` is clamping
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="385">the child widget</doc>
+                 line="387">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -12847,7 +12853,7 @@ The primary use case for `AdwClampScrollable` is clamping
               glib:set-property="maximum-size">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="457">Sets the maximum size allocated to the child.
+             line="459">Sets the maximum size allocated to the child.
 
 It is the width if the clamp is horizontal, or the height if it is vertical.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="38"/>
@@ -12858,13 +12864,13 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="459">a clamp scrollable</doc>
+                 line="461">a clamp scrollable</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
           <parameter name="maximum_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="460">the maximum size</doc>
+                 line="462">the maximum size</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -12874,7 +12880,7 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
               glib:set-property="tightening-threshold">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="504">Sets the size above which the child is clamped.
+             line="506">Sets the size above which the child is clamped.
 
 Starting from this size, the clamp will tighten its grip on the child, slowly
 allocating less and less of the available size up to the maximum allocated
@@ -12896,13 +12902,13 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="506">a clamp scrollable</doc>
+                 line="508">a clamp scrollable</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
           <parameter name="tightening_threshold" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="507">the tightening threshold</doc>
+                 line="509">the tightening threshold</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -12913,7 +12919,7 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="564">Sets the length unit for maximum size and tightening threshold.
+             line="566">Sets the length unit for maximum size and tightening threshold.
 
 Allows the sizes to vary depending on the text scale factor.</doc>
         <source-position filename="src/adw-clamp-scrollable.h" line="50"/>
@@ -12924,13 +12930,13 @@ Allows the sizes to vary depending on the text scale factor.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="566">a clamp</doc>
+                 line="568">a clamp</doc>
             <type name="ClampScrollable" c:type="AdwClampScrollable*"/>
           </instance-parameter>
           <parameter name="unit" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-clamp-scrollable.c"
-                 line="567">the length unit</doc>
+                 line="569">the length unit</doc>
             <type name="LengthUnit" c:type="AdwLengthUnit"/>
           </parameter>
         </parameters>
@@ -12942,7 +12948,7 @@ Allows the sizes to vary depending on the text scale factor.</doc>
                 getter="get_child">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="262">The child widget of the `AdwClampScrollable`.</doc>
+             line="264">The child widget of the `AdwClampScrollable`.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="maximum-size"
@@ -12953,7 +12959,7 @@ Allows the sizes to vary depending on the text scale factor.</doc>
                 default-value="600">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="272">The maximum size allocated to the child.
+             line="274">The maximum size allocated to the child.
 
 It is the width if the clamp is horizontal, or the height if it is vertical.</doc>
         <type name="gint" c:type="gint"/>
@@ -12966,7 +12972,7 @@ It is the width if the clamp is horizontal, or the height if it is vertical.</do
                 default-value="400">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="284">The size above which the child is clamped.
+             line="286">The size above which the child is clamped.
 
 Starting from this size, the clamp will tighten its grip on the child,
 slowly allocating less and less of the available size up to the maximum
@@ -12991,7 +12997,7 @@ size makes transitions to and from the maximum size smoother when resizing.</doc
                 default-value="ADW_LENGTH_UNIT_SP">
         <doc xml:space="preserve"
              filename="src/adw-clamp-scrollable.c"
-             line="307">The length unit for maximum size and tightening threshold.
+             line="309">The length unit for maximum size and tightening threshold.
 
 Allows the sizes to vary depending on the text scale factor.</doc>
         <type name="LengthUnit"/>
@@ -20691,7 +20697,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="0" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="1" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -35616,7 +35622,7 @@ The view must be inside the tab overview, see [property@TabOverview:child].</doc
       <glib:signal name="create-tab" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1717">Emitted when a tab needs to be created;
+             line="1717">Emitted when a tab needs to be created.
 
 This can happen after the new tab button has been pressed, see
 [property@TabOverview:enable-new-tab].
@@ -40964,7 +40970,7 @@ See also [property@ToolbarView:bottom-bar-style].</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.6.0" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.6.1" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and
