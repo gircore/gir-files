@@ -488,13 +488,13 @@ All the information is returned in a #GstDiscovererInfo structure.</doc>
       <constructor name="new" c:identifier="gst_discoverer_new" throws="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2670">Creates a new #GstDiscoverer with the provided timeout.</doc>
+             line="2681">Creates a new #GstDiscoverer with the provided timeout.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="411"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2678">The new #GstDiscoverer.
+               line="2689">The new #GstDiscoverer.
 If an error occurred when creating the discoverer, @err will be set
 accordingly and %NULL will be returned. If @err is set, the caller must
 free it when no longer needed using g_error_free().</doc>
@@ -504,7 +504,7 @@ free it when no longer needed using g_error_free().</doc>
           <parameter name="timeout" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2672">timeout per file, in nanoseconds. Allowed are values between
+                 line="2683">timeout per file, in nanoseconds. Allowed are values between
     one second (#GST_SECOND) and one hour (3600 * #GST_SECOND)</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
@@ -599,7 +599,7 @@ free it when no longer needed using g_error_free().</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2608">Synchronously discovers the given @uri.
+             line="2619">Synchronously discovers the given @uri.
 
 A copy of @uri will be made internally, so the caller can safely g_free()
 afterwards.</doc>
@@ -608,7 +608,7 @@ afterwards.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2619">the result of the scanning. Can be %NULL if an
+               line="2630">the result of the scanning. Can be %NULL if an
 error occurred.</doc>
           <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
         </return-value>
@@ -616,13 +616,13 @@ error occurred.</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2610">A #GstDiscoverer</doc>
+                 line="2621">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2611">The URI to run on.</doc>
+                 line="2622">The URI to run on.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -631,7 +631,7 @@ error occurred.</doc>
               c:identifier="gst_discoverer_discover_uri_async">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2569">Appends the given @uri to the list of URIs to discoverer. The actual
+             line="2580">Appends the given @uri to the list of URIs to discoverer. The actual
 discovery of the @uri will only take place if gst_discoverer_start() has
 been called.
 
@@ -642,7 +642,7 @@ afterwards.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2581">%TRUE if the @uri was successfully appended to the list of pending
+               line="2592">%TRUE if the @uri was successfully appended to the list of pending
 uris, else %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -650,13 +650,13 @@ uris, else %FALSE</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2571">A #GstDiscoverer</doc>
+                 line="2582">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2572">the URI to add.</doc>
+                 line="2583">the URI to add.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -664,7 +664,7 @@ uris, else %FALSE</doc>
       <method name="start" c:identifier="gst_discoverer_start">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2468">Allow asynchronous discovering of URIs to take place.
+             line="2479">Allow asynchronous discovering of URIs to take place.
 A #GMainLoop must be available for #GstDiscoverer to properly work in
 asynchronous mode.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
@@ -676,7 +676,7 @@ asynchronous mode.</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2470">A #GstDiscoverer</doc>
+                 line="2481">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
         </parameters>
@@ -684,7 +684,7 @@ asynchronous mode.</doc>
       <method name="stop" c:identifier="gst_discoverer_stop">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2511">Stop the discovery of any pending URIs and clears the list of
+             line="2522">Stop the discovery of any pending URIs and clears the list of
 pending URIS (if any).</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="419"/>
@@ -695,7 +695,7 @@ pending URIS (if any).</doc>
           <instance-parameter name="discoverer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2513">A #GstDiscoverer</doc>
+                 line="2524">A #GstDiscoverer</doc>
             <type name="Discoverer" c:type="GstDiscoverer*"/>
           </instance-parameter>
         </parameters>
@@ -842,14 +842,14 @@ thread.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="839">the average or nominal bitrate of the stream in bits/second.</doc>
+               line="852">the average or nominal bitrate of the stream in bits/second.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="837">a #GstDiscovererAudioInfo</doc>
+                 line="850">a #GstDiscovererAudioInfo</doc>
             <type name="DiscovererAudioInfo"
                   c:type="const GstDiscovererAudioInfo*"/>
           </instance-parameter>
@@ -863,7 +863,7 @@ thread.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="808">the channel-mask of the stream, refer to
+               line="821">the channel-mask of the stream, refer to
 gst_audio_channel_positions_from_mask() for more
 information.</doc>
           <type name="guint64" c:type="guint64"/>
@@ -872,7 +872,7 @@ information.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="806">a #GstDiscovererAudioInfo</doc>
+                 line="819">a #GstDiscovererAudioInfo</doc>
             <type name="DiscovererAudioInfo"
                   c:type="const GstDiscovererAudioInfo*"/>
           </instance-parameter>
@@ -885,14 +885,14 @@ information.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="799">the number of channels in the stream.</doc>
+               line="812">the number of channels in the stream.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="797">a #GstDiscovererAudioInfo</doc>
+                 line="810">a #GstDiscovererAudioInfo</doc>
             <type name="DiscovererAudioInfo"
                   c:type="const GstDiscovererAudioInfo*"/>
           </instance-parameter>
@@ -905,14 +905,14 @@ information.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="830">the number of bits used per sample in each channel.</doc>
+               line="843">the number of bits used per sample in each channel.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="828">a #GstDiscovererAudioInfo</doc>
+                 line="841">a #GstDiscovererAudioInfo</doc>
             <type name="DiscovererAudioInfo"
                   c:type="const GstDiscovererAudioInfo*"/>
           </instance-parameter>
@@ -925,14 +925,14 @@ information.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="857">the language of the stream, or NULL if unknown.</doc>
+               line="870">the language of the stream, or NULL if unknown.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="855">a #GstDiscovererAudioInfo</doc>
+                 line="868">a #GstDiscovererAudioInfo</doc>
             <type name="DiscovererAudioInfo"
                   c:type="const GstDiscovererAudioInfo*"/>
           </instance-parameter>
@@ -945,14 +945,14 @@ information.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="848">the maximum bitrate of the stream in bits/second.</doc>
+               line="861">the maximum bitrate of the stream in bits/second.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="846">a #GstDiscovererAudioInfo</doc>
+                 line="859">a #GstDiscovererAudioInfo</doc>
             <type name="DiscovererAudioInfo"
                   c:type="const GstDiscovererAudioInfo*"/>
           </instance-parameter>
@@ -965,14 +965,14 @@ information.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="821">the sample rate of the stream in Hertz.</doc>
+               line="834">the sample rate of the stream in Hertz.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="819">a #GstDiscovererAudioInfo</doc>
+                 line="832">a #GstDiscovererAudioInfo</doc>
             <type name="DiscovererAudioInfo"
                   c:type="const GstDiscovererAudioInfo*"/>
           </instance-parameter>
@@ -1100,7 +1100,7 @@ information.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="751">the list of
+               line="764">the list of
 #GstDiscovererStreamInfo this container stream offers.
 Free with gst_discoverer_stream_info_list_free() after usage.</doc>
           <type name="GLib.List" c:type="GList*">
@@ -1111,7 +1111,7 @@ Free with gst_discoverer_stream_info_list_free() after usage.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="749">a #GstDiscovererStreamInfo</doc>
+                 line="762">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererContainerInfo"
                   c:type="GstDiscovererContainerInfo*"/>
           </instance-parameter>
@@ -1125,7 +1125,7 @@ Free with gst_discoverer_stream_info_list_free() after usage.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="775">tags specific to the given container. If you wish to use
+               line="788">tags specific to the given container. If you wish to use
 the tags after the life-time of @info, you will need to copy them.</doc>
           <type name="Gst.TagList" c:type="const GstTagList*"/>
         </return-value>
@@ -1133,7 +1133,7 @@ the tags after the life-time of @info, you will need to copy them.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="773">a #GstDiscovererStreamInfo</doc>
+                 line="786">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererContainerInfo"
                   c:type="const GstDiscovererContainerInfo*"/>
           </instance-parameter>
@@ -1154,21 +1154,21 @@ the tags after the life-time of @info, you will need to copy them.</doc>
                 version="1.6">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2747">Parses a #GVariant as produced by gst_discoverer_info_to_variant()
+             line="2758">Parses a #GVariant as produced by gst_discoverer_info_to_variant()
 back to a #GstDiscovererInfo.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="344"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2754">A newly-allocated #GstDiscovererInfo.</doc>
+               line="2765">A newly-allocated #GstDiscovererInfo.</doc>
           <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
         </return-value>
         <parameters>
           <parameter name="variant" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2749">A #GVariant to deserialize into a #GstDiscovererInfo.</doc>
+                 line="2760">A #GVariant to deserialize into a #GstDiscovererInfo.</doc>
             <type name="GLib.Variant" c:type="GVariant*"/>
           </parameter>
         </parameters>
@@ -1179,14 +1179,14 @@ back to a #GstDiscovererInfo.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="408">A copy of the #GstDiscovererInfo</doc>
+               line="413">A copy of the #GstDiscovererInfo</doc>
           <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
         </return-value>
         <parameters>
           <instance-parameter name="ptr" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="406">a #GstDiscovererInfo</doc>
+                 line="411">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1195,13 +1195,13 @@ back to a #GstDiscovererInfo.</doc>
               c:identifier="gst_discoverer_info_get_audio_streams">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-             line="507">Finds all the #GstDiscovererAudioInfo contained in @info</doc>
+             line="520">Finds all the #GstDiscovererAudioInfo contained in @info</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="328"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="513">A #GList of
+               line="526">A #GList of
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
@@ -1212,7 +1212,7 @@ gst_discoverer_stream_info_list_free().</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="509">a #GstDiscovererInfo</doc>
+                 line="522">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1221,13 +1221,13 @@ gst_discoverer_stream_info_list_free().</doc>
               c:identifier="gst_discoverer_info_get_container_streams">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-             line="556">Finds all the #GstDiscovererContainerInfo contained in @info</doc>
+             line="569">Finds all the #GstDiscovererContainerInfo contained in @info</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="337"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="562">A #GList of
+               line="575">A #GList of
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
@@ -1238,7 +1238,7 @@ gst_discoverer_stream_info_list_free().</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="558">a #GstDiscovererInfo</doc>
+                 line="571">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1250,14 +1250,14 @@ gst_discoverer_stream_info_list_free().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1068">the duration of the URI in #GstClockTime (nanoseconds).</doc>
+               line="1081">the duration of the URI in #GstClockTime (nanoseconds).</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1066">a #GstDiscovererInfo</doc>
+                 line="1079">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1270,14 +1270,14 @@ gst_discoverer_stream_info_list_free().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1086">whether the URI is live.</doc>
+               line="1099">whether the URI is live.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1084">a #GstDiscovererInfo</doc>
+                 line="1097">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1292,7 +1292,7 @@ gst_discoverer_stream_info_list_free().</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1101">Miscellaneous information stored as a #GstStructure
+               line="1114">Miscellaneous information stored as a #GstStructure
 (for example: information about missing plugins). If you wish to use the
 #GstStructure after the life-time of @info, you will need to copy it.</doc>
           <type name="Gst.Structure" c:type="const GstStructure*"/>
@@ -1301,7 +1301,7 @@ gst_discoverer_stream_info_list_free().</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1096">a #GstDiscovererInfo</doc>
+                 line="1109">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1311,13 +1311,13 @@ gst_discoverer_stream_info_list_free().</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-             line="1164">Get the installer details for missing elements</doc>
+             line="1177">Get the installer details for missing elements</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="321"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1171">An array of strings
+               line="1184">An array of strings
 containing information about how to install the various missing elements
 for @info to be usable. If you wish to use the strings after the life-time
 of @info, you will need to copy them.</doc>
@@ -1329,7 +1329,7 @@ of @info, you will need to copy them.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1166">a #GstDiscovererStreamInfo to retrieve installer detail
+                 line="1179">a #GstDiscovererStreamInfo to retrieve installer detail
 for the missing element</doc>
             <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
           </instance-parameter>
@@ -1341,14 +1341,14 @@ for the missing element</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1016">the result of the discovery as a #GstDiscovererResult.</doc>
+               line="1029">the result of the discovery as a #GstDiscovererResult.</doc>
           <type name="DiscovererResult" c:type="GstDiscovererResult"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1014">a #GstDiscovererInfo</doc>
+                 line="1027">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1360,14 +1360,14 @@ for the missing element</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1077">the whether the URI is seekable.</doc>
+               line="1090">the whether the URI is seekable.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1075">a #GstDiscovererInfo</doc>
+                 line="1088">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1379,7 +1379,7 @@ for the missing element</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1025">the structure (or topology) of the URI as a
+               line="1038">the structure (or topology) of the URI as a
 #GstDiscovererStreamInfo.
 This structure can be traversed to see the original hierarchy. Unref with
 gst_discoverer_stream_info_unref() after usage.</doc>
@@ -1389,7 +1389,7 @@ gst_discoverer_stream_info_unref() after usage.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1023">a #GstDiscovererInfo</doc>
+                 line="1036">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1401,7 +1401,7 @@ gst_discoverer_stream_info_unref() after usage.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1045">the list of
+               line="1058">the list of
 all streams contained in the #info. Free after usage
 with gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
@@ -1412,7 +1412,7 @@ with gst_discoverer_stream_info_list_free().</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1043">a #GstDiscovererInfo</doc>
+                 line="1056">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1421,14 +1421,14 @@ with gst_discoverer_stream_info_list_free().</doc>
               c:identifier="gst_discoverer_info_get_streams">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-             line="480">Finds the #GstDiscovererStreamInfo contained in @info that match the
+             line="493">Finds the #GstDiscovererStreamInfo contained in @info that match the
 given @streamtype.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="324"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="488">A #GList of
+               line="501">A #GList of
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
@@ -1439,13 +1439,13 @@ gst_discoverer_stream_info_list_free().</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="482">a #GstDiscovererInfo</doc>
+                 line="495">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
           <parameter name="streamtype" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="483">a #GType derived from #GstDiscovererStreamInfo</doc>
+                 line="496">a #GType derived from #GstDiscovererStreamInfo</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -1454,13 +1454,13 @@ gst_discoverer_stream_info_list_free().</doc>
               c:identifier="gst_discoverer_info_get_subtitle_streams">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-             line="539">Finds all the #GstDiscovererSubtitleInfo contained in @info</doc>
+             line="552">Finds all the #GstDiscovererSubtitleInfo contained in @info</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="334"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="545">A #GList of
+               line="558">A #GList of
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
@@ -1471,7 +1471,7 @@ gst_discoverer_stream_info_list_free().</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="541">a #GstDiscovererInfo</doc>
+                 line="554">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1486,28 +1486,9 @@ gst_discoverer_stream_info_list_free().</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1112">all tags contained in the URI. If you wish to use
+               line="1125">all tags contained in the URI. If you wish to use
 the tags after the life-time of @info, you will need to copy them.</doc>
           <type name="Gst.TagList" c:type="const GstTagList*"/>
-        </return-value>
-        <parameters>
-          <instance-parameter name="info" transfer-ownership="none">
-            <doc xml:space="preserve"
-                 filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1110">a #GstDiscovererInfo</doc>
-            <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
-          </instance-parameter>
-        </parameters>
-      </method>
-      <method name="get_toc" c:identifier="gst_discoverer_info_get_toc">
-        <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
-                         line="318"/>
-        <return-value transfer-ownership="none" nullable="1">
-          <doc xml:space="preserve"
-               filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1125">TOC contained in the URI. If you wish to use
-the TOC after the life-time of @info, you will need to copy it.</doc>
-          <type name="Gst.Toc" c:type="const GstToc*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
@@ -1518,13 +1499,32 @@ the TOC after the life-time of @info, you will need to copy it.</doc>
           </instance-parameter>
         </parameters>
       </method>
+      <method name="get_toc" c:identifier="gst_discoverer_info_get_toc">
+        <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
+                         line="318"/>
+        <return-value transfer-ownership="none" nullable="1">
+          <doc xml:space="preserve"
+               filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
+               line="1138">TOC contained in the URI. If you wish to use
+the TOC after the life-time of @info, you will need to copy it.</doc>
+          <type name="Gst.Toc" c:type="const GstToc*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="info" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
+                 line="1136">a #GstDiscovererInfo</doc>
+            <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
       <method name="get_uri" c:identifier="gst_discoverer_info_get_uri">
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="292"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1006">the URI to which this information corresponds to.
+               line="1019">the URI to which this information corresponds to.
 Copy it if you wish to use it after the life-time of @info.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
@@ -1532,7 +1532,7 @@ Copy it if you wish to use it after the life-time of @info.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="1004">a #GstDiscovererInfo</doc>
+                 line="1017">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="const GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1541,13 +1541,13 @@ Copy it if you wish to use it after the life-time of @info.</doc>
               c:identifier="gst_discoverer_info_get_video_streams">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-             line="523">Finds all the #GstDiscovererVideoInfo contained in @info</doc>
+             line="536">Finds all the #GstDiscovererVideoInfo contained in @info</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="331"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="529">A #GList of
+               line="542">A #GList of
 matching #GstDiscovererStreamInfo. The caller should free it with
 gst_discoverer_stream_info_list_free().</doc>
           <type name="GLib.List" c:type="GList*">
@@ -1558,7 +1558,7 @@ gst_discoverer_stream_info_list_free().</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="525">a #GstDiscovererInfo</doc>
+                 line="538">a #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
         </parameters>
@@ -1568,7 +1568,7 @@ gst_discoverer_stream_info_list_free().</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-             line="2701">Serializes @info to a #GVariant that can be parsed again
+             line="2712">Serializes @info to a #GVariant that can be parsed again
 through gst_discoverer_info_from_variant().
 
 Note that any #GstToc (s) that might have been discovered will not be serialized
@@ -1578,20 +1578,20 @@ for now.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-               line="2713">A newly-allocated #GVariant representing @info.</doc>
+               line="2724">A newly-allocated #GVariant representing @info.</doc>
           <type name="GLib.Variant" c:type="GVariant*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2703">A #GstDiscovererInfo</doc>
+                 line="2714">A #GstDiscovererInfo</doc>
             <type name="DiscovererInfo" c:type="GstDiscovererInfo*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer.c"
-                 line="2704">A combination of #GstDiscovererSerializeFlags to specify
+                 line="2715">A combination of #GstDiscovererSerializeFlags to specify
 what needs to be serialized.</doc>
             <type name="DiscovererSerializeFlags"
                   c:type="GstDiscovererSerializeFlags"/>
@@ -1752,7 +1752,7 @@ for the audio and video streams respectively.</doc>
                 c:identifier="gst_discoverer_stream_info_list_free">
         <doc xml:space="preserve"
              filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-             line="463">Decrements the reference count of all contained #GstDiscovererStreamInfo
+             line="476">Decrements the reference count of all contained #GstDiscovererStreamInfo
 and fress the #GList.</doc>
         <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                          line="347"/>
@@ -1763,7 +1763,7 @@ and fress the #GList.</doc>
           <parameter name="infos" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="465">a #GList of #GstDiscovererStreamInfo</doc>
+                 line="478">a #GList of #GstDiscovererStreamInfo</doc>
             <type name="GLib.List" c:type="GList*">
               <type name="DiscovererStreamInfo"/>
             </type>
@@ -1777,7 +1777,7 @@ and fress the #GList.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="649">the #GstCaps of the stream. Unref with
+               line="662">the #GstCaps of the stream. Unref with
 #gst_caps_unref after usage.</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </return-value>
@@ -1785,7 +1785,7 @@ and fress the #GList.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="647">a #GstDiscovererStreamInfo</doc>
+                 line="660">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1801,7 +1801,7 @@ and fress the #GList.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="715">additional information regarding the stream (for
+               line="728">additional information regarding the stream (for
 example codec version, profile, etc..). If you wish to use the #GstStructure
 after the life-time of @info you will need to copy it.</doc>
           <type name="Gst.Structure" c:type="const GstStructure*"/>
@@ -1810,7 +1810,7 @@ after the life-time of @info you will need to copy it.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="710">a #GstDiscovererStreamInfo</doc>
+                 line="723">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1823,7 +1823,7 @@ after the life-time of @info you will need to copy it.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="630">the next #GstDiscovererStreamInfo in a chain. %NULL
+               line="643">the next #GstDiscovererStreamInfo in a chain. %NULL
 for final streams.
 Unref with #gst_discoverer_stream_info_unref after usage.</doc>
           <type name="DiscovererStreamInfo" c:type="GstDiscovererStreamInfo*"/>
@@ -1832,7 +1832,7 @@ Unref with #gst_discoverer_stream_info_unref after usage.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="628">a #GstDiscovererStreamInfo</doc>
+                 line="641">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1845,7 +1845,7 @@ Unref with #gst_discoverer_stream_info_unref after usage.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="612">the previous #GstDiscovererStreamInfo in a chain.
+               line="625">the previous #GstDiscovererStreamInfo in a chain.
 %NULL for starting points. Unref with #gst_discoverer_stream_info_unref
 after usage.</doc>
           <type name="DiscovererStreamInfo" c:type="GstDiscovererStreamInfo*"/>
@@ -1854,7 +1854,7 @@ after usage.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="610">a #GstDiscovererStreamInfo</doc>
+                 line="623">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1867,7 +1867,7 @@ after usage.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="696">the stream ID of this stream. If you wish to
+               line="709">the stream ID of this stream. If you wish to
 use the stream ID after the life-time of @info you will need to copy it.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
@@ -1875,7 +1875,7 @@ use the stream ID after the life-time of @info you will need to copy it.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="694">a #GstDiscovererStreamInfo</doc>
+                 line="707">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1889,7 +1889,7 @@ use the stream ID after the life-time of @info you will need to copy it.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="732">the stream number, -1 if no index could be determined. This property
+               line="745">the stream number, -1 if no index could be determined. This property
 acts as a unique identifier as a 'int' for the stream.</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
@@ -1897,7 +1897,7 @@ acts as a unique identifier as a 'int' for the stream.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="730">a #GstDiscovererStreamInfo</doc>
+                 line="743">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1910,7 +1910,7 @@ acts as a unique identifier as a 'int' for the stream.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="577">a human readable name for the stream type of the given @info (ex : "audio",
+               line="590">a human readable name for the stream type of the given @info (ex : "audio",
 "container",...).</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
@@ -1918,7 +1918,7 @@ acts as a unique identifier as a 'int' for the stream.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="575">a #GstDiscovererStreamInfo</doc>
+                 line="588">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1931,7 +1931,7 @@ acts as a unique identifier as a 'int' for the stream.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="666">the tags contained in this stream. If you wish to
+               line="679">the tags contained in this stream. If you wish to
 use the tags after the life-time of @info you will need to copy them.</doc>
           <type name="Gst.TagList" c:type="const GstTagList*"/>
         </return-value>
@@ -1939,7 +1939,7 @@ use the tags after the life-time of @info you will need to copy them.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="664">a #GstDiscovererStreamInfo</doc>
+                 line="677">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1951,7 +1951,7 @@ use the tags after the life-time of @info you will need to copy them.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="681">the TOC contained in this stream. If you wish to
+               line="694">the TOC contained in this stream. If you wish to
 use the TOC after the life-time of @info you will need to copy it.</doc>
           <type name="Gst.Toc" c:type="const GstToc*"/>
         </return-value>
@@ -1959,7 +1959,7 @@ use the TOC after the life-time of @info you will need to copy it.</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="679">a #GstDiscovererStreamInfo</doc>
+                 line="692">a #GstDiscovererStreamInfo</doc>
             <type name="DiscovererStreamInfo"
                   c:type="GstDiscovererStreamInfo*"/>
           </instance-parameter>
@@ -1983,14 +1983,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="990">the language of the stream, or NULL if unknown.</doc>
+               line="1003">the language of the stream, or NULL if unknown.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="988">a #GstDiscovererSubtitleInfo</doc>
+                 line="1001">a #GstDiscovererSubtitleInfo</doc>
             <type name="DiscovererSubtitleInfo"
                   c:type="const GstDiscovererSubtitleInfo*"/>
           </instance-parameter>
@@ -2013,14 +2013,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="950">the average or nominal bitrate of the video stream in bits/second.</doc>
+               line="963">the average or nominal bitrate of the video stream in bits/second.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="948">a #GstDiscovererVideoInfo</doc>
+                 line="961">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2033,14 +2033,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="891">the depth in bits of the video stream.</doc>
+               line="904">the depth in bits of the video stream.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="889">a #GstDiscovererVideoInfo</doc>
+                 line="902">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2053,14 +2053,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="909">the framerate of the video stream (denominator).</doc>
+               line="922">the framerate of the video stream (denominator).</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="907">a #GstDiscovererVideoInfo</doc>
+                 line="920">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2073,14 +2073,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="900">the framerate of the video stream (numerator).</doc>
+               line="913">the framerate of the video stream (numerator).</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="898">a #GstDiscovererVideoInfo</doc>
+                 line="911">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2093,14 +2093,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="882">the height of the video stream in pixels.</doc>
+               line="895">the height of the video stream in pixels.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="880">a #GstDiscovererVideoInfo</doc>
+                 line="893">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2113,14 +2113,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="959">the maximum bitrate of the video stream in bits/second.</doc>
+               line="972">the maximum bitrate of the video stream in bits/second.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="957">a #GstDiscovererVideoInfo</doc>
+                 line="970">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2133,14 +2133,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="927">the Pixel Aspect Ratio (PAR) of the video stream (denominator).</doc>
+               line="940">the Pixel Aspect Ratio (PAR) of the video stream (denominator).</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="925">a #GstDiscovererVideoInfo</doc>
+                 line="938">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2153,14 +2153,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="918">the Pixel Aspect Ratio (PAR) of the video stream (numerator).</doc>
+               line="931">the Pixel Aspect Ratio (PAR) of the video stream (numerator).</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="916">a #GstDiscovererVideoInfo</doc>
+                 line="929">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2173,14 +2173,14 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="873">the width of the video stream in pixels.</doc>
+               line="886">the width of the video stream in pixels.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="871">a #GstDiscovererVideoInfo</doc>
+                 line="884">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2193,7 +2193,7 @@ image based ones).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="968">%TRUE if the video stream corresponds to an image (i.e. only contains
+               line="981">%TRUE if the video stream corresponds to an image (i.e. only contains
 one frame).</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -2201,7 +2201,7 @@ one frame).</doc>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="966">a #GstDiscovererVideoInfo</doc>
+                 line="979">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -2214,14 +2214,14 @@ one frame).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="936">%TRUE if the stream is interlaced, else %FALSE.</doc>
+               line="949">%TRUE if the stream is interlaced, else %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="info" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-                 line="934">a #GstDiscovererVideoInfo</doc>
+                 line="947">a #GstDiscovererVideoInfo</doc>
             <type name="DiscovererVideoInfo"
                   c:type="const GstDiscovererVideoInfo*"/>
           </instance-parameter>
@@ -4420,7 +4420,7 @@ in debugging.</doc>
       <type name="gint" c:type="gint"/>
     </constant>
     <constant name="PLUGINS_BASE_VERSION_MICRO"
-              value="9"
+              value="10"
               c:type="GST_PLUGINS_BASE_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstpluginsbaseversion.h"
@@ -5692,14 +5692,14 @@ invalid Opus caps.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-           line="1131">Increments the reference count of @info.</doc>
+           line="1144">Increments the reference count of @info.</doc>
       <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                        line="280"/>
       <parameters>
         <parameter name="info">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1133">a #GstDiscovererInfo</doc>
+               line="1146">a #GstDiscovererInfo</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5708,14 +5708,14 @@ invalid Opus caps.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-           line="1140">Decrements the reference count of @info.</doc>
+           line="1153">Decrements the reference count of @info.</doc>
       <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                        line="279"/>
       <parameters>
         <parameter name="info">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1142">a #GstDiscovererInfo</doc>
+               line="1155">a #GstDiscovererInfo</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5724,14 +5724,14 @@ invalid Opus caps.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-           line="1147">Increments the reference count of @info.</doc>
+           line="1160">Increments the reference count of @info.</doc>
       <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                        line="59"/>
       <parameters>
         <parameter name="info">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1149">a #GstDiscovererStreamInfo</doc>
+               line="1162">a #GstDiscovererStreamInfo</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5740,14 +5740,14 @@ invalid Opus caps.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-           line="1156">Decrements the reference count of @info.</doc>
+           line="1169">Decrements the reference count of @info.</doc>
       <source-position filename="gst-libs/gst/pbutils/gstdiscoverer.h"
                        line="60"/>
       <parameters>
         <parameter name="info">
           <doc xml:space="preserve"
                filename="gst-libs/gst/pbutils/gstdiscoverer-types.c"
-               line="1158">a #GstDiscovererStreamInfo</doc>
+               line="1171">a #GstDiscovererStreamInfo</doc>
         </parameter>
       </parameters>
     </function-macro>
