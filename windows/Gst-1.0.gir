@@ -18237,12 +18237,12 @@ The basic use pattern of a device monitor is as follows:
                    version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="797">Create a new #GstDeviceMonitor</doc>
+             line="796">Create a new #GstDeviceMonitor</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="82"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="802">a new device monitor.</doc>
+               line="801">a new device monitor.</doc>
           <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
         </return-value>
       </constructor>
@@ -18251,7 +18251,7 @@ The basic use pattern of a device monitor is as follows:
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="620">Adds a filter for which #GstDevice will be monitored, any device that matches
+             line="619">Adds a filter for which #GstDevice will be monitored, any device that matches
 all these classes and the #GstCaps will be returned.
 
 If this function is called multiple times to add more filters, each will be
@@ -18266,7 +18266,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="638">The id of the new filter or 0 if no provider matched the filter's
+               line="637">The id of the new filter or 0 if no provider matched the filter's
  classes.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
@@ -18274,7 +18274,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="622">a device monitor</doc>
+                 line="621">a device monitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
           <parameter name="classes"
@@ -18283,7 +18283,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="623">device classes to use as filter or %NULL for any class</doc>
+                 line="622">device classes to use as filter or %NULL for any class</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="caps"
@@ -18292,7 +18292,7 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="624">the #GstCaps to filter or %NULL for ANY</doc>
+                 line="623">the #GstCaps to filter or %NULL for ANY</doc>
             <type name="Caps" c:type="GstCaps*"/>
           </parameter>
         </parameters>
@@ -18302,19 +18302,19 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="819">Gets the #GstBus of this #GstDeviceMonitor</doc>
+             line="818">Gets the #GstBus of this #GstDeviceMonitor</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="85"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="825">a #GstBus</doc>
+               line="824">a #GstBus</doc>
           <type name="Bus" c:type="GstBus*"/>
         </return-value>
         <parameters>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="821">a #GstDeviceProvider</doc>
+                 line="820">a #GstDeviceProvider</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -18324,13 +18324,13 @@ Filters must be added before the #GstDeviceMonitor is started.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="380">Gets a list of devices from all of the relevant monitors. This may actually
+             line="379">Gets a list of devices from all of the relevant monitors. This may actually
 probe the hardware if the monitor is not currently started.</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="88"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="387">a #GList of
+               line="386">a #GList of
   #GstDevice</doc>
           <type name="GLib.List" c:type="GList*">
             <type name="Device"/>
@@ -18340,7 +18340,7 @@ probe the hardware if the monitor is not currently started.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="382">A #GstDeviceProvider</doc>
+                 line="381">A #GstDeviceProvider</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -18350,14 +18350,14 @@ probe the hardware if the monitor is not currently started.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="837">Get a list of the currently selected device provider factories.
+             line="836">Get a list of the currently selected device provider factories.
 
 This</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="106"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="845">
+               line="844">
     A list of device provider factory names that are currently being
     monitored by @monitor or %NULL when nothing is being monitored.</doc>
           <array c:type="gchar**">
@@ -18368,7 +18368,7 @@ This</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="839">a #GstDeviceMonitor</doc>
+                 line="838">a #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -18378,20 +18378,20 @@ This</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="903">Get if @monitor is currently showing all devices, even those from hidden
+             line="902">Get if @monitor is currently showing all devices, even those from hidden
 providers.</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="112"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="910">%TRUE when all devices will be shown.</doc>
+               line="909">%TRUE when all devices will be shown.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="905">a #GstDeviceMonitor</doc>
+                 line="904">a #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -18401,26 +18401,26 @@ providers.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="731">Removes a filter from the #GstDeviceMonitor using the id that was returned
+             line="730">Removes a filter from the #GstDeviceMonitor using the id that was returned
 by gst_device_monitor_add_filter().</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="103"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="739">%TRUE of the filter id was valid, %FALSE otherwise</doc>
+               line="738">%TRUE of the filter id was valid, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="733">a device monitor</doc>
+                 line="732">a device monitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
           <parameter name="filter_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="734">the id of the filter</doc>
+                 line="733">the id of the filter</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -18430,7 +18430,7 @@ by gst_device_monitor_add_filter().</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="882">Set if all devices should be visible, even those devices from hidden
+             line="881">Set if all devices should be visible, even those devices from hidden
 providers. Setting @show_all to true might show some devices multiple times.</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="109"/>
         <return-value transfer-ownership="none">
@@ -18440,13 +18440,13 @@ providers. Setting @show_all to true might show some devices multiple times.</do
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="884">a #GstDeviceMonitor</doc>
+                 line="883">a #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
           <parameter name="show_all" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="885">show all devices</doc>
+                 line="884">show all devices</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -18456,14 +18456,14 @@ providers. Setting @show_all to true might show some devices multiple times.</do
               version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="476">Starts monitoring the devices, one this has succeeded, the
+             line="475">Starts monitoring the devices, one this has succeeded, the
 %GST_MESSAGE_DEVICE_ADDED and %GST_MESSAGE_DEVICE_REMOVED messages
 will be emitted on the bus when the list of devices changes.</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="92"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstdevicemonitor.c"
-               line="484">%TRUE if the device monitoring could be started, i.e. at least a
+               line="483">%TRUE if the device monitoring could be started, i.e. at least a
     single device provider was started successfully.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -18471,7 +18471,7 @@ will be emitted on the bus when the list of devices changes.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="478">A #GstDeviceMonitor</doc>
+                 line="477">A #GstDeviceMonitor</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -18479,7 +18479,7 @@ will be emitted on the bus when the list of devices changes.</doc>
       <method name="stop" c:identifier="gst_device_monitor_stop" version="1.4">
         <doc xml:space="preserve"
              filename="gst/gstdevicemonitor.c"
-             line="554">Stops monitoring the devices.</doc>
+             line="553">Stops monitoring the devices.</doc>
         <source-position filename="gst/gstdevicemonitor.h" line="95"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -18488,7 +18488,7 @@ will be emitted on the bus when the list of devices changes.</doc>
           <instance-parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstdevicemonitor.c"
-                 line="556">A #GstDeviceProvider</doc>
+                 line="555">A #GstDeviceProvider</doc>
             <type name="DeviceMonitor" c:type="GstDeviceMonitor*"/>
           </instance-parameter>
         </parameters>
@@ -31441,7 +31441,7 @@ MT safe.</doc>
       <constructor name="new_single" c:identifier="gst_iterator_new_single">
         <doc xml:space="preserve"
              filename="gst/gstiterator.c"
-             line="797">This #GstIterator is a convenient iterator for the common
+             line="798">This #GstIterator is a convenient iterator for the common
 case where a #GstIterator needs to be returned but only
 a single object has to be considered. This happens often
 for the #GstPadIterIntLinkFunction.</doc>
@@ -31449,20 +31449,20 @@ for the #GstPadIterIntLinkFunction.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstiterator.c"
-               line="807">the new #GstIterator for @object.</doc>
+               line="808">the new #GstIterator for @object.</doc>
           <type name="Iterator" c:type="GstIterator*"/>
         </return-value>
         <parameters>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="799">#GType of the passed object</doc>
+                 line="800">#GType of the passed object</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
           <parameter name="object" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="800">object that this iterator should return</doc>
+                 line="801">object that this iterator should return</doc>
             <type name="GObject.Value" c:type="const GValue*"/>
           </parameter>
         </parameters>
@@ -31490,7 +31490,7 @@ for the #GstPadIterIntLinkFunction.</doc>
       <method name="filter" c:identifier="gst_iterator_filter">
         <doc xml:space="preserve"
              filename="gst/gstiterator.c"
-             line="528">Create a new iterator from an existing iterator. The new iterator
+             line="529">Create a new iterator from an existing iterator. The new iterator
 will only return those elements that match the given compare function @func.
 The first parameter that is passed to @func is the #GValue of the current
 iterator element and the second parameter is @user_data. @func should
@@ -31501,7 +31501,7 @@ When this iterator is freed, @it will also be freed.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstiterator.c"
-               line="542">a new #GstIterator.
+               line="543">a new #GstIterator.
 
 MT safe.</doc>
           <type name="Iterator" c:type="GstIterator*"/>
@@ -31510,19 +31510,19 @@ MT safe.</doc>
           <instance-parameter name="it" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="530">The #GstIterator to filter</doc>
+                 line="531">The #GstIterator to filter</doc>
             <type name="Iterator" c:type="GstIterator*"/>
           </instance-parameter>
           <parameter name="func" transfer-ownership="none" scope="call">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="531">the compare function to select elements</doc>
+                 line="532">the compare function to select elements</doc>
             <type name="GLib.CompareFunc" c:type="GCompareFunc"/>
           </parameter>
           <parameter name="user_data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="532">user data passed to the compare function</doc>
+                 line="533">user data passed to the compare function</doc>
             <type name="GObject.Value" c:type="const GValue*"/>
           </parameter>
         </parameters>
@@ -31530,7 +31530,7 @@ MT safe.</doc>
       <method name="find_custom" c:identifier="gst_iterator_find_custom">
         <doc xml:space="preserve"
              filename="gst/gstiterator.c"
-             line="698">Find the first element in @it that matches the compare function @func.
+             line="699">Find the first element in @it that matches the compare function @func.
 @func should return 0 when the element is found. The first parameter
 to @func will be the current element of the iterator and the
 second parameter will be @user_data.
@@ -31544,7 +31544,7 @@ or if the element wasn't found.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstiterator.c"
-               line="716">Returns %TRUE if the element was found, else %FALSE.
+               line="717">Returns %TRUE if the element was found, else %FALSE.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -31553,7 +31553,7 @@ MT safe.</doc>
           <instance-parameter name="it" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="700">The #GstIterator to iterate</doc>
+                 line="701">The #GstIterator to iterate</doc>
             <type name="Iterator" c:type="GstIterator*"/>
           </instance-parameter>
           <parameter name="func"
@@ -31562,7 +31562,7 @@ MT safe.</doc>
                      closure="2">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="701">the compare function to use</doc>
+                 line="702">the compare function to use</doc>
             <type name="GLib.CompareFunc" c:type="GCompareFunc"/>
           </parameter>
           <parameter name="elem"
@@ -31571,7 +31571,7 @@ MT safe.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="702">pointer to a #GValue where to store the result</doc>
+                 line="703">pointer to a #GValue where to store the result</doc>
             <type name="GObject.Value" c:type="GValue*"/>
           </parameter>
           <parameter name="user_data"
@@ -31580,7 +31580,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="703">user data passed to the compare function</doc>
+                 line="704">user data passed to the compare function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -31588,7 +31588,7 @@ MT safe.</doc>
       <method name="fold" c:identifier="gst_iterator_fold">
         <doc xml:space="preserve"
              filename="gst/gstiterator.c"
-             line="578">Folds @func over the elements of @iter. That is to say, @func will be called
+             line="579">Folds @func over the elements of @iter. That is to say, @func will be called
 as @func (object, @ret, @user_data) for each object in @it. The normal use
 of this procedure is to accumulate the results of operating on the objects in
 @ret.
@@ -31607,7 +31607,7 @@ The iterator will not be freed.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstiterator.c"
-               line="601">A #GstIteratorResult, as described above.
+               line="602">A #GstIteratorResult, as described above.
 
 MT safe.</doc>
           <type name="IteratorResult" c:type="GstIteratorResult"/>
@@ -31616,7 +31616,7 @@ MT safe.</doc>
           <instance-parameter name="it" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="580">The #GstIterator to fold over</doc>
+                 line="581">The #GstIterator to fold over</doc>
             <type name="Iterator" c:type="GstIterator*"/>
           </instance-parameter>
           <parameter name="func"
@@ -31625,14 +31625,14 @@ MT safe.</doc>
                      closure="2">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="581">the fold function</doc>
+                 line="582">the fold function</doc>
             <type name="IteratorFoldFunction"
                   c:type="GstIteratorFoldFunction"/>
           </parameter>
           <parameter name="ret" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="582">the seed value passed to the fold function</doc>
+                 line="583">the seed value passed to the fold function</doc>
             <type name="GObject.Value" c:type="GValue*"/>
           </parameter>
           <parameter name="user_data"
@@ -31641,7 +31641,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="583">user data passed to the fold function</doc>
+                 line="584">user data passed to the fold function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -31649,13 +31649,13 @@ MT safe.</doc>
       <method name="foreach" c:identifier="gst_iterator_foreach">
         <doc xml:space="preserve"
              filename="gst/gstiterator.c"
-             line="651">Iterate over all element of @it and call the given function @func for
+             line="652">Iterate over all element of @it and call the given function @func for
 each element.</doc>
         <source-position filename="gst/gstiterator.h" line="280"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstiterator.c"
-               line="660">the result call to gst_iterator_fold(). The iterator will not be
+               line="661">the result call to gst_iterator_fold(). The iterator will not be
 freed.
 
 MT safe.</doc>
@@ -31665,7 +31665,7 @@ MT safe.</doc>
           <instance-parameter name="it" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="653">The #GstIterator to iterate</doc>
+                 line="654">The #GstIterator to iterate</doc>
             <type name="Iterator" c:type="GstIterator*"/>
           </instance-parameter>
           <parameter name="func"
@@ -31674,7 +31674,7 @@ MT safe.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="654">the function to call for each element.</doc>
+                 line="655">the function to call for each element.</doc>
             <type name="IteratorForeachFunction"
                   c:type="GstIteratorForeachFunction"/>
           </parameter>
@@ -31684,7 +31684,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstiterator.c"
-                 line="655">user data passed to the function</doc>
+                 line="656">user data passed to the function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -74260,7 +74260,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="11" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="12" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>

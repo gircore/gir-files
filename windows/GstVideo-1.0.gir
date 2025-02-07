@@ -21623,7 +21623,7 @@ the buffer and let the sink render the overlays.</doc>
       <constructor name="new" c:identifier="gst_video_overlay_composition_new">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="328">Creates a new video overlay composition object to hold one or more
+             line="378">Creates a new video overlay composition object to hold one or more
 overlay rectangles.
 
 Note that since 1.20 this allows to pass %NULL for @rectangle.</doc>
@@ -21632,7 +21632,7 @@ Note that since 1.20 this allows to pass %NULL for @rectangle.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="338">a new #GstVideoOverlayComposition. Unref with
+               line="388">a new #GstVideoOverlayComposition. Unref with
     gst_video_overlay_composition_unref() when no longer needed.</doc>
           <type name="VideoOverlayComposition"
                 c:type="GstVideoOverlayComposition*"/>
@@ -21644,7 +21644,7 @@ Note that since 1.20 this allows to pass %NULL for @rectangle.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="330">a #GstVideoOverlayRectangle to add to the
+                 line="380">a #GstVideoOverlayRectangle to add to the
     composition</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
@@ -21655,7 +21655,7 @@ Note that since 1.20 this allows to pass %NULL for @rectangle.</doc>
               c:identifier="gst_video_overlay_composition_add_rectangle">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="372">Adds an overlay rectangle to an existing overlay composition object. This
+             line="422">Adds an overlay rectangle to an existing overlay composition object. This
 must be done right after creating the overlay composition.</doc>
         <source-position filename="gst-libs/gst/video/video-overlay-composition.h"
                          line="248"/>
@@ -21666,14 +21666,14 @@ must be done right after creating the overlay composition.</doc>
           <instance-parameter name="comp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="374">a #GstVideoOverlayComposition</doc>
+                 line="424">a #GstVideoOverlayComposition</doc>
             <type name="VideoOverlayComposition"
                   c:type="GstVideoOverlayComposition*"/>
           </instance-parameter>
           <parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="375">a #GstVideoOverlayRectangle to add to the
+                 line="425">a #GstVideoOverlayRectangle to add to the
     composition</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
@@ -21683,7 +21683,7 @@ must be done right after creating the overlay composition.</doc>
       <method name="blend" c:identifier="gst_video_overlay_composition_blend">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="453">Blends the overlay rectangles in @comp on top of the raw video data
+             line="503">Blends the overlay rectangles in @comp on top of the raw video data
 contained in @video_buf. The data in @video_buf must be writable and
 mapped appropriately.
 
@@ -21698,14 +21698,14 @@ mapped with flag GST_MAP_READWRITE.</doc>
           <instance-parameter name="comp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="455">a #GstVideoOverlayComposition</doc>
+                 line="505">a #GstVideoOverlayComposition</doc>
             <type name="VideoOverlayComposition"
                   c:type="GstVideoOverlayComposition*"/>
           </instance-parameter>
           <parameter name="video_buf" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="456">a #GstVideoFrame containing raw video data in a
+                 line="506">a #GstVideoFrame containing raw video data in a
             supported format. It should be mapped using GST_MAP_READWRITE</doc>
             <type name="VideoFrame" c:type="GstVideoFrame*"/>
           </parameter>
@@ -21714,7 +21714,7 @@ mapped with flag GST_MAP_READWRITE.</doc>
       <method name="copy" c:identifier="gst_video_overlay_composition_copy">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="530">Makes a copy of @comp and all contained rectangles, so that it is possible
+             line="580">Makes a copy of @comp and all contained rectangles, so that it is possible
 to modify the composition and contained rectangles (e.g. add additional
 rectangles or change the render co-ordinates or render dimension). The
 actual overlay pixel data buffers contained in the rectangles are not
@@ -21724,7 +21724,7 @@ copied.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="540">a new #GstVideoOverlayComposition equivalent
+               line="590">a new #GstVideoOverlayComposition equivalent
     to @comp.</doc>
           <type name="VideoOverlayComposition"
                 c:type="GstVideoOverlayComposition*"/>
@@ -21733,7 +21733,7 @@ copied.</doc>
           <instance-parameter name="comp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="532">a #GstVideoOverlayComposition to copy</doc>
+                 line="582">a #GstVideoOverlayComposition to copy</doc>
             <type name="VideoOverlayComposition"
                   c:type="GstVideoOverlayComposition*"/>
           </instance-parameter>
@@ -21743,13 +21743,13 @@ copied.</doc>
               c:identifier="gst_video_overlay_composition_get_rectangle">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="422">Returns the @n-th #GstVideoOverlayRectangle contained in @comp.</doc>
+             line="472">Returns the @n-th #GstVideoOverlayRectangle contained in @comp.</doc>
         <source-position filename="gst-libs/gst/video/video-overlay-composition.h"
                          line="255"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="429">the @n-th rectangle, or NULL if @n is out of
+               line="479">the @n-th rectangle, or NULL if @n is out of
     bounds. Will not return a new reference, the caller will need to
     obtain her own reference using gst_video_overlay_rectangle_ref()
     if needed.</doc>
@@ -21760,14 +21760,14 @@ copied.</doc>
           <instance-parameter name="comp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="424">a #GstVideoOverlayComposition</doc>
+                 line="474">a #GstVideoOverlayComposition</doc>
             <type name="VideoOverlayComposition"
                   c:type="GstVideoOverlayComposition*"/>
           </instance-parameter>
           <parameter name="n" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="425">number of the rectangle to get</doc>
+                 line="475">number of the rectangle to get</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -21776,7 +21776,7 @@ copied.</doc>
               c:identifier="gst_video_overlay_composition_get_seqnum">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="607">Returns the sequence number of this composition. Sequence numbers are
+             line="657">Returns the sequence number of this composition. Sequence numbers are
 monotonically increasing and unique for overlay compositions and rectangles
 (meaning there will never be a rectangle with the same sequence number as
 a composition).</doc>
@@ -21785,14 +21785,14 @@ a composition).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="616">the sequence number of @comp</doc>
+               line="666">the sequence number of @comp</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="comp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="609">a #GstVideoOverlayComposition</doc>
+                 line="659">a #GstVideoOverlayComposition</doc>
             <type name="VideoOverlayComposition"
                   c:type="GstVideoOverlayComposition*"/>
           </instance-parameter>
@@ -21802,7 +21802,7 @@ a composition).</doc>
               c:identifier="gst_video_overlay_composition_make_writable">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="568">Takes ownership of @comp and returns a version of @comp that is writable
+             line="618">Takes ownership of @comp and returns a version of @comp that is writable
 (i.e. can be modified). Will either return @comp right away, or create a
 new writable copy of @comp and unref @comp itself. All the contained
 rectangles will also be copied, but the actual overlay pixel data buffers
@@ -21812,7 +21812,7 @@ contained in the rectangles are not copied.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="578">a writable #GstVideoOverlayComposition
+               line="628">a writable #GstVideoOverlayComposition
     equivalent to @comp.</doc>
           <type name="VideoOverlayComposition"
                 c:type="GstVideoOverlayComposition*"/>
@@ -21821,7 +21821,7 @@ contained in the rectangles are not copied.</doc>
           <instance-parameter name="comp" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="570">a #GstVideoOverlayComposition to copy</doc>
+                 line="620">a #GstVideoOverlayComposition to copy</doc>
             <type name="VideoOverlayComposition"
                   c:type="GstVideoOverlayComposition*"/>
           </instance-parameter>
@@ -21831,20 +21831,20 @@ contained in the rectangles are not copied.</doc>
               c:identifier="gst_video_overlay_composition_n_rectangles">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="406">Returns the number of #GstVideoOverlayRectangle&lt;!-- --&gt;s contained in @comp.</doc>
+             line="456">Returns the number of #GstVideoOverlayRectangle&lt;!-- --&gt;s contained in @comp.</doc>
         <source-position filename="gst-libs/gst/video/video-overlay-composition.h"
                          line="252"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="412">the number of rectangles</doc>
+               line="462">the number of rectangles</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="comp" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="408">a #GstVideoOverlayComposition</doc>
+                 line="458">a #GstVideoOverlayComposition</doc>
             <type name="VideoOverlayComposition"
                   c:type="GstVideoOverlayComposition*"/>
           </instance-parameter>
@@ -22046,7 +22046,7 @@ overlay rectangle which can be added to a composition.</doc>
                    c:identifier="gst_video_overlay_rectangle_new_raw">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="672">Creates a new video overlay rectangle with ARGB or AYUV pixel data.
+             line="722">Creates a new video overlay rectangle with ARGB or AYUV pixel data.
 The layout in case of ARGB of the components in memory is B-G-R-A
 on little-endian platforms
 (corresponding to #GST_VIDEO_FORMAT_BGRA) and A-R-G-B on big-endian
@@ -22062,7 +22062,7 @@ The pixel data buffer must have #GstVideoMeta set.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="695">a new #GstVideoOverlayRectangle. Unref with
+               line="745">a new #GstVideoOverlayRectangle. Unref with
     gst_video_overlay_rectangle_unref() when no longer needed.</doc>
           <type name="VideoOverlayRectangle"
                 c:type="GstVideoOverlayRectangle*"/>
@@ -22071,39 +22071,39 @@ The pixel data buffer must have #GstVideoMeta set.</doc>
           <parameter name="pixels" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="674">a #GstBuffer pointing to the pixel memory</doc>
+                 line="724">a #GstBuffer pointing to the pixel memory</doc>
             <type name="Gst.Buffer" c:type="GstBuffer*"/>
           </parameter>
           <parameter name="render_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="675">the X co-ordinate on the video where the top-left corner of this
+                 line="725">the X co-ordinate on the video where the top-left corner of this
     overlay rectangle should be rendered to</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="render_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="677">the Y co-ordinate on the video where the top-left corner of this
+                 line="727">the Y co-ordinate on the video where the top-left corner of this
     overlay rectangle should be rendered to</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="render_width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="679">the render width of this rectangle on the video</doc>
+                 line="729">the render width of this rectangle on the video</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="render_height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="680">the render height of this rectangle on the video</doc>
+                 line="730">the render height of this rectangle on the video</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="681">flags</doc>
+                 line="731">flags</doc>
             <type name="VideoOverlayFormatFlags"
                   c:type="GstVideoOverlayFormatFlags"/>
           </parameter>
@@ -22112,7 +22112,7 @@ The pixel data buffer must have #GstVideoMeta set.</doc>
       <method name="copy" c:identifier="gst_video_overlay_rectangle_copy">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1586">Makes a copy of @rectangle, so that it is possible to modify it
+             line="1636">Makes a copy of @rectangle, so that it is possible to modify it
 (e.g. to change the render co-ordinates or render dimension). The
 actual overlay pixel data buffers contained in the rectangle are not
 copied.</doc>
@@ -22121,7 +22121,7 @@ copied.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1595">a new #GstVideoOverlayRectangle equivalent
+               line="1645">a new #GstVideoOverlayRectangle equivalent
     to @rectangle.</doc>
           <type name="VideoOverlayRectangle"
                 c:type="GstVideoOverlayRectangle*"/>
@@ -22130,7 +22130,7 @@ copied.</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1588">a #GstVideoOverlayRectangle to copy</doc>
+                 line="1638">a #GstVideoOverlayRectangle to copy</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
@@ -22140,7 +22140,7 @@ copied.</doc>
               c:identifier="gst_video_overlay_rectangle_get_flags">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1511">Retrieves the flags associated with a #GstVideoOverlayRectangle.
+             line="1561">Retrieves the flags associated with a #GstVideoOverlayRectangle.
 This is useful if the caller can handle both premultiplied alpha and
 non premultiplied alpha, for example. By knowing whether the rectangle
 uses premultiplied or not, it can request the pixel data in the format
@@ -22150,7 +22150,7 @@ it is stored in, to avoid unnecessary conversion.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1521">the #GstVideoOverlayFormatFlags associated with the rectangle.</doc>
+               line="1571">the #GstVideoOverlayFormatFlags associated with the rectangle.</doc>
           <type name="VideoOverlayFormatFlags"
                 c:type="GstVideoOverlayFormatFlags"/>
         </return-value>
@@ -22158,7 +22158,7 @@ it is stored in, to avoid unnecessary conversion.</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1513">a #GstVideoOverlayRectangle</doc>
+                 line="1563">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
@@ -22168,20 +22168,20 @@ it is stored in, to avoid unnecessary conversion.</doc>
               c:identifier="gst_video_overlay_rectangle_get_global_alpha">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1532">Retrieves the global-alpha value associated with a #GstVideoOverlayRectangle.</doc>
+             line="1582">Retrieves the global-alpha value associated with a #GstVideoOverlayRectangle.</doc>
         <source-position filename="gst-libs/gst/video/video-overlay-composition.h"
                          line="181"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1538">the global-alpha value associated with the rectangle.</doc>
+               line="1588">the global-alpha value associated with the rectangle.</doc>
           <type name="gfloat" c:type="gfloat"/>
         </return-value>
         <parameters>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1534">a #GstVideoOverlayRectangle</doc>
+                 line="1584">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
@@ -22194,7 +22194,7 @@ it is stored in, to avoid unnecessary conversion.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1390">a #GstBuffer holding the ARGB pixel data with
+               line="1440">a #GstBuffer holding the ARGB pixel data with
    width and height of the render dimensions as per
    gst_video_overlay_rectangle_get_render_rectangle(). This function does
    not return a reference, the caller should obtain a reference of her own
@@ -22205,14 +22205,14 @@ it is stored in, to avoid unnecessary conversion.</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1383">a #GstVideoOverlayRectangle</doc>
+                 line="1433">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1384">flags
+                 line="1434">flags
    If a global_alpha value != 1 is set for the rectangle, the caller
    should set the #GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA flag
    if he wants to apply global-alpha himself. If the flag is not set
@@ -22229,7 +22229,7 @@ it is stored in, to avoid unnecessary conversion.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1413">a #GstBuffer holding the AYUV pixel data with
+               line="1463">a #GstBuffer holding the AYUV pixel data with
    width and height of the render dimensions as per
    gst_video_overlay_rectangle_get_render_rectangle(). This function does
    not return a reference, the caller should obtain a reference of her own
@@ -22240,14 +22240,14 @@ it is stored in, to avoid unnecessary conversion.</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1406">a #GstVideoOverlayRectangle</doc>
+                 line="1456">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1407">flags
+                 line="1457">flags
    If a global_alpha value != 1 is set for the rectangle, the caller
    should set the #GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA flag
    if he wants to apply global-alpha himself. If the flag is not set
@@ -22264,7 +22264,7 @@ it is stored in, to avoid unnecessary conversion.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1366">a #GstBuffer holding the pixel data with
+               line="1416">a #GstBuffer holding the pixel data with
    format as originally provided and specified in video meta with
    width and height of the render dimensions as per
    gst_video_overlay_rectangle_get_render_rectangle(). This function does
@@ -22276,14 +22276,14 @@ it is stored in, to avoid unnecessary conversion.</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1359">a #GstVideoOverlayRectangle</doc>
+                 line="1409">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1360">flags
+                 line="1410">flags
    If a global_alpha value != 1 is set for the rectangle, the caller
    should set the #GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA flag
    if he wants to apply global-alpha himself. If the flag is not set
@@ -22297,7 +22297,7 @@ it is stored in, to avoid unnecessary conversion.</doc>
               c:identifier="gst_video_overlay_rectangle_get_pixels_unscaled_argb">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1455">Retrieves the pixel data as it is. This is useful if the caller can
+             line="1505">Retrieves the pixel data as it is. This is useful if the caller can
 do the scaling itself when handling the overlaying. The rectangle will
 need to be scaled to the render dimensions, which can be retrieved using
 gst_video_overlay_rectangle_get_render_rectangle().</doc>
@@ -22306,7 +22306,7 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1469">a #GstBuffer holding the ARGB pixel data with
+               line="1519">a #GstBuffer holding the ARGB pixel data with
    #GstVideoMeta set. This function does not return a reference, the caller
    should obtain a reference of her own with gst_buffer_ref() if needed.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
@@ -22315,14 +22315,14 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1457">a #GstVideoOverlayRectangle</doc>
+                 line="1507">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1458">flags.
+                 line="1508">flags.
    If a global_alpha value != 1 is set for the rectangle, the caller
    should set the #GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA flag
    if he wants to apply global-alpha himself. If the flag is not set
@@ -22336,7 +22336,7 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
               c:identifier="gst_video_overlay_rectangle_get_pixels_unscaled_ayuv">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1483">Retrieves the pixel data as it is. This is useful if the caller can
+             line="1533">Retrieves the pixel data as it is. This is useful if the caller can
 do the scaling itself when handling the overlaying. The rectangle will
 need to be scaled to the render dimensions, which can be retrieved using
 gst_video_overlay_rectangle_get_render_rectangle().</doc>
@@ -22345,7 +22345,7 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1497">a #GstBuffer holding the AYUV pixel data with
+               line="1547">a #GstBuffer holding the AYUV pixel data with
    #GstVideoMeta set. This function does not return a reference, the caller
    should obtain a reference of her own with gst_buffer_ref() if needed.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
@@ -22354,14 +22354,14 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1485">a #GstVideoOverlayRectangle</doc>
+                 line="1535">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1486">flags.
+                 line="1536">flags.
    If a global_alpha value != 1 is set for the rectangle, the caller
    should set the #GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA flag
    if he wants to apply global-alpha himself. If the flag is not set
@@ -22375,7 +22375,7 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
               c:identifier="gst_video_overlay_rectangle_get_pixels_unscaled_raw">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1427">Retrieves the pixel data as it is. This is useful if the caller can
+             line="1477">Retrieves the pixel data as it is. This is useful if the caller can
 do the scaling itself when handling the overlaying. The rectangle will
 need to be scaled to the render dimensions, which can be retrieved using
 gst_video_overlay_rectangle_get_render_rectangle().</doc>
@@ -22384,7 +22384,7 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1441">a #GstBuffer holding the pixel data with
+               line="1491">a #GstBuffer holding the pixel data with
    #GstVideoMeta set. This function does not return a reference, the caller
    should obtain a reference of her own with gst_buffer_ref() if needed.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
@@ -22393,14 +22393,14 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1429">a #GstVideoOverlayRectangle</doc>
+                 line="1479">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1430">flags.
+                 line="1480">flags.
    If a global_alpha value != 1 is set for the rectangle, the caller
    should set the #GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA flag
    if he wants to apply global-alpha himself. If the flag is not set
@@ -22414,21 +22414,21 @@ gst_video_overlay_rectangle_get_render_rectangle().</doc>
               c:identifier="gst_video_overlay_rectangle_get_render_rectangle">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="772">Retrieves the render position and render dimension of the overlay
+             line="822">Retrieves the render position and render dimension of the overlay
 rectangle on the video.</doc>
         <source-position filename="gst-libs/gst/video/video-overlay-composition.h"
                          line="147"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="783">TRUE if valid render dimensions were retrieved.</doc>
+               line="833">TRUE if valid render dimensions were retrieved.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="774">a #GstVideoOverlayRectangle</doc>
+                 line="824">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
@@ -22440,7 +22440,7 @@ rectangle on the video.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="775">address where to store the X render offset</doc>
+                 line="825">address where to store the X render offset</doc>
             <type name="gint" c:type="gint*"/>
           </parameter>
           <parameter name="render_y"
@@ -22451,7 +22451,7 @@ rectangle on the video.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="776">address where to store the Y render offset</doc>
+                 line="826">address where to store the Y render offset</doc>
             <type name="gint" c:type="gint*"/>
           </parameter>
           <parameter name="render_width"
@@ -22462,7 +22462,7 @@ rectangle on the video.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="777">address where to store the render width</doc>
+                 line="827">address where to store the render width</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
           <parameter name="render_height"
@@ -22473,7 +22473,7 @@ rectangle on the video.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="778">address where to store the render height</doc>
+                 line="828">address where to store the render height</doc>
             <type name="guint" c:type="guint*"/>
           </parameter>
         </parameters>
@@ -22482,7 +22482,7 @@ rectangle on the video.</doc>
               c:identifier="gst_video_overlay_rectangle_get_seqnum">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1615">Returns the sequence number of this rectangle. Sequence numbers are
+             line="1665">Returns the sequence number of this rectangle. Sequence numbers are
 monotonically increasing and unique for overlay compositions and rectangles
 (meaning there will never be a rectangle with the same sequence number as
 a composition).
@@ -22501,14 +22501,14 @@ pixel-data.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="1634">the sequence number of @rectangle</doc>
+               line="1684">the sequence number of @rectangle</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1617">a #GstVideoOverlayRectangle</doc>
+                 line="1667">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
@@ -22518,7 +22518,7 @@ pixel-data.</doc>
               c:identifier="gst_video_overlay_rectangle_set_global_alpha">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="1549">Sets the global alpha value associated with a #GstVideoOverlayRectangle. Per-
+             line="1599">Sets the global alpha value associated with a #GstVideoOverlayRectangle. Per-
 pixel alpha values are multiplied with this value. Valid
 values: 0 &lt;= global_alpha &lt;= 1; 1 to deactivate.
 
@@ -22535,14 +22535,14 @@ gst_video_overlay_composition_copy().</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1551">a #GstVideoOverlayRectangle</doc>
+                 line="1601">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="global_alpha" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="1552">Global alpha value (0 to 1.0)</doc>
+                 line="1602">Global alpha value (0 to 1.0)</doc>
             <type name="gfloat" c:type="gfloat"/>
           </parameter>
         </parameters>
@@ -22551,7 +22551,7 @@ gst_video_overlay_composition_copy().</doc>
               c:identifier="gst_video_overlay_rectangle_set_render_rectangle">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="804">Sets the render position and dimensions of the rectangle on the video.
+             line="854">Sets the render position and dimensions of the rectangle on the video.
 This function is mainly for elements that modify the size of the video
 in some way (e.g. through scaling or cropping) and need to adjust the
 details of any overlays to match the operation that changed the size.
@@ -22569,32 +22569,32 @@ gst_video_overlay_composition_copy().</doc>
           <instance-parameter name="rectangle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="806">a #GstVideoOverlayRectangle</doc>
+                 line="856">a #GstVideoOverlayRectangle</doc>
             <type name="VideoOverlayRectangle"
                   c:type="GstVideoOverlayRectangle*"/>
           </instance-parameter>
           <parameter name="render_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="807">render X position of rectangle on video</doc>
+                 line="857">render X position of rectangle on video</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="render_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="808">render Y position of rectangle on video</doc>
+                 line="858">render Y position of rectangle on video</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="render_width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="809">render width of rectangle</doc>
+                 line="859">render width of rectangle</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="render_height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst-libs/gst/video/video-overlay-composition.c"
-                 line="810">render height of rectangle</doc>
+                 line="860">render height of rectangle</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -26024,7 +26024,7 @@ gst_buffer_add_video_meta_full() with them.</doc>
               c:identifier="gst_buffer_add_video_overlay_composition_meta">
       <doc xml:space="preserve"
            filename="gst-libs/gst/video/video-overlay-composition.c"
-           line="272">Sets an overlay composition on a buffer. The buffer will obtain its own
+           line="322">Sets an overlay composition on a buffer. The buffer will obtain its own
 reference to the composition, meaning this function does not take ownership
 of @comp.</doc>
       <source-position filename="gst-libs/gst/video/video-overlay-composition.h"
@@ -26032,7 +26032,7 @@ of @comp.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gst-libs/gst/video/video-overlay-composition.c"
-             line="281">a #GstVideoOverlayCompositionMeta</doc>
+             line="331">a #GstVideoOverlayCompositionMeta</doc>
         <type name="VideoOverlayCompositionMeta"
               c:type="GstVideoOverlayCompositionMeta*"/>
       </return-value>
@@ -26040,7 +26040,7 @@ of @comp.</doc>
         <parameter name="buf" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="274">a #GstBuffer</doc>
+               line="324">a #GstBuffer</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </parameter>
         <parameter name="comp"
@@ -26049,7 +26049,7 @@ of @comp.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gst-libs/gst/video/video-overlay-composition.c"
-               line="275">a #GstVideoOverlayComposition</doc>
+               line="325">a #GstVideoOverlayComposition</doc>
           <type name="VideoOverlayComposition"
                 c:type="GstVideoOverlayComposition*"/>
         </parameter>
