@@ -9973,7 +9973,7 @@ savings time transitions are either 23 or 25 hours in length).</doc>
       <constructor name="new" c:identifier="g_date_time_new" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1581">Creates a new #GDateTime corresponding to the given date and time in
+             line="1589">Creates a new #GDateTime corresponding to the given date and time in
 the time zone @tz.
 
 The @year must be between 1 and 9999, @month between 1 and 12 and @day
@@ -10005,50 +10005,50 @@ when you are done with it.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1620">a new #GDateTime, or %NULL</doc>
+               line="1628">a new #GDateTime, or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
         <parameters>
           <parameter name="tz" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1583">a #GTimeZone</doc>
+                 line="1591">a #GTimeZone</doc>
             <type name="TimeZone" c:type="GTimeZone*"/>
           </parameter>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1584">the year component of the date</doc>
+                 line="1592">the year component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="month" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1585">the month component of the date</doc>
+                 line="1593">the month component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="day" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1586">the day component of the date</doc>
+                 line="1594">the day component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="hour" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1587">the hour component of the date</doc>
+                 line="1595">the hour component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="minute" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1588">the minute component of the date</doc>
+                 line="1596">the minute component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="seconds" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1589">the number of seconds past the minute</doc>
+                 line="1597">the number of seconds past the minute</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -10058,7 +10058,7 @@ when you are done with it.</doc>
                    version="2.56">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1490">Creates a #GDateTime corresponding to the given
+             line="1494">Creates a #GDateTime corresponding to the given
 [ISO 8601 formatted string](https://en.wikipedia.org/wiki/ISO_8601)
 @text. ISO 8601 strings of the form `&lt;date&gt;&lt;sep&gt;&lt;time&gt;&lt;tz&gt;` are supported, with
 some extensions from [RFC 3339](https://tools.ietf.org/html/rfc3339) as
@@ -10105,14 +10105,14 @@ when you are done with it.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1540">a new #GDateTime, or %NULL</doc>
+               line="1544">a new #GDateTime, or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
         <parameters>
           <parameter name="text" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1492">an ISO 8601 formatted time string.</doc>
+                 line="1496">an ISO 8601 formatted time string.</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="default_tz"
@@ -10121,7 +10121,7 @@ when you are done with it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1493">a #GTimeZone to use if the text doesn't contain a
+                 line="1497">a #GTimeZone to use if the text doesn't contain a
                          timezone, or %NULL.</doc>
             <type name="TimeZone" c:type="GTimeZone*"/>
           </parameter>
@@ -10330,7 +10330,7 @@ when you are done with it.</doc>
                    version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1687">Creates a new #GDateTime corresponding to the given date and time in
+             line="1695">Creates a new #GDateTime corresponding to the given date and time in
 the local time zone.
 
 This call is equivalent to calling g_date_time_new() with the time
@@ -10339,44 +10339,44 @@ zone returned by g_time_zone_new_local().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1702">a #GDateTime, or %NULL</doc>
+               line="1710">a #GDateTime, or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
         <parameters>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1689">the year component of the date</doc>
+                 line="1697">the year component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="month" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1690">the month component of the date</doc>
+                 line="1698">the month component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="day" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1691">the day component of the date</doc>
+                 line="1699">the day component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="hour" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1692">the hour component of the date</doc>
+                 line="1700">the hour component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="minute" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1693">the minute component of the date</doc>
+                 line="1701">the minute component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="seconds" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1694">the number of seconds past the minute</doc>
+                 line="1702">the number of seconds past the minute</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -10451,7 +10451,7 @@ zone returned by g_time_zone_new_utc().</doc>
                    version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1724">Creates a new #GDateTime corresponding to the given date and time in
+             line="1732">Creates a new #GDateTime corresponding to the given date and time in
 UTC.
 
 This call is equivalent to calling g_date_time_new() with the time
@@ -10460,44 +10460,44 @@ zone returned by g_time_zone_new_utc().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1739">a #GDateTime, or %NULL</doc>
+               line="1747">a #GDateTime, or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
         <parameters>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1726">the year component of the date</doc>
+                 line="1734">the year component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="month" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1727">the month component of the date</doc>
+                 line="1735">the month component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="day" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1728">the day component of the date</doc>
+                 line="1736">the day component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="hour" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1729">the hour component of the date</doc>
+                 line="1737">the hour component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="minute" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1730">the minute component of the date</doc>
+                 line="1738">the minute component of the date</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="seconds" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1731">the number of seconds past the minute</doc>
+                 line="1739">the number of seconds past the minute</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -10505,12 +10505,12 @@ zone returned by g_time_zone_new_utc().</doc>
       <method name="add" c:identifier="g_date_time_add" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1763">Creates a copy of @datetime and adds the specified timespan to the copy.</doc>
+             line="1771">Creates a copy of @datetime and adds the specified timespan to the copy.</doc>
         <source-position filename="glib/gdatetime.h" line="182"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1770">the newly created #GDateTime which
+               line="1778">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10518,13 +10518,13 @@ zone returned by g_time_zone_new_utc().</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1765">a #GDateTime</doc>
+                 line="1773">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="timespan" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1766">a #GTimeSpan</doc>
+                 line="1774">a #GTimeSpan</doc>
             <type name="TimeSpan" c:type="GTimeSpan"/>
           </parameter>
         </parameters>
@@ -10534,13 +10534,13 @@ zone returned by g_time_zone_new_utc().</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1893">Creates a copy of @datetime and adds the specified number of days to the
+             line="1901">Creates a copy of @datetime and adds the specified number of days to the
 copy. Add negative values to subtract days.</doc>
         <source-position filename="glib/gdatetime.h" line="199"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1901">the newly created #GDateTime which
+               line="1909">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10548,13 +10548,13 @@ copy. Add negative values to subtract days.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1895">a #GDateTime</doc>
+                 line="1903">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="days" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1896">the number of days</doc>
+                 line="1904">the number of days</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -10564,13 +10564,13 @@ copy. Add negative values to subtract days.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1979">Creates a new #GDateTime adding the specified values to the current date and
+             line="1987">Creates a new #GDateTime adding the specified values to the current date and
 time in @datetime. Add negative values to subtract.</doc>
         <source-position filename="glib/gdatetime.h" line="217"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1992">the newly created #GDateTime which
+               line="2000">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10578,43 +10578,43 @@ time in @datetime. Add negative values to subtract.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1981">a #GDateTime</doc>
+                 line="1989">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="years" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1982">the number of years to add</doc>
+                 line="1990">the number of years to add</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="months" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1983">the number of months to add</doc>
+                 line="1991">the number of months to add</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="days" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1984">the number of days to add</doc>
+                 line="1992">the number of days to add</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="hours" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1985">the number of hours to add</doc>
+                 line="1993">the number of hours to add</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="minutes" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1986">the number of minutes to add</doc>
+                 line="1994">the number of minutes to add</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="seconds" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1987">the number of seconds to add</doc>
+                 line="1995">the number of seconds to add</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -10624,13 +10624,13 @@ time in @datetime. Add negative values to subtract.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1918">Creates a copy of @datetime and adds the specified number of hours.
+             line="1926">Creates a copy of @datetime and adds the specified number of hours.
 Add negative values to subtract hours.</doc>
         <source-position filename="glib/gdatetime.h" line="204"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1926">the newly created #GDateTime which
+               line="1934">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10638,13 +10638,13 @@ Add negative values to subtract hours.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1920">a #GDateTime</doc>
+                 line="1928">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="hours" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1921">the number of hours to add</doc>
+                 line="1929">the number of hours to add</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -10654,13 +10654,13 @@ Add negative values to subtract hours.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1938">Creates a copy of @datetime adding the specified number of minutes.
+             line="1946">Creates a copy of @datetime adding the specified number of minutes.
 Add negative values to subtract minutes.</doc>
         <source-position filename="glib/gdatetime.h" line="208"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1946">the newly created #GDateTime which
+               line="1954">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10668,13 +10668,13 @@ Add negative values to subtract minutes.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1940">a #GDateTime</doc>
+                 line="1948">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="minutes" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1941">the number of minutes to add</doc>
+                 line="1949">the number of minutes to add</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -10684,7 +10684,7 @@ Add negative values to subtract minutes.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1823">Creates a copy of @datetime and adds the specified number of months to the
+             line="1831">Creates a copy of @datetime and adds the specified number of months to the
 copy. Add negative values to subtract months.
 
 The day of the month of the resulting #GDateTime is clamped to the number
@@ -10695,7 +10695,7 @@ year), the result would be 29th February.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1836">the newly created #GDateTime which
+               line="1844">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10703,13 +10703,13 @@ year), the result would be 29th February.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1825">a #GDateTime</doc>
+                 line="1833">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="months" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1826">the number of months</doc>
+                 line="1834">the number of months</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -10719,13 +10719,13 @@ year), the result would be 29th February.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1959">Creates a copy of @datetime and adds the specified number of seconds.
+             line="1967">Creates a copy of @datetime and adds the specified number of seconds.
 Add negative values to subtract seconds.</doc>
         <source-position filename="glib/gdatetime.h" line="212"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1967">the newly created #GDateTime which
+               line="1975">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10733,13 +10733,13 @@ Add negative values to subtract seconds.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1961">a #GDateTime</doc>
+                 line="1969">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="seconds" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1962">the number of seconds to add</doc>
+                 line="1970">the number of seconds to add</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -10749,13 +10749,13 @@ Add negative values to subtract seconds.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1871">Creates a copy of @datetime and adds the specified number of weeks to the
+             line="1879">Creates a copy of @datetime and adds the specified number of weeks to the
 copy. Add negative values to subtract weeks.</doc>
         <source-position filename="glib/gdatetime.h" line="195"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1879">the newly created #GDateTime which
+               line="1887">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10763,13 +10763,13 @@ copy. Add negative values to subtract weeks.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1873">a #GDateTime</doc>
+                 line="1881">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="weeks" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1874">the number of weeks</doc>
+                 line="1882">the number of weeks</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -10779,7 +10779,7 @@ copy. Add negative values to subtract weeks.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="1785">Creates a copy of @datetime and adds the specified number of years to the
+             line="1793">Creates a copy of @datetime and adds the specified number of years to the
 copy. Add negative values to subtract years.
 
 As with g_date_time_add_months(), if the resulting date would be 29th
@@ -10788,7 +10788,7 @@ February on a non-leap year, the day will be clamped to 28th February.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="1796">the newly created #GDateTime which
+               line="1804">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -10796,13 +10796,13 @@ February on a non-leap year, the day will be clamped to 28th February.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1787">a #GDateTime</doc>
+                 line="1795">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="years" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="1788">the number of years</doc>
+                 line="1796">the number of years</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -10810,13 +10810,13 @@ February on a non-leap year, the day will be clamped to 28th February.</doc>
       <method name="compare" c:identifier="g_date_time_compare" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2080">A comparison function for #GDateTimes that is suitable
+             line="2088">A comparison function for #GDateTimes that is suitable
 as a #GCompareFunc. Both #GDateTimes must be non-%NULL.</doc>
         <source-position filename="glib/gdatetime.h" line="226"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2088">-1, 0 or 1 if @dt1 is less than, equal to or greater
+               line="2096">-1, 0 or 1 if @dt1 is less than, equal to or greater
   than @dt2.</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
@@ -10824,13 +10824,13 @@ as a #GCompareFunc. Both #GDateTimes must be non-%NULL.</doc>
           <instance-parameter name="dt1" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2082">first #GDateTime to compare</doc>
+                 line="2090">first #GDateTime to compare</doc>
             <type name="DateTime" c:type="gconstpointer"/>
           </instance-parameter>
           <parameter name="dt2" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2083">second #GDateTime to compare</doc>
+                 line="2091">second #GDateTime to compare</doc>
             <type name="DateTime" c:type="gconstpointer"/>
           </parameter>
         </parameters>
@@ -10840,14 +10840,14 @@ as a #GCompareFunc. Both #GDateTimes must be non-%NULL.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2111">Calculates the difference in time between @end and @begin.  The
+             line="2119">Calculates the difference in time between @end and @begin.  The
 #GTimeSpan that is returned is effectively @end - @begin (ie:
 positive if the first parameter is larger).</doc>
         <source-position filename="glib/gdatetime.h" line="229"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2120">the difference between the two #GDateTime, as a time
+               line="2128">the difference between the two #GDateTime, as a time
   span expressed in microseconds.</doc>
           <type name="TimeSpan" c:type="GTimeSpan"/>
         </return-value>
@@ -10855,13 +10855,13 @@ positive if the first parameter is larger).</doc>
           <instance-parameter name="end" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2113">a #GDateTime</doc>
+                 line="2121">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="begin" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2114">a #GDateTime</doc>
+                 line="2122">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </parameter>
         </parameters>
@@ -10869,7 +10869,7 @@ positive if the first parameter is larger).</doc>
       <method name="equal" c:identifier="g_date_time_equal" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2154">Checks to see if @dt1 and @dt2 are equal.
+             line="2162">Checks to see if @dt1 and @dt2 are equal.
 
 Equal here means that they represent the same moment after converting
 them to the same time zone.</doc>
@@ -10877,20 +10877,20 @@ them to the same time zone.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2164">%TRUE if @dt1 and @dt2 are equal</doc>
+               line="2172">%TRUE if @dt1 and @dt2 are equal</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="dt1" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2156">a #GDateTime</doc>
+                 line="2164">a #GDateTime</doc>
             <type name="DateTime" c:type="gconstpointer"/>
           </instance-parameter>
           <parameter name="dt2" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2157">a #GDateTime</doc>
+                 line="2165">a #GDateTime</doc>
             <type name="DateTime" c:type="gconstpointer"/>
           </parameter>
         </parameters>
@@ -10898,7 +10898,7 @@ them to the same time zone.</doc>
       <method name="format" c:identifier="g_date_time_format" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="3649">Creates a newly allocated string representing the requested @format.
+             line="3657">Creates a newly allocated string representing the requested @format.
 
 The format strings understood by this function are a subset of the
 `strftime()` format language as specified by C99.  The `%D`, `%U` and `%W`
@@ -11026,7 +11026,7 @@ names, for example.
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="3780">a newly allocated string formatted to
+               line="3788">a newly allocated string formatted to
    the requested format or %NULL in the case that there was an error (such
    as a format specifier not being supported in the current locale). The
    string should be freed with g_free().</doc>
@@ -11036,13 +11036,13 @@ names, for example.
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="3651">A #GDateTime</doc>
+                 line="3659">A #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="3652">a valid UTF-8 string, containing the format for the
+                 line="3660">a valid UTF-8 string, containing the format for the
          #GDateTime</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
@@ -11053,7 +11053,7 @@ names, for example.
               version="2.62">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="3817">Format @datetime in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601),
+             line="3825">Format @datetime in [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601),
 including the date, time and time zone, and return that as a UTF-8 encoded
 string.
 
@@ -11062,7 +11062,7 @@ Since GLib 2.66, this will output to sub-second precision if needed.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="3827">a newly allocated string formatted in
+               line="3835">a newly allocated string formatted in
   ISO 8601 format or %NULL in the case that there was an error. The string
   should be freed with g_free().</doc>
           <type name="utf8" c:type="gchar*"/>
@@ -11071,7 +11071,7 @@ Since GLib 2.66, this will output to sub-second precision if needed.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="3819">A #GDateTime</doc>
+                 line="3827">A #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11081,20 +11081,20 @@ Since GLib 2.66, this will output to sub-second precision if needed.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2317">Retrieves the day of the month represented by @datetime in the gregorian
+             line="2325">Retrieves the day of the month represented by @datetime in the gregorian
 calendar.</doc>
         <source-position filename="glib/gdatetime.h" line="248"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2324">the day of the month</doc>
+               line="2332">the day of the month</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2319">a #GDateTime</doc>
+                 line="2327">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11104,20 +11104,20 @@ calendar.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2465">Retrieves the ISO 8601 day of the week on which @datetime falls (1 is
+             line="2473">Retrieves the ISO 8601 day of the week on which @datetime falls (1 is
 Monday, 2 is Tuesday... 7 is Sunday).</doc>
         <source-position filename="glib/gdatetime.h" line="255"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2472">the day of the week</doc>
+               line="2480">the day of the week</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2467">a #GDateTime</doc>
+                 line="2475">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11127,20 +11127,20 @@ Monday, 2 is Tuesday... 7 is Sunday).</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2485">Retrieves the day of the year represented by @datetime in the Gregorian
+             line="2493">Retrieves the day of the year represented by @datetime in the Gregorian
 calendar.</doc>
         <source-position filename="glib/gdatetime.h" line="258"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2492">the day of the year</doc>
+               line="2500">the day of the year</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2487">a #GDateTime</doc>
+                 line="2495">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11150,19 +11150,19 @@ calendar.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2509">Retrieves the hour of the day represented by @datetime</doc>
+             line="2517">Retrieves the hour of the day represented by @datetime</doc>
         <source-position filename="glib/gdatetime.h" line="261"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2515">the hour of the day</doc>
+               line="2523">the hour of the day</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2511">a #GDateTime</doc>
+                 line="2519">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11172,19 +11172,19 @@ calendar.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2563">Retrieves the microsecond of the date represented by @datetime</doc>
+             line="2571">Retrieves the microsecond of the date represented by @datetime</doc>
         <source-position filename="glib/gdatetime.h" line="267"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2569">the microsecond of the second</doc>
+               line="2577">the microsecond of the second</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2565">a #GDateTime</doc>
+                 line="2573">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11194,19 +11194,19 @@ calendar.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2527">Retrieves the minute of the hour represented by @datetime</doc>
+             line="2535">Retrieves the minute of the hour represented by @datetime</doc>
         <source-position filename="glib/gdatetime.h" line="263"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2533">the minute of the hour</doc>
+               line="2541">the minute of the hour</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2529">a #GDateTime</doc>
+                 line="2537">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11216,20 +11216,20 @@ calendar.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2294">Retrieves the month of the year represented by @datetime in the Gregorian
+             line="2302">Retrieves the month of the year represented by @datetime in the Gregorian
 calendar.</doc>
         <source-position filename="glib/gdatetime.h" line="246"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2301">the month represented by @datetime</doc>
+               line="2309">the month represented by @datetime</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2296">a #GDateTime</doc>
+                 line="2304">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11239,19 +11239,19 @@ calendar.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2545">Retrieves the second of the minute represented by @datetime</doc>
+             line="2553">Retrieves the second of the minute represented by @datetime</doc>
         <source-position filename="glib/gdatetime.h" line="265"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2551">the second represented by @datetime</doc>
+               line="2559">the second represented by @datetime</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2547">a #GDateTime</doc>
+                 line="2555">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11261,20 +11261,20 @@ calendar.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2581">Retrieves the number of seconds since the start of the last minute,
+             line="2589">Retrieves the number of seconds since the start of the last minute,
 including the fractional part.</doc>
         <source-position filename="glib/gdatetime.h" line="269"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2588">the number of seconds</doc>
+               line="2596">the number of seconds</doc>
           <type name="gdouble" c:type="gdouble"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2583">a #GDateTime</doc>
+                 line="2591">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11284,19 +11284,19 @@ including the fractional part.</doc>
               version="2.58">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2714">Get the time zone for this @datetime.</doc>
+             line="2722">Get the time zone for this @datetime.</doc>
         <source-position filename="glib/gdatetime.h" line="285"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2720">the time zone</doc>
+               line="2728">the time zone</doc>
           <type name="TimeZone" c:type="GTimeZone*"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2716">a #GDateTime</doc>
+                 line="2724">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11306,7 +11306,7 @@ including the fractional part.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2732">Determines the time zone abbreviation to be used at the time and in
+             line="2740">Determines the time zone abbreviation to be used at the time and in
 the time zone of @datetime.
 
 For example, in Toronto this is currently "EST" during the winter
@@ -11316,7 +11316,7 @@ time is in effect.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2743">the time zone abbreviation. The returned
+               line="2751">the time zone abbreviation. The returned
          string is owned by the #GDateTime and it should not be
          modified or freed</doc>
           <type name="utf8" c:type="const gchar*"/>
@@ -11325,7 +11325,7 @@ time is in effect.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2734">a #GDateTime</doc>
+                 line="2742">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11335,7 +11335,7 @@ time is in effect.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2684">Determines the offset to UTC in effect at the time and in the time
+             line="2692">Determines the offset to UTC in effect at the time and in the time
 zone of @datetime.
 
 The offset is the number of microseconds that you add to UTC time to
@@ -11347,7 +11347,7 @@ If @datetime represents UTC time, then the offset is always zero.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2697">the number of microseconds that should be added to UTC to
+               line="2705">the number of microseconds that should be added to UTC to
          get the local time</doc>
           <type name="TimeSpan" c:type="GTimeSpan"/>
         </return-value>
@@ -11355,7 +11355,7 @@ If @datetime represents UTC time, then the offset is always zero.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2686">a #GDateTime</doc>
+                 line="2694">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11365,7 +11365,7 @@ If @datetime represents UTC time, then the offset is always zero.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2353">Returns the ISO 8601 week-numbering year in which the week containing
+             line="2361">Returns the ISO 8601 week-numbering year in which the week containing
 @datetime falls.
 
 This function, taken together with g_date_time_get_week_of_year() and
@@ -11400,14 +11400,14 @@ Monday, so this function never returns 0.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2389">the ISO 8601 week-numbering year for @datetime</doc>
+               line="2397">the ISO 8601 week-numbering year for @datetime</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2355">a #GDateTime</doc>
+                 line="2363">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11417,7 +11417,7 @@ Monday, so this function never returns 0.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2429">Returns the ISO 8601 week number for the week containing @datetime.
+             line="2437">Returns the ISO 8601 week number for the week containing @datetime.
 The ISO 8601 week number is the same for every day of the week (from
 Moday through Sunday).  That can produce some unusual results
 (described below).
@@ -11436,14 +11436,14 @@ if 4 or more days of that week are contained within the new year.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2449">the ISO 8601 week number for @datetime.</doc>
+               line="2457">the ISO 8601 week number for @datetime.</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2431">a #GDateTime</doc>
+                 line="2439">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11453,19 +11453,19 @@ if 4 or more days of that week are contained within the new year.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2272">Retrieves the year represented by @datetime in the Gregorian calendar.</doc>
+             line="2280">Retrieves the year represented by @datetime in the Gregorian calendar.</doc>
         <source-position filename="glib/gdatetime.h" line="244"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2278">the year represented by @datetime</doc>
+               line="2286">the year represented by @datetime</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2274">A #GDateTime</doc>
+                 line="2282">A #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11473,7 +11473,7 @@ if 4 or more days of that week are contained within the new year.</doc>
       <method name="get_ymd" c:identifier="g_date_time_get_ymd" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2176">Retrieves the Gregorian day, month, and year of a given #GDateTime.</doc>
+             line="2184">Retrieves the Gregorian day, month, and year of a given #GDateTime.</doc>
         <source-position filename="glib/gdatetime.h" line="238"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -11482,7 +11482,7 @@ if 4 or more days of that week are contained within the new year.</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2178">a #GDateTime.</doc>
+                 line="2186">a #GDateTime.</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="year"
@@ -11493,7 +11493,7 @@ if 4 or more days of that week are contained within the new year.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2179">the return location for the gregorian year, or %NULL.</doc>
+                 line="2187">the return location for the gregorian year, or %NULL.</doc>
             <type name="gint" c:type="gint*"/>
           </parameter>
           <parameter name="month"
@@ -11504,7 +11504,7 @@ if 4 or more days of that week are contained within the new year.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2180">the return location for the month of the year, or %NULL.</doc>
+                 line="2188">the return location for the month of the year, or %NULL.</doc>
             <type name="gint" c:type="gint*"/>
           </parameter>
           <parameter name="day"
@@ -11515,7 +11515,7 @@ if 4 or more days of that week are contained within the new year.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2181">the return location for the day of the month, or %NULL.</doc>
+                 line="2189">the return location for the day of the month, or %NULL.</doc>
             <type name="gint" c:type="gint*"/>
           </parameter>
         </parameters>
@@ -11523,19 +11523,19 @@ if 4 or more days of that week are contained within the new year.</doc>
       <method name="hash" c:identifier="g_date_time_hash" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2136">Hashes @datetime into a #guint, suitable for use within #GHashTable.</doc>
+             line="2144">Hashes @datetime into a #guint, suitable for use within #GHashTable.</doc>
         <source-position filename="glib/gdatetime.h" line="232"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2142">a #guint containing the hash</doc>
+               line="2150">a #guint containing the hash</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2138">a #GDateTime</doc>
+                 line="2146">a #GDateTime</doc>
             <type name="DateTime" c:type="gconstpointer"/>
           </instance-parameter>
         </parameters>
@@ -11545,20 +11545,20 @@ if 4 or more days of that week are contained within the new year.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2757">Determines if daylight savings time is in effect at the time and in
+             line="2765">Determines if daylight savings time is in effect at the time and in
 the time zone of @datetime.</doc>
         <source-position filename="glib/gdatetime.h" line="289"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2764">%TRUE if daylight savings time is in effect</doc>
+               line="2772">%TRUE if daylight savings time is in effect</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2759">a #GDateTime</doc>
+                 line="2767">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11588,7 +11588,7 @@ the time zone of @datetime.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2804">Creates a new #GDateTime corresponding to the same instant in time as
+             line="2812">Creates a new #GDateTime corresponding to the same instant in time as
 @datetime, but in the local time zone.
 
 This call is equivalent to calling g_date_time_to_timezone() with the
@@ -11597,7 +11597,7 @@ time zone returned by g_time_zone_new_local().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2814">the newly created #GDateTime which
+               line="2822">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -11605,7 +11605,7 @@ time zone returned by g_time_zone_new_local().</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2806">a #GDateTime</doc>
+                 line="2814">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11617,7 +11617,7 @@ time zone returned by g_time_zone_new_local().</doc>
               deprecated-version="2.62">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2644">Stores the instant in time that @datetime represents into @tv.
+             line="2652">Stores the instant in time that @datetime represents into @tv.
 
 The time contained in a #GTimeVal is always stored in the form of
 seconds elapsed since 1970-01-01 00:00:00 UTC, regardless of the time
@@ -11636,20 +11636,20 @@ On systems where 'long' is 64bit, this function never fails.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2663">%TRUE if successful, else %FALSE</doc>
+               line="2671">%TRUE if successful, else %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2646">a #GDateTime</doc>
+                 line="2654">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="tv" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2647">a #GTimeVal to modify</doc>
+                 line="2655">a #GTimeVal to modify</doc>
             <type name="TimeVal" c:type="GTimeVal*"/>
           </parameter>
         </parameters>
@@ -11659,7 +11659,7 @@ On systems where 'long' is 64bit, this function never fails.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2777">Create a new #GDateTime corresponding to the same instant in time as
+             line="2785">Create a new #GDateTime corresponding to the same instant in time as
 @datetime, but in the time zone @tz.
 
 This call can fail in the case that the time goes out of bounds.  For
@@ -11669,7 +11669,7 @@ Greenwich will fail (due to the year 0 being out of range).</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2789">the newly created #GDateTime which
+               line="2797">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -11677,13 +11677,13 @@ Greenwich will fail (due to the year 0 being out of range).</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2779">a #GDateTime</doc>
+                 line="2787">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
           <parameter name="tz" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2780">the new #GTimeZone</doc>
+                 line="2788">the new #GTimeZone</doc>
             <type name="TimeZone" c:type="GTimeZone*"/>
           </parameter>
         </parameters>
@@ -11691,7 +11691,7 @@ Greenwich will fail (due to the year 0 being out of range).</doc>
       <method name="to_unix" c:identifier="g_date_time_to_unix" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2601">Gives the Unix time corresponding to @datetime, rounding down to the
+             line="2609">Gives the Unix time corresponding to @datetime, rounding down to the
 nearest second.
 
 Unix time is the number of seconds that have elapsed since 1970-01-01
@@ -11700,14 +11700,14 @@ Unix time is the number of seconds that have elapsed since 1970-01-01
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2611">the Unix time corresponding to @datetime</doc>
+               line="2619">the Unix time corresponding to @datetime</doc>
           <type name="gint64" c:type="gint64"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2603">a #GDateTime</doc>
+                 line="2611">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11717,7 +11717,7 @@ Unix time is the number of seconds that have elapsed since 1970-01-01
               version="2.80">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2623">Gives the Unix time corresponding to @datetime, in microseconds.
+             line="2631">Gives the Unix time corresponding to @datetime, in microseconds.
 
 Unix time is the number of microseconds that have elapsed since 1970-01-01
 00:00:00 UTC, regardless of the time zone associated with @datetime.</doc>
@@ -11725,14 +11725,14 @@ Unix time is the number of microseconds that have elapsed since 1970-01-01
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2632">the Unix time corresponding to @datetime</doc>
+               line="2640">the Unix time corresponding to @datetime</doc>
           <type name="gint64" c:type="gint64"/>
         </return-value>
         <parameters>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2625">a #GDateTime</doc>
+                 line="2633">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -11740,7 +11740,7 @@ Unix time is the number of microseconds that have elapsed since 1970-01-01
       <method name="to_utc" c:identifier="g_date_time_to_utc" version="2.26">
         <doc xml:space="preserve"
              filename="glib/gdatetime.c"
-             line="2832">Creates a new #GDateTime corresponding to the same instant in time as
+             line="2840">Creates a new #GDateTime corresponding to the same instant in time as
 @datetime, but in UTC.
 
 This call is equivalent to calling g_date_time_to_timezone() with the
@@ -11749,7 +11749,7 @@ time zone returned by g_time_zone_new_utc().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="glib/gdatetime.c"
-               line="2842">the newly created #GDateTime which
+               line="2850">the newly created #GDateTime which
   should be freed with g_date_time_unref(), or %NULL</doc>
           <type name="DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -11757,7 +11757,7 @@ time zone returned by g_time_zone_new_utc().</doc>
           <instance-parameter name="datetime" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdatetime.c"
-                 line="2834">a #GDateTime</doc>
+                 line="2842">a #GDateTime</doc>
             <type name="DateTime" c:type="GDateTime*"/>
           </instance-parameter>
         </parameters>
@@ -22798,7 +22798,7 @@ linked against at application run time.</doc>
       <source-position filename="glib/gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="4" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="5" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib/gversion.c"
            line="78">The micro version number of the GLib library.
