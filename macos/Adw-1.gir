@@ -9411,19 +9411,19 @@ Example of an `AdwBreakpoint` UI definition:
       <constructor name="new" c:identifier="adw_breakpoint_new" version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1458">Creates a new `AdwBreakpoint` with @condition.</doc>
+             line="1462">Creates a new `AdwBreakpoint` with @condition.</doc>
         <source-position filename="src/adw-breakpoint.h" line="79"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-breakpoint.c"
-               line="1464">the newly created `AdwBreakpoint`</doc>
+               line="1468">the newly created `AdwBreakpoint`</doc>
           <type name="Breakpoint" c:type="AdwBreakpoint*"/>
         </return-value>
         <parameters>
           <parameter name="condition" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1460">the condition</doc>
+                 line="1464">the condition</doc>
             <type name="BreakpointCondition" c:type="AdwBreakpointCondition*"/>
           </parameter>
         </parameters>
@@ -9433,7 +9433,7 @@ Example of an `AdwBreakpoint` UI definition:
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1528">Adds a setter to @self.
+             line="1532">Adds a setter to @self.
 
 The setter will automatically set @property on @object to @value when
 applying the breakpoint, and set it back to its original value upon
@@ -9477,19 +9477,19 @@ g_signal_connect_swapped (breakpoint, "unapply",
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1530">a breakpoint</doc>
+                 line="1534">a breakpoint</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </instance-parameter>
           <parameter name="object" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1531">the target object</doc>
+                 line="1535">the target object</doc>
             <type name="GObject.Object" c:type="GObject*"/>
           </parameter>
           <parameter name="property" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1532">the target property</doc>
+                 line="1536">the target property</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="value"
@@ -9498,7 +9498,7 @@ g_signal_connect_swapped (breakpoint, "unapply",
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1533">the value to set</doc>
+                 line="1537">the value to set</doc>
             <type name="GObject.Value" c:type="const GValue*"/>
           </parameter>
         </parameters>
@@ -9510,7 +9510,7 @@ g_signal_connect_swapped (breakpoint, "unapply",
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1645">Adds multiple setters to @self.
+             line="1649">Adds multiple setters to @self.
 
 See [method@Breakpoint.add_setter].
 
@@ -9531,25 +9531,25 @@ adw_breakpoint_add_setters (breakpoint,
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1647">a breakpoint</doc>
+                 line="1651">a breakpoint</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </instance-parameter>
           <parameter name="first_object" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1648">the first target object</doc>
+                 line="1652">the first target object</doc>
             <type name="GObject.Object" c:type="GObject*"/>
           </parameter>
           <parameter name="first_property" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1649">the first target property</doc>
+                 line="1653">the first target property</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1650">the value of the first setter, followed by a list of object, property
+                 line="1654">the value of the first setter, followed by a list of object, property
   and value triplets, terminated by `NULL`</doc>
             <varargs/>
           </parameter>
@@ -9561,7 +9561,7 @@ adw_breakpoint_add_setters (breakpoint,
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1719">Adds multiple setters to @self.
+             line="1723">Adds multiple setters to @self.
 
 See [method@Breakpoint.add_setters].</doc>
         <source-position filename="src/adw-breakpoint.h" line="105"/>
@@ -9572,25 +9572,25 @@ See [method@Breakpoint.add_setters].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1721">a breakpoint</doc>
+                 line="1725">a breakpoint</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </instance-parameter>
           <parameter name="first_object" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1722">the first target object</doc>
+                 line="1726">the first target object</doc>
             <type name="GObject.Object" c:type="GObject*"/>
           </parameter>
           <parameter name="first_property" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1723">the first target property</doc>
+                 line="1727">the first target property</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="args" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1724">the value of the first setter, followed by a list of object, property
+                 line="1728">the value of the first setter, followed by a list of object, property
   and value triplets, terminated by `NULL`</doc>
             <type name="va_list" c:type="va_list"/>
           </parameter>
@@ -9602,7 +9602,7 @@ See [method@Breakpoint.add_setters].</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1686">Adds @n_setters setters to @self.
+             line="1690">Adds @n_setters setters to @self.
 
 This is a convenience function for adding multiple setters at once.
 
@@ -9617,19 +9617,19 @@ This function is meant to be used by language bindings.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1688">a breakpoint</doc>
+                 line="1692">a breakpoint</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </instance-parameter>
           <parameter name="n_setters" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1689">the number of setters to add</doc>
+                 line="1693">the number of setters to add</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="objects" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1690">setter target object</doc>
+                 line="1694">setter target object</doc>
             <array length="0" zero-terminated="0" c:type="GObject**">
               <type name="GObject.Object" c:type="GObject*"/>
             </array>
@@ -9637,7 +9637,7 @@ This function is meant to be used by language bindings.</doc>
           <parameter name="names" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1691">setter target properties</doc>
+                 line="1695">setter target properties</doc>
             <array length="0" zero-terminated="0" c:type="const char**">
               <type name="utf8" c:type="char*"/>
             </array>
@@ -9645,7 +9645,7 @@ This function is meant to be used by language bindings.</doc>
           <parameter name="values" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1692">setter values</doc>
+                 line="1696">setter values</doc>
             <array length="0" zero-terminated="0" c:type="const GValue**">
               <type name="GObject.Value" c:type="GValue*"/>
             </array>
@@ -9658,19 +9658,19 @@ This function is meant to be used by language bindings.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1484">Gets the condition for @self.</doc>
+             line="1488">Gets the condition for @self.</doc>
         <source-position filename="src/adw-breakpoint.h" line="82"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-breakpoint.c"
-               line="1490">the condition</doc>
+               line="1494">the condition</doc>
           <type name="BreakpointCondition" c:type="AdwBreakpointCondition*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1486">a breakpoint</doc>
+                 line="1490">a breakpoint</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </instance-parameter>
         </parameters>
@@ -9681,7 +9681,7 @@ This function is meant to be used by language bindings.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1502">Sets the condition for @self.</doc>
+             line="1506">Sets the condition for @self.</doc>
         <source-position filename="src/adw-breakpoint.h" line="84"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -9690,7 +9690,7 @@ This function is meant to be used by language bindings.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1504">a breakpoint</doc>
+                 line="1508">a breakpoint</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </instance-parameter>
           <parameter name="condition"
@@ -9699,7 +9699,7 @@ This function is meant to be used by language bindings.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-breakpoint.c"
-                 line="1505">the new condition</doc>
+                 line="1509">the new condition</doc>
             <type name="BreakpointCondition" c:type="AdwBreakpointCondition*"/>
           </parameter>
         </parameters>
@@ -9712,13 +9712,13 @@ This function is meant to be used by language bindings.</doc>
                 getter="get_condition">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1116">The breakpoint's condition.</doc>
+             line="1120">The breakpoint's condition.</doc>
         <type name="BreakpointCondition"/>
       </property>
       <glib:signal name="apply" when="last" version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1130">Emitted when the breakpoint is applied.
+             line="1134">Emitted when the breakpoint is applied.
 
 This signal is emitted after the setters have been applied.</doc>
         <return-value transfer-ownership="none">
@@ -9728,7 +9728,7 @@ This signal is emitted after the setters have been applied.</doc>
       <glib:signal name="unapply" when="last" version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-breakpoint.c"
-             line="1152">Emitted when the breakpoint is unapplied.
+             line="1156">Emitted when the breakpoint is unapplied.
 
 This signal is emitted before resetting the setter values.</doc>
         <return-value transfer-ownership="none">
@@ -13132,12 +13132,12 @@ contains a [class@Gtk.ScrolledWindow], which in turn contains a
       <constructor name="new" c:identifier="adw_combo_row_new">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="742">Creates a new `AdwComboRow`.</doc>
+             line="743">Creates a new `AdwComboRow`.</doc>
         <source-position filename="src/adw-combo-row.h" line="38"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="747">the newly created `AdwComboRow`</doc>
+               line="748">the newly created `AdwComboRow`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -13147,7 +13147,7 @@ contains a [class@Gtk.ScrolledWindow], which in turn contains a
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1185">Gets whether search is enabled.
+             line="1186">Gets whether search is enabled.
 
 If set to `TRUE`, a search entry will be shown in the popup that
 allows to search for items in the list.
@@ -13157,14 +13157,14 @@ Search requires [property@ComboRow:expression] to be set.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="1196">whether the popup includes a search entry</doc>
+               line="1197">whether the popup includes a search entry</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1187">a combo row</doc>
+                 line="1188">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13174,19 +13174,19 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:get-property="expression">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1063">Gets the expression used to obtain strings from items.</doc>
+             line="1064">Gets the expression used to obtain strings from items.</doc>
         <source-position filename="src/adw-combo-row.h" line="74"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="1069">the expression used to obtain strings from items</doc>
+               line="1070">the expression used to obtain strings from items</doc>
           <type name="Gtk.Expression" c:type="GtkExpression*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1065">a combo row</doc>
+                 line="1066">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13196,19 +13196,19 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:get-property="factory">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="922">Gets the factory for populating list items.</doc>
+             line="923">Gets the factory for populating list items.</doc>
         <source-position filename="src/adw-combo-row.h" line="56"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="928">the factory in use</doc>
+               line="929">the factory in use</doc>
           <type name="Gtk.ListItemFactory" c:type="GtkListItemFactory*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="924">a combo row</doc>
+                 line="925">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13219,19 +13219,19 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="962">Gets the factory that's currently used to create header widgets for the popup.</doc>
+             line="963">Gets the factory that's currently used to create header widgets for the popup.</doc>
         <source-position filename="src/adw-combo-row.h" line="62"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="968">The factory in use</doc>
+               line="969">The factory in use</doc>
           <type name="Gtk.ListItemFactory" c:type="GtkListItemFactory*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="964">a combo row</doc>
+                 line="965">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13241,19 +13241,19 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:get-property="list-factory">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1012">Gets the factory for populating list items in the popup.</doc>
+             line="1013">Gets the factory for populating list items in the popup.</doc>
         <source-position filename="src/adw-combo-row.h" line="68"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="1018">the factory in use</doc>
+               line="1019">the factory in use</doc>
           <type name="Gtk.ListItemFactory" c:type="GtkListItemFactory*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1014">a combo row</doc>
+                 line="1015">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13263,19 +13263,19 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:get-property="model">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="829">Gets the model that provides the displayed items.</doc>
+             line="830">Gets the model that provides the displayed items.</doc>
         <source-position filename="src/adw-combo-row.h" line="41"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="835">The model in use</doc>
+               line="836">The model in use</doc>
           <type name="Gio.ListModel" c:type="GListModel*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="831">a combo row</doc>
+                 line="832">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13286,12 +13286,12 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1249">Returns the match mode that the search filter is using.</doc>
+             line="1250">Returns the match mode that the search filter is using.</doc>
         <source-position filename="src/adw-combo-row.h" line="95"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="1255">the match mode of the search filter</doc>
+               line="1256">the match mode of the search filter</doc>
           <type name="Gtk.StringFilterMatchMode"
                 c:type="GtkStringFilterMatchMode"/>
         </return-value>
@@ -13299,7 +13299,7 @@ Search requires [property@ComboRow:expression] to be set.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1251">a combo row</doc>
+                 line="1252">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13309,12 +13309,12 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:get-property="selected">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="782">Gets the position of the selected item.</doc>
+             line="783">Gets the position of the selected item.</doc>
         <source-position filename="src/adw-combo-row.h" line="47"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="788">the position of the selected item, or
+               line="789">the position of the selected item, or
   [const@Gtk.INVALID_LIST_POSITION] if no item is selected</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
@@ -13322,7 +13322,7 @@ Search requires [property@ComboRow:expression] to be set.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="784">a combo row</doc>
+                 line="785">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13332,19 +13332,19 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:get-property="selected-item">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="806">Gets the selected item.</doc>
+             line="807">Gets the selected item.</doc>
         <source-position filename="src/adw-combo-row.h" line="53"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="812">the selected item</doc>
+               line="813">the selected item</doc>
           <type name="GObject.Object" c:type="gpointer"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="808">a combo row</doc>
+                 line="809">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13354,19 +13354,19 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:get-property="use-subtitle">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1127">Gets whether to use the current value as the subtitle.</doc>
+             line="1128">Gets whether to use the current value as the subtitle.</doc>
         <source-position filename="src/adw-combo-row.h" line="80"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-combo-row.c"
-               line="1133">whether to use the current value as the subtitle</doc>
+               line="1134">whether to use the current value as the subtitle</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1129">a combo row</doc>
+                 line="1130">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
         </parameters>
@@ -13377,7 +13377,7 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1212">Sets whether to enable search.
+             line="1213">Sets whether to enable search.
 
 If set to `TRUE`, a search entry will be shown in the popup that
 allows to search for items in the list.
@@ -13391,13 +13391,13 @@ Search requires [property@ComboRow:expression] to be set.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1214">a combo row</doc>
+                 line="1215">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="enable_search" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1215">whether to enable search</doc>
+                 line="1216">whether to enable search</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -13407,7 +13407,7 @@ Search requires [property@ComboRow:expression] to be set.</doc>
               glib:set-property="expression">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1083">Sets the expression used to obtain strings from items.
+             line="1084">Sets the expression used to obtain strings from items.
 
 The expression must have a value type of `G_TYPE_STRING`.
 
@@ -13422,7 +13422,7 @@ It's used to bind strings to labels produced by the default factory if
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1085">a combo row</doc>
+                 line="1086">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="expression"
@@ -13431,7 +13431,7 @@ It's used to bind strings to labels produced by the default factory if
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1086">an expression</doc>
+                 line="1087">an expression</doc>
             <type name="Gtk.Expression" c:type="GtkExpression*"/>
           </parameter>
         </parameters>
@@ -13441,7 +13441,7 @@ It's used to bind strings to labels produced by the default factory if
               glib:set-property="factory">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="942">Sets the factory for populating list items.
+             line="943">Sets the factory for populating list items.
 
 This factory is always used for the item in the row. It is also used for
 items in the popup unless [property@ComboRow:list-factory] is set.</doc>
@@ -13453,7 +13453,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="944">a combo row</doc>
+                 line="945">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="factory"
@@ -13462,7 +13462,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="945">the factory to use</doc>
+                 line="946">the factory to use</doc>
             <type name="Gtk.ListItemFactory" c:type="GtkListItemFactory*"/>
           </parameter>
         </parameters>
@@ -13473,7 +13473,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="984">Sets the factory to use for creating header widgets for the popup.</doc>
+             line="985">Sets the factory to use for creating header widgets for the popup.</doc>
         <source-position filename="src/adw-combo-row.h" line="64"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -13482,7 +13482,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="986">a combo row</doc>
+                 line="987">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="factory"
@@ -13491,7 +13491,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="987">the factory to use</doc>
+                 line="988">the factory to use</doc>
             <type name="Gtk.ListItemFactory" c:type="GtkListItemFactory*"/>
           </parameter>
         </parameters>
@@ -13501,7 +13501,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
               glib:set-property="list-factory">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1032">Sets the factory for populating list items in the popup.
+             line="1033">Sets the factory for populating list items in the popup.
 
 If this is not set, [property@ComboRow:factory] is used.</doc>
         <source-position filename="src/adw-combo-row.h" line="70"/>
@@ -13512,7 +13512,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1034">a combo row</doc>
+                 line="1035">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="factory"
@@ -13521,7 +13521,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1035">the factory to use</doc>
+                 line="1036">the factory to use</doc>
             <type name="Gtk.ListItemFactory" c:type="GtkListItemFactory*"/>
           </parameter>
         </parameters>
@@ -13531,7 +13531,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
               glib:set-property="model">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="849">Sets the model that provides the displayed items.</doc>
+             line="850">Sets the model that provides the displayed items.</doc>
         <source-position filename="src/adw-combo-row.h" line="43"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -13540,7 +13540,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="851">a combo row</doc>
+                 line="852">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="model"
@@ -13549,7 +13549,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="852">the model to use</doc>
+                 line="853">the model to use</doc>
             <type name="Gio.ListModel" c:type="GListModel*"/>
           </parameter>
         </parameters>
@@ -13560,7 +13560,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1271">Sets the match mode for the search filter.</doc>
+             line="1272">Sets the match mode for the search filter.</doc>
         <source-position filename="src/adw-combo-row.h" line="92"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -13569,13 +13569,13 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1273">a combo row</doc>
+                 line="1274">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="search_match_mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1274">the new match mode</doc>
+                 line="1275">the new match mode</doc>
             <type name="Gtk.StringFilterMatchMode"
                   c:type="GtkStringFilterMatchMode"/>
           </parameter>
@@ -13586,7 +13586,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
               glib:set-property="selected">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="755">Selects the item at the given position.</doc>
+             line="756">Selects the item at the given position.</doc>
         <source-position filename="src/adw-combo-row.h" line="49"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -13595,13 +13595,13 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="757">a combo row</doc>
+                 line="758">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="position" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="758">the position of the item to select, or
+                 line="759">the position of the item to select, or
   [const@Gtk.INVALID_LIST_POSITION]</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -13612,7 +13612,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
               glib:set-property="use-subtitle">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="1147">Sets whether to use the current value as the subtitle.
+             line="1148">Sets whether to use the current value as the subtitle.
 
 If you use a custom list item factory, you will need to give the row a
 name conversion expression with [property@ComboRow:expression].
@@ -13629,13 +13629,13 @@ The subtitle is interpreted as Pango markup if
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1149">a combo row</doc>
+                 line="1150">a combo row</doc>
             <type name="ComboRow" c:type="AdwComboRow*"/>
           </instance-parameter>
           <parameter name="use_subtitle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-combo-row.c"
-                 line="1150">whether to use the current value as the subtitle</doc>
+                 line="1151">whether to use the current value as the subtitle</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -13649,7 +13649,7 @@ The subtitle is interpreted as Pango markup if
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="681">Whether to show a search entry in the popup.
+             line="682">Whether to show a search entry in the popup.
 
 If set to `TRUE`, a search entry will be shown in the popup that
 allows to search for items in the list.
@@ -13664,7 +13664,7 @@ Search requires [property@ComboRow:expression] to be set.</doc>
                 getter="get_expression">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="646">An expression used to obtain strings from items.
+             line="647">An expression used to obtain strings from items.
 
 The expression must have a value type of `G_TYPE_STRING`.
 
@@ -13680,7 +13680,7 @@ It's used to bind strings to labels produced by the default factory if
                 getter="get_factory">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="609">Factory for populating list items.
+             line="610">Factory for populating list items.
 
 This factory is always used for the item in the row. It is also used for
 items in the popup unless [property@ComboRow:list-factory] is set.</doc>
@@ -13694,7 +13694,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
                 getter="get_header_factory">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="622">The factory for creating header widgets for the popup.</doc>
+             line="623">The factory for creating header widgets for the popup.</doc>
         <type name="Gtk.ListItemFactory"/>
       </property>
       <property name="list-factory"
@@ -13704,7 +13704,7 @@ items in the popup unless [property@ComboRow:list-factory] is set.</doc>
                 getter="get_list_factory">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="634">The factory for populating list items in the popup.
+             line="635">The factory for populating list items in the popup.
 
 If this is not set, [property@ComboRow:factory] is used.</doc>
         <type name="Gtk.ListItemFactory"/>
@@ -13716,7 +13716,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
                 getter="get_model">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="599">The model that provides the displayed items.</doc>
+             line="600">The model that provides the displayed items.</doc>
         <type name="Gio.ListModel"/>
       </property>
       <property name="search-match-mode"
@@ -13728,7 +13728,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
                 default-value="GTK_STRING_FILTER_MATCH_MODE_PREFIX">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="698">The match mode for the search filter.</doc>
+             line="699">The match mode for the search filter.</doc>
         <type name="Gtk.StringFilterMatchMode"/>
       </property>
       <property name="selected"
@@ -13739,7 +13739,7 @@ If this is not set, [property@ComboRow:factory] is used.</doc>
                 default-value="4294967295">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="576">The position of the selected item.
+             line="577">The position of the selected item.
 
 If no item is selected, the property has the value
 [const@Gtk.INVALID_LIST_POSITION]</doc>
@@ -13750,7 +13750,7 @@ If no item is selected, the property has the value
                 getter="get_selected_item">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="589">The selected item.</doc>
+             line="590">The selected item.</doc>
         <type name="GObject.Object"/>
       </property>
       <property name="use-subtitle"
@@ -13761,7 +13761,7 @@ If no item is selected, the property has the value
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-combo-row.c"
-             line="663">Whether to use the current value as the subtitle.
+             line="664">Whether to use the current value as the subtitle.
 
 If you use a custom list item factory, you will need to give the row a
 name conversion expression with [property@ComboRow:expression].
@@ -13985,12 +13985,12 @@ minimum size, and [property@Gtk.Widget:width-request] and
       <constructor name="new" c:identifier="adw_dialog_new" version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1303">Creates a new `AdwDialog`.</doc>
+             line="1308">Creates a new `AdwDialog`.</doc>
         <source-position filename="src/adw-dialog.h" line="47"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1308">the new created `AdwDialog`</doc>
+               line="1313">the new created `AdwDialog`</doc>
           <type name="Dialog" c:type="AdwDialog*"/>
         </return-value>
       </constructor>
@@ -14021,7 +14021,7 @@ minimum size, and [property@Gtk.Widget:width-request] and
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1940">Adds @breakpoint to @self.</doc>
+             line="1952">Adds @breakpoint to @self.</doc>
         <source-position filename="src/adw-dialog.h" line="110"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -14030,13 +14030,13 @@ minimum size, and [property@Gtk.Widget:width-request] and
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1942">a dialog</doc>
+                 line="1954">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="breakpoint" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1943">the breakpoint to add</doc>
+                 line="1955">the breakpoint to add</doc>
             <type name="Breakpoint" c:type="AdwBreakpoint*"/>
           </parameter>
         </parameters>
@@ -14044,7 +14044,7 @@ minimum size, and [property@Gtk.Widget:width-request] and
       <method name="close" c:identifier="adw_dialog_close" version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1862">Attempts to close @self.
+             line="1867">Attempts to close @self.
 
 If the [property@Dialog:can-close] property is set to `FALSE`, the
 [signal@Dialog::close-attempt] signal is emitted.
@@ -14054,14 +14054,14 @@ See also: [method@Dialog.force_close].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1873">whether @self was successfully closed</doc>
+               line="1878">whether @self was successfully closed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1864">a dialog</doc>
+                 line="1869">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14071,7 +14071,7 @@ See also: [method@Dialog.force_close].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1906">Closes @self.
+             line="1918">Closes @self.
 
 Unlike [method@Dialog.close], it succeeds even if [property@Dialog:can-close]
 is set to `FALSE`.</doc>
@@ -14083,7 +14083,7 @@ is set to `FALSE`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1908">a dialog</doc>
+                 line="1920">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14094,19 +14094,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1424">Gets whether @self can be closed.</doc>
+             line="1429">Gets whether @self can be closed.</doc>
         <source-position filename="src/adw-dialog.h" line="62"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1430">whether the dialog can be closed</doc>
+               line="1435">whether the dialog can be closed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1426">a dialog</doc>
+                 line="1431">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14117,19 +14117,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1318">Gets the child widget of @self.</doc>
+             line="1323">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-dialog.h" line="50"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1324">the child widget of @self</doc>
+               line="1329">the child widget of @self</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1320">a dialog</doc>
+                 line="1325">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14140,19 +14140,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1536">Gets the height of the dialog's contents.</doc>
+             line="1541">Gets the height of the dialog's contents.</doc>
         <source-position filename="src/adw-dialog.h" line="74"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1542">the content height</doc>
+               line="1547">the content height</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1538">a dialog</doc>
+                 line="1543">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14163,19 +14163,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1486">Gets the width of the dialog's contents.</doc>
+             line="1491">Gets the width of the dialog's contents.</doc>
         <source-position filename="src/adw-dialog.h" line="68"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1492">the content width</doc>
+               line="1497">the content width</doc>
           <type name="gint" c:type="int"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1488">a dialog</doc>
+                 line="1493">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14186,19 +14186,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1965">Gets the current breakpoint.</doc>
+             line="1977">Gets the current breakpoint.</doc>
         <source-position filename="src/adw-dialog.h" line="114"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1971">the current breakpoint</doc>
+               line="1983">the current breakpoint</doc>
           <type name="Breakpoint" c:type="AdwBreakpoint*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1967">a dialog</doc>
+                 line="1979">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14209,19 +14209,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1780">Gets the default widget for @self.</doc>
+             line="1785">Gets the default widget for @self.</doc>
         <source-position filename="src/adw-dialog.h" line="98"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1786">the default widget</doc>
+               line="1791">the default widget</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1782">a dialog</doc>
+                 line="1787">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14232,19 +14232,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1708">Gets the focus widget for @self.</doc>
+             line="1713">Gets the focus widget for @self.</doc>
         <source-position filename="src/adw-dialog.h" line="92"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1714">the focus widget</doc>
+               line="1719">the focus widget</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1710">a dialog</doc>
+                 line="1715">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14255,19 +14255,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1586">Gets whether to size content of @self automatically.</doc>
+             line="1591">Gets whether to size content of @self automatically.</doc>
         <source-position filename="src/adw-dialog.h" line="80"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1592">whether to size content automatically</doc>
+               line="1597">whether to size content automatically</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1588">a dialog</doc>
+                 line="1593">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14278,12 +14278,12 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1645">Gets presentation mode for @self.</doc>
+             line="1650">Gets presentation mode for @self.</doc>
         <source-position filename="src/adw-dialog.h" line="86"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1651">the presentation mode</doc>
+               line="1656">the presentation mode</doc>
           <type name="DialogPresentationMode"
                 c:type="AdwDialogPresentationMode"/>
         </return-value>
@@ -14291,7 +14291,7 @@ is set to `FALSE`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1647">a dialog</doc>
+                 line="1652">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14302,19 +14302,19 @@ is set to `FALSE`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1373">Gets the title of @self.</doc>
+             line="1378">Gets the title of @self.</doc>
         <source-position filename="src/adw-dialog.h" line="56"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-dialog.c"
-               line="1379">the title</doc>
+               line="1384">the title</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1375">a dialog</doc>
+                 line="1380">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
         </parameters>
@@ -14322,7 +14322,7 @@ is set to `FALSE`.</doc>
       <method name="present" c:identifier="adw_dialog_present" version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="2011">Presents @self within @parent's window.
+             line="2023">Presents @self within @parent's window.
 
 If @self is already shown, raises it to the top instead.
 
@@ -14336,7 +14336,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="2013">a dialog</doc>
+                 line="2025">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -14345,7 +14345,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="2014">a widget within the toplevel</doc>
+                 line="2026">a widget within the toplevel</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -14356,7 +14356,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1446">Sets whether @self can be closed.
+             line="1451">Sets whether @self can be closed.
 
 If set to `FALSE`, the close button, shortcuts and
 [method@Dialog.close] will result in [signal@Dialog::close-attempt] being
@@ -14370,13 +14370,13 @@ emitted instead, and bottom sheet close swipe will be disabled.
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1448">a dialog</doc>
+                 line="1453">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="can_close" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1449">whether to allow closing</doc>
+                 line="1454">whether to allow closing</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -14387,7 +14387,7 @@ emitted instead, and bottom sheet close swipe will be disabled.
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1340">Sets the child widget of @self.</doc>
+             line="1345">Sets the child widget of @self.</doc>
         <source-position filename="src/adw-dialog.h" line="52"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -14396,7 +14396,7 @@ emitted instead, and bottom sheet close swipe will be disabled.
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1342">a dialog</doc>
+                 line="1347">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="child"
@@ -14405,7 +14405,7 @@ emitted instead, and bottom sheet close swipe will be disabled.
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1343">the child widget</doc>
+                 line="1348">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -14416,7 +14416,7 @@ emitted instead, and bottom sheet close swipe will be disabled.
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1558">Sets the height of the dialog's contents.
+             line="1563">Sets the height of the dialog's contents.
 
 Set it to -1 to reset it to the content's natural height.
 
@@ -14429,13 +14429,13 @@ See also: [property@Gtk.Window:default-height]</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1560">a dialog</doc>
+                 line="1565">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="content_height" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1561">the content height</doc>
+                 line="1566">the content height</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -14446,7 +14446,7 @@ See also: [property@Gtk.Window:default-height]</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1508">Sets the width of the dialog's contents.
+             line="1513">Sets the width of the dialog's contents.
 
 Set it to -1 to reset it to the content's natural width.
 
@@ -14459,13 +14459,13 @@ See also: [property@Gtk.Window:default-width]</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1510">a dialog</doc>
+                 line="1515">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="content_width" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1511">the content width</doc>
+                 line="1516">the content width</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -14476,7 +14476,7 @@ See also: [property@Gtk.Window:default-width]</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1802">Sets the default widget for @self.
+             line="1807">Sets the default widget for @self.
 
 It's activated when the user presses Enter.</doc>
         <source-position filename="src/adw-dialog.h" line="100"/>
@@ -14487,7 +14487,7 @@ It's activated when the user presses Enter.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1804">a dialog</doc>
+                 line="1809">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="default_widget"
@@ -14496,7 +14496,7 @@ It's activated when the user presses Enter.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1805">the default widget</doc>
+                 line="1810">the default widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -14507,7 +14507,7 @@ It's activated when the user presses Enter.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1730">Sets the focus widget for @self.
+             line="1735">Sets the focus widget for @self.
 
 If @focus is not the current focus widget, and is focusable, sets it as the
 focus widget for the dialog.
@@ -14523,7 +14523,7 @@ to a particular widget in the dialog, it is usually more convenient to use
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1732">a dialog</doc>
+                 line="1737">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="focus"
@@ -14532,7 +14532,7 @@ to a particular widget in the dialog, it is usually more convenient to use
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1733">the focus widget</doc>
+                 line="1738">the focus widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -14543,7 +14543,7 @@ to a particular widget in the dialog, it is usually more convenient to use
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1608">Sets whether to size content of @self automatically.
+             line="1613">Sets whether to size content of @self automatically.
 
 If set to `TRUE`, always use the content's natural size instead of
 [property@Dialog:content-width] and [property@Dialog:content-height]. If
@@ -14558,13 +14558,13 @@ See also: [property@Gtk.Window:resizable]</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1610">a dialog</doc>
+                 line="1615">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="follows_content_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1611">whether to size content automatically</doc>
+                 line="1616">whether to size content automatically</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -14575,7 +14575,7 @@ See also: [property@Gtk.Window:resizable]</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1667">Sets presentation mode for @self.
+             line="1672">Sets presentation mode for @self.
 
 When set to `ADW_DIALOG_AUTO`, the dialog appears as a bottom sheet when the
 following condition is met: `max-width: 450px or max-height: 360px`, and as a
@@ -14594,13 +14594,13 @@ Presentation mode does nothing for dialogs presented as a window.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1669">a dialog</doc>
+                 line="1674">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="presentation_mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1670">the new presentation mode</doc>
+                 line="1675">the new presentation mode</doc>
             <type name="DialogPresentationMode"
                   c:type="AdwDialogPresentationMode"/>
           </parameter>
@@ -14612,7 +14612,7 @@ Presentation mode does nothing for dialogs presented as a window.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1395">Sets the title of @self.</doc>
+             line="1400">Sets the title of @self.</doc>
         <source-position filename="src/adw-dialog.h" line="58"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -14621,13 +14621,13 @@ Presentation mode does nothing for dialogs presented as a window.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1397">a dialog</doc>
+                 line="1402">a dialog</doc>
             <type name="Dialog" c:type="AdwDialog*"/>
           </instance-parameter>
           <parameter name="title" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-dialog.c"
-                 line="1398">the new title</doc>
+                 line="1403">the new title</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -14641,7 +14641,7 @@ Presentation mode does nothing for dialogs presented as a window.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1046">Whether the dialog can be closed.
+             line="1051">Whether the dialog can be closed.
 
 If set to `FALSE`, the close button, shortcuts and
 [method@Dialog.close] will result in [signal@Dialog::close-attempt] being
@@ -14657,7 +14657,7 @@ emitted instead, and bottom sheet close swipe will be disabled.
                 getter="get_child">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1022">The child widget of the `AdwDialog`.</doc>
+             line="1027">The child widget of the `AdwDialog`.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="content-height"
@@ -14669,7 +14669,7 @@ emitted instead, and bottom sheet close swipe will be disabled.
                 default-value="-1">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1079">The height of the dialog's contents.
+             line="1084">The height of the dialog's contents.
 
 Set it to -1 to reset it to the content's natural height.
 
@@ -14685,7 +14685,7 @@ See also: [property@Gtk.Window:default-height]</doc>
                 default-value="-1">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1063">The width of the dialog's contents.
+             line="1068">The width of the dialog's contents.
 
 Set it to -1 to reset it to the content's natural width.
 
@@ -14698,7 +14698,7 @@ See also: [property@Gtk.Window:default-width]</doc>
                 getter="get_current_breakpoint">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1162">The current breakpoint.</doc>
+             line="1167">The current breakpoint.</doc>
         <type name="Breakpoint"/>
       </property>
       <property name="default-widget"
@@ -14709,7 +14709,7 @@ See also: [property@Gtk.Window:default-width]</doc>
                 getter="get_default_widget">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1148">The default widget.
+             line="1153">The default widget.
 
 It's activated when the user presses Enter.</doc>
         <type name="Gtk.Widget"/>
@@ -14722,7 +14722,7 @@ It's activated when the user presses Enter.</doc>
                 getter="get_focus">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1136">The focus widget.</doc>
+             line="1141">The focus widget.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="follows-content-size"
@@ -14734,7 +14734,7 @@ It's activated when the user presses Enter.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1095">Whether to size content automatically.
+             line="1100">Whether to size content automatically.
 
 If set to `TRUE`, always use the content's natural size instead of
 [property@Dialog:content-width] and [property@Dialog:content-height]. If
@@ -14752,7 +14752,7 @@ See also: [property@Gtk.Window:resizable]</doc>
                 default-value="ADW_DIALOG_AUTO">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1113">The dialog's presentation mode.
+             line="1118">The dialog's presentation mode.
 
 When set to `ADW_DIALOG_AUTO`, the dialog appears as a bottom sheet when
 the following condition is met: `max-width: 450px or max-height: 360px`,
@@ -14773,7 +14773,7 @@ Presentation mode does nothing for dialogs presented as a window.</doc>
                 getter="get_title">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1034">The title of the dialog.</doc>
+             line="1039">The title of the dialog.</doc>
         <type name="utf8" c:type="gchar*"/>
       </property>
       <field name="parent_instance">
@@ -14782,7 +14782,7 @@ Presentation mode does nothing for dialogs presented as a window.</doc>
       <glib:signal name="close-attempt" when="last" version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1176">Emitted when the close button or shortcut is used, or
+             line="1181">Emitted when the close button or shortcut is used, or
 [method@Dialog.close] is called while [property@Dialog:can-close] is set to
 `FALSE`.</doc>
         <return-value transfer-ownership="none">
@@ -14792,7 +14792,7 @@ Presentation mode does nothing for dialogs presented as a window.</doc>
       <glib:signal name="closed" when="last" version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-dialog.c"
-             line="1199">Emitted when the dialog is successfully closed.</doc>
+             line="1204">Emitted when the dialog is successfully closed.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -20697,7 +20697,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="3" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="4" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -25853,6 +25853,12 @@ It offer a way to reveal the contents in clear text.
 The `AdwPreferencesDialog` widget presents an application's preferences
 gathered into pages and groups. The preferences are searchable by the user.
 
+## Actions
+
+`AdwPrefencesDialog` defines the `navigation.pop` action, it doesn't take any
+parameters and pops the current subpage from the navigation stack, equivalent
+to calling [method@PreferencesDialog.pop_subpage].
+
 ## CSS nodes
 
 `AdwPreferencesDialog` has a main CSS node with the name `dialog` and the
@@ -25866,12 +25872,12 @@ style class `.preferences`.</doc>
                    version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="678">Creates a new `AdwPreferencesDialog`.</doc>
+             line="684">Creates a new `AdwPreferencesDialog`.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-preferences-dialog.c"
-               line="683">the newly created `AdwPreferencesDialog`</doc>
+               line="689">the newly created `AdwPreferencesDialog`</doc>
           <type name="Dialog" c:type="AdwDialog*"/>
         </return-value>
       </constructor>
@@ -25880,7 +25886,7 @@ style class `.preferences`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="693">Adds a preferences page to @self.</doc>
+             line="699">Adds a preferences page to @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="45"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -25889,13 +25895,13 @@ style class `.preferences`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="695">a preferences dialog</doc>
+                 line="701">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="696">the page to add</doc>
+                 line="702">the page to add</doc>
             <type name="PreferencesPage" c:type="AdwPreferencesPage*"/>
           </parameter>
         </parameters>
@@ -25905,7 +25911,7 @@ style class `.preferences`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="950">Displays @toast.
+             line="956">Displays @toast.
 
 See [method@ToastOverlay.add_toast].</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="76"/>
@@ -25916,13 +25922,13 @@ See [method@ToastOverlay.add_toast].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="952">a preferences dialog</doc>
+                 line="958">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
           <parameter name="toast" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="953">a toast</doc>
+                 line="959">a toast</doc>
             <type name="Toast" c:type="AdwToast*"/>
           </parameter>
         </parameters>
@@ -25933,19 +25939,19 @@ See [method@ToastOverlay.add_toast].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="845">Gets whether search is enabled for @self.</doc>
+             line="851">Gets whether search is enabled for @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="64"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-preferences-dialog.c"
-               line="851">whether search is enabled for @self.</doc>
+               line="857">whether search is enabled for @self.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="847">a preferences dialog</doc>
+                 line="853">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
         </parameters>
@@ -25956,19 +25962,19 @@ See [method@ToastOverlay.add_toast].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="754">Gets the currently visible page of @self.</doc>
+             line="760">Gets the currently visible page of @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="52"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-preferences-dialog.c"
-               line="760">the visible page</doc>
+               line="766">the visible page</doc>
           <type name="PreferencesPage" c:type="AdwPreferencesPage*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="756">a preferences dialog</doc>
+                 line="762">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
         </parameters>
@@ -25979,19 +25985,19 @@ See [method@ToastOverlay.add_toast].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="799">Gets the name of currently visible page of @self.</doc>
+             line="805">Gets the name of currently visible page of @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="58"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-preferences-dialog.c"
-               line="805">the name of the visible page</doc>
+               line="811">the name of the visible page</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="801">a preferences dialog</doc>
+                 line="807">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
         </parameters>
@@ -26001,19 +26007,19 @@ See [method@ToastOverlay.add_toast].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="928">Pop the visible page from the subpage stack of @self.</doc>
+             line="934">Pop the visible page from the subpage stack of @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="73"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-preferences-dialog.c"
-               line="934">`TRUE` if a page has been popped</doc>
+               line="940">`TRUE` if a page has been popped</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="930">a preferences dialog</doc>
+                 line="936">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
         </parameters>
@@ -26023,7 +26029,7 @@ See [method@ToastOverlay.add_toast].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="903">Pushes @page onto the subpage stack of @self.
+             line="909">Pushes @page onto the subpage stack of @self.
 
 The page will be automatically removed when popped.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="70"/>
@@ -26034,13 +26040,13 @@ The page will be automatically removed when popped.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="905">a preferences dialog</doc>
+                 line="911">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="906">the subpage</doc>
+                 line="912">the subpage</doc>
             <type name="NavigationPage" c:type="AdwNavigationPage*"/>
           </parameter>
         </parameters>
@@ -26050,7 +26056,7 @@ The page will be automatically removed when popped.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="725">Removes a page from @self.</doc>
+             line="731">Removes a page from @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="48"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -26059,13 +26065,13 @@ The page will be automatically removed when popped.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="727">a preferences dialog</doc>
+                 line="733">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="728">the page to remove</doc>
+                 line="734">the page to remove</doc>
             <type name="PreferencesPage" c:type="AdwPreferencesPage*"/>
           </parameter>
         </parameters>
@@ -26076,7 +26082,7 @@ The page will be automatically removed when popped.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="867">Sets whether search is enabled for @self.</doc>
+             line="873">Sets whether search is enabled for @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="66"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -26085,13 +26091,13 @@ The page will be automatically removed when popped.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="869">a preferences dialog</doc>
+                 line="875">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
           <parameter name="search_enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="870">whether search is enabled</doc>
+                 line="876">whether search is enabled</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -26102,7 +26108,7 @@ The page will be automatically removed when popped.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="776">Makes @page the visible page of @self.</doc>
+             line="782">Makes @page the visible page of @self.</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="54"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -26111,13 +26117,13 @@ The page will be automatically removed when popped.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="778">a preferences dialog</doc>
+                 line="784">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="779">a page of @self</doc>
+                 line="785">a page of @self</doc>
             <type name="PreferencesPage" c:type="AdwPreferencesPage*"/>
           </parameter>
         </parameters>
@@ -26128,7 +26134,7 @@ The page will be automatically removed when popped.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="821">Makes the page with the given name visible.
+             line="827">Makes the page with the given name visible.
 
 See [property@PreferencesDialog:visible-page].</doc>
         <source-position filename="src/adw-preferences-dialog.h" line="60"/>
@@ -26139,13 +26145,13 @@ See [property@PreferencesDialog:visible-page].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="823">a preferences dialog</doc>
+                 line="829">a preferences dialog</doc>
             <type name="PreferencesDialog" c:type="AdwPreferencesDialog*"/>
           </instance-parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-preferences-dialog.c"
-                 line="824">the name of the page to make visible</doc>
+                 line="830">the name of the page to make visible</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -26159,7 +26165,7 @@ See [property@PreferencesDialog:visible-page].</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="568">Whether search is enabled.</doc>
+             line="574">Whether search is enabled.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="visible-page"
@@ -26170,7 +26176,7 @@ See [property@PreferencesDialog:visible-page].</doc>
                 getter="get_visible_page">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="542">The currently visible page.</doc>
+             line="548">The currently visible page.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="visible-page-name"
@@ -26182,7 +26188,7 @@ See [property@PreferencesDialog:visible-page].</doc>
                 default-value="NULL">
         <doc xml:space="preserve"
              filename="src/adw-preferences-dialog.c"
-             line="554">The name of the currently visible page.
+             line="560">The name of the currently visible page.
 
 See [property@AdwPreferencesDialog:visible-page].</doc>
         <type name="utf8" c:type="gchar*"/>
@@ -40970,7 +40976,7 @@ See also [property@ToolbarView:bottom-bar-style].</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.6.3" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.6.4" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and
