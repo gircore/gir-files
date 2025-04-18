@@ -2311,7 +2311,7 @@ is the same as or newer than the passed-in version.</doc>
               c:type="SOUP_COOKIE_MAX_AGE_ONE_DAY">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="590">A constant corresponding to 1 day.
+           line="615">A constant corresponding to 1 day.
 
 For use with [ctor@Cookie.new] and [method@Cookie.set_max_age].</doc>
       <source-position filename="libsoup/cookies/soup-cookie.h" line="33"/>
@@ -2322,7 +2322,7 @@ For use with [ctor@Cookie.new] and [method@Cookie.set_max_age].</doc>
               c:type="SOUP_COOKIE_MAX_AGE_ONE_HOUR">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="583">A constant corresponding to 1 hour.
+           line="608">A constant corresponding to 1 hour.
 
 For use with [ctor@Cookie.new] and [method@Cookie.set_max_age].</doc>
       <source-position filename="libsoup/cookies/soup-cookie.h" line="32"/>
@@ -2333,7 +2333,7 @@ For use with [ctor@Cookie.new] and [method@Cookie.set_max_age].</doc>
               c:type="SOUP_COOKIE_MAX_AGE_ONE_WEEK">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="597">A constant corresponding to 1 week.
+           line="622">A constant corresponding to 1 week.
 
 For use with [ctor@Cookie.new] and [method@Cookie.set_max_age].</doc>
       <source-position filename="libsoup/cookies/soup-cookie.h" line="34"/>
@@ -2344,7 +2344,7 @@ For use with [ctor@Cookie.new] and [method@Cookie.set_max_age].</doc>
               c:type="SOUP_COOKIE_MAX_AGE_ONE_YEAR">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="604">A constant corresponding to 1 year.
+           line="629">A constant corresponding to 1 year.
 
 For use with [ctor@Cookie.new] and [method@Cookie.set_max_age].</doc>
       <source-position filename="libsoup/cookies/soup-cookie.h" line="35"/>
@@ -2839,7 +2839,7 @@ cross-site scripting attacks.</doc>
       <constructor name="new" c:identifier="soup_cookie_new">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="350">Creates a new #SoupCookie with the given attributes.
+             line="375">Creates a new #SoupCookie with the given attributes.
 
 Use [method@Cookie.set_secure] and [method@Cookie.set_http_only] if you
 need to set those attributes on the returned cookie.
@@ -2864,38 +2864,38 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="380">a new #SoupCookie.</doc>
+               line="405">a new #SoupCookie.</doc>
           <type name="Cookie" c:type="SoupCookie*"/>
         </return-value>
         <parameters>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="352">cookie name</doc>
+                 line="377">cookie name</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="353">cookie value</doc>
+                 line="378">cookie value</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="domain" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="354">cookie domain or hostname</doc>
+                 line="379">cookie domain or hostname</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="355">cookie path, or %NULL</doc>
+                 line="380">cookie path, or %NULL</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="max_age" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="356">max age of the cookie, or -1 for a session cookie</doc>
+                 line="381">max age of the cookie, or -1 for a session cookie</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -2903,7 +2903,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
       <method name="applies_to_uri" c:identifier="soup_cookie_applies_to_uri">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="1037">Tests if @cookie should be sent to @uri.
+             line="1062">Tests if @cookie should be sent to @uri.
 
 (At the moment, this does not check that @cookie's domain matches
 @uri, because it assumes that the caller has already done that.
@@ -2912,20 +2912,20 @@ But don't rely on that; it may change in the future.)</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="1048">%TRUE if @cookie should be sent to @uri, %FALSE if not</doc>
+               line="1073">%TRUE if @cookie should be sent to @uri, %FALSE if not</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="1039">a #SoupCookie</doc>
+                 line="1064">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="1040">a #GUri</doc>
+                 line="1065">a #GUri</doc>
             <type name="GLib.Uri" c:type="GUri*"/>
           </parameter>
         </parameters>
@@ -2982,7 +2982,7 @@ or that @cookie should be accepted when receiving a response from @host.</doc>
       <method name="equal" c:identifier="soup_cookie_equal">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="1081">Tests if @cookie1 and @cookie2 are equal.
+             line="1106">Tests if @cookie1 and @cookie2 are equal.
 
 Note that currently, this does not check that the cookie domains
 match. This may change in the future.</doc>
@@ -2990,20 +2990,20 @@ match. This may change in the future.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="1091">whether the cookies are equal.</doc>
+               line="1116">whether the cookies are equal.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie1" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="1083">a #SoupCookie</doc>
+                 line="1108">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="cookie2" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="1084">a #SoupCookie</doc>
+                 line="1109">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </parameter>
         </parameters>
@@ -3011,7 +3011,7 @@ match. This may change in the future.</doc>
       <method name="free" c:identifier="soup_cookie_free">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="841">Frees @cookie.</doc>
+             line="866">Frees @cookie.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="107"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -3020,7 +3020,7 @@ match. This may change in the future.</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="843">a #SoupCookie</doc>
+                 line="868">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3028,19 +3028,19 @@ match. This may change in the future.</doc>
       <method name="get_domain" c:identifier="soup_cookie_get_domain">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="490">Gets @cookie's domain.</doc>
+             line="515">Gets @cookie's domain.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="60"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="496">@cookie's domain</doc>
+               line="521">@cookie's domain</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="492">a #SoupCookie</doc>
+                 line="517">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3048,12 +3048,12 @@ match. This may change in the future.</doc>
       <method name="get_expires" c:identifier="soup_cookie_get_expires">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="612">Gets @cookie's expiration time.</doc>
+             line="637">Gets @cookie's expiration time.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="73"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="618">@cookie's expiration time, which is
+               line="643">@cookie's expiration time, which is
   owned by @cookie and should not be modified or freed.</doc>
           <type name="GLib.DateTime" c:type="GDateTime*"/>
         </return-value>
@@ -3061,7 +3061,7 @@ match. This may change in the future.</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="614">a #GDateTime</doc>
+                 line="639">a #GDateTime</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3069,19 +3069,19 @@ match. This may change in the future.</doc>
       <method name="get_http_only" c:identifier="soup_cookie_get_http_only">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="681">Gets @cookie's HttpOnly attribute.</doc>
+             line="706">Gets @cookie's HttpOnly attribute.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="83"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="687">@cookie's HttpOnly attribute</doc>
+               line="712">@cookie's HttpOnly attribute</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="683">a #SoupCookie</doc>
+                 line="708">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3089,19 +3089,19 @@ match. This may change in the future.</doc>
       <method name="get_name" c:identifier="soup_cookie_get_name">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="434">Gets @cookie's name.</doc>
+             line="459">Gets @cookie's name.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="50"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="440">@cookie's name</doc>
+               line="465">@cookie's name</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="436">a #SoupCookie</doc>
+                 line="461">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3109,19 +3109,19 @@ match. This may change in the future.</doc>
       <method name="get_path" c:identifier="soup_cookie_get_path">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="518">Gets @cookie's path.</doc>
+             line="543">Gets @cookie's path.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="65"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="524">@cookie's path</doc>
+               line="549">@cookie's path</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="520">a #SoupCookie</doc>
+                 line="545">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3130,19 +3130,19 @@ match. This may change in the future.</doc>
               c:identifier="soup_cookie_get_same_site_policy">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="790">Returns the same-site policy for this cookie.</doc>
+             line="815">Returns the same-site policy for this cookie.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="92"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="796">a #SoupSameSitePolicy</doc>
+               line="821">a #SoupSameSitePolicy</doc>
           <type name="SameSitePolicy" c:type="SoupSameSitePolicy"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="792">a #SoupCookie</doc>
+                 line="817">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3150,19 +3150,19 @@ match. This may change in the future.</doc>
       <method name="get_secure" c:identifier="soup_cookie_get_secure">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="651">Gets @cookie's secure attribute.</doc>
+             line="676">Gets @cookie's secure attribute.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="78"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="657">@cookie's secure attribute</doc>
+               line="682">@cookie's secure attribute</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="653">a #SoupCookie</doc>
+                 line="678">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3170,19 +3170,19 @@ match. This may change in the future.</doc>
       <method name="get_value" c:identifier="soup_cookie_get_value">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="462">Gets @cookie's value.</doc>
+             line="487">Gets @cookie's value.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="55"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="468">@cookie's value</doc>
+               line="493">@cookie's value</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="464">a #SoupCookie</doc>
+                 line="489">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3190,7 +3190,7 @@ match. This may change in the future.</doc>
       <method name="set_domain" c:identifier="soup_cookie_set_domain">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="504">Sets @cookie's domain to @domain.</doc>
+             line="529">Sets @cookie's domain to @domain.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="62"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -3199,13 +3199,13 @@ match. This may change in the future.</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="506">a #SoupCookie</doc>
+                 line="531">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="domain" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="507">the new domain</doc>
+                 line="532">the new domain</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -3213,7 +3213,7 @@ match. This may change in the future.</doc>
       <method name="set_expires" c:identifier="soup_cookie_set_expires">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="627">Sets @cookie's expiration time to @expires.
+             line="652">Sets @cookie's expiration time to @expires.
 
 If @expires is %NULL, @cookie will be a session cookie and will expire at the
 end of the client's session.
@@ -3227,13 +3227,13 @@ end of the client's session.
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="629">a #SoupCookie</doc>
+                 line="654">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="expires" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="630">the new expiration time, or %NULL</doc>
+                 line="655">the new expiration time, or %NULL</doc>
             <type name="GLib.DateTime" c:type="GDateTime*"/>
           </parameter>
         </parameters>
@@ -3241,7 +3241,7 @@ end of the client's session.
       <method name="set_http_only" c:identifier="soup_cookie_set_http_only">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="695">Sets @cookie's HttpOnly attribute to @http_only.
+             line="720">Sets @cookie's HttpOnly attribute to @http_only.
 
 If %TRUE, @cookie will be marked as "http only", meaning it should not be
 exposed to web page scripts or other untrusted code.</doc>
@@ -3253,13 +3253,13 @@ exposed to web page scripts or other untrusted code.</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="697">a #SoupCookie</doc>
+                 line="722">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="http_only" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="698">the new value for the HttpOnly attribute</doc>
+                 line="723">the new value for the HttpOnly attribute</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -3267,7 +3267,7 @@ exposed to web page scripts or other untrusted code.</doc>
       <method name="set_max_age" c:identifier="soup_cookie_set_max_age">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="546">Sets @cookie's max age to @max_age.
+             line="571">Sets @cookie's max age to @max_age.
 
 If @max_age is -1, the cookie is a session cookie, and will expire at the end
 of the client's session. Otherwise, it is the number of seconds until the
@@ -3286,13 +3286,13 @@ This sets the same property as [method@Cookie.set_expires].</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="548">a #SoupCookie</doc>
+                 line="573">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="max_age" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="549">the new max age</doc>
+                 line="574">the new max age</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -3300,7 +3300,7 @@ This sets the same property as [method@Cookie.set_expires].</doc>
       <method name="set_name" c:identifier="soup_cookie_set_name">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="448">Sets @cookie's name to @name.</doc>
+             line="473">Sets @cookie's name to @name.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="52"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -3309,13 +3309,13 @@ This sets the same property as [method@Cookie.set_expires].</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="450">a #SoupCookie</doc>
+                 line="475">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="451">the new name</doc>
+                 line="476">the new name</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -3323,7 +3323,7 @@ This sets the same property as [method@Cookie.set_expires].</doc>
       <method name="set_path" c:identifier="soup_cookie_set_path">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="532">Sets @cookie's path to @path.</doc>
+             line="557">Sets @cookie's path to @path.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="67"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -3332,13 +3332,13 @@ This sets the same property as [method@Cookie.set_expires].</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="534">a #SoupCookie</doc>
+                 line="559">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="535">the new path</doc>
+                 line="560">the new path</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -3347,7 +3347,7 @@ This sets the same property as [method@Cookie.set_expires].</doc>
               c:identifier="soup_cookie_set_same_site_policy">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="766">When used in conjunction with
+             line="791">When used in conjunction with
 [method@CookieJar.get_cookie_list_with_same_site_info] this sets the policy
 of when this cookie should be exposed.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="89"/>
@@ -3358,13 +3358,13 @@ of when this cookie should be exposed.</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="768">a #SoupCookie</doc>
+                 line="793">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="769">a #SoupSameSitePolicy</doc>
+                 line="794">a #SoupSameSitePolicy</doc>
             <type name="SameSitePolicy" c:type="SoupSameSitePolicy"/>
           </parameter>
         </parameters>
@@ -3372,7 +3372,7 @@ of when this cookie should be exposed.</doc>
       <method name="set_secure" c:identifier="soup_cookie_set_secure">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="665">Sets @cookie's secure attribute to @secure.
+             line="690">Sets @cookie's secure attribute to @secure.
 
 If %TRUE, @cookie will only be transmitted from the client to the server over
 secure (https) connections.</doc>
@@ -3384,13 +3384,13 @@ secure (https) connections.</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="667">a #SoupCookie</doc>
+                 line="692">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="secure" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="668">the new value for the secure attribute</doc>
+                 line="693">the new value for the secure attribute</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -3398,7 +3398,7 @@ secure (https) connections.</doc>
       <method name="set_value" c:identifier="soup_cookie_set_value">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="476">Sets @cookie's value to @value.</doc>
+             line="501">Sets @cookie's value to @value.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="57"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -3407,13 +3407,13 @@ secure (https) connections.</doc>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="478">a #SoupCookie</doc>
+                 line="503">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="479">the new value</doc>
+                 line="504">the new value</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -3422,20 +3422,20 @@ secure (https) connections.</doc>
               c:identifier="soup_cookie_to_cookie_header">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="823">Serializes @cookie in the format used by the Cookie header (ie, for
+             line="848">Serializes @cookie in the format used by the Cookie header (ie, for
 returning a cookie from a [class@Session] to a server).</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="97"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="830">the header</doc>
+               line="855">the header</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="825">a #SoupCookie</doc>
+                 line="850">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3444,21 +3444,21 @@ returning a cookie from a [class@Session] to a server).</doc>
               c:identifier="soup_cookie_to_set_cookie_header">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="804">Serializes @cookie in the format used by the Set-Cookie header.
+             line="829">Serializes @cookie in the format used by the Set-Cookie header.
 
 i.e. for sending a cookie from a [class@Server] to a client.</doc>
         <source-position filename="libsoup/cookies/soup-cookie.h" line="95"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="812">the header</doc>
+               line="837">the header</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="806">a #SoupCookie</doc>
+                 line="831">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </instance-parameter>
         </parameters>
@@ -3466,7 +3466,7 @@ i.e. for sending a cookie from a [class@Server] to a client.</doc>
       <function name="parse" c:identifier="soup_cookie_parse">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="402">Parses @header and returns a #SoupCookie.
+             line="427">Parses @header and returns a #SoupCookie.
 
 If @header contains multiple cookies, only the first one will be parsed.
 
@@ -3483,7 +3483,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="421">a new #SoupCookie, or %NULL if it could
+               line="446">a new #SoupCookie, or %NULL if it could
   not be parsed, or contained an illegal "domain" attribute for a
   cookie originating from @origin.</doc>
           <type name="Cookie" c:type="SoupCookie*"/>
@@ -3492,7 +3492,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
           <parameter name="header" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="404">a cookie string (eg, the value of a Set-Cookie header)</doc>
+                 line="429">a cookie string (eg, the value of a Set-Cookie header)</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="origin"
@@ -3501,7 +3501,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie.c"
-                 line="405">origin of the cookie</doc>
+                 line="430">origin of the cookie</doc>
             <type name="GLib.Uri" c:type="GUri*"/>
           </parameter>
         </parameters>
@@ -3564,20 +3564,20 @@ use a subclass for that.</doc>
       <virtual-method name="is_persistent" invoker="is_persistent">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1097">Gets whether @jar stores cookies persistenly.</doc>
+             line="1105">Gets whether @jar stores cookies persistenly.</doc>
         <source-position filename="libsoup/cookies/soup-cookie-jar.h"
                          line="20"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie-jar.c"
-               line="1103">%TRUE if @jar storage is persistent or %FALSE otherwise.</doc>
+               line="1111">%TRUE if @jar storage is persistent or %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="1099">a #SoupCookieJar</doc>
+                 line="1107">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
         </parameters>
@@ -3597,7 +3597,7 @@ use a subclass for that.</doc>
       <method name="add_cookie" c:identifier="soup_cookie_jar_add_cookie">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="736">Adds @cookie to @jar.
+             line="742">Adds @cookie to @jar.
 
 Emits the [signal@CookieJar::changed] signal if we are modifying
 an existing cookie or adding a valid new cookie ('valid' means
@@ -3613,13 +3613,13 @@ that the cookie's expire date is not in the past).
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="738">a #SoupCookieJar</doc>
+                 line="744">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
           <parameter name="cookie" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="739">a #SoupCookie</doc>
+                 line="745">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </parameter>
         </parameters>
@@ -3683,7 +3683,7 @@ from insecure origins. %NULL is treated as secure.
               c:identifier="soup_cookie_jar_add_cookie_with_first_party">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="755">Adds @cookie to @jar.
+             line="761">Adds @cookie to @jar.
 
 Emits the [signal@CookieJar::changed] signal if we are modifying
 an existing cookie or adding a valid new cookie ('valid' means
@@ -3705,19 +3705,19 @@ For secure cookies to work properly you may want to use
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="757">a #SoupCookieJar</doc>
+                 line="763">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
           <parameter name="first_party" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="758">the URI for the main document</doc>
+                 line="764">the URI for the main document</doc>
             <type name="GLib.Uri" c:type="GUri*"/>
           </parameter>
           <parameter name="cookie" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="759">a #SoupCookie</doc>
+                 line="765">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </parameter>
         </parameters>
@@ -3725,16 +3725,18 @@ For secure cookies to work properly you may want to use
       <method name="all_cookies" c:identifier="soup_cookie_jar_all_cookies">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="937">Constructs a [struct@GLib.List] with every cookie inside the @jar.
+             line="943">Constructs a [struct@GLib.List] with every cookie inside the @jar.
 
 The cookies in the list are a copy of the original, so
-you have to free them when you are done with them.</doc>
+you have to free them when you are done with them.
+
+For historical reasons this list is in reverse order.</doc>
         <source-position filename="libsoup/cookies/soup-cookie-jar.h"
                          line="82"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie-jar.c"
-               line="946">a #GSList
+               line="954">a #GSList
   with all the cookies in the @jar.</doc>
           <type name="GLib.SList" c:type="GSList*">
             <type name="Cookie"/>
@@ -3744,7 +3746,7 @@ you have to free them when you are done with them.</doc>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="939">a #SoupCookieJar</doc>
+                 line="945">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
         </parameters>
@@ -3753,7 +3755,7 @@ you have to free them when you are done with them.</doc>
               c:identifier="soup_cookie_jar_delete_cookie">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="976">Deletes @cookie from @jar.
+             line="984">Deletes @cookie from @jar.
 
 Emits the [signal@CookieJar::changed] signal.</doc>
         <source-position filename="libsoup/cookies/soup-cookie-jar.h"
@@ -3765,13 +3767,13 @@ Emits the [signal@CookieJar::changed] signal.</doc>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="978">a #SoupCookieJar</doc>
+                 line="986">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
           <parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="979">a #SoupCookie</doc>
+                 line="987">a #SoupCookie</doc>
             <type name="Cookie" c:type="SoupCookie*"/>
           </parameter>
         </parameters>
@@ -3782,13 +3784,13 @@ Emits the [signal@CookieJar::changed] signal.</doc>
         <attribute name="org.gtk.Method.get_property" value="accept-policy"/>
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1055">Gets @jar's [enum@CookieJarAcceptPolicy].</doc>
+             line="1063">Gets @jar's [enum@CookieJarAcceptPolicy].</doc>
         <source-position filename="libsoup/cookies/soup-cookie-jar.h"
                          line="87"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie-jar.c"
-               line="1061">the #SoupCookieJarAcceptPolicy set in the @jar</doc>
+               line="1069">the #SoupCookieJarAcceptPolicy set in the @jar</doc>
           <type name="CookieJarAcceptPolicy"
                 c:type="SoupCookieJarAcceptPolicy"/>
         </return-value>
@@ -3796,7 +3798,7 @@ Emits the [signal@CookieJar::changed] signal.</doc>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="1057">a #SoupCookieJar</doc>
+                 line="1065">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
         </parameters>
@@ -3970,20 +3972,20 @@ this.</doc>
               c:identifier="soup_cookie_jar_is_persistent">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1097">Gets whether @jar stores cookies persistenly.</doc>
+             line="1105">Gets whether @jar stores cookies persistenly.</doc>
         <source-position filename="libsoup/cookies/soup-cookie-jar.h"
                          line="89"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie-jar.c"
-               line="1103">%TRUE if @jar storage is persistent or %FALSE otherwise.</doc>
+               line="1111">%TRUE if @jar storage is persistent or %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="1099">a #SoupCookieJar</doc>
+                 line="1107">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
         </parameters>
@@ -3994,7 +3996,7 @@ this.</doc>
         <attribute name="org.gtk.Method.set_property" value="accept-policy"/>
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1074">Sets @policy as the cookie acceptance policy for @jar.</doc>
+             line="1082">Sets @policy as the cookie acceptance policy for @jar.</doc>
         <source-position filename="libsoup/cookies/soup-cookie-jar.h"
                          line="84"/>
         <return-value transfer-ownership="none">
@@ -4004,13 +4006,13 @@ this.</doc>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="1076">a #SoupCookieJar</doc>
+                 line="1084">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
           <parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="1077">a #SoupCookieJarAcceptPolicy</doc>
+                 line="1085">a #SoupCookieJarAcceptPolicy</doc>
             <type name="CookieJarAcceptPolicy"
                   c:type="SoupCookieJarAcceptPolicy"/>
           </parameter>
@@ -4019,7 +4021,7 @@ this.</doc>
       <method name="set_cookie" c:identifier="soup_cookie_jar_set_cookie">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="783">Adds @cookie to @jar, exactly as though it had appeared in a
+             line="789">Adds @cookie to @jar, exactly as though it had appeared in a
 Set-Cookie header returned from a request to @uri.
 
 Keep in mind that if the [enum@CookieJarAcceptPolicy] set is either
@@ -4037,19 +4039,19 @@ party or not.</doc>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="785">a #SoupCookieJar</doc>
+                 line="791">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="786">the URI setting the cookie</doc>
+                 line="792">the URI setting the cookie</doc>
             <type name="GLib.Uri" c:type="GUri*"/>
           </parameter>
           <parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="787">the stringified cookie to set</doc>
+                 line="793">the stringified cookie to set</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4058,7 +4060,7 @@ party or not.</doc>
               c:identifier="soup_cookie_jar_set_cookie_with_first_party">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="827">Adds @cookie to @jar, exactly as though it had appeared in a
+             line="833">Adds @cookie to @jar, exactly as though it had appeared in a
 Set-Cookie header returned from a request to @uri.
 
 @first_party will be used to reject cookies coming from third party resources
@@ -4072,25 +4074,25 @@ in case such a security policy is set in the @jar.</doc>
           <instance-parameter name="jar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="829">a #SoupCookieJar</doc>
+                 line="835">a #SoupCookieJar</doc>
             <type name="CookieJar" c:type="SoupCookieJar*"/>
           </instance-parameter>
           <parameter name="uri" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="830">the URI setting the cookie</doc>
+                 line="836">the URI setting the cookie</doc>
             <type name="GLib.Uri" c:type="GUri*"/>
           </parameter>
           <parameter name="first_party" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="831">the URI for the main document</doc>
+                 line="837">the URI for the main document</doc>
             <type name="GLib.Uri" c:type="GUri*"/>
           </parameter>
           <parameter name="cookie" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="832">the stringified cookie to set</doc>
+                 line="838">the stringified cookie to set</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4139,13 +4141,19 @@ new value.</doc>
           <type name="none" c:type="void"/>
         </return-value>
         <parameters>
-          <parameter name="old_cookie" transfer-ownership="none">
+          <parameter name="old_cookie"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
                  line="171">the old #SoupCookie value</doc>
             <type name="Cookie"/>
           </parameter>
-          <parameter name="new_cookie" transfer-ownership="none">
+          <parameter name="new_cookie"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
                  line="172">the new #SoupCookie value</doc>
@@ -4160,7 +4168,7 @@ new value.</doc>
                  c:type="SoupCookieJarAcceptPolicy">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie-jar.c"
-           line="1022">The policy for accepting or rejecting cookies returned in
+           line="1030">The policy for accepting or rejecting cookies returned in
 responses.</doc>
       <member name="always"
               value="0"
@@ -4169,7 +4177,7 @@ responses.</doc>
               glib:name="SOUP_COOKIE_JAR_ACCEPT_ALWAYS">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1024">accept all cookies unconditionally.</doc>
+             line="1032">accept all cookies unconditionally.</doc>
       </member>
       <member name="never"
               value="1"
@@ -4178,7 +4186,7 @@ responses.</doc>
               glib:name="SOUP_COOKIE_JAR_ACCEPT_NEVER">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1025">reject all cookies unconditionally.</doc>
+             line="1033">reject all cookies unconditionally.</doc>
       </member>
       <member name="no_third_party"
               value="2"
@@ -4187,7 +4195,7 @@ responses.</doc>
               glib:name="SOUP_COOKIE_JAR_ACCEPT_NO_THIRD_PARTY">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1026">accept all cookies set by the main
+             line="1034">accept all cookies set by the main
   document loaded in the application using libsoup. An example of the most
   common case, web browsers, would be: If http://www.example.com is the page
   loaded, accept all cookies set by example.com, but if a resource from
@@ -4206,7 +4214,7 @@ responses.</doc>
               glib:name="SOUP_COOKIE_JAR_ACCEPT_GRANDFATHERED_THIRD_PARTY">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie-jar.c"
-             line="1037">accept all cookies set by
+             line="1045">accept all cookies set by
   the main document loaded in the application using libsoup, and from domains
   that have previously set at least one cookie when loaded as the main
   document. An example of the most common case, web browsers, would be: if
@@ -4249,14 +4257,14 @@ responses.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/cookies/soup-cookie-jar.c"
-                 line="1103">%TRUE if @jar storage is persistent or %FALSE otherwise.</doc>
+                 line="1111">%TRUE if @jar storage is persistent or %FALSE otherwise.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
           <parameters>
             <parameter name="jar" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libsoup/cookies/soup-cookie-jar.c"
-                   line="1099">a #SoupCookieJar</doc>
+                   line="1107">a #SoupCookieJar</doc>
               <type name="CookieJar" c:type="SoupCookieJar*"/>
             </parameter>
           </parameters>
@@ -4691,7 +4699,7 @@ enforcer.</doc>
       <constructor name="new" c:identifier="soup_hsts_enforcer_new">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="185">Creates a new #SoupHSTSEnforcer.
+             line="176">Creates a new #SoupHSTSEnforcer.
 
 The base #SoupHSTSEnforcer class does not support persistent storage of HSTS
 policies, see [class@HSTSEnforcerDB] for that.</doc>
@@ -4700,7 +4708,7 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-enforcer.c"
-               line="193">a new #SoupHSTSEnforcer</doc>
+               line="184">a new #SoupHSTSEnforcer</doc>
           <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
         </return-value>
       </constructor>
@@ -4728,13 +4736,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
       <virtual-method name="has_valid_policy" invoker="has_valid_policy">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="604">Gets whether @hsts_enforcer has a currently valid policy for @domain.</doc>
+             line="593">Gets whether @hsts_enforcer has a currently valid policy for @domain.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-enforcer.h"
                          line="35"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-enforcer.c"
-               line="611">%TRUE if access to @domain should happen over HTTPS, false
+               line="600">%TRUE if access to @domain should happen over HTTPS, false
   otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -4742,13 +4750,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="606">a #SoupHSTSEnforcer</doc>
+                 line="595">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
           <parameter name="domain" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="607">a domain.</doc>
+                 line="596">a domain.</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4756,20 +4764,20 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
       <virtual-method name="is_persistent" invoker="is_persistent">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="588">Gets whether @hsts_enforcer stores policies persistenly.</doc>
+             line="577">Gets whether @hsts_enforcer stores policies persistenly.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-enforcer.h"
                          line="34"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-enforcer.c"
-               line="594">%TRUE if @hsts_enforcer storage is persistent or %FALSE otherwise.</doc>
+               line="583">%TRUE if @hsts_enforcer storage is persistent or %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="590">a #SoupHSTSEnforcer</doc>
+                 line="579">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
         </parameters>
@@ -4777,13 +4785,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
       <method name="get_domains" c:identifier="soup_hsts_enforcer_get_domains">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="646">Gets a list of domains for which there are policies in @enforcer.</doc>
+             line="635">Gets a list of domains for which there are policies in @enforcer.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-enforcer.h"
                          line="62"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-enforcer.c"
-               line="653">a newly allocated
+               line="642">a newly allocated
   list of domains. Use [func@GLib.List.free_full] and [func@GLib.free] to free the
   list.</doc>
           <type name="GLib.List" c:type="GList*">
@@ -4794,13 +4802,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="648">a #SoupHSTSEnforcer</doc>
+                 line="637">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
           <parameter name="session_policies" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="649">whether to include session policies</doc>
+                 line="638">whether to include session policies</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4809,13 +4817,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
               c:identifier="soup_hsts_enforcer_get_policies">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="682">Gets a list with the policies in @enforcer.</doc>
+             line="671">Gets a list with the policies in @enforcer.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-enforcer.h"
                          line="66"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-enforcer.c"
-               line="689">a newly
+               line="678">a newly
   allocated list of policies. Use [func@GLib.List.free_full] and
   [method@HSTSPolicy.free] to free the list.</doc>
           <type name="GLib.List" c:type="GList*">
@@ -4826,13 +4834,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="684">a #SoupHSTSEnforcer</doc>
+                 line="673">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
           <parameter name="session_policies" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="685">whether to include session policies</doc>
+                 line="674">whether to include session policies</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4841,13 +4849,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
               c:identifier="soup_hsts_enforcer_has_valid_policy">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="604">Gets whether @hsts_enforcer has a currently valid policy for @domain.</doc>
+             line="593">Gets whether @hsts_enforcer has a currently valid policy for @domain.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-enforcer.h"
                          line="51"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-enforcer.c"
-               line="611">%TRUE if access to @domain should happen over HTTPS, false
+               line="600">%TRUE if access to @domain should happen over HTTPS, false
   otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -4855,13 +4863,13 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="606">a #SoupHSTSEnforcer</doc>
+                 line="595">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
           <parameter name="domain" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="607">a domain.</doc>
+                 line="596">a domain.</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -4870,20 +4878,20 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
               c:identifier="soup_hsts_enforcer_is_persistent">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="588">Gets whether @hsts_enforcer stores policies persistenly.</doc>
+             line="577">Gets whether @hsts_enforcer stores policies persistenly.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-enforcer.h"
                          line="49"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-enforcer.c"
-               line="594">%TRUE if @hsts_enforcer storage is persistent or %FALSE otherwise.</doc>
+               line="583">%TRUE if @hsts_enforcer storage is persistent or %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="590">a #SoupHSTSEnforcer</doc>
+                 line="579">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
         </parameters>
@@ -4891,7 +4899,7 @@ policies, see [class@HSTSEnforcerDB] for that.</doc>
       <method name="set_policy" c:identifier="soup_hsts_enforcer_set_policy">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="314">Sets @policy to @hsts_enforcer.
+             line="303">Sets @policy to @hsts_enforcer.
 
 If @policy is expired, any existing HSTS policy for its host will be removed
 instead. If a policy existed for this host, it will be replaced. Otherwise,
@@ -4908,13 +4916,13 @@ expire and will be enforced during the lifetime of @hsts_enforcer's
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="316">a #SoupHSTSEnforcer</doc>
+                 line="305">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
           <parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="317">the policy of the HSTS host</doc>
+                 line="306">the policy of the HSTS host</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </parameter>
         </parameters>
@@ -4923,7 +4931,7 @@ expire and will be enforced during the lifetime of @hsts_enforcer's
               c:identifier="soup_hsts_enforcer_set_session_policy">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="364">Sets a session policy for @domain.
+             line="353">Sets a session policy for @domain.
 
 A session policy is a policy that is permanent to the lifetime of
 @hsts_enforcer's [class@Session] and doesn't expire.</doc>
@@ -4936,19 +4944,19 @@ A session policy is a policy that is permanent to the lifetime of
           <instance-parameter name="hsts_enforcer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="366">a #SoupHSTSEnforcer</doc>
+                 line="355">a #SoupHSTSEnforcer</doc>
             <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
           </instance-parameter>
           <parameter name="domain" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="367">policy domain or hostname</doc>
+                 line="356">policy domain or hostname</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="include_subdomains" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="368">%TRUE if the policy applies on sub domains</doc>
+                 line="357">%TRUE if the policy applies on sub domains</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4959,7 +4967,7 @@ A session policy is a policy that is permanent to the lifetime of
       <glib:signal name="changed" when="first">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer.c"
-             line="154">Emitted when @hsts_enforcer changes.
+             line="145">Emitted when @hsts_enforcer changes.
 
 If a policy has been added,
 @new_policy will contain the newly-added policy and
@@ -4978,13 +4986,13 @@ this signal.</doc>
           <parameter name="old_policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="157">the old #SoupHSTSPolicy value</doc>
+                 line="148">the old #SoupHSTSPolicy value</doc>
             <type name="HSTSPolicy"/>
           </parameter>
           <parameter name="new_policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="158">the new #SoupHSTSPolicy value</doc>
+                 line="149">the new #SoupHSTSPolicy value</doc>
             <type name="HSTSPolicy"/>
           </parameter>
         </parameters>
@@ -5014,14 +5022,14 @@ whether changes made to it will be lost when the underlying [class@Session] is f
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="594">%TRUE if @hsts_enforcer storage is persistent or %FALSE otherwise.</doc>
+                 line="583">%TRUE if @hsts_enforcer storage is persistent or %FALSE otherwise.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
           <parameters>
             <parameter name="hsts_enforcer" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libsoup/hsts/soup-hsts-enforcer.c"
-                   line="590">a #SoupHSTSEnforcer</doc>
+                   line="579">a #SoupHSTSEnforcer</doc>
               <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
             </parameter>
           </parameters>
@@ -5041,7 +5049,7 @@ policies.</doc>
           <return-value transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-enforcer.c"
-                 line="611">%TRUE if access to @domain should happen over HTTPS, false
+                 line="600">%TRUE if access to @domain should happen over HTTPS, false
   otherwise.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </return-value>
@@ -5049,13 +5057,13 @@ policies.</doc>
             <parameter name="hsts_enforcer" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libsoup/hsts/soup-hsts-enforcer.c"
-                   line="606">a #SoupHSTSEnforcer</doc>
+                   line="595">a #SoupHSTSEnforcer</doc>
               <type name="HSTSEnforcer" c:type="SoupHSTSEnforcer*"/>
             </parameter>
             <parameter name="domain" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="libsoup/hsts/soup-hsts-enforcer.c"
-                   line="607">a domain.</doc>
+                   line="596">a domain.</doc>
               <type name="utf8" c:type="const char*"/>
             </parameter>
           </parameters>
@@ -5142,7 +5150,7 @@ and initialized. Changes to the policies during the lifetime of a
                 default-value="NULL">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-enforcer-db.c"
-             line="329">The filename of the SQLite database where HSTS policies are stored.</doc>
+             line="330">The filename of the SQLite database where HSTS policies are stored.</doc>
         <type name="utf8" c:type="gchar*"/>
       </property>
     </class>
@@ -5227,13 +5235,13 @@ must also be enforced on all subdomains of @domain.</doc>
                    c:identifier="soup_hsts_policy_new_from_response">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="236">Parses @msg's first "Strict-Transport-Security" response header and
+             line="241">Parses @msg's first "Strict-Transport-Security" response header and
 returns a #SoupHSTSPolicy.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="39"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="243">a new #SoupHSTSPolicy, or %NULL if no valid
+               line="248">a new #SoupHSTSPolicy, or %NULL if no valid
   "Strict-Transport-Security" response header was found.</doc>
           <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
         </return-value>
@@ -5241,7 +5249,7 @@ returns a #SoupHSTSPolicy.</doc>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="238">a #SoupMessage</doc>
+                 line="243">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -5249,7 +5257,7 @@ returns a #SoupHSTSPolicy.</doc>
       <constructor name="new_full" c:identifier="soup_hsts_policy_new_full">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="161">Full version of [ctor@HSTSPolicy.new], to use with an existing
+             line="166">Full version of [ctor@HSTSPolicy.new], to use with an existing
 expiration date.
 
 See [ctor@HSTSPolicy.new] for details.</doc>
@@ -5257,32 +5265,32 @@ See [ctor@HSTSPolicy.new] for details.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="173">a new #SoupHSTSPolicy.</doc>
+               line="178">a new #SoupHSTSPolicy.</doc>
           <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
         </return-value>
         <parameters>
           <parameter name="domain" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="163">policy domain or hostname</doc>
+                 line="168">policy domain or hostname</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="max_age" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="164">max age of the policy</doc>
+                 line="169">max age of the policy</doc>
             <type name="gulong" c:type="unsigned long"/>
           </parameter>
           <parameter name="expires" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="165">the date of expiration of the policy or %NULL for a permanent policy</doc>
+                 line="170">the date of expiration of the policy or %NULL for a permanent policy</doc>
             <type name="GLib.DateTime" c:type="GDateTime*"/>
           </parameter>
           <parameter name="include_subdomains" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="166">%TRUE if the policy applies on subdomains</doc>
+                 line="171">%TRUE if the policy applies on subdomains</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -5291,7 +5299,7 @@ See [ctor@HSTSPolicy.new] for details.</doc>
                    c:identifier="soup_hsts_policy_new_session_policy">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="204">Creates a new session #SoupHSTSPolicy with the given attributes.
+             line="209">Creates a new session #SoupHSTSPolicy with the given attributes.
 
 A session policy is a policy that is valid during the lifetime of
 the [class@HSTSEnforcer] it is added to. Contrary to regular policies,
@@ -5308,20 +5316,20 @@ must also be enforced on all subdomains of @domain.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="223">a new #SoupHSTSPolicy.</doc>
+               line="228">a new #SoupHSTSPolicy.</doc>
           <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
         </return-value>
         <parameters>
           <parameter name="domain" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="206">policy domain or hostname</doc>
+                 line="211">policy domain or hostname</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="include_subdomains" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="207">%TRUE if the policy applies on sub domains</doc>
+                 line="212">%TRUE if the policy applies on sub domains</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -5375,7 +5383,7 @@ must also be enforced on all subdomains of @domain.</doc>
       <method name="free" c:identifier="soup_hsts_policy_free">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="398">Frees @policy.</doc>
+             line="403">Frees @policy.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="56"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -5384,7 +5392,7 @@ must also be enforced on all subdomains of @domain.</doc>
           <instance-parameter name="policy" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="400">a #SoupHSTSPolicy</doc>
+                 line="405">a #SoupHSTSPolicy</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </instance-parameter>
         </parameters>
@@ -5392,19 +5400,19 @@ must also be enforced on all subdomains of @domain.</doc>
       <method name="get_domain" c:identifier="soup_hsts_policy_get_domain">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="298">Gets @policy's domain.</doc>
+             line="303">Gets @policy's domain.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="47"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="304">@policy's domain.</doc>
+               line="309">@policy's domain.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="300">a #SoupHSTSPolicy</doc>
+                 line="305">a #SoupHSTSPolicy</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </instance-parameter>
         </parameters>
@@ -5412,19 +5420,19 @@ must also be enforced on all subdomains of @domain.</doc>
       <method name="get_expires" c:identifier="soup_hsts_policy_get_expires">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="366">Returns the expiration date for @policy.</doc>
+             line="371">Returns the expiration date for @policy.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="59"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="372">A #GDateTime or %NULL if unset</doc>
+               line="377">A #GDateTime or %NULL if unset</doc>
           <type name="GLib.DateTime" c:type="GDateTime*"/>
         </return-value>
         <parameters>
           <instance-parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="368">a #SoupHSTSPolicy</doc>
+                 line="373">a #SoupHSTSPolicy</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </instance-parameter>
         </parameters>
@@ -5432,19 +5440,19 @@ must also be enforced on all subdomains of @domain.</doc>
       <method name="get_max_age" c:identifier="soup_hsts_policy_get_max_age">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="382">Returns the max age for @policy.</doc>
+             line="387">Returns the max age for @policy.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="62"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="388">Max age in seconds</doc>
+               line="393">Max age in seconds</doc>
           <type name="gulong" c:type="gulong"/>
         </return-value>
         <parameters>
           <instance-parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="384">a #SoupHSTSPolicy</doc>
+                 line="389">a #SoupHSTSPolicy</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </instance-parameter>
         </parameters>
@@ -5453,19 +5461,19 @@ must also be enforced on all subdomains of @domain.</doc>
               c:identifier="soup_hsts_policy_includes_subdomains">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="332">Gets whether @policy include its subdomains.</doc>
+             line="337">Gets whether @policy include its subdomains.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="51"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="338">%TRUE if @policy includes subdomains, %FALSE otherwise.</doc>
+               line="343">%TRUE if @policy includes subdomains, %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="334">a #SoupHSTSPolicy</doc>
+                 line="339">a #SoupHSTSPolicy</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </instance-parameter>
         </parameters>
@@ -5473,21 +5481,21 @@ must also be enforced on all subdomains of @domain.</doc>
       <method name="is_expired" c:identifier="soup_hsts_policy_is_expired">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="314">Gets whether @policy is expired.
+             line="319">Gets whether @policy is expired.
 
 Permanent policies never expire.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="49"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="322">%TRUE if @policy is expired, %FALSE otherwise.</doc>
+               line="327">%TRUE if @policy is expired, %FALSE otherwise.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="316">a #SoupHSTSPolicy</doc>
+                 line="321">a #SoupHSTSPolicy</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </instance-parameter>
         </parameters>
@@ -5496,21 +5504,21 @@ Permanent policies never expire.</doc>
               c:identifier="soup_hsts_policy_is_session_policy">
         <doc xml:space="preserve"
              filename="libsoup/hsts/soup-hsts-policy.c"
-             line="348">Gets whether @policy is a non-permanent, non-expirable session policy.
+             line="353">Gets whether @policy is a non-permanent, non-expirable session policy.
 
 See [ctor@HSTSPolicy.new_session_policy] for details.</doc>
         <source-position filename="libsoup/hsts/soup-hsts-policy.h" line="53"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/hsts/soup-hsts-policy.c"
-               line="356">%TRUE if @policy is permanent, %FALSE otherwise</doc>
+               line="361">%TRUE if @policy is permanent, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="policy" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/hsts/soup-hsts-policy.c"
-                 line="350">a #SoupHSTSPolicy</doc>
+                 line="355">a #SoupHSTSPolicy</doc>
             <type name="HSTSPolicy" c:type="SoupHSTSPolicy*"/>
           </instance-parameter>
         </parameters>
@@ -6038,7 +6046,7 @@ time.</doc>
       <source-position filename="libsoup/soup-version.h" line="14"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="4" c:type="SOUP_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="5" c:type="SOUP_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="libsoup/soup-version.c"
            line="32">Like [func@get_micro_version], but from the headers used at
@@ -13401,7 +13409,7 @@ context at the time of the function call.</doc>
       <method name="abort" c:identifier="soup_session_abort">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2027">Cancels all pending requests in @session and closes all idle
+             line="2033">Cancels all pending requests in @session and closes all idle
 persistent connections.</doc>
         <source-position filename="libsoup/soup-session.h" line="132"/>
         <return-value transfer-ownership="none">
@@ -13411,7 +13419,7 @@ persistent connections.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2029">the session</doc>
+                 line="2035">the session</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
         </parameters>
@@ -13419,7 +13427,7 @@ persistent connections.</doc>
       <method name="add_feature" c:identifier="soup_session_add_feature">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2064">Adds @feature's functionality to @session. You cannot add multiple
+             line="2070">Adds @feature's functionality to @session. You cannot add multiple
 features of the same [alias@GObject.Type] to a session.
 
 See the main #SoupSession documentation for information on what
@@ -13432,13 +13440,13 @@ features are present in sessions by default.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2066">a #SoupSession</doc>
+                 line="2072">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2067">an object that implements #SoupSessionFeature</doc>
+                 line="2073">an object that implements #SoupSessionFeature</doc>
             <type name="SessionFeature" c:type="SoupSessionFeature*"/>
           </parameter>
         </parameters>
@@ -13447,7 +13455,7 @@ features are present in sessions by default.</doc>
               c:identifier="soup_session_add_feature_by_type">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2092">If @feature_type is the type of a class that implements
+             line="2098">If @feature_type is the type of a class that implements
 [iface@SessionFeature], this creates a new feature of that type and
 adds it to @session as with [method@Session.add_feature]. You can use
 this when you don't need to customize the new feature in any way.
@@ -13467,13 +13475,13 @@ features are present in sessions by default.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2094">a #SoupSession</doc>
+                 line="2100">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2095">a #GType</doc>
+                 line="2101">a #GType</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -13532,14 +13540,14 @@ requests.</doc>
               c:identifier="soup_session_get_async_result_message">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3647">Gets the [class@Message] of the @result asynchronous operation This is useful
+             line="3656">Gets the [class@Message] of the @result asynchronous operation This is useful
 to get the [class@Message] of an asynchronous operation started by @session
 from its [callback@Gio.AsyncReadyCallback].</doc>
         <source-position filename="libsoup/soup-session.h" line="193"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3656">a #SoupMessage or
+               line="3665">a #SoupMessage or
   %NULL if @result is not a valid @session async operation result.</doc>
           <type name="Message" c:type="SoupMessage*"/>
         </return-value>
@@ -13547,13 +13555,13 @@ from its [callback@Gio.AsyncReadyCallback].</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3649">a #SoupSession</doc>
+                 line="3658">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3650">the #GAsyncResult passed to your callback</doc>
+                 line="3659">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -13561,12 +13569,12 @@ from its [callback@Gio.AsyncReadyCallback].</doc>
       <method name="get_feature" c:identifier="soup_session_get_feature">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2261">Gets the feature in @session of type @feature_type.</doc>
+             line="2267">Gets the feature in @session of type @feature_type.</doc>
         <source-position filename="libsoup/soup-session.h" line="212"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="2268">a #SoupSessionFeature, or %NULL. The
+               line="2274">a #SoupSessionFeature, or %NULL. The
   feature is owned by @session.</doc>
           <type name="SessionFeature" c:type="SoupSessionFeature*"/>
         </return-value>
@@ -13574,13 +13582,13 @@ from its [callback@Gio.AsyncReadyCallback].</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2263">a #SoupSession</doc>
+                 line="2269">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2264">the #GType of the feature to get</doc>
+                 line="2270">the #GType of the feature to get</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -13589,13 +13597,13 @@ from its [callback@Gio.AsyncReadyCallback].</doc>
               c:identifier="soup_session_get_feature_for_message">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2290">Gets the feature in @session of type @feature_type, provided
+             line="2296">Gets the feature in @session of type @feature_type, provided
 that it is not disabled for @msg.</doc>
         <source-position filename="libsoup/soup-session.h" line="215"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="2299">a #SoupSessionFeature. The feature is
+               line="2305">a #SoupSessionFeature. The feature is
   owned by @session.</doc>
           <type name="SessionFeature" c:type="SoupSessionFeature*"/>
         </return-value>
@@ -13603,19 +13611,19 @@ that it is not disabled for @msg.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2292">a #SoupSession</doc>
+                 line="2298">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2293">the #GType of the feature to get</doc>
+                 line="2299">the #GType of the feature to get</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2294">a #SoupMessage</doc>
+                 line="2300">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
         </parameters>
@@ -13860,27 +13868,27 @@ given host.</doc>
       <method name="has_feature" c:identifier="soup_session_has_feature">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2196">Tests if @session has at a feature of type @feature_type (which can
+             line="2202">Tests if @session has at a feature of type @feature_type (which can
 be the type of either a [iface@SessionFeature], or else a subtype of
 some class managed by another feature, such as [class@Auth]).</doc>
         <source-position filename="libsoup/soup-session.h" line="209"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="2205">%TRUE or %FALSE</doc>
+               line="2211">%TRUE or %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2198">a #SoupSession</doc>
+                 line="2204">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2199">the #GType of the class of features to check for</doc>
+                 line="2205">the #GType of the class of features to check for</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -13890,7 +13898,7 @@ some class managed by another feature, such as [class@Auth]).</doc>
               glib:finish-func="preconnect_finish">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3906">Start a preconnection to @msg.
+             line="3915">Start a preconnection to @msg.
 
 Once the connection is done, it will remain in idle state so that it can be
 reused by future requests. If there's already an idle connection for the
@@ -13909,19 +13917,19 @@ The operation finishes when the connection is done or an error occurred.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3908">a #SoupSession</doc>
+                 line="3917">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3909">a #SoupMessage</doc>
+                 line="3918">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3910">the I/O priority of the request</doc>
+                 line="3919">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -13930,7 +13938,7 @@ The operation finishes when the connection is done or an error occurred.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3911">a #GCancellable</doc>
+                 line="3920">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -13941,7 +13949,7 @@ The operation finishes when the connection is done or an error occurred.</doc>
                      closure="4">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3912">the callback to invoke when the operation finishes</doc>
+                 line="3921">the callback to invoke when the operation finishes</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -13950,7 +13958,7 @@ The operation finishes when the connection is done or an error occurred.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3913">data for @progress_callback and @callback</doc>
+                 line="3922">data for @progress_callback and @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -13960,25 +13968,25 @@ The operation finishes when the connection is done or an error occurred.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3961">Complete a preconnect async operation started with [method@Session.preconnect_async].</doc>
+             line="3970">Complete a preconnect async operation started with [method@Session.preconnect_async].</doc>
         <source-position filename="libsoup/soup-session.h" line="243"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3969">%TRUE if the preconnect succeeded, or %FALSE in case of error.</doc>
+               line="3978">%TRUE if the preconnect succeeded, or %FALSE in case of error.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3963">a #SoupSession</doc>
+                 line="3972">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3964">the #GAsyncResult passed to your callback</doc>
+                 line="3973">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -13986,7 +13994,7 @@ The operation finishes when the connection is done or an error occurred.</doc>
       <method name="remove_feature" c:identifier="soup_session_remove_feature">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2139">Removes @feature's functionality from @session.</doc>
+             line="2145">Removes @feature's functionality from @session.</doc>
         <source-position filename="libsoup/soup-session.h" line="203"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -13995,13 +14003,13 @@ The operation finishes when the connection is done or an error occurred.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2141">a #SoupSession</doc>
+                 line="2147">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2142">a feature that has previously been added to @session</doc>
+                 line="2148">a feature that has previously been added to @session</doc>
             <type name="SessionFeature" c:type="SoupSessionFeature*"/>
           </parameter>
         </parameters>
@@ -14010,7 +14018,7 @@ The operation finishes when the connection is done or an error occurred.</doc>
               c:identifier="soup_session_remove_feature_by_type">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2161">Removes all features of type @feature_type (or any subclass of
+             line="2167">Removes all features of type @feature_type (or any subclass of
 @feature_type) from @session.</doc>
         <source-position filename="libsoup/soup-session.h" line="206"/>
         <return-value transfer-ownership="none">
@@ -14020,13 +14028,13 @@ The operation finishes when the connection is done or an error occurred.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2163">a #SoupSession</doc>
+                 line="2169">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="feature_type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2164">a #GType</doc>
+                 line="2170">a #GType</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
         </parameters>
@@ -14037,7 +14045,7 @@ The operation finishes when the connection is done or an error occurred.</doc>
               glib:async-func="send_async">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3199">Synchronously sends @msg and waits for the beginning of a response.
+             line="3205">Synchronously sends @msg and waits for the beginning of a response.
 
 On success, a [class@Gio.InputStream] will be returned which you can use to
 read the response body. ("Success" here means only that an HTTP
@@ -14054,12 +14062,15 @@ state.
 If @msg is requeued due to a redirect or authentication, the
 initial (`3xx/401/407`) response body will be suppressed, and
 [method@Session.send] will only return once a final response has been
-received.</doc>
+received.
+
+Possible error domains include [error@SessionError], [error@Gio.IOErrorEnum],
+and [error@Gio.TlsError] which you may want to specifically handle.</doc>
         <source-position filename="libsoup/soup-session.h" line="146"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3225">a #GInputStream for reading the
+               line="3234">a #GInputStream for reading the
   response body, or %NULL on error.</doc>
           <type name="Gio.InputStream" c:type="GInputStream*"/>
         </return-value>
@@ -14067,13 +14078,13 @@ received.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3201">a #SoupSession</doc>
+                 line="3207">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3202">a #SoupMessage</doc>
+                 line="3208">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="cancellable"
@@ -14082,7 +14093,7 @@ received.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3203">a #GCancellable</doc>
+                 line="3209">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
         </parameters>
@@ -14093,7 +14104,7 @@ received.</doc>
               glib:async-func="send_and_read_async">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3436">Synchronously sends @msg and reads the response body.
+             line="3445">Synchronously sends @msg and reads the response body.
 
 On success, a [struct@GLib.Bytes] will be returned with the response body.
 This function should only be used when the resource to be retrieved
@@ -14104,20 +14115,20 @@ See [method@Session.send] for more details on the general semantics.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3451">a #GBytes, or %NULL on error.</doc>
+               line="3460">a #GBytes, or %NULL on error.</doc>
           <type name="GLib.Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3438">a #SoupSession</doc>
+                 line="3447">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3439">a #SoupMessage</doc>
+                 line="3448">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="cancellable"
@@ -14126,7 +14137,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3440">a #GCancellable</doc>
+                 line="3449">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
         </parameters>
@@ -14137,7 +14148,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
               glib:sync-func="send_and_read">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3365">Asynchronously sends @msg and reads the response body.
+             line="3374">Asynchronously sends @msg and reads the response body.
 
 When @callback is called, then either @msg has been sent, and its response
 body read, or else an error has occurred. This function should only be used
@@ -14154,19 +14165,19 @@ See [method@Session.send] for more details on the general semantics.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3367">a #SoupSession</doc>
+                 line="3376">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3368">a #SoupMessage</doc>
+                 line="3377">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3369">the I/O priority of the request</doc>
+                 line="3378">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -14175,7 +14186,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3370">a #GCancellable</doc>
+                 line="3379">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -14186,7 +14197,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      closure="4">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3371">the callback to invoke</doc>
+                 line="3380">the callback to invoke</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -14195,7 +14206,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3372">data for @callback</doc>
+                 line="3381">data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -14205,27 +14216,27 @@ See [method@Session.send] for more details on the general semantics.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3413">Gets the response to a [method@Session.send_and_read_async].
+             line="3422">Gets the response to a [method@Session.send_and_read_async].
 
 If successful, returns a [struct@GLib.Bytes] with the response body.</doc>
         <source-position filename="libsoup/soup-session.h" line="159"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3423">a #GBytes, or %NULL on error.</doc>
+               line="3432">a #GBytes, or %NULL on error.</doc>
           <type name="GLib.Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3415">a #SoupSession</doc>
+                 line="3424">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3416">the #GAsyncResult passed to your callback</doc>
+                 line="3425">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -14237,39 +14248,39 @@ If successful, returns a [struct@GLib.Bytes] with the response body.</doc>
               glib:async-func="send_and_splice_async">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3607">Synchronously sends @msg and splices the response body stream into @out_stream.
+             line="3616">Synchronously sends @msg and splices the response body stream into @out_stream.
 
 See [method@Session.send] for more details on the general semantics.</doc>
         <source-position filename="libsoup/soup-session.h" line="185"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3620">a #gssize containing the size of the data spliced, or -1 if an error occurred.</doc>
+               line="3629">a #gssize containing the size of the data spliced, or -1 if an error occurred.</doc>
           <type name="gssize" c:type="gssize"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3609">a #SoupSession</doc>
+                 line="3618">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3610">a #SoupMessage</doc>
+                 line="3619">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="out_stream" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3611">a #GOutputStream</doc>
+                 line="3620">a #GOutputStream</doc>
             <type name="Gio.OutputStream" c:type="GOutputStream*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3612">a set of #GOutputStreamSpliceFlags</doc>
+                 line="3621">a set of #GOutputStreamSpliceFlags</doc>
             <type name="Gio.OutputStreamSpliceFlags"
                   c:type="GOutputStreamSpliceFlags"/>
           </parameter>
@@ -14279,7 +14290,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3613">a #GCancellable</doc>
+                 line="3622">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
         </parameters>
@@ -14291,7 +14302,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
               glib:sync-func="send_and_splice">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3535">Asynchronously sends @msg and splices the response body stream into @out_stream.
+             line="3544">Asynchronously sends @msg and splices the response body stream into @out_stream.
 When @callback is called, then either @msg has been sent and its response body
 spliced, or else an error has occurred.
 
@@ -14304,32 +14315,32 @@ See [method@Session.send] for more details on the general semantics.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3537">a #SoupSession</doc>
+                 line="3546">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3538">a #SoupMessage</doc>
+                 line="3547">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="out_stream" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3539">a #GOutputStream</doc>
+                 line="3548">a #GOutputStream</doc>
             <type name="Gio.OutputStream" c:type="GOutputStream*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3540">a set of #GOutputStreamSpliceFlags</doc>
+                 line="3549">a set of #GOutputStreamSpliceFlags</doc>
             <type name="Gio.OutputStreamSpliceFlags"
                   c:type="GOutputStreamSpliceFlags"/>
           </parameter>
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3541">the I/O priority of the request</doc>
+                 line="3550">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -14338,7 +14349,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3542">a #GCancellable</doc>
+                 line="3551">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -14349,7 +14360,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      closure="6">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3543">the callback to invoke</doc>
+                 line="3552">the callback to invoke</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -14358,7 +14369,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3544">data for @callback</doc>
+                 line="3553">data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -14369,25 +14380,25 @@ See [method@Session.send] for more details on the general semantics.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3584">Gets the response to a [method@Session.send_and_splice_async].</doc>
+             line="3593">Gets the response to a [method@Session.send_and_splice_async].</doc>
         <source-position filename="libsoup/soup-session.h" line="180"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3592">a #gssize containing the size of the data spliced, or -1 if an error occurred.</doc>
+               line="3601">a #gssize containing the size of the data spliced, or -1 if an error occurred.</doc>
           <type name="gssize" c:type="gssize"/>
         </return-value>
         <parameters>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3586">a #SoupSession</doc>
+                 line="3595">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3587">the #GAsyncResult passed to your callback</doc>
+                 line="3596">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -14398,7 +14409,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
               glib:sync-func="send">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3107">Asynchronously sends @msg and waits for the beginning of a response.
+             line="3113">Asynchronously sends @msg and waits for the beginning of a response.
 
 When @callback is called, then either @msg has been sent, and its response
 headers received, or else an error has occurred. Call
@@ -14414,19 +14425,19 @@ See [method@Session.send] for more details on the general semantics.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3109">a #SoupSession</doc>
+                 line="3115">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3110">a #SoupMessage</doc>
+                 line="3116">a #SoupMessage</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3111">the I/O priority of the request</doc>
+                 line="3117">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -14435,7 +14446,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3112">a #GCancellable</doc>
+                 line="3118">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -14446,7 +14457,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      closure="4">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3113">the callback to invoke</doc>
+                 line="3119">the callback to invoke</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -14455,7 +14466,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3114">data for @callback</doc>
+                 line="3120">data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -14465,7 +14476,7 @@ See [method@Session.send] for more details on the general semantics.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3157">Gets the response to a [method@Session.send_async] call.
+             line="3163">Gets the response to a [method@Session.send_async] call.
 
 If successful returns a [class@Gio.InputStream] that can be used to read the
 response body.</doc>
@@ -14473,7 +14484,7 @@ response body.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3168">a #GInputStream for reading the
+               line="3174">a #GInputStream for reading the
   response body, or %NULL on error.</doc>
           <type name="Gio.InputStream" c:type="GInputStream*"/>
         </return-value>
@@ -14481,13 +14492,13 @@ response body.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3159">a #SoupSession</doc>
+                 line="3165">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3160">the #GAsyncResult passed to your callback</doc>
+                 line="3166">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -14746,7 +14757,7 @@ is %NULL then no "User-Agent" will be included in requests. See
               glib:finish-func="websocket_connect_finish">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3769">Asynchronously creates a [class@WebsocketConnection] to communicate with a
+             line="3778">Asynchronously creates a [class@WebsocketConnection] to communicate with a
 remote server.
 
 All necessary WebSocket-related headers will be added to @msg, and
@@ -14771,13 +14782,13 @@ response, and [method@Session.websocket_connect_finish] will return
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3771">a #SoupSession</doc>
+                 line="3780">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3772">#SoupMessage indicating the WebSocket server to connect to</doc>
+                 line="3781">#SoupMessage indicating the WebSocket server to connect to</doc>
             <type name="Message" c:type="SoupMessage*"/>
           </parameter>
           <parameter name="origin"
@@ -14786,7 +14797,7 @@ response, and [method@Session.websocket_connect_finish] will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3773">origin of the connection</doc>
+                 line="3782">origin of the connection</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="protocols"
@@ -14795,7 +14806,7 @@ response, and [method@Session.websocket_connect_finish] will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3774">a
+                 line="3783">a
   %NULL-terminated array of protocols supported</doc>
             <array c:type="char**">
               <type name="utf8" c:type="char*"/>
@@ -14804,7 +14815,7 @@ response, and [method@Session.websocket_connect_finish] will return
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3776">the I/O priority of the request</doc>
+                 line="3785">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -14813,7 +14824,7 @@ response, and [method@Session.websocket_connect_finish] will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3777">a #GCancellable</doc>
+                 line="3786">a #GCancellable</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -14824,7 +14835,7 @@ response, and [method@Session.websocket_connect_finish] will return
                      closure="6">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3778">the callback to invoke</doc>
+                 line="3787">the callback to invoke</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -14833,7 +14844,7 @@ response, and [method@Session.websocket_connect_finish] will return
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3779">data for @callback</doc>
+                 line="3788">data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -14843,7 +14854,7 @@ response, and [method@Session.websocket_connect_finish] will return
               throws="1">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="3851">Gets the [class@WebsocketConnection] response to a
+             line="3860">Gets the [class@WebsocketConnection] response to a
 [method@Session.websocket_connect_async] call.
 
 If successful, returns a [class@WebsocketConnection] that can be used to
@@ -14852,7 +14863,7 @@ communicate with the server.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libsoup/soup-session.c"
-               line="3863">a new #SoupWebsocketConnection, or
+               line="3872">a new #SoupWebsocketConnection, or
   %NULL on error.</doc>
           <type name="WebsocketConnection" c:type="SoupWebsocketConnection*"/>
         </return-value>
@@ -14860,13 +14871,13 @@ communicate with the server.</doc>
           <instance-parameter name="session" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3853">a #SoupSession</doc>
+                 line="3862">a #SoupSession</doc>
             <type name="Session" c:type="SoupSession*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="3854">the #GAsyncResult passed to your callback</doc>
+                 line="3863">the #GAsyncResult passed to your callback</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -14883,7 +14894,7 @@ communicate with the server.</doc>
                    value="soup_session_set_accept_language"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2591">If non-%NULL, the value to use for the "Accept-Language" header
+             line="2597">If non-%NULL, the value to use for the "Accept-Language" header
 on [class@Message]s sent from this session.
 
 Setting this will disable [property@Session:accept-language-auto].</doc>
@@ -14901,7 +14912,7 @@ Setting this will disable [property@Session:accept-language-auto].</doc>
                    value="soup_session_set_accept_language_auto"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2607">If %TRUE, #SoupSession will automatically set the string
+             line="2613">If %TRUE, #SoupSession will automatically set the string
 for the "Accept-Language" header on every [class@Message]
 sent, based on the return value of [func@GLib.get_language_names].
 
@@ -14921,7 +14932,7 @@ Setting this will override any previous value of
                    value="soup_session_set_idle_timeout"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2492">Connection lifetime (in seconds) when idle. Any connection
+             line="2498">Connection lifetime (in seconds) when idle. Any connection
 left idle longer than this will be closed.
 
 Although you can change this property at any time, it will
@@ -14940,7 +14951,7 @@ this timeout value.</doc>
                    value="soup_session_get_local_address"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2644">Sets the [class@Gio.InetSocketAddress] to use for the client side of
+             line="2650">Sets the [class@Gio.InetSocketAddress] to use for the client side of
 the connection.
 
 Use this property if you want for instance to bind the
@@ -14957,7 +14968,7 @@ local socket to a specific IP address.</doc>
                    value="soup_session_get_max_conns"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2460">The maximum number of connections that the session can open at once.</doc>
+             line="2466">The maximum number of connections that the session can open at once.</doc>
         <type name="gint" c:type="gint"/>
       </property>
       <property name="max-conns-per-host"
@@ -14970,7 +14981,7 @@ local socket to a specific IP address.</doc>
                    value="soup_session_get_max_conns_per_host"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2476">The maximum number of connections that the session can open at once
+             line="2482">The maximum number of connections that the session can open at once
 to a given host.</doc>
         <type name="gint" c:type="gint"/>
       </property>
@@ -14985,7 +14996,7 @@ to a given host.</doc>
                    value="soup_session_set_proxy_resolver"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2442">A [iface@Gio.ProxyResolver] to use with this session.
+             line="2448">A [iface@Gio.ProxyResolver] to use with this session.
 
 If no proxy resolver is set, then the default proxy resolver
 will be used. See [func@Gio.ProxyResolver.get_default].
@@ -15003,7 +15014,7 @@ what proxies get used.</doc>
                    value="soup_session_get_remote_connectable"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2625">Sets a socket to make outgoing connections on. This will override the default
+             line="2631">Sets a socket to make outgoing connections on. This will override the default
 behaviour of opening TCP/IP sockets to the hosts specified in the URIs.
 
 This function is not required for common HTTP usage, but only when connecting
@@ -15024,7 +15035,7 @@ a [class@Gio.UnixSocketAddress] can be passed to this function.</doc>
                    value="soup_session_set_timeout"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2529">The timeout (in seconds) for socket I/O operations
+             line="2535">The timeout (in seconds) for socket I/O operations
 (including connecting to a server, and waiting for a reply
 to an HTTP request).
 
@@ -15050,7 +15061,7 @@ kept open).</doc>
                    value="soup_session_set_tls_database"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2512">Sets the [class@Gio.TlsDatabase] to use for validating SSL/TLS
+             line="2518">Sets the [class@Gio.TlsDatabase] to use for validating SSL/TLS
 certificates.
 
 If no certificate database is set, then the default database will be
@@ -15068,7 +15079,7 @@ used. See [method@Gio.TlsBackend.get_default_database].</doc>
                    value="soup_session_set_tls_interaction"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2661">A [class@Gio.TlsInteraction] object that will be passed on to any
+             line="2667">A [class@Gio.TlsInteraction] object that will be passed on to any
 [class@Gio.TlsConnection]s created by the session.
 
 This can be used to provide client-side certificates, for example.</doc>
@@ -15086,7 +15097,7 @@ This can be used to provide client-side certificates, for example.</doc>
                    value="soup_session_set_user_agent"/>
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2554">User-Agent string.
+             line="2560">User-Agent string.
 
 If non-%NULL, the value to use for the "User-Agent" header
 on [class@Message]s sent from this session.
@@ -15119,7 +15130,7 @@ header for you.</doc>
       <glib:signal name="request-queued" when="last">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2376">Emitted when a request is queued on @session.
+             line="2382">Emitted when a request is queued on @session.
 
 When sending a request, first [signal@Session::request-queued]
 is emitted, indicating that the session has become aware of
@@ -15154,7 +15165,7 @@ message.</doc>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2379">the request that was queued</doc>
+                 line="2385">the request that was queued</doc>
             <type name="Message"/>
           </parameter>
         </parameters>
@@ -15162,7 +15173,7 @@ message.</doc>
       <glib:signal name="request-unqueued" when="last">
         <doc xml:space="preserve"
              filename="libsoup/soup-session.c"
-             line="2420">Emitted when a request is removed from @session's queue,
+             line="2426">Emitted when a request is removed from @session's queue,
 indicating that @session is done with it.
 
 See [signal@Session::request-queued] for a detailed description of
@@ -15174,7 +15185,7 @@ the message lifecycle within a session.</doc>
           <parameter name="msg" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libsoup/soup-session.c"
-                 line="2423">the request that was unqueued</doc>
+                 line="2429">the request that was unqueued</doc>
             <type name="Message"/>
           </parameter>
         </parameters>
@@ -17990,7 +18001,7 @@ features from newer versions.</doc>
               moved-to="Cookie.parse">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="402">Parses @header and returns a #SoupCookie.
+           line="427">Parses @header and returns a #SoupCookie.
 
 If @header contains multiple cookies, only the first one will be parsed.
 
@@ -18007,7 +18018,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="421">a new #SoupCookie, or %NULL if it could
+             line="446">a new #SoupCookie, or %NULL if it could
   not be parsed, or contained an illegal "domain" attribute for a
   cookie originating from @origin.</doc>
         <type name="Cookie" c:type="SoupCookie*"/>
@@ -18016,7 +18027,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
         <parameter name="header" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="404">a cookie string (eg, the value of a Set-Cookie header)</doc>
+               line="429">a cookie string (eg, the value of a Set-Cookie header)</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="origin"
@@ -18025,7 +18036,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="405">origin of the cookie</doc>
+               line="430">origin of the cookie</doc>
           <type name="GLib.Uri" c:type="GUri*"/>
         </parameter>
       </parameters>
@@ -18035,7 +18046,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="1000">Frees @cookies.</doc>
+           line="1025">Frees @cookies.</doc>
       <source-position filename="libsoup/cookies/soup-cookie.h" line="122"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -18044,7 +18055,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
         <parameter name="cookies" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="1002">a #GSList of #SoupCookie</doc>
+               line="1027">a #GSList of #SoupCookie</doc>
           <type name="GLib.SList" c:type="GSList*">
             <type name="Cookie"/>
           </type>
@@ -18055,7 +18066,7 @@ is %SOUP_SAME_SITE_POLICY_LAX.</doc>
               c:identifier="soup_cookies_from_request">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="902">Parses @msg's Cookie request header and returns a [struct@GLib.SList] of
+           line="927">Parses @msg's Cookie request header and returns a [struct@GLib.SList] of
 `SoupCookie`s.
 
 As the "Cookie" header, unlike "Set-Cookie", only contains cookie names and
@@ -18066,7 +18077,7 @@ can't generally pass a cookie returned from this method directly to
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="914">a #GSList of
+             line="939">a #GSList of
   `SoupCookie`s, which can be freed with [method@Cookie.free].</doc>
         <type name="GLib.SList" c:type="GSList*">
           <type name="Cookie"/>
@@ -18076,7 +18087,7 @@ can't generally pass a cookie returned from this method directly to
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="904">a #SoupMessage containing a "Cookie" request header</doc>
+               line="929">a #SoupMessage containing a "Cookie" request header</doc>
           <type name="Message" c:type="SoupMessage*"/>
         </parameter>
       </parameters>
@@ -18085,7 +18096,7 @@ can't generally pass a cookie returned from this method directly to
               c:identifier="soup_cookies_from_response">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="862">Parses @msg's Set-Cookie response headers and returns a [struct@GLib.SList]
+           line="887">Parses @msg's Set-Cookie response headers and returns a [struct@GLib.SList]
 of `SoupCookie`s.
 
 Cookies that do not specify "path" or "domain" attributes will have their
@@ -18094,7 +18105,7 @@ values defaulted from @msg.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="872">a #GSList of
+             line="897">a #GSList of
   `SoupCookie`s, which can be freed with [method@Cookie.free].</doc>
         <type name="GLib.SList" c:type="GSList*">
           <type name="Cookie"/>
@@ -18104,7 +18115,7 @@ values defaulted from @msg.</doc>
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="864">a #SoupMessage containing a "Set-Cookie" response header</doc>
+               line="889">a #SoupMessage containing a "Set-Cookie" response header</doc>
           <type name="Message" c:type="SoupMessage*"/>
         </parameter>
       </parameters>
@@ -18113,20 +18124,20 @@ values defaulted from @msg.</doc>
               c:identifier="soup_cookies_to_cookie_header">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="1012">Serializes a [struct@GLib.SList] of #SoupCookie into a string suitable for
+           line="1037">Serializes a [struct@GLib.SList] of #SoupCookie into a string suitable for
 setting as the value of the "Cookie" header.</doc>
       <source-position filename="libsoup/cookies/soup-cookie.h" line="125"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="libsoup/cookies/soup-cookie.c"
-             line="1019">the serialization of @cookies</doc>
+             line="1044">the serialization of @cookies</doc>
         <type name="utf8" c:type="char*"/>
       </return-value>
       <parameters>
         <parameter name="cookies" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="1014">a #GSList of #SoupCookie</doc>
+               line="1039">a #GSList of #SoupCookie</doc>
           <type name="GLib.SList" c:type="GSList*">
             <type name="Cookie"/>
           </type>
@@ -18136,7 +18147,7 @@ setting as the value of the "Cookie" header.</doc>
     <function name="cookies_to_request" c:identifier="soup_cookies_to_request">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="972">Adds the name and value of each cookie in @cookies to @msg's
+           line="997">Adds the name and value of each cookie in @cookies to @msg's
 "Cookie" request.
 
 If @msg already has a "Cookie" request header, these cookies will be appended
@@ -18150,7 +18161,7 @@ cookies twice, eg, when requeuing a message.</doc>
         <parameter name="cookies" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="974">a #GSList of #SoupCookie</doc>
+               line="999">a #GSList of #SoupCookie</doc>
           <type name="GLib.SList" c:type="GSList*">
             <type name="Cookie"/>
           </type>
@@ -18158,7 +18169,7 @@ cookies twice, eg, when requeuing a message.</doc>
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="975">a #SoupMessage</doc>
+               line="1000">a #SoupMessage</doc>
           <type name="Message" c:type="SoupMessage*"/>
         </parameter>
       </parameters>
@@ -18167,7 +18178,7 @@ cookies twice, eg, when requeuing a message.</doc>
               c:identifier="soup_cookies_to_response">
       <doc xml:space="preserve"
            filename="libsoup/cookies/soup-cookie.c"
-           line="945">Appends a "Set-Cookie" response header to @msg for each cookie in
+           line="970">Appends a "Set-Cookie" response header to @msg for each cookie in
 @cookies.
 
 This is in addition to any other "Set-Cookie" headers
@@ -18180,7 +18191,7 @@ This is in addition to any other "Set-Cookie" headers
         <parameter name="cookies" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="947">a #GSList of #SoupCookie</doc>
+               line="972">a #GSList of #SoupCookie</doc>
           <type name="GLib.SList" c:type="GSList*">
             <type name="Cookie"/>
           </type>
@@ -18188,7 +18199,7 @@ This is in addition to any other "Set-Cookie" headers
         <parameter name="msg" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/cookies/soup-cookie.c"
-               line="948">a #SoupMessage</doc>
+               line="973">a #SoupMessage</doc>
           <type name="Message" c:type="SoupMessage*"/>
         </parameter>
       </parameters>
@@ -19323,7 +19334,7 @@ format).</doc>
     <function name="uri_copy" c:identifier="soup_uri_copy" introspectable="0">
       <doc xml:space="preserve"
            filename="libsoup/soup-uri-utils.c"
-           line="403">As of 3.4.0 this will detect the default ports of HTTP(s) and WS(S)
+           line="405">As of 3.4.0 this will detect the default ports of HTTP(s) and WS(S)
 URIs when copying and set it to the default port of the new scheme.
 So for example copying `http://localhost:80` while changing the scheme to https
 will result in `https://localhost:443`.
@@ -19333,26 +19344,26 @@ Return a copy of @uri with the given components updated.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="libsoup/soup-uri-utils.c"
-             line="417">a new #GUri</doc>
+             line="419">a new #GUri</doc>
         <type name="GLib.Uri" c:type="GUri*"/>
       </return-value>
       <parameters>
         <parameter name="uri" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/soup-uri-utils.c"
-               line="405">the #GUri to copy</doc>
+               line="407">the #GUri to copy</doc>
           <type name="GLib.Uri" c:type="GUri*"/>
         </parameter>
         <parameter name="first_component" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/soup-uri-utils.c"
-               line="406">first #SoupURIComponent to update</doc>
+               line="408">first #SoupURIComponent to update</doc>
           <type name="URIComponent" c:type="SoupURIComponent"/>
         </parameter>
         <parameter name="..." transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libsoup/soup-uri-utils.c"
-               line="407">value of @first_component  followed by additional
+               line="409">value of @first_component  followed by additional
    components and values, terminated by %SOUP_URI_NONE</doc>
           <varargs/>
         </parameter>

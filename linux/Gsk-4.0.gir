@@ -1403,12 +1403,12 @@ The new node will acquire a reference to each of the children.</doc>
            glib:fundamental="1">
       <doc xml:space="preserve"
            filename="gsk/gskrendernodeimpl.c"
-           line="7290">A render node that emits a debugging message when drawing its
+           line="7287">A render node that emits a debugging message when drawing its
 child node.</doc>
       <constructor name="new" c:identifier="gsk_debug_node_new">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7371">Creates a `GskRenderNode` that will add debug information about
+             line="7368">Creates a `GskRenderNode` that will add debug information about
 the given @child.
 
 Adding this node has no visual effect.</doc>
@@ -1416,20 +1416,20 @@ Adding this node has no visual effect.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7381">A new `GskRenderNode`</doc>
+               line="7378">A new `GskRenderNode`</doc>
           <type name="DebugNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <parameter name="child" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7373">The child to add debug info for</doc>
+                 line="7370">The child to add debug info for</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </parameter>
           <parameter name="message" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7374">The debug message</doc>
+                 line="7371">The debug message</doc>
             <type name="utf8" c:type="char*"/>
           </parameter>
         </parameters>
@@ -1437,19 +1437,19 @@ Adding this node has no visual effect.</doc>
       <method name="get_child" c:identifier="gsk_debug_node_get_child">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7408">Gets the child node that is getting drawn by the given @node.</doc>
+             line="7405">Gets the child node that is getting drawn by the given @node.</doc>
         <source-position filename="gsk/gskrendernode.h" line="212"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7414">the child `GskRenderNode`</doc>
+               line="7411">the child `GskRenderNode`</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7410">a debug `GskRenderNode`</doc>
+                 line="7407">a debug `GskRenderNode`</doc>
             <type name="DebugNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -1457,19 +1457,19 @@ Adding this node has no visual effect.</doc>
       <method name="get_message" c:identifier="gsk_debug_node_get_message">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7424">Gets the debug message that was set on this node</doc>
+             line="7421">Gets the debug message that was set on this node</doc>
         <source-position filename="gsk/gskrendernode.h" line="214"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7430">The debug message</doc>
+               line="7427">The debug message</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7426">a debug `GskRenderNode`</doc>
+                 line="7423">a debug `GskRenderNode`</doc>
             <type name="DebugNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -2581,14 +2581,14 @@ will be %NULL.</doc>
            glib:fundamental="1">
       <doc xml:space="preserve"
            filename="gsk/gskrendernodeimpl.c"
-           line="7444">A render node using a GL shader when drawing its children nodes.</doc>
+           line="7441">A render node using a GL shader when drawing its children nodes.</doc>
       <constructor name="new"
                    c:identifier="gsk_gl_shader_node_new"
                    deprecated="1"
                    deprecated-version="4.16">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7527">Creates a `GskRenderNode` that will render the given @shader into the
+             line="7524">Creates a `GskRenderNode` that will render the given @shader into the
 area given by @bounds.
 
 The @args is a block of data to use for uniform input, as per types and
@@ -2612,26 +2612,26 @@ renderer before using it.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7555">A new `GskRenderNode`</doc>
+               line="7552">A new `GskRenderNode`</doc>
           <type name="GLShaderNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <parameter name="shader" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7529">the `GskGLShader`</doc>
+                 line="7526">the `GskGLShader`</doc>
             <type name="GLShader" c:type="GskGLShader*"/>
           </parameter>
           <parameter name="bounds" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7530">the rectangle to render the shader into</doc>
+                 line="7527">the rectangle to render the shader into</doc>
             <type name="Graphene.Rect" c:type="const graphene_rect_t*"/>
           </parameter>
           <parameter name="args" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7531">Arguments for the uniforms</doc>
+                 line="7528">Arguments for the uniforms</doc>
             <type name="GLib.Bytes" c:type="GBytes*"/>
           </parameter>
           <parameter name="children"
@@ -2640,7 +2640,7 @@ renderer before using it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7532">array of child nodes,
+                 line="7529">array of child nodes,
   these will be rendered to textures and used as input.</doc>
             <array length="4" zero-terminated="0" c:type="GskRenderNode**">
               <type name="RenderNode" c:type="GskRenderNode*"/>
@@ -2649,7 +2649,7 @@ renderer before using it.</doc>
           <parameter name="n_children" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7534">Length of @children (currently the GL backend supports
+                 line="7531">Length of @children (currently the GL backend supports
   up to 4 children)</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -2661,7 +2661,7 @@ renderer before using it.</doc>
               deprecated-version="4.16">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7663">Gets args for the node.</doc>
+             line="7660">Gets args for the node.</doc>
         <doc-deprecated xml:space="preserve">GTK's new Vulkan-focused rendering
   does not support this feature. Use [GtkGLArea](../gtk4/class.GLArea.html)
   for OpenGL rendering.</doc-deprecated>
@@ -2669,14 +2669,14 @@ renderer before using it.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7669">A `GBytes` with the uniform arguments</doc>
+               line="7666">A `GBytes` with the uniform arguments</doc>
           <type name="GLib.Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7665">a `GskRenderNode` for a gl shader</doc>
+                 line="7662">a `GskRenderNode` for a gl shader</doc>
             <type name="GLShaderNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -2687,7 +2687,7 @@ renderer before using it.</doc>
               deprecated-version="4.16">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7625">Gets one of the children.</doc>
+             line="7622">Gets one of the children.</doc>
         <doc-deprecated xml:space="preserve">GTK's new Vulkan-focused rendering
   does not support this feature. Use [GtkGLArea](../gtk4/class.GLArea.html)
   for OpenGL rendering.</doc-deprecated>
@@ -2695,20 +2695,20 @@ renderer before using it.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7632">the @idx'th child of @node</doc>
+               line="7629">the @idx'th child of @node</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7627">a `GskRenderNode` for a gl shader</doc>
+                 line="7624">a `GskRenderNode` for a gl shader</doc>
             <type name="GLShaderNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
           <parameter name="idx" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7628">the position of the child to get</doc>
+                 line="7625">the position of the child to get</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -2719,7 +2719,7 @@ renderer before using it.</doc>
               deprecated-version="4.16">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7605">Returns the number of children</doc>
+             line="7602">Returns the number of children</doc>
         <doc-deprecated xml:space="preserve">GTK's new Vulkan-focused rendering
   does not support this feature. Use [GtkGLArea](../gtk4/class.GLArea.html)
   for OpenGL rendering.</doc-deprecated>
@@ -2727,14 +2727,14 @@ renderer before using it.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7611">The number of children</doc>
+               line="7608">The number of children</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7607">a `GskRenderNode` for a gl shader</doc>
+                 line="7604">a `GskRenderNode` for a gl shader</doc>
             <type name="GLShaderNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -2742,19 +2742,19 @@ renderer before using it.</doc>
       <method name="get_shader" c:identifier="gsk_gl_shader_node_get_shader">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7647">Gets shader code for the node.</doc>
+             line="7644">Gets shader code for the node.</doc>
         <source-position filename="gsk/gskrendernode.h" line="599"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7653">the `GskGLShader` shader</doc>
+               line="7650">the `GskGLShader` shader</doc>
           <type name="GLShader" c:type="GskGLShader*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7649">a `GskRenderNode` for a gl shader</doc>
+                 line="7646">a `GskRenderNode` for a gl shader</doc>
             <type name="GLShaderNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -3480,7 +3480,7 @@ points and color stops, and render that into the area given by @bounds.</doc>
       <constructor name="new" c:identifier="gsk_mask_node_new" version="4.10">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7186">Creates a `GskRenderNode` that will mask a given node by another.
+             line="7183">Creates a `GskRenderNode` that will mask a given node by another.
 
 The @mask_mode determines how the 'mask values' are derived from
 the colors of the @mask. Applying the mask consists of multiplying
@@ -3489,26 +3489,26 @@ the 'mask value' with the alpha of the source.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7198">A new `GskRenderNode`</doc>
+               line="7195">A new `GskRenderNode`</doc>
           <type name="MaskNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7188">The source node to be drawn</doc>
+                 line="7185">The source node to be drawn</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </parameter>
           <parameter name="mask" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7189">The node to be used as mask</doc>
+                 line="7186">The node to be used as mask</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </parameter>
           <parameter name="mask_mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7190">The mask mode to use</doc>
+                 line="7187">The mask mode to use</doc>
             <type name="MaskMode" c:type="GskMaskMode"/>
           </parameter>
         </parameters>
@@ -3518,19 +3518,19 @@ the 'mask value' with the alpha of the source.</doc>
               version="4.10">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7249">Retrieves the mask `GskRenderNode` child of the @node.</doc>
+             line="7246">Retrieves the mask `GskRenderNode` child of the @node.</doc>
         <source-position filename="gsk/gskrendernode.h" line="577"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7255">the mask child node</doc>
+               line="7252">the mask child node</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7251">a mask `GskRenderNode`</doc>
+                 line="7248">a mask `GskRenderNode`</doc>
             <type name="MaskNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -3540,19 +3540,19 @@ the 'mask value' with the alpha of the source.</doc>
               version="4.10">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7269">Retrieves the mask mode used by @node.</doc>
+             line="7266">Retrieves the mask mode used by @node.</doc>
         <source-position filename="gsk/gskrendernode.h" line="579"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7275">the mask mode</doc>
+               line="7272">the mask mode</doc>
           <type name="MaskMode" c:type="GskMaskMode"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7271">a blending `GskRenderNode`</doc>
+                 line="7268">a blending `GskRenderNode`</doc>
             <type name="MaskNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -3562,19 +3562,19 @@ the 'mask value' with the alpha of the source.</doc>
               version="4.10">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7229">Retrieves the source `GskRenderNode` child of the @node.</doc>
+             line="7226">Retrieves the source `GskRenderNode` child of the @node.</doc>
         <source-position filename="gsk/gskrendernode.h" line="575"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7235">the source child node</doc>
+               line="7232">the source child node</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7231">a mask `GskRenderNode`</doc>
+                 line="7228">a mask `GskRenderNode`</doc>
             <type name="MaskNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -9703,14 +9703,14 @@ the @node.</doc>
            glib:fundamental="1">
       <doc xml:space="preserve"
            filename="gsk/gskrendernodeimpl.c"
-           line="7687">A render node that potentially diverts a part of the scene graph to a subsurface.</doc>
+           line="7684">A render node that potentially diverts a part of the scene graph to a subsurface.</doc>
       <constructor name="new"
                    c:identifier="gsk_subsurface_node_new"
                    version="4.14"
                    introspectable="0">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7787">Creates a `GskRenderNode` that will possibly divert the child
+             line="7784">Creates a `GskRenderNode` that will possibly divert the child
 node to a subsurface.
 
 Note: Since subsurfaces are currently private, these nodes cannot
@@ -9720,14 +9720,14 @@ currently be created outside of GTK. See
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7799">A new `GskRenderNode`</doc>
+               line="7796">A new `GskRenderNode`</doc>
           <type name="SubsurfaceNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <parameter name="child" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7789">The child to divert to a subsurface</doc>
+                 line="7786">The child to divert to a subsurface</doc>
             <type name="RenderNode" c:type="GskRenderNode*"/>
           </parameter>
           <parameter name="subsurface"
@@ -9736,7 +9736,7 @@ currently be created outside of GTK. See
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7790">the subsurface to use</doc>
+                 line="7787">the subsurface to use</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -9747,19 +9747,19 @@ currently be created outside of GTK. See
                 introspectable="0">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7849">Gets the subsurface that was set on this node</doc>
+             line="7846">Gets the subsurface that was set on this node</doc>
         <source-position filename="gsk/gskrendernode.h" line="611"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7855">the subsurface</doc>
+               line="7852">the subsurface</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7851">a debug `GskRenderNode`</doc>
+                 line="7848">a debug `GskRenderNode`</doc>
             <type name="DebugNode" c:type="const GskRenderNode*"/>
           </parameter>
         </parameters>
@@ -9769,19 +9769,19 @@ currently be created outside of GTK. See
               version="4.14">
         <doc xml:space="preserve"
              filename="gsk/gskrendernodeimpl.c"
-             line="7831">Gets the child node that is getting drawn by the given @node.</doc>
+             line="7828">Gets the child node that is getting drawn by the given @node.</doc>
         <source-position filename="gsk/gskrendernode.h" line="609"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gskrendernodeimpl.c"
-               line="7837">the child `GskRenderNode`</doc>
+               line="7834">the child `GskRenderNode`</doc>
           <type name="RenderNode" c:type="GskRenderNode*"/>
         </return-value>
         <parameters>
           <instance-parameter name="node" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gskrendernodeimpl.c"
-                 line="7833">a debug `GskRenderNode`</doc>
+                 line="7830">a debug `GskRenderNode`</doc>
             <type name="SubsurfaceNode" c:type="const GskRenderNode*"/>
           </instance-parameter>
         </parameters>
@@ -10162,7 +10162,7 @@ having to worry about others changing them.</doc>
       <constructor name="new" c:identifier="gsk_transform_new">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2338">Creates a new identity transform.
+             line="2340">Creates a new identity transform.
 
 This function is meant to be used by language
 bindings. For C code, this is equivalent to using %NULL.</doc>
@@ -10170,19 +10170,19 @@ bindings. For C code, this is equivalent to using %NULL.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2346">A new identity transform</doc>
+               line="2348">A new identity transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
       </constructor>
       <method name="equal" c:identifier="gsk_transform_equal">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2263">Checks two transforms for equality.</doc>
+             line="2265">Checks two transforms for equality.</doc>
         <source-position filename="gsk/gsktransform.h" line="84"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2270">%TRUE if the two transforms perform the same operation</doc>
+               line="2272">%TRUE if the two transforms perform the same operation</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -10192,7 +10192,7 @@ bindings. For C code, this is equivalent to using %NULL.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2265">the first transform</doc>
+                 line="2267">the first transform</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="second"
@@ -10201,7 +10201,7 @@ bindings. For C code, this is equivalent to using %NULL.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2266">the second transform</doc>
+                 line="2268">the second transform</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </parameter>
         </parameters>
@@ -10209,12 +10209,12 @@ bindings. For C code, this is equivalent to using %NULL.</doc>
       <method name="get_category" c:identifier="gsk_transform_get_category">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2294">Returns the category this transform belongs to.</doc>
+             line="2296">Returns the category this transform belongs to.</doc>
         <source-position filename="gsk/gsktransform.h" line="82"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2300">The category of the transform</doc>
+               line="2302">The category of the transform</doc>
           <type name="TransformCategory" c:type="GskTransformCategory"/>
         </return-value>
         <parameters>
@@ -10224,7 +10224,7 @@ bindings. For C code, this is equivalent to using %NULL.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2296">A `GskTransform`</doc>
+                 line="2298">A `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
         </parameters>
@@ -10232,7 +10232,7 @@ bindings. For C code, this is equivalent to using %NULL.</doc>
       <method name="invert" c:identifier="gsk_transform_invert">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2228">Inverts the given transform.
+             line="2230">Inverts the given transform.
 
 If @self is not invertible, %NULL is returned.
 Note that inverting %NULL also returns %NULL, which is
@@ -10246,7 +10246,7 @@ if you want to keep it around.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2243">The inverted transform</doc>
+               line="2245">The inverted transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10256,7 +10256,7 @@ if you want to keep it around.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2230">Transform to invert</doc>
+                 line="2232">Transform to invert</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
         </parameters>
@@ -10296,7 +10296,7 @@ if you want to keep it around.</doc>
       <method name="perspective" c:identifier="gsk_transform_perspective">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1683">Applies a perspective projection transform.
+             line="1685">Applies a perspective projection transform.
 
 This transform scales points in X and Y based on their Z value,
 scaling points with positive Z values away from the origin, and
@@ -10309,7 +10309,7 @@ if you want to keep it around.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="1700">The new transform</doc>
+               line="1702">The new transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10319,13 +10319,13 @@ if you want to keep it around.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1685">the next transform</doc>
+                 line="1687">the next transform</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="depth" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1686">distance of the z=0 plane. Lower values give a more
+                 line="1688">distance of the z=0 plane. Lower values give a more
   flattened pyramid and therefore a more pronounced
   perspective effect.</doc>
             <type name="gfloat" c:type="float"/>
@@ -10335,7 +10335,7 @@ if you want to keep it around.</doc>
       <method name="print" c:identifier="gsk_transform_print">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1763">Converts @self into a human-readable string representation suitable
+             line="1765">Converts @self into a human-readable string representation suitable
 for printing.
 
 The result of this function can later be parsed with
@@ -10351,13 +10351,13 @@ The result of this function can later be parsed with
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1765">a `GskTransform`</doc>
+                 line="1767">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1766">The string to print into</doc>
+                 line="1768">The string to print into</doc>
             <type name="GLib.String" c:type="GString*"/>
           </parameter>
         </parameters>
@@ -10365,12 +10365,12 @@ The result of this function can later be parsed with
       <method name="ref" c:identifier="gsk_transform_ref">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1728">Acquires a reference on the given `GskTransform`.</doc>
+             line="1730">Acquires a reference on the given `GskTransform`.</doc>
         <source-position filename="gsk/gsktransform.h" line="38"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="1734">the `GskTransform` with an additional reference</doc>
+               line="1736">the `GskTransform` with an additional reference</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10380,7 +10380,7 @@ The result of this function can later be parsed with
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1730">a `GskTransform`</doc>
+                 line="1732">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
         </parameters>
@@ -10421,7 +10421,7 @@ if you want to keep it around.</doc>
       <method name="rotate_3d" c:identifier="gsk_transform_rotate_3d">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1118">Rotates @next @angle degrees around @axis.
+             line="1119">Rotates @next @angle degrees around @axis.
 
 For a rotation in 2D space, use [method@Gsk.Transform.rotate]
 
@@ -10431,7 +10431,7 @@ if you want to keep it around.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="1131">The new transform</doc>
+               line="1132">The new transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10441,19 +10441,19 @@ if you want to keep it around.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1120">the next transform</doc>
+                 line="1121">the next transform</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="angle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1121">the rotation angle, in degrees (clockwise)</doc>
+                 line="1122">the rotation angle, in degrees (clockwise)</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
           <parameter name="axis" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1122">The rotation axis</doc>
+                 line="1123">The rotation axis</doc>
             <type name="Graphene.Vec3" c:type="const graphene_vec3_t*"/>
           </parameter>
         </parameters>
@@ -10461,7 +10461,7 @@ if you want to keep it around.</doc>
       <method name="scale" c:identifier="gsk_transform_scale">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1519">Scales @next in 2-dimensional space by the given factors.
+             line="1521">Scales @next in 2-dimensional space by the given factors.
 
 Use [method@Gsk.Transform.scale_3d] to scale in all 3 dimensions.
 
@@ -10471,7 +10471,7 @@ if you want to keep it around.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="1532">The new transform</doc>
+               line="1534">The new transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10481,19 +10481,19 @@ if you want to keep it around.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1521">the next transform</doc>
+                 line="1523">the next transform</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="factor_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1522">scaling factor on the X axis</doc>
+                 line="1524">scaling factor on the X axis</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
           <parameter name="factor_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1523">scaling factor on the Y axis</doc>
+                 line="1525">scaling factor on the Y axis</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
         </parameters>
@@ -10501,7 +10501,7 @@ if you want to keep it around.</doc>
       <method name="scale_3d" c:identifier="gsk_transform_scale_3d">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1542">Scales @next by the given factors.
+             line="1544">Scales @next by the given factors.
 
 This function consumes @next. Use [method@Gsk.Transform.ref] first
 if you want to keep it around.</doc>
@@ -10509,7 +10509,7 @@ if you want to keep it around.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="1554">The new transform</doc>
+               line="1556">The new transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10519,25 +10519,25 @@ if you want to keep it around.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1544">the next transform</doc>
+                 line="1546">the next transform</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="factor_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1545">scaling factor on the X axis</doc>
+                 line="1547">scaling factor on the X axis</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
           <parameter name="factor_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1546">scaling factor on the Y axis</doc>
+                 line="1548">scaling factor on the Y axis</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
           <parameter name="factor_z" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1547">scaling factor on the Z axis</doc>
+                 line="1549">scaling factor on the Z axis</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
         </parameters>
@@ -10545,7 +10545,7 @@ if you want to keep it around.</doc>
       <method name="skew" c:identifier="gsk_transform_skew" version="4.6">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1300">Applies a skew transform.
+             line="1302">Applies a skew transform.
 
 This function consumes @next. Use [method@Gsk.Transform.ref] first
 if you want to keep it around.</doc>
@@ -10553,7 +10553,7 @@ if you want to keep it around.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="1311">The new transform</doc>
+               line="1313">The new transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10563,19 +10563,19 @@ if you want to keep it around.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1302">the next transform</doc>
+                 line="1304">the next transform</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="skew_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1303">skew factor, in degrees, on the X axis</doc>
+                 line="1305">skew factor, in degrees, on the X axis</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
           <parameter name="skew_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1304">skew factor, in degrees, on the Y axis</doc>
+                 line="1306">skew factor, in degrees, on the Y axis</doc>
             <type name="gfloat" c:type="float"/>
           </parameter>
         </parameters>
@@ -10583,7 +10583,7 @@ if you want to keep it around.</doc>
       <method name="to_2d" c:identifier="gsk_transform_to_2d">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1845">Converts a `GskTransform` to a 2D transformation matrix.
+             line="1847">Converts a `GskTransform` to a 2D transformation matrix.
 
 @self must be a 2D transformation. If you are not
 sure, use gsk_transform_get_category() &gt;=
@@ -10608,7 +10608,7 @@ Cairo.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1847">a 2D `GskTransform`</doc>
+                 line="1849">a 2D `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="out_xx"
@@ -10617,7 +10617,7 @@ Cairo.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1848">return location for the xx member</doc>
+                 line="1850">return location for the xx member</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
           <parameter name="out_yx"
@@ -10626,7 +10626,7 @@ Cairo.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1849">return location for the yx member</doc>
+                 line="1851">return location for the yx member</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
           <parameter name="out_xy"
@@ -10635,7 +10635,7 @@ Cairo.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1850">return location for the xy member</doc>
+                 line="1852">return location for the xy member</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
           <parameter name="out_yy"
@@ -10644,7 +10644,7 @@ Cairo.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1851">return location for the yy member</doc>
+                 line="1853">return location for the yy member</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
           <parameter name="out_dx"
@@ -10653,7 +10653,7 @@ Cairo.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1852">return location for the x0 member</doc>
+                 line="1854">return location for the x0 member</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
           <parameter name="out_dy"
@@ -10662,7 +10662,7 @@ Cairo.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1853">return location for the y0 member</doc>
+                 line="1855">return location for the y0 member</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
         </parameters>
@@ -10672,7 +10672,7 @@ Cairo.</doc>
               version="4.6">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1911">Converts a `GskTransform` to 2D transformation factors.
+             line="1913">Converts a `GskTransform` to 2D transformation factors.
 
 To recreate an equivalent transform from the factors returned
 by this function, use
@@ -10698,7 +10698,7 @@ to check.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1913">a `GskTransform`</doc>
+                 line="1915">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="out_skew_x"
@@ -10707,7 +10707,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1914">return location for the skew factor
+                 line="1916">return location for the skew factor
   in the  x direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10717,7 +10717,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1916">return location for the skew factor
+                 line="1918">return location for the skew factor
   in the  y direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10727,7 +10727,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1918">return location for the scale
+                 line="1920">return location for the scale
   factor in the x direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10737,7 +10737,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1920">return location for the scale
+                 line="1922">return location for the scale
   factor in the y direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10747,7 +10747,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1922">return location for the rotation angle</doc>
+                 line="1924">return location for the rotation angle</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
           <parameter name="out_dx"
@@ -10756,7 +10756,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1923">return location for the translation
+                 line="1925">return location for the translation
   in the x direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10766,7 +10766,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1925">return location for the translation
+                 line="1927">return location for the translation
   in the y direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10775,7 +10775,7 @@ to check.</doc>
       <method name="to_affine" c:identifier="gsk_transform_to_affine">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2000">Converts a `GskTransform` to 2D affine transformation factors.
+             line="2002">Converts a `GskTransform` to 2D affine transformation factors.
 
 To recreate an equivalent transform from the factors returned
 by this function, use
@@ -10798,7 +10798,7 @@ to check.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2002">a `GskTransform`</doc>
+                 line="2004">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="out_scale_x"
@@ -10807,7 +10807,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2003">return location for the scale
+                 line="2005">return location for the scale
   factor in the x direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10817,7 +10817,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2005">return location for the scale
+                 line="2007">return location for the scale
   factor in the y direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10827,7 +10827,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2007">return location for the translation
+                 line="2009">return location for the translation
   in the x direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10837,7 +10837,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2009">return location for the translation
+                 line="2011">return location for the translation
   in the y direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10846,7 +10846,7 @@ to check.</doc>
       <method name="to_matrix" c:identifier="gsk_transform_to_matrix">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1819">Computes the actual value of @self and stores it in @out_matrix.
+             line="1821">Computes the actual value of @self and stores it in @out_matrix.
 
 The previous value of @out_matrix will be ignored.</doc>
         <source-position filename="gsk/gsktransform.h" line="51"/>
@@ -10860,7 +10860,7 @@ The previous value of @out_matrix will be ignored.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1821">a `GskTransform`</doc>
+                 line="1823">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="out_matrix"
@@ -10869,7 +10869,7 @@ The previous value of @out_matrix will be ignored.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1822">The matrix to set</doc>
+                 line="1824">The matrix to set</doc>
             <type name="Graphene.Matrix" c:type="graphene_matrix_t*"/>
           </parameter>
         </parameters>
@@ -10877,7 +10877,7 @@ The previous value of @out_matrix will be ignored.</doc>
       <method name="to_string" c:identifier="gsk_transform_to_string">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1795">Converts a matrix into a string that is suitable for printing.
+             line="1797">Converts a matrix into a string that is suitable for printing.
 
 The resulting string can be parsed with [func@Gsk.Transform.parse].
 
@@ -10886,7 +10886,7 @@ This is a wrapper around [method@Gsk.Transform.print].</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="1805">A new string for @self</doc>
+               line="1807">A new string for @self</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
@@ -10896,7 +10896,7 @@ This is a wrapper around [method@Gsk.Transform.print].</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1797">a `GskTransform`</doc>
+                 line="1799">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
         </parameters>
@@ -10904,7 +10904,7 @@ This is a wrapper around [method@Gsk.Transform.print].</doc>
       <method name="to_translate" c:identifier="gsk_transform_to_translate">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2152">Converts a `GskTransform` to a translation operation.
+             line="2154">Converts a `GskTransform` to a translation operation.
 
 @self must be a 2D transformation. If you are not
 sure, use
@@ -10920,7 +10920,7 @@ to check.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2154">a `GskTransform`</doc>
+                 line="2156">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="out_dx"
@@ -10929,7 +10929,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2155">return location for the translation
+                 line="2157">return location for the translation
   in the x direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10939,7 +10939,7 @@ to check.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2157">return location for the translation
+                 line="2159">return location for the translation
   in the y direction</doc>
             <type name="gfloat" c:type="float*"/>
           </parameter>
@@ -10948,7 +10948,7 @@ to check.</doc>
       <method name="transform" c:identifier="gsk_transform_transform">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2194">Applies all the operations from @other to @next.
+             line="2196">Applies all the operations from @other to @next.
 
 This function consumes @next. Use [method@Gsk.Transform.ref] first
 if you want to keep it around.</doc>
@@ -10956,7 +10956,7 @@ if you want to keep it around.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2204">The new transform</doc>
+               line="2206">The new transform</doc>
           <type name="Transform" c:type="GskTransform*"/>
         </return-value>
         <parameters>
@@ -10966,7 +10966,7 @@ if you want to keep it around.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2196">Transform to apply @other to</doc>
+                 line="2198">Transform to apply @other to</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="other"
@@ -10975,7 +10975,7 @@ if you want to keep it around.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2197">Transform to apply</doc>
+                 line="2199">Transform to apply</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </parameter>
         </parameters>
@@ -10984,7 +10984,7 @@ if you want to keep it around.</doc>
               c:identifier="gsk_transform_transform_bounds">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2354">Transforms a `graphene_rect_t` using the given transform @self.
+             line="2356">Transforms a `graphene_rect_t` using the given transform @self.
 
 The result is the bounding box containing the coplanar quad.</doc>
         <source-position filename="gsk/gsktransform.h" line="128"/>
@@ -10995,13 +10995,13 @@ The result is the bounding box containing the coplanar quad.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2356">a `GskTransform`</doc>
+                 line="2358">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="rect" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2357">a `graphene_rect_t`</doc>
+                 line="2359">a `graphene_rect_t`</doc>
             <type name="Graphene.Rect" c:type="const graphene_rect_t*"/>
           </parameter>
           <parameter name="out_rect"
@@ -11010,7 +11010,7 @@ The result is the bounding box containing the coplanar quad.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2358">return location for the bounds
+                 line="2360">return location for the bounds
   of the transformed rectangle</doc>
             <type name="Graphene.Rect" c:type="graphene_rect_t*"/>
           </parameter>
@@ -11020,7 +11020,7 @@ The result is the bounding box containing the coplanar quad.</doc>
               c:identifier="gsk_transform_transform_point">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2435">Transforms a `graphene_point_t` using the given transform @self.</doc>
+             line="2437">Transforms a `graphene_point_t` using the given transform @self.</doc>
         <source-position filename="gsk/gsktransform.h" line="132"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -11029,13 +11029,13 @@ The result is the bounding box containing the coplanar quad.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2437">a `GskTransform`</doc>
+                 line="2439">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
           <parameter name="point" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2438">a `graphene_point_t`</doc>
+                 line="2440">a `graphene_point_t`</doc>
             <type name="Graphene.Point" c:type="const graphene_point_t*"/>
           </parameter>
           <parameter name="out_point"
@@ -11044,7 +11044,7 @@ The result is the bounding box containing the coplanar quad.</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2439">return location for
+                 line="2441">return location for
   the transformed point</doc>
             <type name="Graphene.Point" c:type="graphene_point_t*"/>
           </parameter>
@@ -11117,7 +11117,7 @@ if you want to keep it around.</doc>
       <method name="unref" c:identifier="gsk_transform_unref">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="1745">Releases a reference on the given `GskTransform`.
+             line="1747">Releases a reference on the given `GskTransform`.
 
 If the reference was the last, the resources associated to the @self are
 freed.</doc>
@@ -11132,7 +11132,7 @@ freed.</doc>
                               allow-none="1">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="1747">a `GskTransform`</doc>
+                 line="1749">a `GskTransform`</doc>
             <type name="Transform" c:type="GskTransform*"/>
           </instance-parameter>
         </parameters>
@@ -11140,7 +11140,7 @@ freed.</doc>
       <function name="parse" c:identifier="gsk_transform_parse">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2730">Parses the given @string into a transform and puts it in
+             line="2732">Parses the given @string into a transform and puts it in
 @out_transform.
 
 Strings printed via [method@Gsk.Transform.to_string]
@@ -11152,14 +11152,14 @@ returned and %NULL is put in @out_transform.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2744">%TRUE if @string described a valid transform.</doc>
+               line="2746">%TRUE if @string described a valid transform.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2732">the string to parse</doc>
+                 line="2734">the string to parse</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="out_transform"
@@ -11168,7 +11168,7 @@ returned and %NULL is put in @out_transform.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gsk/gsktransform.c"
-                 line="2733">The location to put the transform in</doc>
+                 line="2735">The location to put the transform in</doc>
             <type name="Transform" c:type="GskTransform**"/>
           </parameter>
         </parameters>
@@ -11521,7 +11521,7 @@ The `O` command is an extension that is not supported in SVG.</doc>
               moved-to="Transform.parse">
       <doc xml:space="preserve"
            filename="gsk/gsktransform.c"
-           line="2730">Parses the given @string into a transform and puts it in
+           line="2732">Parses the given @string into a transform and puts it in
 @out_transform.
 
 Strings printed via [method@Gsk.Transform.to_string]
@@ -11533,14 +11533,14 @@ returned and %NULL is put in @out_transform.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gsk/gsktransform.c"
-             line="2744">%TRUE if @string described a valid transform.</doc>
+             line="2746">%TRUE if @string described a valid transform.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="string" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2732">the string to parse</doc>
+               line="2734">the string to parse</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="out_transform"
@@ -11549,7 +11549,7 @@ returned and %NULL is put in @out_transform.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gsk/gsktransform.c"
-               line="2733">The location to put the transform in</doc>
+               line="2735">The location to put the transform in</doc>
           <type name="Transform" c:type="GskTransform**"/>
         </parameter>
       </parameters>
