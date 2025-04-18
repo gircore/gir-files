@@ -1160,7 +1160,7 @@ To read textual or image data from a clipboard, use
               glib:get-property="content">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="491">Returns the `GdkContentProvider` currently set on @clipboard.
+             line="492">Returns the `GdkContentProvider` currently set on @clipboard.
 
 If the @clipboard is empty or its contents are not owned by the
 current process, %NULL will be returned.</doc>
@@ -1168,7 +1168,7 @@ current process, %NULL will be returned.</doc>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="500">The content of a clipboard
+               line="501">The content of a clipboard
   if the clipboard does not maintain any content</doc>
           <type name="ContentProvider" c:type="GdkContentProvider*"/>
         </return-value>
@@ -1176,7 +1176,7 @@ current process, %NULL will be returned.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="493">a `GdkClipboard`</doc>
+                 line="494">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
         </parameters>
@@ -1186,19 +1186,19 @@ current process, %NULL will be returned.</doc>
               glib:get-property="display">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="431">Gets the `GdkDisplay` that the clipboard was created for.</doc>
+             line="432">Gets the `GdkDisplay` that the clipboard was created for.</doc>
         <source-position filename="gdk/gdkclipboard.h" line="37"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="437">a `GdkDisplay`</doc>
+               line="438">a `GdkDisplay`</doc>
           <type name="Display" c:type="GdkDisplay*"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="433">a `GdkClipboard`</doc>
+                 line="434">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
         </parameters>
@@ -1208,19 +1208,19 @@ current process, %NULL will be returned.</doc>
               glib:get-property="formats">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="449">Gets the formats that the clipboard can provide its current contents in.</doc>
+             line="450">Gets the formats that the clipboard can provide its current contents in.</doc>
         <source-position filename="gdk/gdkclipboard.h" line="39"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="455">The formats of the clipboard</doc>
+               line="456">The formats of the clipboard</doc>
           <type name="ContentFormats" c:type="GdkContentFormats*"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="451">a `GdkClipboard`</doc>
+                 line="452">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
         </parameters>
@@ -1230,7 +1230,7 @@ current process, %NULL will be returned.</doc>
               glib:get-property="local">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="467">Returns if the clipboard is local.
+             line="468">Returns if the clipboard is local.
 
 A clipboard is considered local if it was last claimed
 by the running application.
@@ -1241,14 +1241,14 @@ even on a local clipboard. In this case the clipboard is empty.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="479">%TRUE if the clipboard is local</doc>
+               line="480">%TRUE if the clipboard is local</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="469">a `GdkClipboard`</doc>
+                 line="470">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
         </parameters>
@@ -1258,7 +1258,7 @@ even on a local clipboard. In this case the clipboard is empty.</doc>
               glib:finish-func="read_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="627">Asynchronously requests an input stream to read the @clipboard's
+             line="628">Asynchronously requests an input stream to read the @clipboard's
 contents from.
 
 The clipboard will choose the most suitable mime type from the given list
@@ -1271,13 +1271,13 @@ to fulfill the request, preferring the ones listed first.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="629">a `GdkClipboard`</doc>
+                 line="630">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="mime_types" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="630">a %NULL-terminated array of mime types to choose from</doc>
+                 line="631">a %NULL-terminated array of mime types to choose from</doc>
             <array c:type="const char**">
               <type name="utf8" c:type="char*"/>
             </array>
@@ -1285,7 +1285,7 @@ to fulfill the request, preferring the ones listed first.</doc>
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="631">the I/O priority of the request</doc>
+                 line="632">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -1294,7 +1294,7 @@ to fulfill the request, preferring the ones listed first.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="632">optional `GCancellable` object</doc>
+                 line="633">optional `GCancellable` object</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -1305,7 +1305,7 @@ to fulfill the request, preferring the ones listed first.</doc>
                      closure="4">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="633">callback to call when the request is satisfied</doc>
+                 line="634">callback to call when the request is satisfied</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -1314,7 +1314,7 @@ to fulfill the request, preferring the ones listed first.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="634">the data to pass to callback function</doc>
+                 line="635">the data to pass to callback function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -1324,27 +1324,27 @@ to fulfill the request, preferring the ones listed first.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="664">Finishes an asynchronous clipboard read.
+             line="665">Finishes an asynchronous clipboard read.
 
 See [method@Gdk.Clipboard.read_async].</doc>
         <source-position filename="gdk/gdkclipboard.h" line="64"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="676">a `GInputStream`</doc>
+               line="677">a `GInputStream`</doc>
           <type name="Gio.InputStream" c:type="GInputStream*"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="666">a `GdkClipboard`</doc>
+                 line="667">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="667">a `GAsyncResult`</doc>
+                 line="668">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
           <parameter name="out_mime_type"
@@ -1355,7 +1355,7 @@ See [method@Gdk.Clipboard.read_async].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="668">location to store
+                 line="669">location to store
   the chosen mime type</doc>
             <type name="utf8" c:type="const char**"/>
           </parameter>
@@ -1366,7 +1366,7 @@ See [method@Gdk.Clipboard.read_async].</doc>
               glib:finish-func="read_text_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="943">Asynchronously request the @clipboard contents converted to a string.
+             line="944">Asynchronously request the @clipboard contents converted to a string.
 
 This is a simple wrapper around [method@Gdk.Clipboard.read_value_async].
 Use that function or [method@Gdk.Clipboard.read_async] directly if you
@@ -1379,7 +1379,7 @@ need more control over the operation.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="945">a `GdkClipboard`</doc>
+                 line="946">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="cancellable"
@@ -1388,7 +1388,7 @@ need more control over the operation.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="946">optional `GCancellable` object</doc>
+                 line="947">optional `GCancellable` object</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -1399,7 +1399,7 @@ need more control over the operation.</doc>
                      closure="2">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="947">callback to call when the request is satisfied</doc>
+                 line="948">callback to call when the request is satisfied</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -1408,7 +1408,7 @@ need more control over the operation.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="948">the data to pass to callback function</doc>
+                 line="949">the data to pass to callback function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -1418,27 +1418,27 @@ need more control over the operation.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="975">Finishes an asynchronous clipboard read.
+             line="976">Finishes an asynchronous clipboard read.
 
 See [method@Gdk.Clipboard.read_text_async].</doc>
         <source-position filename="gdk/gdkclipboard.h" line="94"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="985">a new string</doc>
+               line="986">a new string</doc>
           <type name="utf8" c:type="char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="977">a `GdkClipboard`</doc>
+                 line="978">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="978">a `GAsyncResult`</doc>
+                 line="979">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -1448,7 +1448,7 @@ See [method@Gdk.Clipboard.read_text_async].</doc>
               glib:finish-func="read_texture_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="881">Asynchronously request the @clipboard contents converted to a `GdkPixbuf`.
+             line="882">Asynchronously request the @clipboard contents converted to a `GdkPixbuf`.
 
 This is a simple wrapper around [method@Gdk.Clipboard.read_value_async].
 Use that function or [method@Gdk.Clipboard.read_async] directly if you
@@ -1461,7 +1461,7 @@ need more control over the operation.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="883">a `GdkClipboard`</doc>
+                 line="884">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="cancellable"
@@ -1470,7 +1470,7 @@ need more control over the operation.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="884">optional `GCancellable` object, %NULL to ignore.</doc>
+                 line="885">optional `GCancellable` object, %NULL to ignore.</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -1481,7 +1481,7 @@ need more control over the operation.</doc>
                      closure="2">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="885">callback to call when the request is satisfied</doc>
+                 line="886">callback to call when the request is satisfied</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -1490,7 +1490,7 @@ need more control over the operation.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="886">the data to pass to callback function</doc>
+                 line="887">the data to pass to callback function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -1500,27 +1500,27 @@ need more control over the operation.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="913">Finishes an asynchronous clipboard read.
+             line="914">Finishes an asynchronous clipboard read.
 
 See [method@Gdk.Clipboard.read_texture_async].</doc>
         <source-position filename="gdk/gdkclipboard.h" line="85"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="923">a new `GdkTexture`</doc>
+               line="924">a new `GdkTexture`</doc>
           <type name="Texture" c:type="GdkTexture*"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="915">a `GdkClipboard`</doc>
+                 line="916">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="916">a `GAsyncResult`</doc>
+                 line="917">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -1530,7 +1530,7 @@ See [method@Gdk.Clipboard.read_texture_async].</doc>
               glib:finish-func="read_value_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="820">Asynchronously request the @clipboard contents converted to the given
+             line="821">Asynchronously request the @clipboard contents converted to the given
 @type.
 
 For local clipboard contents that are available in the given `GType`,
@@ -1544,19 +1544,19 @@ the value will be copied directly. Otherwise, GDK will try to use
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="822">a `GdkClipboard`</doc>
+                 line="823">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="823">a `GType` to read</doc>
+                 line="824">a `GType` to read</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="824">the I/O priority of the request</doc>
+                 line="825">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -1565,7 +1565,7 @@ the value will be copied directly. Otherwise, GDK will try to use
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="825">optional `GCancellable` object</doc>
+                 line="826">optional `GCancellable` object</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -1576,7 +1576,7 @@ the value will be copied directly. Otherwise, GDK will try to use
                      closure="4">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="826">callback to call when the request is satisfied</doc>
+                 line="827">callback to call when the request is satisfied</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -1585,7 +1585,7 @@ the value will be copied directly. Otherwise, GDK will try to use
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="827">the data to pass to callback function</doc>
+                 line="828">the data to pass to callback function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -1595,27 +1595,27 @@ the value will be copied directly. Otherwise, GDK will try to use
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="857">Finishes an asynchronous clipboard read.
+             line="858">Finishes an asynchronous clipboard read.
 
 See [method@Gdk.Clipboard.read_value_async].</doc>
         <source-position filename="gdk/gdkclipboard.h" line="76"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="867">a `GValue` containing the result.</doc>
+               line="868">a `GValue` containing the result.</doc>
           <type name="GObject.Value" c:type="const GValue*"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="859">a `GdkClipboard`</doc>
+                 line="860">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="860">a `GAsyncResult`</doc>
+                 line="861">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -1626,7 +1626,7 @@ See [method@Gdk.Clipboard.read_value_async].</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="1229">Sets the clipboard to contain the value collected from the given varargs.
+             line="1230">Sets the clipboard to contain the value collected from the given varargs.
 
 Values should be passed the same way they are passed to other value
 collecting APIs, such as [method@GObject.Object.set] or
@@ -1645,19 +1645,19 @@ gdk_clipboard_set (clipboard, GDK_TYPE_TEXTURE, some_texture);
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1231">a `GdkClipboard`</doc>
+                 line="1232">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1232">type of value to set</doc>
+                 line="1233">type of value to set</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1233">value contents conforming to @type</doc>
+                 line="1234">value contents conforming to @type</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -1665,7 +1665,7 @@ gdk_clipboard_set (clipboard, GDK_TYPE_TEXTURE, some_texture);
       <method name="set_content" c:identifier="gdk_clipboard_set_content">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="1174">Sets a new content provider on @clipboard.
+             line="1175">Sets a new content provider on @clipboard.
 
 The clipboard will claim the `GdkDisplay`'s resources and advertise
 these new contents to other applications.
@@ -1681,14 +1681,14 @@ transfer the contents and then request that format from @provider.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="1193">%TRUE if setting the clipboard succeeded</doc>
+               line="1194">%TRUE if setting the clipboard succeeded</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1176">a `GdkClipboard`</doc>
+                 line="1177">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="provider"
@@ -1697,7 +1697,7 @@ transfer the contents and then request that format from @provider.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1177">the new contents of @clipboard
+                 line="1178">the new contents of @clipboard
   or %NULL to clear the clipboard</doc>
             <type name="ContentProvider" c:type="GdkContentProvider*"/>
           </parameter>
@@ -1708,7 +1708,7 @@ transfer the contents and then request that format from @provider.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="1318">Puts the given @text into the clipboard.</doc>
+             line="1319">Puts the given @text into the clipboard.</doc>
         <source-position filename="gdk/gdkclipboard.h" line="113"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -1717,13 +1717,13 @@ transfer the contents and then request that format from @provider.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1320">a `GdkClipboard`</doc>
+                 line="1321">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="text" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1321">Text to put into the clipboard</doc>
+                 line="1322">Text to put into the clipboard</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -1733,7 +1733,7 @@ transfer the contents and then request that format from @provider.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="1334">Puts the given @texture into the clipboard.</doc>
+             line="1335">Puts the given @texture into the clipboard.</doc>
         <source-position filename="gdk/gdkclipboard.h" line="116"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -1742,13 +1742,13 @@ transfer the contents and then request that format from @provider.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1336">a `GdkClipboard`</doc>
+                 line="1337">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="texture" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1337">a `GdkTexture` to put into the clipboard</doc>
+                 line="1338">a `GdkTexture` to put into the clipboard</doc>
             <type name="Texture" c:type="GdkTexture*"/>
           </parameter>
         </parameters>
@@ -1758,7 +1758,7 @@ transfer the contents and then request that format from @provider.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="1261">Sets the clipboard to contain the value collected from the given @args.</doc>
+             line="1262">Sets the clipboard to contain the value collected from the given @args.</doc>
         <source-position filename="gdk/gdkclipboard.h" line="106"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -1767,19 +1767,19 @@ transfer the contents and then request that format from @provider.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1263">a `GdkClipboard`</doc>
+                 line="1264">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1264">type of value to set</doc>
+                 line="1265">type of value to set</doc>
             <type name="GType" c:type="GType"/>
           </parameter>
           <parameter name="args" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1265">varargs containing the value of @type</doc>
+                 line="1266">varargs containing the value of @type</doc>
             <type name="va_list" c:type="va_list"/>
           </parameter>
         </parameters>
@@ -1789,7 +1789,7 @@ transfer the contents and then request that format from @provider.</doc>
               shadows="set">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="1296">Sets the @clipboard to contain the given @value.</doc>
+             line="1297">Sets the @clipboard to contain the given @value.</doc>
         <source-position filename="gdk/gdkclipboard.h" line="110"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -1798,13 +1798,13 @@ transfer the contents and then request that format from @provider.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1298">a `GdkClipboard`</doc>
+                 line="1299">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="1299">a `GValue` to set</doc>
+                 line="1300">a `GValue` to set</doc>
             <type name="GObject.Value" c:type="const GValue*"/>
           </parameter>
         </parameters>
@@ -1814,7 +1814,7 @@ transfer the contents and then request that format from @provider.</doc>
               glib:finish-func="store_finish">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="513">Asynchronously instructs the @clipboard to store its contents remotely.
+             line="514">Asynchronously instructs the @clipboard to store its contents remotely.
 
 If the clipboard is not local, this function does nothing but report success.
 
@@ -1834,13 +1834,13 @@ is shut down, so you likely don't need to call it.</doc>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="515">a `GdkClipboard`</doc>
+                 line="516">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="io_priority" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="516">the I/O priority of the request</doc>
+                 line="517">the I/O priority of the request</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="cancellable"
@@ -1849,7 +1849,7 @@ is shut down, so you likely don't need to call it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="517">optional `GCancellable` object</doc>
+                 line="518">optional `GCancellable` object</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -1860,7 +1860,7 @@ is shut down, so you likely don't need to call it.</doc>
                      closure="3">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="518">callback to call when the request is satisfied</doc>
+                 line="519">callback to call when the request is satisfied</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -1869,7 +1869,7 @@ is shut down, so you likely don't need to call it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="519">the data to pass to callback function</doc>
+                 line="520">the data to pass to callback function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -1879,27 +1879,27 @@ is shut down, so you likely don't need to call it.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="565">Finishes an asynchronous clipboard store.
+             line="566">Finishes an asynchronous clipboard store.
 
 See [method@Gdk.Clipboard.store_async].</doc>
         <source-position filename="gdk/gdkclipboard.h" line="52"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/gdkclipboard.c"
-               line="575">%TRUE if storing was successful.</doc>
+               line="576">%TRUE if storing was successful.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="clipboard" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="567">a `GdkClipboard`</doc>
+                 line="568">a `GdkClipboard`</doc>
             <type name="Clipboard" c:type="GdkClipboard*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/gdkclipboard.c"
-                 line="568">a `GAsyncResult`</doc>
+                 line="569">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -1907,7 +1907,7 @@ See [method@Gdk.Clipboard.store_async].</doc>
       <property name="content" transfer-ownership="none" getter="get_content">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="392">The `GdkContentProvider` or %NULL if the clipboard is empty or contents are
+             line="393">The `GdkContentProvider` or %NULL if the clipboard is empty or contents are
 provided otherwise.</doc>
         <type name="ContentProvider"/>
       </property>
@@ -1918,13 +1918,13 @@ provided otherwise.</doc>
                 getter="get_display">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="355">The `GdkDisplay` that the clipboard belongs to.</doc>
+             line="356">The `GdkDisplay` that the clipboard belongs to.</doc>
         <type name="Display"/>
       </property>
       <property name="formats" transfer-ownership="none" getter="get_formats">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="368">The possible formats that the clipboard can provide its data in.</doc>
+             line="369">The possible formats that the clipboard can provide its data in.</doc>
         <type name="ContentFormats"/>
       </property>
       <property name="local"
@@ -1933,13 +1933,13 @@ provided otherwise.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="380">%TRUE if the contents of the clipboard are owned by this process.</doc>
+             line="381">%TRUE if the contents of the clipboard are owned by this process.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <glib:signal name="changed" when="last">
         <doc xml:space="preserve"
              filename="gdk/gdkclipboard.c"
-             line="405">Emitted when the clipboard changes ownership.</doc>
+             line="406">Emitted when the clipboard changes ownership.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -34137,7 +34137,7 @@ can fail, returning %NULL context.</doc>
       <glib:signal name="images-updated" when="last">
         <doc xml:space="preserve"
              filename="gdk/gdkvulkancontext.c"
-             line="889">Emitted when the images managed by this context have changed.
+             line="893">Emitted when the images managed by this context have changed.
 
 Usually this means that the swapchain had to be recreated,
 for example in response to a change of the surface size.</doc>

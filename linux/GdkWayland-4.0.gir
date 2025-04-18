@@ -663,19 +663,19 @@ provides access to the Wayland `wl_seat` object with
               introspectable="0">
         <doc xml:space="preserve"
              filename="gdk/wayland/gdkseat-wayland.c"
-             line="4462">Returns the Wayland `wl_seat` of a `GdkSeat`.</doc>
+             line="4487">Returns the Wayland `wl_seat` of a `GdkSeat`.</doc>
         <source-position filename="gdk/wayland/gdkwaylandseat.h" line="47"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/wayland/gdkseat-wayland.c"
-               line="4468">a Wayland `wl_seat`</doc>
+               line="4493">a Wayland `wl_seat`</doc>
           <type name="gpointer" c:type="wl_seat*"/>
         </return-value>
         <parameters>
           <instance-parameter name="seat" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdkseat-wayland.c"
-                 line="4464">a `GdkSeat`</doc>
+                 line="4489">a `GdkSeat`</doc>
             <type name="WaylandSeat" c:type="GdkSeat*"/>
           </instance-parameter>
         </parameters>
@@ -732,7 +732,7 @@ access to the Wayland `wl_surface` object with
            glib:get-type="gdk_wayland_toplevel_get_type">
       <doc xml:space="preserve"
            filename="gdk/wayland/gdktoplevel-wayland.c"
-           line="69">The Wayland implementation of `GdkToplevel`.
+           line="70">The Wayland implementation of `GdkToplevel`.
 
 Beyond the [iface@Gdk.Toplevel] API, the Wayland implementation
 has API to set up cross-process parent-child relationships between
@@ -744,7 +744,7 @@ surfaces with [method@GdkWayland.WaylandToplevel.export_handle] and
               version="4.12">
         <doc xml:space="preserve"
              filename="gdk/wayland/gdktoplevel-wayland.c"
-             line="2662">Destroy a handle that was obtained with gdk_wayland_toplevel_export_handle().
+             line="2678">Destroy a handle that was obtained with gdk_wayland_toplevel_export_handle().
 
 Note that this API depends on an unstable Wayland protocol,
 and thus may require changes in the future.</doc>
@@ -757,13 +757,13 @@ and thus may require changes in the future.</doc>
           <instance-parameter name="toplevel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2664">the `GdkToplevel` that was exported</doc>
+                 line="2680">the `GdkToplevel` that was exported</doc>
             <type name="WaylandToplevel" c:type="GdkToplevel*"/>
           </instance-parameter>
           <parameter name="handle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2665">the handle to drop</doc>
+                 line="2681">the handle to drop</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -772,7 +772,7 @@ and thus may require changes in the future.</doc>
               c:identifier="gdk_wayland_toplevel_export_handle">
         <doc xml:space="preserve"
              filename="gdk/wayland/gdktoplevel-wayland.c"
-             line="2568">Asynchronously obtains a handle for a surface that can be passed
+             line="2584">Asynchronously obtains a handle for a surface that can be passed
 to other processes.
 
 When the handle has been obtained, @callback will be called.
@@ -800,7 +800,7 @@ and thus may require changes in the future.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/wayland/gdktoplevel-wayland.c"
-               line="2599">%TRUE if the handle has been requested, %FALSE if
+               line="2615">%TRUE if the handle has been requested, %FALSE if
   an error occurred.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -808,7 +808,7 @@ and thus may require changes in the future.</doc>
           <instance-parameter name="toplevel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2570">the `GdkToplevel` to obtain a handle for</doc>
+                 line="2586">the `GdkToplevel` to obtain a handle for</doc>
             <type name="WaylandToplevel" c:type="GdkToplevel*"/>
           </instance-parameter>
           <parameter name="callback"
@@ -818,7 +818,7 @@ and thus may require changes in the future.</doc>
                      destroy="2">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2571">callback to call with the handle</doc>
+                 line="2587">callback to call with the handle</doc>
             <type name="WaylandToplevelExported"
                   c:type="GdkWaylandToplevelExported"/>
           </parameter>
@@ -828,7 +828,7 @@ and thus may require changes in the future.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2572">user data for @callback</doc>
+                 line="2588">user data for @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
           <parameter name="destroy_func"
@@ -836,7 +836,7 @@ and thus may require changes in the future.</doc>
                      scope="async">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2573">destroy notify for @user_data</doc>
+                 line="2589">destroy notify for @user_data</doc>
             <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
           </parameter>
         </parameters>
@@ -845,7 +845,7 @@ and thus may require changes in the future.</doc>
               c:identifier="gdk_wayland_toplevel_set_application_id">
         <doc xml:space="preserve"
              filename="gdk/wayland/gdktoplevel-wayland.c"
-             line="2442">Sets the application id on a `GdkToplevel`.</doc>
+             line="2445">Sets the application id on a `GdkToplevel`.</doc>
         <source-position filename="gdk/wayland/gdkwaylandtoplevel.h"
                          line="67"/>
         <return-value transfer-ownership="none">
@@ -855,13 +855,13 @@ and thus may require changes in the future.</doc>
           <instance-parameter name="toplevel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2444">a `GdkToplevel`</doc>
+                 line="2447">a `GdkToplevel`</doc>
             <type name="WaylandToplevel" c:type="GdkToplevel*"/>
           </instance-parameter>
           <parameter name="application_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2445">the application id for the @toplevel</doc>
+                 line="2448">the application id for the @toplevel</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -870,7 +870,7 @@ and thus may require changes in the future.</doc>
               c:identifier="gdk_wayland_toplevel_set_transient_for_exported">
         <doc xml:space="preserve"
              filename="gdk/wayland/gdktoplevel-wayland.c"
-             line="2710">Marks @toplevel as transient for the surface to which the given
+             line="2726">Marks @toplevel as transient for the surface to which the given
 @parent_handle_str refers.
 
 Typically, the handle will originate from a
@@ -883,7 +883,7 @@ and thus may require changes in the future.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/wayland/gdktoplevel-wayland.c"
-               line="2724">%TRUE if the surface has been marked as transient,
+               line="2740">%TRUE if the surface has been marked as transient,
   %FALSE if an error occurred.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -891,13 +891,13 @@ and thus may require changes in the future.</doc>
           <instance-parameter name="toplevel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2712">the `GdkToplevel` to make as transient</doc>
+                 line="2728">the `GdkToplevel` to make as transient</doc>
             <type name="WaylandToplevel" c:type="GdkToplevel*"/>
           </instance-parameter>
           <parameter name="parent_handle_str" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2713">an exported handle for a surface</doc>
+                 line="2729">an exported handle for a surface</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -908,7 +908,7 @@ and thus may require changes in the future.</doc>
               deprecated-version="4.12">
         <doc xml:space="preserve"
              filename="gdk/wayland/gdktoplevel-wayland.c"
-             line="2622">Destroys the handle that was obtained with
+             line="2638">Destroys the handle that was obtained with
 gdk_wayland_toplevel_export_handle().
 
 It is an error to call this function on a surface that
@@ -931,7 +931,7 @@ and thus may require changes in the future.</doc>
           <instance-parameter name="toplevel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/wayland/gdktoplevel-wayland.c"
-                 line="2624">the `GdkToplevel` to unexport</doc>
+                 line="2640">the `GdkToplevel` to unexport</doc>
             <type name="WaylandToplevel" c:type="GdkToplevel*"/>
           </instance-parameter>
         </parameters>
@@ -941,7 +941,7 @@ and thus may require changes in the future.</doc>
               c:type="GdkWaylandToplevelExported">
       <doc xml:space="preserve"
            filename="gdk/wayland/gdktoplevel-wayland.c"
-           line="2528">Callback that gets called when the handle for a surface has been
+           line="2544">Callback that gets called when the handle for a surface has been
 obtained from the Wayland compositor.
 
 This callback is used in [method@GdkWayland.WaylandToplevel.export_handle].
@@ -956,13 +956,13 @@ marking surfaces as transient for out-of-process surfaces.</doc>
         <parameter name="toplevel" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/wayland/gdktoplevel-wayland.c"
-               line="2530">the `GdkToplevel` that is exported</doc>
+               line="2546">the `GdkToplevel` that is exported</doc>
           <type name="WaylandToplevel" c:type="GdkToplevel*"/>
         </parameter>
         <parameter name="handle" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/wayland/gdktoplevel-wayland.c"
-               line="2531">the handle</doc>
+               line="2547">the handle</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="user_data"
@@ -972,7 +972,7 @@ marking surfaces as transient for out-of-process surfaces.</doc>
                    closure="2">
           <doc xml:space="preserve"
                filename="gdk/wayland/gdktoplevel-wayland.c"
-               line="2532">user data that was passed to [method@GdkWayland.WaylandToplevel.export_handle]</doc>
+               line="2548">user data that was passed to [method@GdkWayland.WaylandToplevel.export_handle]</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
