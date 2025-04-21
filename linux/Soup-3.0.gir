@@ -5,10 +5,12 @@ and/or use gtk-doc annotations.  -->
 <repository version="1.2"
             xmlns="http://www.gtk.org/introspection/core/1.0"
             xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:doc="http://www.gtk.org/introspection/doc/1.0"
             xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
   <include name="Gio" version="2.0"/>
   <package name="libsoup-3.0"/>
   <c:include name="libsoup/soup.h"/>
+  <doc:format name="unknown"/>
   <namespace name="Soup"
              version="3.0"
              shared-library="libsoup-3.0.so.0"
@@ -9608,55 +9610,6 @@ You may not modify the headers while iterating over them.</doc>
           <type name="gpointer" c:type="gpointer"/>
         </array>
       </field>
-      <method name="next" c:identifier="soup_message_headers_iter_next">
-        <doc xml:space="preserve"
-             filename="libsoup/soup-message-headers.c"
-             line="817">Yields the next name/value pair in the [struct@MessageHeaders] being
-iterated by @iter.
-
-If @iter has already yielded the last header, then
-[method@MessageHeadersIter.next] will return %FALSE and @name and @value
-will be unchanged.</doc>
-        <source-position filename="libsoup/soup-message-headers.h" line="86"/>
-        <return-value transfer-ownership="none">
-          <doc xml:space="preserve"
-               filename="libsoup/soup-message-headers.c"
-               line="832">%TRUE if another name and value were returned, %FALSE
-  if the end of the headers has been reached.</doc>
-          <type name="gboolean" c:type="gboolean"/>
-        </return-value>
-        <parameters>
-          <instance-parameter name="iter"
-                              direction="inout"
-                              caller-allocates="0"
-                              transfer-ownership="none">
-            <doc xml:space="preserve"
-                 filename="libsoup/soup-message-headers.c"
-                 line="819">a %SoupMessageHeadersIter</doc>
-            <type name="MessageHeadersIter" c:type="SoupMessageHeadersIter*"/>
-          </instance-parameter>
-          <parameter name="name"
-                     direction="out"
-                     caller-allocates="0"
-                     transfer-ownership="none">
-            <doc xml:space="preserve"
-                 filename="libsoup/soup-message-headers.c"
-                 line="820">pointer to a variable to return
-  the header name in</doc>
-            <type name="utf8" c:type="const char**"/>
-          </parameter>
-          <parameter name="value"
-                     direction="out"
-                     caller-allocates="0"
-                     transfer-ownership="none">
-            <doc xml:space="preserve"
-                 filename="libsoup/soup-message-headers.c"
-                 line="822">pointer to a variable to return
-  the header value in</doc>
-            <type name="utf8" c:type="const char**"/>
-          </parameter>
-        </parameters>
-      </method>
       <function name="init" c:identifier="soup_message_headers_iter_init">
         <doc xml:space="preserve"
              filename="libsoup/soup-message-headers.c"
@@ -9681,6 +9634,55 @@ will be unchanged.</doc>
                  filename="libsoup/soup-message-headers.c"
                  line="802">a %SoupMessageHeaders</doc>
             <type name="MessageHeaders" c:type="SoupMessageHeaders*"/>
+          </parameter>
+        </parameters>
+      </function>
+      <function name="next" c:identifier="soup_message_headers_iter_next">
+        <doc xml:space="preserve"
+             filename="libsoup/soup-message-headers.c"
+             line="817">Yields the next name/value pair in the [struct@MessageHeaders] being
+iterated by @iter.
+
+If @iter has already yielded the last header, then
+[method@MessageHeadersIter.next] will return %FALSE and @name and @value
+will be unchanged.</doc>
+        <source-position filename="libsoup/soup-message-headers.h" line="86"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libsoup/soup-message-headers.c"
+               line="832">%TRUE if another name and value were returned, %FALSE
+  if the end of the headers has been reached.</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <parameter name="iter"
+                     direction="inout"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libsoup/soup-message-headers.c"
+                 line="819">a %SoupMessageHeadersIter</doc>
+            <type name="MessageHeadersIter" c:type="SoupMessageHeadersIter*"/>
+          </parameter>
+          <parameter name="name"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libsoup/soup-message-headers.c"
+                 line="820">pointer to a variable to return
+  the header name in</doc>
+            <type name="utf8" c:type="const char**"/>
+          </parameter>
+          <parameter name="value"
+                     direction="out"
+                     caller-allocates="0"
+                     transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="libsoup/soup-message-headers.c"
+                 line="822">pointer to a variable to return
+  the header value in</doc>
+            <type name="utf8" c:type="const char**"/>
           </parameter>
         </parameters>
       </function>
@@ -19187,6 +19189,57 @@ Beware that @headers may be modified even on failure.</doc>
                filename="libsoup/soup-message-headers.c"
                line="802">a %SoupMessageHeaders</doc>
           <type name="MessageHeaders" c:type="SoupMessageHeaders*"/>
+        </parameter>
+      </parameters>
+    </function>
+    <function name="message_headers_iter_next"
+              c:identifier="soup_message_headers_iter_next"
+              moved-to="MessageHeadersIter.next">
+      <doc xml:space="preserve"
+           filename="libsoup/soup-message-headers.c"
+           line="817">Yields the next name/value pair in the [struct@MessageHeaders] being
+iterated by @iter.
+
+If @iter has already yielded the last header, then
+[method@MessageHeadersIter.next] will return %FALSE and @name and @value
+will be unchanged.</doc>
+      <source-position filename="libsoup/soup-message-headers.h" line="86"/>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve"
+             filename="libsoup/soup-message-headers.c"
+             line="832">%TRUE if another name and value were returned, %FALSE
+  if the end of the headers has been reached.</doc>
+        <type name="gboolean" c:type="gboolean"/>
+      </return-value>
+      <parameters>
+        <parameter name="iter"
+                   direction="inout"
+                   caller-allocates="0"
+                   transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libsoup/soup-message-headers.c"
+               line="819">a %SoupMessageHeadersIter</doc>
+          <type name="MessageHeadersIter" c:type="SoupMessageHeadersIter*"/>
+        </parameter>
+        <parameter name="name"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libsoup/soup-message-headers.c"
+               line="820">pointer to a variable to return
+  the header name in</doc>
+          <type name="utf8" c:type="const char**"/>
+        </parameter>
+        <parameter name="value"
+                   direction="out"
+                   caller-allocates="0"
+                   transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="libsoup/soup-message-headers.c"
+               line="822">pointer to a variable to return
+  the header value in</doc>
+          <type name="utf8" c:type="const char**"/>
         </parameter>
       </parameters>
     </function>
