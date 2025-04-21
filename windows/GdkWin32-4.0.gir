@@ -5,11 +5,13 @@ and/or use gtk-doc annotations.  -->
 <repository version="1.2"
             xmlns="http://www.gtk.org/introspection/core/1.0"
             xmlns:c="http://www.gtk.org/introspection/c/1.0"
+            xmlns:doc="http://www.gtk.org/introspection/doc/1.0"
             xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
   <include name="Gdk" version="4.0"/>
   <include name="win32" version="1.0"/>
   <package name="gtk4-win32"/>
   <c:include name="gdk/win32/gdkwin32.h"/>
+  <doc:format name="unknown"/>
   <namespace name="GdkWin32"
              version="4.0"
              shared-library="libgtk-4-1.dll"
@@ -137,7 +139,7 @@ and/or use gtk-doc annotations.  -->
     <function-macro name="SURFACE_HWND"
                     c:identifier="GDK_SURFACE_HWND"
                     introspectable="0">
-      <source-position filename="gdk/win32/gdkwin32misc.h" line="46"/>
+      <source-position filename="gdk/win32/gdkwin32misc.h" line="43"/>
       <parameters>
         <parameter name="win">
         </parameter>
@@ -360,19 +362,19 @@ and/or use gtk-doc annotations.  -->
                 c:identifier="gdk_win32_display_get_wgl_version">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkglcontext-win32-wgl.c"
-             line="1268">Retrieves the version of the WGL implementation.</doc>
+             line="1252">Retrieves the version of the WGL implementation.</doc>
         <source-position filename="gdk/win32/gdkwin32glcontext.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdkglcontext-win32-wgl.c"
-               line="1276">%TRUE if WGL is available</doc>
+               line="1260">%TRUE if WGL is available</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkglcontext-win32-wgl.c"
-                 line="1270">a `GdkDisplay`</doc>
+                 line="1254">a `GdkDisplay`</doc>
             <type name="Gdk.Display" c:type="GdkDisplay*"/>
           </parameter>
           <parameter name="major"
@@ -381,7 +383,7 @@ and/or use gtk-doc annotations.  -->
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkglcontext-win32-wgl.c"
-                 line="1271">return location for the WGL major version</doc>
+                 line="1255">return location for the WGL major version</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
           <parameter name="minor"
@@ -390,7 +392,7 @@ and/or use gtk-doc annotations.  -->
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkglcontext-win32-wgl.c"
-                 line="1272">return location for the WGL minor version</doc>
+                 line="1256">return location for the WGL minor version</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -398,7 +400,7 @@ and/or use gtk-doc annotations.  -->
       <method name="add_filter" c:identifier="gdk_win32_display_add_filter">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkdisplay-win32.c"
-             line="52">Adds an event filter to @window, allowing you to intercept messages
+             line="50">Adds an event filter to @window, allowing you to intercept messages
 before they reach GDK. This is a low-level operation and makes it
 easy to break GDK and/or GTK, so you have to know what you're
 doing.</doc>
@@ -410,7 +412,7 @@ doing.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="54">a `GdkWin32Display`</doc>
+                 line="52">a `GdkWin32Display`</doc>
             <type name="Win32Display" c:type="GdkWin32Display*"/>
           </instance-parameter>
           <parameter name="function"
@@ -419,7 +421,7 @@ doing.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="55">filter callback</doc>
+                 line="53">filter callback</doc>
             <type name="Win32MessageFilterFunc"
                   c:type="GdkWin32MessageFilterFunc"/>
           </parameter>
@@ -429,7 +431,7 @@ doing.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="56">data to pass to filter callback</doc>
+                 line="54">data to pass to filter callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -439,19 +441,19 @@ doing.</doc>
               version="4.4">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkdisplay-win32.c"
-             line="1256">Retrieves the EGL display connection object for the given GDK display.</doc>
+             line="1307">Retrieves the EGL display connection object for the given GDK display.</doc>
         <source-position filename="gdk/win32/gdkwin32display.h" line="107"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/win32/gdkdisplay-win32.c"
-               line="1262">the EGL display</doc>
+               line="1313">the EGL display</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="1258">a Win32 display</doc>
+                 line="1309">a Win32 display</doc>
             <type name="Win32Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -492,7 +494,7 @@ It may for example be shared with its fallback cursor.</doc>
               c:identifier="gdk_win32_display_remove_filter">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkdisplay-win32.c"
-             line="137">Remove a filter previously added with gdk_win32_display_add_filter().</doc>
+             line="135">Remove a filter previously added with gdk_win32_display_add_filter().</doc>
         <source-position filename="gdk/win32/gdkwin32display.h" line="99"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -501,7 +503,7 @@ It may for example be shared with its fallback cursor.</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="139">A `GdkWin32Display`</doc>
+                 line="137">A `GdkWin32Display`</doc>
             <type name="Win32Display" c:type="GdkWin32Display*"/>
           </instance-parameter>
           <parameter name="function"
@@ -510,7 +512,7 @@ It may for example be shared with its fallback cursor.</doc>
                      closure="1">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="140">previously-added filter function</doc>
+                 line="138">previously-added filter function</doc>
             <type name="Win32MessageFilterFunc"
                   c:type="GdkWin32MessageFilterFunc"/>
           </parameter>
@@ -520,7 +522,7 @@ It may for example be shared with its fallback cursor.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="141">user data for previously-added filter function</doc>
+                 line="139">user data for previously-added filter function</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -529,7 +531,7 @@ It may for example be shared with its fallback cursor.</doc>
               c:identifier="gdk_win32_display_set_cursor_theme">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkdisplay-win32.c"
-             line="330">Sets the cursor theme from which the images for cursor
+             line="328">Sets the cursor theme from which the images for cursor
 should be taken.
 
 If the windowing system supports it, existing cursors created
@@ -546,7 +548,7 @@ for the corresponding `GtkSetting`).</doc>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="332">a `GdkDisplay`</doc>
+                 line="330">a `GdkDisplay`</doc>
             <type name="Win32Display" c:type="GdkDisplay*"/>
           </instance-parameter>
           <parameter name="name"
@@ -555,14 +557,14 @@ for the corresponding `GtkSetting`).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="333">the name of the cursor theme to use, or %NULL
+                 line="331">the name of the cursor theme to use, or %NULL
   to unset a previously set value</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="335">the cursor size to use, or 0 to keep the previous size</doc>
+                 line="333">the cursor size to use, or 0 to keep the previous size</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -755,7 +757,7 @@ if a filter wants a GDK event queued, it should do that itself.</doc>
                 c:identifier="gdk_win32_monitor_get_workarea">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkmonitor-win32.c"
-             line="800">Retrieves the size and position of the “work area” on a monitor
+             line="796">Retrieves the size and position of the “work area” on a monitor
 within the display coordinate space.
 
 The returned geometry is in ”application pixels”, not in ”device pixels”
@@ -768,7 +770,7 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
           <parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkmonitor-win32.c"
-                 line="802">a `GdkMonitor`</doc>
+                 line="798">a `GdkMonitor`</doc>
             <type name="Gdk.Monitor" c:type="GdkMonitor*"/>
           </parameter>
           <parameter name="workarea"
@@ -777,7 +779,7 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkmonitor-win32.c"
-                 line="803">a `GdkRectangle` to be filled with the monitor workarea</doc>
+                 line="799">a `GdkRectangle` to be filled with the monitor workarea</doc>
             <type name="Gdk.Rectangle" c:type="GdkRectangle*"/>
           </parameter>
         </parameters>
@@ -798,6 +800,12 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
            glib:get-type="gdk_win32_screen_get_type"
            glib:type-struct="Win32ScreenClass">
       <source-position filename="gdk/win32/gdkwin32screen.h" line="43"/>
+      <property name="display"
+                writable="1"
+                construct-only="1"
+                transfer-ownership="none">
+        <type name="Gdk.Display"/>
+      </property>
     </class>
     <record name="Win32ScreenClass"
             c:type="GdkWin32ScreenClass"
@@ -819,18 +827,18 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
                 deprecated="1"
                 deprecated-version="4.8">
         <doc-deprecated xml:space="preserve">Use gdk_win32_surface_get_handle() instead.</doc-deprecated>
-        <source-position filename="gdk/win32/gdkwin32misc.h" line="73"/>
+        <source-position filename="gdk/win32/gdkwin32misc.h" line="53"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="4187">the associated @surface HWND handle.</doc>
+               line="2624">the associated @surface HWND handle.</doc>
           <type name="win32.HWND" c:type="HWND"/>
         </return-value>
         <parameters>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="4185">a `GdkSurface`</doc>
+                 line="2622">a `GdkSurface`</doc>
             <type name="Gdk.Surface" c:type="GdkSurface*"/>
           </parameter>
         </parameters>
@@ -840,18 +848,18 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
                 deprecated="1"
                 deprecated-version="4.8">
         <doc-deprecated xml:space="preserve">Use `GDK_IS_WIN32_SURFACE` instead.</doc-deprecated>
-        <source-position filename="gdk/win32/gdkwin32misc.h" line="71"/>
+        <source-position filename="gdk/win32/gdkwin32misc.h" line="51"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="4142">%TRUE if the @surface is a win32 implemented surface.</doc>
+               line="2579">%TRUE if the @surface is a win32 implemented surface.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="4140">a `GdkSurface`</doc>
+                 line="2577">a `GdkSurface`</doc>
             <type name="Gdk.Surface" c:type="GdkSurface*"/>
           </parameter>
         </parameters>
@@ -859,24 +867,24 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
       <function name="lookup_for_display"
                 c:identifier="gdk_win32_surface_lookup_for_display"
                 introspectable="0">
-        <source-position filename="gdk/win32/gdkwin32misc.h" line="83"/>
+        <source-position filename="gdk/win32/gdkwin32misc.h" line="63"/>
         <return-value nullable="1">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="4127">the %GdkSurface associated with the given @anid, or %NULL.</doc>
+               line="2564">the %GdkSurface associated with the given @anid, or %NULL.</doc>
           <type name="Gdk.Surface" c:type="GdkSurface*"/>
         </return-value>
         <parameters>
           <parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="4124">a %GdkDisplay</doc>
+                 line="2561">a %GdkDisplay</doc>
             <type name="Gdk.Display" c:type="GdkDisplay*"/>
           </parameter>
           <parameter name="anid" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="4125">a HWND window handle</doc>
+                 line="2562">a HWND window handle</doc>
             <type name="win32.HWND" c:type="HWND"/>
           </parameter>
         </parameters>
@@ -884,19 +892,19 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
       <method name="get_handle" c:identifier="gdk_win32_surface_get_handle">
         <doc xml:space="preserve"
              filename="gdk/win32/gdksurface-win32.c"
-             line="4543">Returns the HWND handle belonging to @surface.</doc>
-        <source-position filename="gdk/win32/gdkwin32misc.h" line="80"/>
+             line="2978">Returns the HWND handle belonging to @surface.</doc>
+        <source-position filename="gdk/win32/gdkwin32misc.h" line="60"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="4549">the associated HWND handle.</doc>
+               line="2984">the associated HWND handle.</doc>
           <type name="win32.HWND" c:type="HWND"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="4545">a native `GdkSurface`.</doc>
+                 line="2980">a native `GdkSurface`.</doc>
             <type name="Win32Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -905,7 +913,7 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
               c:identifier="gdk_win32_surface_set_urgency_hint">
         <doc xml:space="preserve"
              filename="gdk/win32/gdksurface-win32.c"
-             line="1178">Flashes the specified @surface.</doc>
+             line="1128">Flashes the specified @surface.</doc>
         <source-position filename="gdk/win32/gdkwin32surface.h" line="53"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -914,13 +922,13 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="1180">a native `GdkSurface`.</doc>
+                 line="1130">a native `GdkSurface`.</doc>
             <type name="Win32Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="urgent" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="1181">if %TRUE, flashes both the window and the taskbar button
+                 line="1131">if %TRUE, flashes both the window and the taskbar button
          continuously.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
@@ -945,7 +953,7 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
     </record>
     <function name="win32_handle_table_lookup"
               c:identifier="gdk_win32_handle_table_lookup">
-      <source-position filename="gdk/win32/gdkwin32misc.h" line="76"/>
+      <source-position filename="gdk/win32/gdkwin32misc.h" line="56"/>
       <return-value transfer-ownership="none" nullable="1">
         <type name="gpointer" c:type="gpointer"/>
       </return-value>
