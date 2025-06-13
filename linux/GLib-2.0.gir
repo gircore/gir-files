@@ -8735,7 +8735,7 @@ valid.</doc>
       <method name="add_days" c:identifier="g_date_add_days">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1692">Increments a date some number of days.
+             line="1693">Increments a date some number of days.
 To move forward by weeks, add weeks*7 days.
 The date must be valid.</doc>
         <source-position filename="glib/gdate.h" line="223"/>
@@ -8746,13 +8746,13 @@ The date must be valid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1694">a #GDate to increment</doc>
+                 line="1695">a #GDate to increment</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="n_days" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1695">number of days to move the date forward</doc>
+                 line="1696">number of days to move the date forward</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -8760,7 +8760,7 @@ The date must be valid.</doc>
       <method name="add_months" c:identifier="g_date_add_months">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1742">Increments a date by some number of months.
+             line="1743">Increments a date by some number of months.
 If the day of the month is greater than 28,
 this routine may change the day of the month
 (because the destination month may not have
@@ -8773,13 +8773,13 @@ the current day in it). The date must be valid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1744">a #GDate to increment</doc>
+                 line="1745">a #GDate to increment</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="n_months" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1745">number of months to move forward</doc>
+                 line="1746">number of months to move forward</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -8787,7 +8787,7 @@ the current day in it). The date must be valid.</doc>
       <method name="add_years" c:identifier="g_date_add_years">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1837">Increments a date by some number of years.
+             line="1838">Increments a date by some number of years.
 If the date is February 29, and the destination
 year is not a leap year, the date will be changed
 to February 28. The date must be valid.</doc>
@@ -8799,13 +8799,13 @@ to February 28. The date must be valid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1839">a #GDate to increment</doc>
+                 line="1840">a #GDate to increment</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="n_years" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1840">number of years to move forward</doc>
+                 line="1841">number of years to move forward</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -8813,7 +8813,7 @@ to February 28. The date must be valid.</doc>
       <method name="clamp" c:identifier="g_date_clamp">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="2127">If @date is prior to @min_date, sets @date equal to @min_date.
+             line="2128">If @date is prior to @min_date, sets @date equal to @min_date.
 If @date falls after @max_date, sets @date equal to @max_date.
 Otherwise, @date is unchanged.
 Either of @min_date and @max_date may be %NULL.
@@ -8826,19 +8826,19 @@ All non-%NULL dates must be valid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2129">a #GDate to clamp</doc>
+                 line="2130">a #GDate to clamp</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="min_date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2130">minimum accepted value for @date</doc>
+                 line="2131">minimum accepted value for @date</doc>
             <type name="Date" c:type="const GDate*"/>
           </parameter>
           <parameter name="max_date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2131">maximum accepted value for @date</doc>
+                 line="2132">maximum accepted value for @date</doc>
             <type name="Date" c:type="const GDate*"/>
           </parameter>
         </parameters>
@@ -8872,13 +8872,13 @@ Validity can be tested with g_date_valid().</doc>
       <method name="compare" c:identifier="g_date_compare">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="2022">qsort()-style comparison function for dates.
+             line="2023">qsort()-style comparison function for dates.
 Both dates must be valid.</doc>
         <source-position filename="glib/gdate.h" line="262"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="2030">0 for equal, less than zero if @lhs is less than @rhs,
+               line="2031">0 for equal, less than zero if @lhs is less than @rhs,
     greater than zero if @lhs is greater than @rhs</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
@@ -8886,13 +8886,13 @@ Both dates must be valid.</doc>
           <instance-parameter name="lhs" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2024">first date to compare</doc>
+                 line="2025">first date to compare</doc>
             <type name="Date" c:type="const GDate*"/>
           </instance-parameter>
           <parameter name="rhs" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2025">second date to compare</doc>
+                 line="2026">second date to compare</doc>
             <type name="Date" c:type="const GDate*"/>
           </parameter>
         </parameters>
@@ -9160,20 +9160,20 @@ Can return 0 if the day is before the first Sunday of the year.</doc>
       <method name="is_first_of_month" c:identifier="g_date_is_first_of_month">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1642">Returns %TRUE if the date is on the first of a month.
+             line="1643">Returns %TRUE if the date is on the first of a month.
 The date must be valid.</doc>
         <source-position filename="glib/gdate.h" line="217"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1649">%TRUE if the date is the first of the month</doc>
+               line="1650">%TRUE if the date is the first of the month</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1644">a #GDate to check</doc>
+                 line="1645">a #GDate to check</doc>
             <type name="Date" c:type="const GDate*"/>
           </instance-parameter>
         </parameters>
@@ -9181,20 +9181,20 @@ The date must be valid.</doc>
       <method name="is_last_of_month" c:identifier="g_date_is_last_of_month">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1665">Returns %TRUE if the date is the last day of the month.
+             line="1666">Returns %TRUE if the date is the last day of the month.
 The date must be valid.</doc>
         <source-position filename="glib/gdate.h" line="219"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1672">%TRUE if the date is the last day of the month</doc>
+               line="1673">%TRUE if the date is the last day of the month</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1667">a #GDate to check</doc>
+                 line="1668">a #GDate to check</doc>
             <type name="Date" c:type="const GDate*"/>
           </instance-parameter>
         </parameters>
@@ -9202,7 +9202,7 @@ The date must be valid.</doc>
       <method name="order" c:identifier="g_date_order">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="2162">Checks if @date1 is less than or equal to @date2,
+             line="2163">Checks if @date1 is less than or equal to @date2,
 and swap the values if this is not the case.</doc>
         <source-position filename="glib/gdate.h" line="275"/>
         <return-value transfer-ownership="none">
@@ -9212,13 +9212,13 @@ and swap the values if this is not the case.</doc>
           <instance-parameter name="date1" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2164">the first date</doc>
+                 line="2165">the first date</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="date2" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2165">the second date</doc>
+                 line="2166">the second date</doc>
             <type name="Date" c:type="GDate*"/>
           </parameter>
         </parameters>
@@ -9226,7 +9226,7 @@ and swap the values if this is not the case.</doc>
       <method name="set_day" c:identifier="g_date_set_day">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1541">Sets the day of the month for a #GDate. If the resulting
+             line="1542">Sets the day of the month for a #GDate. If the resulting
 day-month-year triplet is invalid, the date will be invalid.</doc>
         <source-position filename="glib/gdate.h" line="203"/>
         <return-value transfer-ownership="none">
@@ -9236,13 +9236,13 @@ day-month-year triplet is invalid, the date will be invalid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1543">a #GDate</doc>
+                 line="1544">a #GDate</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="day" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1544">day to set</doc>
+                 line="1545">day to set</doc>
             <type name="DateDay" c:type="GDateDay"/>
           </parameter>
         </parameters>
@@ -9250,7 +9250,7 @@ day-month-year triplet is invalid, the date will be invalid.</doc>
       <method name="set_dmy" c:identifier="g_date_set_dmy">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1593">Sets the value of a #GDate from a day, month, and year.
+             line="1594">Sets the value of a #GDate from a day, month, and year.
 The day-month-year triplet must be valid; if you aren't
 sure it is, call g_date_valid_dmy() to check before you
 set it.</doc>
@@ -9262,25 +9262,25 @@ set it.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1595">a #GDate</doc>
+                 line="1596">a #GDate</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="day" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1596">day</doc>
+                 line="1597">day</doc>
             <type name="DateDay" c:type="GDateDay"/>
           </parameter>
           <parameter name="month" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1597">month</doc>
+                 line="1598">month</doc>
             <type name="DateMonth" c:type="GDateMonth"/>
           </parameter>
           <parameter name="y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1598">year</doc>
+                 line="1599">year</doc>
             <type name="DateYear" c:type="GDateYear"/>
           </parameter>
         </parameters>
@@ -9288,7 +9288,7 @@ set it.</doc>
       <method name="set_julian" c:identifier="g_date_set_julian">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1623">Sets the value of a #GDate from a Julian day number.</doc>
+             line="1624">Sets the value of a #GDate from a Julian day number.</doc>
         <source-position filename="glib/gdate.h" line="214"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -9297,13 +9297,13 @@ set it.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1625">a #GDate</doc>
+                 line="1626">a #GDate</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="julian_date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1626">Julian day number (days since January 1, Year 1)</doc>
+                 line="1627">Julian day number (days since January 1, Year 1)</doc>
             <type name="guint32" c:type="guint32"/>
           </parameter>
         </parameters>
@@ -9311,7 +9311,7 @@ set it.</doc>
       <method name="set_month" c:identifier="g_date_set_month">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1515">Sets the month of the year for a #GDate.  If the resulting
+             line="1516">Sets the month of the year for a #GDate.  If the resulting
 day-month-year triplet is invalid, the date will be invalid.</doc>
         <source-position filename="glib/gdate.h" line="200"/>
         <return-value transfer-ownership="none">
@@ -9321,13 +9321,13 @@ day-month-year triplet is invalid, the date will be invalid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1517">a #GDate</doc>
+                 line="1518">a #GDate</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="month" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1518">month to set</doc>
+                 line="1519">month to set</doc>
             <type name="DateMonth" c:type="GDateMonth"/>
           </parameter>
         </parameters>
@@ -9371,7 +9371,7 @@ capacity).</doc>
               deprecated-version="2.10">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1472">Sets the value of a date from a #GTime value.
+             line="1473">Sets the value of a date from a #GTime value.
 The time to date conversion is done using the user's current timezone.</doc>
         <doc-deprecated xml:space="preserve">Use g_date_set_time_t() instead.</doc-deprecated>
         <source-position filename="glib/gdate.h" line="196"/>
@@ -9382,13 +9382,13 @@ The time to date conversion is done using the user's current timezone.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1474">a #GDate.</doc>
+                 line="1475">a #GDate.</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="time_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1475">#GTime value to set.</doc>
+                 line="1476">#GTime value to set.</doc>
             <type name="Time" c:type="GTime"/>
           </parameter>
         </parameters>
@@ -9398,7 +9398,7 @@ The time to date conversion is done using the user's current timezone.</doc>
               version="2.10">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1416">Sets the value of a date to the date corresponding to a time
+             line="1417">Sets the value of a date to the date corresponding to a time
 specified as a time_t. The time to date conversion is done using
 the user's current timezone.
 
@@ -9417,13 +9417,13 @@ To set the value of a date to the current day, you could write:
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1418">a #GDate</doc>
+                 line="1419">a #GDate</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="timet" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1419">time_t value to set</doc>
+                 line="1420">time_t value to set</doc>
             <type name="time_t" c:type="time_t"/>
           </parameter>
         </parameters>
@@ -9435,7 +9435,7 @@ To set the value of a date to the current day, you could write:
               deprecated-version="2.62">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1491">Sets the value of a date from a #GTimeVal value.  Note that the
+             line="1492">Sets the value of a date from a #GTimeVal value.  Note that the
 @tv_usec member is ignored, because #GDate can't make use of the
 additional precision.
 
@@ -9450,13 +9450,13 @@ The time to date conversion is done using the user's current timezone.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1493">a #GDate</doc>
+                 line="1494">a #GDate</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="timeval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1494">#GTimeVal value to set</doc>
+                 line="1495">#GTimeVal value to set</doc>
             <type name="TimeVal" c:type="GTimeVal*"/>
           </parameter>
         </parameters>
@@ -9464,7 +9464,7 @@ The time to date conversion is done using the user's current timezone.</doc>
       <method name="set_year" c:identifier="g_date_set_year">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1567">Sets the year for a #GDate. If the resulting day-month-year
+             line="1568">Sets the year for a #GDate. If the resulting day-month-year
 triplet is invalid, the date will be invalid.</doc>
         <source-position filename="glib/gdate.h" line="206"/>
         <return-value transfer-ownership="none">
@@ -9474,13 +9474,13 @@ triplet is invalid, the date will be invalid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1569">a #GDate</doc>
+                 line="1570">a #GDate</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1570">year to set</doc>
+                 line="1571">year to set</doc>
             <type name="DateYear" c:type="GDateYear"/>
           </parameter>
         </parameters>
@@ -9488,7 +9488,7 @@ triplet is invalid, the date will be invalid.</doc>
       <method name="subtract_days" c:identifier="g_date_subtract_days">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1717">Moves a date some number of days into the past.
+             line="1718">Moves a date some number of days into the past.
 To move by weeks, just move by weeks*7 days.
 The date must be valid.</doc>
         <source-position filename="glib/gdate.h" line="226"/>
@@ -9499,13 +9499,13 @@ The date must be valid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1719">a #GDate to decrement</doc>
+                 line="1720">a #GDate to decrement</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="n_days" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1720">number of days to move</doc>
+                 line="1721">number of days to move</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -9513,7 +9513,7 @@ The date must be valid.</doc>
       <method name="subtract_months" c:identifier="g_date_subtract_months">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1788">Moves a date some number of months into the past.
+             line="1789">Moves a date some number of months into the past.
 If the current day of the month doesn't exist in
 the destination month, the day of the month
 may change. The date must be valid.</doc>
@@ -9525,13 +9525,13 @@ may change. The date must be valid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1790">a #GDate to decrement</doc>
+                 line="1791">a #GDate to decrement</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="n_months" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1791">number of months to move</doc>
+                 line="1792">number of months to move</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -9539,7 +9539,7 @@ may change. The date must be valid.</doc>
       <method name="subtract_years" c:identifier="g_date_subtract_years">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1870">Moves a date some number of years into the past.
+             line="1871">Moves a date some number of years into the past.
 If the current day doesn't exist in the destination
 year (i.e. it's February 29 and you move to a non-leap-year)
 then the day is changed to February 29. The date
@@ -9552,13 +9552,13 @@ must be valid.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1872">a #GDate to decrement</doc>
+                 line="1873">a #GDate to decrement</doc>
             <type name="Date" c:type="GDate*"/>
           </instance-parameter>
           <parameter name="n_years" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1873">number of years to move</doc>
+                 line="1874">number of years to move</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -9566,7 +9566,7 @@ must be valid.</doc>
       <method name="to_struct_tm" c:identifier="g_date_to_struct_tm">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="2082">Fills in the date-related bits of a struct tm using the @date value.
+             line="2083">Fills in the date-related bits of a struct tm using the @date value.
 Initializes the non-date parts with something safe but meaningless.</doc>
         <source-position filename="glib/gdate.h" line="265"/>
         <return-value transfer-ownership="none">
@@ -9576,13 +9576,13 @@ Initializes the non-date parts with something safe but meaningless.</doc>
           <instance-parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2084">a #GDate to set the struct tm from</doc>
+                 line="2085">a #GDate to set the struct tm from</doc>
             <type name="Date" c:type="const GDate*"/>
           </instance-parameter>
           <parameter name="tm" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2085">struct tm to fill</doc>
+                 line="2086">struct tm to fill</doc>
             <type name="gpointer" c:type="tm*"/>
           </parameter>
         </parameters>
@@ -9613,26 +9613,26 @@ if it wasn't allocated by one of the g_date_new() variants.</doc>
                 c:identifier="g_date_get_days_in_month">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1926">Returns the number of days in a month, taking leap
+             line="1927">Returns the number of days in a month, taking leap
 years into account.</doc>
         <source-position filename="glib/gdate.h" line="247"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1934">number of days in @month during the @year</doc>
+               line="1935">number of days in @month during the @year</doc>
           <type name="guint8" c:type="guint8"/>
         </return-value>
         <parameters>
           <parameter name="month" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1928">month</doc>
+                 line="1929">month</doc>
             <type name="DateMonth" c:type="GDateMonth"/>
           </parameter>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1929">year</doc>
+                 line="1930">year</doc>
             <type name="DateYear" c:type="GDateYear"/>
           </parameter>
         </parameters>
@@ -9641,7 +9641,7 @@ years into account.</doc>
                 c:identifier="g_date_get_monday_weeks_in_year">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1950">Returns the number of weeks in the year, where weeks
+             line="1951">Returns the number of weeks in the year, where weeks
 are taken to start on Monday. Will be 52 or 53. The
 date must be valid. (Years always have 52 7-day periods,
 plus 1 or 2 extra days depending on whether it's a leap
@@ -9652,14 +9652,14 @@ one of the extra days happens to be a Monday.)</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1962">number of Mondays in the year</doc>
+               line="1963">number of Mondays in the year</doc>
           <type name="guint8" c:type="guint8"/>
         </return-value>
         <parameters>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1952">a year</doc>
+                 line="1953">a year</doc>
             <type name="DateYear" c:type="GDateYear"/>
           </parameter>
         </parameters>
@@ -9668,7 +9668,7 @@ one of the extra days happens to be a Monday.)</doc>
                 c:identifier="g_date_get_sunday_weeks_in_year">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1986">Returns the number of weeks in the year, where weeks
+             line="1987">Returns the number of weeks in the year, where weeks
 are taken to start on Sunday. Will be 52 or 53. The
 date must be valid. (Years always have 52 7-day periods,
 plus 1 or 2 extra days depending on whether it's a leap
@@ -9679,14 +9679,14 @@ one of the extra days happens to be a Sunday.)</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1998">the number of weeks in @year</doc>
+               line="1999">the number of weeks in @year</doc>
           <type name="guint8" c:type="guint8"/>
         </return-value>
         <parameters>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1988">year to count weeks in</doc>
+                 line="1989">year to count weeks in</doc>
             <type name="DateYear" c:type="GDateYear"/>
           </parameter>
         </parameters>
@@ -9694,7 +9694,7 @@ one of the extra days happens to be a Sunday.)</doc>
       <function name="is_leap_year" c:identifier="g_date_is_leap_year">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1904">Returns %TRUE if the year is a leap year.
+             line="1905">Returns %TRUE if the year is a leap year.
 
 For the purposes of this function, leap year is every year
 divisible by 4 unless that year is divisible by 100. If it
@@ -9704,14 +9704,14 @@ is also divisible by 400.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1915">%TRUE if the year is a leap year</doc>
+               line="1916">%TRUE if the year is a leap year</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="year" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="1906">year to check</doc>
+                 line="1907">year to check</doc>
             <type name="DateYear" c:type="GDateYear"/>
           </parameter>
         </parameters>
@@ -9719,7 +9719,7 @@ is also divisible by 400.</doc>
       <function name="strftime" c:identifier="g_date_strftime">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="2625">Generates a printed representation of the date, in a
+             line="2626">Generates a printed representation of the date, in a
 [locale](running.html#locale)-specific way.
 Works just like the platform's C library strftime() function,
 but only accepts date-related formats; time-related formats
@@ -9736,32 +9736,32 @@ where the C library only complies to C89.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="2646">number of characters written to the buffer, or `0` if the buffer was too small</doc>
+               line="2647">number of characters written to the buffer, or `0` if the buffer was too small</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
         <parameters>
           <parameter name="s" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2627">destination buffer</doc>
+                 line="2628">destination buffer</doc>
             <type name="utf8" c:type="gchar*"/>
           </parameter>
           <parameter name="slen" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2628">buffer size</doc>
+                 line="2629">buffer size</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2629">format string</doc>
+                 line="2630">format string</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="date" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gdate.c"
-                 line="2630">valid #GDate</doc>
+                 line="2631">valid #GDate</doc>
             <type name="Date" c:type="const GDate*"/>
           </parameter>
         </parameters>
@@ -22801,7 +22801,7 @@ linked against at application run time.</doc>
       <source-position filename="glib/gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="1" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="2" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib/gversion.c"
            line="78">The micro version number of the GLib library.
@@ -43151,26 +43151,26 @@ too often.</doc>
       <method name="append" c:identifier="g_string_append">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="578">Adds a string onto the end of a #GString, expanding
+             line="579">Adds a string onto the end of a #GString, expanding
 it if necessary.</doc>
         <source-position filename="glib/gstring.h" line="105"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="586">@string</doc>
+               line="587">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="580">a #GString</doc>
+                 line="581">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="581">the string to append onto the end of @string</doc>
+                 line="582">the string to append onto the end of @string</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -43178,26 +43178,26 @@ it if necessary.</doc>
       <method name="append_c" c:identifier="g_string_append_c">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="621">Adds a byte onto the end of a #GString, expanding
+             line="622">Adds a byte onto the end of a #GString, expanding
 it if necessary.</doc>
         <source-position filename="glib/gstring.h" line="112"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="629">@string</doc>
+               line="630">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="623">a #GString</doc>
+                 line="624">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="c" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="624">the byte to append onto the end of @string</doc>
+                 line="625">the byte to append onto the end of @string</doc>
             <type name="gchar" c:type="gchar"/>
           </parameter>
         </parameters>
@@ -43205,7 +43205,7 @@ it if necessary.</doc>
       <method name="append_len" c:identifier="g_string_append_len">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="595">Appends @len bytes of @val to @string.
+             line="596">Appends @len bytes of @val to @string.
 
 If @len is positive, @val may contain embedded nuls and need
 not be nul-terminated. It is the caller's responsibility to
@@ -43218,26 +43218,26 @@ makes g_string_append_len() equivalent to g_string_append().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="611">@string</doc>
+               line="612">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="597">a #GString</doc>
+                 line="598">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="598">bytes to append</doc>
+                 line="599">bytes to append</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="599">number of bytes of @val to use, or -1 for all of @val</doc>
+                 line="600">number of bytes of @val to use, or -1 for all of @val</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
         </parameters>
@@ -43247,7 +43247,7 @@ makes g_string_append_len() equivalent to g_string_append().</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1406">Appends a formatted string onto the end of a #GString.
+             line="1416">Appends a formatted string onto the end of a #GString.
 This function is similar to g_string_printf() except
 that the text is appended to the #GString.</doc>
         <source-position filename="glib/gstring.h" line="179"/>
@@ -43258,19 +43258,19 @@ that the text is appended to the #GString.</doc>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1408">a #GString</doc>
+                 line="1418">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1409">the string format. See the printf() documentation</doc>
+                 line="1419">the string format. See the printf() documentation</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1410">the parameters to insert into the format string</doc>
+                 line="1420">the parameters to insert into the format string</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -43278,26 +43278,26 @@ that the text is appended to the #GString.</doc>
       <method name="append_unichar" c:identifier="g_string_append_unichar">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="640">Converts a Unicode character into UTF-8, and appends it
+             line="641">Converts a Unicode character into UTF-8, and appends it
 to the string.</doc>
         <source-position filename="glib/gstring.h" line="115"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="648">@string</doc>
+               line="649">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="642">a #GString</doc>
+                 line="643">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="wc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="643">a Unicode character</doc>
+                 line="644">a Unicode character</doc>
             <type name="gunichar" c:type="gunichar"/>
           </parameter>
         </parameters>
@@ -43307,39 +43307,39 @@ to the string.</doc>
               version="2.16">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="552">Appends @unescaped to @string, escaping any characters that
+             line="553">Appends @unescaped to @string, escaping any characters that
 are reserved in URIs using URI-style escape sequences.</doc>
         <source-position filename="glib/gstring.h" line="183"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="563">@string</doc>
+               line="564">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="554">a #GString</doc>
+                 line="555">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="unescaped" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="555">a string</doc>
+                 line="556">a string</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="reserved_chars_allowed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="556">a string of reserved characters allowed
+                 line="557">a string of reserved characters allowed
     to be used, or %NULL</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="allow_utf8" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="558">set %TRUE if the escaped string may include UTF8 characters</doc>
+                 line="559">set %TRUE if the escaped string may include UTF8 characters</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -43350,7 +43350,7 @@ are reserved in URIs using URI-style escape sequences.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1292">Appends a formatted string onto the end of a #GString.
+             line="1302">Appends a formatted string onto the end of a #GString.
 This function is similar to g_string_append_printf()
 except that the arguments to the format string are passed
 as a va_list.</doc>
@@ -43362,19 +43362,19 @@ as a va_list.</doc>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1294">a #GString</doc>
+                 line="1304">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1295">the string format. See the printf() documentation</doc>
+                 line="1305">the string format. See the printf() documentation</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="args" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1296">the list of arguments to insert in the output</doc>
+                 line="1306">the list of arguments to insert in the output</doc>
             <type name="va_list" c:type="va_list"/>
           </parameter>
         </parameters>
@@ -43382,12 +43382,12 @@ as a va_list.</doc>
       <method name="ascii_down" c:identifier="g_string_ascii_down">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1162">Converts all uppercase ASCII letters to lowercase ASCII letters.</doc>
+             line="1172">Converts all uppercase ASCII letters to lowercase ASCII letters.</doc>
         <source-position filename="glib/gstring.h" line="161"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="1168">passed-in @string pointer, with all the
+               line="1178">passed-in @string pointer, with all the
     uppercase characters converted to lowercase in place,
     with semantics that exactly match g_ascii_tolower().</doc>
           <type name="String" c:type="GString*"/>
@@ -43396,7 +43396,7 @@ as a va_list.</doc>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1164">a GString</doc>
+                 line="1174">a GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
         </parameters>
@@ -43404,12 +43404,12 @@ as a va_list.</doc>
       <method name="ascii_up" c:identifier="g_string_ascii_up">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1193">Converts all lowercase ASCII letters to uppercase ASCII letters.</doc>
+             line="1203">Converts all lowercase ASCII letters to uppercase ASCII letters.</doc>
         <source-position filename="glib/gstring.h" line="163"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="1199">passed-in @string pointer, with all the
+               line="1209">passed-in @string pointer, with all the
     lowercase characters converted to uppercase in place,
     with semantics that exactly match g_ascii_toupper().</doc>
           <type name="String" c:type="GString*"/>
@@ -43418,7 +43418,7 @@ as a va_list.</doc>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1195">a GString</doc>
+                 line="1205">a GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
         </parameters>
@@ -43459,7 +43459,7 @@ have to worry about having enough space to copy the string.</doc>
               deprecated-version="2.2">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1224">Converts a #GString to lowercase.</doc>
+             line="1234">Converts a #GString to lowercase.</doc>
         <doc-deprecated xml:space="preserve">This function uses the locale-specific
     tolower() function, which is almost never the right thing.
     Use g_string_ascii_down() or g_utf8_strdown() instead.</doc-deprecated>
@@ -43467,14 +43467,14 @@ have to worry about having enough space to copy the string.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="1230">the #GString</doc>
+               line="1240">the #GString</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1226">a #GString</doc>
+                 line="1236">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
         </parameters>
@@ -43510,32 +43510,32 @@ For use with #GHashTable.</doc>
       <method name="erase" c:identifier="g_string_erase">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="953">Removes @len bytes from a #GString, starting at position @pos.
+             line="963">Removes @len bytes from a #GString, starting at position @pos.
 The rest of the #GString is shifted down to fill the gap.</doc>
         <source-position filename="glib/gstring.h" line="152"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="963">@string</doc>
+               line="973">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="955">a #GString</doc>
+                 line="965">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="pos" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="956">the position of the content to remove</doc>
+                 line="966">the position of the content to remove</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="957">the number of bytes to remove, or -1 to remove all
+                 line="967">the number of bytes to remove, or -1 to remove all
       following bytes</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
@@ -43651,32 +43651,32 @@ equal to the "len" member.</doc>
       <method name="insert" c:identifier="g_string_insert">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="740">Inserts a copy of a string into a #GString,
+             line="741">Inserts a copy of a string into a #GString,
 expanding it if necessary.</doc>
         <source-position filename="glib/gstring.h" line="131"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="749">@string</doc>
+               line="750">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="742">a #GString</doc>
+                 line="743">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="pos" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="743">the position to insert the copy of the string</doc>
+                 line="744">the position to insert the copy of the string</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="744">the string to insert</doc>
+                 line="745">the string to insert</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -43684,31 +43684,31 @@ expanding it if necessary.</doc>
       <method name="insert_c" c:identifier="g_string_insert_c">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="759">Inserts a byte into a #GString, expanding it if necessary.</doc>
+             line="760">Inserts a byte into a #GString, expanding it if necessary.</doc>
         <source-position filename="glib/gstring.h" line="135"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="767">@string</doc>
+               line="768">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="761">a #GString</doc>
+                 line="762">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="pos" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="762">the position to insert the byte</doc>
+                 line="763">the position to insert the byte</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
           <parameter name="c" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="763">the byte to insert</doc>
+                 line="764">the byte to insert</doc>
             <type name="gchar" c:type="gchar"/>
           </parameter>
         </parameters>
@@ -43764,33 +43764,33 @@ If @pos is -1, bytes are inserted at the end of the string.</doc>
       <method name="insert_unichar" c:identifier="g_string_insert_unichar">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="800">Converts a Unicode character into UTF-8, and insert it
+             line="803">Converts a Unicode character into UTF-8, and insert it
 into the string at the given position.</doc>
         <source-position filename="glib/gstring.h" line="139"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="810">@string</doc>
+               line="813">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="802">a #GString</doc>
+                 line="805">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="pos" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="803">the position at which to insert character, or -1
+                 line="806">the position at which to insert character, or -1
     to append at the end of the string</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
           <parameter name="wc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="805">a Unicode character</doc>
+                 line="808">a Unicode character</doc>
             <type name="gunichar" c:type="gunichar"/>
           </parameter>
         </parameters>
@@ -43800,31 +43800,31 @@ into the string at the given position.</doc>
               version="2.14">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="883">Overwrites part of a string, lengthening it if necessary.</doc>
+             line="890">Overwrites part of a string, lengthening it if necessary.</doc>
         <source-position filename="glib/gstring.h" line="143"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="891">@string</doc>
+               line="898">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="885">a #GString</doc>
+                 line="892">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="pos" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="886">the position at which to start overwriting</doc>
+                 line="893">the position at which to start overwriting</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="887">the string that will overwrite the @string starting at @pos</doc>
+                 line="894">the string that will overwrite the @string starting at @pos</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -43834,38 +43834,38 @@ into the string at the given position.</doc>
               version="2.14">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="904">Overwrites part of a string, lengthening it if necessary.
+             line="911">Overwrites part of a string, lengthening it if necessary.
 This function will work with embedded nuls.</doc>
         <source-position filename="glib/gstring.h" line="147"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="914">@string</doc>
+               line="921">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="906">a #GString</doc>
+                 line="913">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="pos" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="907">the position at which to start overwriting</doc>
+                 line="914">the position at which to start overwriting</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="908">the string that will overwrite the @string starting at @pos</doc>
+                 line="915">the string that will overwrite the @string starting at @pos</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="909">the number of bytes to write from @val</doc>
+                 line="916">the number of bytes to write from @val</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
         </parameters>
@@ -43873,26 +43873,26 @@ This function will work with embedded nuls.</doc>
       <method name="prepend" c:identifier="g_string_prepend">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="659">Adds a string on to the start of a #GString,
+             line="660">Adds a string on to the start of a #GString,
 expanding it if necessary.</doc>
         <source-position filename="glib/gstring.h" line="118"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="667">@string</doc>
+               line="668">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="661">a #GString</doc>
+                 line="662">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="662">the string to prepend on the start of @string</doc>
+                 line="663">the string to prepend on the start of @string</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -43900,26 +43900,26 @@ expanding it if necessary.</doc>
       <method name="prepend_c" c:identifier="g_string_prepend_c">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="702">Adds a byte onto the start of a #GString,
+             line="703">Adds a byte onto the start of a #GString,
 expanding it if necessary.</doc>
         <source-position filename="glib/gstring.h" line="121"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="710">@string</doc>
+               line="711">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="704">a #GString</doc>
+                 line="705">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="c" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="705">the byte to prepend on the start of the #GString</doc>
+                 line="706">the byte to prepend on the start of the #GString</doc>
             <type name="gchar" c:type="gchar"/>
           </parameter>
         </parameters>
@@ -43927,7 +43927,7 @@ expanding it if necessary.</doc>
       <method name="prepend_len" c:identifier="g_string_prepend_len">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="676">Prepends @len bytes of @val to @string.
+             line="677">Prepends @len bytes of @val to @string.
 
 If @len is positive, @val may contain embedded nuls and need
 not be nul-terminated. It is the caller's responsibility to
@@ -43940,26 +43940,26 @@ makes g_string_prepend_len() equivalent to g_string_prepend().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="692">@string</doc>
+               line="693">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="678">a #GString</doc>
+                 line="679">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="val" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="679">bytes to prepend</doc>
+                 line="680">bytes to prepend</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="680">number of bytes in @val to prepend, or -1 for all of @val</doc>
+                 line="681">number of bytes in @val to prepend, or -1 for all of @val</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
         </parameters>
@@ -43967,26 +43967,26 @@ makes g_string_prepend_len() equivalent to g_string_prepend().</doc>
       <method name="prepend_unichar" c:identifier="g_string_prepend_unichar">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="721">Converts a Unicode character into UTF-8, and prepends it
+             line="722">Converts a Unicode character into UTF-8, and prepends it
 to the string.</doc>
         <source-position filename="glib/gstring.h" line="124"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="729">@string</doc>
+               line="730">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="723">a #GString</doc>
+                 line="724">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="wc" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="724">a Unicode character</doc>
+                 line="725">a Unicode character</doc>
             <type name="gunichar" c:type="gunichar"/>
           </parameter>
         </parameters>
@@ -43994,7 +43994,7 @@ to the string.</doc>
       <method name="printf" c:identifier="g_string_printf" introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1367">Writes a formatted string into a #GString.
+             line="1377">Writes a formatted string into a #GString.
 This is similar to the standard sprintf() function,
 except that the #GString buffer automatically expands
 to contain the results. The previous contents of the
@@ -44007,19 +44007,19 @@ to contain the results. The previous contents of the
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1369">a #GString</doc>
+                 line="1379">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1370">the string format. See the printf() documentation</doc>
+                 line="1380">the string format. See the printf() documentation</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1371">the parameters to insert into the format string</doc>
+                 line="1381">the parameters to insert into the format string</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -44027,7 +44027,7 @@ to contain the results. The previous contents of the
       <method name="replace" c:identifier="g_string_replace" version="2.68">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="998">Replaces the string @find with the string @replace in a #GString up to
+             line="1008">Replaces the string @find with the string @replace in a #GString up to
 @limit times. If the number of instances of @find in the #GString is
 less than @limit, all instances are replaced. If @limit is `0`,
 all instances of @find are replaced.
@@ -44040,32 +44040,32 @@ not work correctly in earlier versions.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="1016">the number of find and replace operations performed.</doc>
+               line="1026">the number of find and replace operations performed.</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1000">a #GString</doc>
+                 line="1010">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="find" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1001">the string to find in @string</doc>
+                 line="1011">the string to find in @string</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="replace" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1002">the string to insert in place of @find</doc>
+                 line="1012">the string to insert in place of @find</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="limit" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1003">the maximum instances of @find to replace with @replace, or `0` for
+                 line="1013">the maximum instances of @find to replace with @replace, or `0` for
 no limit</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -44133,7 +44133,7 @@ always, string-&gt;str[string-&gt;len] will be a nul byte.)</doc>
               deprecated-version="2.2">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1258">Converts a #GString to uppercase.</doc>
+             line="1268">Converts a #GString to uppercase.</doc>
         <doc-deprecated xml:space="preserve">This function uses the locale-specific
     toupper() function, which is almost never the right thing.
     Use g_string_ascii_up() or g_utf8_strup() instead.</doc-deprecated>
@@ -44141,14 +44141,14 @@ always, string-&gt;str[string-&gt;len] will be a nul byte.)</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gstring.c"
-               line="1264">@string</doc>
+               line="1274">@string</doc>
           <type name="String" c:type="GString*"/>
         </return-value>
         <parameters>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1260">a #GString</doc>
+                 line="1270">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
         </parameters>
@@ -44159,7 +44159,7 @@ always, string-&gt;str[string-&gt;len] will be a nul byte.)</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gstring.c"
-             line="1331">Writes a formatted string into a #GString.
+             line="1341">Writes a formatted string into a #GString.
 This function is similar to g_string_printf() except that
 the arguments to the format string are passed as a va_list.</doc>
         <source-position filename="glib/gstring.h" line="165"/>
@@ -44170,19 +44170,19 @@ the arguments to the format string are passed as a va_list.</doc>
           <instance-parameter name="string" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1333">a #GString</doc>
+                 line="1343">a #GString</doc>
             <type name="String" c:type="GString*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1334">the string format. See the printf() documentation</doc>
+                 line="1344">the string format. See the printf() documentation</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="args" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gstring.c"
-                 line="1335">the parameters to insert into the format string</doc>
+                 line="1345">the parameters to insert into the format string</doc>
             <type name="va_list" c:type="va_list"/>
           </parameter>
         </parameters>
@@ -68016,26 +68016,26 @@ function to call when the data element is destroyed.</doc>
               moved-to="Date.get_days_in_month">
       <doc xml:space="preserve"
            filename="glib/gdate.c"
-           line="1926">Returns the number of days in a month, taking leap
+           line="1927">Returns the number of days in a month, taking leap
 years into account.</doc>
       <source-position filename="glib/gdate.h" line="247"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1934">number of days in @month during the @year</doc>
+             line="1935">number of days in @month during the @year</doc>
         <type name="guint8" c:type="guint8"/>
       </return-value>
       <parameters>
         <parameter name="month" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1928">month</doc>
+               line="1929">month</doc>
           <type name="DateMonth" c:type="GDateMonth"/>
         </parameter>
         <parameter name="year" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1929">year</doc>
+               line="1930">year</doc>
           <type name="DateYear" c:type="GDateYear"/>
         </parameter>
       </parameters>
@@ -68045,7 +68045,7 @@ years into account.</doc>
               moved-to="Date.get_monday_weeks_in_year">
       <doc xml:space="preserve"
            filename="glib/gdate.c"
-           line="1950">Returns the number of weeks in the year, where weeks
+           line="1951">Returns the number of weeks in the year, where weeks
 are taken to start on Monday. Will be 52 or 53. The
 date must be valid. (Years always have 52 7-day periods,
 plus 1 or 2 extra days depending on whether it's a leap
@@ -68056,14 +68056,14 @@ one of the extra days happens to be a Monday.)</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1962">number of Mondays in the year</doc>
+             line="1963">number of Mondays in the year</doc>
         <type name="guint8" c:type="guint8"/>
       </return-value>
       <parameters>
         <parameter name="year" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1952">a year</doc>
+               line="1953">a year</doc>
           <type name="DateYear" c:type="GDateYear"/>
         </parameter>
       </parameters>
@@ -68073,7 +68073,7 @@ one of the extra days happens to be a Monday.)</doc>
               moved-to="Date.get_sunday_weeks_in_year">
       <doc xml:space="preserve"
            filename="glib/gdate.c"
-           line="1986">Returns the number of weeks in the year, where weeks
+           line="1987">Returns the number of weeks in the year, where weeks
 are taken to start on Sunday. Will be 52 or 53. The
 date must be valid. (Years always have 52 7-day periods,
 plus 1 or 2 extra days depending on whether it's a leap
@@ -68084,14 +68084,14 @@ one of the extra days happens to be a Sunday.)</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1998">the number of weeks in @year</doc>
+             line="1999">the number of weeks in @year</doc>
         <type name="guint8" c:type="guint8"/>
       </return-value>
       <parameters>
         <parameter name="year" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1988">year to count weeks in</doc>
+               line="1989">year to count weeks in</doc>
           <type name="DateYear" c:type="GDateYear"/>
         </parameter>
       </parameters>
@@ -68101,7 +68101,7 @@ one of the extra days happens to be a Sunday.)</doc>
               moved-to="Date.is_leap_year">
       <doc xml:space="preserve"
            filename="glib/gdate.c"
-           line="1904">Returns %TRUE if the year is a leap year.
+           line="1905">Returns %TRUE if the year is a leap year.
 
 For the purposes of this function, leap year is every year
 divisible by 4 unless that year is divisible by 100. If it
@@ -68111,14 +68111,14 @@ is also divisible by 400.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="1915">%TRUE if the year is a leap year</doc>
+             line="1916">%TRUE if the year is a leap year</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="year" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="1906">year to check</doc>
+               line="1907">year to check</doc>
           <type name="DateYear" c:type="GDateYear"/>
         </parameter>
       </parameters>
@@ -68128,7 +68128,7 @@ is also divisible by 400.</doc>
               moved-to="Date.strftime">
       <doc xml:space="preserve"
            filename="glib/gdate.c"
-           line="2625">Generates a printed representation of the date, in a
+           line="2626">Generates a printed representation of the date, in a
 [locale](running.html#locale)-specific way.
 Works just like the platform's C library strftime() function,
 but only accepts date-related formats; time-related formats
@@ -68145,32 +68145,32 @@ where the C library only complies to C89.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gdate.c"
-             line="2646">number of characters written to the buffer, or `0` if the buffer was too small</doc>
+             line="2647">number of characters written to the buffer, or `0` if the buffer was too small</doc>
         <type name="gsize" c:type="gsize"/>
       </return-value>
       <parameters>
         <parameter name="s" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="2627">destination buffer</doc>
+               line="2628">destination buffer</doc>
           <type name="utf8" c:type="gchar*"/>
         </parameter>
         <parameter name="slen" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="2628">buffer size</doc>
+               line="2629">buffer size</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="format" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="2629">format string</doc>
+               line="2630">format string</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="date" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gdate.c"
-               line="2630">valid #GDate</doc>
+               line="2631">valid #GDate</doc>
           <type name="Date" c:type="const GDate*"/>
         </parameter>
       </parameters>
@@ -70459,7 +70459,7 @@ The encoding of the returned string is UTF-8.</doc>
               version="2.6">
       <doc xml:space="preserve"
            filename="glib/gcharset.c"
-           line="749">Computes a list of applicable locale names, which can be used to
+           line="751">Computes a list of applicable locale names, which can be used to
 e.g. construct locale-dependent filenames or search paths. The returned
 list is sorted from most desirable to least desirable and always contains
 the default locale "C".
@@ -70474,7 +70474,7 @@ user.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gcharset.c"
-             line="764">a %NULL-terminated array of strings owned by GLib
+             line="766">a %NULL-terminated array of strings owned by GLib
    that must not be modified or freed.</doc>
         <array c:type="const gchar* const*">
           <type name="utf8"/>
@@ -70486,7 +70486,7 @@ user.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/gcharset.c"
-           line="775">Computes a list of applicable locale names with a locale category name,
+           line="777">Computes a list of applicable locale names with a locale category name,
 which can be used to construct the fallback locale-dependent filenames
 or search paths. The returned list is sorted from most desirable to
 least desirable and always contains the default locale "C".
@@ -70500,7 +70500,7 @@ g_get_language_names() returns g_get_language_names_with_category("LC_MESSAGES")
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gcharset.c"
-             line="790">a %NULL-terminated array of strings owned by
+             line="792">a %NULL-terminated array of strings owned by
    the thread g_get_language_names_with_category was called from.
    It must not be modified or freed. It must be copied if planned to be used in another thread.</doc>
         <array c:type="const gchar* const*">
@@ -70511,7 +70511,7 @@ g_get_language_names() returns g_get_language_names_with_category("LC_MESSAGES")
         <parameter name="category_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gcharset.c"
-               line="777">a locale category name</doc>
+               line="779">a locale category name</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -70521,7 +70521,7 @@ g_get_language_names() returns g_get_language_names_with_category("LC_MESSAGES")
               version="2.28">
       <doc xml:space="preserve"
            filename="glib/gcharset.c"
-           line="642">Returns a list of derived variants of @locale, which can be used to
+           line="644">Returns a list of derived variants of @locale, which can be used to
 e.g. construct locale-dependent filenames or search paths. The returned
 list is sorted from most desirable to least desirable.
 This function handles territory, charset and extra locale modifiers. See
@@ -70540,7 +70540,7 @@ use g_get_language_names().</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gcharset.c"
-             line="662">a newly
+             line="664">a newly
   allocated array of newly allocated strings with the locale variants. Free with
   g_strfreev().</doc>
         <array c:type="gchar**">
@@ -70551,7 +70551,7 @@ use g_get_language_names().</doc>
         <parameter name="locale" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gcharset.c"
-               line="644">a locale identifier</doc>
+               line="646">a locale identifier</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
