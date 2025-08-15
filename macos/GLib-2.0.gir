@@ -22801,7 +22801,7 @@ linked against at application run time.</doc>
       <source-position filename="glib/gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="3" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="4" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib/gversion.c"
            line="78">The micro version number of the GLib library.
@@ -46317,7 +46317,7 @@ can be stopped by calling [func@GLib.ThreadPool.stop_unused_threads].</doc>
       <method name="free" c:identifier="g_thread_pool_free">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="866">Frees all resources allocated for @pool.
+             line="876">Frees all resources allocated for @pool.
 
 If @immediate is %TRUE, no new task is processed for @pool.
 Otherwise @pool is not freed before the last task is processed.
@@ -46339,19 +46339,19 @@ After calling this function @pool must not be used anymore.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="868">a #GThreadPool</doc>
+                 line="878">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
           <parameter name="immediate" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="869">should @pool shut down immediately?</doc>
+                 line="879">should @pool shut down immediately?</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
           <parameter name="wait_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="870">should the function wait for all tasks to be finished?</doc>
+                 line="880">should the function wait for all tasks to be finished?</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -46360,19 +46360,19 @@ After calling this function @pool must not be used anymore.</doc>
               c:identifier="g_thread_pool_get_max_threads">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="790">Returns the maximal number of threads for @pool.</doc>
+             line="800">Returns the maximal number of threads for @pool.</doc>
         <source-position filename="glib/gthreadpool.h" line="86"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="796">the maximal number of threads</doc>
+               line="806">the maximal number of threads</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="792">a #GThreadPool</doc>
+                 line="802">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
         </parameters>
@@ -46381,19 +46381,19 @@ After calling this function @pool must not be used anymore.</doc>
               c:identifier="g_thread_pool_get_num_threads">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="816">Returns the number of threads currently running in @pool.</doc>
+             line="826">Returns the number of threads currently running in @pool.</doc>
         <source-position filename="glib/gthreadpool.h" line="88"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="822">the number of threads currently running</doc>
+               line="832">the number of threads currently running</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="818">a #GThreadPool</doc>
+                 line="828">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
         </parameters>
@@ -46403,20 +46403,20 @@ After calling this function @pool must not be used anymore.</doc>
               version="2.46">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1110">Moves the item to the front of the queue of unprocessed
+             line="1120">Moves the item to the front of the queue of unprocessed
 items, so that it will be processed next.</doc>
         <source-position filename="glib/gthreadpool.h" line="78"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="1118">%TRUE if the item was found and moved</doc>
+               line="1128">%TRUE if the item was found and moved</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="1112">a #GThreadPool</doc>
+                 line="1122">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
           <parameter name="data"
@@ -46425,7 +46425,7 @@ items, so that it will be processed next.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="1113">an unprocessed item in the pool</doc>
+                 line="1123">an unprocessed item in the pool</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -46433,7 +46433,7 @@ items, so that it will be processed next.</doc>
       <method name="push" c:identifier="g_thread_pool_push" throws="1">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="658">Inserts @data into the list of tasks to be executed by @pool.
+             line="668">Inserts @data into the list of tasks to be executed by @pool.
 
 When the number of currently running threads is lower than the
 maximal allowed number of threads, a new thread is started (or
@@ -46451,14 +46451,14 @@ Before version 2.32, this function did not return a success status.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="679">%TRUE on success, %FALSE if an error occurred</doc>
+               line="689">%TRUE on success, %FALSE if an error occurred</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="660">a #GThreadPool</doc>
+                 line="670">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
           <parameter name="data"
@@ -46467,7 +46467,7 @@ Before version 2.32, this function did not return a success status.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="661">a new task for @pool</doc>
+                 line="671">a new task for @pool</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -46477,7 +46477,7 @@ Before version 2.32, this function did not return a success status.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="716">Sets the maximal allowed number of threads for @pool.
+             line="726">Sets the maximal allowed number of threads for @pool.
 A value of -1 means that the maximal number of threads
 is unlimited. If @pool is an exclusive thread pool, setting
 the maximal number of threads to -1 is not allowed.
@@ -46501,20 +46501,20 @@ Before version 2.32, this function did not return a success status.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="744">%TRUE on success, %FALSE if an error occurred</doc>
+               line="754">%TRUE on success, %FALSE if an error occurred</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="718">a #GThreadPool</doc>
+                 line="728">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
           <parameter name="max_threads" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="719">a new maximal number of threads for @pool,
+                 line="729">a new maximal number of threads for @pool,
     or -1 for unlimited</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
@@ -46526,7 +46526,7 @@ Before version 2.32, this function did not return a success status.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1062">Sets the function used to sort the list of tasks. This allows the
+             line="1072">Sets the function used to sort the list of tasks. This allows the
 tasks to be processed by a priority determined by @func, and not
 just in the order in which they were added to the pool.
 
@@ -46543,13 +46543,13 @@ created.</doc>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="1064">a #GThreadPool</doc>
+                 line="1074">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
           <parameter name="func" transfer-ownership="none" closure="1">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="1065">the #GCompareDataFunc used to sort the list of tasks.
+                 line="1075">the #GCompareDataFunc used to sort the list of tasks.
     This function is passed two tasks. It should return
     0 if the order in which they are handled does not matter,
     a negative value if the first task should be processed before
@@ -46563,7 +46563,7 @@ created.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="1071">user data passed to @func</doc>
+                 line="1081">user data passed to @func</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -46571,19 +46571,19 @@ created.</doc>
       <method name="unprocessed" c:identifier="g_thread_pool_unprocessed">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="842">Returns the number of tasks still unprocessed in @pool.</doc>
+             line="852">Returns the number of tasks still unprocessed in @pool.</doc>
         <source-position filename="glib/gthreadpool.h" line="72"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="848">the number of unprocessed tasks</doc>
+               line="858">the number of unprocessed tasks</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="pool" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="844">a #GThreadPool</doc>
+                 line="854">a #GThreadPool</doc>
             <type name="ThreadPool" c:type="GThreadPool*"/>
           </instance-parameter>
         </parameters>
@@ -46593,7 +46593,7 @@ created.</doc>
                 version="2.10">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1181">This function will return the maximum @interval that a
+             line="1191">This function will return the maximum @interval that a
 thread will wait in the thread pool for new tasks before
 being stopped.
 
@@ -46603,7 +46603,7 @@ pool for new work are not stopped.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="1191">the maximum @interval (milliseconds) to wait
+               line="1201">the maximum @interval (milliseconds) to wait
     for new tasks in the thread pool before stopping the
     thread</doc>
           <type name="guint" c:type="guint"/>
@@ -46613,12 +46613,12 @@ pool for new work are not stopped.</doc>
                 c:identifier="g_thread_pool_get_max_unused_threads">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1018">Returns the maximal allowed number of unused threads.</doc>
+             line="1028">Returns the maximal allowed number of unused threads.</doc>
         <source-position filename="glib/gthreadpool.h" line="93"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="1023">the maximal number of unused threads</doc>
+               line="1033">the maximal number of unused threads</doc>
           <type name="gint" c:type="gint"/>
         </return-value>
       </function>
@@ -46626,12 +46626,12 @@ pool for new work are not stopped.</doc>
                 c:identifier="g_thread_pool_get_num_unused_threads">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1031">Returns the number of currently unused threads.</doc>
+             line="1041">Returns the number of currently unused threads.</doc>
         <source-position filename="glib/gthreadpool.h" line="95"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="1036">the number of currently unused threads</doc>
+               line="1046">the number of currently unused threads</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
       </function>
@@ -46793,7 +46793,7 @@ and freed before all tasks have been executed.
                 version="2.10">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1140">This function will set the maximum @interval that a thread
+             line="1150">This function will set the maximum @interval that a thread
 waiting in the pool for new tasks can be idle for before
 being stopped. This function is similar to calling
 g_thread_pool_stop_unused_threads() on a regular timeout,
@@ -46810,7 +46810,7 @@ The default value is 15000 (15 seconds).</doc>
           <parameter name="interval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="1142">the maximum @interval (in milliseconds)
+                 line="1152">the maximum @interval (in milliseconds)
     a thread can be idle</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -46820,7 +46820,7 @@ The default value is 15000 (15 seconds).</doc>
                 c:identifier="g_thread_pool_set_max_unused_threads">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="979">Sets the maximal number of unused threads to @max_threads.
+             line="989">Sets the maximal number of unused threads to @max_threads.
 If @max_threads is -1, no limit is imposed on the number
 of unused threads.
 
@@ -46833,7 +46833,7 @@ The default value is 8 since GLib 2.84. Previously the default value was 2.</doc
           <parameter name="max_threads" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gthreadpool.c"
-                 line="981">maximal number of unused threads</doc>
+                 line="991">maximal number of unused threads</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -46842,7 +46842,7 @@ The default value is 8 since GLib 2.84. Previously the default value was 2.</doc
                 c:identifier="g_thread_pool_stop_unused_threads">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1044">Stops all currently unused threads. This does not change the
+             line="1054">Stops all currently unused threads. This does not change the
 maximal number of unused threads. This function can be used to
 regularly stop all unused threads e.g. from g_timeout_add().</doc>
         <source-position filename="glib/gthreadpool.h" line="97"/>
@@ -86314,7 +86314,7 @@ anymore and the @vtable parameter is ignored and you should pass %NULL.
               version="2.10">
       <doc xml:space="preserve"
            filename="glib/gthreadpool.c"
-           line="1181">This function will return the maximum @interval that a
+           line="1191">This function will return the maximum @interval that a
 thread will wait in the thread pool for new tasks before
 being stopped.
 
@@ -86324,7 +86324,7 @@ pool for new work are not stopped.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1191">the maximum @interval (milliseconds) to wait
+             line="1201">the maximum @interval (milliseconds) to wait
     for new tasks in the thread pool before stopping the
     thread</doc>
         <type name="guint" c:type="guint"/>
@@ -86335,12 +86335,12 @@ pool for new work are not stopped.</doc>
               moved-to="ThreadPool.get_max_unused_threads">
       <doc xml:space="preserve"
            filename="glib/gthreadpool.c"
-           line="1018">Returns the maximal allowed number of unused threads.</doc>
+           line="1028">Returns the maximal allowed number of unused threads.</doc>
       <source-position filename="glib/gthreadpool.h" line="93"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1023">the maximal number of unused threads</doc>
+             line="1033">the maximal number of unused threads</doc>
         <type name="gint" c:type="gint"/>
       </return-value>
     </function>
@@ -86349,12 +86349,12 @@ pool for new work are not stopped.</doc>
               moved-to="ThreadPool.get_num_unused_threads">
       <doc xml:space="preserve"
            filename="glib/gthreadpool.c"
-           line="1031">Returns the number of currently unused threads.</doc>
+           line="1041">Returns the number of currently unused threads.</doc>
       <source-position filename="glib/gthreadpool.h" line="95"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gthreadpool.c"
-             line="1036">the number of currently unused threads</doc>
+             line="1046">the number of currently unused threads</doc>
         <type name="guint" c:type="guint"/>
       </return-value>
     </function>
@@ -86364,7 +86364,7 @@ pool for new work are not stopped.</doc>
               version="2.10">
       <doc xml:space="preserve"
            filename="glib/gthreadpool.c"
-           line="1140">This function will set the maximum @interval that a thread
+           line="1150">This function will set the maximum @interval that a thread
 waiting in the pool for new tasks can be idle for before
 being stopped. This function is similar to calling
 g_thread_pool_stop_unused_threads() on a regular timeout,
@@ -86381,7 +86381,7 @@ The default value is 15000 (15 seconds).</doc>
         <parameter name="interval" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="1142">the maximum @interval (in milliseconds)
+               line="1152">the maximum @interval (in milliseconds)
     a thread can be idle</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
@@ -86392,7 +86392,7 @@ The default value is 15000 (15 seconds).</doc>
               moved-to="ThreadPool.set_max_unused_threads">
       <doc xml:space="preserve"
            filename="glib/gthreadpool.c"
-           line="979">Sets the maximal number of unused threads to @max_threads.
+           line="989">Sets the maximal number of unused threads to @max_threads.
 If @max_threads is -1, no limit is imposed on the number
 of unused threads.
 
@@ -86405,7 +86405,7 @@ The default value is 8 since GLib 2.84. Previously the default value was 2.</doc
         <parameter name="max_threads" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gthreadpool.c"
-               line="981">maximal number of unused threads</doc>
+               line="991">maximal number of unused threads</doc>
           <type name="gint" c:type="gint"/>
         </parameter>
       </parameters>
@@ -86415,7 +86415,7 @@ The default value is 8 since GLib 2.84. Previously the default value was 2.</doc
               moved-to="ThreadPool.stop_unused_threads">
       <doc xml:space="preserve"
            filename="glib/gthreadpool.c"
-           line="1044">Stops all currently unused threads. This does not change the
+           line="1054">Stops all currently unused threads. This does not change the
 maximal number of unused threads. This function can be used to
 regularly stop all unused threads e.g. from g_timeout_add().</doc>
       <source-position filename="glib/gthreadpool.h" line="97"/>
