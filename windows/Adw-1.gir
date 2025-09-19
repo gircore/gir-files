@@ -5469,7 +5469,7 @@ Example of an `AdwAlertDialog` UI definition:
                    version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1346">Creates a new `AdwAlertDialog`.
+             line="1349">Creates a new `AdwAlertDialog`.
 
 @heading and @body can be set to `NULL`. This can be useful if they need to
 be formatted or use markup. In that case, set them to `NULL` and call
@@ -5487,7 +5487,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1366">the newly created `AdwAlertDialog`</doc>
+               line="1369">the newly created `AdwAlertDialog`</doc>
           <type name="Dialog" c:type="AdwDialog*"/>
         </return-value>
         <parameters>
@@ -5497,7 +5497,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1348">the heading</doc>
+                 line="1351">the heading</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="body"
@@ -5506,7 +5506,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1349">the body text</doc>
+                 line="1352">the body text</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -5530,7 +5530,7 @@ adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1914">Adds a response with @id and @label to @self.
+             line="1917">Adds a response with @id and @label to @self.
 
 Responses are represented as buttons in the dialog.
 
@@ -5554,19 +5554,19 @@ responses further.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1916">an alert dialog</doc>
+                 line="1919">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1917">the response ID</doc>
+                 line="1920">the response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="label" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1918">the response label</doc>
+                 line="1921">the response label</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -5577,7 +5577,7 @@ responses further.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1977">Adds multiple responses to @self.
+             line="1980">Adds multiple responses to @self.
 
 This is the same as calling [method@AlertDialog.add_response] repeatedly. The
 variable argument list should be `NULL`-terminated list of response IDs and
@@ -5600,19 +5600,19 @@ adw_alert_dialog_add_responses (dialog,
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1979">an alert dialog</doc>
+                 line="1982">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="first_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1980">response id</doc>
+                 line="1983">response id</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1981">label for first response, then more id-label pairs</doc>
+                 line="1984">label for first response, then more id-label pairs</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5623,7 +5623,7 @@ adw_alert_dialog_add_responses (dialog,
               glib:finish-func="choose_finish">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2462">This function shows @self to the user.
+             line="2468">This function shows @self to the user.
 
 If the window is an [class@Window] or [class@ApplicationWindow], the dialog
 will be shown within it. Otherwise, it will be a separate window.</doc>
@@ -5635,7 +5635,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2464">an alert dialog</doc>
+                 line="2470">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="parent"
@@ -5644,7 +5644,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2465">the parent widget</doc>
+                 line="2471">the parent widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
           <parameter name="cancellable"
@@ -5653,7 +5653,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2466">a `GCancellable` to cancel the operation</doc>
+                 line="2472">a `GCancellable` to cancel the operation</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -5664,7 +5664,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      closure="3">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2467">a callback to call when the operation is complete</doc>
+                 line="2473">a callback to call when the operation is complete</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -5673,7 +5673,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2468">data to pass to @callback</doc>
+                 line="2474">data to pass to @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -5683,12 +5683,12 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2500">Finishes the [method@AlertDialog.choose] call and returns the response ID.</doc>
+             line="2506">Finishes the [method@AlertDialog.choose] call and returns the response ID.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="168"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2507">the ID of the response that was selected, or
+               line="2513">the ID of the response that was selected, or
   [property@AlertDialog:close-response] if the call was cancelled.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -5696,13 +5696,13 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2502">an alert dialog</doc>
+                 line="2508">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2503">a `GAsyncResult`</doc>
+                 line="2509">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -5713,7 +5713,7 @@ will be shown within it. Otherwise, it will be a separate window.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1709">Sets the formatted body text of @self.
+             line="1712">Sets the formatted body text of @self.
 
 See [property@AlertDialog:body].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="86"/>
@@ -5724,19 +5724,19 @@ See [property@AlertDialog:body].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1711">an alert dialog</doc>
+                 line="1714">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1712">the formatted string for the body text</doc>
+                 line="1715">the formatted string for the body text</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1713">the parameters to insert into @format</doc>
+                 line="1716">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5747,7 +5747,7 @@ See [property@AlertDialog:body].</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1752">Sets the formatted body text of @self with Pango markup.
+             line="1755">Sets the formatted body text of @self with Pango markup.
 
 The @format is assumed to contain Pango markup.
 
@@ -5764,19 +5764,19 @@ See [property@AlertDialog:body].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1754">an alert dialog</doc>
+                 line="1757">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1755">the formatted string for the body text with Pango markup</doc>
+                 line="1758">the formatted string for the body text with Pango markup</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1756">the parameters to insert into @format</doc>
+                 line="1759">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5787,7 +5787,7 @@ See [property@AlertDialog:body].</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1506">Sets the formatted heading of @self.
+             line="1509">Sets the formatted heading of @self.
 
 See [property@AlertDialog:heading].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="64"/>
@@ -5798,19 +5798,19 @@ See [property@AlertDialog:heading].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1508">an alert dialog</doc>
+                 line="1511">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1509">the formatted string for the heading</doc>
+                 line="1512">the formatted string for the heading</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1510">the parameters to insert into @format</doc>
+                 line="1513">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5821,7 +5821,7 @@ See [property@AlertDialog:heading].</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1549">Sets the formatted heading of @self with Pango markup.
+             line="1552">Sets the formatted heading of @self with Pango markup.
 
 The @format is assumed to contain Pango markup.
 
@@ -5838,19 +5838,19 @@ See [property@AlertDialog:heading].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1551">an alert dialog</doc>
+                 line="1554">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1552">the formatted string for the heading with Pango markup</doc>
+                 line="1555">the formatted string for the heading with Pango markup</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1553">the parameters to insert into @format</doc>
+                 line="1556">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -5861,19 +5861,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1598">Gets the body text of @self.</doc>
+             line="1601">Gets the body text of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="74"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1604">the body of @self.</doc>
+               line="1607">the body of @self.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1600">an alert dialog</doc>
+                 line="1603">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5884,19 +5884,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1654">Gets whether the body text of @self includes Pango markup.</doc>
+             line="1657">Gets whether the body text of @self includes Pango markup.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="80"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1660">whether @self uses markup for body text</doc>
+               line="1663">whether @self uses markup for body text</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1656">an alert dialog</doc>
+                 line="1659">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5907,19 +5907,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2352">Gets the ID of the close response of @self.</doc>
+             line="2358">Gets the ID of the close response of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="152"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2358">the close response ID</doc>
+               line="2364">the close response ID</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2354">an alert dialog</doc>
+                 line="2360">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5930,19 +5930,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2287">Gets the ID of the default response of @self.</doc>
+             line="2290">Gets the ID of the default response of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="146"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2293">the default response ID</doc>
+               line="2296">the default response ID</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2289">an alert dialog</doc>
+                 line="2292">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5953,19 +5953,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1801">Gets the child widget of @self.</doc>
+             line="1804">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="96"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1807">the child widget of @self.</doc>
+               line="1810">the child widget of @self.</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1803">an alert dialog</doc>
+                 line="1806">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5976,19 +5976,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1387">Gets the heading of @self.</doc>
+             line="1390">Gets the heading of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="52"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1393">the heading of @self.</doc>
+               line="1396">the heading of @self.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1389">an alert dialog</doc>
+                 line="1392">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -5999,19 +5999,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1447">Gets whether the heading of @self includes Pango markup.</doc>
+             line="1450">Gets whether the heading of @self includes Pango markup.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="58"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1453">whether @self uses markup for heading</doc>
+               line="1456">whether @self uses markup for heading</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1449">an alert dialog</doc>
+                 line="1452">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -6022,19 +6022,19 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1858">Gets whether @self prefers wide layout.</doc>
+             line="1861">Gets whether @self prefers wide layout.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="102"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="1864">whether to prefer wide layout</doc>
+               line="1867">whether to prefer wide layout</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1860">an alert dialog</doc>
+                 line="1863">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
         </parameters>
@@ -6044,27 +6044,27 @@ See [property@AlertDialog:heading].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2132">Gets the appearance of @response.
+             line="2135">Gets the appearance of @response.
 
 See [method@AlertDialog.set_response_appearance].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="130"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2141">the appearance of @response</doc>
+               line="2144">the appearance of @response</doc>
           <type name="ResponseAppearance" c:type="AdwResponseAppearance"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2134">an alert dialog</doc>
+                 line="2137">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2135">a response ID</doc>
+                 line="2138">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6074,27 +6074,27 @@ See [method@AlertDialog.set_response_appearance].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2217">Gets whether @response is enabled.
+             line="2220">Gets whether @response is enabled.
 
 See [method@AlertDialog.set_response_enabled].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="138"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2226">whether @response is enabled</doc>
+               line="2229">whether @response is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2219">an alert dialog</doc>
+                 line="2222">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2220">a response ID</doc>
+                 line="2223">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6104,27 +6104,27 @@ See [method@AlertDialog.set_response_enabled].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2072">Gets the label of @response.
+             line="2075">Gets the label of @response.
 
 See [method@AlertDialog.set_response_label].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="122"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2081">the label of @response</doc>
+               line="2084">the label of @response</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2074">an alert dialog</doc>
+                 line="2077">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2075">a response ID</doc>
+                 line="2078">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6134,25 +6134,25 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2411">Gets whether @self has a response with the ID @response.</doc>
+             line="2417">Gets whether @self has a response with the ID @response.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="158"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-alert-dialog.c"
-               line="2418">whether @self has a response with the ID @response.</doc>
+               line="2424">whether @self has a response with the ID @response.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2413">an alert dialog</doc>
+                 line="2419">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2414">response ID</doc>
+                 line="2420">response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6162,7 +6162,7 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2032">Removes a response from @self.</doc>
+             line="2035">Removes a response from @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="118"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6171,13 +6171,13 @@ See [method@AlertDialog.set_response_label].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2034">an alert dialog</doc>
+                 line="2037">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2035">the response ID</doc>
+                 line="2038">the response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6188,7 +6188,7 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1620">Sets the body text of @self.</doc>
+             line="1623">Sets the body text of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="76"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6197,13 +6197,13 @@ See [method@AlertDialog.set_response_label].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1622">an alert dialog</doc>
+                 line="1625">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="body" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1623">the body of @self</doc>
+                 line="1626">the body of @self</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6214,7 +6214,7 @@ See [method@AlertDialog.set_response_label].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1676">Sets whether the body text of @self includes Pango markup.
+             line="1679">Sets whether the body text of @self includes Pango markup.
 
 See [func@Pango.parse_markup].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="82"/>
@@ -6225,13 +6225,13 @@ See [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1678">an alert dialog</doc>
+                 line="1681">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1679">whether to use markup for body text</doc>
+                 line="1682">whether to use markup for body text</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6242,7 +6242,7 @@ See [func@Pango.parse_markup].</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2374">Sets the ID of the close response of @self.
+             line="2380">Sets the ID of the close response of @self.
 
 It will be passed to [signal@AlertDialog::response] if the dialog is closed
 by pressing &lt;kbd&gt;Escape&lt;/kbd&gt; or with a system action.
@@ -6258,13 +6258,13 @@ The default close response is `close`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2376">an alert dialog</doc>
+                 line="2382">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2377">the close response ID</doc>
+                 line="2383">the close response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6275,12 +6275,15 @@ The default close response is `close`.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2312">Sets the ID of the default response of @self.
+             line="2315">Sets the ID of the default response of @self.
 
-If set, pressing &lt;kbd&gt;Enter&lt;/kbd&gt; will activate the corresponding button.
+The button corresponding to this response will be set as the default widget
+of @self.
 
-If set to `NULL` or to a non-existent response ID, pressing &lt;kbd&gt;Enter&lt;/kbd&gt;
-will do nothing.</doc>
+If not set, the default widget will not be set, and the last added response
+will be focused by default.
+
+See [property@Dialog:default-widget].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="148"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6289,7 +6292,7 @@ will do nothing.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2314">an alert dialog</doc>
+                 line="2317">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response"
@@ -6298,7 +6301,7 @@ will do nothing.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2315">the default response ID</doc>
+                 line="2318">the default response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6309,7 +6312,7 @@ will do nothing.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1823">Sets the child widget of @self.
+             line="1826">Sets the child widget of @self.
 
 The child widget is displayed below the heading and body.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="98"/>
@@ -6320,7 +6323,7 @@ The child widget is displayed below the heading and body.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1825">an alert dialog</doc>
+                 line="1828">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="child"
@@ -6329,7 +6332,7 @@ The child widget is displayed below the heading and body.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1826">the child widget</doc>
+                 line="1829">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -6340,7 +6343,7 @@ The child widget is displayed below the heading and body.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1409">Sets the heading of @self.</doc>
+             line="1412">Sets the heading of @self.</doc>
         <source-position filename="src/adw-alert-dialog.h" line="54"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -6349,7 +6352,7 @@ The child widget is displayed below the heading and body.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1411">an alert dialog</doc>
+                 line="1414">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="heading"
@@ -6358,7 +6361,7 @@ The child widget is displayed below the heading and body.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1412">the heading of @self</doc>
+                 line="1415">the heading of @self</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6369,7 +6372,7 @@ The child widget is displayed below the heading and body.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1469">Sets whether the heading of @self includes Pango markup.
+             line="1472">Sets whether the heading of @self includes Pango markup.
 
 See [func@Pango.parse_markup].</doc>
         <source-position filename="src/adw-alert-dialog.h" line="60"/>
@@ -6380,13 +6383,13 @@ See [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1471">an alert dialog</doc>
+                 line="1474">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1472">whether to use markup for heading</doc>
+                 line="1475">whether to use markup for heading</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6397,7 +6400,7 @@ See [func@Pango.parse_markup].</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1880">Sets whether @self prefers wide layout.
+             line="1883">Sets whether @self prefers wide layout.
 
 Prefer horizontal button layout when possible, and wider dialog width
 otherwise.</doc>
@@ -6409,13 +6412,13 @@ otherwise.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1882">an alert dialog</doc>
+                 line="1885">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="prefer_wide_layout" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1883">whether to prefer wide layout</doc>
+                 line="1886">whether to prefer wide layout</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6425,7 +6428,7 @@ otherwise.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2160">Sets the appearance for @response.
+             line="2163">Sets the appearance for @response.
 
 &lt;picture&gt;
   &lt;source srcset="alert-dialog-appearance-dark.png" media="(prefers-color-scheme: dark)"&gt;
@@ -6450,19 +6453,19 @@ Negative responses like Cancel or Close should use the default appearance.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2162">an alert dialog</doc>
+                 line="2165">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2163">a response ID</doc>
+                 line="2166">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="appearance" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2164">appearance for @response</doc>
+                 line="2167">appearance for @response</doc>
             <type name="ResponseAppearance" c:type="AdwResponseAppearance"/>
           </parameter>
         </parameters>
@@ -6472,7 +6475,7 @@ Negative responses like Cancel or Close should use the default appearance.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2245">Sets whether @response is enabled.
+             line="2248">Sets whether @response is enabled.
 
 If @response is not enabled, the corresponding button will have
 [property@Gtk.Widget:sensitive] set to `FALSE` and it can't be activated as
@@ -6490,19 +6493,19 @@ Responses are enabled by default.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2247">an alert dialog</doc>
+                 line="2250">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2248">a response ID</doc>
+                 line="2251">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2249">whether to enable @response</doc>
+                 line="2252">whether to enable @response</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6512,7 +6515,7 @@ Responses are enabled by default.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="2100">Sets the label of @response to @label.
+             line="2103">Sets the label of @response to @label.
 
 Labels are displayed on the dialog buttons. An embedded underline in @label
 indicates a mnemonic.</doc>
@@ -6524,19 +6527,19 @@ indicates a mnemonic.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2102">an alert dialog</doc>
+                 line="2105">an alert dialog</doc>
             <type name="AlertDialog" c:type="AdwAlertDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2103">a response ID</doc>
+                 line="2106">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="label" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="2104">the label of @response</doc>
+                 line="2107">the label of @response</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -6575,7 +6578,7 @@ See [func@Pango.parse_markup].</doc>
                 default-value="close">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="994">The ID of the close response.
+             line="997">The ID of the close response.
 
 It will be passed to [signal@AlertDialog::response] if the dialog is
 closed by pressing &lt;kbd&gt;Escape&lt;/kbd&gt; or with a system action.
@@ -6596,10 +6599,13 @@ The default close response is `close`.</doc>
              filename="src/adw-alert-dialog.c"
              line="977">The response ID of the default response.
 
-If set, pressing &lt;kbd&gt;Enter&lt;/kbd&gt; will activate the corresponding button.
+The button corresponding to this response will be set as the default widget
+of the dialog.
 
-If set to `NULL` or a non-existent response ID, pressing &lt;kbd&gt;Enter&lt;/kbd&gt;
-will do nothing.</doc>
+If not set, the default widget will not be set, and the last added response
+will be focused by default.
+
+See [property@Dialog:default-widget].</doc>
         <type name="utf8" c:type="gchar*"/>
       </property>
       <property name="extra-child"
@@ -6661,7 +6667,7 @@ otherwise.</doc>
       <glib:signal name="response" when="last" detailed="1" version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-alert-dialog.c"
-             line="1015">This signal is emitted when the dialog is closed.
+             line="1018">This signal is emitted when the dialog is closed.
 
 @response will be set to the response ID of the button that had been
 activated.
@@ -6676,7 +6682,7 @@ action, @response will be set to the value of
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-alert-dialog.c"
-                 line="1018">the response ID</doc>
+                 line="1021">the response ID</doc>
             <type name="utf8" c:type="gchar*"/>
           </parameter>
         </parameters>
@@ -21535,7 +21541,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="6" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="7" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -21705,7 +21711,7 @@ Example of an `AdwMessageDialog` UI definition:
                    deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1439">Creates a new `AdwMessageDialog`.
+             line="1442">Creates a new `AdwMessageDialog`.
 
 @heading and @body can be set to `NULL`. This can be useful if they need to
 be formatted or use markup. In that case, set them to `NULL` and call
@@ -21724,7 +21730,7 @@ adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="1460">the newly created `AdwMessageDialog`</doc>
+               line="1463">the newly created `AdwMessageDialog`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
@@ -21734,7 +21740,7 @@ adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1441">transient parent</doc>
+                 line="1444">transient parent</doc>
             <type name="Gtk.Window" c:type="GtkWindow*"/>
           </parameter>
           <parameter name="heading"
@@ -21743,7 +21749,7 @@ adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1442">the heading</doc>
+                 line="1445">the heading</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="body"
@@ -21752,7 +21758,7 @@ adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1443">the body text</doc>
+                 line="1446">the body text</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -21765,7 +21771,7 @@ adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
         <attribute name="org.gtk.Method.signal" value="response"/>
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2482">Emits the [signal@MessageDialog::response] signal with the given response ID.
+             line="2488">Emits the [signal@MessageDialog::response] signal with the given response ID.
 
 Used to indicate that the user has responded to the dialog in some way.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -21777,13 +21783,13 @@ Used to indicate that the user has responded to the dialog in some way.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2484">a message dialog</doc>
+                 line="2490">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2485">response ID</doc>
+                 line="2491">response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -21795,7 +21801,7 @@ Used to indicate that the user has responded to the dialog in some way.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1972">Adds a response with @id and @label to @self.
+             line="1975">Adds a response with @id and @label to @self.
 
 Responses are represented as buttons in the dialog.
 
@@ -21820,19 +21826,19 @@ responses further.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1974">a message dialog</doc>
+                 line="1977">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1975">the response ID</doc>
+                 line="1978">the response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="label" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1976">the response label</doc>
+                 line="1979">the response label</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -21845,7 +21851,7 @@ responses further.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2036">Adds multiple responses to @self.
+             line="2039">Adds multiple responses to @self.
 
 This is the same as calling [method@MessageDialog.add_response] repeatedly.
 The variable argument list should be `NULL`-terminated list of response IDs
@@ -21869,19 +21875,19 @@ adw_message_dialog_add_responses (dialog,
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2038">a message dialog</doc>
+                 line="2041">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="first_id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2039">response id</doc>
+                 line="2042">response id</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2040">label for first response, then more id-label pairs</doc>
+                 line="2043">label for first response, then more id-label pairs</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -21894,7 +21900,7 @@ adw_message_dialog_add_responses (dialog,
               glib:finish-func="choose_finish">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2557">This function shows @self to the user.</doc>
+             line="2563">This function shows @self to the user.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="153"/>
         <return-value transfer-ownership="none">
@@ -21904,7 +21910,7 @@ adw_message_dialog_add_responses (dialog,
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2559">a message dialog</doc>
+                 line="2565">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="cancellable"
@@ -21913,7 +21919,7 @@ adw_message_dialog_add_responses (dialog,
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2560">a `GCancellable` to cancel the operation</doc>
+                 line="2566">a `GCancellable` to cancel the operation</doc>
             <type name="Gio.Cancellable" c:type="GCancellable*"/>
           </parameter>
           <parameter name="callback"
@@ -21924,7 +21930,7 @@ adw_message_dialog_add_responses (dialog,
                      closure="2">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2561">a callback to call when the operation is complete</doc>
+                 line="2567">a callback to call when the operation is complete</doc>
             <type name="Gio.AsyncReadyCallback" c:type="GAsyncReadyCallback"/>
           </parameter>
           <parameter name="user_data"
@@ -21933,7 +21939,7 @@ adw_message_dialog_add_responses (dialog,
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2562">data to pass to @callback</doc>
+                 line="2568">data to pass to @callback</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -21945,13 +21951,13 @@ adw_message_dialog_add_responses (dialog,
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2590">Finishes the [method@MessageDialog.choose] call and returns the response ID.</doc>
+             line="2596">Finishes the [method@MessageDialog.choose] call and returns the response ID.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="159"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2597">the ID of the response that was selected, or
+               line="2603">the ID of the response that was selected, or
   [property@MessageDialog:close-response] if the call was cancelled.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
@@ -21959,13 +21965,13 @@ adw_message_dialog_add_responses (dialog,
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2592">a message dialog</doc>
+                 line="2598">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="result" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2593">a `GAsyncResult`</doc>
+                 line="2599">a `GAsyncResult`</doc>
             <type name="Gio.AsyncResult" c:type="GAsyncResult*"/>
           </parameter>
         </parameters>
@@ -21978,7 +21984,7 @@ adw_message_dialog_add_responses (dialog,
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1819">Sets the formatted body text of @self.
+             line="1822">Sets the formatted body text of @self.
 
 See [property@MessageDialog:body].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -21990,19 +21996,19 @@ See [property@MessageDialog:body].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1821">a message dialog</doc>
+                 line="1824">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1822">the formatted string for the body text</doc>
+                 line="1825">the formatted string for the body text</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1823">the parameters to insert into @format</doc>
+                 line="1826">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -22015,7 +22021,7 @@ See [property@MessageDialog:body].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1863">Sets the formatted body text of @self with Pango markup.
+             line="1866">Sets the formatted body text of @self with Pango markup.
 
 The @format is assumed to contain Pango markup.
 
@@ -22033,19 +22039,19 @@ See [property@MessageDialog:body].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1865">a message dialog</doc>
+                 line="1868">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1866">the formatted string for the body text with Pango markup</doc>
+                 line="1869">the formatted string for the body text with Pango markup</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1867">the parameters to insert into @format</doc>
+                 line="1870">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -22058,7 +22064,7 @@ See [property@MessageDialog:body].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1610">Sets the formatted heading of @self.
+             line="1613">Sets the formatted heading of @self.
 
 See [property@MessageDialog:heading].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22070,19 +22076,19 @@ See [property@MessageDialog:heading].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1612">a message dialog</doc>
+                 line="1615">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1613">the formatted string for the heading</doc>
+                 line="1616">the formatted string for the heading</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1614">the parameters to insert into @format</doc>
+                 line="1617">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -22095,7 +22101,7 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1654">Sets the formatted heading of @self with Pango markup.
+             line="1657">Sets the formatted heading of @self with Pango markup.
 
 The @format is assumed to contain Pango markup.
 
@@ -22113,19 +22119,19 @@ See [property@MessageDialog:heading].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1656">a message dialog</doc>
+                 line="1659">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1657">the formatted string for the heading with Pango markup</doc>
+                 line="1660">the formatted string for the heading with Pango markup</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1658">the parameters to insert into @format</doc>
+                 line="1661">the parameters to insert into @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -22138,20 +22144,20 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1704">Gets the body text of @self.</doc>
+             line="1707">Gets the body text of @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="67"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="1710">the body of @self.</doc>
+               line="1713">the body of @self.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1706">a message dialog</doc>
+                 line="1709">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
         </parameters>
@@ -22164,20 +22170,20 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1762">Gets whether the body text of @self includes Pango markup.</doc>
+             line="1765">Gets whether the body text of @self includes Pango markup.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="73"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="1768">whether @self uses markup for body text</doc>
+               line="1771">whether @self uses markup for body text</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1764">a message dialog</doc>
+                 line="1767">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
         </parameters>
@@ -22190,20 +22196,20 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2421">Gets the ID of the close response of @self.</doc>
+             line="2427">Gets the ID of the close response of @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="139"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2427">the close response ID</doc>
+               line="2433">the close response ID</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2423">a message dialog</doc>
+                 line="2429">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
         </parameters>
@@ -22216,20 +22222,20 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2354">Gets the ID of the default response of @self.</doc>
+             line="2357">Gets the ID of the default response of @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="133"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2360">the default response ID</doc>
+               line="2363">the default response ID</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2356">a message dialog</doc>
+                 line="2359">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
         </parameters>
@@ -22242,20 +22248,20 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1913">Gets the child widget of @self.</doc>
+             line="1916">Gets the child widget of @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="89"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="1919">the child widget of @self.</doc>
+               line="1922">the child widget of @self.</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1915">a message dialog</doc>
+                 line="1918">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
         </parameters>
@@ -22268,20 +22274,20 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1487">Gets the heading of @self.</doc>
+             line="1490">Gets the heading of @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="45"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="1493">the heading of @self.</doc>
+               line="1496">the heading of @self.</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1489">a message dialog</doc>
+                 line="1492">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
         </parameters>
@@ -22294,20 +22300,20 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1549">Gets whether the heading of @self includes Pango markup.</doc>
+             line="1552">Gets whether the heading of @self includes Pango markup.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="51"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="1555">whether @self uses markup for heading</doc>
+               line="1558">whether @self uses markup for heading</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1551">a message dialog</doc>
+                 line="1554">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
         </parameters>
@@ -22319,7 +22325,7 @@ See [property@MessageDialog:heading].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2195">Gets the appearance of @response.
+             line="2198">Gets the appearance of @response.
 
 See [method@MessageDialog.set_response_appearance].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22327,20 +22333,20 @@ See [method@MessageDialog.set_response_appearance].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2204">the appearance of @response</doc>
+               line="2207">the appearance of @response</doc>
           <type name="ResponseAppearance" c:type="AdwResponseAppearance"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2197">a message dialog</doc>
+                 line="2200">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2198">a response ID</doc>
+                 line="2201">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22352,7 +22358,7 @@ See [method@MessageDialog.set_response_appearance].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2282">Gets whether @response is enabled.
+             line="2285">Gets whether @response is enabled.
 
 See [method@MessageDialog.set_response_enabled].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22360,20 +22366,20 @@ See [method@MessageDialog.set_response_enabled].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2291">whether @response is enabled</doc>
+               line="2294">whether @response is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2284">a message dialog</doc>
+                 line="2287">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2285">a response ID</doc>
+                 line="2288">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22385,7 +22391,7 @@ See [method@MessageDialog.set_response_enabled].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2133">Gets the label of @response.
+             line="2136">Gets the label of @response.
 
 See [method@MessageDialog.set_response_label].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22393,20 +22399,20 @@ See [method@MessageDialog.set_response_label].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2142">the label of @response</doc>
+               line="2145">the label of @response</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2135">a message dialog</doc>
+                 line="2138">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2136">a response ID</doc>
+                 line="2139">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22418,26 +22424,26 @@ See [method@MessageDialog.set_response_label].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2505">Gets whether @self has a response with the ID @response.</doc>
+             line="2511">Gets whether @self has a response with the ID @response.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="149"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-message-dialog.c"
-               line="2512">whether @self has a response with the ID @response.</doc>
+               line="2518">whether @self has a response with the ID @response.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2507">a message dialog</doc>
+                 line="2513">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2508">response ID</doc>
+                 line="2514">response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22449,7 +22455,7 @@ See [method@MessageDialog.set_response_label].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2092">Removes a response from @self.</doc>
+             line="2095">Removes a response from @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="100"/>
         <return-value transfer-ownership="none">
@@ -22459,13 +22465,13 @@ See [method@MessageDialog.set_response_label].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2094">a message dialog</doc>
+                 line="2097">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="id" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2095">the response ID</doc>
+                 line="2098">the response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22478,7 +22484,7 @@ See [method@MessageDialog.set_response_label].</doc>
         <attribute name="org.gtk.Method.signal" value="response"/>
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2482">Emits the [signal@MessageDialog::response] signal with the given response ID.
+             line="2488">Emits the [signal@MessageDialog::response] signal with the given response ID.
 
 Used to indicate that the user has responded to the dialog in some way.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22490,13 +22496,13 @@ Used to indicate that the user has responded to the dialog in some way.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2484">a message dialog</doc>
+                 line="2490">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2485">response ID</doc>
+                 line="2491">response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22509,7 +22515,7 @@ Used to indicate that the user has responded to the dialog in some way.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1727">Sets the body text of @self.</doc>
+             line="1730">Sets the body text of @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="69"/>
         <return-value transfer-ownership="none">
@@ -22519,13 +22525,13 @@ Used to indicate that the user has responded to the dialog in some way.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1729">a message dialog</doc>
+                 line="1732">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="body" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1730">the body of @self</doc>
+                 line="1733">the body of @self</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22538,7 +22544,7 @@ Used to indicate that the user has responded to the dialog in some way.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1785">Sets whether the body text of @self includes Pango markup.
+             line="1788">Sets whether the body text of @self includes Pango markup.
 
 See [func@Pango.parse_markup].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22550,13 +22556,13 @@ See [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1787">a message dialog</doc>
+                 line="1790">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1788">whether to use markup for body text</doc>
+                 line="1791">whether to use markup for body text</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -22569,7 +22575,7 @@ See [func@Pango.parse_markup].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2444">Sets the ID of the close response of @self.
+             line="2450">Sets the ID of the close response of @self.
 
 It will be passed to [signal@MessageDialog::response] if the window is
 closed by pressing &lt;kbd&gt;Escape&lt;/kbd&gt; or with a system action.
@@ -22586,13 +22592,13 @@ The default close response is `close`.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2446">a message dialog</doc>
+                 line="2452">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2447">the close response ID</doc>
+                 line="2453">the close response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22605,12 +22611,15 @@ The default close response is `close`.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2380">Sets the ID of the default response of @self.
+             line="2383">Sets the ID of the default response of @self.
 
-If set, pressing &lt;kbd&gt;Enter&lt;/kbd&gt; will activate the corresponding button.
+The button corresponding to this response will be set as the default widget
+of @self.
 
-If set to `NULL` or to a non-existent response ID, pressing &lt;kbd&gt;Enter&lt;/kbd&gt;
-will do nothing.</doc>
+If not set, the default widget will not be set, and the last added response
+will be focused by default.
+
+See [property@Gtk.Window:default-widget].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="135"/>
         <return-value transfer-ownership="none">
@@ -22620,7 +22629,7 @@ will do nothing.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2382">a message dialog</doc>
+                 line="2385">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response"
@@ -22629,7 +22638,7 @@ will do nothing.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2383">the default response ID</doc>
+                 line="2386">the default response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22642,7 +22651,7 @@ will do nothing.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1936">Sets the child widget of @self.
+             line="1939">Sets the child widget of @self.
 
 The child widget is displayed below the heading and body.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22654,7 +22663,7 @@ The child widget is displayed below the heading and body.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1938">a message dialog</doc>
+                 line="1941">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="child"
@@ -22663,7 +22672,7 @@ The child widget is displayed below the heading and body.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1939">the child widget</doc>
+                 line="1942">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -22676,7 +22685,7 @@ The child widget is displayed below the heading and body.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1510">Sets the heading of @self.</doc>
+             line="1513">Sets the heading of @self.</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <source-position filename="src/adw-message-dialog.h" line="47"/>
         <return-value transfer-ownership="none">
@@ -22686,7 +22695,7 @@ The child widget is displayed below the heading and body.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1512">a message dialog</doc>
+                 line="1515">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="heading"
@@ -22695,7 +22704,7 @@ The child widget is displayed below the heading and body.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1513">the heading of @self</doc>
+                 line="1516">the heading of @self</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22708,7 +22717,7 @@ The child widget is displayed below the heading and body.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1572">Sets whether the heading of @self includes Pango markup.
+             line="1575">Sets whether the heading of @self includes Pango markup.
 
 See [func@Pango.parse_markup].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
@@ -22720,13 +22729,13 @@ See [func@Pango.parse_markup].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1574">a message dialog</doc>
+                 line="1577">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="use_markup" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1575">whether to use markup for heading</doc>
+                 line="1578">whether to use markup for heading</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -22738,7 +22747,7 @@ See [func@Pango.parse_markup].</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2224">Sets the appearance for @response.
+             line="2227">Sets the appearance for @response.
 
 &lt;picture&gt;
   &lt;source srcset="message-dialog-appearance-dark.png" media="(prefers-color-scheme: dark)"&gt;
@@ -22764,19 +22773,19 @@ Negative responses like Cancel or Close should use the default appearance.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2226">a message dialog</doc>
+                 line="2229">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2227">a response ID</doc>
+                 line="2230">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="appearance" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2228">appearance for @response</doc>
+                 line="2231">appearance for @response</doc>
             <type name="ResponseAppearance" c:type="AdwResponseAppearance"/>
           </parameter>
         </parameters>
@@ -22788,7 +22797,7 @@ Negative responses like Cancel or Close should use the default appearance.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2311">Sets whether @response is enabled.
+             line="2314">Sets whether @response is enabled.
 
 If @response is not enabled, the corresponding button will have
 [property@Gtk.Widget:sensitive] set to `FALSE` and it can't be activated as
@@ -22807,19 +22816,19 @@ Responses are enabled by default.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2313">a message dialog</doc>
+                 line="2316">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2314">a response ID</doc>
+                 line="2317">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2315">whether to enable @response</doc>
+                 line="2318">whether to enable @response</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -22831,7 +22840,7 @@ Responses are enabled by default.</doc>
               deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="2162">Sets the label of @response to @label.
+             line="2165">Sets the label of @response to @label.
 
 Labels are displayed on the dialog buttons. An embedded underline in @label
 indicates a mnemonic.</doc>
@@ -22844,19 +22853,19 @@ indicates a mnemonic.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2164">a message dialog</doc>
+                 line="2167">a message dialog</doc>
             <type name="MessageDialog" c:type="AdwMessageDialog*"/>
           </instance-parameter>
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2165">a response ID</doc>
+                 line="2168">a response ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="label" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="2166">the label of @response</doc>
+                 line="2169">the label of @response</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -22903,7 +22912,7 @@ See [func@Pango.parse_markup].</doc>
                 default-value="close">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1095">The ID of the close response.
+             line="1098">The ID of the close response.
 
 It will be passed to [signal@MessageDialog::response] if the window is
 closed by pressing &lt;kbd&gt;Escape&lt;/kbd&gt; or with a system action.
@@ -22927,10 +22936,13 @@ The default close response is `close`.</doc>
              filename="src/adw-message-dialog.c"
              line="1077">The response ID of the default response.
 
-If set, pressing &lt;kbd&gt;Enter&lt;/kbd&gt; will activate the corresponding button.
+The button corresponding to this response will be set as the default widget
+of the dialog.
 
-If set to `NULL` or a non-existent response ID, pressing &lt;kbd&gt;Enter&lt;/kbd&gt;
-will do nothing.</doc>
+If not set, the default widget will not be set, and the last added response
+will be focused by default.
+
+See [property@Gtk.Window:default-widget].</doc>
         <doc-deprecated xml:space="preserve">Use [class@AlertDialog].</doc-deprecated>
         <type name="utf8" c:type="gchar*"/>
       </property>
@@ -22992,7 +23004,7 @@ See [func@Pango.parse_markup].</doc>
                    deprecated-version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-message-dialog.c"
-             line="1117">This signal is emitted when the dialog is closed.
+             line="1120">This signal is emitted when the dialog is closed.
 
 @response will be set to the response ID of the button that had been
 activated.
@@ -23008,7 +23020,7 @@ action, @response will be set to the value of
           <parameter name="response" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-message-dialog.c"
-                 line="1120">the response ID</doc>
+                 line="1123">the response ID</doc>
             <type name="utf8" c:type="gchar*"/>
           </parameter>
         </parameters>
@@ -23031,13 +23043,13 @@ action, @response will be set to the value of
             <parameter name="self" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="src/adw-message-dialog.c"
-                   line="2484">a message dialog</doc>
+                   line="2490">a message dialog</doc>
               <type name="MessageDialog" c:type="AdwMessageDialog*"/>
             </parameter>
             <parameter name="response" transfer-ownership="none">
               <doc xml:space="preserve"
                    filename="src/adw-message-dialog.c"
-                   line="2485">response ID</doc>
+                   line="2491">response ID</doc>
               <type name="utf8" c:type="const char*"/>
             </parameter>
           </parameters>
@@ -30161,7 +30173,11 @@ impossible, such as [property@StatusPage:paintable].
 ## CSS nodes
 
 `AdwSpinner` has a single node with the name `image` and the style class
-`.spinner`.</doc>
+`.spinner`.
+
+## Accessibility
+
+`AdwSpinner` uses the [enum@Gtk.AccessibleRole.progress-bar] role.</doc>
       <source-position filename="src/adw-spinner.h" line="22"/>
       <implements name="Gtk.Accessible"/>
       <implements name="Gtk.Buildable"/>
@@ -30169,12 +30185,12 @@ impossible, such as [property@StatusPage:paintable].
       <constructor name="new" c:identifier="adw_spinner_new" version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-spinner.c"
-             line="135">Creates a new `AdwSpinner`.</doc>
+             line="144">Creates a new `AdwSpinner`.</doc>
         <source-position filename="src/adw-spinner.h" line="25"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-spinner.c"
-               line="140">the newly created `AdwSpinner`</doc>
+               line="149">the newly created `AdwSpinner`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -33957,19 +33973,19 @@ direction.</doc>
       <constructor name="new" c:identifier="adw_swipe_tracker_new">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1392">Creates a new `AdwSwipeTracker` for @widget.</doc>
+             line="1394">Creates a new `AdwSwipeTracker` for @widget.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="26"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1398">the newly created `AdwSwipeTracker`</doc>
+               line="1400">the newly created `AdwSwipeTracker`</doc>
           <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
         </return-value>
         <parameters>
           <parameter name="swipeable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1394">a widget to add the tracker on</doc>
+                 line="1396">a widget to add the tracker on</doc>
             <type name="Swipeable" c:type="AdwSwipeable*"/>
           </parameter>
         </parameters>
@@ -33979,19 +33995,19 @@ direction.</doc>
               glib:get-property="allow-long-swipes">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1555">Gets whether to allow swiping for more than one snap point at a time.</doc>
+             line="1557">Gets whether to allow swiping for more than one snap point at a time.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="50"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1561">whether long swipes are allowed</doc>
+               line="1563">whether long swipes are allowed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1557">a swipe tracker</doc>
+                 line="1559">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34001,19 +34017,19 @@ direction.</doc>
               glib:get-property="allow-mouse-drag">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1514">Gets whether @self can be dragged with mouse pointer.</doc>
+             line="1516">Gets whether @self can be dragged with mouse pointer.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="44"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1520">whether mouse dragging is allowed</doc>
+               line="1522">whether mouse dragging is allowed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1516">a swipe tracker</doc>
+                 line="1518">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34024,19 +34040,19 @@ direction.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1683">Gets whether to allow touchscreen swiping from `GtkWindowHandle`.</doc>
+             line="1685">Gets whether to allow touchscreen swiping from `GtkWindowHandle`.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="68"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1689">whether swiping from window handles is allowed</doc>
+               line="1691">whether swiping from window handles is allowed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1685">a swipe tracker</doc>
+                 line="1687">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34046,19 +34062,19 @@ direction.</doc>
               glib:get-property="enabled">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1426">Gets whether @self is enabled.</doc>
+             line="1428">Gets whether @self is enabled.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="32"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1432">whether @self is enabled</doc>
+               line="1434">whether @self is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1428">a swipe tracker</doc>
+                 line="1430">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34069,19 +34085,19 @@ direction.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1597">Gets whether to allow swiping past the first available snap point.</doc>
+             line="1599">Gets whether to allow swiping past the first available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="56"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1603">whether to allow swiping past the first available snap point</doc>
+               line="1605">whether to allow swiping past the first available snap point</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1599">a swipe tracker</doc>
+                 line="1601">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34091,19 +34107,19 @@ direction.</doc>
               glib:get-property="reversed">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1473">Gets whether @self is reversing the swipe direction.</doc>
+             line="1475">Gets whether @self is reversing the swipe direction.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="38"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1479">whether the direction is reversed</doc>
+               line="1481">whether the direction is reversed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1475">a swipe tracker</doc>
+                 line="1477">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34113,19 +34129,19 @@ direction.</doc>
               glib:get-property="swipeable">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1410">Get the widget @self is attached to.</doc>
+             line="1412">Get the widget @self is attached to.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="29"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1416">the swipeable widget</doc>
+               line="1418">the swipeable widget</doc>
           <type name="Swipeable" c:type="AdwSwipeable*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1412">a swipe tracker</doc>
+                 line="1414">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34136,19 +34152,19 @@ direction.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1640">Gets whether to allow swiping past the last available snap point.</doc>
+             line="1642">Gets whether to allow swiping past the last available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="62"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1646">whether to allow swiping past the last available snap point</doc>
+               line="1648">whether to allow swiping past the last available snap point</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1642">a swipe tracker</doc>
+                 line="1644">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -34158,7 +34174,7 @@ direction.</doc>
               glib:set-property="allow-long-swipes">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1571">Sets whether to allow swiping for more than one snap point at a time.
+             line="1573">Sets whether to allow swiping for more than one snap point at a time.
 
 If the value is `FALSE`, each swipe can only move to the adjacent snap
 points.</doc>
@@ -34170,13 +34186,13 @@ points.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1573">a swipe tracker</doc>
+                 line="1575">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="allow_long_swipes" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1574">whether to allow long swipes</doc>
+                 line="1576">whether to allow long swipes</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -34186,7 +34202,7 @@ points.</doc>
               glib:set-property="allow-mouse-drag">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1530">Sets whether @self can be dragged with mouse pointer.</doc>
+             line="1532">Sets whether @self can be dragged with mouse pointer.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="46"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -34195,13 +34211,13 @@ points.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1532">a swipe tracker</doc>
+                 line="1534">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="allow_mouse_drag" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1533">whether to allow mouse dragging</doc>
+                 line="1535">whether to allow mouse dragging</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -34212,7 +34228,7 @@ points.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1701">Sets whether to allow touchscreen swiping from `GtkWindowHandle`.
+             line="1703">Sets whether to allow touchscreen swiping from `GtkWindowHandle`.
 
 Setting it to `TRUE` will make dragging the window impossible.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="70"/>
@@ -34223,13 +34239,13 @@ Setting it to `TRUE` will make dragging the window impossible.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1703">a swipe tracker</doc>
+                 line="1705">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="allow_window_handle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1704">whether to allow swiping from window handles</doc>
+                 line="1706">whether to allow swiping from window handles</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -34239,7 +34255,7 @@ Setting it to `TRUE` will make dragging the window impossible.</doc>
               glib:set-property="enabled">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1442">Sets whether @self is enabled.
+             line="1444">Sets whether @self is enabled.
 
 When it's not enabled, no events will be processed. Usually widgets will want
 to expose this via a property.</doc>
@@ -34251,13 +34267,13 @@ to expose this via a property.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1444">a swipe tracker</doc>
+                 line="1446">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1445">whether @self is enabled</doc>
+                 line="1447">whether @self is enabled</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -34268,7 +34284,7 @@ to expose this via a property.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1615">Sets whether to allow swiping past the first available snap point.</doc>
+             line="1617">Sets whether to allow swiping past the first available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="58"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -34277,13 +34293,13 @@ to expose this via a property.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1617">a swipe tracker</doc>
+                 line="1619">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="overshoot" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1618">whether to allow swiping past the first available snap point</doc>
+                 line="1620">whether to allow swiping past the first available snap point</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -34293,7 +34309,7 @@ to expose this via a property.</doc>
               glib:set-property="reversed">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1489">Sets whether to reverse the swipe direction.
+             line="1491">Sets whether to reverse the swipe direction.
 
 If the swipe tracker is horizontal, it can be used for supporting RTL text
 direction.</doc>
@@ -34305,13 +34321,13 @@ direction.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1491">a swipe tracker</doc>
+                 line="1493">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="reversed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1492">whether to reverse the swipe direction</doc>
+                 line="1494">whether to reverse the swipe direction</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -34322,7 +34338,7 @@ direction.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1658">Sets whether to allow swiping past the last available snap point.</doc>
+             line="1660">Sets whether to allow swiping past the last available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="64"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -34331,13 +34347,13 @@ direction.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1660">a swipe tracker</doc>
+                 line="1662">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="overshoot" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1661">whether to allow swiping past the last available snap point</doc>
+                 line="1663">whether to allow swiping past the last available snap point</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -34346,7 +34362,7 @@ direction.</doc>
               c:identifier="adw_swipe_tracker_shift_position">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1728">Moves the current progress value by @delta.
+             line="1730">Moves the current progress value by @delta.
 
 This can be used to adjust the current position if snap points move during
 the gesture.</doc>
@@ -34358,13 +34374,13 @@ the gesture.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1730">a swipe tracker</doc>
+                 line="1732">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="delta" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1731">the position delta</doc>
+                 line="1733">the position delta</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
         </parameters>
@@ -34377,7 +34393,7 @@ the gesture.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1233">Whether to allow swiping for more than one snap point at a time.
+             line="1235">Whether to allow swiping for more than one snap point at a time.
 
 If the value is `FALSE`, each swipe can only move to the adjacent snap
 points.</doc>
@@ -34391,7 +34407,7 @@ points.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1223">Whether to allow dragging with mouse pointer.</doc>
+             line="1225">Whether to allow dragging with mouse pointer.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="allow-window-handle"
@@ -34403,7 +34419,7 @@ points.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1270">Whether to allow touchscreen swiping from `GtkWindowHandle`.
+             line="1272">Whether to allow touchscreen swiping from `GtkWindowHandle`.
 
 This will make dragging the window impossible.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -34416,7 +34432,7 @@ This will make dragging the window impossible.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1197">Whether the swipe tracker is enabled.
+             line="1199">Whether the swipe tracker is enabled.
 
 When it's not enabled, no events will be processed. Usually widgets will
 want to expose this via a property.</doc>
@@ -34431,7 +34447,7 @@ want to expose this via a property.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1246">Whether to allow swiping past the first available snap point.</doc>
+             line="1248">Whether to allow swiping past the first available snap point.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="reversed"
@@ -34442,7 +34458,7 @@ want to expose this via a property.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1210">Whether to reverse the swipe direction.
+             line="1212">Whether to reverse the swipe direction.
 
 If the swipe tracker is horizontal, it can be used for supporting RTL text
 direction.</doc>
@@ -34455,7 +34471,7 @@ direction.</doc>
                 getter="get_swipeable">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1187">The widget the swipe tracker is attached to.</doc>
+             line="1189">The widget the swipe tracker is attached to.</doc>
         <type name="Swipeable"/>
       </property>
       <property name="upper-overshoot"
@@ -34467,13 +34483,13 @@ direction.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1258">Whether to allow swiping past the last available snap point.</doc>
+             line="1260">Whether to allow swiping past the last available snap point.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <glib:signal name="begin-swipe" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1314">This signal is emitted right before a swipe will be started, after the
+             line="1316">This signal is emitted right before a swipe will be started, after the
 drag threshold has been passed.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -34482,7 +34498,7 @@ drag threshold has been passed.</doc>
       <glib:signal name="end-swipe" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1354">This signal is emitted as soon as the gesture has stopped.
+             line="1356">This signal is emitted as soon as the gesture has stopped.
 
 The user is expected to animate the deceleration from the current progress
 value to @to with an animation using @velocity as the initial velocity,
@@ -34495,13 +34511,13 @@ fit for this.</doc>
           <parameter name="velocity" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1357">the velocity of the swipe</doc>
+                 line="1359">the velocity of the swipe</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
           <parameter name="to" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1358">the progress value to animate to</doc>
+                 line="1360">the progress value to animate to</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -34509,7 +34525,7 @@ fit for this.</doc>
       <glib:signal name="prepare" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1290">This signal is emitted when a possible swipe is detected.
+             line="1292">This signal is emitted when a possible swipe is detected.
 
 The @direction value can be used to restrict the swipe to a certain
 direction.</doc>
@@ -34520,7 +34536,7 @@ direction.</doc>
           <parameter name="direction" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1293">the direction of the swipe</doc>
+                 line="1295">the direction of the swipe</doc>
             <type name="NavigationDirection"/>
           </parameter>
         </parameters>
@@ -34528,7 +34544,7 @@ direction.</doc>
       <glib:signal name="update-swipe" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1333">This signal is emitted every time the progress value changes.</doc>
+             line="1335">This signal is emitted every time the progress value changes.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -34536,7 +34552,7 @@ direction.</doc>
           <parameter name="progress" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1336">the current animation progress value</doc>
+                 line="1338">the current animation progress value</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -43419,7 +43435,7 @@ See also [property@ToolbarView:bottom-bar-style].</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.7.6" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.7.7" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and
