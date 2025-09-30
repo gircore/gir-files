@@ -286,6 +286,15 @@ and/or use gtk-doc annotations.  -->
         </parameter>
       </parameters>
     </function-macro>
+    <function-macro name="DEPRECATED_ENUMERATOR_IN_2_86_FOR"
+                    c:identifier="GMODULE_DEPRECATED_ENUMERATOR_IN_2_86_FOR"
+                    introspectable="0">
+      <source-position filename="gmodule/gmodule-visibility.h" line="1062"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="DEPRECATED_FOR"
                     c:identifier="GMODULE_DEPRECATED_FOR"
                     introspectable="0">
@@ -565,6 +574,15 @@ and/or use gtk-doc annotations.  -->
         </parameter>
       </parameters>
     </function-macro>
+    <function-macro name="DEPRECATED_IN_2_86_FOR"
+                    c:identifier="GMODULE_DEPRECATED_IN_2_86_FOR"
+                    introspectable="0">
+      <source-position filename="gmodule/gmodule-visibility.h" line="1058"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="DEPRECATED_MACRO_IN_2_26_FOR"
                     c:identifier="GMODULE_DEPRECATED_MACRO_IN_2_26_FOR"
                     introspectable="0">
@@ -830,6 +848,15 @@ and/or use gtk-doc annotations.  -->
                     c:identifier="GMODULE_DEPRECATED_MACRO_IN_2_84_FOR"
                     introspectable="0">
       <source-position filename="gmodule/gmodule-visibility.h" line="1026"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="DEPRECATED_MACRO_IN_2_86_FOR"
+                    c:identifier="GMODULE_DEPRECATED_MACRO_IN_2_86_FOR"
+                    introspectable="0">
+      <source-position filename="gmodule/gmodule-visibility.h" line="1060"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -1105,6 +1132,15 @@ and/or use gtk-doc annotations.  -->
         </parameter>
       </parameters>
     </function-macro>
+    <function-macro name="DEPRECATED_TYPE_IN_2_86_FOR"
+                    c:identifier="GMODULE_DEPRECATED_TYPE_IN_2_86_FOR"
+                    introspectable="0">
+      <source-position filename="gmodule/gmodule-visibility.h" line="1064"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
     <constant name="MODULE_IMPL_AR" value="7" c:type="G_MODULE_IMPL_AR">
       <source-position filename="gmodule/gmoduleconf.h" line="31"/>
       <type name="gint" c:type="gint"/>
@@ -1126,24 +1162,28 @@ and/or use gtk-doc annotations.  -->
            filename="gmodule/gmodule.c"
            line="56">The #GModule struct is an opaque data structure to represent a
 [dynamically-loaded module](modules.html#dynamic-loading-of-modules).
-It should only be accessed via the following functions.</doc>
+It should only be accessed via the following functions.
+
+To ensure correct lock ordering, these functions must not be called from
+global constructors (for example, those using GCC’s
+`__attribute__((constructor))` attribute).</doc>
       <source-position filename="gmodule/gmodule.h" line="70"/>
       <method name="close" c:identifier="g_module_close">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="711">Closes a module.</doc>
+             line="715">Closes a module.</doc>
         <source-position filename="gmodule/gmodule.h" line="110"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="717">%TRUE on success</doc>
+               line="721">%TRUE on success</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="module" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="713">a #GModule to close</doc>
+                 line="717">a #GModule to close</doc>
             <type name="Module" c:type="GModule*"/>
           </instance-parameter>
         </parameters>
@@ -1151,7 +1191,7 @@ It should only be accessed via the following functions.</doc>
       <method name="make_resident" c:identifier="g_module_make_resident">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="772">Ensures that a module will never be unloaded.
+             line="776">Ensures that a module will never be unloaded.
 Any future g_module_close() calls on the module will be ignored.</doc>
         <source-position filename="gmodule/gmodule.h" line="114"/>
         <return-value transfer-ownership="none">
@@ -1161,7 +1201,7 @@ Any future g_module_close() calls on the module will be ignored.</doc>
           <instance-parameter name="module" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="774">a #GModule to make permanently resident</doc>
+                 line="778">a #GModule to make permanently resident</doc>
             <type name="Module" c:type="GModule*"/>
           </instance-parameter>
         </parameters>
@@ -1169,21 +1209,21 @@ Any future g_module_close() calls on the module will be ignored.</doc>
       <method name="name" c:identifier="g_module_name">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="855">Returns the filename that the module was opened with.
+             line="859">Returns the filename that the module was opened with.
 
 If @module refers to the application itself, "main" is returned.</doc>
         <source-position filename="gmodule/gmodule.h" line="128"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="863">the filename of the module</doc>
+               line="867">the filename of the module</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="module" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="857">a #GModule</doc>
+                 line="861">a #GModule</doc>
             <type name="Module" c:type="GModule*"/>
           </instance-parameter>
         </parameters>
@@ -1191,26 +1231,26 @@ If @module refers to the application itself, "main" is returned.</doc>
       <method name="symbol" c:identifier="g_module_symbol">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="800">Gets a symbol pointer from a module, such as one exported
+             line="804">Gets a symbol pointer from a module, such as one exported
 by %G_MODULE_EXPORT. Note that a valid symbol can be %NULL.</doc>
         <source-position filename="gmodule/gmodule.h" line="122"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="809">%TRUE on success</doc>
+               line="813">%TRUE on success</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="module" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="802">a #GModule</doc>
+                 line="806">a #GModule</doc>
             <type name="Module" c:type="GModule*"/>
           </instance-parameter>
           <parameter name="symbol_name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="803">the name of the symbol to find</doc>
+                 line="807">the name of the symbol to find</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="symbol"
@@ -1220,7 +1260,7 @@ by %G_MODULE_EXPORT. Note that a valid symbol can be %NULL.</doc>
                      nullable="1">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="804">returns the pointer to the symbol value</doc>
+                 line="808">returns the pointer to the symbol value</doc>
             <type name="gpointer" c:type="gpointer*"/>
           </parameter>
         </parameters>
@@ -1231,7 +1271,7 @@ by %G_MODULE_EXPORT. Note that a valid symbol can be %NULL.</doc>
                 deprecated-version="2.76">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="876">A portable way to build the filename of a module. The platform-specific
+             line="880">A portable way to build the filename of a module. The platform-specific
 prefix and suffix are added to the filename, if needed, and the result
 is added to the directory, using the correct separator character.
 
@@ -1250,7 +1290,7 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="897">the complete path of the module, including the standard library
+               line="901">the complete path of the module, including the standard library
     prefix and suffix. This should be freed when no longer needed</doc>
           <type name="utf8" c:type="gchar*"/>
         </return-value>
@@ -1261,7 +1301,7 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="878">the directory where the module is. This can be
+                 line="882">the directory where the module is. This can be
     %NULL or the empty string to indicate that the standard platform-specific
     directories will be used, though that is not recommended</doc>
             <type name="utf8" c:type="const gchar*"/>
@@ -1269,7 +1309,7 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
           <parameter name="module_name" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="881">the name of the module</doc>
+                 line="885">the name of the module</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -1277,12 +1317,12 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
       <function name="error" c:identifier="g_module_error">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="787">Gets a string describing the last module error.</doc>
+             line="791">Gets a string describing the last module error.</doc>
         <source-position filename="gmodule/gmodule.h" line="118"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="792">a string describing the last module error</doc>
+               line="796">a string describing the last module error</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
       </function>
@@ -1294,12 +1334,12 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
       <function name="open" c:identifier="g_module_open" introspectable="0">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="693">A thin wrapper function around g_module_open_full()</doc>
+             line="697">A thin wrapper function around g_module_open_full()</doc>
         <source-position filename="gmodule/gmodule.h" line="100"/>
         <return-value>
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="702">a #GModule on success, or %NULL on failure</doc>
+               line="706">a #GModule on success, or %NULL on failure</doc>
           <type name="Module" c:type="GModule*"/>
         </return-value>
         <parameters>
@@ -1309,14 +1349,14 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="695">the name or path to the file containing the module,
+                 line="699">the name or path to the file containing the module,
     or %NULL to obtain a #GModule representing the main program itself</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="697">the flags used for opening the module. This can be the
+                 line="701">the flags used for opening the module. This can be the
     logical OR of any of the #GModuleFlags.</doc>
             <type name="ModuleFlags" c:type="GModuleFlags"/>
           </parameter>
@@ -1329,7 +1369,7 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
                 throws="1">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="429">Opens a module. If the module has already been opened, its reference count
+             line="433">Opens a module. If the module has already been opened, its reference count
 is incremented. If not, the module is searched using @file_name.
 
 Since 2.76, the search order/behavior is as follows:
@@ -1356,7 +1396,7 @@ of @file_name.</doc>
         <return-value>
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="461">a #GModule on success, or %NULL on failure</doc>
+               line="465">a #GModule on success, or %NULL on failure</doc>
           <type name="Module" c:type="GModule*"/>
         </return-value>
         <parameters>
@@ -1366,14 +1406,14 @@ of @file_name.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="431">the name or path to the file containing the module,
+                 line="435">the name or path to the file containing the module,
     or %NULL to obtain a #GModule representing the main program itself</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gmodule/gmodule.c"
-                 line="433">the flags used for opening the module. This can be the
+                 line="437">the flags used for opening the module. This can be the
     logical OR of any of the #GModuleFlags</doc>
             <type name="ModuleFlags" c:type="GModuleFlags"/>
           </parameter>
@@ -1382,12 +1422,12 @@ of @file_name.</doc>
       <function name="supported" c:identifier="g_module_supported">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="289">Checks if modules are supported on the current platform.</doc>
+             line="293">Checks if modules are supported on the current platform.</doc>
         <source-position filename="gmodule/gmodule.h" line="96"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="294">%TRUE if modules are supported</doc>
+               line="298">%TRUE if modules are supported</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
       </function>
@@ -1395,7 +1435,7 @@ of @file_name.</doc>
     <callback name="ModuleCheckInit" c:type="GModuleCheckInit">
       <doc xml:space="preserve"
            filename="gmodule/gmodule.c"
-           line="64">Specifies the type of the module initialization function.
+           line="68">Specifies the type of the module initialization function.
 If a module contains a function named g_module_check_init() it is called
 automatically when the module is loaded. It is passed the #GModule structure
 and should return %NULL on success or a string describing the initialization
@@ -1404,14 +1444,14 @@ error.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="74">%NULL on success, or a string describing the initialization error</doc>
+             line="78">%NULL on success, or a string describing the initialization error</doc>
         <type name="utf8" c:type="const gchar*"/>
       </return-value>
       <parameters>
         <parameter name="module" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="66">the #GModule corresponding to the module which has just been loaded</doc>
+               line="70">the #GModule corresponding to the module which has just been loaded</doc>
           <type name="Module" c:type="GModule*"/>
         </parameter>
       </parameters>
@@ -1467,7 +1507,7 @@ Note that these flags are not supported on all platforms.</doc>
     <callback name="ModuleUnload" c:type="GModuleUnload">
       <doc xml:space="preserve"
            filename="gmodule/gmodule.c"
-           line="77">Specifies the type of the module function called when it is unloaded.
+           line="81">Specifies the type of the module function called when it is unloaded.
 If a module contains a function named g_module_unload() it is called
 automatically when the module is unloaded.
 It is passed the #GModule structure.</doc>
@@ -1479,7 +1519,7 @@ It is passed the #GModule structure.</doc>
         <parameter name="module" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="79">the #GModule about to be unloaded</doc>
+               line="83">the #GModule about to be unloaded</doc>
           <type name="Module" c:type="GModule*"/>
         </parameter>
       </parameters>
@@ -1513,7 +1553,7 @@ It is passed the #GModule structure.</doc>
               deprecated-version="2.76">
       <doc xml:space="preserve"
            filename="gmodule/gmodule.c"
-           line="876">A portable way to build the filename of a module. The platform-specific
+           line="880">A portable way to build the filename of a module. The platform-specific
 prefix and suffix are added to the filename, if needed, and the result
 is added to the directory, using the correct separator character.
 
@@ -1532,7 +1572,7 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="897">the complete path of the module, including the standard library
+             line="901">the complete path of the module, including the standard library
     prefix and suffix. This should be freed when no longer needed</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -1543,7 +1583,7 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="878">the directory where the module is. This can be
+               line="882">the directory where the module is. This can be
     %NULL or the empty string to indicate that the standard platform-specific
     directories will be used, though that is not recommended</doc>
           <type name="utf8" c:type="const gchar*"/>
@@ -1551,7 +1591,7 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
         <parameter name="module_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gmodule/gmodule.c"
-               line="881">the name of the module</doc>
+               line="885">the name of the module</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -1561,12 +1601,12 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
               moved-to="Module.error">
       <doc xml:space="preserve"
            filename="gmodule/gmodule.c"
-           line="787">Gets a string describing the last module error.</doc>
+           line="791">Gets a string describing the last module error.</doc>
       <source-position filename="gmodule/gmodule.h" line="118"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="792">a string describing the last module error</doc>
+             line="796">a string describing the last module error</doc>
         <type name="utf8" c:type="const gchar*"/>
       </return-value>
     </function>
@@ -1582,12 +1622,12 @@ basename of the file_name argument. See %G_MODULE_SUFFIX for why.</doc-deprecate
               moved-to="Module.supported">
       <doc xml:space="preserve"
            filename="gmodule/gmodule.c"
-           line="289">Checks if modules are supported on the current platform.</doc>
+           line="293">Checks if modules are supported on the current platform.</doc>
       <source-position filename="gmodule/gmodule.h" line="96"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gmodule/gmodule.c"
-             line="294">%TRUE if modules are supported</doc>
+             line="298">%TRUE if modules are supported</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
     </function>
