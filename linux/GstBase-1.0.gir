@@ -4303,7 +4303,7 @@ if desired.</doc>
               c:identifier="gst_base_parse_add_index_entry">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="1989">Adds an entry to the index associating @offset to @ts.  It is recommended
+             line="2017">Adds an entry to the index associating @offset to @ts.  It is recommended
 to only add keyframe entries.  @force allows to bypass checks, such as
 whether the stream is (upstream) seekable, another entry is already "close"
 to the new entry, etc.</doc>
@@ -4311,38 +4311,38 @@ to the new entry, etc.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="2002">#gboolean indicating whether entry was added</doc>
+               line="2030">#gboolean indicating whether entry was added</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1991">#GstBaseParse.</doc>
+                 line="2019">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1992">offset of entry</doc>
+                 line="2020">offset of entry</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="ts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1993">timestamp associated with offset</doc>
+                 line="2021">timestamp associated with offset</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="key" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1994">whether entry refers to keyframe</doc>
+                 line="2022">whether entry refers to keyframe</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
           <parameter name="force" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1995">add entry disregarding sanity checks</doc>
+                 line="2023">add entry disregarding sanity checks</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4351,37 +4351,37 @@ to the new entry, etc.</doc>
               c:identifier="gst_base_parse_convert_default">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="1752">Default implementation of #GstBaseParseClass::convert.</doc>
+             line="1780">Default implementation of #GstBaseParseClass::convert.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="360"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="1762">%TRUE if conversion was successful.</doc>
+               line="1790">%TRUE if conversion was successful.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1754">#GstBaseParse.</doc>
+                 line="1782">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="src_format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1755">#GstFormat describing the source format.</doc>
+                 line="1783">#GstFormat describing the source format.</doc>
             <type name="Gst.Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="src_value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1756">Source value to be converted.</doc>
+                 line="1784">Source value to be converted.</doc>
             <type name="gint64" c:type="gint64"/>
           </parameter>
           <parameter name="dest_format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1757">#GstFormat defining the converted format.</doc>
+                 line="1785">#GstFormat defining the converted format.</doc>
             <type name="Gst.Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="dest_value"
@@ -4390,7 +4390,7 @@ to the new entry, etc.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="1758">Pointer where the conversion result will be put.</doc>
+                 line="1786">Pointer where the conversion result will be put.</doc>
             <type name="gint64" c:type="gint64*"/>
           </parameter>
         </parameters>
@@ -4398,7 +4398,7 @@ to the new entry, etc.</doc>
       <method name="drain" c:identifier="gst_base_parse_drain" version="1.12">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="2780">Drains the adapter until it is empty. It decreases the min_frame_size to
+             line="2808">Drains the adapter until it is empty. It decreases the min_frame_size to
 match the current adapter size and calls chain method until the adapter
 is emptied or chain returns with error.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="335"/>
@@ -4409,7 +4409,7 @@ is emptied or chain returns with error.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2782">a #GstBaseParse</doc>
+                 line="2810">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
         </parameters>
@@ -4417,7 +4417,7 @@ is emptied or chain returns with error.</doc>
       <method name="finish_frame" c:identifier="gst_base_parse_finish_frame">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="2680">Collects parsed data and pushes it downstream.
+             line="2708">Collects parsed data and pushes it downstream.
 Source pad caps must be set when this is called.
 
 If @frame's out_buffer is set, that will be used as subsequent frame data,
@@ -4435,26 +4435,26 @@ caller retains ownership of @frame.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="2701">a #GstFlowReturn that should be escalated to caller (of caller)</doc>
+               line="2729">a #GstFlowReturn that should be escalated to caller (of caller)</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2682">a #GstBaseParse</doc>
+                 line="2710">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2683">a #GstBaseParseFrame</doc>
+                 line="2711">a #GstBaseParseFrame</doc>
             <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
           </parameter>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2684">consumed input data represented by frame</doc>
+                 line="2712">consumed input data represented by frame</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -4464,7 +4464,7 @@ caller retains ownership of @frame.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="5037">Sets the parser subclass's tags and how they should be merged with any
+             line="5065">Sets the parser subclass's tags and how they should be merged with any
 upstream stream tags. This will override any tags previously-set
 with gst_base_parse_merge_tags().
 
@@ -4478,7 +4478,7 @@ not required to use this and can still do tag handling on its own.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="5039">a #GstBaseParse</doc>
+                 line="5067">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="tags"
@@ -4487,14 +4487,14 @@ not required to use this and can still do tag handling on its own.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="5040">a #GstTagList to merge, or NULL to unset
+                 line="5068">a #GstTagList to merge, or NULL to unset
     previously-set tags</doc>
             <type name="Gst.TagList" c:type="GstTagList*"/>
           </parameter>
           <parameter name="mode" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="5042">the #GstTagMergeMode to use, usually #GST_TAG_MERGE_REPLACE</doc>
+                 line="5070">the #GstTagMergeMode to use, usually #GST_TAG_MERGE_REPLACE</doc>
             <type name="Gst.TagMergeMode" c:type="GstTagMergeMode"/>
           </parameter>
         </parameters>
@@ -4502,7 +4502,7 @@ not required to use this and can still do tag handling on its own.</doc>
       <method name="push_frame" c:identifier="gst_base_parse_push_frame">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="2466">Pushes the frame's buffer downstream, sends any pending events and
+             line="2494">Pushes the frame's buffer downstream, sends any pending events and
 does some timestamp and segment handling. Takes ownership of
 frame's buffer, though caller retains ownership of @frame.
 
@@ -4511,20 +4511,20 @@ This must be called with sinkpad STREAM_LOCK held.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="2477">#GstFlowReturn</doc>
+               line="2505">#GstFlowReturn</doc>
           <type name="Gst.FlowReturn" c:type="GstFlowReturn"/>
         </return-value>
         <parameters>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2468">#GstBaseParse.</doc>
+                 line="2496">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="2469">a #GstBaseParseFrame</doc>
+                 line="2497">a #GstBaseParseFrame</doc>
             <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
           </parameter>
         </parameters>
@@ -4533,7 +4533,7 @@ This must be called with sinkpad STREAM_LOCK held.</doc>
               c:identifier="gst_base_parse_set_average_bitrate">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3906">Optionally sets the average bitrate detected in media (if non-zero),
+             line="3934">Optionally sets the average bitrate detected in media (if non-zero),
 e.g. based on metadata, as it will be posted to the application.
 
 By default, announced average bitrate is estimated. The average bitrate
@@ -4548,13 +4548,13 @@ a seek position, if there's no index and the format is syncable
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3908">#GstBaseParse.</doc>
+                 line="3936">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="bitrate" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3909">average bitrate in bits/second</doc>
+                 line="3937">average bitrate in bits/second</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4562,7 +4562,7 @@ a seek position, if there's no index and the format is syncable
       <method name="set_duration" c:identifier="gst_base_parse_set_duration">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3855">Sets the duration of the currently playing media. Subclass can use this
+             line="3883">Sets the duration of the currently playing media. Subclass can use this
 when it is able to determine duration and/or notices a change in the media
 duration.  Alternatively, if @interval is non-zero (default), then stream
 duration is determined based on estimated bitrate, and updated every @interval
@@ -4575,25 +4575,25 @@ frames.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3857">#GstBaseParse.</doc>
+                 line="3885">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="fmt" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3858">#GstFormat.</doc>
+                 line="3886">#GstFormat.</doc>
             <type name="Gst.Format" c:type="GstFormat"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3859">duration value.</doc>
+                 line="3887">duration value.</doc>
             <type name="gint64" c:type="gint64"/>
           </parameter>
           <parameter name="interval" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3860">how often to update the duration estimate based on bitrate, or 0.</doc>
+                 line="3888">how often to update the duration estimate based on bitrate, or 0.</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -4602,7 +4602,7 @@ frames.</doc>
               c:identifier="gst_base_parse_set_frame_rate">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3944">If frames per second is configured, parser can take care of buffer duration
+             line="3972">If frames per second is configured, parser can take care of buffer duration
 and timestamping.  When performing segment clipping, or seeking to a specific
 location, a corresponding decoder might need an initial @lead_in and a
 following @lead_out number of frames to ensure the desired segment is
@@ -4615,31 +4615,31 @@ entirely filled upon decoding.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3946">the #GstBaseParse to set</doc>
+                 line="3974">the #GstBaseParse to set</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="fps_num" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3947">frames per second (numerator).</doc>
+                 line="3975">frames per second (numerator).</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="fps_den" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3948">frames per second (denominator).</doc>
+                 line="3976">frames per second (denominator).</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="lead_in" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3949">frames needed before a segment for subsequent decode</doc>
+                 line="3977">frames needed before a segment for subsequent decode</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="lead_out" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3950">frames needed after a segment</doc>
+                 line="3978">frames needed after a segment</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -4648,7 +4648,7 @@ entirely filled upon decoding.</doc>
               c:identifier="gst_base_parse_set_has_timing_info">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4001">Set if frames carry timing information which the subclass can (generally)
+             line="4029">Set if frames carry timing information which the subclass can (generally)
 parse and provide.  In particular, intrinsic (rather than estimated) time
 can be obtained following a seek.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="332"/>
@@ -4659,13 +4659,13 @@ can be obtained following a seek.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4003">a #GstBaseParse</doc>
+                 line="4031">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="has_timing" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4004">whether frames carry timing information</doc>
+                 line="4032">whether frames carry timing information</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4673,7 +4673,7 @@ can be obtained following a seek.</doc>
       <method name="set_infer_ts" c:identifier="gst_base_parse_set_infer_ts">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4072">By default, the base class might try to infer PTS from DTS and vice
+             line="4100">By default, the base class might try to infer PTS from DTS and vice
 versa.  While this is generally correct for audio data, it may not
 be otherwise. Sub-classes implementing such formats should disable
 timestamp inferring.</doc>
@@ -4685,13 +4685,13 @@ timestamp inferring.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4074">a #GstBaseParse</doc>
+                 line="4102">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="infer_ts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4075">%TRUE if parser should infer DTS/PTS from each other</doc>
+                 line="4103">%TRUE if parser should infer DTS/PTS from each other</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4699,7 +4699,7 @@ timestamp inferring.</doc>
       <method name="set_latency" c:identifier="gst_base_parse_set_latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4089">Sets the minimum and maximum (which may likely be equal) latency introduced
+             line="4117">Sets the minimum and maximum (which may likely be equal) latency introduced
 by the parsing process. If there is such a latency, which depends on the
 particular parsing of the format, it typically corresponds to 1 frame duration.
 
@@ -4714,19 +4714,19 @@ global latency.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4091">a #GstBaseParse</doc>
+                 line="4119">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="min_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4092">minimum parse latency</doc>
+                 line="4120">minimum parse latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="max_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4093">maximum parse latency</doc>
+                 line="4121">maximum parse latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -4735,7 +4735,7 @@ global latency.</doc>
               c:identifier="gst_base_parse_set_min_frame_size">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="3926">Subclass can use this function to tell the base class that it needs to
+             line="3954">Subclass can use this function to tell the base class that it needs to
 be given buffers of at least @min_size bytes.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="329"/>
         <return-value transfer-ownership="none">
@@ -4745,13 +4745,13 @@ be given buffers of at least @min_size bytes.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3928">#GstBaseParse.</doc>
+                 line="3956">#GstBaseParse.</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="min_size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="3929">Minimum size in bytes of the data that this base class should
+                 line="3957">Minimum size in bytes of the data that this base class should
       give to subclass.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
@@ -4761,7 +4761,7 @@ be given buffers of at least @min_size bytes.</doc>
               c:identifier="gst_base_parse_set_passthrough">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4033">Set if the nature of the format or configuration does not allow (much)
+             line="4061">Set if the nature of the format or configuration does not allow (much)
 parsing, and the parser should operate in passthrough mode (which only
 applies when operating in push mode). That is, incoming buffers are
 pushed through unmodified, i.e. no #GstBaseParseClass::handle_frame
@@ -4776,13 +4776,13 @@ passthrough semantics in #GstBaseParseClass::pre_push_frame.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4035">a #GstBaseParse</doc>
+                 line="4063">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="passthrough" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4036">%TRUE if parser should run in passthrough mode</doc>
+                 line="4064">%TRUE if parser should run in passthrough mode</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4791,7 +4791,7 @@ passthrough semantics in #GstBaseParseClass::pre_push_frame.</doc>
               c:identifier="gst_base_parse_set_pts_interpolation">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4053">By default, the base class will guess PTS timestamps using a simple
+             line="4081">By default, the base class will guess PTS timestamps using a simple
 interpolation (previous timestamp + duration), which is incorrect for
 data streams with reordering, where PTS can go backward. Sub-classes
 implementing such formats should disable PTS interpolation.</doc>
@@ -4803,13 +4803,13 @@ implementing such formats should disable PTS interpolation.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4055">a #GstBaseParse</doc>
+                 line="4083">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="pts_interpolate" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4056">%TRUE if parser should interpolate PTS timestamps</doc>
+                 line="4084">%TRUE if parser should interpolate PTS timestamps</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4817,7 +4817,7 @@ implementing such formats should disable PTS interpolation.</doc>
       <method name="set_syncable" c:identifier="gst_base_parse_set_syncable">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4017">Set if frame starts can be identified. This is set by default and
+             line="4045">Set if frame starts can be identified. This is set by default and
 determines whether seeking based on bitrate averages
 is possible for a format/stream.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="338"/>
@@ -4828,13 +4828,13 @@ is possible for a format/stream.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4019">a #GstBaseParse</doc>
+                 line="4047">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="syncable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4020">set if frame starts can be identified</doc>
+                 line="4048">set if frame starts can be identified</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -4844,7 +4844,7 @@ is possible for a format/stream.</doc>
               version="1.2">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="4997">This function should only be called from a @handle_frame implementation.
+             line="5025">This function should only be called from a @handle_frame implementation.
 
 #GstBaseParse creates initial timestamps for frames by using the last
 timestamp seen in the stream before the frame starts.  In certain
@@ -4860,13 +4860,13 @@ into the frame data that the picture starts.</doc>
           <instance-parameter name="parse" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="4999">a #GstBaseParse</doc>
+                 line="5027">a #GstBaseParse</doc>
             <type name="BaseParse" c:type="GstBaseParse*"/>
           </instance-parameter>
           <parameter name="offset" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="5000">offset into current buffer</doc>
+                 line="5028">offset into current buffer</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -4877,7 +4877,7 @@ into the frame data that the picture starts.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="554">If set to %TRUE, baseparse will unconditionally force parsing of the
+             line="575">If set to %TRUE, baseparse will unconditionally force parsing of the
 incoming data. This can be required in the rare cases where the incoming
 side-data (caps, pts, dts, ...) is not trusted by the user and wants to
 force validation and parsing of the incoming data.
@@ -5273,14 +5273,14 @@ of each frame's processing, i.e. parsing virtual method invocation sequence.</do
       <constructor name="new" c:identifier="gst_base_parse_frame_new">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="751">Allocates a new #GstBaseParseFrame. This function is mainly for bindings,
+             line="772">Allocates a new #GstBaseParseFrame. This function is mainly for bindings,
 elements written in C should usually allocate the frame on the stack and
 then use gst_base_parse_frame_init() to initialise it.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="302"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="763">a newly-allocated #GstBaseParseFrame. Free with
+               line="784">a newly-allocated #GstBaseParseFrame. Free with
     gst_base_parse_frame_free() when no longer needed.</doc>
           <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
         </return-value>
@@ -5288,19 +5288,19 @@ then use gst_base_parse_frame_init() to initialise it.</doc>
           <parameter name="buffer" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="753">a #GstBuffer</doc>
+                 line="774">a #GstBuffer</doc>
             <type name="Gst.Buffer" c:type="GstBuffer*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="754">the flags</doc>
+                 line="775">the flags</doc>
             <type name="BaseParseFrameFlags" c:type="GstBaseParseFrameFlags"/>
           </parameter>
           <parameter name="overhead" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="755">number of bytes in this frame which should be counted as
+                 line="776">number of bytes in this frame which should be counted as
     metadata overhead, ie. not used to calculate the average bitrate.
     Set to -1 to mark the entire frame as metadata. If in doubt, set to 0.</doc>
             <type name="gint" c:type="gint"/>
@@ -5312,19 +5312,19 @@ then use gst_base_parse_frame_init() to initialise it.</doc>
               version="1.12.1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="682">Copies a #GstBaseParseFrame.</doc>
+             line="703">Copies a #GstBaseParseFrame.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="309"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstbaseparse.c"
-               line="688">A copy of @frame</doc>
+               line="709">A copy of @frame</doc>
           <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
         </return-value>
         <parameters>
           <instance-parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="684">a #GstBaseParseFrame</doc>
+                 line="705">a #GstBaseParseFrame</doc>
             <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
           </instance-parameter>
         </parameters>
@@ -5332,7 +5332,7 @@ then use gst_base_parse_frame_init() to initialise it.</doc>
       <method name="free" c:identifier="gst_base_parse_frame_free">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="706">Frees the provided @frame.</doc>
+             line="727">Frees the provided @frame.</doc>
         <source-position filename="libs/gst/base/gstbaseparse.h" line="311"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -5341,7 +5341,7 @@ then use gst_base_parse_frame_init() to initialise it.</doc>
           <instance-parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="708">A #GstBaseParseFrame</doc>
+                 line="729">A #GstBaseParseFrame</doc>
             <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
           </instance-parameter>
         </parameters>
@@ -5349,7 +5349,7 @@ then use gst_base_parse_frame_init() to initialise it.</doc>
       <method name="init" c:identifier="gst_base_parse_frame_init">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstbaseparse.c"
-             line="733">Sets a #GstBaseParseFrame to initial state.  Currently this means
+             line="754">Sets a #GstBaseParseFrame to initial state.  Currently this means
 all public fields are zero-ed and a private flag is set to make
 sure gst_base_parse_frame_free() only frees the contents but not
 the actual frame. Use this function to initialise a #GstBaseParseFrame
@@ -5362,7 +5362,7 @@ allocated on the stack.</doc>
           <instance-parameter name="frame" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstbaseparse.c"
-                 line="735">#GstBaseParseFrame.</doc>
+                 line="756">#GstBaseParseFrame.</doc>
             <type name="BaseParseFrame" c:type="GstBaseParseFrame*"/>
           </instance-parameter>
         </parameters>
