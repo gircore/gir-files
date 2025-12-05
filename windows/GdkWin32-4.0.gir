@@ -11,12 +11,674 @@ and/or use gtk-doc annotations.  -->
   <include name="win32" version="1.0"/>
   <package name="gtk4-win32"/>
   <c:include name="gdk/win32/gdkwin32.h"/>
-  <doc:format name="unknown"/>
+  <doc:format name="gi-docgen"/>
   <namespace name="GdkWin32"
              version="4.0"
              shared-library="libgtk-4-1.dll"
              c:identifier-prefixes="Gdk"
              c:symbol-prefixes="gdk">
+    <enumeration name="D3D12Error" version="4.20" c:type="GdkD3D12Error">
+      <doc xml:space="preserve"
+           filename="gdk/win32/gdkd3d12texture.h"
+           line="40">Error enumeration for GTK's Direct3D 12 integration.</doc>
+      <source-position filename="gdk/win32/gdkd3d12texture.h" line="57"/>
+      <member name="not_available"
+              value="0"
+              c:identifier="GDK_D3D12_ERROR_NOT_AVAILABLE">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texture.h"
+             line="42">D3D12 support is not available, because the OS
+  is not Windows, the Windows version is not recent enough, or it was explicitly
+  disabled at compile- or runtime</doc>
+      </member>
+      <member name="unsupported_format"
+              value="1"
+              c:identifier="GDK_D3D12_ERROR_UNSUPPORTED_FORMAT">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texture.h"
+             line="45">The requested format is not supported</doc>
+      </member>
+      <member name="creation_failed"
+              value="2"
+              c:identifier="GDK_D3D12_ERROR_CREATION_FAILED">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texture.h"
+             line="46">GTK failed to create the resource for other
+  reasons</doc>
+      </member>
+    </enumeration>
+    <class name="D3D12Texture"
+           c:symbol-prefix="d3d12_texture"
+           c:type="GdkD3D12Texture"
+           version="4.20"
+           parent="Gdk.Texture"
+           glib:type-name="GdkD3D12Texture"
+           glib:get-type="gdk_d3d12_texture_get_type"
+           glib:type-struct="D3D12TextureClass">
+      <doc xml:space="preserve"
+           filename="gdk/win32/gdkd3d12texture.c"
+           line="33">A `GdkTexture` representing a [ID3D12Resource](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nn-d3d12-id3d12resource).
+
+To create a `GdkD3D12Texture`, use the auxiliary
+[class@Gdk.Win32.D3d12TextureBuilder] object.
+
+D3D12 textures can only be created on Windows.</doc>
+      <source-position filename="gdk/win32/gdkd3d12texture.h" line="38"/>
+      <implements name="Gdk.Paintable"/>
+      <implements name="Gio.Icon"/>
+      <implements name="Gio.LoadableIcon"/>
+    </class>
+    <class name="D3D12TextureBuilder"
+           c:symbol-prefix="d3d12_texture_builder"
+           c:type="GdkD3D12TextureBuilder"
+           version="4.20"
+           parent="GObject.Object"
+           glib:type-name="GdkD3D12TextureBuilder"
+           glib:get-type="gdk_d3d12_texture_builder_get_type"
+           glib:type-struct="D3D12TextureBuilderClass">
+      <doc xml:space="preserve"
+           filename="gdk/win32/gdkd3d12texturebuilder.c"
+           line="51">`GdkD3D12TextureBuilder` is a builder used to construct [class@Gdk.Texture]
+objects from [ID3D12Resources](https://learn.microsoft.com/en-us/windows/win32/api/d3d12/nn-d3d12-id3d12resource).
+
+The operation of `GdkD3D12TextureBuilder` is quite simple: Create a texture builder,
+set all the necessary properties, and then call [method@Gdk.D3d12TextureBuilder.build]
+to create the new texture.
+
+Not all `D3D12Resources` can be used. You have to use a texture resource for a `GdkTexture`.
+GDK will attempt to detect invalid resources and fail to create the texture in that case.
+
+`GdkD3D12TextureBuilder` can be used for quick one-shot construction of
+textures as well as kept around and reused to construct multiple textures.</doc>
+      <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                       line="43"/>
+      <constructor name="new"
+                   c:identifier="gdk_d3d12_texture_builder_new"
+                   version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="293">Creates a new texture builder.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="48"/>
+        <return-value transfer-ownership="full">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="298">the new `GdkTextureBuilder`</doc>
+          <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+        </return-value>
+      </constructor>
+      <method name="build"
+              c:identifier="gdk_d3d12_texture_builder_build"
+              version="4.20"
+              throws="1">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="635">Builds a new `GdkTexture` with the values set up in the builder.
+
+It is a programming error to call this function if any mandatory property has not been set.
+
+Not all formats defined in the `drm_fourcc.h` header are supported. You can use
+[method@Gdk.Display.get_d3d12_formats] to get a list of supported formats. If the
+format is not supported by GTK, %NULL will be returned and @error will be set.
+
+The `destroy` function gets called when the returned texture gets released.
+
+It is the responsibility of the caller to keep the file descriptors for the planes
+open until the created texture is no longer used, and close them afterwards (possibly
+using the @destroy notify).
+
+It is possible to call this function multiple times to create multiple textures,
+possibly with changing properties in between.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="93"/>
+        <return-value transfer-ownership="full" nullable="1">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="660">a newly built `GdkTexture` or `NULL`
+  if the format is not supported</doc>
+          <type name="Gdk.Texture" c:type="GdkTexture*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="637">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="destroy"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1"
+                     scope="async">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="638">destroy function to be called when the texture is
+  released</doc>
+            <type name="GLib.DestroyNotify" c:type="GDestroyNotify"/>
+          </parameter>
+          <parameter name="data"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="640">user data to pass to the destroy function</doc>
+            <type name="gpointer" c:type="gpointer"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="get_color_state"
+              c:identifier="gdk_d3d12_texture_builder_get_color_state"
+              glib:get-property="color-state"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="490">Gets the color state previously set via gdk_d3d12_texture_builder_set_color_state().</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="75"/>
+        <return-value transfer-ownership="none" nullable="1">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="496">the color state</doc>
+          <type name="Gdk.ColorState" c:type="GdkColorState*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="492">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_fence"
+              c:identifier="gdk_d3d12_texture_builder_get_fence"
+              glib:get-property="fence"
+              version="4.20"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="355">Returns the fence that this texture builder is
+associated with.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="57"/>
+        <return-value transfer-ownership="none" nullable="1">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="362">the fence</doc>
+          <type c:type="ID3D12Fence*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="357">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_fence_wait"
+              c:identifier="gdk_d3d12_texture_builder_get_fence_wait"
+              glib:get-property="fence-wait"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="401">Returns the value that GTK should wait for on the fence
+before using the resource.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="63"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="408">the fence wait value</doc>
+          <type name="guint64" c:type="guint64"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="403">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_premultiplied"
+              c:identifier="gdk_d3d12_texture_builder_get_premultiplied"
+              glib:get-property="premultiplied"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="446">Whether the data is premultiplied.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="69"/>
+        <return-value transfer-ownership="none">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="452">whether the data is premultiplied</doc>
+          <type name="gboolean" c:type="gboolean"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="448">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_resource"
+              c:identifier="gdk_d3d12_texture_builder_get_resource"
+              glib:get-property="resource"
+              version="4.20"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="308">Returns the resource that this texture builder is
+associated with.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="51"/>
+        <return-value transfer-ownership="none" nullable="1">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="315">the resource</doc>
+          <type c:type="ID3D12Resource*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="310">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_update_region"
+              c:identifier="gdk_d3d12_texture_builder_get_update_region"
+              glib:get-property="update-region"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="581">Gets the region previously set via gdk_d3d12_texture_builder_set_update_region() or
+%NULL if none was set.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="87"/>
+        <return-value transfer-ownership="none" nullable="1">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="588">The region</doc>
+          <type name="cairo.Region" c:type="cairo_region_t*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="583">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="get_update_texture"
+              c:identifier="gdk_d3d12_texture_builder_get_update_texture"
+              glib:get-property="update-texture"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="539">Gets the texture previously set via gdk_d3d12_texture_builder_set_update_texture() or
+%NULL if none was set.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="81"/>
+        <return-value transfer-ownership="none" nullable="1">
+          <doc xml:space="preserve"
+               filename="gdk/win32/gdkd3d12texturebuilder.c"
+               line="546">The texture</doc>
+          <type name="Gdk.Texture" c:type="GdkTexture*"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="541">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+        </parameters>
+      </method>
+      <method name="set_color_state"
+              c:identifier="gdk_d3d12_texture_builder_set_color_state"
+              glib:set-property="color-state"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="508">Sets the color state for the texture.
+
+By default, the colorstate is `NULL`. In that case, GTK will choose the
+correct colorstate based on the format.
+If you don't know what colorstates are, this is probably the right thing.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="77"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="510">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="color_state"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="511">a `GdkColorState` or `NULL` to unset the colorstate.</doc>
+            <type name="Gdk.ColorState" c:type="GdkColorState*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_fence"
+              c:identifier="gdk_d3d12_texture_builder_set_fence"
+              glib:set-property="fence"
+              version="4.20"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="374">Sets the fence that this texture builder is going to construct
+a texture for.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="59"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="376">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="fence" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="377">the fence</doc>
+            <type c:type="ID3D12Fence*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_fence_wait"
+              c:identifier="gdk_d3d12_texture_builder_set_fence_wait"
+              glib:set-property="fence-wait"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="420">Sets the value that GTK should wait on on the given fence before using the
+resource.
+
+When no fence is set, this value has no effect.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="65"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="422">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="fence_wait" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="423">the value to wait on</doc>
+            <type name="guint64" c:type="guint64"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_premultiplied"
+              c:identifier="gdk_d3d12_texture_builder_set_premultiplied"
+              glib:set-property="premultiplied"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="464">Sets whether the data is premultiplied.
+
+Unless otherwise specified, all formats including alpha channels are assumed
+to be premultiplied.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="71"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="466">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="premultiplied" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="467">whether the data is premultiplied</doc>
+            <type name="gboolean" c:type="gboolean"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_resource"
+              c:identifier="gdk_d3d12_texture_builder_set_resource"
+              glib:set-property="resource"
+              version="4.20"
+              introspectable="0">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="327">Sets the resource that this texture builder is going to construct
+a texture for.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="53"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="329">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="resource" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="330">the resource</doc>
+            <type c:type="ID3D12Resource*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_update_region"
+              c:identifier="gdk_d3d12_texture_builder_set_update_region"
+              glib:set-property="update-region"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="600">Sets the region to be updated by this texture. Together with
+[property@Gdk.D3d12TextureBuilder:update-texture] this describes an
+update of a previous texture.
+
+When rendering animations of large textures, it is possible that
+consecutive textures are only updating contents in parts of the texture.
+It is then possible to describe this update via these two properties,
+so that GTK can avoid rerendering parts that did not change.
+
+An example would be a screen recording where only the mouse pointer moves.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="89"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="602">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="region"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="603">the region to update</doc>
+            <type name="cairo.Region" c:type="cairo_region_t*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <method name="set_update_texture"
+              c:identifier="gdk_d3d12_texture_builder_set_update_texture"
+              glib:set-property="update-texture"
+              version="4.20">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="558">Sets the texture to be updated by this texture. See
+[method@Gdk.D3d12TextureBuilder.set_update_region] for an explanation.</doc>
+        <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                         line="83"/>
+        <return-value transfer-ownership="none">
+          <type name="none" c:type="void"/>
+        </return-value>
+        <parameters>
+          <instance-parameter name="self" transfer-ownership="none">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="560">a `GdkD3D12TextureBuilder`</doc>
+            <type name="D3D12TextureBuilder" c:type="GdkD3D12TextureBuilder*"/>
+          </instance-parameter>
+          <parameter name="texture"
+                     transfer-ownership="none"
+                     nullable="1"
+                     allow-none="1">
+            <doc xml:space="preserve"
+                 filename="gdk/win32/gdkd3d12texturebuilder.c"
+                 line="561">the texture to update</doc>
+            <type name="Gdk.Texture" c:type="GdkTexture*"/>
+          </parameter>
+        </parameters>
+      </method>
+      <property name="color-state"
+                version="4.20"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_color_state"
+                getter="get_color_state">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="200">The color state of the texture.</doc>
+        <type name="Gdk.ColorState"/>
+      </property>
+      <property name="fence"
+                version="4.20"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_fence"
+                getter="get_fence">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="212">The optional `ID3D12Fence` to wait on before using the resource.</doc>
+        <type name="gpointer" c:type="gpointer"/>
+      </property>
+      <property name="fence-wait"
+                version="4.20"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_fence_wait"
+                getter="get_fence_wait"
+                default-value="0">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="223">The value the fence should wait on</doc>
+        <type name="guint64" c:type="guint64"/>
+      </property>
+      <property name="premultiplied"
+                version="4.20"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_premultiplied"
+                getter="get_premultiplied"
+                default-value="TRUE">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="235">Whether the alpha channel is premultiplied into the others.
+
+Only relevant if the format has alpha.</doc>
+        <type name="gboolean" c:type="gboolean"/>
+      </property>
+      <property name="resource"
+                version="4.20"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_resource"
+                getter="get_resource">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="249">The `ID3D12Resource`</doc>
+        <type name="gpointer" c:type="gpointer"/>
+      </property>
+      <property name="update-region"
+                version="4.20"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_update_region"
+                getter="get_update_region">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="260">The update region for [property@Gdk.D3d12TextureBuilder:update-texture].</doc>
+        <type name="cairo.Region"/>
+      </property>
+      <property name="update-texture"
+                version="4.20"
+                writable="1"
+                transfer-ownership="none"
+                setter="set_update_texture"
+                getter="get_update_texture">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texturebuilder.c"
+             line="272">The texture [property@Gdk.D3d12TextureBuilder:update-region] is an update for.</doc>
+        <type name="Gdk.Texture"/>
+      </property>
+    </class>
+    <record name="D3D12TextureBuilderClass"
+            c:type="GdkD3D12TextureBuilderClass"
+            disguised="1"
+            opaque="1"
+            glib:is-gtype-struct-for="D3D12TextureBuilder">
+      <source-position filename="gdk/win32/gdkd3d12texturebuilder.h"
+                       line="43"/>
+    </record>
+    <record name="D3D12TextureClass"
+            c:type="GdkD3D12TextureClass"
+            disguised="1"
+            opaque="1"
+            glib:is-gtype-struct-for="D3D12Texture">
+      <source-position filename="gdk/win32/gdkd3d12texture.h" line="38"/>
+    </record>
+    <function-macro name="D3D12_TEXTURE"
+                    c:identifier="GDK_D3D12_TEXTURE"
+                    introspectable="0">
+      <source-position filename="gdk/win32/gdkd3d12texture.h" line="32"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="IS_D3D12_TEXTURE"
+                    c:identifier="GDK_IS_D3D12_TEXTURE"
+                    introspectable="0">
+      <source-position filename="gdk/win32/gdkd3d12texture.h" line="33"/>
+      <parameters>
+        <parameter name="obj">
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="IS_WIN32_DISPLAY"
                     c:identifier="GDK_IS_WIN32_DISPLAY"
                     introspectable="0">
@@ -97,24 +759,6 @@ and/or use gtk-doc annotations.  -->
       <source-position filename="gdk/win32/gdkwin32monitor.h" line="35"/>
       <parameters>
         <parameter name="object">
-        </parameter>
-      </parameters>
-    </function-macro>
-    <function-macro name="IS_WIN32_SCREEN"
-                    c:identifier="GDK_IS_WIN32_SCREEN"
-                    introspectable="0">
-      <source-position filename="gdk/win32/gdkwin32screen.h" line="38"/>
-      <parameters>
-        <parameter name="object">
-        </parameter>
-      </parameters>
-    </function-macro>
-    <function-macro name="IS_WIN32_SCREEN_CLASS"
-                    c:identifier="GDK_IS_WIN32_SCREEN_CLASS"
-                    introspectable="0">
-      <source-position filename="gdk/win32/gdkwin32screen.h" line="39"/>
-      <parameters>
-        <parameter name="klass">
         </parameter>
       </parameters>
     </function-macro>
@@ -283,33 +927,6 @@ and/or use gtk-doc annotations.  -->
         </parameter>
       </parameters>
     </function-macro>
-    <function-macro name="WIN32_SCREEN"
-                    c:identifier="GDK_WIN32_SCREEN"
-                    introspectable="0">
-      <source-position filename="gdk/win32/gdkwin32screen.h" line="36"/>
-      <parameters>
-        <parameter name="object">
-        </parameter>
-      </parameters>
-    </function-macro>
-    <function-macro name="WIN32_SCREEN_CLASS"
-                    c:identifier="GDK_WIN32_SCREEN_CLASS"
-                    introspectable="0">
-      <source-position filename="gdk/win32/gdkwin32screen.h" line="37"/>
-      <parameters>
-        <parameter name="klass">
-        </parameter>
-      </parameters>
-    </function-macro>
-    <function-macro name="WIN32_SCREEN_GET_CLASS"
-                    c:identifier="GDK_WIN32_SCREEN_GET_CLASS"
-                    introspectable="0">
-      <source-position filename="gdk/win32/gdkwin32screen.h" line="40"/>
-      <parameters>
-        <parameter name="obj">
-        </parameter>
-      </parameters>
-    </function-macro>
     <function-macro name="WIN32_SURFACE"
                     c:identifier="GDK_WIN32_SURFACE"
                     introspectable="0">
@@ -362,19 +979,19 @@ and/or use gtk-doc annotations.  -->
                 c:identifier="gdk_win32_display_get_wgl_version">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkglcontext-win32-wgl.c"
-             line="1252">Retrieves the version of the WGL implementation.</doc>
+             line="1110">Retrieves the version of the WGL implementation.</doc>
         <source-position filename="gdk/win32/gdkwin32glcontext.h" line="42"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdkglcontext-win32-wgl.c"
-               line="1260">%TRUE if WGL is available</doc>
+               line="1118">%TRUE if WGL is available</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkglcontext-win32-wgl.c"
-                 line="1254">a `GdkDisplay`</doc>
+                 line="1112">a `GdkDisplay`</doc>
             <type name="Gdk.Display" c:type="GdkDisplay*"/>
           </parameter>
           <parameter name="major"
@@ -383,7 +1000,7 @@ and/or use gtk-doc annotations.  -->
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkglcontext-win32-wgl.c"
-                 line="1255">return location for the WGL major version</doc>
+                 line="1113">return location for the WGL major version</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
           <parameter name="minor"
@@ -392,7 +1009,7 @@ and/or use gtk-doc annotations.  -->
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkglcontext-win32-wgl.c"
-                 line="1256">return location for the WGL minor version</doc>
+                 line="1114">return location for the WGL minor version</doc>
             <type name="gint" c:type="int*"/>
           </parameter>
         </parameters>
@@ -441,19 +1058,19 @@ doing.</doc>
               version="4.4">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkdisplay-win32.c"
-             line="1307">Retrieves the EGL display connection object for the given GDK display.</doc>
+             line="1359">Retrieves the EGL display connection object for the given GDK display.</doc>
         <source-position filename="gdk/win32/gdkwin32display.h" line="107"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gdk/win32/gdkdisplay-win32.c"
-               line="1313">the EGL display</doc>
+               line="1365">the EGL display</doc>
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkdisplay-win32.c"
-                 line="1309">a Win32 display</doc>
+                 line="1361">a Win32 display</doc>
             <type name="Win32Display" c:type="GdkDisplay*"/>
           </instance-parameter>
         </parameters>
@@ -463,7 +1080,7 @@ doing.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkcursor-win32.c"
-             line="1469">Returns the Win32 HCURSOR wrapper object belonging to a `GdkCursor`,
+             line="1534">Returns the Win32 HCURSOR wrapper object belonging to a `GdkCursor`,
 potentially creating the cursor object.
 
 Be aware that the returned cursor may not be unique to @cursor.
@@ -472,20 +1089,20 @@ It may for example be shared with its fallback cursor.</doc>
         <return-value>
           <doc xml:space="preserve"
                filename="gdk/win32/gdkcursor-win32.c"
-               line="1480">a GdkWin32HCursor</doc>
+               line="1545">a GdkWin32HCursor</doc>
           <type name="Win32HCursor" c:type="GdkWin32HCursor*"/>
         </return-value>
         <parameters>
           <instance-parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkcursor-win32.c"
-                 line="1471">a `GdkDisplay`</doc>
+                 line="1536">a `GdkDisplay`</doc>
             <type name="Win32Display" c:type="GdkWin32Display*"/>
           </instance-parameter>
           <parameter name="cursor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkcursor-win32.c"
-                 line="1472">a `GdkCursor`</doc>
+                 line="1537">a `GdkCursor`</doc>
             <type name="Gdk.Cursor" c:type="GdkCursor*"/>
           </parameter>
         </parameters>
@@ -757,7 +1374,7 @@ if a filter wants a GDK event queued, it should do that itself.</doc>
                 c:identifier="gdk_win32_monitor_get_workarea">
         <doc xml:space="preserve"
              filename="gdk/win32/gdkmonitor-win32.c"
-             line="796">Retrieves the size and position of the “work area” on a monitor
+             line="787">Retrieves the size and position of the “work area” on a monitor
 within the display coordinate space.
 
 The returned geometry is in ”application pixels”, not in ”device pixels”
@@ -770,7 +1387,7 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
           <parameter name="monitor" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkmonitor-win32.c"
-                 line="798">a `GdkMonitor`</doc>
+                 line="789">a `GdkMonitor`</doc>
             <type name="Gdk.Monitor" c:type="GdkMonitor*"/>
           </parameter>
           <parameter name="workarea"
@@ -779,7 +1396,7 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdkmonitor-win32.c"
-                 line="799">a `GdkRectangle` to be filled with the monitor workarea</doc>
+                 line="790">a `GdkRectangle` to be filled with the monitor workarea</doc>
             <type name="Gdk.Rectangle" c:type="GdkRectangle*"/>
           </parameter>
         </parameters>
@@ -791,28 +1408,6 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
             opaque="1"
             glib:is-gtype-struct-for="Win32Monitor">
       <source-position filename="gdk/win32/gdkwin32monitor.h" line="42"/>
-    </record>
-    <class name="Win32Screen"
-           c:symbol-prefix="win32_screen"
-           c:type="GdkWin32Screen"
-           parent="GObject.Object"
-           glib:type-name="GdkWin32Screen"
-           glib:get-type="gdk_win32_screen_get_type"
-           glib:type-struct="Win32ScreenClass">
-      <source-position filename="gdk/win32/gdkwin32screen.h" line="43"/>
-      <property name="display"
-                writable="1"
-                construct-only="1"
-                transfer-ownership="none">
-        <type name="Gdk.Display"/>
-      </property>
-    </class>
-    <record name="Win32ScreenClass"
-            c:type="GdkWin32ScreenClass"
-            disguised="1"
-            opaque="1"
-            glib:is-gtype-struct-for="Win32Screen">
-      <source-position filename="gdk/win32/gdkwin32screen.h" line="43"/>
     </record>
     <class name="Win32Surface"
            c:symbol-prefix="win32_surface"
@@ -831,14 +1426,14 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="2624">the associated @surface HWND handle.</doc>
+               line="2566">the associated @surface HWND handle.</doc>
           <type name="win32.HWND" c:type="HWND"/>
         </return-value>
         <parameters>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="2622">a `GdkSurface`</doc>
+                 line="2564">a `GdkSurface`</doc>
             <type name="Gdk.Surface" c:type="GdkSurface*"/>
           </parameter>
         </parameters>
@@ -852,14 +1447,14 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="2579">%TRUE if the @surface is a win32 implemented surface.</doc>
+               line="2521">%TRUE if the @surface is a win32 implemented surface.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="2577">a `GdkSurface`</doc>
+                 line="2519">a `GdkSurface`</doc>
             <type name="Gdk.Surface" c:type="GdkSurface*"/>
           </parameter>
         </parameters>
@@ -871,20 +1466,20 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
         <return-value nullable="1">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="2564">the %GdkSurface associated with the given @anid, or %NULL.</doc>
+               line="2506">the %GdkSurface associated with the given @anid, or %NULL.</doc>
           <type name="Gdk.Surface" c:type="GdkSurface*"/>
         </return-value>
         <parameters>
           <parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="2561">a %GdkDisplay</doc>
+                 line="2503">a %GdkDisplay</doc>
             <type name="Gdk.Display" c:type="GdkDisplay*"/>
           </parameter>
           <parameter name="anid" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="2562">a HWND window handle</doc>
+                 line="2504">a HWND window handle</doc>
             <type name="win32.HWND" c:type="HWND"/>
           </parameter>
         </parameters>
@@ -892,19 +1487,19 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
       <method name="get_handle" c:identifier="gdk_win32_surface_get_handle">
         <doc xml:space="preserve"
              filename="gdk/win32/gdksurface-win32.c"
-             line="2978">Returns the HWND handle belonging to @surface.</doc>
+             line="2894">Returns the HWND handle belonging to @surface.</doc>
         <source-position filename="gdk/win32/gdkwin32misc.h" line="60"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gdk/win32/gdksurface-win32.c"
-               line="2984">the associated HWND handle.</doc>
+               line="2900">the associated HWND handle.</doc>
           <type name="win32.HWND" c:type="HWND"/>
         </return-value>
         <parameters>
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="2980">a native `GdkSurface`.</doc>
+                 line="2896">a native `GdkSurface`.</doc>
             <type name="Win32Surface" c:type="GdkSurface*"/>
           </instance-parameter>
         </parameters>
@@ -913,7 +1508,7 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
               c:identifier="gdk_win32_surface_set_urgency_hint">
         <doc xml:space="preserve"
              filename="gdk/win32/gdksurface-win32.c"
-             line="1128">Flashes the specified @surface.</doc>
+             line="1132">Flashes the specified @surface.</doc>
         <source-position filename="gdk/win32/gdkwin32surface.h" line="53"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -922,13 +1517,13 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
           <instance-parameter name="surface" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="1130">a native `GdkSurface`.</doc>
+                 line="1134">a native `GdkSurface`.</doc>
             <type name="Win32Surface" c:type="GdkSurface*"/>
           </instance-parameter>
           <parameter name="urgent" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gdk/win32/gdksurface-win32.c"
-                 line="1131">if %TRUE, flashes both the window and the taskbar button
+                 line="1135">if %TRUE, flashes both the window and the taskbar button
          continuously.</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
@@ -951,6 +1546,17 @@ The returned geometry is in ”application pixels”, not in ”device pixels”
         <type name="win32.HCURSOR" c:type="HCURSOR"/>
       </field>
     </record>
+    <function name="d3d12_error_quark" c:identifier="gdk_d3d12_error_quark">
+      <doc xml:space="preserve"
+           filename="gdk/win32/gdkd3d12texture.c"
+           line="65">Registers an error quark for [class@Gdk.Win32.D3d12Texture] errors.</doc>
+      <return-value transfer-ownership="none">
+        <doc xml:space="preserve"
+             filename="gdk/win32/gdkd3d12texture.c"
+             line="70">the error quark</doc>
+        <type name="GLib.Quark" c:type="GQuark"/>
+      </return-value>
+    </function>
     <function name="win32_handle_table_lookup"
               c:identifier="gdk_win32_handle_table_lookup">
       <source-position filename="gdk/win32/gdkwin32misc.h" line="56"/>
