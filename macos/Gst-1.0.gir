@@ -63785,12 +63785,12 @@ Applications can activate streams from a collection by using the
                    version="1.10">
         <doc xml:space="preserve"
              filename="gst/gststreamcollection.c"
-             line="161">Create a new #GstStreamCollection.</doc>
+             line="173">Create a new #GstStreamCollection.</doc>
         <source-position filename="gst/gststreamcollection.h" line="100"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gststreamcollection.c"
-               line="167">The new #GstStreamCollection.</doc>
+               line="179">The new #GstStreamCollection.</doc>
           <type name="StreamCollection" c:type="GstStreamCollection*"/>
         </return-value>
         <parameters>
@@ -63800,7 +63800,7 @@ Applications can activate streams from a collection by using the
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="163">The stream id of the parent stream</doc>
+                 line="175">The stream id of the parent stream</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -63830,25 +63830,25 @@ Applications can activate streams from a collection by using the
               version="1.10">
         <doc xml:space="preserve"
              filename="gst/gststreamcollection.c"
-             line="279">Add the given @stream to the @collection.</doc>
+             line="297">Add the given @stream to the @collection.</doc>
         <source-position filename="gst/gststreamcollection.h" line="112"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gststreamcollection.c"
-               line="286">%TRUE if the @stream was properly added, else %FALSE</doc>
+               line="304">%TRUE if the @stream was properly added, else %FALSE</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="collection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="281">a #GstStreamCollection</doc>
+                 line="299">a #GstStreamCollection</doc>
             <type name="StreamCollection" c:type="GstStreamCollection*"/>
           </instance-parameter>
           <parameter name="stream" transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="282">the #GstStream to add</doc>
+                 line="300">the #GstStream to add</doc>
             <type name="Stream" c:type="GstStream*"/>
           </parameter>
         </parameters>
@@ -63858,19 +63858,19 @@ Applications can activate streams from a collection by using the
               version="1.10">
         <doc xml:space="preserve"
              filename="gst/gststreamcollection.c"
-             line="306">Get the number of streams this collection contains</doc>
+             line="331">Get the number of streams this collection contains</doc>
         <source-position filename="gst/gststreamcollection.h" line="106"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gststreamcollection.c"
-               line="312">The number of streams that @collection contains</doc>
+               line="337">The number of streams that @collection contains</doc>
           <type name="guint" c:type="guint"/>
         </return-value>
         <parameters>
           <instance-parameter name="collection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="308">a #GstStreamCollection</doc>
+                 line="333">a #GstStreamCollection</doc>
             <type name="StreamCollection" c:type="GstStreamCollection*"/>
           </instance-parameter>
         </parameters>
@@ -63880,27 +63880,27 @@ Applications can activate streams from a collection by using the
               version="1.10">
         <doc xml:space="preserve"
              filename="gst/gststreamcollection.c"
-             line="324">Retrieve the #GstStream with index @index from the collection.
+             line="349">Retrieve the #GstStream with index @index from the collection.
 
 The caller should not modify the returned #GstStream</doc>
         <source-position filename="gst/gststreamcollection.h" line="109"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gststreamcollection.c"
-               line="333">A #GstStream</doc>
+               line="358">A #GstStream</doc>
           <type name="Stream" c:type="GstStream*"/>
         </return-value>
         <parameters>
           <instance-parameter name="collection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="326">a #GstStreamCollection</doc>
+                 line="351">a #GstStreamCollection</doc>
             <type name="StreamCollection" c:type="GstStreamCollection*"/>
           </instance-parameter>
           <parameter name="index" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="327">Index of the stream to retrieve</doc>
+                 line="352">Index of the stream to retrieve</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
         </parameters>
@@ -63911,19 +63911,19 @@ The caller should not modify the returned #GstStream</doc>
               version="1.10">
         <doc xml:space="preserve"
              filename="gst/gststreamcollection.c"
-             line="211">Returns the upstream id of the @collection.</doc>
+             line="223">Returns the upstream id of the @collection.</doc>
         <source-position filename="gst/gststreamcollection.h" line="103"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gst/gststreamcollection.c"
-               line="217">The upstream id</doc>
+               line="229">The upstream id</doc>
           <type name="utf8" c:type="const gchar*"/>
         </return-value>
         <parameters>
           <instance-parameter name="collection" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="213">a #GstStreamCollection</doc>
+                 line="225">a #GstStreamCollection</doc>
             <type name="StreamCollection" c:type="GstStreamCollection*"/>
           </instance-parameter>
         </parameters>
@@ -63936,7 +63936,7 @@ The caller should not modify the returned #GstStream</doc>
                 default-value="NULL">
         <doc xml:space="preserve"
              filename="gst/gststreamcollection.c"
-             line="99">stream-id</doc>
+             line="104">stream-id</doc>
         <type name="utf8" c:type="gchar*"/>
       </property>
       <field name="object" readable="0" private="1">
@@ -63961,7 +63961,7 @@ The caller should not modify the returned #GstStream</doc>
                    no-hooks="1">
         <doc xml:space="preserve"
              filename="gst/gststreamcollection.c"
-             line="110">The stream notify signal is used to be notified of property changes to
+             line="115">The stream notify signal is used to be notified of property changes to
 streams within the collection.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -63970,13 +63970,13 @@ streams within the collection.</doc>
           <parameter name="prop_stream" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="113">the #GstStream that originated the signal</doc>
+                 line="118">the #GstStream that originated the signal</doc>
             <type name="Stream"/>
           </parameter>
           <parameter name="prop" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gststreamcollection.c"
-                 line="114">the property that changed</doc>
+                 line="119">the property that changed</doc>
             <type name="GObject.ParamSpec"/>
           </parameter>
         </parameters>
@@ -78140,7 +78140,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="8" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="9" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
