@@ -22985,7 +22985,7 @@ linked against at application run time.</doc>
       <source-position filename="glib/gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="2" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="3" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib/gversion.c"
            line="78">The micro version number of the GLib library.
@@ -53980,14 +53980,14 @@ in @flags.</doc>
                 version="2.6">
         <doc xml:space="preserve"
              filename="glib/gconvert.c"
-             line="1765">Splits an URI list conforming to the text/uri-list
+             line="1779">Splits an URI list conforming to the text/uri-list
 mime type defined in RFC 2483 into individual URIs,
 discarding any comments. The URIs are not validated.</doc>
         <source-position filename="glib/gconvert.h" line="175"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1773">a newly allocated %NULL-terminated list
+               line="1787">a newly allocated %NULL-terminated list
   of strings holding the individual URIs. The array should be freed
   with g_strfreev().</doc>
           <array c:type="gchar**">
@@ -53998,7 +53998,7 @@ discarding any comments. The URIs are not validated.</doc>
           <parameter name="uri_list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gconvert.c"
-                 line="1767">an URI list</doc>
+                 line="1781">an URI list</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -56255,7 +56255,7 @@ If @length is -1 then @strv is %NULL-terminated.</doc>
                    introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gvariant-parser.c"
-             line="2656">Parses @format and returns the result.
+             line="2672">Parses @format and returns the result.
 
 @format must be a text format #GVariant with one extension: at any
 point that a value may appear in the text, a '%' character followed
@@ -56291,20 +56291,20 @@ with "%@".</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2694">a new floating #GVariant instance</doc>
+               line="2710">a new floating #GVariant instance</doc>
           <type name="Variant" c:type="GVariant*"/>
         </return-value>
         <parameters>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2658">a text format #GVariant</doc>
+                 line="2674">a text format #GVariant</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2659">arguments as per @format</doc>
+                 line="2675">arguments as per @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -56314,7 +56314,7 @@ with "%@".</doc>
                    introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gvariant-parser.c"
-             line="2594">Parses @format and returns the result.
+             line="2610">Parses @format and returns the result.
 
 This is the version of g_variant_new_parsed() intended to be used
 from libraries.
@@ -56339,20 +56339,20 @@ or by passing it to another g_variant_new() call.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2621">a new, usually floating, #GVariant</doc>
+               line="2637">a new, usually floating, #GVariant</doc>
           <type name="Variant" c:type="GVariant*"/>
         </return-value>
         <parameters>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2596">a text format #GVariant</doc>
+                 line="2612">a text format #GVariant</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="app" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2597">a pointer to a #va_list</doc>
+                 line="2613">a pointer to a #va_list</doc>
             <type name="va_list" c:type="va_list*"/>
           </parameter>
         </parameters>
@@ -58691,7 +58691,7 @@ strings in sequence.</doc>
       <function name="parse" c:identifier="g_variant_parse" throws="1">
         <doc xml:space="preserve"
              filename="glib/gvariant-parser.c"
-             line="2489">Parses a #GVariant from a text representation.
+             line="2505">Parses a #GVariant from a text representation.
 
 A single #GVariant is parsed from the content of @text.
 
@@ -58731,7 +58731,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2534">a non-floating reference to a #GVariant, or %NULL</doc>
+               line="2550">a non-floating reference to a #GVariant, or %NULL</doc>
           <type name="Variant" c:type="GVariant*"/>
         </return-value>
         <parameters>
@@ -58741,13 +58741,13 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2491">a #GVariantType, or %NULL</doc>
+                 line="2507">a #GVariantType, or %NULL</doc>
             <type name="VariantType" c:type="const GVariantType*"/>
           </parameter>
           <parameter name="text" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2492">a string containing a GVariant in text form</doc>
+                 line="2508">a string containing a GVariant in text form</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="limit"
@@ -58756,7 +58756,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2493">a pointer to the end of @text, or %NULL</doc>
+                 line="2509">a pointer to the end of @text, or %NULL</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="endptr"
@@ -58765,7 +58765,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2494">a location to store the end pointer, or %NULL</doc>
+                 line="2510">a location to store the end pointer, or %NULL</doc>
             <type name="utf8" c:type="const gchar**"/>
           </parameter>
         </parameters>
@@ -58775,7 +58775,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
                 version="2.40">
         <doc xml:space="preserve"
              filename="glib/gvariant-parser.c"
-             line="2858">Pretty-prints a message showing the context of a #GVariant parse
+             line="2876">Pretty-prints a message showing the context of a #GVariant parse
 error within the string for which parsing was attempted.
 
 The resulting string is suitable for output to the console or other
@@ -58808,20 +58808,20 @@ function.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2893">the printed message</doc>
+               line="2911">the printed message</doc>
           <type name="utf8" c:type="gchar*"/>
         </return-value>
         <parameters>
           <parameter name="error" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2860">a #GError from the #GVariantParseError domain</doc>
+                 line="2878">a #GError from the #GVariantParseError domain</doc>
             <type name="Error" c:type="GError*"/>
           </parameter>
           <parameter name="source_str" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2861">the string that was given to the parser</doc>
+                 line="2879">the string that was given to the parser</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -58978,7 +58978,7 @@ make_pointless_dictionary (void)
               introspectable="0">
         <doc xml:space="preserve"
              filename="glib/gvariant-parser.c"
-             line="2710">Adds to a #GVariantBuilder.
+             line="2726">Adds to a #GVariantBuilder.
 
 This call is a convenience wrapper that is exactly equivalent to
 calling g_variant_new_parsed() followed by
@@ -59012,19 +59012,19 @@ make_pointless_dictionary (void)
           <instance-parameter name="builder" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2712">a #GVariantBuilder</doc>
+                 line="2728">a #GVariantBuilder</doc>
             <type name="VariantBuilder" c:type="GVariantBuilder*"/>
           </instance-parameter>
           <parameter name="format" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2713">a text format #GVariant</doc>
+                 line="2729">a text format #GVariant</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
           <parameter name="..." transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-parser.c"
-                 line="2714">arguments as per @format</doc>
+                 line="2730">arguments as per @format</doc>
             <varargs/>
           </parameter>
         </parameters>
@@ -70362,7 +70362,7 @@ extensions and those listed in the `PATHEXT` environment variable.</doc>
               version="2.6">
       <doc xml:space="preserve"
            filename="glib/gconvert.c"
-           line="1827">Returns the display basename for the particular filename, guaranteed
+           line="1841">Returns the display basename for the particular filename, guaranteed
 to be valid UTF-8. The display name might not be identical to the filename,
 for instance there might be problems converting it to UTF-8, and some files
 can be translated in the display.
@@ -70382,7 +70382,7 @@ whole path, as it allows translation.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gconvert.c"
-             line="1849">a newly allocated string containing
+             line="1863">a newly allocated string containing
   a rendition of the basename of the filename in valid UTF-8</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -70390,7 +70390,7 @@ whole path, as it allows translation.</doc>
         <parameter name="filename" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1829">an absolute pathname in the
+               line="1843">an absolute pathname in the
     GLib file name encoding</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
@@ -70401,7 +70401,7 @@ whole path, as it allows translation.</doc>
               version="2.6">
       <doc xml:space="preserve"
            filename="glib/gconvert.c"
-           line="1868">Converts a filename into a valid UTF-8 string. The conversion is
+           line="1882">Converts a filename into a valid UTF-8 string. The conversion is
 not necessarily reversible, so you should keep the original around
 and use the return value of this function only for display purposes.
 Unlike g_filename_to_utf8(), the result is guaranteed to be non-%NULL
@@ -70420,7 +70420,7 @@ translation of filenames.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gconvert.c"
-             line="1889">a newly allocated string containing
+             line="1903">a newly allocated string containing
   a rendition of the filename in valid UTF-8</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -70428,7 +70428,7 @@ translation of filenames.</doc>
         <parameter name="filename" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1870">a pathname hopefully in the
+               line="1884">a pathname hopefully in the
     GLib file name encoding</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
@@ -70439,7 +70439,7 @@ translation of filenames.</doc>
               throws="1">
       <doc xml:space="preserve"
            filename="glib/gconvert.c"
-           line="1563">Converts an escaped ASCII-encoded URI to a local filename in the
+           line="1577">Converts an escaped ASCII-encoded URI to a local filename in the
 encoding used for filenames.
 
 Since GLib 2.78, the query string and fragment can be present in the URI,
@@ -70450,7 +70450,7 @@ but we don't support the entire standard.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gconvert.c"
-             line="1580">a newly-allocated string holding
+             line="1594">a newly-allocated string holding
               the resulting filename, or %NULL on an error.</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
@@ -70458,7 +70458,7 @@ but we don't support the entire standard.</doc>
         <parameter name="uri" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1565">a uri describing a filename (escaped, encoded in ASCII).</doc>
+               line="1579">a uri describing a filename (escaped, encoded in ASCII).</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="hostname"
@@ -70470,7 +70470,7 @@ but we don't support the entire standard.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1566">Location to store hostname for the URI.
+               line="1580">Location to store hostname for the URI.
            If there is no hostname in the URI, %NULL will be
            stored in this location.</doc>
           <type name="utf8" c:type="gchar**"/>
@@ -70551,13 +70551,13 @@ not UTF-8 and the conversion output contains a nul character, the error
               throws="1">
       <doc xml:space="preserve"
            filename="glib/gconvert.c"
-           line="1713">Converts an absolute filename to an escaped ASCII-encoded URI, with the path
+           line="1727">Converts an absolute filename to an escaped ASCII-encoded URI, with the path
 component following Section 3.3. of RFC 2396.</doc>
       <source-position filename="glib/gconvert.h" line="163"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gconvert.c"
-             line="1725">a newly-allocated string holding the resulting
+             line="1739">a newly-allocated string holding the resulting
               URI, or %NULL on an error.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -70565,7 +70565,7 @@ component following Section 3.3. of RFC 2396.</doc>
         <parameter name="filename" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1715">an absolute filename specified in the GLib file
+               line="1729">an absolute filename specified in the GLib file
     name encoding, which is the on-disk file name bytes on Unix, and UTF-8
     on Windows</doc>
           <type name="filename" c:type="const gchar*"/>
@@ -70576,7 +70576,7 @@ component following Section 3.3. of RFC 2396.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1718">A UTF-8 encoded hostname, or %NULL for none.</doc>
+               line="1732">A UTF-8 encoded hostname, or %NULL for none.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -90566,14 +90566,14 @@ in @flags.</doc>
               version="2.6">
       <doc xml:space="preserve"
            filename="glib/gconvert.c"
-           line="1765">Splits an URI list conforming to the text/uri-list
+           line="1779">Splits an URI list conforming to the text/uri-list
 mime type defined in RFC 2483 into individual URIs,
 discarding any comments. The URIs are not validated.</doc>
       <source-position filename="glib/gconvert.h" line="175"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gconvert.c"
-             line="1773">a newly allocated %NULL-terminated list
+             line="1787">a newly allocated %NULL-terminated list
   of strings holding the individual URIs. The array should be freed
   with g_strfreev().</doc>
         <array c:type="gchar**">
@@ -90584,7 +90584,7 @@ discarding any comments. The URIs are not validated.</doc>
         <parameter name="uri_list" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gconvert.c"
-               line="1767">an URI list</doc>
+               line="1781">an URI list</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -92717,7 +92717,7 @@ strings in sequence.</doc>
               throws="1">
       <doc xml:space="preserve"
            filename="glib/gvariant-parser.c"
-           line="2489">Parses a #GVariant from a text representation.
+           line="2505">Parses a #GVariant from a text representation.
 
 A single #GVariant is parsed from the content of @text.
 
@@ -92757,7 +92757,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gvariant-parser.c"
-             line="2534">a non-floating reference to a #GVariant, or %NULL</doc>
+             line="2550">a non-floating reference to a #GVariant, or %NULL</doc>
         <type name="Variant" c:type="GVariant*"/>
       </return-value>
       <parameters>
@@ -92767,13 +92767,13 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2491">a #GVariantType, or %NULL</doc>
+               line="2507">a #GVariantType, or %NULL</doc>
           <type name="VariantType" c:type="const GVariantType*"/>
         </parameter>
         <parameter name="text" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2492">a string containing a GVariant in text form</doc>
+               line="2508">a string containing a GVariant in text form</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="limit"
@@ -92782,7 +92782,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2493">a pointer to the end of @text, or %NULL</doc>
+               line="2509">a pointer to the end of @text, or %NULL</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="endptr"
@@ -92791,7 +92791,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2494">a location to store the end pointer, or %NULL</doc>
+               line="2510">a location to store the end pointer, or %NULL</doc>
           <type name="utf8" c:type="const gchar**"/>
         </parameter>
       </parameters>
@@ -92802,7 +92802,7 @@ guaranteed to handle nesting up to at least 64 levels.</doc>
               version="2.40">
       <doc xml:space="preserve"
            filename="glib/gvariant-parser.c"
-           line="2858">Pretty-prints a message showing the context of a #GVariant parse
+           line="2876">Pretty-prints a message showing the context of a #GVariant parse
 error within the string for which parsing was attempted.
 
 The resulting string is suitable for output to the console or other
@@ -92835,20 +92835,20 @@ function.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gvariant-parser.c"
-             line="2893">the printed message</doc>
+             line="2911">the printed message</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
       <parameters>
         <parameter name="error" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2860">a #GError from the #GVariantParseError domain</doc>
+               line="2878">a #GError from the #GVariantParseError domain</doc>
           <type name="Error" c:type="GError*"/>
         </parameter>
         <parameter name="source_str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gvariant-parser.c"
-               line="2861">the string that was given to the parser</doc>
+               line="2879">the string that was given to the parser</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
