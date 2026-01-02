@@ -51244,7 +51244,7 @@ MT safe.</doc>
       <method name="auto_clock" c:identifier="gst_pipeline_auto_clock">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="919">Let @pipeline select a clock automatically. This is the default
+             line="910">Let @pipeline select a clock automatically. This is the default
 behaviour.
 
 Use this function if you previous forced a fixed clock with
@@ -51260,7 +51260,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="921">a #GstPipeline</doc>
+                 line="912">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51270,13 +51270,13 @@ MT safe.</doc>
               glib:get-property="auto-flush-bus">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="1032">Check if @pipeline will automatically flush messages when going to
+             line="1023">Check if @pipeline will automatically flush messages when going to
 the NULL state.</doc>
         <source-position filename="gst/gstpipeline.h" line="131"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="1039">whether the pipeline will automatically flush its bus when
+               line="1030">whether the pipeline will automatically flush its bus when
 going from READY to NULL state or not.
 
 MT safe.</doc>
@@ -51286,7 +51286,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1034">a #GstPipeline</doc>
+                 line="1025">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51294,13 +51294,13 @@ MT safe.</doc>
       <method name="get_bus" c:identifier="gst_pipeline_get_bus">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="769">Gets the #GstBus of @pipeline. The bus allows applications to receive
+             line="760">Gets the #GstBus of @pipeline. The bus allows applications to receive
 #GstMessage packets.</doc>
         <source-position filename="gst/gstpipeline.h" line="98"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="776">a #GstBus, unref after usage.
+               line="767">a #GstBus, unref after usage.
 
 MT safe.</doc>
           <type name="Bus" c:type="GstBus*"/>
@@ -51309,7 +51309,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="771">a #GstPipeline</doc>
+                 line="762">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51319,7 +51319,7 @@ MT safe.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="822">Gets the current clock used by @pipeline. Users of object
+             line="813">Gets the current clock used by @pipeline. Users of object
 oriented languages should use gst_pipeline_get_pipeline_clock()
 to avoid confusion with gst_element_get_clock() which has a different behavior.
 
@@ -51329,14 +51329,14 @@ clock, even if the pipeline is not in the PLAYING state.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="833">a #GstClock, unref after usage.</doc>
+               line="824">a #GstClock, unref after usage.</doc>
           <type name="Clock" c:type="GstClock*"/>
         </return-value>
         <parameters>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="824">a #GstPipeline</doc>
+                 line="815">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51346,12 +51346,12 @@ clock, even if the pipeline is not in the PLAYING state.</doc>
               version="1.24">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="1224">Return the configured latency on @pipeline.</doc>
+             line="1215">Return the configured latency on @pipeline.</doc>
         <source-position filename="gst/gstpipeline.h" line="137"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="1230">@pipeline configured latency, or %GST_CLOCK_TIME_NONE if none has been configured
+               line="1221">@pipeline configured latency, or %GST_CLOCK_TIME_NONE if none has been configured
 because @pipeline did not reach the PLAYING state yet.
 
 MT safe.</doc>
@@ -51361,7 +51361,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1226">a #GstPipeline</doc>
+                 line="1217">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51371,12 +51371,12 @@ MT safe.</doc>
               glib:get-property="delay">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="977">Get the configured delay (see gst_pipeline_set_delay()).</doc>
+             line="968">Get the configured delay (see gst_pipeline_set_delay()).</doc>
         <source-position filename="gst/gstpipeline.h" line="119"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="983">The configured delay.
+               line="974">The configured delay.
 
 MT safe.</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
@@ -51385,7 +51385,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="979">a #GstPipeline</doc>
+                 line="970">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51396,20 +51396,20 @@ MT safe.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="1089">Gets the latency that should be configured on the pipeline. See
+             line="1080">Gets the latency that should be configured on the pipeline. See
 gst_pipeline_set_latency().</doc>
         <source-position filename="gst/gstpipeline.h" line="125"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="1096">Latency to configure on the pipeline or GST_CLOCK_TIME_NONE</doc>
+               line="1087">Latency to configure on the pipeline or GST_CLOCK_TIME_NONE</doc>
           <type name="ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1091">a #GstPipeline</doc>
+                 line="1082">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51419,7 +51419,7 @@ gst_pipeline_set_latency().</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="841">Gets the current clock used by @pipeline.
+             line="832">Gets the current clock used by @pipeline.
 
 Unlike gst_element_get_clock(), this function will always return a
 clock, even if the pipeline is not in the PLAYING state.</doc>
@@ -51427,14 +51427,14 @@ clock, even if the pipeline is not in the PLAYING state.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="850">a #GstClock, unref after usage.</doc>
+               line="841">a #GstClock, unref after usage.</doc>
           <type name="Clock" c:type="GstClock*"/>
         </return-value>
         <parameters>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="843">a #GstPipeline</doc>
+                 line="834">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51444,12 +51444,12 @@ clock, even if the pipeline is not in the PLAYING state.</doc>
               version="1.24">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="1200">Check if @pipeline is live.</doc>
+             line="1191">Check if @pipeline is live.</doc>
         <source-position filename="gst/gstpipeline.h" line="134"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="1206">%TRUE if @pipeline is live, %FALSE if not or if it did not reach the PAUSED state yet.
+               line="1197">%TRUE if @pipeline is live, %FALSE if not or if it did not reach the PAUSED state yet.
 
 MT safe.</doc>
           <type name="gboolean" c:type="gboolean"/>
@@ -51458,7 +51458,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1202">a #GstPipeline</doc>
+                 line="1193">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
         </parameters>
@@ -51468,7 +51468,7 @@ MT safe.</doc>
               glib:set-property="auto-flush-bus">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="1001">Usually, when a pipeline goes from READY to NULL state, it automatically
+             line="992">Usually, when a pipeline goes from READY to NULL state, it automatically
 flushes all pending messages on the bus, which is done for refcounting
 purposes, to break circular references.
 
@@ -51490,13 +51490,13 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1003">a #GstPipeline</doc>
+                 line="994">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
           <parameter name="auto_flush" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1004">whether or not to automatically flush the bus when
+                 line="995">whether or not to automatically flush the bus when
 the pipeline goes from READY to NULL state</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
@@ -51507,13 +51507,13 @@ the pipeline goes from READY to NULL state</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="895">Set the clock for @pipeline. The clock will be distributed
+             line="886">Set the clock for @pipeline. The clock will be distributed
 to all the elements managed by the pipeline.</doc>
         <source-position filename="gst/gstpipeline.h" line="104"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gst/gstpipeline.c"
-               line="903">%TRUE if the clock could be set on the pipeline. %FALSE if
+               line="894">%TRUE if the clock could be set on the pipeline. %FALSE if
   some element did not accept the clock.
 
 MT safe.</doc>
@@ -51523,7 +51523,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="897">a #GstPipeline</doc>
+                 line="888">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
           <parameter name="clock"
@@ -51532,7 +51532,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="898">the clock to set</doc>
+                 line="889">the clock to set</doc>
             <type name="Clock" c:type="GstClock*"/>
           </parameter>
         </parameters>
@@ -51542,7 +51542,7 @@ MT safe.</doc>
               glib:set-property="delay">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="950">Set the expected delay needed for all elements to perform the
+             line="941">Set the expected delay needed for all elements to perform the
 PAUSED to PLAYING state change. @delay will be added to the
 base time of the elements so that they wait an additional @delay
 amount of time before starting to process buffers and cannot be
@@ -51560,13 +51560,13 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="952">a #GstPipeline</doc>
+                 line="943">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
           <parameter name="delay" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="953">the delay</doc>
+                 line="944">the delay</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -51577,7 +51577,7 @@ MT safe.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="1058">Sets the latency that should be configured on the pipeline. Setting
+             line="1049">Sets the latency that should be configured on the pipeline. Setting
 GST_CLOCK_TIME_NONE will restore the default behaviour of using the minimum
 latency from the LATENCY query. Setting this is usually not required and
 the pipeline will figure out an appropriate latency automatically.
@@ -51592,13 +51592,13 @@ the LATENCY query, will most likely cause the pipeline to fail.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1060">a #GstPipeline</doc>
+                 line="1051">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
           <parameter name="latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="1061">latency to configure</doc>
+                 line="1052">latency to configure</doc>
             <type name="ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -51606,7 +51606,7 @@ the LATENCY query, will most likely cause the pipeline to fail.</doc>
       <method name="use_clock" c:identifier="gst_pipeline_use_clock">
         <doc xml:space="preserve"
              filename="gst/gstpipeline.c"
-             line="863">Force @pipeline to use the given @clock. The pipeline will
+             line="854">Force @pipeline to use the given @clock. The pipeline will
 always use the given clock even if new clock providers are added
 to this pipeline.
 
@@ -51622,7 +51622,7 @@ MT safe.</doc>
           <instance-parameter name="pipeline" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="865">a #GstPipeline</doc>
+                 line="856">a #GstPipeline</doc>
             <type name="Pipeline" c:type="GstPipeline*"/>
           </instance-parameter>
           <parameter name="clock"
@@ -51631,7 +51631,7 @@ MT safe.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gst/gstpipeline.c"
-                 line="866">the clock to use</doc>
+                 line="857">the clock to use</doc>
             <type name="Clock" c:type="GstClock*"/>
           </parameter>
         </parameters>
@@ -78080,7 +78080,7 @@ determine a order for the two provided values.</doc>
       <source-position filename="gst/gstversion.h" line="51"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="VERSION_MICRO" value="9" c:type="GST_VERSION_MICRO">
+    <constant name="VERSION_MICRO" value="10" c:type="GST_VERSION_MICRO">
       <doc xml:space="preserve"
            filename="gst/gstversion.h"
            line="58">The micro version of GStreamer at compile time:</doc>
