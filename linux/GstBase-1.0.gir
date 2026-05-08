@@ -1958,7 +1958,7 @@ sent before pushing the buffer.</doc>
       <method name="get_allocator" c:identifier="gst_aggregator_get_allocator">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3989">Lets #GstAggregator sub-classes get the memory @allocator
+             line="3996">Lets #GstAggregator sub-classes get the memory @allocator
 acquired by the base class and its @params.
 
 Unref the @allocator after use it.</doc>
@@ -1970,7 +1970,7 @@ Unref the @allocator after use it.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3991">a #GstAggregator</doc>
+                 line="3998">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="allocator"
@@ -1982,7 +1982,7 @@ Unref the @allocator after use it.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3992">the #GstAllocator
+                 line="3999">the #GstAllocator
 used</doc>
             <type name="Gst.Allocator" c:type="GstAllocator**"/>
           </parameter>
@@ -1994,7 +1994,7 @@ used</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3994">the
+                 line="4001">the
 #GstAllocationParams of @allocator</doc>
             <type name="Gst.AllocationParams" c:type="GstAllocationParams*"/>
           </parameter>
@@ -2006,7 +2006,7 @@ used</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3970">the instance of the #GstBufferPool used
+               line="3977">the instance of the #GstBufferPool used
 by @trans; free it after use it</doc>
           <type name="Gst.BufferPool" c:type="GstBufferPool*"/>
         </return-value>
@@ -2014,7 +2014,7 @@ by @trans; free it after use it</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3968">a #GstAggregator</doc>
+                 line="3975">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -2024,13 +2024,13 @@ by @trans; free it after use it</doc>
               version="1.22">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="4167">Subclasses may use the return value to inform whether they should return
+             line="4174">Subclasses may use the return value to inform whether they should return
 %GST_FLOW_EOS from their aggregate implementation.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="442"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="4173">whether live status was forced on @self.</doc>
+               line="4180">whether live status was forced on @self.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -2046,7 +2046,7 @@ by @trans; free it after use it</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="4150">whether inactive pads will not be waited on</doc>
+               line="4157">whether inactive pads will not be waited on</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
@@ -2060,7 +2060,7 @@ by @trans; free it after use it</doc>
               glib:get-property="latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="2441">Retrieves the latency values reported by @self in response to the latency
+             line="2448">Retrieves the latency values reported by @self in response to the latency
 query, or %GST_CLOCK_TIME_NONE if there is not live source connected and the element
 will not wait for the clock.
 
@@ -2069,14 +2069,14 @@ Typically only called by subclasses.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="2451">The latency or %GST_CLOCK_TIME_NONE if the element does not sync</doc>
+               line="2458">The latency or %GST_CLOCK_TIME_NONE if the element does not sync</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="2443">a #GstAggregator</doc>
+                 line="2450">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -2168,7 +2168,7 @@ Specific API like gst_aggregator_set_src_caps() should be used for these.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="4088">Subclasses should call this when they have prepared the
+             line="4095">Subclasses should call this when they have prepared the
 buffers they will aggregate for each of their sink pads, but
 before using any of the properties of the pads that govern
 *how* aggregation should be performed, for example z-index
@@ -2190,19 +2190,19 @@ function.</doc>
           <parameter name="pts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="4090">The presentation timestamp of the next output buffer</doc>
+                 line="4097">The presentation timestamp of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="dts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="4091">The decoding timestamp of the next output buffer</doc>
+                 line="4098">The decoding timestamp of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="4092">The duration of the next output buffer</doc>
+                 line="4099">The duration of the next output buffer</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="info"
@@ -2211,7 +2211,7 @@ function.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="4093">a #GstStructure containing additional information</doc>
+                 line="4100">a #GstStructure containing additional information</doc>
             <type name="Gst.Structure" c:type="GstStructure*"/>
           </parameter>
         </parameters>
@@ -2221,7 +2221,7 @@ function.</doc>
               version="1.22">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="4183">Subclasses should call this at construction time in order for @self to
+             line="4190">Subclasses should call this at construction time in order for @self to
 aggregate on a timeout even when no live source is connected.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="445"/>
         <return-value transfer-ownership="none">
@@ -2241,7 +2241,7 @@ aggregate on a timeout even when no live source is connected.</doc>
               version="1.20">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="4124">Subclasses should call this when they don't want to time out
+             line="4131">Subclasses should call this when they don't want to time out
 waiting for a pad that hasn't yet received any buffers in live
 mode.
 
@@ -2258,7 +2258,7 @@ sure upstream has had a fair chance to start up.</doc>
           <parameter name="ignore" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="4126">whether inactive pads should not be waited on</doc>
+                 line="4133">whether inactive pads should not be waited on</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -2268,7 +2268,7 @@ sure upstream has had a fair chance to start up.</doc>
               glib:set-property="latency">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3922">Lets #GstAggregator sub-classes tell the baseclass what their internal
+             line="3929">Lets #GstAggregator sub-classes tell the baseclass what their internal
 latency is. Will also post a LATENCY message on the bus so the pipeline
 can reconfigure its global latency if the values changed.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="398"/>
@@ -2279,19 +2279,19 @@ can reconfigure its global latency if the values changed.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3924">a #GstAggregator</doc>
+                 line="3931">a #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
           <parameter name="min_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3925">minimum latency</doc>
+                 line="3932">minimum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
           <parameter name="max_latency" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3926">maximum latency</doc>
+                 line="3933">maximum latency</doc>
             <type name="Gst.ClockTime" c:type="GstClockTime"/>
           </parameter>
         </parameters>
@@ -2324,7 +2324,7 @@ can reconfigure its global latency if the values changed.</doc>
               version="1.16">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="4016">This is a simple #GstAggregatorClass::get_next_time implementation that
+             line="4023">This is a simple #GstAggregatorClass::get_next_time implementation that
 just looks at the #GstSegment on the srcpad of the aggregator and bases
 the next time on the running time there.
 
@@ -2334,14 +2334,14 @@ and you have a dead line based aggregator subclass.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="4027">The running time based on the position</doc>
+               line="4034">The running time based on the position</doc>
           <type name="Gst.ClockTime" c:type="GstClockTime"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="4018">A #GstAggregator</doc>
+                 line="4025">A #GstAggregator</doc>
             <type name="Aggregator" c:type="GstAggregator*"/>
           </instance-parameter>
         </parameters>
@@ -2351,7 +2351,7 @@ and you have a dead line based aggregator subclass.</doc>
               version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="4058">Subclasses should use this to update the segment on their
+             line="4065">Subclasses should use this to update the segment on their
 source pad, instead of directly pushing new segment events
 downstream.
 
@@ -2377,7 +2377,7 @@ if it is used at all.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3116">Enables the emission of signals such as #GstAggregator::samples-selected</doc>
+             line="3123">Enables the emission of signals such as #GstAggregator::samples-selected</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="latency"
@@ -2395,7 +2395,7 @@ if it is used at all.</doc>
                 default-value="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3082">Force minimum upstream latency (in nanoseconds). When sources with a
+             line="3089">Force minimum upstream latency (in nanoseconds). When sources with a
 higher latency are expected to be plugged in dynamically after the
 aggregator has started playing, this allows overriding the minimum
 latency reported by the initial source(s). This is only taken into
@@ -2434,7 +2434,7 @@ account when larger than the actually reported minimum latency.</doc>
       <glib:signal name="samples-selected" when="first" version="1.18">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3128">Signals that the #GstAggregator subclass has selected the next set
+             line="3135">Signals that the #GstAggregator subclass has selected the next set
 of input samples it will aggregate. Handlers may call
 gst_aggregator_peek_next_sample() at that point.</doc>
         <return-value transfer-ownership="none">
@@ -2444,25 +2444,25 @@ gst_aggregator_peek_next_sample() at that point.</doc>
           <parameter name="segment" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3131">The #GstSegment the next output buffer is part of</doc>
+                 line="3138">The #GstSegment the next output buffer is part of</doc>
             <type name="Gst.Segment"/>
           </parameter>
           <parameter name="pts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3132">The presentation timestamp of the next output buffer</doc>
+                 line="3139">The presentation timestamp of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="dts" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3133">The decoding timestamp of the next output buffer</doc>
+                 line="3140">The decoding timestamp of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="duration" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3134">The duration of the next output buffer</doc>
+                 line="3141">The duration of the next output buffer</doc>
             <type name="guint64" c:type="guint64"/>
           </parameter>
           <parameter name="info"
@@ -2471,7 +2471,7 @@ gst_aggregator_peek_next_sample() at that point.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3135">a #GstStructure containing additional information</doc>
+                 line="3142">a #GstStructure containing additional information</doc>
             <type name="Gst.Structure"/>
           </parameter>
         </parameters>
@@ -3126,19 +3126,19 @@ This class used to live in gst-plugins-bad and was moved to core.</doc>
       <method name="drop_buffer" c:identifier="gst_aggregator_pad_drop_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3783">Drop the buffer currently queued in @pad.</doc>
+             line="3790">Drop the buffer currently queued in @pad.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="116"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3789">TRUE if there was a buffer queued in @pad, or FALSE if not.</doc>
+               line="3796">TRUE if there was a buffer queued in @pad, or FALSE if not.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3785">the pad where to drop any pending buffer</doc>
+                 line="3792">the pad where to drop any pending buffer</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -3148,21 +3148,21 @@ This class used to live in gst-plugins-bad and was moved to core.</doc>
               version="1.14.1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3842">This checks if a pad has a buffer available that will be returned by
+             line="3849">This checks if a pad has a buffer available that will be returned by
 a call to gst_aggregator_pad_peek_buffer() or
 gst_aggregator_pad_pop_buffer().</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="119"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3850">%TRUE if the pad has a buffer available as the next thing.</doc>
+               line="3857">%TRUE if the pad has a buffer available as the next thing.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3844">the pad to check the buffer on</doc>
+                 line="3851">the pad to check the buffer on</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -3172,14 +3172,14 @@ gst_aggregator_pad_pop_buffer().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3878">%TRUE if the pad is EOS, otherwise %FALSE.</doc>
+               line="3885">%TRUE if the pad is EOS, otherwise %FALSE.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3876">an aggregator pad</doc>
+                 line="3883">an aggregator pad</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -3189,12 +3189,12 @@ gst_aggregator_pad_pop_buffer().</doc>
               version="1.20">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3892">It is only valid to call this method from #GstAggregatorClass::aggregate()</doc>
+             line="3899">It is only valid to call this method from #GstAggregatorClass::aggregate()</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="125"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3898">%TRUE if the pad is inactive, %FALSE otherwise.
+               line="3905">%TRUE if the pad is inactive, %FALSE otherwise.
   See gst_aggregator_ignore_inactive_pads() for more info.</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
@@ -3202,7 +3202,7 @@ gst_aggregator_pad_pop_buffer().</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3894">an aggregator pad</doc>
+                 line="3901">an aggregator pad</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -3212,7 +3212,7 @@ gst_aggregator_pad_pop_buffer().</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3809">A reference to the buffer in @pad or
+               line="3816">A reference to the buffer in @pad or
 NULL if no buffer was queued. You should unref the buffer after
 usage.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
@@ -3221,7 +3221,7 @@ usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3807">the pad to get buffer from</doc>
+                 line="3814">the pad to get buffer from</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -3229,12 +3229,12 @@ usage.</doc>
       <method name="pop_buffer" c:identifier="gst_aggregator_pad_pop_buffer">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3725">Steal the ref to the buffer currently queued in @pad.</doc>
+             line="3732">Steal the ref to the buffer currently queued in @pad.</doc>
         <source-position filename="libs/gst/base/gstaggregator.h" line="110"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gstaggregator.c"
-               line="3731">The buffer in @pad or NULL if no buffer was
+               line="3738">The buffer in @pad or NULL if no buffer was
   queued. You should unref the buffer after usage.</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </return-value>
@@ -3242,7 +3242,7 @@ usage.</doc>
           <instance-parameter name="pad" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gstaggregator.c"
-                 line="3727">the pad to get buffer from</doc>
+                 line="3734">the pad to get buffer from</doc>
             <type name="AggregatorPad" c:type="GstAggregatorPad*"/>
           </instance-parameter>
         </parameters>
@@ -3254,7 +3254,7 @@ usage.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="libs/gst/base/gstaggregator.c"
-             line="3636">Enables the emission of signals such as #GstAggregatorPad::buffer-consumed</doc>
+             line="3643">Enables the emission of signals such as #GstAggregatorPad::buffer-consumed</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <field name="parent">
@@ -19260,7 +19260,7 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
             version="1.22">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="501">The opaque #GstTypeFindData structure.</doc>
+           line="502">The opaque #GstTypeFindData structure.</doc>
       <source-position filename="libs/gst/base/gsttypefindhelper.h" line="32"/>
       <method name="free"
               c:identifier="gst_type_find_data_free"
@@ -19275,7 +19275,7 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
           <instance-parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gsttypefindhelper.c"
-                 line="1149">GstTypeFindData * to free</doc>
+                 line="1150">GstTypeFindData * to free</doc>
             <type name="TypeFindData" c:type="GstTypeFindData*"/>
           </instance-parameter>
         </parameters>
@@ -19286,20 +19286,20 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="1090">Returns #GstCaps associated with #GstTypeFindData</doc>
+             line="1091">Returns #GstCaps associated with #GstTypeFindData</doc>
         <source-position filename="libs/gst/base/gsttypefindhelper.h"
                          line="36"/>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="1096">#GstCaps.</doc>
+               line="1097">#GstCaps.</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </return-value>
         <parameters>
           <instance-parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gsttypefindhelper.c"
-                 line="1092">GstTypeFindData *</doc>
+                 line="1093">GstTypeFindData *</doc>
             <type name="TypeFindData" c:type="GstTypeFindData*"/>
           </instance-parameter>
         </parameters>
@@ -19310,13 +19310,13 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="1109">Returns #GstTypeFindProbability associated with #GstTypeFindData</doc>
+             line="1110">Returns #GstTypeFindProbability associated with #GstTypeFindData</doc>
         <source-position filename="libs/gst/base/gsttypefindhelper.h"
                          line="37"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="1115">#GstTypeFindProbability.</doc>
+               line="1116">#GstTypeFindProbability.</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability"/>
         </return-value>
@@ -19324,7 +19324,7 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
           <instance-parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gsttypefindhelper.c"
-                 line="1111">GstTypeFindData *</doc>
+                 line="1112">GstTypeFindData *</doc>
             <type name="TypeFindData" c:type="GstTypeFindData*"/>
           </instance-parameter>
         </parameters>
@@ -19335,20 +19335,20 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
               introspectable="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="1128">Returns #GstTypeFind associated with #GstTypeFindData</doc>
+             line="1129">Returns #GstTypeFind associated with #GstTypeFindData</doc>
         <source-position filename="libs/gst/base/gsttypefindhelper.h"
                          line="38"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="1134">#GstTypeFind.</doc>
+               line="1135">#GstTypeFind.</doc>
           <type name="Gst.TypeFind" c:type="GstTypeFind*"/>
         </return-value>
         <parameters>
           <instance-parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gsttypefindhelper.c"
-                 line="1130">GstTypeFindData *</doc>
+                 line="1131">GstTypeFindData *</doc>
             <type name="TypeFindData" c:type="GstTypeFindData*"/>
           </instance-parameter>
         </parameters>
@@ -19359,13 +19359,13 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="1052">Free-function: gst_type_find_data_free</doc>
+             line="1053">Free-function: gst_type_find_data_free</doc>
         <source-position filename="libs/gst/base/gsttypefindhelper.h"
                          line="34"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="1060">the #GstTypeFindData. The caller should free
+               line="1061">the #GstTypeFindData. The caller should free
          the returned #GstTypeFindData with gst_type_find_data_free().</doc>
           <type name="TypeFindData" c:type="GstTypeFindData*"/>
         </return-value>
@@ -19376,13 +19376,13 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gsttypefindhelper.c"
-                 line="1054">object doing the typefinding, or %NULL (used for logging)</doc>
+                 line="1055">object doing the typefinding, or %NULL (used for logging)</doc>
             <type name="Gst.Object" c:type="GstObject*"/>
           </parameter>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gsttypefindhelper.c"
-                 line="1055">a pointer with data to typefind</doc>
+                 line="1056">a pointer with data to typefind</doc>
             <array length="2" zero-terminated="0" c:type="const guint8*">
               <type name="guint8" c:type="guint8"/>
             </array>
@@ -19390,7 +19390,7 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
           <parameter name="size" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="libs/gst/base/gsttypefindhelper.c"
-                 line="1056">the size of @data</doc>
+                 line="1057">the size of @data</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -19864,12 +19864,12 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="1052">Free-function: gst_type_find_data_free</doc>
+           line="1053">Free-function: gst_type_find_data_free</doc>
       <source-position filename="libs/gst/base/gsttypefindhelper.h" line="34"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="1060">the #GstTypeFindData. The caller should free
+             line="1061">the #GstTypeFindData. The caller should free
          the returned #GstTypeFindData with gst_type_find_data_free().</doc>
         <type name="TypeFindData" c:type="GstTypeFindData*"/>
       </return-value>
@@ -19880,13 +19880,13 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="1054">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="1055">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="1055">a pointer with data to typefind</doc>
+               line="1056">a pointer with data to typefind</doc>
           <array length="2" zero-terminated="0" c:type="const guint8*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -19894,7 +19894,7 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
         <parameter name="size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="1056">the size of @data</doc>
+               line="1057">the size of @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
       </parameters>
@@ -19902,14 +19902,14 @@ of size @struct_size, with an initial queue size of @initial_size.</doc>
     <function name="type_find_helper" c:identifier="gst_type_find_helper">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="463">Tries to find what type of data is flowing from the given source #GstPad.
+           line="464">Tries to find what type of data is flowing from the given source #GstPad.
 
 Free-function: gst_caps_unref</doc>
       <source-position filename="libs/gst/base/gsttypefindhelper.h" line="42"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="472">the #GstCaps corresponding to the data
+             line="473">the #GstCaps corresponding to the data
     stream.  Returns %NULL if no #GstCaps matches the data stream.</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
       </return-value>
@@ -19917,13 +19917,13 @@ Free-function: gst_caps_unref</doc>
         <parameter name="src" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="465">A source #GstPad</doc>
+               line="466">A source #GstPad</doc>
           <type name="Gst.Pad" c:type="GstPad*"/>
         </parameter>
         <parameter name="size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="466">The length in bytes</doc>
+               line="467">The length in bytes</doc>
           <type name="guint64" c:type="guint64"/>
         </parameter>
       </parameters>
@@ -19932,7 +19932,7 @@ Free-function: gst_caps_unref</doc>
               c:identifier="gst_type_find_helper_for_buffer">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="792">Tries to find what type of data is contained in the given #GstBuffer, the
+           line="793">Tries to find what type of data is contained in the given #GstBuffer, the
 assumption being that the buffer represents the beginning of the stream or
 file.
 
@@ -19948,7 +19948,7 @@ Free-function: gst_caps_unref</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="812">the #GstCaps corresponding to the data,
+             line="813">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -19960,13 +19960,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="794">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="795">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="buf" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="795">a #GstBuffer with data to typefind</doc>
+               line="796">a #GstBuffer with data to typefind</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </parameter>
         <parameter name="prob"
@@ -19977,7 +19977,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="796">location to store the probability of the found
+               line="797">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -19989,7 +19989,7 @@ Free-function: gst_caps_unref</doc>
               version="1.22">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="877">Tries to find if type of media contained in the given #GstBuffer, matches
+           line="878">Tries to find if type of media contained in the given #GstBuffer, matches
 @caps specified, assumption being that the buffer represents the beginning
 of the stream or file.
 
@@ -20006,7 +20006,7 @@ Free-function: gst_caps_unref</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="899">the #GstCaps corresponding to the data,
+             line="900">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -20018,19 +20018,19 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="879">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="880">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="buf" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="880">a #GstBuffer with data to typefind</doc>
+               line="881">a #GstBuffer with data to typefind</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </parameter>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="881">caps of the media</doc>
+               line="882">caps of the media</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </parameter>
         <parameter name="prob"
@@ -20041,7 +20041,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="882">location to store the probability of the found
+               line="883">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -20053,7 +20053,7 @@ Free-function: gst_caps_unref</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="823">Tries to find what type of data is contained in the given #GstBuffer, the
+           line="824">Tries to find what type of data is contained in the given #GstBuffer, the
 assumption being that the buffer represents the beginning of the stream or
 file.
 
@@ -20073,7 +20073,7 @@ Free-function: gst_caps_unref</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="848">the #GstCaps corresponding to the data,
+             line="849">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -20085,13 +20085,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="825">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="826">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="buf" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="826">a #GstBuffer with data to typefind</doc>
+               line="827">a #GstBuffer with data to typefind</doc>
           <type name="Gst.Buffer" c:type="GstBuffer*"/>
         </parameter>
         <parameter name="extension"
@@ -20100,7 +20100,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="827">extension of the media, or %NULL</doc>
+               line="828">extension of the media, or %NULL</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="prob"
@@ -20111,7 +20111,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="828">location to store the probability of the found
+               line="829">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -20122,7 +20122,7 @@ Free-function: gst_caps_unref</doc>
               c:identifier="gst_type_find_helper_for_data">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="590">Tries to find what type of data is contained in the given @data, the
+           line="591">Tries to find what type of data is contained in the given @data, the
 assumption being that the data represents the beginning of the stream or
 file.
 
@@ -20138,7 +20138,7 @@ Free-function: gst_caps_unref</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="611">the #GstCaps corresponding to the data,
+             line="612">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -20150,13 +20150,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="592">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="593">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="593">* a pointer with data to typefind</doc>
+               line="594">* a pointer with data to typefind</doc>
           <array length="2" zero-terminated="0" c:type="const guint8*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -20164,7 +20164,7 @@ Free-function: gst_caps_unref</doc>
         <parameter name="size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="594">the size of @data</doc>
+               line="595">the size of @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="prob"
@@ -20175,7 +20175,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="595">location to store the probability of the found
+               line="596">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -20187,7 +20187,7 @@ Free-function: gst_caps_unref</doc>
               version="1.22">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="706">Tries to find if type of media contained in the given @data, matches the
+           line="707">Tries to find if type of media contained in the given @data, matches the
 @caps specified, assumption being that the data represents the beginning
 of the stream or file.
 
@@ -20200,7 +20200,7 @@ Free-function: gst_caps_unref</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="725">the #GstCaps corresponding to the data,
+             line="726">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -20212,13 +20212,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="708">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="709">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="709">a pointer with data to typefind</doc>
+               line="710">a pointer with data to typefind</doc>
           <array length="2" zero-terminated="0" c:type="const guint8*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -20226,13 +20226,13 @@ Free-function: gst_caps_unref</doc>
         <parameter name="size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="710">the size of @data</doc>
+               line="711">the size of @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="711">caps of the media</doc>
+               line="712">caps of the media</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </parameter>
         <parameter name="prob"
@@ -20243,7 +20243,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="712">location to store the probability of the found
+               line="713">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -20255,7 +20255,7 @@ Free-function: gst_caps_unref</doc>
               version="1.16">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="623">Tries to find what type of data is contained in the given @data, the
+           line="624">Tries to find what type of data is contained in the given @data, the
 assumption being that the data represents the beginning of the stream or
 file.
 
@@ -20275,7 +20275,7 @@ Free-function: gst_caps_unref</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="649">the #GstCaps corresponding to the data,
+             line="650">the #GstCaps corresponding to the data,
     or %NULL if no type could be found. The caller should free the caps
     returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -20287,13 +20287,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="625">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="626">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="data" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="626">* a pointer with data to typefind</doc>
+               line="627">* a pointer with data to typefind</doc>
           <array length="2" zero-terminated="0" c:type="const guint8*">
             <type name="guint8" c:type="guint8"/>
           </array>
@@ -20301,7 +20301,7 @@ Free-function: gst_caps_unref</doc>
         <parameter name="size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="627">the size of @data</doc>
+               line="628">the size of @data</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="extension"
@@ -20310,7 +20310,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="628">extension of the media, or %NULL</doc>
+               line="629">extension of the media, or %NULL</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="prob"
@@ -20321,7 +20321,7 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="629">location to store the probability of the found
+               line="630">location to store the probability of the found
     caps, or %NULL</doc>
           <type name="Gst.TypeFindProbability"
                 c:type="GstTypeFindProbability*"/>
@@ -20332,7 +20332,7 @@ Free-function: gst_caps_unref</doc>
               c:identifier="gst_type_find_helper_for_extension">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="931">Tries to find the best #GstCaps associated with @extension.
+           line="932">Tries to find the best #GstCaps associated with @extension.
 
 All available typefinders will be checked against the extension in order
 of rank. The caps of the first typefinder that can handle @extension will be
@@ -20343,7 +20343,7 @@ Free-function: gst_caps_unref</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="944">the #GstCaps corresponding to
+             line="945">the #GstCaps corresponding to
     @extension, or %NULL if no type could be found. The caller should free
     the caps returned with gst_caps_unref().</doc>
         <type name="Gst.Caps" c:type="GstCaps*"/>
@@ -20355,13 +20355,13 @@ Free-function: gst_caps_unref</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="933">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="934">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="extension" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="934">an extension</doc>
+               line="935">an extension</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -20541,7 +20541,7 @@ in many cases.</doc>
               version="1.22">
       <doc xml:space="preserve"
            filename="libs/gst/base/gsttypefindhelper.c"
-           line="996">Tries to find the best #GstTypeFindFactory associated with @caps.
+           line="997">Tries to find the best #GstTypeFindFactory associated with @caps.
 
 The typefinder that can handle @caps will be returned.
 
@@ -20550,7 +20550,7 @@ Free-function: g_list_free</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="libs/gst/base/gsttypefindhelper.c"
-             line="1007">the list of #GstTypeFindFactory
+             line="1008">the list of #GstTypeFindFactory
          corresponding to @caps, or %NULL if no typefinder could be
          found. Caller should free the returned list with g_list_free()
          and list elements with gst_object_unref().</doc>
@@ -20565,13 +20565,13 @@ Free-function: g_list_free</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="998">object doing the typefinding, or %NULL (used for logging)</doc>
+               line="999">object doing the typefinding, or %NULL (used for logging)</doc>
           <type name="Gst.Object" c:type="GstObject*"/>
         </parameter>
         <parameter name="caps" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="libs/gst/base/gsttypefindhelper.c"
-               line="999">caps of the media</doc>
+               line="1000">caps of the media</doc>
           <type name="Gst.Caps" c:type="GstCaps*"/>
         </parameter>
       </parameters>
