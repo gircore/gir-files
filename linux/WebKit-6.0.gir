@@ -4164,7 +4164,7 @@ and handle the download process itself.</doc>
       <method name="cancel" c:identifier="webkit_download_cancel">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="580">Cancels the download.
+             line="582">Cancels the download.
 
 When the ongoing download
 operation is effectively cancelled the signal
@@ -4179,7 +4179,7 @@ operation is effectively cancelled the signal
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="582">a #WebKitDownload</doc>
+                 line="584">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
         </parameters>
@@ -4190,7 +4190,7 @@ operation is effectively cancelled the signal
               version="2.6">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="688">Returns the current value of the #WebKitDownload:allow-overwrite property.
+             line="690">Returns the current value of the #WebKitDownload:allow-overwrite property.
 
 Returns the current value of the #WebKitDownload:allow-overwrite property,
 which determines whether the download will overwrite an existing file on
@@ -4200,14 +4200,14 @@ disk, or if it will fail if the destination already exists.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-               line="698">the current value of the #WebKitDownload:allow-overwrite property</doc>
+               line="700">the current value of the #WebKitDownload:allow-overwrite property</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="690">a #WebKitDownload</doc>
+                 line="692">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
         </parameters>
@@ -4242,7 +4242,7 @@ sure this method returns a valid destination.</doc>
               c:identifier="webkit_download_get_elapsed_time">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="632">Gets the elapsed time in seconds, including any fractional part.
+             line="634">Gets the elapsed time in seconds, including any fractional part.
 
 If the download finished, had an error or was cancelled this is
 the time between its start and the event.</doc>
@@ -4251,14 +4251,14 @@ the time between its start and the event.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-               line="641">seconds since the download was started</doc>
+               line="643">seconds since the download was started</doc>
           <type name="gdouble" c:type="gdouble"/>
         </return-value>
         <parameters>
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="634">a #WebKitDownload</doc>
+                 line="636">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
         </parameters>
@@ -4268,7 +4268,7 @@ the time between its start and the event.</doc>
               glib:get-property="estimated-progress">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="603">Gets the value of the #WebKitDownload:estimated-progress property.
+             line="605">Gets the value of the #WebKitDownload:estimated-progress property.
 Gets the value of the #WebKitDownload:estimated-progress property.
 You can monitor the estimated progress of the download operation by
 connecting to the notify::estimated-progress signal of @download.</doc>
@@ -4277,7 +4277,7 @@ connecting to the notify::estimated-progress signal of @download.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-               line="612">an estimate of the of the percent complete for a download
+               line="614">an estimate of the of the percent complete for a download
     as a range from 0.0 to 1.0.</doc>
           <type name="gdouble" c:type="gdouble"/>
         </return-value>
@@ -4285,7 +4285,7 @@ connecting to the notify::estimated-progress signal of @download.</doc>
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="605">a #WebKitDownload</doc>
+                 line="607">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
         </parameters>
@@ -4294,7 +4294,7 @@ connecting to the notify::estimated-progress signal of @download.</doc>
               c:identifier="webkit_download_get_received_data_length">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="654">Gets the length of the data already downloaded for @download.
+             line="656">Gets the length of the data already downloaded for @download.
 
 Gets the length of the data already downloaded for @download
 in bytes.</doc>
@@ -4303,14 +4303,14 @@ in bytes.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-               line="663">the amount of bytes already downloaded.</doc>
+               line="665">the amount of bytes already downloaded.</doc>
           <type name="guint64" c:type="guint64"/>
         </return-value>
         <parameters>
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="656">a #WebKitDownload</doc>
+                 line="658">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
         </parameters>
@@ -4342,7 +4342,7 @@ process.</doc>
               glib:get-property="response">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="559">Retrieves the #WebKitURIResponse object that backs the download process.
+             line="561">Retrieves the #WebKitURIResponse object that backs the download process.
 
 Retrieves the #WebKitURIResponse object that backs the download
 process. This method returns %NULL if called before the response
@@ -4353,7 +4353,7 @@ signal to be notified when the response is received.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-               line="570">the #WebKitURIResponse, or %NULL if
+               line="572">the #WebKitURIResponse, or %NULL if
     the response hasn't been received yet.</doc>
           <type name="URIResponse" c:type="WebKitURIResponse*"/>
         </return-value>
@@ -4361,7 +4361,7 @@ signal to be notified when the response is received.</doc>
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="561">a #WebKitDownload</doc>
+                 line="563">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
         </parameters>
@@ -4369,13 +4369,13 @@ signal to be notified when the response is received.</doc>
       <method name="get_web_view" c:identifier="webkit_download_get_web_view">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="672">Get the #WebKitWebView that initiated the download.</doc>
+             line="674">Get the #WebKitWebView that initiated the download.</doc>
         <source-position filename="_builddir/WebKitGTK/DerivedSources/webkit/WebKitDownload.h"
                          line="65"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-               line="678">the #WebKitWebView that initiated @download,
+               line="680">the #WebKitWebView that initiated @download,
    or %NULL if @download was not initiated by a #WebKitWebView.</doc>
           <type name="WebView" c:type="WebKitWebView*"/>
         </return-value>
@@ -4383,7 +4383,7 @@ signal to be notified when the response is received.</doc>
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="674">a #WebKitDownload</doc>
+                 line="676">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
         </parameters>
@@ -4394,7 +4394,7 @@ signal to be notified when the response is received.</doc>
               version="2.6">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-             line="709">Sets the #WebKitDownload:allow-overwrite property.
+             line="711">Sets the #WebKitDownload:allow-overwrite property.
 
 Sets the #WebKitDownload:allow-overwrite property, which determines whether
 the download may overwrite an existing file on disk, or if it will fail if
@@ -4408,13 +4408,13 @@ the destination already exists.</doc>
           <instance-parameter name="download" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="711">a #WebKitDownload</doc>
+                 line="713">a #WebKitDownload</doc>
             <type name="Download" c:type="WebKitDownload*"/>
           </instance-parameter>
           <parameter name="allowed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitDownload.cpp"
-                 line="712">the new value for the #WebKitDownload:allow-overwrite property</doc>
+                 line="714">the new value for the #WebKitDownload:allow-overwrite property</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -6519,7 +6519,7 @@ form with webkit_form_submission_request_submit().</doc>
               version="2.20">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitFormSubmissionRequest.cpp"
-             line="123">Get lists of the text fields contained in the form associated to @request.
+             line="125">Get lists of the text fields contained in the form associated to @request.
 
 Get lists with the names and values of the text fields contained in
 the form associated to @request. Note that names and values may be
@@ -6532,14 +6532,14 @@ If this function returns %FALSE, then both @field_names and
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="Source/WebKit/UIProcess/API/glib/WebKitFormSubmissionRequest.cpp"
-               line="140">%TRUE if the form contains text fields, or %FALSE otherwise</doc>
+               line="142">%TRUE if the form contains text fields, or %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="request" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitFormSubmissionRequest.cpp"
-                 line="125">a #WebKitFormSubmissionRequest</doc>
+                 line="127">a #WebKitFormSubmissionRequest</doc>
             <type name="FormSubmissionRequest"
                   c:type="WebKitFormSubmissionRequest*"/>
           </instance-parameter>
@@ -6551,7 +6551,7 @@ If this function returns %FALSE, then both @field_names and
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitFormSubmissionRequest.cpp"
-                 line="126">
+                 line="128">
    names of the text fields in the form</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray**">
               <type name="utf8"/>
@@ -6565,7 +6565,7 @@ If this function returns %FALSE, then both @field_names and
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitFormSubmissionRequest.cpp"
-                 line="128">
+                 line="130">
    values of the text fields in the form</doc>
             <array name="GLib.PtrArray" c:type="GPtrArray**">
               <type name="utf8"/>
@@ -6577,7 +6577,7 @@ If this function returns %FALSE, then both @field_names and
               c:identifier="webkit_form_submission_request_submit">
         <doc xml:space="preserve"
              filename="Source/WebKit/UIProcess/API/glib/WebKitFormSubmissionRequest.cpp"
-             line="156">Continue the form submission.</doc>
+             line="158">Continue the form submission.</doc>
         <source-position filename="_builddir/WebKitGTK/DerivedSources/webkit/WebKitFormSubmissionRequest.h"
                          line="43"/>
         <return-value transfer-ownership="none">
@@ -6587,7 +6587,7 @@ If this function returns %FALSE, then both @field_names and
           <instance-parameter name="request" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="Source/WebKit/UIProcess/API/glib/WebKitFormSubmissionRequest.cpp"
-                 line="158">a #WebKitFormSubmissionRequest</doc>
+                 line="160">a #WebKitFormSubmissionRequest</doc>
             <type name="FormSubmissionRequest"
                   c:type="WebKitFormSubmissionRequest*"/>
           </instance-parameter>
@@ -9570,7 +9570,7 @@ against at application run time.</doc>
                        line="31"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="3" c:type="WEBKIT_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="4" c:type="WEBKIT_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="Source/WebKit/UIProcess/API/glib/WebKitVersion.cpp"
            line="39">Like webkit_get_micro_version(), but from the headers used at
