@@ -7381,7 +7381,7 @@ styles from it. This can be used to add custom styles to the application.
       <constructor name="new" c:identifier="adw_application_new">
         <doc xml:space="preserve"
              filename="src/adw-application.c"
-             line="447">Creates a new `AdwApplication`.
+             line="442">Creates a new `AdwApplication`.
 
 If `application_id` is not `NULL`, then it must be valid. See
 [func@Gio.Application.id_is_valid].
@@ -7392,7 +7392,7 @@ uniqueness) will be disabled.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-application.c"
-               line="460">the newly created `AdwApplication`</doc>
+               line="455">the newly created `AdwApplication`</doc>
           <type name="Application" c:type="AdwApplication*"/>
         </return-value>
         <parameters>
@@ -7402,13 +7402,13 @@ uniqueness) will be disabled.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-application.c"
-                 line="449">The application ID</doc>
+                 line="444">The application ID</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-application.c"
-                 line="450">The application flags</doc>
+                 line="445">The application flags</doc>
             <type name="Gio.ApplicationFlags" c:type="GApplicationFlags"/>
           </parameter>
         </parameters>
@@ -7418,7 +7418,7 @@ uniqueness) will be disabled.</doc>
               glib:get-property="style-manager">
         <doc xml:space="preserve"
              filename="src/adw-application.c"
-             line="472">Gets the style manager for @self.
+             line="467">Gets the style manager for @self.
 
 This is a convenience property allowing to access `AdwStyleManager` through
 property bindings or expressions.</doc>
@@ -7426,14 +7426,14 @@ property bindings or expressions.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-application.c"
-               line="481">the style manager</doc>
+               line="476">the style manager</doc>
           <type name="StyleManager" c:type="AdwStyleManager*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-application.c"
-                 line="474">an application</doc>
+                 line="469">an application</doc>
             <type name="Application" c:type="AdwApplication*"/>
           </instance-parameter>
         </parameters>
@@ -7443,7 +7443,7 @@ property bindings or expressions.</doc>
                 getter="get_style_manager">
         <doc xml:space="preserve"
              filename="src/adw-application.c"
-             line="426">The style manager for this application.
+             line="421">The style manager for this application.
 
 This is a convenience property allowing to access `AdwStyleManager` through
 property bindings or expressions.</doc>
@@ -21697,7 +21697,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="1" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="3" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -37370,7 +37370,7 @@ preferences exists.</doc>
                 c:identifier="adw_style_manager_get_default">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="900">Gets the default `AdwStyleManager` instance.
+             line="899">Gets the default `AdwStyleManager` instance.
 
 It manages all [class@Gdk.Display] instances unless the style manager for
 that display has an override.
@@ -37380,7 +37380,7 @@ See [func@StyleManager.get_for_display].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="910">the default style manager</doc>
+               line="909">the default style manager</doc>
           <type name="StyleManager" c:type="AdwStyleManager*"/>
         </return-value>
       </function>
@@ -37388,7 +37388,7 @@ See [func@StyleManager.get_for_display].</doc>
                 c:identifier="adw_style_manager_get_for_display">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="921">Gets the `AdwStyleManager` instance managing @display.
+             line="920">Gets the `AdwStyleManager` instance managing @display.
 
 It can be used to override styles for that specific display instead of the
 whole application.
@@ -37398,14 +37398,14 @@ Most applications should use [func@StyleManager.get_default] instead.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="932">the style manager for @display</doc>
+               line="931">the style manager for @display</doc>
           <type name="StyleManager" c:type="AdwStyleManager*"/>
         </return-value>
         <parameters>
           <parameter name="display" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="923">a `GdkDisplay`</doc>
+                 line="922">a `GdkDisplay`</doc>
             <type name="Gdk.Display" c:type="GdkDisplay*"/>
           </parameter>
         </parameters>
@@ -37416,21 +37416,21 @@ Most applications should use [func@StyleManager.get_default] instead.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1131">Gets the current system accent color.
+             line="1130">Gets the current system accent color.
 
 See also [property@StyleManager:accent-color-rgba].</doc>
         <source-position filename="src/adw-style-manager.h" line="63"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1139">the current system accent color</doc>
+               line="1138">the current system accent color</doc>
           <type name="AccentColor" c:type="AdwAccentColor"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1133">a style manager</doc>
+                 line="1132">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37441,7 +37441,7 @@ See also [property@StyleManager:accent-color-rgba].</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1151">Gets the current system accent color as a `GdkRGBA`.
+             line="1150">Gets the current system accent color as a `GdkRGBA`.
 
 Equivalent to calling [func@AccentColor.to_rgba] on the value of
 [property@StyleManager:accent-color].
@@ -37451,14 +37451,14 @@ This is a background color. The matching foreground color is white.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1162">the current system accent color</doc>
+               line="1161">the current system accent color</doc>
           <type name="Gdk.RGBA" c:type="GdkRGBA*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1153">a style manager</doc>
+                 line="1152">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37468,19 +37468,19 @@ This is a background color. The matching foreground color is white.</doc>
               glib:get-property="color-scheme">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="966">Gets the requested application color scheme.</doc>
+             line="965">Gets the requested application color scheme.</doc>
         <source-position filename="src/adw-style-manager.h" line="46"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="972">the color scheme</doc>
+               line="971">the color scheme</doc>
           <type name="ColorScheme" c:type="AdwColorScheme"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="968">a style manager</doc>
+                 line="967">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37490,7 +37490,7 @@ This is a background color. The matching foreground color is white.</doc>
               glib:get-property="dark">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1070">Gets whether the application is using dark appearance.
+             line="1069">Gets whether the application is using dark appearance.
 
 This can be used to query the current appearance, as requested via
 [property@StyleManager:color-scheme].</doc>
@@ -37498,14 +37498,14 @@ This can be used to query the current appearance, as requested via
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1079">whether the application is using dark appearance</doc>
+               line="1078">whether the application is using dark appearance</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1072">a style manager</doc>
+                 line="1071">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37515,7 +37515,7 @@ This can be used to query the current appearance, as requested via
               glib:get-property="display">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="947">Gets the display the style manager is associated with.
+             line="946">Gets the display the style manager is associated with.
 
 The display will be `NULL` for the style manager returned by
 [func@StyleManager.get_default].</doc>
@@ -37523,14 +37523,14 @@ The display will be `NULL` for the style manager returned by
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="956">the display</doc>
+               line="955">the display</doc>
           <type name="Gdk.Display" c:type="GdkDisplay*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="949">a style manager</doc>
+                 line="948">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37541,7 +37541,7 @@ The display will be `NULL` for the style manager returned by
               version="1.7">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1181">Gets the system document font.
+             line="1180">Gets the system document font.
 
 The font is in the same format as [property@Gtk.Settings:gtk-font-name],
 e.g. "Adwaita Sans 12".
@@ -37551,14 +37551,14 @@ Use [func@Pango.FontDescription.from_string] to parse it.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1192">the system document font</doc>
+               line="1191">the system document font</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1183">a style manager</doc>
+                 line="1182">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37568,21 +37568,21 @@ Use [func@Pango.FontDescription.from_string] to parse it.</doc>
               glib:get-property="high-contrast">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1089">Gets whether the application is using high contrast appearance.
+             line="1088">Gets whether the application is using high contrast appearance.
 
 This cannot be overridden by applications.</doc>
         <source-position filename="src/adw-style-manager.h" line="57"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1097">whether the application is using high contrast appearance</doc>
+               line="1096">whether the application is using high contrast appearance</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1091">a style manager</doc>
+                 line="1090">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37593,7 +37593,7 @@ This cannot be overridden by applications.</doc>
               version="1.7">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1207">Gets the system monospace font.
+             line="1206">Gets the system monospace font.
 
 The font is in the same format as [property@Gtk.Settings:gtk-font-name],
 e.g. "Adwaita Mono 11".
@@ -37603,14 +37603,14 @@ Use [func@Pango.FontDescription.from_string] to parse it.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1218">the system monospace font</doc>
+               line="1217">the system monospace font</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1209">a style manager</doc>
+                 line="1208">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37621,7 +37621,7 @@ Use [func@Pango.FontDescription.from_string] to parse it.</doc>
               version="1.6">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1107">Gets whether the system supports accent colors.
+             line="1106">Gets whether the system supports accent colors.
 
 This can be used to check if the current environment provides an accent color
 preference. For example, applications might want to show a preference for
@@ -37632,14 +37632,14 @@ See [property@StyleManager:accent-color].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1119">whether the system supports accent colors</doc>
+               line="1118">whether the system supports accent colors</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1109">a style manager</doc>
+                 line="1108">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37649,7 +37649,7 @@ See [property@StyleManager:accent-color].</doc>
               glib:get-property="system-supports-color-schemes">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="1050">Gets whether the system supports color schemes.
+             line="1049">Gets whether the system supports color schemes.
 
 This can be used to check if the current environment provides a color scheme
 preference. For example, applications might want to show a separate
@@ -37658,14 +37658,14 @@ appearance switcher if it's set to `FALSE`.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-style-manager.c"
-               line="1060">whether the system supports color schemes</doc>
+               line="1059">whether the system supports color schemes</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="1052">a style manager</doc>
+                 line="1051">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
         </parameters>
@@ -37675,7 +37675,7 @@ appearance switcher if it's set to `FALSE`.</doc>
               glib:set-property="color-scheme">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="982">Sets the requested application color scheme.
+             line="981">Sets the requested application color scheme.
 
 The effective appearance will be decided based on the application color
 scheme and the system preferred color scheme. The
@@ -37714,13 +37714,13 @@ preference.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="984">a style manager</doc>
+                 line="983">a style manager</doc>
             <type name="StyleManager" c:type="AdwStyleManager*"/>
           </instance-parameter>
           <parameter name="color_scheme" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-style-manager.c"
-                 line="985">the color scheme</doc>
+                 line="984">the color scheme</doc>
             <type name="ColorScheme" c:type="AdwColorScheme"/>
           </parameter>
         </parameters>
@@ -37732,7 +37732,7 @@ preference.</doc>
                 default-value="ADW_ACCENT_COLOR_BLUE">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="796">The current system accent color.
+             line="795">The current system accent color.
 
 See also [property@StyleManager:accent-color-rgba].</doc>
         <type name="AccentColor"/>
@@ -37743,7 +37743,7 @@ See also [property@StyleManager:accent-color-rgba].</doc>
                 getter="get_accent_color_rgba">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="811">The current system accent color as a `GdkRGBA`.
+             line="810">The current system accent color as a `GdkRGBA`.
 
 Equivalent to calling [func@AccentColor.to_rgba] on the value of
 [property@StyleManager:accent-color].
@@ -37759,7 +37759,7 @@ This is a background color. The matching foreground color is white.</doc>
                 default-value="ADW_COLOR_SCHEME_DEFAULT">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="695">The requested application color scheme.
+             line="694">The requested application color scheme.
 
 The effective appearance will be decided based on the application color
 scheme and the system preferred color scheme. The
@@ -37799,7 +37799,7 @@ preference.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="753">Whether the application is using dark appearance.
+             line="752">Whether the application is using dark appearance.
 
 This property can be used to query the current appearance, as requested via
 [property@StyleManager:color-scheme].</doc>
@@ -37812,7 +37812,7 @@ This property can be used to query the current appearance, as requested via
                 getter="get_display">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="682">The display the style manager is associated with.
+             line="681">The display the style manager is associated with.
 
 The display will be `NULL` for the style manager returned by
 [func@StyleManager.get_default].</doc>
@@ -37825,7 +37825,7 @@ The display will be `NULL` for the style manager returned by
                 default-value="Sans 10">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="828">The system document font.
+             line="827">The system document font.
 
 The font is in the same format as [property@Gtk.Settings:gtk-font-name],
 e.g. "Adwaita Sans 12".
@@ -37839,7 +37839,7 @@ Use [func@Pango.FontDescription.from_string] to parse it.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="766">Whether the application is using high contrast appearance.
+             line="765">Whether the application is using high contrast appearance.
 
 This cannot be overridden by applications.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -37851,7 +37851,7 @@ This cannot be overridden by applications.</doc>
                 default-value="Monospace 10">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="845">The system monospace font.
+             line="844">The system monospace font.
 
 The font is in the same format as [property@Gtk.Settings:gtk-font-name],
 e.g. "Adwaita Mono 11".
@@ -37866,7 +37866,7 @@ Use [func@Pango.FontDescription.from_string] to parse it.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="778">Whether the system supports accent colors.
+             line="777">Whether the system supports accent colors.
 
 This property can be used to check if the current environment provides an
 accent color preference. For example, applications might want to show a
@@ -37881,7 +37881,7 @@ See [property@StyleManager:accent-color].</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-style-manager.c"
-             line="737">Whether the system supports color schemes.
+             line="736">Whether the system supports color schemes.
 
 This property can be used to check if the current environment provides a
 color scheme preference. For example, applications might want to show a
@@ -37909,7 +37909,7 @@ See [property@StyleManager:color-scheme].</doc>
            glib:type-struct="SwipeTrackerClass">
       <doc xml:space="preserve"
            filename="src/adw-swipe-tracker.c"
-           line="35">A swipe tracker used in [class@Carousel], [class@NavigationView] and
+           line="36">A swipe tracker used in [class@Carousel], [class@NavigationView] and
 [class@OverlaySplitView].
 
 The `AdwSwipeTracker` object can be used for implementing widgets with swipe
@@ -37925,19 +37925,19 @@ direction.</doc>
       <constructor name="new" c:identifier="adw_swipe_tracker_new">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1394">Creates a new `AdwSwipeTracker` for @widget.</doc>
+             line="1406">Creates a new `AdwSwipeTracker` for @widget.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="26"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1400">the newly created `AdwSwipeTracker`</doc>
+               line="1412">the newly created `AdwSwipeTracker`</doc>
           <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
         </return-value>
         <parameters>
           <parameter name="swipeable" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1396">a widget to add the tracker on</doc>
+                 line="1408">a widget to add the tracker on</doc>
             <type name="Swipeable" c:type="AdwSwipeable*"/>
           </parameter>
         </parameters>
@@ -37947,19 +37947,19 @@ direction.</doc>
               glib:get-property="allow-long-swipes">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1557">Gets whether to allow swiping for more than one snap point at a time.</doc>
+             line="1569">Gets whether to allow swiping for more than one snap point at a time.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="50"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1563">whether long swipes are allowed</doc>
+               line="1575">whether long swipes are allowed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1559">a swipe tracker</doc>
+                 line="1571">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -37969,19 +37969,19 @@ direction.</doc>
               glib:get-property="allow-mouse-drag">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1516">Gets whether @self can be dragged with mouse pointer.</doc>
+             line="1528">Gets whether @self can be dragged with mouse pointer.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="44"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1522">whether mouse dragging is allowed</doc>
+               line="1534">whether mouse dragging is allowed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1518">a swipe tracker</doc>
+                 line="1530">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -37992,19 +37992,19 @@ direction.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1685">Gets whether to allow touchscreen swiping from `GtkWindowHandle`.</doc>
+             line="1697">Gets whether to allow touchscreen swiping from `GtkWindowHandle`.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="68"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1691">whether swiping from window handles is allowed</doc>
+               line="1703">whether swiping from window handles is allowed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1687">a swipe tracker</doc>
+                 line="1699">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -38014,19 +38014,19 @@ direction.</doc>
               glib:get-property="enabled">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1428">Gets whether @self is enabled.</doc>
+             line="1440">Gets whether @self is enabled.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="32"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1434">whether @self is enabled</doc>
+               line="1446">whether @self is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1430">a swipe tracker</doc>
+                 line="1442">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -38037,19 +38037,19 @@ direction.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1599">Gets whether to allow swiping past the first available snap point.</doc>
+             line="1611">Gets whether to allow swiping past the first available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="56"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1605">whether to allow swiping past the first available snap point</doc>
+               line="1617">whether to allow swiping past the first available snap point</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1601">a swipe tracker</doc>
+                 line="1613">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -38059,19 +38059,19 @@ direction.</doc>
               glib:get-property="reversed">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1475">Gets whether @self is reversing the swipe direction.</doc>
+             line="1487">Gets whether @self is reversing the swipe direction.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="38"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1481">whether the direction is reversed</doc>
+               line="1493">whether the direction is reversed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1477">a swipe tracker</doc>
+                 line="1489">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -38081,19 +38081,19 @@ direction.</doc>
               glib:get-property="swipeable">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1412">Get the widget @self is attached to.</doc>
+             line="1424">Get the widget @self is attached to.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="29"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1418">the swipeable widget</doc>
+               line="1430">the swipeable widget</doc>
           <type name="Swipeable" c:type="AdwSwipeable*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1414">a swipe tracker</doc>
+                 line="1426">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -38104,19 +38104,19 @@ direction.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1642">Gets whether to allow swiping past the last available snap point.</doc>
+             line="1654">Gets whether to allow swiping past the last available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="62"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-swipe-tracker.c"
-               line="1648">whether to allow swiping past the last available snap point</doc>
+               line="1660">whether to allow swiping past the last available snap point</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1644">a swipe tracker</doc>
+                 line="1656">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
         </parameters>
@@ -38126,7 +38126,7 @@ direction.</doc>
               glib:set-property="allow-long-swipes">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1573">Sets whether to allow swiping for more than one snap point at a time.
+             line="1585">Sets whether to allow swiping for more than one snap point at a time.
 
 If the value is `FALSE`, each swipe can only move to the adjacent snap
 points.</doc>
@@ -38138,13 +38138,13 @@ points.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1575">a swipe tracker</doc>
+                 line="1587">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="allow_long_swipes" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1576">whether to allow long swipes</doc>
+                 line="1588">whether to allow long swipes</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -38154,7 +38154,7 @@ points.</doc>
               glib:set-property="allow-mouse-drag">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1532">Sets whether @self can be dragged with mouse pointer.</doc>
+             line="1544">Sets whether @self can be dragged with mouse pointer.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="46"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -38163,13 +38163,13 @@ points.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1534">a swipe tracker</doc>
+                 line="1546">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="allow_mouse_drag" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1535">whether to allow mouse dragging</doc>
+                 line="1547">whether to allow mouse dragging</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -38180,7 +38180,7 @@ points.</doc>
               version="1.5">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1703">Sets whether to allow touchscreen swiping from `GtkWindowHandle`.
+             line="1715">Sets whether to allow touchscreen swiping from `GtkWindowHandle`.
 
 Setting it to `TRUE` will make dragging the window impossible.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="70"/>
@@ -38191,13 +38191,13 @@ Setting it to `TRUE` will make dragging the window impossible.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1705">a swipe tracker</doc>
+                 line="1717">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="allow_window_handle" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1706">whether to allow swiping from window handles</doc>
+                 line="1718">whether to allow swiping from window handles</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -38207,7 +38207,7 @@ Setting it to `TRUE` will make dragging the window impossible.</doc>
               glib:set-property="enabled">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1444">Sets whether @self is enabled.
+             line="1456">Sets whether @self is enabled.
 
 When it's not enabled, no events will be processed. Usually widgets will want
 to expose this via a property.</doc>
@@ -38219,13 +38219,13 @@ to expose this via a property.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1446">a swipe tracker</doc>
+                 line="1458">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="enabled" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1447">whether @self is enabled</doc>
+                 line="1459">whether @self is enabled</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -38236,7 +38236,7 @@ to expose this via a property.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1617">Sets whether to allow swiping past the first available snap point.</doc>
+             line="1629">Sets whether to allow swiping past the first available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="58"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -38245,13 +38245,13 @@ to expose this via a property.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1619">a swipe tracker</doc>
+                 line="1631">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="overshoot" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1620">whether to allow swiping past the first available snap point</doc>
+                 line="1632">whether to allow swiping past the first available snap point</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -38261,7 +38261,7 @@ to expose this via a property.</doc>
               glib:set-property="reversed">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1491">Sets whether to reverse the swipe direction.
+             line="1503">Sets whether to reverse the swipe direction.
 
 If the swipe tracker is horizontal, it can be used for supporting RTL text
 direction.</doc>
@@ -38273,13 +38273,13 @@ direction.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1493">a swipe tracker</doc>
+                 line="1505">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="reversed" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1494">whether to reverse the swipe direction</doc>
+                 line="1506">whether to reverse the swipe direction</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -38290,7 +38290,7 @@ direction.</doc>
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1660">Sets whether to allow swiping past the last available snap point.</doc>
+             line="1672">Sets whether to allow swiping past the last available snap point.</doc>
         <source-position filename="src/adw-swipe-tracker.h" line="64"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -38299,13 +38299,13 @@ direction.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1662">a swipe tracker</doc>
+                 line="1674">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="overshoot" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1663">whether to allow swiping past the last available snap point</doc>
+                 line="1675">whether to allow swiping past the last available snap point</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -38314,7 +38314,7 @@ direction.</doc>
               c:identifier="adw_swipe_tracker_shift_position">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1730">Moves the current progress value by @delta.
+             line="1742">Moves the current progress value by @delta.
 
 This can be used to adjust the current position if snap points move during
 the gesture.</doc>
@@ -38326,13 +38326,13 @@ the gesture.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1732">a swipe tracker</doc>
+                 line="1744">a swipe tracker</doc>
             <type name="SwipeTracker" c:type="AdwSwipeTracker*"/>
           </instance-parameter>
           <parameter name="delta" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1733">the position delta</doc>
+                 line="1745">the position delta</doc>
             <type name="gdouble" c:type="double"/>
           </parameter>
         </parameters>
@@ -38345,7 +38345,7 @@ the gesture.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1235">Whether to allow swiping for more than one snap point at a time.
+             line="1247">Whether to allow swiping for more than one snap point at a time.
 
 If the value is `FALSE`, each swipe can only move to the adjacent snap
 points.</doc>
@@ -38359,7 +38359,7 @@ points.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1225">Whether to allow dragging with mouse pointer.</doc>
+             line="1237">Whether to allow dragging with mouse pointer.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="allow-window-handle"
@@ -38371,7 +38371,7 @@ points.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1272">Whether to allow touchscreen swiping from `GtkWindowHandle`.
+             line="1284">Whether to allow touchscreen swiping from `GtkWindowHandle`.
 
 This will make dragging the window impossible.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -38384,7 +38384,7 @@ This will make dragging the window impossible.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1199">Whether the swipe tracker is enabled.
+             line="1211">Whether the swipe tracker is enabled.
 
 When it's not enabled, no events will be processed. Usually widgets will
 want to expose this via a property.</doc>
@@ -38399,7 +38399,7 @@ want to expose this via a property.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1248">Whether to allow swiping past the first available snap point.</doc>
+             line="1260">Whether to allow swiping past the first available snap point.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="reversed"
@@ -38410,7 +38410,7 @@ want to expose this via a property.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1212">Whether to reverse the swipe direction.
+             line="1224">Whether to reverse the swipe direction.
 
 If the swipe tracker is horizontal, it can be used for supporting RTL text
 direction.</doc>
@@ -38423,7 +38423,7 @@ direction.</doc>
                 getter="get_swipeable">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1189">The widget the swipe tracker is attached to.</doc>
+             line="1201">The widget the swipe tracker is attached to.</doc>
         <type name="Swipeable"/>
       </property>
       <property name="upper-overshoot"
@@ -38435,13 +38435,13 @@ direction.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1260">Whether to allow swiping past the last available snap point.</doc>
+             line="1272">Whether to allow swiping past the last available snap point.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <glib:signal name="begin-swipe" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1316">This signal is emitted right before a swipe will be started, after the
+             line="1328">This signal is emitted right before a swipe will be started, after the
 drag threshold has been passed.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -38450,7 +38450,7 @@ drag threshold has been passed.</doc>
       <glib:signal name="end-swipe" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1356">This signal is emitted as soon as the gesture has stopped.
+             line="1368">This signal is emitted as soon as the gesture has stopped.
 
 The user is expected to animate the deceleration from the current progress
 value to @to with an animation using @velocity as the initial velocity,
@@ -38463,13 +38463,13 @@ fit for this.</doc>
           <parameter name="velocity" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1359">the velocity of the swipe</doc>
+                 line="1371">the velocity of the swipe</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
           <parameter name="to" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1360">the progress value to animate to</doc>
+                 line="1372">the progress value to animate to</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -38477,7 +38477,7 @@ fit for this.</doc>
       <glib:signal name="prepare" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1292">This signal is emitted when a possible swipe is detected.
+             line="1304">This signal is emitted when a possible swipe is detected.
 
 The @direction value can be used to restrict the swipe to a certain
 direction.</doc>
@@ -38488,7 +38488,7 @@ direction.</doc>
           <parameter name="direction" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1295">the direction of the swipe</doc>
+                 line="1307">the direction of the swipe</doc>
             <type name="NavigationDirection"/>
           </parameter>
         </parameters>
@@ -38496,7 +38496,7 @@ direction.</doc>
       <glib:signal name="update-swipe" when="first">
         <doc xml:space="preserve"
              filename="src/adw-swipe-tracker.c"
-             line="1335">This signal is emitted every time the progress value changes.</doc>
+             line="1347">This signal is emitted every time the progress value changes.</doc>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -38504,7 +38504,7 @@ direction.</doc>
           <parameter name="progress" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-swipe-tracker.c"
-                 line="1338">the current animation progress value</doc>
+                 line="1350">the current animation progress value</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -40024,7 +40024,7 @@ but use the [signal@TabButton::clicked] signal.</doc>
            glib:type-struct="TabOverviewClass">
       <doc xml:space="preserve"
            filename="src/adw-tab-overview.c"
-           line="32">A tab overview for [class@TabView].
+           line="34">A tab overview for [class@TabView].
 
 &lt;picture&gt;
   &lt;source srcset="tab-overview-dark.png" media="(prefers-color-scheme: dark)"&gt;
@@ -40109,12 +40109,12 @@ opening and closing itself. They can be convenient when used together with
                    version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1959">Creates a new `AdwTabOverview`.</doc>
+             line="1971">Creates a new `AdwTabOverview`.</doc>
         <source-position filename="src/adw-tab-overview.h" line="28"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1964">the newly created `AdwTabOverview`</doc>
+               line="1976">the newly created `AdwTabOverview`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -40124,19 +40124,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2070">Gets the child widget of @self.</doc>
+             line="2082">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="37"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2076">the child widget of @self</doc>
+               line="2088">the child widget of @self</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2072">a tab overview</doc>
+                 line="2084">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40147,19 +40147,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2355">Gets whether to new tab button is enabled for @self.</doc>
+             line="2367">Gets whether to new tab button is enabled for @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="64"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2361">whether new tab button is enabled</doc>
+               line="2373">whether new tab button is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2357">a tab overview</doc>
+                 line="2369">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40170,19 +40170,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2275">Gets whether search in tabs is enabled for @self.</doc>
+             line="2287">Gets whether search in tabs is enabled for @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="55"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2281">whether search is enabled</doc>
+               line="2293">whether search is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2277">a tab overview</doc>
+                 line="2289">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40193,19 +40193,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2595">Gets the current action during a drop on the extra_drop_target.</doc>
+             line="2607">Gets the current action during a drop on the extra_drop_target.</doc>
         <source-position filename="src/adw-tab-overview.h" line="94"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2601">the drag action of the current drop.</doc>
+               line="2613">the drag action of the current drop.</doc>
           <type name="Gdk.DragAction" c:type="GdkDragAction"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2597">a tab overview</doc>
+                 line="2609">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40216,7 +40216,7 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2613">Gets the current drag action during a drop.
+             line="2625">Gets the current drag action during a drop.
 
 This method should only be used from inside a
 [signal@TabOverview::extra-drag-drop] handler.
@@ -40227,14 +40227,14 @@ The action will be a subset of what was originally passed to
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2625">the drag action of the current drop</doc>
+               line="2637">the drag action of the current drop</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2615">a tab overview</doc>
+                 line="2627">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40245,19 +40245,19 @@ The action will be a subset of what was originally passed to
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2228">Gets whether thumbnails use inverted layout.</doc>
+             line="2240">Gets whether thumbnails use inverted layout.</doc>
         <source-position filename="src/adw-tab-overview.h" line="49"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2234">whether thumbnails use inverted layout</doc>
+               line="2246">whether thumbnails use inverted layout</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2230">a tab overview</doc>
+                 line="2242">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40268,19 +40268,19 @@ The action will be a subset of what was originally passed to
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2115">Gets whether @self is open.</doc>
+             line="2127">Gets whether @self is open.</doc>
         <source-position filename="src/adw-tab-overview.h" line="43"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2121">whether the overview is open</doc>
+               line="2133">whether the overview is open</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2117">a tab overview</doc>
+                 line="2129">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40291,21 +40291,21 @@ The action will be a subset of what was originally passed to
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2335">Gets whether search is currently active for @self.
+             line="2347">Gets whether search is currently active for @self.
 
 See [property@TabOverview:enable-search].</doc>
         <source-position filename="src/adw-tab-overview.h" line="61"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2343">whether search is active</doc>
+               line="2355">whether search is active</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2337">a tab overview</doc>
+                 line="2349">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40316,19 +40316,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2402">Gets the secondary menu model for @self.</doc>
+             line="2414">Gets the secondary menu model for @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="70"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2408">the secondary menu model</doc>
+               line="2420">the secondary menu model</doc>
           <type name="Gio.MenuModel" c:type="GMenuModel*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2404">a tab overview</doc>
+                 line="2416">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40339,19 +40339,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2497">Gets whether end title buttons are shown in @self's header bar.</doc>
+             line="2509">Gets whether end title buttons are shown in @self's header bar.</doc>
         <source-position filename="src/adw-tab-overview.h" line="82"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2503">whether end title buttons are shown</doc>
+               line="2515">whether end title buttons are shown</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2499">a tab overview</doc>
+                 line="2511">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40362,19 +40362,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2449">Gets whether start title buttons are shown in @self's header bar.</doc>
+             line="2461">Gets whether start title buttons are shown in @self's header bar.</doc>
         <source-position filename="src/adw-tab-overview.h" line="76"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2455">whether start title buttons are shown</doc>
+               line="2467">whether start title buttons are shown</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2451">a tab overview</doc>
+                 line="2463">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40385,19 +40385,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1974">Gets the tab view @self controls.</doc>
+             line="1986">Gets the tab view @self controls.</doc>
         <source-position filename="src/adw-tab-overview.h" line="31"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1980">the tab view</doc>
+               line="1992">the tab view</doc>
           <type name="TabView" c:type="AdwTabView*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1976">a tab overview</doc>
+                 line="1988">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40408,7 +40408,7 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2088">Sets the child widget of @self.</doc>
+             line="2100">Sets the child widget of @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="39"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -40417,7 +40417,7 @@ See [property@TabOverview:enable-search].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2090">a tab overview</doc>
+                 line="2102">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="child"
@@ -40426,7 +40426,7 @@ See [property@TabOverview:enable-search].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2091">the child widget</doc>
+                 line="2103">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -40437,7 +40437,7 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2373">Sets whether to enable new tab button for @self.
+             line="2385">Sets whether to enable new tab button for @self.
 
 Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
         <source-position filename="src/adw-tab-overview.h" line="66"/>
@@ -40448,13 +40448,13 @@ Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2375">a tab overview</doc>
+                 line="2387">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="enable_new_tab" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2376">whether to enable new tab button</doc>
+                 line="2388">whether to enable new tab button</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40465,7 +40465,7 @@ Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2293">Sets whether to enable search in tabs for @self.
+             line="2305">Sets whether to enable search in tabs for @self.
 
 Search matches tab titles and tooltips, as well as keywords, set via
 [property@TabPage:keyword]. Use keywords to search in e.g. page URLs in a web
@@ -40483,13 +40483,13 @@ active.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2295">a tab overview</doc>
+                 line="2307">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="enable_search" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2296">whether to enable search</doc>
+                 line="2308">whether to enable search</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40500,7 +40500,7 @@ active.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2637">Sets whether drop data should be preloaded on hover.
+             line="2649">Sets whether drop data should be preloaded on hover.
 
 See [property@Gtk.DropTarget:preload].</doc>
         <source-position filename="src/adw-tab-overview.h" line="99"/>
@@ -40511,13 +40511,13 @@ See [property@Gtk.DropTarget:preload].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2639">a tab overview</doc>
+                 line="2651">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="preload" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2640">whether to preload drop data</doc>
+                 line="2652">whether to preload drop data</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40528,7 +40528,7 @@ See [property@Gtk.DropTarget:preload].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2246">Sets whether thumbnails use inverted layout.
+             line="2258">Sets whether thumbnails use inverted layout.
 
 If set to `TRUE`, thumbnails will have the close or unpin button at the
 beginning and the indicator at the end rather than the other way around.</doc>
@@ -40540,13 +40540,13 @@ beginning and the indicator at the end rather than the other way around.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2248">a tab overview</doc>
+                 line="2260">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="inverted" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2249">whether thumbnails use inverted layout</doc>
+                 line="2261">whether thumbnails use inverted layout</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40557,7 +40557,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2133">Sets whether the to open @self.</doc>
+             line="2145">Sets whether the to open @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="45"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -40566,13 +40566,13 @@ beginning and the indicator at the end rather than the other way around.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2135">a tab overview</doc>
+                 line="2147">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="open" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2136">whether the overview is open</doc>
+                 line="2148">whether the overview is open</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40583,7 +40583,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2420">Sets the secondary menu model for @self.
+             line="2432">Sets the secondary menu model for @self.
 
 Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
         <source-position filename="src/adw-tab-overview.h" line="72"/>
@@ -40594,7 +40594,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2422">a tab overview</doc>
+                 line="2434">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="secondary_menu"
@@ -40603,7 +40603,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2423">a menu model</doc>
+                 line="2435">a menu model</doc>
             <type name="Gio.MenuModel" c:type="GMenuModel*"/>
           </parameter>
         </parameters>
@@ -40614,7 +40614,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2515">Sets whether to show end title buttons in @self's header bar.
+             line="2527">Sets whether to show end title buttons in @self's header bar.
 
 See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
         <source-position filename="src/adw-tab-overview.h" line="84"/>
@@ -40625,13 +40625,13 @@ See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2517">a tab overview</doc>
+                 line="2529">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="show_end_title_buttons" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2518">whether to show end title buttons</doc>
+                 line="2530">whether to show end title buttons</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40642,7 +40642,7 @@ See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2467">Sets whether to show start title buttons in @self's header bar.
+             line="2479">Sets whether to show start title buttons in @self's header bar.
 
 See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
         <source-position filename="src/adw-tab-overview.h" line="78"/>
@@ -40653,13 +40653,13 @@ See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2469">a tab overview</doc>
+                 line="2481">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="show_start_title_buttons" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2470">whether to show start title buttons</doc>
+                 line="2482">whether to show start title buttons</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40670,7 +40670,7 @@ See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1992">Sets the tab view to control.
+             line="2004">Sets the tab view to control.
 
 The view must be inside @self, see [property@TabOverview:child].</doc>
         <source-position filename="src/adw-tab-overview.h" line="33"/>
@@ -40681,7 +40681,7 @@ The view must be inside @self, see [property@TabOverview:child].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1994">a tab overview</doc>
+                 line="2006">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="view"
@@ -40690,7 +40690,7 @@ The view must be inside @self, see [property@TabOverview:child].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1995">a tab view</doc>
+                 line="2007">a tab view</doc>
             <type name="TabView" c:type="AdwTabView*"/>
           </parameter>
         </parameters>
@@ -40700,7 +40700,7 @@ The view must be inside @self, see [property@TabOverview:child].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2545">Sets up an extra drop target on tabs.
+             line="2557">Sets up an extra drop target on tabs.
 
 This allows to drag arbitrary content onto tabs, for example URLs in a web
 browser.
@@ -40718,13 +40718,13 @@ drop.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2547">a tab overview</doc>
+                 line="2559">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="actions" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2548">the supported actions</doc>
+                 line="2560">the supported actions</doc>
             <type name="Gdk.DragAction" c:type="GdkDragAction"/>
           </parameter>
           <parameter name="types"
@@ -40733,7 +40733,7 @@ drop.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2549">
+                 line="2561">
   all supported `GType`s that can be dropped</doc>
             <array length="2" zero-terminated="0" c:type="GType*">
               <type name="GType" c:type="GType"/>
@@ -40742,7 +40742,7 @@ drop.</doc>
           <parameter name="n_types" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2551">number of @types</doc>
+                 line="2563">number of @types</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -40755,7 +40755,7 @@ drop.</doc>
                 getter="get_child">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1602">The child widget.</doc>
+             line="1614">The child widget.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="enable-new-tab"
@@ -40767,7 +40767,7 @@ drop.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1676">Whether to enable new tab button.
+             line="1688">Whether to enable new tab button.
 
 Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40781,7 +40781,7 @@ Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1641">Whether to enable search in tabs.
+             line="1653">Whether to enable search in tabs.
 
 Search matches tab titles and tooltips, as well as keywords, set via
 [property@TabPage:keyword]. Use keywords to search in e.g. page URLs in a
@@ -40800,7 +40800,7 @@ currently active.</doc>
                 default-value="GDK_ACTION_NONE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1732">The current drag action during a drop.
+             line="1744">The current drag action during a drop.
 
 This property should only be used from inside a
 [signal@TabOverview::extra-drag-drop] handler.
@@ -40818,7 +40818,7 @@ The action will be a subset of what was originally passed to
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1750">Whether the drop data should be preloaded on hover.
+             line="1762">Whether the drop data should be preloaded on hover.
 
 See [property@Gtk.DropTarget:preload].</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40832,7 +40832,7 @@ See [property@Gtk.DropTarget:preload].</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1626">Whether thumbnails use inverted layout.
+             line="1638">Whether thumbnails use inverted layout.
 
 If set to `TRUE`, thumbnails will have the close or unpin buttons at the
 beginning and the indicator at the end rather than the other way around.</doc>
@@ -40847,7 +40847,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1614">Whether the overview is open.</doc>
+             line="1626">Whether the overview is open.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="search-active"
@@ -40857,7 +40857,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1662">Whether search is currently active.
+             line="1674">Whether search is currently active.
 
 See [property@TabOverview:enable-search].</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40870,7 +40870,7 @@ See [property@TabOverview:enable-search].</doc>
                 getter="get_secondary_menu">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1690">The secondary menu model.
+             line="1702">The secondary menu model.
 
 Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
         <type name="Gio.MenuModel"/>
@@ -40884,7 +40884,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1718">Whether to show end title buttons in the overview's header bar.
+             line="1730">Whether to show end title buttons in the overview's header bar.
 
 See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40898,7 +40898,7 @@ See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1704">Whether to show start title buttons in the overview's header bar.
+             line="1716">Whether to show start title buttons in the overview's header bar.
 
 See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40911,7 +40911,7 @@ See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
                 getter="get_view">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1588">The tab view the overview controls.
+             line="1600">The tab view the overview controls.
 
 The view must be inside the tab overview, see [property@TabOverview:child].</doc>
         <type name="TabView"/>
@@ -40919,7 +40919,7 @@ The view must be inside the tab overview, see [property@TabOverview:child].</doc
       <glib:signal name="create-tab" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1766">Emitted when a tab needs to be created.
+             line="1778">Emitted when a tab needs to be created.
 
 This can happen after the new tab button has been pressed, see
 [property@TabOverview:enable-new-tab].
@@ -40929,14 +40929,14 @@ The signal handler is expected to create a new page in the corresponding
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1778">the newly created page</doc>
+               line="1790">the newly created page</doc>
           <type name="TabPage"/>
         </return-value>
       </glib:signal>
       <glib:signal name="extra-drag-drop" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1796">Emitted when content is dropped onto a tab.
+             line="1808">Emitted when content is dropped onto a tab.
 
 The content must be of one of the types set up via
 [method@TabOverview.setup_extra_drop_target].
@@ -40945,20 +40945,20 @@ See [signal@Gtk.DropTarget::drop].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1809">whether the drop was accepted</doc>
+               line="1821">whether the drop was accepted</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1799">the page matching the tab the content was dropped onto</doc>
+                 line="1811">the page matching the tab the content was dropped onto</doc>
             <type name="TabPage"/>
           </parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1800">the `GValue` being dropped</doc>
+                 line="1812">the `GValue` being dropped</doc>
             <type name="GObject.Value"/>
           </parameter>
         </parameters>
@@ -40966,7 +40966,7 @@ See [signal@Gtk.DropTarget::drop].</doc>
       <glib:signal name="extra-drag-value" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1825">Emitted when the dropped content is preloaded.
+             line="1837">Emitted when the dropped content is preloaded.
 
 In order for data to be preloaded, [property@TabOverview:extra-drag-preload]
 must be set to `TRUE`.
@@ -40978,14 +40978,14 @@ See [property@Gtk.DropTarget:value].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1841">the preferred action for the drop</doc>
+               line="1853">the preferred action for the drop</doc>
           <type name="Gdk.DragAction"/>
         </return-value>
         <parameters>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1828">the page matching the tab the content was dropped onto</doc>
+                 line="1840">the page matching the tab the content was dropped onto</doc>
             <type name="TabPage"/>
           </parameter>
           <parameter name="value"
@@ -40994,7 +40994,7 @@ See [property@Gtk.DropTarget:value].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1829">the `GValue` being dropped</doc>
+                 line="1841">the `GValue` being dropped</doc>
             <type name="GObject.Value"/>
           </parameter>
         </parameters>
@@ -47527,7 +47527,7 @@ See also [property@ToolbarView:bottom-bar-style].</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.9.1" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.9.3" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and
@@ -53425,7 +53425,7 @@ included when compiling your code.</doc>
     <function name="init" c:identifier="adw_init">
       <doc xml:space="preserve"
            filename="src/adw-main.c"
-           line="34">Initializes Libadwaita.
+           line="63">Initializes Libadwaita.
 
 This function can be used instead of [func@Gtk.init] as it initializes GTK
 implicitly.
@@ -53444,13 +53444,13 @@ library are set up properly.</doc>
     <function name="is_initialized" c:identifier="adw_is_initialized">
       <doc xml:space="preserve"
            filename="src/adw-main.c"
-           line="79">Use this function to check if libadwaita has been initialized with
+           line="112">Use this function to check if libadwaita has been initialized with
 [func@init].</doc>
       <source-position filename="src/adw-main.h" line="22"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="src/adw-main.c"
-             line="85">the initialization status</doc>
+             line="118">the initialization status</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
     </function>
