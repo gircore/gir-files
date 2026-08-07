@@ -21697,7 +21697,7 @@ New values may be added to this enumeration over time.</doc>
       <source-position filename="src/adw-version.h" line="22"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="MICRO_VERSION" value="2" c:type="ADW_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="3" c:type="ADW_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="31">Adwaita micro version component (e.g. 3 if the version is 1.2.3).</doc>
@@ -40024,7 +40024,7 @@ but use the [signal@TabButton::clicked] signal.</doc>
            glib:type-struct="TabOverviewClass">
       <doc xml:space="preserve"
            filename="src/adw-tab-overview.c"
-           line="32">A tab overview for [class@TabView].
+           line="34">A tab overview for [class@TabView].
 
 &lt;picture&gt;
   &lt;source srcset="tab-overview-dark.png" media="(prefers-color-scheme: dark)"&gt;
@@ -40109,12 +40109,12 @@ opening and closing itself. They can be convenient when used together with
                    version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1959">Creates a new `AdwTabOverview`.</doc>
+             line="1971">Creates a new `AdwTabOverview`.</doc>
         <source-position filename="src/adw-tab-overview.h" line="28"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1964">the newly created `AdwTabOverview`</doc>
+               line="1976">the newly created `AdwTabOverview`</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
       </constructor>
@@ -40124,19 +40124,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2070">Gets the child widget of @self.</doc>
+             line="2082">Gets the child widget of @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="37"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2076">the child widget of @self</doc>
+               line="2088">the child widget of @self</doc>
           <type name="Gtk.Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2072">a tab overview</doc>
+                 line="2084">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40147,19 +40147,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2355">Gets whether to new tab button is enabled for @self.</doc>
+             line="2367">Gets whether to new tab button is enabled for @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="64"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2361">whether new tab button is enabled</doc>
+               line="2373">whether new tab button is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2357">a tab overview</doc>
+                 line="2369">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40170,19 +40170,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2275">Gets whether search in tabs is enabled for @self.</doc>
+             line="2287">Gets whether search in tabs is enabled for @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="55"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2281">whether search is enabled</doc>
+               line="2293">whether search is enabled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2277">a tab overview</doc>
+                 line="2289">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40193,19 +40193,19 @@ opening and closing itself. They can be convenient when used together with
               version="1.4">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2595">Gets the current action during a drop on the extra_drop_target.</doc>
+             line="2607">Gets the current action during a drop on the extra_drop_target.</doc>
         <source-position filename="src/adw-tab-overview.h" line="94"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2601">the drag action of the current drop.</doc>
+               line="2613">the drag action of the current drop.</doc>
           <type name="Gdk.DragAction" c:type="GdkDragAction"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2597">a tab overview</doc>
+                 line="2609">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40216,7 +40216,7 @@ opening and closing itself. They can be convenient when used together with
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2613">Gets the current drag action during a drop.
+             line="2625">Gets the current drag action during a drop.
 
 This method should only be used from inside a
 [signal@TabOverview::extra-drag-drop] handler.
@@ -40227,14 +40227,14 @@ The action will be a subset of what was originally passed to
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2625">the drag action of the current drop</doc>
+               line="2637">the drag action of the current drop</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2615">a tab overview</doc>
+                 line="2627">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40245,19 +40245,19 @@ The action will be a subset of what was originally passed to
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2228">Gets whether thumbnails use inverted layout.</doc>
+             line="2240">Gets whether thumbnails use inverted layout.</doc>
         <source-position filename="src/adw-tab-overview.h" line="49"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2234">whether thumbnails use inverted layout</doc>
+               line="2246">whether thumbnails use inverted layout</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2230">a tab overview</doc>
+                 line="2242">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40268,19 +40268,19 @@ The action will be a subset of what was originally passed to
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2115">Gets whether @self is open.</doc>
+             line="2127">Gets whether @self is open.</doc>
         <source-position filename="src/adw-tab-overview.h" line="43"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2121">whether the overview is open</doc>
+               line="2133">whether the overview is open</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2117">a tab overview</doc>
+                 line="2129">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40291,21 +40291,21 @@ The action will be a subset of what was originally passed to
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2335">Gets whether search is currently active for @self.
+             line="2347">Gets whether search is currently active for @self.
 
 See [property@TabOverview:enable-search].</doc>
         <source-position filename="src/adw-tab-overview.h" line="61"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2343">whether search is active</doc>
+               line="2355">whether search is active</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2337">a tab overview</doc>
+                 line="2349">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40316,19 +40316,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2402">Gets the secondary menu model for @self.</doc>
+             line="2414">Gets the secondary menu model for @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="70"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2408">the secondary menu model</doc>
+               line="2420">the secondary menu model</doc>
           <type name="Gio.MenuModel" c:type="GMenuModel*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2404">a tab overview</doc>
+                 line="2416">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40339,19 +40339,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2497">Gets whether end title buttons are shown in @self's header bar.</doc>
+             line="2509">Gets whether end title buttons are shown in @self's header bar.</doc>
         <source-position filename="src/adw-tab-overview.h" line="82"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2503">whether end title buttons are shown</doc>
+               line="2515">whether end title buttons are shown</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2499">a tab overview</doc>
+                 line="2511">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40362,19 +40362,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2449">Gets whether start title buttons are shown in @self's header bar.</doc>
+             line="2461">Gets whether start title buttons are shown in @self's header bar.</doc>
         <source-position filename="src/adw-tab-overview.h" line="76"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="2455">whether start title buttons are shown</doc>
+               line="2467">whether start title buttons are shown</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2451">a tab overview</doc>
+                 line="2463">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40385,19 +40385,19 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1974">Gets the tab view @self controls.</doc>
+             line="1986">Gets the tab view @self controls.</doc>
         <source-position filename="src/adw-tab-overview.h" line="31"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1980">the tab view</doc>
+               line="1992">the tab view</doc>
           <type name="TabView" c:type="AdwTabView*"/>
         </return-value>
         <parameters>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1976">a tab overview</doc>
+                 line="1988">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
         </parameters>
@@ -40408,7 +40408,7 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2088">Sets the child widget of @self.</doc>
+             line="2100">Sets the child widget of @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="39"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -40417,7 +40417,7 @@ See [property@TabOverview:enable-search].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2090">a tab overview</doc>
+                 line="2102">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="child"
@@ -40426,7 +40426,7 @@ See [property@TabOverview:enable-search].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2091">the child widget</doc>
+                 line="2103">the child widget</doc>
             <type name="Gtk.Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -40437,7 +40437,7 @@ See [property@TabOverview:enable-search].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2373">Sets whether to enable new tab button for @self.
+             line="2385">Sets whether to enable new tab button for @self.
 
 Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
         <source-position filename="src/adw-tab-overview.h" line="66"/>
@@ -40448,13 +40448,13 @@ Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2375">a tab overview</doc>
+                 line="2387">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="enable_new_tab" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2376">whether to enable new tab button</doc>
+                 line="2388">whether to enable new tab button</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40465,7 +40465,7 @@ Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2293">Sets whether to enable search in tabs for @self.
+             line="2305">Sets whether to enable search in tabs for @self.
 
 Search matches tab titles and tooltips, as well as keywords, set via
 [property@TabPage:keyword]. Use keywords to search in e.g. page URLs in a web
@@ -40483,13 +40483,13 @@ active.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2295">a tab overview</doc>
+                 line="2307">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="enable_search" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2296">whether to enable search</doc>
+                 line="2308">whether to enable search</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40500,7 +40500,7 @@ active.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2637">Sets whether drop data should be preloaded on hover.
+             line="2649">Sets whether drop data should be preloaded on hover.
 
 See [property@Gtk.DropTarget:preload].</doc>
         <source-position filename="src/adw-tab-overview.h" line="99"/>
@@ -40511,13 +40511,13 @@ See [property@Gtk.DropTarget:preload].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2639">a tab overview</doc>
+                 line="2651">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="preload" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2640">whether to preload drop data</doc>
+                 line="2652">whether to preload drop data</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40528,7 +40528,7 @@ See [property@Gtk.DropTarget:preload].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2246">Sets whether thumbnails use inverted layout.
+             line="2258">Sets whether thumbnails use inverted layout.
 
 If set to `TRUE`, thumbnails will have the close or unpin button at the
 beginning and the indicator at the end rather than the other way around.</doc>
@@ -40540,13 +40540,13 @@ beginning and the indicator at the end rather than the other way around.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2248">a tab overview</doc>
+                 line="2260">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="inverted" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2249">whether thumbnails use inverted layout</doc>
+                 line="2261">whether thumbnails use inverted layout</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40557,7 +40557,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2133">Sets whether the to open @self.</doc>
+             line="2145">Sets whether the to open @self.</doc>
         <source-position filename="src/adw-tab-overview.h" line="45"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -40566,13 +40566,13 @@ beginning and the indicator at the end rather than the other way around.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2135">a tab overview</doc>
+                 line="2147">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="open" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2136">whether the overview is open</doc>
+                 line="2148">whether the overview is open</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40583,7 +40583,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2420">Sets the secondary menu model for @self.
+             line="2432">Sets the secondary menu model for @self.
 
 Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
         <source-position filename="src/adw-tab-overview.h" line="72"/>
@@ -40594,7 +40594,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2422">a tab overview</doc>
+                 line="2434">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="secondary_menu"
@@ -40603,7 +40603,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2423">a menu model</doc>
+                 line="2435">a menu model</doc>
             <type name="Gio.MenuModel" c:type="GMenuModel*"/>
           </parameter>
         </parameters>
@@ -40614,7 +40614,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2515">Sets whether to show end title buttons in @self's header bar.
+             line="2527">Sets whether to show end title buttons in @self's header bar.
 
 See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
         <source-position filename="src/adw-tab-overview.h" line="84"/>
@@ -40625,13 +40625,13 @@ See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2517">a tab overview</doc>
+                 line="2529">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="show_end_title_buttons" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2518">whether to show end title buttons</doc>
+                 line="2530">whether to show end title buttons</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40642,7 +40642,7 @@ See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2467">Sets whether to show start title buttons in @self's header bar.
+             line="2479">Sets whether to show start title buttons in @self's header bar.
 
 See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
         <source-position filename="src/adw-tab-overview.h" line="78"/>
@@ -40653,13 +40653,13 @@ See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2469">a tab overview</doc>
+                 line="2481">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="show_start_title_buttons" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2470">whether to show start title buttons</doc>
+                 line="2482">whether to show start title buttons</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
@@ -40670,7 +40670,7 @@ See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1992">Sets the tab view to control.
+             line="2004">Sets the tab view to control.
 
 The view must be inside @self, see [property@TabOverview:child].</doc>
         <source-position filename="src/adw-tab-overview.h" line="33"/>
@@ -40681,7 +40681,7 @@ The view must be inside @self, see [property@TabOverview:child].</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1994">a tab overview</doc>
+                 line="2006">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="view"
@@ -40690,7 +40690,7 @@ The view must be inside @self, see [property@TabOverview:child].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1995">a tab view</doc>
+                 line="2007">a tab view</doc>
             <type name="TabView" c:type="AdwTabView*"/>
           </parameter>
         </parameters>
@@ -40700,7 +40700,7 @@ The view must be inside @self, see [property@TabOverview:child].</doc>
               version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="2545">Sets up an extra drop target on tabs.
+             line="2557">Sets up an extra drop target on tabs.
 
 This allows to drag arbitrary content onto tabs, for example URLs in a web
 browser.
@@ -40718,13 +40718,13 @@ drop.</doc>
           <instance-parameter name="self" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2547">a tab overview</doc>
+                 line="2559">a tab overview</doc>
             <type name="TabOverview" c:type="AdwTabOverview*"/>
           </instance-parameter>
           <parameter name="actions" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2548">the supported actions</doc>
+                 line="2560">the supported actions</doc>
             <type name="Gdk.DragAction" c:type="GdkDragAction"/>
           </parameter>
           <parameter name="types"
@@ -40733,7 +40733,7 @@ drop.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2549">
+                 line="2561">
   all supported `GType`s that can be dropped</doc>
             <array length="2" zero-terminated="0" c:type="GType*">
               <type name="GType" c:type="GType"/>
@@ -40742,7 +40742,7 @@ drop.</doc>
           <parameter name="n_types" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="2551">number of @types</doc>
+                 line="2563">number of @types</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -40755,7 +40755,7 @@ drop.</doc>
                 getter="get_child">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1602">The child widget.</doc>
+             line="1614">The child widget.</doc>
         <type name="Gtk.Widget"/>
       </property>
       <property name="enable-new-tab"
@@ -40767,7 +40767,7 @@ drop.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1676">Whether to enable new tab button.
+             line="1688">Whether to enable new tab button.
 
 Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40781,7 +40781,7 @@ Connect to the [signal@TabOverview::create-tab] signal to use it.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1641">Whether to enable search in tabs.
+             line="1653">Whether to enable search in tabs.
 
 Search matches tab titles and tooltips, as well as keywords, set via
 [property@TabPage:keyword]. Use keywords to search in e.g. page URLs in a
@@ -40800,7 +40800,7 @@ currently active.</doc>
                 default-value="GDK_ACTION_NONE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1732">The current drag action during a drop.
+             line="1744">The current drag action during a drop.
 
 This property should only be used from inside a
 [signal@TabOverview::extra-drag-drop] handler.
@@ -40818,7 +40818,7 @@ The action will be a subset of what was originally passed to
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1750">Whether the drop data should be preloaded on hover.
+             line="1762">Whether the drop data should be preloaded on hover.
 
 See [property@Gtk.DropTarget:preload].</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40832,7 +40832,7 @@ See [property@Gtk.DropTarget:preload].</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1626">Whether thumbnails use inverted layout.
+             line="1638">Whether thumbnails use inverted layout.
 
 If set to `TRUE`, thumbnails will have the close or unpin buttons at the
 beginning and the indicator at the end rather than the other way around.</doc>
@@ -40847,7 +40847,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1614">Whether the overview is open.</doc>
+             line="1626">Whether the overview is open.</doc>
         <type name="gboolean" c:type="gboolean"/>
       </property>
       <property name="search-active"
@@ -40857,7 +40857,7 @@ beginning and the indicator at the end rather than the other way around.</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1662">Whether search is currently active.
+             line="1674">Whether search is currently active.
 
 See [property@TabOverview:enable-search].</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40870,7 +40870,7 @@ See [property@TabOverview:enable-search].</doc>
                 getter="get_secondary_menu">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1690">The secondary menu model.
+             line="1702">The secondary menu model.
 
 Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
         <type name="Gio.MenuModel"/>
@@ -40884,7 +40884,7 @@ Use it to add extra actions, e.g. to open a new window or undo closed tab.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1718">Whether to show end title buttons in the overview's header bar.
+             line="1730">Whether to show end title buttons in the overview's header bar.
 
 See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40898,7 +40898,7 @@ See [property@HeaderBar:show-start-title-buttons] for the other side.</doc>
                 default-value="TRUE">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1704">Whether to show start title buttons in the overview's header bar.
+             line="1716">Whether to show start title buttons in the overview's header bar.
 
 See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
         <type name="gboolean" c:type="gboolean"/>
@@ -40911,7 +40911,7 @@ See [property@HeaderBar:show-end-title-buttons] for the other side.</doc>
                 getter="get_view">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1588">The tab view the overview controls.
+             line="1600">The tab view the overview controls.
 
 The view must be inside the tab overview, see [property@TabOverview:child].</doc>
         <type name="TabView"/>
@@ -40919,7 +40919,7 @@ The view must be inside the tab overview, see [property@TabOverview:child].</doc
       <glib:signal name="create-tab" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1766">Emitted when a tab needs to be created.
+             line="1778">Emitted when a tab needs to be created.
 
 This can happen after the new tab button has been pressed, see
 [property@TabOverview:enable-new-tab].
@@ -40929,14 +40929,14 @@ The signal handler is expected to create a new page in the corresponding
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1778">the newly created page</doc>
+               line="1790">the newly created page</doc>
           <type name="TabPage"/>
         </return-value>
       </glib:signal>
       <glib:signal name="extra-drag-drop" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1796">Emitted when content is dropped onto a tab.
+             line="1808">Emitted when content is dropped onto a tab.
 
 The content must be of one of the types set up via
 [method@TabOverview.setup_extra_drop_target].
@@ -40945,20 +40945,20 @@ See [signal@Gtk.DropTarget::drop].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1809">whether the drop was accepted</doc>
+               line="1821">whether the drop was accepted</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1799">the page matching the tab the content was dropped onto</doc>
+                 line="1811">the page matching the tab the content was dropped onto</doc>
             <type name="TabPage"/>
           </parameter>
           <parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1800">the `GValue` being dropped</doc>
+                 line="1812">the `GValue` being dropped</doc>
             <type name="GObject.Value"/>
           </parameter>
         </parameters>
@@ -40966,7 +40966,7 @@ See [signal@Gtk.DropTarget::drop].</doc>
       <glib:signal name="extra-drag-value" when="last" version="1.3">
         <doc xml:space="preserve"
              filename="src/adw-tab-overview.c"
-             line="1825">Emitted when the dropped content is preloaded.
+             line="1837">Emitted when the dropped content is preloaded.
 
 In order for data to be preloaded, [property@TabOverview:extra-drag-preload]
 must be set to `TRUE`.
@@ -40978,14 +40978,14 @@ See [property@Gtk.DropTarget:value].</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="src/adw-tab-overview.c"
-               line="1841">the preferred action for the drop</doc>
+               line="1853">the preferred action for the drop</doc>
           <type name="Gdk.DragAction"/>
         </return-value>
         <parameters>
           <parameter name="page" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1828">the page matching the tab the content was dropped onto</doc>
+                 line="1840">the page matching the tab the content was dropped onto</doc>
             <type name="TabPage"/>
           </parameter>
           <parameter name="value"
@@ -40994,7 +40994,7 @@ See [property@Gtk.DropTarget:value].</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="src/adw-tab-overview.c"
-                 line="1829">the `GValue` being dropped</doc>
+                 line="1841">the `GValue` being dropped</doc>
             <type name="GObject.Value"/>
           </parameter>
         </parameters>
@@ -47527,7 +47527,7 @@ See also [property@ToolbarView:bottom-bar-style].</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="VERSION_S" value="1.9.2" c:type="ADW_VERSION_S">
+    <constant name="VERSION_S" value="1.9.3" c:type="ADW_VERSION_S">
       <doc xml:space="preserve"
            filename="src/adw-version.h"
            line="45">Adwaita version, encoded as a string, useful for printing and
