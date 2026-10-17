@@ -12843,7 +12843,7 @@ See gtk_assistant_commit() for details.</doc>
  add its own buttons through gtk_assistant_add_action_widget().</doc>
       </member>
     </enumeration>
-    <constant name="BINARY_AGE" value="2204" c:type="GTK_BINARY_AGE">
+    <constant name="BINARY_AGE" value="2205" c:type="GTK_BINARY_AGE">
       <doc xml:space="preserve"
            filename="gtk/gtkversion.h"
            line="63">Like [func@get_binary_age], but from the headers used at
@@ -44471,19 +44471,19 @@ data after it has been transferred.</doc>
       <constructor name="new" c:identifier="gtk_drag_source_new">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="631">Creates a new `GtkDragSource` object.</doc>
+             line="632">Creates a new `GtkDragSource` object.</doc>
         <source-position filename="gtk/gtkdragsource.h" line="52"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gtk/gtkdragsource.c"
-               line="636">the new `GtkDragSource`</doc>
+               line="637">the new `GtkDragSource`</doc>
           <type name="DragSource" c:type="GtkDragSource*"/>
         </return-value>
       </constructor>
       <method name="drag_cancel" c:identifier="gtk_drag_source_drag_cancel">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="782">Cancels a currently ongoing drag operation.</doc>
+             line="783">Cancels a currently ongoing drag operation.</doc>
         <source-position filename="gtk/gtkdragsource.h" line="72"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -44492,7 +44492,7 @@ data after it has been transferred.</doc>
           <instance-parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="784">a `GtkDragSource`</doc>
+                 line="785">a `GtkDragSource`</doc>
             <type name="DragSource" c:type="GtkDragSource*"/>
           </instance-parameter>
         </parameters>
@@ -44502,19 +44502,19 @@ data after it has been transferred.</doc>
               glib:get-property="actions">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="688">Gets the actions that are currently set on the `GtkDragSource`.</doc>
+             line="689">Gets the actions that are currently set on the `GtkDragSource`.</doc>
         <source-position filename="gtk/gtkdragsource.h" line="64"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtk/gtkdragsource.c"
-               line="694">the actions set on @source</doc>
+               line="695">the actions set on @source</doc>
           <type name="Gdk.DragAction" c:type="GdkDragAction"/>
         </return-value>
         <parameters>
           <instance-parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="690">a `GtkDragSource`</doc>
+                 line="691">a `GtkDragSource`</doc>
             <type name="DragSource" c:type="GtkDragSource*"/>
           </instance-parameter>
         </parameters>
@@ -44524,19 +44524,19 @@ data after it has been transferred.</doc>
               glib:get-property="content">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="644">Gets the current content provider of a `GtkDragSource`.</doc>
+             line="645">Gets the current content provider of a `GtkDragSource`.</doc>
         <source-position filename="gtk/gtkdragsource.h" line="58"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gtk/gtkdragsource.c"
-               line="650">the `GdkContentProvider` of @source</doc>
+               line="651">the `GdkContentProvider` of @source</doc>
           <type name="Gdk.ContentProvider" c:type="GdkContentProvider*"/>
         </return-value>
         <parameters>
           <instance-parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="646">a `GtkDragSource`</doc>
+                 line="647">a `GtkDragSource`</doc>
             <type name="DragSource" c:type="GtkDragSource*"/>
           </instance-parameter>
         </parameters>
@@ -44544,12 +44544,12 @@ data after it has been transferred.</doc>
       <method name="get_drag" c:identifier="gtk_drag_source_get_drag">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="765">Returns the underlying `GdkDrag` object for an ongoing drag.</doc>
+             line="766">Returns the underlying `GdkDrag` object for an ongoing drag.</doc>
         <source-position filename="gtk/gtkdragsource.h" line="75"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gtk/gtkdragsource.c"
-               line="771">the `GdkDrag` of the current
+               line="772">the `GdkDrag` of the current
   drag operation</doc>
           <type name="Gdk.Drag" c:type="GdkDrag*"/>
         </return-value>
@@ -44557,7 +44557,7 @@ data after it has been transferred.</doc>
           <instance-parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="767">a `GtkDragSource`</doc>
+                 line="768">a `GtkDragSource`</doc>
             <type name="DragSource" c:type="GtkDragSource*"/>
           </instance-parameter>
         </parameters>
@@ -44567,7 +44567,7 @@ data after it has been transferred.</doc>
               glib:set-property="actions">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="704">Sets the actions on the `GtkDragSource`.
+             line="705">Sets the actions on the `GtkDragSource`.
 
 During a DND operation, the actions are offered to potential
 drop targets. If @actions include %GDK_ACTION_MOVE, you need
@@ -44584,13 +44584,13 @@ or in a handler for the [signal@Gtk.DragSource::prepare] signal.</doc>
           <instance-parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="706">a `GtkDragSource`</doc>
+                 line="707">a `GtkDragSource`</doc>
             <type name="DragSource" c:type="GtkDragSource*"/>
           </instance-parameter>
           <parameter name="actions" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="707">the actions to offer</doc>
+                 line="708">the actions to offer</doc>
             <type name="Gdk.DragAction" c:type="GdkDragAction"/>
           </parameter>
         </parameters>
@@ -44600,7 +44600,7 @@ or in a handler for the [signal@Gtk.DragSource::prepare] signal.</doc>
               glib:set-property="content">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="660">Sets a content provider on a `GtkDragSource`.
+             line="661">Sets a content provider on a `GtkDragSource`.
 
 When the data is requested in the cause of a DND operation,
 it will be obtained from the content provider.
@@ -44618,7 +44618,7 @@ You may consider setting the content provider back to
           <instance-parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="662">a `GtkDragSource`</doc>
+                 line="663">a `GtkDragSource`</doc>
             <type name="DragSource" c:type="GtkDragSource*"/>
           </instance-parameter>
           <parameter name="content"
@@ -44627,7 +44627,7 @@ You may consider setting the content provider back to
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="663">a `GdkContentProvider`</doc>
+                 line="664">a `GdkContentProvider`</doc>
             <type name="Gdk.ContentProvider" c:type="GdkContentProvider*"/>
           </parameter>
         </parameters>
@@ -44635,7 +44635,7 @@ You may consider setting the content provider back to
       <method name="set_icon" c:identifier="gtk_drag_source_set_icon">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="733">Sets a paintable to use as icon during DND operations.
+             line="734">Sets a paintable to use as icon during DND operations.
 
 The hotspot coordinates determine the point on the icon
 that gets aligned with the hotspot of the cursor.
@@ -44653,7 +44653,7 @@ a [signal@Gtk.DragSource::prepare] or
           <instance-parameter name="source" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="735">a `GtkDragSource`</doc>
+                 line="736">a `GtkDragSource`</doc>
             <type name="DragSource" c:type="GtkDragSource*"/>
           </instance-parameter>
           <parameter name="paintable"
@@ -44662,19 +44662,19 @@ a [signal@Gtk.DragSource::prepare] or
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="736">the `GdkPaintable` to use as icon</doc>
+                 line="737">the `GdkPaintable` to use as icon</doc>
             <type name="Gdk.Paintable" c:type="GdkPaintable*"/>
           </parameter>
           <parameter name="hot_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="737">the hotspot X coordinate on the icon</doc>
+                 line="738">the hotspot X coordinate on the icon</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="hot_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="738">the hotspot Y coordinate on the icon</doc>
+                 line="739">the hotspot Y coordinate on the icon</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -44687,7 +44687,7 @@ a [signal@Gtk.DragSource::prepare] or
                 default-value="GDK_ACTION_COPY">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="345">The actions that are supported by drag operations from the source.
+             line="346">The actions that are supported by drag operations from the source.
 
 Note that you must handle the [signal@Gtk.DragSource::drag-end] signal
 if the actions include %GDK_ACTION_MOVE.</doc>
@@ -44700,13 +44700,13 @@ if the actions include %GDK_ACTION_MOVE.</doc>
                 getter="get_content">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="335">The data that is offered by drag operations from this source.</doc>
+             line="336">The data that is offered by drag operations from this source.</doc>
         <type name="Gdk.ContentProvider"/>
       </property>
       <glib:signal name="drag-begin" when="last">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="388">Emitted on the drag source when a drag is started.
+             line="389">Emitted on the drag source when a drag is started.
 
 It can be used to e.g. set a custom drag icon with
 [method@Gtk.DragSource.set_icon].</doc>
@@ -44717,7 +44717,7 @@ It can be used to e.g. set a custom drag icon with
           <parameter name="drag" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="391">the `GdkDrag` object</doc>
+                 line="392">the `GdkDrag` object</doc>
             <type name="Gdk.Drag"/>
           </parameter>
         </parameters>
@@ -44725,7 +44725,7 @@ It can be used to e.g. set a custom drag icon with
       <glib:signal name="drag-cancel" when="last">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="435">Emitted on the drag source when a drag has failed.
+             line="436">Emitted on the drag source when a drag has failed.
 
 The signal handler may handle a failed drag operation based on
 the type of error. It should return %TRUE if the failure has been handled
@@ -44733,20 +44733,20 @@ and the default "drag operation failed" animation should not be shown.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtk/gtkdragsource.c"
-               line="447">%TRUE if the failed drag operation has been already handled</doc>
+               line="448">%TRUE if the failed drag operation has been already handled</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <parameter name="drag" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="438">the `GdkDrag` object</doc>
+                 line="439">the `GdkDrag` object</doc>
             <type name="Gdk.Drag"/>
           </parameter>
           <parameter name="reason" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="439">information on why the drag failed</doc>
+                 line="440">information on why the drag failed</doc>
             <type name="Gdk.DragCancelReason"/>
           </parameter>
         </parameters>
@@ -44754,7 +44754,7 @@ and the default "drag operation failed" animation should not be shown.</doc>
       <glib:signal name="drag-end" when="last">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="408">Emitted on the drag source when a drag is finished.
+             line="409">Emitted on the drag source when a drag is finished.
 
 A typical reason to connect to this signal is to undo
 things done in [signal@Gtk.DragSource::prepare] or
@@ -44766,13 +44766,13 @@ things done in [signal@Gtk.DragSource::prepare] or
           <parameter name="drag" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="411">the `GdkDrag` object</doc>
+                 line="412">the `GdkDrag` object</doc>
             <type name="Gdk.Drag"/>
           </parameter>
           <parameter name="delete_data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="412">%TRUE if the drag was performing %GDK_ACTION_MOVE,
+                 line="413">%TRUE if the drag was performing %GDK_ACTION_MOVE,
    and the data should be deleted</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
@@ -44781,7 +44781,7 @@ things done in [signal@Gtk.DragSource::prepare] or
       <glib:signal name="prepare" when="last">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="360">Emitted when a drag is about to be initiated.
+             line="361">Emitted when a drag is about to be initiated.
 
 It returns the `GdkContentProvider` to use for the drag that is about
 to start. The default handler for this signal returns the value of
@@ -44790,20 +44790,20 @@ property ahead of time, you don't need to connect to this signal.</doc>
         <return-value transfer-ownership="full" nullable="1">
           <doc xml:space="preserve"
                filename="gtk/gtkdragsource.c"
-               line="373">a `GdkContentProvider`</doc>
+               line="374">a `GdkContentProvider`</doc>
           <type name="Gdk.ContentProvider"/>
         </return-value>
         <parameters>
           <parameter name="x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="363">the X coordinate of the drag starting point</doc>
+                 line="364">the X coordinate of the drag starting point</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
           <parameter name="y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="364">the Y coordinate of the drag starting point</doc>
+                 line="365">the Y coordinate of the drag starting point</doc>
             <type name="gdouble" c:type="gdouble"/>
           </parameter>
         </parameters>
@@ -76627,7 +76627,7 @@ See [signal@Gtk.SpinButton::input].</doc>
       <source-position filename="gtk/gtkspinbutton.h" line="52"/>
       <type name="gint" c:type="gint"/>
     </constant>
-    <constant name="INTERFACE_AGE" value="4" c:type="GTK_INTERFACE_AGE">
+    <constant name="INTERFACE_AGE" value="5" c:type="GTK_INTERFACE_AGE">
       <doc xml:space="preserve"
            filename="gtk/gtkversion.h"
            line="72">Like [func@get_interface_age], but from the headers used at
@@ -94580,7 +94580,7 @@ This macro is longer used by GTK.</doc>
         </parameter>
       </parameters>
     </function-macro>
-    <constant name="MICRO_VERSION" value="4" c:type="GTK_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="5" c:type="GTK_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="gtk/gtkversion.h"
            line="54">Like [func@get_micro_version], but from the headers used at
@@ -177063,43 +177063,43 @@ some_widget_dispose (GObject *gobject)
               c:identifier="gtk_drag_check_threshold">
         <doc xml:space="preserve"
              filename="gtk/gtkdragsource.c"
-             line="802">Checks to see if a drag movement has passed the GTK drag threshold.</doc>
+             line="803">Checks to see if a drag movement has passed the GTK drag threshold.</doc>
         <source-position filename="gtk/gtkdragsource.h" line="78"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtk/gtkdragsource.c"
-               line="812">true if the drag threshold has been passed</doc>
+               line="813">true if the drag threshold has been passed</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="widget" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="804">a widget</doc>
+                 line="805">a widget</doc>
             <type name="Widget" c:type="GtkWidget*"/>
           </instance-parameter>
           <parameter name="start_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="805">X coordinate of start of drag</doc>
+                 line="806">X coordinate of start of drag</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="start_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="806">Y coordinate of start of drag</doc>
+                 line="807">Y coordinate of start of drag</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="current_x" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="807">current X coordinate</doc>
+                 line="808">current X coordinate</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="current_y" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkdragsource.c"
-                 line="808">current Y coordinate</doc>
+                 line="809">current Y coordinate</doc>
             <type name="gint" c:type="int"/>
           </parameter>
         </parameters>
@@ -184105,7 +184105,7 @@ titlebars.</doc>
       <method name="destroy" c:identifier="gtk_window_destroy">
         <doc xml:space="preserve"
              filename="gtk/gtkwindow.c"
-             line="7040">Drops the internal reference GTK holds on toplevel windows.</doc>
+             line="7050">Drops the internal reference GTK holds on toplevel windows.</doc>
         <source-position filename="gtk/gtkwindow.h" line="257"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -184114,7 +184114,7 @@ titlebars.</doc>
           <instance-parameter name="window" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7042">the window to destroy</doc>
+                 line="7052">the window to destroy</doc>
             <type name="Window" c:type="GtkWindow*"/>
           </instance-parameter>
         </parameters>
@@ -184207,19 +184207,19 @@ notifications of the [property@Gtk.Window:fullscreened] property.</doc>
               glib:get-property="child">
         <doc xml:space="preserve"
              filename="gtk/gtkwindow.c"
-             line="7022">Gets the child widget of the window.</doc>
+             line="7032">Gets the child widget of the window.</doc>
         <source-position filename="gtk/gtkwindow.h" line="239"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gtk/gtkwindow.c"
-               line="7028">the child widget of @window</doc>
+               line="7038">the child widget of @window</doc>
           <type name="Widget" c:type="GtkWidget*"/>
         </return-value>
         <parameters>
           <instance-parameter name="window" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7024">a window</doc>
+                 line="7034">a window</doc>
             <type name="Window" c:type="GtkWindow*"/>
           </instance-parameter>
         </parameters>
@@ -184415,19 +184415,19 @@ not be false for the widget.</doc>
               version="4.20">
         <doc xml:space="preserve"
              filename="gtk/gtkwindow.c"
-             line="7260">Returns the gravity that is used when changing the window size programmatically.</doc>
+             line="7270">Returns the gravity that is used when changing the window size programmatically.</doc>
         <source-position filename="gtk/gtkwindow.h" line="318"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtk/gtkwindow.c"
-               line="7266">the gravity</doc>
+               line="7276">the gravity</doc>
           <type name="WindowGravity" c:type="GtkWindowGravity"/>
         </return-value>
         <parameters>
           <instance-parameter name="window" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7262">a window</doc>
+                 line="7272">a window</doc>
             <type name="Window" c:type="GtkWindow*"/>
           </instance-parameter>
         </parameters>
@@ -184464,20 +184464,20 @@ If the window has no group, then the default group is returned.</doc>
               version="4.2">
         <doc xml:space="preserve"
              filename="gtk/gtkwindow.c"
-             line="7236">Returns whether this window reacts to &lt;kbd&gt;F10&lt;/kbd&gt;
+             line="7246">Returns whether this window reacts to &lt;kbd&gt;F10&lt;/kbd&gt;
 presses by activating a menubar it contains.</doc>
         <source-position filename="gtk/gtkwindow.h" line="266"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gtk/gtkwindow.c"
-               line="7243">true if the window handles &lt;kbd&gt;F10&lt;/kbd&gt;</doc>
+               line="7253">true if the window handles &lt;kbd&gt;F10&lt;/kbd&gt;</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="window" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7238">a window</doc>
+                 line="7248">a window</doc>
             <type name="Window" c:type="GtkWindow*"/>
           </instance-parameter>
         </parameters>
@@ -184968,7 +184968,7 @@ as relevant.</doc>
               glib:set-property="child">
         <doc xml:space="preserve"
              filename="gtk/gtkwindow.c"
-             line="6992">Sets the child widget of the window.</doc>
+             line="7002">Sets the child widget of the window.</doc>
         <source-position filename="gtk/gtkwindow.h" line="236"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -184977,7 +184977,7 @@ as relevant.</doc>
           <instance-parameter name="window" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="6994">a window</doc>
+                 line="7004">a window</doc>
             <type name="Window" c:type="GtkWindow*"/>
           </instance-parameter>
           <parameter name="child"
@@ -184986,7 +184986,7 @@ as relevant.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="6995">the child widget</doc>
+                 line="7005">the child widget</doc>
             <type name="Widget" c:type="GtkWidget*"/>
           </parameter>
         </parameters>
@@ -185279,7 +185279,7 @@ and should not be set by applications.</doc>
               version="4.20">
         <doc xml:space="preserve"
              filename="gtk/gtkwindow.c"
-             line="7280">Sets the gravity that is used when changing the window size programmatically.</doc>
+             line="7290">Sets the gravity that is used when changing the window size programmatically.</doc>
         <source-position filename="gtk/gtkwindow.h" line="320"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -185288,13 +185288,13 @@ and should not be set by applications.</doc>
           <instance-parameter name="window" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7282">a window</doc>
+                 line="7292">a window</doc>
             <type name="Window" c:type="GtkWindow*"/>
           </instance-parameter>
           <parameter name="gravity" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7283">the new gravity</doc>
+                 line="7293">the new gravity</doc>
             <type name="WindowGravity" c:type="GtkWindowGravity"/>
           </parameter>
         </parameters>
@@ -185305,7 +185305,7 @@ and should not be set by applications.</doc>
               version="4.2">
         <doc xml:space="preserve"
              filename="gtk/gtkwindow.c"
-             line="7207">Sets whether this window should react to &lt;kbd&gt;F10&lt;/kbd&gt;
+             line="7217">Sets whether this window should react to &lt;kbd&gt;F10&lt;/kbd&gt;
 presses by activating a menubar it contains.</doc>
         <source-position filename="gtk/gtkwindow.h" line="263"/>
         <return-value transfer-ownership="none">
@@ -185315,13 +185315,13 @@ presses by activating a menubar it contains.</doc>
           <instance-parameter name="window" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7209">a window</doc>
+                 line="7219">a window</doc>
             <type name="Window" c:type="GtkWindow*"/>
           </instance-parameter>
           <parameter name="handle_menubar_accel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gtk/gtkwindow.c"
-                 line="7210">true to make @window handle &lt;kbd&gt;F10&lt;/kbd&gt;</doc>
+                 line="7220">true to make @window handle &lt;kbd&gt;F10&lt;/kbd&gt;</doc>
             <type name="gboolean" c:type="gboolean"/>
           </parameter>
         </parameters>
