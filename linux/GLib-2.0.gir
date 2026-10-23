@@ -12309,7 +12309,7 @@ It is an error to call any of the `GDir` methods other than
                 throws="1">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="1886">Creates a subdirectory in the preferred directory for temporary
+             line="1890">Creates a subdirectory in the preferred directory for temporary
 files (as returned by g_get_tmp_dir()).
 
 @tmpl should be a string in the GLib file name encoding containing
@@ -12324,7 +12324,7 @@ modified, and might thus be a read-only literal string.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1904">The actual name used. This string
+               line="1908">The actual name used. This string
   should be freed with g_free() when not needed any longer and is
   is in the GLib file name encoding. In case of errors, %NULL is
   returned and @error will be set.</doc>
@@ -12337,7 +12337,7 @@ modified, and might thus be a read-only literal string.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/gfileutils.c"
-                 line="1888">Template for directory name,
+                 line="1892">Template for directory name,
   as in g_mkdtemp(), basename only, or %NULL for a default template</doc>
             <type name="filename" c:type="const gchar*"/>
           </parameter>
@@ -17377,19 +17377,19 @@ programmer (unless you are creating a new type of #GIOChannel).</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="1991">Replacement for g_io_channel_read() with the new API.</doc>
+             line="1992">Replacement for g_io_channel_read() with the new API.</doc>
         <source-position filename="glib/giochannel.h" line="269"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/giochannel.c"
-               line="2008">the status of the operation.</doc>
+               line="2009">the status of the operation.</doc>
           <type name="IOStatus" c:type="GIOStatus"/>
         </return-value>
         <parameters>
           <instance-parameter name="channel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="1993">a #GIOChannel</doc>
+                 line="1994">a #GIOChannel</doc>
             <type name="IOChannel" c:type="GIOChannel*"/>
           </instance-parameter>
           <parameter name="buf"
@@ -17398,7 +17398,7 @@ programmer (unless you are creating a new type of #GIOChannel).</doc>
                      transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="1994">
+                 line="1995">
     a buffer to read data into</doc>
             <array length="1" zero-terminated="0" c:type="gchar*">
               <type name="guint8"/>
@@ -17407,7 +17407,7 @@ programmer (unless you are creating a new type of #GIOChannel).</doc>
           <parameter name="count" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="1996">the size of the buffer. Note that the buffer may not be
+                 line="1997">the size of the buffer. Note that the buffer may not be
     completely filled even if there is data in the buffer if the
     remaining data is not a complete character.</doc>
             <type name="gsize" c:type="gsize"/>
@@ -17420,7 +17420,7 @@ programmer (unless you are creating a new type of #GIOChannel).</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="1999">The number of bytes read. This may be
+                 line="2000">The number of bytes read. This may be
     zero even on success if count &lt; 6 and the channel's encoding
     is non-%NULL. This indicates that the next UTF-8 character is
     too wide for the buffer.</doc>
@@ -17531,12 +17531,12 @@ is %G_IO_STATUS_NORMAL.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="1910">Reads all the remaining data from the file.</doc>
+             line="1911">Reads all the remaining data from the file.</doc>
         <source-position filename="glib/giochannel.h" line="264"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/giochannel.c"
-               line="1924">%G_IO_STATUS_NORMAL on success.
+               line="1925">%G_IO_STATUS_NORMAL on success.
     This function never returns %G_IO_STATUS_EOF.</doc>
           <type name="IOStatus" c:type="GIOStatus"/>
         </return-value>
@@ -17544,7 +17544,7 @@ is %G_IO_STATUS_NORMAL.</doc>
           <instance-parameter name="channel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="1912">a #GIOChannel</doc>
+                 line="1913">a #GIOChannel</doc>
             <type name="IOChannel" c:type="GIOChannel*"/>
           </instance-parameter>
           <parameter name="str_return"
@@ -17553,7 +17553,7 @@ is %G_IO_STATUS_NORMAL.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="1913">Location to
+                 line="1914">Location to
              store a pointer to a string holding the remaining data in the
              #GIOChannel. This data should be freed with g_free() when no
              longer needed. This data is terminated by an extra nul
@@ -17568,7 +17568,7 @@ is %G_IO_STATUS_NORMAL.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="1918">location to store length of the data</doc>
+                 line="1919">location to store length of the data</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
         </parameters>
@@ -17578,20 +17578,20 @@ is %G_IO_STATUS_NORMAL.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2111">Reads a Unicode character from @channel.
+             line="2112">Reads a Unicode character from @channel.
 This function cannot be called on a channel with %NULL encoding.</doc>
         <source-position filename="glib/giochannel.h" line="275"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/giochannel.c"
-               line="2121">a #GIOStatus</doc>
+               line="2122">a #GIOStatus</doc>
           <type name="IOStatus" c:type="GIOStatus"/>
         </return-value>
         <parameters>
           <instance-parameter name="channel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2113">a #GIOChannel</doc>
+                 line="2114">a #GIOChannel</doc>
             <type name="IOChannel" c:type="GIOChannel*"/>
           </instance-parameter>
           <parameter name="thechar"
@@ -17600,7 +17600,7 @@ This function cannot be called on a channel with %NULL encoding.</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2114">a location to return a character</doc>
+                 line="2115">a location to return a character</doc>
             <type name="gunichar" c:type="gunichar*"/>
           </parameter>
         </parameters>
@@ -18042,7 +18042,7 @@ the #GIOChannel.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2172">Replacement for g_io_channel_write() with the new API.
+             line="2173">Replacement for g_io_channel_write() with the new API.
 
 On seekable channels with encodings other than %NULL or UTF-8, generic
 mixing of reading and writing is not allowed. A call to g_io_channel_write_chars ()
@@ -18052,20 +18052,20 @@ cases described in the documentation for g_io_channel_set_encoding ().</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/giochannel.c"
-               line="2193">the status of the operation.</doc>
+               line="2194">the status of the operation.</doc>
           <type name="IOStatus" c:type="GIOStatus"/>
         </return-value>
         <parameters>
           <instance-parameter name="channel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2174">a #GIOChannel</doc>
+                 line="2175">a #GIOChannel</doc>
             <type name="IOChannel" c:type="GIOChannel*"/>
           </instance-parameter>
           <parameter name="buf" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2175">a buffer to write data from</doc>
+                 line="2176">a buffer to write data from</doc>
             <array zero-terminated="0" c:type="const gchar*">
               <type name="guint8"/>
             </array>
@@ -18073,7 +18073,7 @@ cases described in the documentation for g_io_channel_set_encoding ().</doc>
           <parameter name="count" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2176">the size of the buffer. If -1, the buffer
+                 line="2177">the size of the buffer. If -1, the buffer
         is taken to be a nul-terminated string.</doc>
             <type name="gssize" c:type="gssize"/>
           </parameter>
@@ -18083,7 +18083,7 @@ cases described in the documentation for g_io_channel_set_encoding ().</doc>
                      transfer-ownership="full">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2178">The number of bytes written. This can be nonzero
+                 line="2179">The number of bytes written. This can be nonzero
                 even if the return value is not %G_IO_STATUS_NORMAL.
                 If the return value is %G_IO_STATUS_NORMAL and the
                 channel is blocking, this will always be equal
@@ -18097,26 +18097,26 @@ cases described in the documentation for g_io_channel_set_encoding ().</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2521">Writes a Unicode character to @channel.
+             line="2522">Writes a Unicode character to @channel.
 This function cannot be called on a channel with %NULL encoding.</doc>
         <source-position filename="glib/giochannel.h" line="285"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/giochannel.c"
-               line="2531">a #GIOStatus</doc>
+               line="2532">a #GIOStatus</doc>
           <type name="IOStatus" c:type="GIOStatus"/>
         </return-value>
         <parameters>
           <instance-parameter name="channel" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2523">a #GIOChannel</doc>
+                 line="2524">a #GIOChannel</doc>
             <type name="IOChannel" c:type="GIOChannel*"/>
           </instance-parameter>
           <parameter name="thechar" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/giochannel.c"
-                 line="2524">a character</doc>
+                 line="2525">a character</doc>
             <type name="gunichar" c:type="gunichar"/>
           </parameter>
         </parameters>
@@ -18154,54 +18154,54 @@ This function cannot be called on a channel with %NULL encoding.</doc>
                  glib:error-domain="g-io-channel-error-quark">
       <doc xml:space="preserve"
            filename="glib/giochannel.c"
-           line="2573">Error codes returned by #GIOChannel operations.</doc>
+           line="2574">Error codes returned by #GIOChannel operations.</doc>
       <source-position filename="glib/giochannel.h" line="69"/>
       <member name="fbig" value="0" c:identifier="G_IO_CHANNEL_ERROR_FBIG">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2575">File too large.</doc>
+             line="2576">File too large.</doc>
       </member>
       <member name="inval" value="1" c:identifier="G_IO_CHANNEL_ERROR_INVAL">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2576">Invalid argument.</doc>
+             line="2577">Invalid argument.</doc>
       </member>
       <member name="io" value="2" c:identifier="G_IO_CHANNEL_ERROR_IO">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2577">IO error.</doc>
+             line="2578">IO error.</doc>
       </member>
       <member name="isdir" value="3" c:identifier="G_IO_CHANNEL_ERROR_ISDIR">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2578">File is a directory.</doc>
+             line="2579">File is a directory.</doc>
       </member>
       <member name="nospc" value="4" c:identifier="G_IO_CHANNEL_ERROR_NOSPC">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2579">No space left on device.</doc>
+             line="2580">No space left on device.</doc>
       </member>
       <member name="nxio" value="5" c:identifier="G_IO_CHANNEL_ERROR_NXIO">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2580">No such device or address.</doc>
+             line="2581">No such device or address.</doc>
       </member>
       <member name="overflow"
               value="6"
               c:identifier="G_IO_CHANNEL_ERROR_OVERFLOW">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2581">Value too large for defined datatype.</doc>
+             line="2582">Value too large for defined datatype.</doc>
       </member>
       <member name="pipe" value="7" c:identifier="G_IO_CHANNEL_ERROR_PIPE">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2582">Broken pipe.</doc>
+             line="2583">Broken pipe.</doc>
       </member>
       <member name="failed" value="8" c:identifier="G_IO_CHANNEL_ERROR_FAILED">
         <doc xml:space="preserve"
              filename="glib/giochannel.c"
-             line="2583">Some other error.</doc>
+             line="2584">Some other error.</doc>
       </member>
     </enumeration>
     <bitfield name="IOCondition"
@@ -23044,7 +23044,7 @@ linked against at application run time.</doc>
       <source-position filename="glib/gtypes.h" line="76"/>
       <type name="guint8" c:type="guint8"/>
     </constant>
-    <constant name="MICRO_VERSION" value="3" c:type="GLIB_MICRO_VERSION">
+    <constant name="MICRO_VERSION" value="4" c:type="GLIB_MICRO_VERSION">
       <doc xml:space="preserve"
            filename="glib/gversion.c"
            line="78">The micro version number of the GLib library.
@@ -52485,7 +52485,7 @@ See [Unicode Standard Annex #24: Script names](http://www.unicode.org/reports/tr
                 version="2.30">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1610">Looks up the Unicode script for @iso15924.  ISO 15924 assigns four-letter
+             line="1621">Looks up the Unicode script for @iso15924.  ISO 15924 assigns four-letter
 codes to scripts.  For example, the code for Arabic is 'Arab'.
 This function accepts four letter codes encoded as a @guint32 in a
 big-endian fashion.  That is, the code expected for Arabic is
@@ -52498,7 +52498,7 @@ for details.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1624">the Unicode script for @iso15924, or
+               line="1635">the Unicode script for @iso15924, or
   of %G_UNICODE_SCRIPT_INVALID_CODE if @iso15924 is zero and
   %G_UNICODE_SCRIPT_UNKNOWN if @iso15924 is unknown.</doc>
           <type name="UnicodeScript" c:type="GUnicodeScript"/>
@@ -52507,7 +52507,7 @@ for details.</doc>
           <parameter name="iso15924" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/guniprop.c"
-                 line="1612">a Unicode script</doc>
+                 line="1623">a Unicode script</doc>
             <type name="guint32" c:type="guint32"/>
           </parameter>
         </parameters>
@@ -52517,7 +52517,7 @@ for details.</doc>
                 version="2.30">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1578">Looks up the ISO 15924 code for @script.  ISO 15924 assigns four-letter
+             line="1589">Looks up the ISO 15924 code for @script.  ISO 15924 assigns four-letter
 codes to scripts.  For example, the code for Arabic is 'Arab'.  The
 four letter codes are encoded as a @guint32 by this function in a
 big-endian fashion.  That is, the code returned for Arabic is
@@ -52530,7 +52530,7 @@ for details.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1592">the ISO 15924 code for @script, encoded as an integer,
+               line="1603">the ISO 15924 code for @script, encoded as an integer,
   of zero if @script is %G_UNICODE_SCRIPT_INVALID_CODE or
   ISO 15924 code 'Zzzz' (script code for UNKNOWN) if @script is not understood.</doc>
           <type name="guint32" c:type="guint32"/>
@@ -52539,7 +52539,7 @@ for details.</doc>
           <parameter name="script" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/guniprop.c"
-                 line="1580">a Unicode script</doc>
+                 line="1591">a Unicode script</doc>
             <type name="UnicodeScript" c:type="GUnicodeScript"/>
           </parameter>
         </parameters>
@@ -57268,7 +57268,7 @@ see the section on
               version="2.24">
         <doc xml:space="preserve"
              filename="glib/gvariant-core.c"
-             line="1216">Reads a child item out of a container #GVariant instance.  This
+             line="1221">Reads a child item out of a container #GVariant instance.  This
 includes variants, maybes, arrays, tuples and dictionary
 entries.  It is an error to call this function on any other type of
 #GVariant.
@@ -57295,20 +57295,20 @@ This function is O(1).</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gvariant-core.c"
-               line="1245">the child at the specified index</doc>
+               line="1250">the child at the specified index</doc>
           <type name="Variant" c:type="GVariant*"/>
         </return-value>
         <parameters>
           <instance-parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-core.c"
-                 line="1218">a container #GVariant</doc>
+                 line="1223">a container #GVariant</doc>
             <type name="Variant" c:type="GVariant*"/>
           </instance-parameter>
           <parameter name="index_" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-core.c"
-                 line="1219">the index of the child to fetch</doc>
+                 line="1224">the index of the child to fetch</doc>
             <type name="gsize" c:type="gsize"/>
           </parameter>
         </parameters>
@@ -57365,12 +57365,15 @@ serialized data).</doc>
              line="1129">Returns a pointer to the serialized form of a #GVariant instance.
 The semantics of this function are exactly the same as
 g_variant_get_data(), except that the returned #GBytes holds
-a reference to the variant data.</doc>
+a reference to the variant data.
+
+This function cannot fail, even for corrupted variants. In that case
+it will return a #GBytes filled with nul bytes.</doc>
         <source-position filename="glib/gvariant.h" line="232"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gvariant-core.c"
-               line="1138">A new #GBytes representing the variant data</doc>
+               line="1141">A new #GBytes representing the variant data</doc>
           <type name="Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
@@ -58106,7 +58109,7 @@ counts.</doc>
               version="2.24">
         <doc xml:space="preserve"
              filename="glib/gvariant-core.c"
-             line="1438">Checks if @value is in normal form.
+             line="1443">Checks if @value is in normal form.
 
 The main reason to do this is to detect if a given chunk of
 serialized data is in normal form: load the data into a #GVariant
@@ -58123,14 +58126,14 @@ GVariant is guaranteed to handle nesting up to at least 64 levels.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gvariant-core.c"
-               line="1456">%TRUE if @value is in normal form</doc>
+               line="1461">%TRUE if @value is in normal form</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-core.c"
-                 line="1440">a #GVariant instance</doc>
+                 line="1445">a #GVariant instance</doc>
             <type name="Variant" c:type="GVariant*"/>
           </instance-parameter>
         </parameters>
@@ -58309,7 +58312,7 @@ plan to do many lookups then [struct@VariantDict] may be more efficient.</doc>
               version="2.24">
         <doc xml:space="preserve"
              filename="glib/gvariant-core.c"
-             line="1178">Determines the number of children in a container #GVariant instance.
+             line="1183">Determines the number of children in a container #GVariant instance.
 This includes variants, maybes, arrays, tuples and dictionary
 entries.  It is an error to call this function on any other type of
 #GVariant.
@@ -58324,14 +58327,14 @@ This function is O(1).</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gvariant-core.c"
-               line="1194">the number of children in the container</doc>
+               line="1199">the number of children in the container</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
         <parameters>
           <instance-parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-core.c"
-                 line="1180">a container #GVariant</doc>
+                 line="1185">a container #GVariant</doc>
             <type name="Variant" c:type="GVariant*"/>
           </instance-parameter>
         </parameters>
@@ -58474,7 +58477,7 @@ are not floating.</doc>
       <method name="store" c:identifier="g_variant_store" version="2.24">
         <doc xml:space="preserve"
              filename="glib/gvariant-core.c"
-             line="1397">Stores the serialized form of @value at @data.  @data should be
+             line="1402">Stores the serialized form of @value at @data.  @data should be
 large enough.  See g_variant_get_size().
 
 The stored data is in machine native byte order but may not be in
@@ -58494,13 +58497,13 @@ This function is approximately O(n) in the size of @data.</doc>
           <instance-parameter name="value" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-core.c"
-                 line="1399">the #GVariant to store</doc>
+                 line="1404">the #GVariant to store</doc>
             <type name="Variant" c:type="GVariant*"/>
           </instance-parameter>
           <parameter name="data" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="glib/gvariant-core.c"
-                 line="1400">the location to store the serialized data at</doc>
+                 line="1405">the location to store the serialized data at</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
         </parameters>
@@ -65293,7 +65296,7 @@ or certain other protocols.</doc>
               deprecated-version="2.2">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2561">Gets the name of the file without any leading directory
+           line="2565">Gets the name of the file without any leading directory
 components. It returns a pointer into the given file name
 string.</doc>
       <doc-deprecated xml:space="preserve">Use g_path_get_basename() instead, but notice
@@ -65304,7 +65307,7 @@ string.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2569">the name of the file without any leading
+             line="2573">the name of the file without any leading
   directory components</doc>
         <type name="filename" c:type="const gchar*"/>
       </return-value>
@@ -65312,7 +65315,7 @@ string.</doc>
         <parameter name="file_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2563">the name of the file</doc>
+               line="2567">the name of the file</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -65623,7 +65626,7 @@ Note that the @lock_bit bit will always be unset regardless of
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2293">Creates a filename from a series of elements using the correct
+           line="2297">Creates a filename from a series of elements using the correct
 separator for the current platform.
 
 On Unix, this function behaves identically to `g_build_path
@@ -65645,20 +65648,20 @@ If you are building a path programmatically you may want to use
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2317">the newly allocated path</doc>
+             line="2321">the newly allocated path</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
       <parameters>
         <parameter name="first_element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2295">the first element in the path</doc>
+               line="2299">the first element in the path</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
         <parameter name="..." transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2296">remaining elements in path, terminated by %NULL</doc>
+               line="2300">remaining elements in path, terminated by %NULL</doc>
           <varargs/>
         </parameter>
       </parameters>
@@ -65669,7 +65672,7 @@ If you are building a path programmatically you may want to use
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2241">Creates a filename from a list of elements using the correct
+           line="2245">Creates a filename from a list of elements using the correct
 separator for the current platform.
 
 Behaves exactly like g_build_filename(), but takes the path elements
@@ -65681,20 +65684,20 @@ functions.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2255">the newly allocated path</doc>
+             line="2259">the newly allocated path</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
       <parameters>
         <parameter name="first_element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2243">the first element in the path</doc>
+               line="2247">the first element in the path</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
         <parameter name="args" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2244">va_list of remaining elements in path</doc>
+               line="2248">va_list of remaining elements in path</doc>
           <type name="va_list" c:type="va_list*"/>
         </parameter>
       </parameters>
@@ -65704,7 +65707,7 @@ functions.</doc>
               version="2.8">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2268">Creates a filename from a vector of elements using the correct
+           line="2272">Creates a filename from a vector of elements using the correct
 separator for the current platform.
 
 This function behaves exactly like g_build_filename(), but takes the path
@@ -65717,14 +65720,14 @@ If you are building a path programmatically you may want to use
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2283">the newly allocated path</doc>
+             line="2287">the newly allocated path</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
       <parameters>
         <parameter name="args" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2270">%NULL-terminated
+               line="2274">%NULL-terminated
   array of strings containing the path elements.</doc>
           <array c:type="gchar**">
             <type name="filename"/>
@@ -65735,7 +65738,7 @@ If you are building a path programmatically you may want to use
     <function name="build_path" c:identifier="g_build_path" introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2055">Creates a path from a series of elements using @separator as the
+           line="2059">Creates a path from a series of elements using @separator as the
 separator between elements.
 
 At the boundary between two elements, any trailing occurrences of
@@ -65767,26 +65770,26 @@ of the separator are ignored.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2090">the newly allocated path</doc>
+             line="2094">the newly allocated path</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
       <parameters>
         <parameter name="separator" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2057">a string used to separate the elements of the path.</doc>
+               line="2061">a string used to separate the elements of the path.</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
         <parameter name="first_element" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2058">the first element in the path</doc>
+               line="2062">the first element in the path</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
         <parameter name="..." transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2059">remaining elements in path, terminated by %NULL</doc>
+               line="2063">remaining elements in path, terminated by %NULL</doc>
           <varargs/>
         </parameter>
       </parameters>
@@ -65794,7 +65797,7 @@ of the separator are ignored.</doc>
     <function name="build_pathv" c:identifier="g_build_pathv" version="2.8">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2028">Behaves exactly like g_build_path(), but takes the path elements
+           line="2032">Behaves exactly like g_build_path(), but takes the path elements
 as a string array, instead of variadic arguments.
 
 This function is mainly meant for language bindings.</doc>
@@ -65802,7 +65805,7 @@ This function is mainly meant for language bindings.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2039">a newly-allocated string that
+             line="2043">a newly-allocated string that
     must be freed with g_free().</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
@@ -65810,13 +65813,13 @@ This function is mainly meant for language bindings.</doc>
         <parameter name="separator" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2030">a string used to separate the elements of the path.</doc>
+               line="2034">a string used to separate the elements of the path.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="args" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2031">%NULL-terminated
+               line="2035">%NULL-terminated
   array of strings containing the path elements.</doc>
           <array c:type="gchar**">
             <type name="filename"/>
@@ -66374,7 +66377,7 @@ thread.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2807">Gets the canonical file name from @filename. All triple slashes are turned into
+           line="2811">Gets the canonical file name from @filename. All triple slashes are turned into
 single slashes, and all `..` and `.`s resolved against @relative_to.
 
 Symlinks are not followed, and the returned path is guaranteed to be absolute.
@@ -66392,7 +66395,7 @@ No file system I/O is done.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2828">a newly allocated string with the
+             line="2832">a newly allocated string with the
   canonical file path</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
@@ -66400,7 +66403,7 @@ No file system I/O is done.</doc>
         <parameter name="filename" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2809">the name of the file</doc>
+               line="2813">the name of the file</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
         <parameter name="relative_to"
@@ -66409,7 +66412,7 @@ No file system I/O is done.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2810">the relative directory, or %NULL
+               line="2814">the relative directory, or %NULL
 to use the current working directory</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
@@ -69231,7 +69234,7 @@ but use the _() macro for translations.</doc>
               throws="1">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="1886">Creates a subdirectory in the preferred directory for temporary
+           line="1890">Creates a subdirectory in the preferred directory for temporary
 files (as returned by g_get_tmp_dir()).
 
 @tmpl should be a string in the GLib file name encoding containing
@@ -69246,7 +69249,7 @@ modified, and might thus be a read-only literal string.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="1904">The actual name used. This string
+             line="1908">The actual name used. This string
   should be freed with g_free() when not needed any longer and is
   is in the GLib file name encoding. In case of errors, %NULL is
   returned and @error will be set.</doc>
@@ -69259,7 +69262,7 @@ modified, and might thus be a read-only literal string.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1888">Template for directory name,
+               line="1892">Template for directory name,
   as in g_mkdtemp(), basename only, or %NULL for a default template</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
@@ -69906,7 +69909,7 @@ codes are those in the #GFileError enumeration. In the error case,
     <function name="file_open_tmp" c:identifier="g_file_open_tmp" throws="1">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="1830">Opens a file for writing in the preferred directory for temporary
+           line="1834">Opens a file for writing in the preferred directory for temporary
 files (as returned by g_get_tmp_dir()).
 
 @tmpl should be a string in the GLib file name encoding containing
@@ -69926,7 +69929,7 @@ name encoding.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="1855">A file handle (as from open()) to the file opened for
+             line="1859">A file handle (as from open()) to the file opened for
   reading and writing. The file is opened in binary mode on platforms
   where there is a difference. The file handle should be closed with
   close(). In case of errors, -1 is returned and @error will be set.</doc>
@@ -69939,7 +69942,7 @@ name encoding.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1832">Template for file name, as in
+               line="1836">Template for file name, as in
   g_mkstemp(), basename only, or %NULL for a default template</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
@@ -69949,7 +69952,7 @@ name encoding.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1834">location to store actual name used,
+               line="1838">location to store actual name used,
   or %NULL</doc>
           <type name="filename" c:type="gchar**"/>
         </parameter>
@@ -69961,7 +69964,7 @@ name encoding.</doc>
               throws="1">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2333">Reads the contents of the symbolic link @filename like the POSIX
+           line="2337">Reads the contents of the symbolic link @filename like the POSIX
 `readlink()` function.
 
 The returned string is in the encoding used for filenames. Use
@@ -69988,7 +69991,7 @@ if (!g_path_is_absolute (link_target))
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2362">A newly-allocated string with
+             line="2366">A newly-allocated string with
   the contents of the symbolic link, or %NULL if an error occurred.</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
@@ -69996,7 +69999,7 @@ if (!g_path_is_absolute (link_target))
         <parameter name="filename" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2335">the symbolic link</doc>
+               line="2339">the symbolic link</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -71019,7 +71022,7 @@ freed.</doc>
     <function name="get_current_dir" c:identifier="g_get_current_dir">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2961">Gets the current directory.
+           line="2965">Gets the current directory.
 
 The returned string should be freed when no longer needed.
 The encoding of the returned string is system defined.
@@ -71033,7 +71036,7 @@ the current directory is the target of a symbolic link.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2975">the current directory</doc>
+             line="2979">the current directory</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
     </function>
@@ -74168,7 +74171,7 @@ output via the structured log writer function (see [func@GLib.log_set_writer_fun
     <function name="log_default_handler" c:identifier="g_log_default_handler">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3477">The default log handler set up by GLib; [func@GLib.log_set_default_handler]
+           line="3491">The default log handler set up by GLib; [func@GLib.log_set_default_handler]
 allows to install an alternate default log handler.
 
 This is used if no log handler has been set for the particular log
@@ -74210,14 +74213,14 @@ This has no effect if structured logging is enabled; see
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3479">the log domain of the message, or `NULL` for the
+               line="3493">the log domain of the message, or `NULL` for the
   default `""` application domain</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3481">the level of the message</doc>
+               line="3495">the level of the message</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="message"
@@ -74226,7 +74229,7 @@ This has no effect if structured logging is enabled; see
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3482">the message</doc>
+               line="3496">the message</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="unused_data"
@@ -74235,7 +74238,7 @@ This has no effect if structured logging is enabled; see
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3483">data passed from [func@GLib.log] which is unused</doc>
+               line="3497">data passed from [func@GLib.log] which is unused</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -74286,7 +74289,7 @@ my_custom_log_writer_fn (GLogLevelFlags log_level,
               version="2.72">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3139">Return whether debug output from the GLib logging system is enabled.
+           line="3153">Return whether debug output from the GLib logging system is enabled.
 
 Note that this should not be used to conditionalise calls to [func@GLib.debug] or
 other logging functions; it should only be used from [type@GLib.LogWriterFunc]
@@ -74299,7 +74302,7 @@ the docs for [func@GLib.log_set_debug_enabled].</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3152">`TRUE` if debug output is enabled, `FALSE` otherwise</doc>
+             line="3166">`TRUE` if debug output is enabled, `FALSE` otherwise</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
     </function>
@@ -74373,7 +74376,7 @@ are fatal. See [Using Structured Logging](logging.html#using-structured-logging)
               version="2.72">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3162">Enable or disable debug output from the GLib logging system for all domains.
+           line="3176">Enable or disable debug output from the GLib logging system for all domains.
 
 This value interacts disjunctively with `G_MESSAGES_DEBUG`, `DEBUG_INVOCATION` and
 [func@GLib.log_writer_default_set_debug_domains] — if any of them would allow
@@ -74389,7 +74392,7 @@ output — it is intended for external use.</doc>
         <parameter name="enabled" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3164">`TRUE` to enable debug output, `FALSE` otherwise</doc>
+               line="3178">`TRUE` to enable debug output, `FALSE` otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </parameter>
       </parameters>
@@ -74930,7 +74933,7 @@ containing the key-value pairs of message data.</doc>
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2980">Format a structured log message and output it to the default log destination
+           line="2994">Format a structured log message and output it to the default log destination
 for the platform.
 
 On Linux, this is typically the systemd journal, falling
@@ -74956,7 +74959,7 @@ up to the writer function to determine which log messages are fatal.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3012">[enum@GLib.LogWriterOutput.HANDLED] on success,
+             line="3026">[enum@GLib.LogWriterOutput.HANDLED] on success,
   [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
         <type name="LogWriterOutput" c:type="GLogWriterOutput"/>
       </return-value>
@@ -74964,14 +74967,14 @@ up to the writer function to determine which log messages are fatal.</doc>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2982">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2996">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2984">key–value pairs of structured data forming
+               line="2998">key–value pairs of structured data forming
    the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -74980,7 +74983,7 @@ up to the writer function to determine which log messages are fatal.</doc>
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2986">number of elements in the @fields array</doc>
+               line="3000">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="user_data"
@@ -74989,7 +74992,7 @@ up to the writer function to determine which log messages are fatal.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2987">user data passed to [func@GLib.log_set_writer_func]</doc>
+               line="3001">user data passed to [func@GLib.log_set_writer_func]</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -74999,7 +75002,7 @@ up to the writer function to determine which log messages are fatal.</doc>
               version="2.80">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2837">Reset the list of domains to be logged, that might be initially set by the
+           line="2851">Reset the list of domains to be logged, that might be initially set by the
 `G_MESSAGES_DEBUG` or `DEBUG_INVOCATION` environment variables.
 
 This function is thread-safe.</doc>
@@ -75014,7 +75017,7 @@ This function is thread-safe.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2839">`NULL`-terminated array with domains to be printed.
+               line="2853">`NULL`-terminated array with domains to be printed.
   `NULL` or an array with no values means none. Array with a single value `"all"` means all.</doc>
           <type name="utf8" c:type="const gchar* const*"/>
         </parameter>
@@ -75059,7 +75062,7 @@ or creating objects that could create worker threads of their own.</doc>
               version="2.68">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2935">Check whether [func@GLib.log_writer_default] and [func@GLib.log_default_handler] would
+           line="2949">Check whether [func@GLib.log_writer_default] and [func@GLib.log_default_handler] would
 ignore a message with the given domain and level.
 
 As with [func@GLib.log_default_handler], this function drops debug and informational
@@ -75090,7 +75093,7 @@ if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2969">`TRUE` if the log message would be dropped by GLib’s
+             line="2983">`TRUE` if the log message would be dropped by GLib’s
   default log handlers</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -75098,7 +75101,7 @@ if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2938">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2952">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
@@ -75108,7 +75111,7 @@ if (!g_log_writer_default_would_drop (G_LOG_LEVEL_DEBUG, G_LOG_DOMAIN))
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2937">log domain</doc>
+               line="2951">log domain</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -75262,7 +75265,7 @@ defined, but will always return [enum@GLib.LogWriterOutput.UNHANDLED].</doc>
               version="2.50">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="2678">Format a structured log message and print it to either `stdout` or `stderr`,
+           line="2692">Format a structured log message and print it to either `stdout` or `stderr`,
 depending on its log level.
 
 [flags@GLib.LogLevelFlags.LEVEL_INFO] and [flags@GLib.LogLevelFlags.LEVEL_DEBUG] messages
@@ -75283,7 +75286,7 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="2705">[enum@GLib.LogWriterOutput.HANDLED] on success,
+             line="2719">[enum@GLib.LogWriterOutput.HANDLED] on success,
   [enum@GLib.LogWriterOutput.UNHANDLED] otherwise</doc>
         <type name="LogWriterOutput" c:type="GLogWriterOutput"/>
       </return-value>
@@ -75291,14 +75294,14 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2680">log level, either from [type@GLib.LogLevelFlags], or a user-defined
+               line="2694">log level, either from [type@GLib.LogLevelFlags], or a user-defined
    level</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2682">key–value pairs of structured data forming
+               line="2696">key–value pairs of structured data forming
    the log message</doc>
           <array length="2" zero-terminated="0" c:type="const GLogField*">
             <type name="LogField" c:type="GLogField"/>
@@ -75307,7 +75310,7 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
         <parameter name="n_fields" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2684">number of elements in the @fields array</doc>
+               line="2698">number of elements in the @fields array</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="user_data"
@@ -75316,7 +75319,7 @@ This is suitable for use as a [type@GLib.LogWriterFunc].</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="2685">user data passed to [func@GLib.log_set_writer_func]</doc>
+               line="2699">user data passed to [func@GLib.log_set_writer_func]</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -76486,7 +76489,7 @@ created. Returns -1 if an error occurred, with errno set.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="1655">Creates a temporary directory in the current directory.
+           line="1659">Creates a temporary directory in the current directory.
 
 See the [`mkdtemp()`](man:mkdtemp(3)) documentation on most UNIX-like systems.
 
@@ -76506,7 +76509,7 @@ g_dir_make_tmp() instead.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="1676">A pointer to @tmpl, which has been
+             line="1680">A pointer to @tmpl, which has been
   modified to hold the directory name.  In case of errors, %NULL is
   returned and %errno will be set.</doc>
         <type name="filename" c:type="gchar*"/>
@@ -76515,7 +76518,7 @@ g_dir_make_tmp() instead.</doc>
         <parameter name="tmpl" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1657">template directory name</doc>
+               line="1661">template directory name</doc>
           <type name="filename" c:type="gchar*"/>
         </parameter>
       </parameters>
@@ -76526,7 +76529,7 @@ g_dir_make_tmp() instead.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="1617">Creates a temporary directory in the current directory.
+           line="1621">Creates a temporary directory in the current directory.
 
 See the [`mkdtemp()`](man:mkdtemp(3)) documentation on most UNIX-like systems.
 
@@ -76546,7 +76549,7 @@ g_dir_make_tmp() instead.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="1639">A pointer to @tmpl, which has been
+             line="1643">A pointer to @tmpl, which has been
   modified to hold the directory name. In case of errors, %NULL is
   returned, and %errno will be set.</doc>
         <type name="filename" c:type="gchar*"/>
@@ -76555,13 +76558,13 @@ g_dir_make_tmp() instead.</doc>
         <parameter name="tmpl" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1619">template directory name</doc>
+               line="1623">template directory name</doc>
           <type name="filename" c:type="gchar*"/>
         </parameter>
         <parameter name="mode" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1620">permissions to create the temporary directory with</doc>
+               line="1624">permissions to create the temporary directory with</doc>
           <type name="gint" c:type="gint"/>
         </parameter>
       </parameters>
@@ -76569,7 +76572,7 @@ g_dir_make_tmp() instead.</doc>
     <function name="mkstemp" c:identifier="g_mkstemp" introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="1725">Opens a temporary file in the current directory.
+           line="1729">Opens a temporary file in the current directory.
 
 See the [`mkstemp()`](man:mkstemp(3)) documentation on most UNIX-like systems.
 
@@ -76584,7 +76587,7 @@ Most importantly, on Windows it should be in UTF-8.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="1741">A file handle (as from open()) to the file
+             line="1745">A file handle (as from open()) to the file
   opened for reading and writing. The file is opened in binary
   mode on platforms where there is a difference. The file handle
   should be closed with close(). In case of errors, -1 is
@@ -76595,7 +76598,7 @@ Most importantly, on Windows it should be in UTF-8.</doc>
         <parameter name="tmpl" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1727">template filename</doc>
+               line="1731">template filename</doc>
           <type name="filename" c:type="gchar*"/>
         </parameter>
       </parameters>
@@ -76606,7 +76609,7 @@ Most importantly, on Windows it should be in UTF-8.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="1688">Opens a temporary file in the current directory.
+           line="1692">Opens a temporary file in the current directory.
 
 See the [`mkstemp()`](man:mkstemp(3)) documentation on most UNIX-like systems.
 
@@ -76622,7 +76625,7 @@ on Windows it should be in UTF-8.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="1708">A file handle (as from open()) to the file
+             line="1712">A file handle (as from open()) to the file
   opened for reading and writing. The file handle should be
   closed with close(). In case of errors, -1 is returned
   and %errno will be set.</doc>
@@ -76632,20 +76635,20 @@ on Windows it should be in UTF-8.</doc>
         <parameter name="tmpl" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1690">template filename</doc>
+               line="1694">template filename</doc>
           <type name="filename" c:type="gchar*"/>
         </parameter>
         <parameter name="flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1691">flags to pass to an open() call in addition to O_EXCL
+               line="1695">flags to pass to an open() call in addition to O_EXCL
   and O_CREAT, which are passed automatically</doc>
           <type name="gint" c:type="gint"/>
         </parameter>
         <parameter name="mode" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="1693">permissions to create the temporary file with</doc>
+               line="1697">permissions to create the temporary file with</doc>
           <type name="gint" c:type="gint"/>
         </parameter>
       </parameters>
@@ -77495,7 +77498,7 @@ This function can be passed to g_hash_table_new() as the
     <function name="path_get_basename" c:identifier="g_path_get_basename">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2606">Gets the last component of the filename.
+           line="2610">Gets the last component of the filename.
 
 If @file_name ends with a directory separator it gets the component
 before the last slash. If @file_name consists only of directory
@@ -77505,7 +77508,7 @@ separator is returned. If @file_name is empty, it gets ".".</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2617">a newly allocated string
+             line="2621">a newly allocated string
   containing the last component of the filename</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
@@ -77513,7 +77516,7 @@ separator is returned. If @file_name is empty, it gets ".".</doc>
         <parameter name="file_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2608">the name of the file</doc>
+               line="2612">the name of the file</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -77521,7 +77524,7 @@ separator is returned. If @file_name is empty, it gets ".".</doc>
     <function name="path_get_dirname" c:identifier="g_path_get_dirname">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2699">Gets the directory components of a file name. For example, the directory
+           line="2703">Gets the directory components of a file name. For example, the directory
 component of `/usr/bin/test` is `/usr/bin`. The directory component of `/`
 is `/`.
 
@@ -77531,14 +77534,14 @@ The returned string should be freed when no longer needed.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2710">the directory components of the file</doc>
+             line="2714">the directory components of the file</doc>
         <type name="filename" c:type="gchar*"/>
       </return-value>
       <parameters>
         <parameter name="file_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2701">the name of the file</doc>
+               line="2705">the name of the file</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -77546,7 +77549,7 @@ The returned string should be freed when no longer needed.</doc>
     <function name="path_is_absolute" c:identifier="g_path_is_absolute">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2441">Returns %TRUE if the given @file_name is an absolute file name.
+           line="2445">Returns %TRUE if the given @file_name is an absolute file name.
 Note that this is a somewhat vague concept on Windows.
 
 On POSIX systems, an absolute file name is well-defined. It always
@@ -77574,14 +77577,14 @@ Windows-specific code.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2470">%TRUE if @file_name is absolute</doc>
+             line="2474">%TRUE if @file_name is absolute</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="file_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2443">a file name</doc>
+               line="2447">a file name</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -77589,14 +77592,14 @@ Windows-specific code.</doc>
     <function name="path_skip_root" c:identifier="g_path_skip_root">
       <doc xml:space="preserve"
            filename="glib/gfileutils.c"
-           line="2490">Returns a pointer into @file_name after the root component,
+           line="2494">Returns a pointer into @file_name after the root component,
 i.e. after the "/" in UNIX or "C:\" under Windows. If @file_name
 is not an absolute path it returns %NULL.</doc>
       <source-position filename="glib/gfileutils.h" line="204"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="glib/gfileutils.c"
-             line="2498">a pointer into @file_name after the
+             line="2502">a pointer into @file_name after the
     root component</doc>
         <type name="filename" c:type="const gchar*"/>
       </return-value>
@@ -77604,7 +77607,7 @@ is not an absolute path it returns %NULL.</doc>
         <parameter name="file_name" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gfileutils.c"
-               line="2492">a file name</doc>
+               line="2496">a file name</doc>
           <type name="filename" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -78120,7 +78123,7 @@ error condition) then also do nothing.</doc>
     <function name="print" c:identifier="g_print" introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3653">Outputs a formatted message via the print handler.
+           line="3667">Outputs a formatted message via the print handler.
 
 The default print handler outputs the encoded message to `stdout`, without
 appending a trailing new-line character. Typically, @format should end with
@@ -78139,13 +78142,13 @@ use [func@GLib.log], [func@GLib.log_structured], or the convenience macros
         <parameter name="format" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3655">the message format. See the `printf()` documentation</doc>
+               line="3669">the message format. See the `printf()` documentation</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="..." transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3656">the parameters to insert into the format string</doc>
+               line="3670">the parameters to insert into the format string</doc>
           <varargs/>
         </parameter>
       </parameters>
@@ -78153,7 +78156,7 @@ use [func@GLib.log], [func@GLib.log_structured], or the convenience macros
     <function name="printerr" c:identifier="g_printerr" introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3720">Outputs a formatted message via the error message handler.
+           line="3734">Outputs a formatted message via the error message handler.
 
 The default handler outputs the encoded message to `stderr`, without appending
 a trailing new-line character. Typically, @format should end with its own
@@ -78170,13 +78173,13 @@ macros [func@GLib.message], [func@GLib.warning] and [func@GLib.error].</doc>
         <parameter name="format" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3722">the message format. See the `printf()` documentation</doc>
+               line="3736">the message format. See the `printf()` documentation</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="..." transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3723">the parameters to insert into the format string</doc>
+               line="3737">the parameters to insert into the format string</doc>
           <varargs/>
         </parameter>
       </parameters>
@@ -78223,7 +78226,7 @@ own new-line character.
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3755">Calculates the maximum space needed to store the output
+           line="3769">Calculates the maximum space needed to store the output
 of the `sprintf()` function.
 
 If @format or @args are invalid, `0` is returned. This could happen if, for
@@ -78237,20 +78240,20 @@ placeholders in any case, as their behaviour is locale-dependent.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3771">the maximum space needed to store the formatted string, or `0` on error</doc>
+             line="3785">the maximum space needed to store the formatted string, or `0` on error</doc>
         <type name="gsize" c:type="gsize"/>
       </return-value>
       <parameters>
         <parameter name="format" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3757">the format string. See the `printf()` documentation</doc>
+               line="3771">the format string. See the `printf()` documentation</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="args" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3758">the parameters to be inserted into the format string</doc>
+               line="3772">the parameters to be inserted into the format string</doc>
           <type name="va_list" c:type="va_list"/>
         </parameter>
       </parameters>
@@ -79090,12 +79093,12 @@ by the g_random_* functions, to @seed.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="270">Acquires a reference on the data pointed by @mem_block.</doc>
+           line="274">Acquires a reference on the data pointed by @mem_block.</doc>
       <source-position filename="glib/grcbox.h" line="40"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grcbox.c"
-             line="276">a pointer to the data,
+             line="280">a pointer to the data,
   with its reference count increased</doc>
         <type name="gpointer" c:type="gpointer"/>
       </return-value>
@@ -79103,7 +79106,7 @@ by the g_random_* functions, to @seed.</doc>
         <parameter name="mem_block" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="272">a pointer to reference counted data</doc>
+               line="276">a pointer to reference counted data</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -79111,7 +79114,7 @@ by the g_random_* functions, to @seed.</doc>
     <function name="rc_box_alloc" c:identifier="g_rc_box_alloc" version="2.58">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="155">Allocates @block_size bytes of memory, and adds reference
+           line="159">Allocates @block_size bytes of memory, and adds reference
 counting semantics to it.
 
 The data will be freed when its reference count drops to
@@ -79123,14 +79126,14 @@ built-in type.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grcbox.c"
-             line="168">a pointer to the allocated memory</doc>
+             line="172">a pointer to the allocated memory</doc>
         <type name="gpointer" c:type="gpointer"/>
       </return-value>
       <parameters>
         <parameter name="block_size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="157">the size of the allocation, must be greater than 0</doc>
+               line="161">the size of the allocation, must be greater than 0</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
       </parameters>
@@ -79140,7 +79143,7 @@ built-in type.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="180">Allocates @block_size bytes of memory, and adds reference
+           line="184">Allocates @block_size bytes of memory, and adds reference
 counting semantics to it.
 
 The contents of the returned data is set to zero.
@@ -79154,14 +79157,14 @@ built-in type.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grcbox.c"
-             line="195">a pointer to the allocated memory</doc>
+             line="199">a pointer to the allocated memory</doc>
         <type name="gpointer" c:type="gpointer"/>
       </return-value>
       <parameters>
         <parameter name="block_size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="182">the size of the allocation, must be greater than 0</doc>
+               line="186">the size of the allocation, must be greater than 0</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
       </parameters>
@@ -79169,14 +79172,14 @@ built-in type.</doc>
     <function name="rc_box_dup" c:identifier="g_rc_box_dup" version="2.58">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="241">Allocates a new block of data with reference counting
+           line="245">Allocates a new block of data with reference counting
 semantics, and copies @block_size bytes of @mem_block
 into it.</doc>
       <source-position filename="glib/grcbox.h" line="37"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/grcbox.c"
-             line="250">a pointer to the allocated
+             line="254">a pointer to the allocated
   memory</doc>
         <type name="gpointer" c:type="gpointer"/>
       </return-value>
@@ -79184,13 +79187,13 @@ into it.</doc>
         <parameter name="block_size" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="243">the number of bytes to copy, must be greater than 0</doc>
+               line="247">the number of bytes to copy, must be greater than 0</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
         <parameter name="mem_block" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="244">the memory to copy</doc>
+               line="248">the memory to copy</doc>
           <type name="gpointer" c:type="gconstpointer"/>
         </parameter>
       </parameters>
@@ -79200,19 +79203,19 @@ into it.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="353">Retrieves the size of the reference counted data pointed by @mem_block.</doc>
+           line="357">Retrieves the size of the reference counted data pointed by @mem_block.</doc>
       <source-position filename="glib/grcbox.h" line="48"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/grcbox.c"
-             line="359">the size of the data, in bytes</doc>
+             line="363">the size of the data, in bytes</doc>
         <type name="gsize" c:type="gsize"/>
       </return-value>
       <parameters>
         <parameter name="mem_block" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="355">a pointer to reference counted data</doc>
+               line="359">a pointer to reference counted data</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -79223,7 +79226,7 @@ into it.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="207">A convenience macro to allocate reference counted data with
+           line="211">A convenience macro to allocate reference counted data with
 the size of the given @type.
 
 This macro calls g_rc_box_alloc() with `sizeof (@type)` and
@@ -79234,7 +79237,7 @@ avoiding a type cast in the source code.</doc>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="209">the type to allocate, typically a structure name</doc>
+               line="213">the type to allocate, typically a structure name</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79244,7 +79247,7 @@ avoiding a type cast in the source code.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="224">A convenience macro to allocate reference counted data with
+           line="228">A convenience macro to allocate reference counted data with
 the size of the given @type, and set its contents to zero.
 
 This macro calls g_rc_box_alloc0() with `sizeof (@type)` and
@@ -79255,7 +79258,7 @@ avoiding a type cast in the source code.</doc>
         <parameter name="type">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="226">the type to allocate, typically a structure name</doc>
+               line="230">the type to allocate, typically a structure name</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -79264,7 +79267,7 @@ avoiding a type cast in the source code.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="298">Releases a reference on the data pointed by @mem_block.
+           line="302">Releases a reference on the data pointed by @mem_block.
 
 If the reference was the last one, it will free the
 resources allocated for @mem_block.</doc>
@@ -79276,7 +79279,7 @@ resources allocated for @mem_block.</doc>
         <parameter name="mem_block" transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="300">a pointer to reference counted data</doc>
+               line="304">a pointer to reference counted data</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
       </parameters>
@@ -79286,7 +79289,7 @@ resources allocated for @mem_block.</doc>
               version="2.58">
       <doc xml:space="preserve"
            filename="glib/grcbox.c"
-           line="315">Releases a reference on the data pointed by @mem_block.
+           line="319">Releases a reference on the data pointed by @mem_block.
 
 If the reference was the last one, it will call @clear_func
 to clear the contents of @mem_block, and then will free the
@@ -79299,13 +79302,13 @@ resources allocated for @mem_block.</doc>
         <parameter name="mem_block" transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="317">a pointer to reference counted data</doc>
+               line="321">a pointer to reference counted data</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
         <parameter name="clear_func" transfer-ownership="none" scope="async">
           <doc xml:space="preserve"
                filename="glib/grcbox.c"
-               line="318">a function to call when clearing the data</doc>
+               line="322">a function to call when clearing the data</doc>
           <type name="DestroyNotify" c:type="GDestroyNotify"/>
         </parameter>
       </parameters>
@@ -80033,7 +80036,7 @@ Care is taken to avoid overflow when calculating the size of the allocated block
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3183">Internal function used to print messages from the public [func@GLib.return_if_fail]
+           line="3197">Internal function used to print messages from the public [func@GLib.return_if_fail]
 and [func@GLib.return_val_if_fail] macros.</doc>
       <source-position filename="glib/gmessages.h" line="296"/>
       <return-value transfer-ownership="none">
@@ -80046,13 +80049,13 @@ and [func@GLib.return_val_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3185">log domain</doc>
+               line="3199">log domain</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="pretty_function" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3186">function containing the assertion</doc>
+               line="3200">function containing the assertion</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="expression"
@@ -80061,7 +80064,7 @@ and [func@GLib.return_val_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3187">expression which failed</doc>
+               line="3201">expression which failed</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -80800,7 +80803,7 @@ for requirements on integrating g_set_prgname() with GTK applications.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3574">Sets the print handler to @func, or resets it to the
+           line="3588">Sets the print handler to @func, or resets it to the
 default GLib handler if `NULL`.
 
 Any messages passed to [func@GLib.print] will be output via
@@ -80819,7 +80822,7 @@ in all platforms. Before GLib 2.76, this was `NULL`.</doc>
       <return-value>
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3595">the old print handler</doc>
+             line="3609">the old print handler</doc>
         <type name="PrintFunc" c:type="GPrintFunc"/>
       </return-value>
       <parameters>
@@ -80829,7 +80832,7 @@ in all platforms. Before GLib 2.76, this was `NULL`.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3576">the new print handler or `NULL` to
+               line="3590">the new print handler or `NULL` to
   reset to the default</doc>
           <type name="PrintFunc" c:type="GPrintFunc"/>
         </parameter>
@@ -80840,7 +80843,7 @@ in all platforms. Before GLib 2.76, this was `NULL`.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3690">Sets the handler for printing error messages to @func,
+           line="3704">Sets the handler for printing error messages to @func,
 or resets it to the default GLib handler if `NULL`.
 
 Any messages passed to [func@GLib.printerr] will be output via
@@ -80859,7 +80862,7 @@ Before GLib 2.76, this was `NULL`.</doc>
       <return-value>
         <doc xml:space="preserve"
              filename="glib/gmessages.c"
-             line="3711">the old error message handler</doc>
+             line="3725">the old error message handler</doc>
         <type name="PrintFunc" c:type="GPrintFunc"/>
       </return-value>
       <parameters>
@@ -80869,7 +80872,7 @@ Before GLib 2.76, this was `NULL`.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3692">he new error message handler or `NULL`
+               line="3706">he new error message handler or `NULL`
   to reset to the default</doc>
           <type name="PrintFunc" c:type="GPrintFunc"/>
         </parameter>
@@ -85125,7 +85128,7 @@ it is recommended to do so even if it isn’t.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3348">Asserts that all messages previously indicated via
+           line="3362">Asserts that all messages previously indicated via
 [func@GLib.test_expect_message] have been seen and suppressed.
 
 This API may only be used with the old logging API ([func@GLib.log] without
@@ -85389,7 +85392,7 @@ crash collection infrastructure such as systemd-coredump or abrt.</doc>
               version="2.34">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3262">Indicates that a message with the given @log_domain and @log_level,
+           line="3276">Indicates that a message with the given @log_domain and @log_level,
 with text matching @pattern, is expected to be logged.
 
 When this message is logged, it will not be printed, and the test case will
@@ -85435,19 +85438,19 @@ expected via [func@GLib.test_expect_message] then they will be ignored.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3264">the log domain of the message</doc>
+               line="3278">the log domain of the message</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="log_level" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3265">the log level of the message</doc>
+               line="3279">the log level of the message</doc>
           <type name="LogLevelFlags" c:type="GLogLevelFlags"/>
         </parameter>
         <parameter name="pattern" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3266">a glob-style pattern (see [type@GLib.PatternSpec])</doc>
+               line="3280">a glob-style pattern (see [type@GLib.PatternSpec])</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
       </parameters>
@@ -88524,7 +88527,7 @@ as pango_break() instead of caring about break types yourself.</doc>
               version="2.30">
       <doc xml:space="preserve"
            filename="glib/gunidecomp.c"
-           line="669">Performs a single composition step of the
+           line="682">Performs a single composition step of the
 Unicode canonical composition algorithm.
 
 This function includes algorithmic Hangul Jamo composition,
@@ -88544,20 +88547,20 @@ for details.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gunidecomp.c"
-             line="692">%TRUE if the characters could be composed</doc>
+             line="705">%TRUE if the characters could be composed</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="a" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="671">a Unicode character</doc>
+               line="684">a Unicode character</doc>
           <type name="gunichar" c:type="gunichar"/>
         </parameter>
         <parameter name="b" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="672">a Unicode character</doc>
+               line="685">a Unicode character</doc>
           <type name="gunichar" c:type="gunichar"/>
         </parameter>
         <parameter name="ch"
@@ -88566,7 +88569,7 @@ for details.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="673">return location for the composed character</doc>
+               line="686">return location for the composed character</doc>
           <type name="gunichar" c:type="gunichar*"/>
         </parameter>
       </parameters>
@@ -88576,7 +88579,7 @@ for details.</doc>
               version="2.30">
       <doc xml:space="preserve"
            filename="glib/gunidecomp.c"
-           line="595">Performs a single decomposition step of the
+           line="608">Performs a single decomposition step of the
 Unicode canonical decomposition algorithm.
 
 This function does not include compatibility
@@ -88603,14 +88606,14 @@ for details.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gunidecomp.c"
-             line="625">%TRUE if the character could be decomposed</doc>
+             line="638">%TRUE if the character could be decomposed</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="ch" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="597">a Unicode character</doc>
+               line="610">a Unicode character</doc>
           <type name="gunichar" c:type="gunichar"/>
         </parameter>
         <parameter name="a"
@@ -88619,7 +88622,7 @@ for details.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="598">return location for the first component of @ch</doc>
+               line="611">return location for the first component of @ch</doc>
           <type name="gunichar" c:type="gunichar*"/>
         </parameter>
         <parameter name="b"
@@ -88628,7 +88631,7 @@ for details.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="599">return location for the second component of @ch</doc>
+               line="612">return location for the second component of @ch</doc>
           <type name="gunichar" c:type="gunichar*"/>
         </parameter>
       </parameters>
@@ -88660,7 +88663,7 @@ g_unichar_isdigit()), its numeric value. Otherwise, -1.</doc>
               version="2.30">
       <doc xml:space="preserve"
            filename="glib/gunidecomp.c"
-           line="708">Computes the canonical or compatibility decomposition of a
+           line="721">Computes the canonical or compatibility decomposition of a
 Unicode character.  For compatibility decomposition,
 pass %TRUE for @compat; for canonical decomposition
 pass %FALSE for @compat.
@@ -88683,20 +88686,20 @@ for details.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/gunidecomp.c"
-             line="735">the length of the full decomposition.</doc>
+             line="748">the length of the full decomposition.</doc>
         <type name="gsize" c:type="gsize"/>
       </return-value>
       <parameters>
         <parameter name="ch" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="710">a Unicode character.</doc>
+               line="723">a Unicode character.</doc>
           <type name="gunichar" c:type="gunichar"/>
         </parameter>
         <parameter name="compat" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="711">whether perform canonical or compatibility decomposition</doc>
+               line="724">whether perform canonical or compatibility decomposition</doc>
           <type name="gboolean" c:type="gboolean"/>
         </parameter>
         <parameter name="result"
@@ -88707,13 +88710,13 @@ for details.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="712">location to store decomposed result, or %NULL</doc>
+               line="725">location to store decomposed result, or %NULL</doc>
           <type name="gunichar" c:type="gunichar*"/>
         </parameter>
         <parameter name="result_len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="713">length of @result</doc>
+               line="726">length of @result</doc>
           <type name="gsize" c:type="gsize"/>
         </parameter>
       </parameters>
@@ -88723,7 +88726,7 @@ for details.</doc>
               version="2.4">
       <doc xml:space="preserve"
            filename="glib/guniprop.c"
-           line="1267">In Unicode, some characters are "mirrored". This means that their
+           line="1278">In Unicode, some characters are "mirrored". This means that their
 images are mirrored horizontally in text that is laid out from right
 to left. For instance, "(" would become its mirror image, ")", in
 right-to-left text.
@@ -88736,14 +88739,14 @@ pointed to by @mirrored_ch.  Otherwise the original character is put.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1282">%TRUE if @ch has a mirrored character, %FALSE otherwise</doc>
+             line="1293">%TRUE if @ch has a mirrored character, %FALSE otherwise</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="ch" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1269">a Unicode character</doc>
+               line="1280">a Unicode character</doc>
           <type name="gunichar" c:type="gunichar"/>
         </parameter>
         <parameter name="mirrored_ch"
@@ -88752,7 +88755,7 @@ pointed to by @mirrored_ch.  Otherwise the original character is put.</doc>
                    transfer-ownership="full">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1270">location to store the mirrored character</doc>
+               line="1281">location to store the mirrored character</doc>
           <type name="gunichar" c:type="gunichar*"/>
         </parameter>
       </parameters>
@@ -88762,7 +88765,7 @@ pointed to by @mirrored_ch.  Otherwise the original character is put.</doc>
               version="2.14">
       <doc xml:space="preserve"
            filename="glib/guniprop.c"
-           line="1330">Looks up the #GUnicodeScript for a particular character (as defined
+           line="1341">Looks up the #GUnicodeScript for a particular character (as defined
 by Unicode Standard Annex \#24). No check is made for @ch being a
 valid Unicode character; if you pass in invalid character, the
 result is undefined.
@@ -88773,14 +88776,14 @@ two are interchangeable.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1342">the #GUnicodeScript for the character.</doc>
+             line="1353">the #GUnicodeScript for the character.</doc>
         <type name="UnicodeScript" c:type="GUnicodeScript"/>
       </return-value>
       <parameters>
         <parameter name="ch" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1332">a Unicode character</doc>
+               line="1343">a Unicode character</doc>
           <type name="gunichar" c:type="gunichar"/>
         </parameter>
       </parameters>
@@ -89420,7 +89423,7 @@ manual for more information.</doc>
               version="2.30">
       <doc xml:space="preserve"
            filename="glib/guniprop.c"
-           line="1610">Looks up the Unicode script for @iso15924.  ISO 15924 assigns four-letter
+           line="1621">Looks up the Unicode script for @iso15924.  ISO 15924 assigns four-letter
 codes to scripts.  For example, the code for Arabic is 'Arab'.
 This function accepts four letter codes encoded as a @guint32 in a
 big-endian fashion.  That is, the code expected for Arabic is
@@ -89433,7 +89436,7 @@ for details.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1624">the Unicode script for @iso15924, or
+             line="1635">the Unicode script for @iso15924, or
   of %G_UNICODE_SCRIPT_INVALID_CODE if @iso15924 is zero and
   %G_UNICODE_SCRIPT_UNKNOWN if @iso15924 is unknown.</doc>
         <type name="UnicodeScript" c:type="GUnicodeScript"/>
@@ -89442,7 +89445,7 @@ for details.</doc>
         <parameter name="iso15924" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1612">a Unicode script</doc>
+               line="1623">a Unicode script</doc>
           <type name="guint32" c:type="guint32"/>
         </parameter>
       </parameters>
@@ -89453,7 +89456,7 @@ for details.</doc>
               version="2.30">
       <doc xml:space="preserve"
            filename="glib/guniprop.c"
-           line="1578">Looks up the ISO 15924 code for @script.  ISO 15924 assigns four-letter
+           line="1589">Looks up the ISO 15924 code for @script.  ISO 15924 assigns four-letter
 codes to scripts.  For example, the code for Arabic is 'Arab'.  The
 four letter codes are encoded as a @guint32 by this function in a
 big-endian fashion.  That is, the code returned for Arabic is
@@ -89466,7 +89469,7 @@ for details.</doc>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1592">the ISO 15924 code for @script, encoded as an integer,
+             line="1603">the ISO 15924 code for @script, encoded as an integer,
   of zero if @script is %G_UNICODE_SCRIPT_INVALID_CODE or
   ISO 15924 code 'Zzzz' (script code for UNKNOWN) if @script is not understood.</doc>
         <type name="guint32" c:type="guint32"/>
@@ -89475,7 +89478,7 @@ for details.</doc>
         <parameter name="script" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1580">a Unicode script</doc>
+               line="1591">a Unicode script</doc>
           <type name="UnicodeScript" c:type="GUnicodeScript"/>
         </parameter>
       </parameters>
@@ -90986,7 +90989,7 @@ unpaired surrogates or partial character sequences.</doc>
     <function name="utf8_casefold" c:identifier="g_utf8_casefold">
       <doc xml:space="preserve"
            filename="glib/guniprop.c"
-           line="1200">Converts a string into a form that is independent of case. The
+           line="1210">Converts a string into a form that is independent of case. The
 result will not correspond to any particular case, but can be
 compared for equality or ordered with the results of calling
 g_utf8_casefold() on other strings.
@@ -91001,7 +91004,7 @@ provide such a function.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1217">a newly allocated string, that is a
+             line="1227">a newly allocated string, that is a
   case independent form of @str.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -91009,13 +91012,13 @@ provide such a function.</doc>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1202">a UTF-8 encoded string</doc>
+               line="1212">a UTF-8 encoded string</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1203">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
+               line="1213">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
           <type name="gssize" c:type="gssize"/>
         </parameter>
       </parameters>
@@ -91341,7 +91344,7 @@ that may contain invalid UTF-8.</doc>
     <function name="utf8_normalize" c:identifier="g_utf8_normalize">
       <doc xml:space="preserve"
            filename="glib/gunidecomp.c"
-           line="513">Converts a string into canonical form, standardizing
+           line="526">Converts a string into canonical form, standardizing
 such issues as whether a character with an accent
 is represented as a base character and combining
 accent or as a single precomposed character. The
@@ -91370,7 +91373,7 @@ less capable Unicode handling.</doc>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="glib/gunidecomp.c"
-             line="545">a newly allocated string, that
+             line="558">a newly allocated string, that
   is the normalized form of @str, or %NULL if @str
   is not valid UTF-8.</doc>
         <type name="utf8" c:type="gchar*"/>
@@ -91379,19 +91382,19 @@ less capable Unicode handling.</doc>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="515">a UTF-8 encoded string.</doc>
+               line="528">a UTF-8 encoded string.</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="516">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
+               line="529">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
           <type name="gssize" c:type="gssize"/>
         </parameter>
         <parameter name="mode" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gunidecomp.c"
-               line="517">the type of normalization to perform.</doc>
+               line="530">the type of normalization to perform.</doc>
           <type name="NormalizeMode" c:type="GNormalizeMode"/>
         </parameter>
       </parameters>
@@ -91532,7 +91535,7 @@ If @len is `-1`, allow unbounded search.</doc>
     <function name="utf8_strdown" c:identifier="g_utf8_strdown">
       <doc xml:space="preserve"
            filename="glib/guniprop.c"
-           line="1162">Converts all Unicode characters in the string that have a case
+           line="1171">Converts all Unicode characters in the string that have a case
 to lowercase. The exact manner that this is done depends
 on the current locale, and may result in the number of
 characters in the string changing.</doc>
@@ -91540,7 +91543,7 @@ characters in the string changing.</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="1172">a newly allocated string, with all characters
+             line="1181">a newly allocated string, with all characters
    converted to lowercase.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -91548,13 +91551,13 @@ characters in the string changing.</doc>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1164">a UTF-8 encoded string</doc>
+               line="1173">a UTF-8 encoded string</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="1165">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
+               line="1174">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
           <type name="gssize" c:type="gssize"/>
         </parameter>
       </parameters>
@@ -91713,7 +91716,7 @@ no longer needed.</doc>
     <function name="utf8_strup" c:identifier="g_utf8_strup">
       <doc xml:space="preserve"
            filename="glib/guniprop.c"
-           line="964">Converts all Unicode characters in the string that have a case
+           line="968">Converts all Unicode characters in the string that have a case
 to uppercase. The exact manner that this is done depends
 on the current locale, and may result in the number of
 characters in the string increasing. (For instance, the
@@ -91722,7 +91725,7 @@ German ess-zet will be changed to SS.)</doc>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="glib/guniprop.c"
-             line="975">a newly allocated string, with all characters
+             line="979">a newly allocated string, with all characters
    converted to uppercase.</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -91730,13 +91733,13 @@ German ess-zet will be changed to SS.)</doc>
         <parameter name="str" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="966">a UTF-8 encoded string</doc>
+               line="970">a UTF-8 encoded string</doc>
           <type name="utf8" c:type="const gchar*"/>
         </parameter>
         <parameter name="len" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/guniprop.c"
-               line="967">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
+               line="971">length of @str, in bytes, or -1 if @str is nul-terminated.</doc>
           <type name="gssize" c:type="gssize"/>
         </parameter>
       </parameters>
@@ -92743,7 +92746,7 @@ checks and assertions are disabled.</doc>
               introspectable="0">
       <doc xml:space="preserve"
            filename="glib/gmessages.c"
-           line="3204">Internal function used to print messages from the public [func@GLib.warn_if_reached]
+           line="3218">Internal function used to print messages from the public [func@GLib.warn_if_reached]
 and [func@GLib.warn_if_fail] macros.</doc>
       <source-position filename="glib/gmessages.h" line="300"/>
       <return-value transfer-ownership="none">
@@ -92756,25 +92759,25 @@ and [func@GLib.warn_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3206">log domain</doc>
+               line="3220">log domain</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="file" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3207">file containing the warning</doc>
+               line="3221">file containing the warning</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="line" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3208">line number of the warning</doc>
+               line="3222">line number of the warning</doc>
           <type name="gint" c:type="int"/>
         </parameter>
         <parameter name="func" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3209">function containing the warning</doc>
+               line="3223">function containing the warning</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="warnexpr"
@@ -92783,7 +92786,7 @@ and [func@GLib.warn_if_fail] macros.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="glib/gmessages.c"
-               line="3210">expression which failed</doc>
+               line="3224">expression which failed</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>

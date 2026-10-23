@@ -98260,7 +98260,7 @@ If @data is empty or corrupt, %G_RESOURCE_ERROR_INTERNAL will be returned.</doc>
               version="2.32">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1132">Registers the resource with the process-global set of resources.
+             line="1140">Registers the resource with the process-global set of resources.
 
 Once a resource is registered the files in it can be accessed
 with the global resource lookup functions like
@@ -98273,7 +98273,7 @@ with the global resource lookup functions like
           <instance-parameter name="resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1134">A [struct@Gio.Resource]</doc>
+                 line="1142">A [struct@Gio.Resource]</doc>
             <type name="Resource" c:type="GResource*"/>
           </instance-parameter>
         </parameters>
@@ -98284,7 +98284,7 @@ with the global resource lookup functions like
               version="2.32">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1152">Unregisters the resource from the process-global set of resources.</doc>
+             line="1160">Unregisters the resource from the process-global set of resources.</doc>
         <source-position filename="gio/gresource.h" line="102"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
@@ -98293,7 +98293,7 @@ with the global resource lookup functions like
           <instance-parameter name="resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1154">A [struct@Gio.Resource]</doc>
+                 line="1162">A [struct@Gio.Resource]</doc>
             <type name="Resource" c:type="GResource*"/>
           </instance-parameter>
         </parameters>
@@ -98304,7 +98304,7 @@ with the global resource lookup functions like
               throws="1">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1009">Returns all the names of children at the specified @path in the resource.
+             line="1017">Returns all the names of children at the specified @path in the resource.
 
 The return result is a `NULL` terminated list of strings which should
 be released with [func@GLib.strfreev].
@@ -98317,7 +98317,7 @@ If @path is invalid or does not exist in the [struct@Gio.Resource],
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1026">an array of constant strings</doc>
+               line="1034">an array of constant strings</doc>
           <array c:type="char**">
             <type name="utf8"/>
           </array>
@@ -98326,19 +98326,19 @@ If @path is invalid or does not exist in the [struct@Gio.Resource],
           <instance-parameter name="resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1011">A [struct@Gio.Resource]</doc>
+                 line="1019">A [struct@Gio.Resource]</doc>
             <type name="Resource" c:type="GResource*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1012">A path name inside the resource</doc>
+                 line="1020">A path name inside the resource</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="lookup_flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1013">A [flags@Gio.ResourceLookupFlags]</doc>
+                 line="1021">A [flags@Gio.ResourceLookupFlags]</doc>
             <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
           </parameter>
         </parameters>
@@ -98349,7 +98349,7 @@ If @path is invalid or does not exist in the [struct@Gio.Resource],
               throws="1">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="937">Looks for a file at the specified @path in the resource and
+             line="945">Looks for a file at the specified @path in the resource and
 if found returns information about it.
 
 @lookup_flags controls the behaviour of the lookup.
@@ -98360,26 +98360,26 @@ not found in @resource.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="956">`TRUE` if the file was found, `FALSE` if there were errors</doc>
+               line="964">`TRUE` if the file was found, `FALSE` if there were errors</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="939">A [struct@Gio.Resource]</doc>
+                 line="947">A [struct@Gio.Resource]</doc>
             <type name="Resource" c:type="GResource*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="940">A path name inside the resource</doc>
+                 line="948">A path name inside the resource</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="lookup_flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="941">A [flags@Gio.ResourceLookupFlags]</doc>
+                 line="949">A [flags@Gio.ResourceLookupFlags]</doc>
             <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
           </parameter>
           <parameter name="size"
@@ -98390,7 +98390,7 @@ not found in @resource.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="942">a location to place the length of the contents of the file,
+                 line="950">a location to place the length of the contents of the file,
    or `NULL` if the length is not needed</doc>
             <type name="gsize" c:type="gsize*"/>
           </parameter>
@@ -98402,7 +98402,7 @@ not found in @resource.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="944">a location to place the flags about the file,
+                 line="952">a location to place the flags about the file,
    or `NULL` if the length is not needed</doc>
             <type name="guint32" c:type="guint32*"/>
           </parameter>
@@ -98413,26 +98413,26 @@ not found in @resource.</doc>
               version="2.84">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1066">Returns whether the specified @path in the resource
+             line="1074">Returns whether the specified @path in the resource
 has children.</doc>
         <source-position filename="gio/gresource.h" line="123"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1074">%TRUE if @path has children</doc>
+               line="1082">%TRUE if @path has children</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1068">A #GResource</doc>
+                 line="1076">A #GResource</doc>
             <type name="Resource" c:type="GResource*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1069">A pathname inside the resource</doc>
+                 line="1077">A pathname inside the resource</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
         </parameters>
@@ -98443,7 +98443,7 @@ has children.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="823">Looks for a file at the specified @path in the resource and
+             line="831">Looks for a file at the specified @path in the resource and
 returns a [struct@GLib.Bytes] that lets you directly access the data in
 memory.
 
@@ -98465,26 +98465,26 @@ resource failed.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="849">[struct@GLib.Bytes] or `NULL` on error</doc>
+               line="857">[struct@GLib.Bytes] or `NULL` on error</doc>
           <type name="GLib.Bytes" c:type="GBytes*"/>
         </return-value>
         <parameters>
           <instance-parameter name="resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="825">A [struct@Gio.Resource]</doc>
+                 line="833">A [struct@Gio.Resource]</doc>
             <type name="Resource" c:type="GResource*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="826">A path name inside the resource</doc>
+                 line="834">A path name inside the resource</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="lookup_flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="827">A [flags@Gio.ResourceLookupFlags]</doc>
+                 line="835">A [flags@Gio.ResourceLookupFlags]</doc>
             <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
           </parameter>
         </parameters>
@@ -98495,7 +98495,7 @@ resource failed.</doc>
               throws="1">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="763">Looks for a file at the specified @path in the resource and
+             line="771">Looks for a file at the specified @path in the resource and
 returns a [class@Gio.InputStream] that lets you read the data.
 
 @lookup_flags controls the behaviour of the lookup.
@@ -98506,26 +98506,26 @@ not found in @resource.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="778">[class@Gio.InputStream] or `NULL` on error</doc>
+               line="786">[class@Gio.InputStream] or `NULL` on error</doc>
           <type name="InputStream" c:type="GInputStream*"/>
         </return-value>
         <parameters>
           <instance-parameter name="resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="765">A [struct@Gio.Resource]</doc>
+                 line="773">A [struct@Gio.Resource]</doc>
             <type name="Resource" c:type="GResource*"/>
           </instance-parameter>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="766">A path name inside the resource</doc>
+                 line="774">A path name inside the resource</doc>
             <type name="utf8" c:type="const char*"/>
           </parameter>
           <parameter name="lookup_flags" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="767">A [flags@Gio.ResourceLookupFlags]</doc>
+                 line="775">A [flags@Gio.ResourceLookupFlags]</doc>
             <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
           </parameter>
         </parameters>
@@ -114651,7 +114651,7 @@ using the following functions.</doc>
       <method name="fini" c:identifier="g_static_resource_fini" version="2.32">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1548">Finalizes a [struct@Gio.Resource] initialized by
+             line="1556">Finalizes a [struct@Gio.Resource] initialized by
 [method@Gio.StaticResource.init].
 
 This is normally used by code generated by
@@ -114665,7 +114665,7 @@ and is not typically used by other code.</doc>
           <instance-parameter name="static_resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1550">pointer to a static [struct@Gio.StaticResource]</doc>
+                 line="1558">pointer to a static [struct@Gio.StaticResource]</doc>
             <type name="StaticResource" c:type="GStaticResource*"/>
           </instance-parameter>
         </parameters>
@@ -114675,7 +114675,7 @@ and is not typically used by other code.</doc>
               version="2.32">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1584">Gets the [struct@Gio.Resource] that was registered by a call to
+             line="1592">Gets the [struct@Gio.Resource] that was registered by a call to
 [method@Gio.StaticResource.init].
 
 This is normally used by code generated by
@@ -114685,14 +114685,14 @@ and is not typically used by other code.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1595">a [struct@Gio.Resource]</doc>
+               line="1603">a [struct@Gio.Resource]</doc>
           <type name="Resource" c:type="GResource*"/>
         </return-value>
         <parameters>
           <instance-parameter name="static_resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1586">pointer to a static [struct@Gio.StaticResource]</doc>
+                 line="1594">pointer to a static [struct@Gio.StaticResource]</doc>
             <type name="StaticResource" c:type="GStaticResource*"/>
           </instance-parameter>
         </parameters>
@@ -114700,7 +114700,7 @@ and is not typically used by other code.</doc>
       <method name="init" c:identifier="g_static_resource_init" version="2.32">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1518">Initializes a [struct@Gio.Resource] from static data using a
+             line="1526">Initializes a [struct@Gio.Resource] from static data using a
 [struct@Gio.StaticResource].
 
 This is normally used by code generated by
@@ -114714,7 +114714,7 @@ and is not typically used by other code.</doc>
           <instance-parameter name="static_resource" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gresource.c"
-                 line="1520">pointer to a static [struct@Gio.StaticResource]</doc>
+                 line="1528">pointer to a static [struct@Gio.StaticResource]</doc>
             <type name="StaticResource" c:type="GStaticResource*"/>
           </instance-parameter>
         </parameters>
@@ -129526,7 +129526,7 @@ when using it. This is no longer necessary since GLib 2.72.</doc>
                    version="2.22">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="384">Creates a new #GUnixSocketAddress for @path.
+             line="430">Creates a new #GUnixSocketAddress for @path.
 
 To create abstract socket addresses, on systems that support that,
 use g_unix_socket_address_new_abstract().</doc>
@@ -129534,14 +129534,14 @@ use g_unix_socket_address_new_abstract().</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="393">a new #GUnixSocketAddress</doc>
+               line="439">a new #GUnixSocketAddress</doc>
           <type name="SocketAddress" c:type="GSocketAddress*"/>
         </return-value>
         <parameters>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="386">the socket path</doc>
+                 line="432">the socket path</doc>
             <type name="utf8" c:type="const gchar*"/>
           </parameter>
         </parameters>
@@ -129551,21 +129551,21 @@ use g_unix_socket_address_new_abstract().</doc>
                    deprecated="1">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="406">Creates a new %G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED
+             line="452">Creates a new %G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED
 #GUnixSocketAddress for @path.</doc>
         <doc-deprecated xml:space="preserve">Use g_unix_socket_address_new_with_type().</doc-deprecated>
         <source-position filename="gio/gunixsocketaddress.h" line="63"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="414">a new #GUnixSocketAddress</doc>
+               line="460">a new #GUnixSocketAddress</doc>
           <type name="SocketAddress" c:type="GSocketAddress*"/>
         </return-value>
         <parameters>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="408">the abstract name</doc>
+                 line="454">the abstract name</doc>
             <array length="1" zero-terminated="0" c:type="const gchar*">
               <type name="gchar"/>
             </array>
@@ -129573,7 +129573,7 @@ use g_unix_socket_address_new_abstract().</doc>
           <parameter name="path_len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="409">the length of @path, or -1</doc>
+                 line="455">the length of @path, or -1</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
         </parameters>
@@ -129583,7 +129583,7 @@ use g_unix_socket_address_new_abstract().</doc>
                    version="2.26">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="426">Creates a new #GUnixSocketAddress of type @type with name @path.
+             line="472">Creates a new #GUnixSocketAddress of type @type with name @path.
 
 If @type is %G_UNIX_SOCKET_ADDRESS_PATH, this is equivalent to
 calling g_unix_socket_address_new().
@@ -129618,14 +129618,14 @@ its listening socket.</doc>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="464">a new #GUnixSocketAddress</doc>
+               line="510">a new #GUnixSocketAddress</doc>
           <type name="SocketAddress" c:type="GSocketAddress*"/>
         </return-value>
         <parameters>
           <parameter name="path" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="428">the name</doc>
+                 line="474">the name</doc>
             <array length="1" zero-terminated="0" c:type="const gchar*">
               <type name="gchar"/>
             </array>
@@ -129633,13 +129633,13 @@ its listening socket.</doc>
           <parameter name="path_len" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="429">the length of @path, or -1</doc>
+                 line="475">the length of @path, or -1</doc>
             <type name="gint" c:type="gint"/>
           </parameter>
           <parameter name="type" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="430">a #GUnixSocketAddressType</doc>
+                 line="476">a #GUnixSocketAddressType</doc>
             <type name="UnixSocketAddressType"
                   c:type="GUnixSocketAddressType"/>
           </parameter>
@@ -129650,12 +129650,12 @@ its listening socket.</doc>
                 version="2.22">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="575">Checks if abstract UNIX domain socket names are supported.</doc>
+             line="621">Checks if abstract UNIX domain socket names are supported.</doc>
         <source-position filename="gio/gunixsocketaddress.h" line="79"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="580">%TRUE if supported, %FALSE otherwise</doc>
+               line="626">%TRUE if supported, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
       </function>
@@ -129665,19 +129665,19 @@ its listening socket.</doc>
               version="2.26">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="540">Gets @address's type.</doc>
+             line="586">Gets @address's type.</doc>
         <source-position filename="gio/gunixsocketaddress.h" line="74"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="546">a #GUnixSocketAddressType</doc>
+               line="592">a #GUnixSocketAddressType</doc>
           <type name="UnixSocketAddressType" c:type="GUnixSocketAddressType"/>
         </return-value>
         <parameters>
           <instance-parameter name="address" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="542">a #GInetSocketAddress</doc>
+                 line="588">a #GInetSocketAddress</doc>
             <type name="UnixSocketAddress" c:type="GUnixSocketAddress*"/>
           </instance-parameter>
         </parameters>
@@ -129688,20 +129688,20 @@ its listening socket.</doc>
               deprecated="1">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="556">Tests if @address is abstract.</doc>
+             line="602">Tests if @address is abstract.</doc>
         <doc-deprecated xml:space="preserve">Use g_unix_socket_address_get_address_type()</doc-deprecated>
         <source-position filename="gio/gunixsocketaddress.h" line="76"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="562">%TRUE if the address is abstract, %FALSE otherwise</doc>
+               line="608">%TRUE if the address is abstract, %FALSE otherwise</doc>
           <type name="gboolean" c:type="gboolean"/>
         </return-value>
         <parameters>
           <instance-parameter name="address" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="558">a #GInetSocketAddress</doc>
+                 line="604">a #GInetSocketAddress</doc>
             <type name="UnixSocketAddress" c:type="GUnixSocketAddress*"/>
           </instance-parameter>
         </parameters>
@@ -129712,7 +129712,7 @@ its listening socket.</doc>
               version="2.22">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="501">Gets @address's path, or for abstract sockets the "name".
+             line="547">Gets @address's path, or for abstract sockets the "name".
 
 Guaranteed to be zero-terminated, but an abstract socket
 may contain embedded zeros, and thus you should use
@@ -129722,14 +129722,14 @@ of this string.</doc>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="512">the path for @address</doc>
+               line="558">the path for @address</doc>
           <type name="utf8" c:type="const char*"/>
         </return-value>
         <parameters>
           <instance-parameter name="address" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="503">a #GInetSocketAddress</doc>
+                 line="549">a #GInetSocketAddress</doc>
             <type name="UnixSocketAddress" c:type="GUnixSocketAddress*"/>
           </instance-parameter>
         </parameters>
@@ -129739,21 +129739,21 @@ of this string.</doc>
               version="2.22">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="522">Gets the length of @address's path.
+             line="568">Gets the length of @address's path.
 
 For details, see g_unix_socket_address_get_path().</doc>
         <source-position filename="gio/gunixsocketaddress.h" line="72"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gunixsocketaddress.c"
-               line="530">the length of the path</doc>
+               line="576">the length of the path</doc>
           <type name="gsize" c:type="gsize"/>
         </return-value>
         <parameters>
           <instance-parameter name="address" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gio/gunixsocketaddress.c"
-                 line="524">a #GInetSocketAddress</doc>
+                 line="570">a #GInetSocketAddress</doc>
             <type name="UnixSocketAddress" c:type="GUnixSocketAddress*"/>
           </instance-parameter>
         </parameters>
@@ -129766,7 +129766,7 @@ For details, see g_unix_socket_address_get_path().</doc>
                 default-value="FALSE">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="299">Whether or not this is an abstract address</doc>
+             line="345">Whether or not this is an abstract address</doc>
         <doc-deprecated xml:space="preserve">Use #GUnixSocketAddress:address-type, which
 distinguishes between zero-padded and non-zero-padded
 abstract addresses.</doc-deprecated>
@@ -129781,7 +129781,7 @@ abstract addresses.</doc-deprecated>
                 default-value="G_UNIX_SOCKET_ADDRESS_PATH">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="315">The type of Unix socket address.</doc>
+             line="361">The type of Unix socket address.</doc>
         <type name="UnixSocketAddressType"/>
       </property>
       <property name="path"
@@ -129793,7 +129793,7 @@ abstract addresses.</doc-deprecated>
                 default-value="NULL">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="270">Unix socket path.</doc>
+             line="316">Unix socket path.</doc>
         <type name="utf8" c:type="gchar*"/>
       </property>
       <property name="path-as-array"
@@ -129803,7 +129803,7 @@ abstract addresses.</doc-deprecated>
                 transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gio/gunixsocketaddress.c"
-             line="285">Unix socket path, as a byte array.</doc>
+             line="331">Unix socket path, as a byte array.</doc>
         <array name="GLib.ByteArray">
           <type name="guint8" c:type="guint8"/>
         </array>
@@ -139069,7 +139069,7 @@ will be returned.</doc>
               throws="1">
       <doc xml:space="preserve"
            filename="gio/gresource.c"
-           line="1290">Returns all the names of children at the specified @path in the set of
+           line="1298">Returns all the names of children at the specified @path in the set of
 globally registered resources.
 
 The return result is a `NULL` terminated list of strings which should
@@ -139080,7 +139080,7 @@ be released with [func@GLib.strfreev].
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1304">an array of constant strings</doc>
+             line="1312">an array of constant strings</doc>
         <array c:type="char**">
           <type name="utf8"/>
         </array>
@@ -139089,13 +139089,13 @@ be released with [func@GLib.strfreev].
         <parameter name="path" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1292">A path name inside the resource</doc>
+               line="1300">A path name inside the resource</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="lookup_flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1293">A [flags@Gio.ResourceLookupFlags]</doc>
+               line="1301">A [flags@Gio.ResourceLookupFlags]</doc>
           <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
         </parameter>
       </parameters>
@@ -139106,7 +139106,7 @@ be released with [func@GLib.strfreev].
               throws="1">
       <doc xml:space="preserve"
            filename="gio/gresource.c"
-           line="1401">Looks for a file at the specified @path in the set of
+           line="1409">Looks for a file at the specified @path in the set of
 globally registered resources and if found returns information about it.
 
 @lookup_flags controls the behaviour of the lookup.</doc>
@@ -139114,20 +139114,20 @@ globally registered resources and if found returns information about it.
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1416">`TRUE` if the file was found, `FALSE` if there were errors</doc>
+             line="1424">`TRUE` if the file was found, `FALSE` if there were errors</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="path" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1403">A path name inside the resource</doc>
+               line="1411">A path name inside the resource</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="lookup_flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1404">A [flags@Gio.ResourceLookupFlags]</doc>
+               line="1412">A [flags@Gio.ResourceLookupFlags]</doc>
           <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
         </parameter>
         <parameter name="size"
@@ -139138,7 +139138,7 @@ globally registered resources and if found returns information about it.
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1405">a location to place the length of the contents of the file,
+               line="1413">a location to place the length of the contents of the file,
    or `NULL` if the length is not needed</doc>
           <type name="gsize" c:type="gsize*"/>
         </parameter>
@@ -139150,7 +139150,7 @@ globally registered resources and if found returns information about it.
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1407">a location to place the [flags@Gio.ResourceFlags] about the file,
+               line="1415">a location to place the [flags@Gio.ResourceFlags] about the file,
    or `NULL` if the flags are not needed</doc>
           <type name="guint32" c:type="guint32*"/>
         </parameter>
@@ -139161,20 +139161,20 @@ globally registered resources and if found returns information about it.
               version="2.84">
       <doc xml:space="preserve"
            filename="gio/gresource.c"
-           line="1368">Returns whether the specified @path in the set of
+           line="1376">Returns whether the specified @path in the set of
 globally registered resources has children.</doc>
       <source-position filename="gio/gresource.h" line="126"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1375">%TRUE if @patch has children</doc>
+             line="1383">%TRUE if @patch has children</doc>
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
       <parameters>
         <parameter name="path" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1370">A pathname</doc>
+               line="1378">A pathname</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
       </parameters>
@@ -139185,7 +139185,7 @@ globally registered resources has children.</doc>
               throws="1">
       <doc xml:space="preserve"
            filename="gio/gresource.c"
-           line="1225">Looks for a file at the specified @path in the set of
+           line="1233">Looks for a file at the specified @path in the set of
 globally registered resources and returns a [struct@GLib.Bytes] that
 lets you directly access the data in memory.
 
@@ -139203,20 +139203,20 @@ the heap and automatically uncompress the data.
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1246">[struct@GLib.Bytes] or `NULL` on error</doc>
+             line="1254">[struct@GLib.Bytes] or `NULL` on error</doc>
         <type name="GLib.Bytes" c:type="GBytes*"/>
       </return-value>
       <parameters>
         <parameter name="path" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1227">A path name inside the resource</doc>
+               line="1235">A path name inside the resource</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="lookup_flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1228">A [flags@Gio.ResourceLookupFlags]</doc>
+               line="1236">A [flags@Gio.ResourceLookupFlags]</doc>
           <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
         </parameter>
       </parameters>
@@ -139227,7 +139227,7 @@ the heap and automatically uncompress the data.
               throws="1">
       <doc xml:space="preserve"
            filename="gio/gresource.c"
-           line="1168">Looks for a file at the specified @path in the set of
+           line="1176">Looks for a file at the specified @path in the set of
 globally registered resources and returns a [class@Gio.InputStream]
 that lets you read the data.
 
@@ -139236,20 +139236,20 @@ that lets you read the data.
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gio/gresource.c"
-             line="1180">[class@Gio.InputStream] or `NULL` on error</doc>
+             line="1188">[class@Gio.InputStream] or `NULL` on error</doc>
         <type name="InputStream" c:type="GInputStream*"/>
       </return-value>
       <parameters>
         <parameter name="path" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1170">A path name inside the resource</doc>
+               line="1178">A path name inside the resource</doc>
           <type name="utf8" c:type="const char*"/>
         </parameter>
         <parameter name="lookup_flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1171">A [flags@Gio.ResourceLookupFlags]</doc>
+               line="1179">A [flags@Gio.ResourceLookupFlags]</doc>
           <type name="ResourceLookupFlags" c:type="GResourceLookupFlags"/>
         </parameter>
       </parameters>
@@ -139259,7 +139259,7 @@ that lets you read the data.
               version="2.32">
       <doc xml:space="preserve"
            filename="gio/gresource.c"
-           line="1132">Registers the resource with the process-global set of resources.
+           line="1140">Registers the resource with the process-global set of resources.
 
 Once a resource is registered the files in it can be accessed
 with the global resource lookup functions like
@@ -139272,7 +139272,7 @@ with the global resource lookup functions like
         <parameter name="resource" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1134">A [struct@Gio.Resource]</doc>
+               line="1142">A [struct@Gio.Resource]</doc>
           <type name="Resource" c:type="GResource*"/>
         </parameter>
       </parameters>
@@ -139282,7 +139282,7 @@ with the global resource lookup functions like
               version="2.32">
       <doc xml:space="preserve"
            filename="gio/gresource.c"
-           line="1152">Unregisters the resource from the process-global set of resources.</doc>
+           line="1160">Unregisters the resource from the process-global set of resources.</doc>
       <source-position filename="gio/gresource.h" line="102"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
@@ -139291,7 +139291,7 @@ with the global resource lookup functions like
         <parameter name="resource" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gio/gresource.c"
-               line="1154">A [struct@Gio.Resource]</doc>
+               line="1162">A [struct@Gio.Resource]</doc>
           <type name="Resource" c:type="GResource*"/>
         </parameter>
       </parameters>
