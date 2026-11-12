@@ -52,7 +52,7 @@ type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2122">A convenience macro to ease adding private data to instances of a new type
+           line="2128">A convenience macro to ease adding private data to instances of a new type
 in the @_C_ section of G_DEFINE_TYPE_WITH_CODE() or
 G_DEFINE_ABSTRACT_TYPE_WITH_CODE().
 
@@ -117,12 +117,12 @@ name of the form `TypeNamePrivate`.
 It is safe to call the `_get_instance_private` function on %NULL or invalid
 objects since it's only adding an offset to the instance pointer. In that
 case the returned pointer must not be dereferenced.</doc>
-      <source-position filename="gobject/gtype.h" line="2194"/>
+      <source-position filename="gobject/gtype.h" line="2200"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2124">the name of the type in CamelCase</doc>
+               line="2130">the name of the type in CamelCase</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -3945,7 +3945,7 @@ unsigned long integer argument.</doc>
                 version="2.30">
         <doc xml:space="preserve"
              filename="gobject/gclosure.c"
-             line="1531">A generic marshaller function implemented via
+             line="1596">A generic marshaller function implemented via
 [libffi](http://sourceware.org/libffi/).
 
 Normally this function is not passed explicitly to g_signal_new(),
@@ -3958,26 +3958,26 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
           <parameter name="closure" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1533">A #GClosure.</doc>
+                 line="1598">A #GClosure.</doc>
             <type name="Closure" c:type="GClosure*"/>
           </parameter>
           <parameter name="return_gvalue" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1534">A #GValue to store the return value. May be %NULL
+                 line="1599">A #GValue to store the return value. May be %NULL
   if the callback of closure doesn't return a value.</doc>
             <type name="Value" c:type="GValue*"/>
           </parameter>
           <parameter name="n_param_values" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1536">The length of the @param_values array.</doc>
+                 line="1601">The length of the @param_values array.</doc>
             <type name="guint" c:type="guint"/>
           </parameter>
           <parameter name="param_values" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1537">An array of #GValues holding the arguments
+                 line="1602">An array of #GValues holding the arguments
   on which to invoke the callback of closure.</doc>
             <type name="Value" c:type="const GValue*"/>
           </parameter>
@@ -3987,7 +3987,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1539">The invocation hint given as the last argument to
+                 line="1604">The invocation hint given as the last argument to
   g_closure_invoke().</doc>
             <type name="gpointer" c:type="gpointer"/>
           </parameter>
@@ -3997,7 +3997,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1541">Additional data specified when registering the
+                 line="1606">Additional data specified when registering the
   marshaller, see g_closure_set_marshal() and
   g_closure_set_meta_marshal()</doc>
             <type name="gpointer" c:type="gpointer"/>
@@ -4010,7 +4010,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
                 introspectable="0">
         <doc xml:space="preserve"
              filename="gobject/gclosure.c"
-             line="1632">A generic #GVaClosureMarshal function implemented via
+             line="1708">A generic #GVaClosureMarshal function implemented via
 [libffi](http://sourceware.org/libffi/).</doc>
         <source-position filename="gobject/gclosure.h" line="304"/>
         <return-value transfer-ownership="none">
@@ -4020,7 +4020,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
           <parameter name="closure" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1634">the #GClosure to which the marshaller belongs</doc>
+                 line="1710">the #GClosure to which the marshaller belongs</doc>
             <type name="Closure" c:type="GClosure*"/>
           </parameter>
           <parameter name="return_value"
@@ -4029,7 +4029,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1635">a #GValue to store the return
+                 line="1711">a #GValue to store the return
  value. May be %NULL if the callback of @closure doesn't return a
  value.</doc>
             <type name="Value" c:type="GValue*"/>
@@ -4037,14 +4037,14 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
           <parameter name="instance" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1638">the instance on which the closure is
+                 line="1714">the instance on which the closure is
  invoked.</doc>
             <type name="TypeInstance" c:type="gpointer"/>
           </parameter>
           <parameter name="args_list" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1640">va_list of arguments to be passed to the closure.</doc>
+                 line="1716">va_list of arguments to be passed to the closure.</doc>
             <type name="va_list" c:type="va_list"/>
           </parameter>
           <parameter name="marshal_data"
@@ -4053,7 +4053,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
                      allow-none="1">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1641">additional data specified when
+                 line="1717">additional data specified when
  registering the marshaller, see g_closure_set_marshal() and
  g_closure_set_meta_marshal()</doc>
             <type name="gpointer" c:type="gpointer"/>
@@ -4061,13 +4061,13 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
           <parameter name="n_params" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1644">the length of the @param_types array</doc>
+                 line="1720">the length of the @param_types array</doc>
             <type name="gint" c:type="int"/>
           </parameter>
           <parameter name="param_types" transfer-ownership="none">
             <doc xml:space="preserve"
                  filename="gobject/gclosure.c"
-                 line="1645">the #GType of each argument from
+                 line="1721">the #GType of each argument from
  @args_list.</doc>
             <array length="5" zero-terminated="0" c:type="GType*">
               <type name="GType" c:type="GType"/>
@@ -5249,23 +5249,26 @@ on closures.</doc>
            filename="gobject/gsignal.h"
            line="183">The connection flags are used to specify the behaviour of a signal's
 connection.</doc>
-      <source-position filename="gobject/gsignal.h" line="200"/>
-      <member name="default" value="0" c:identifier="G_CONNECT_DEFAULT">
+      <source-position filename="gobject/gsignal.h" line="206"/>
+      <member name="default"
+              value="0"
+              c:identifier="G_CONNECT_DEFAULT"
+              version="2.74">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="185">Default behaviour (no special flags). Since: 2.74</doc>
+             line="196">Default behaviour (no special flags).</doc>
       </member>
       <member name="after" value="1" c:identifier="G_CONNECT_AFTER">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="186">If set, the handler should be called after the
+             line="185">If set, the handler should be called after the
  default handler of the signal. Normally, the handler is called before
  the default handler.</doc>
       </member>
       <member name="swapped" value="2" c:identifier="G_CONNECT_SWAPPED">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="189">If set, the instance and data should be swapped when
+             line="188">If set, the instance and data should be swapped when
  calling the handler; see g_signal_connect_swapped() for an example.</doc>
       </member>
     </bitfield>
@@ -5275,7 +5278,7 @@ connection.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1623">A convenience macro for emitting the usual declarations in the
+           line="1629">A convenience macro for emitting the usual declarations in the
 header file for a type which is intended to be subclassed.
 
 You might use it in a header as follows:
@@ -5333,7 +5336,7 @@ This results in the following things happening:
 
 - g_autoptr() support being added for your type, based on the type of your parent class
 
-You can only use this function if your parent type also supports g_autoptr().
+You can only use this function if your parent type also supports `g_autoptr()`.
 
 Because the type macro (`GTK_TYPE_FROBBER` in the above example) is not a callable, you must continue to
 manually define this as a macro for yourself.
@@ -5342,42 +5345,42 @@ The declaration of the `_get_type()` function is the first thing emitted by the 
 to be used in the usual way with export control and API versioning macros.
 
 If you are writing a library, it is important to note that it is possible to convert a type from using
-G_DECLARE_FINAL_TYPE() to G_DECLARE_DERIVABLE_TYPE() without breaking API or ABI.  As a precaution, you
-should therefore use G_DECLARE_FINAL_TYPE() until you are sure that it makes sense for your class to be
+[func@GObject.DECLARE_FINAL_TYPE] to `G_DECLARE_DERIVABLE_TYPE()` without breaking API or ABI.  As a precaution, you
+should therefore use `G_DECLARE_FINAL_TYPE()` until you are sure that it makes sense for your class to be
 subclassed.  Once a class structure has been exposed it is not possible to change its size or remove or
 reorder items without breaking the API and/or ABI.  If you want to declare your own class structure, use
-G_DECLARE_DERIVABLE_TYPE().  If you want to declare a class without exposing the class or instance
-structures, use G_DECLARE_FINAL_TYPE().
+`G_DECLARE_DERIVABLE_TYPE()`.  If you want to declare a class without exposing the class or instance
+structures, use `G_DECLARE_FINAL_TYPE()`.
 
-If you must use G_DECLARE_DERIVABLE_TYPE() you should be sure to include some padding at the bottom of your
+If you must use `G_DECLARE_DERIVABLE_TYPE()` you should be sure to include some padding at the bottom of your
 class structure to leave space for the addition of future virtual functions.</doc>
-      <source-position filename="gobject/gtype.h" line="1711"/>
+      <source-position filename="gobject/gtype.h" line="1717"/>
       <parameters>
         <parameter name="ModuleObjName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1625">The name of the new type, in camel case (like `GtkWidget`)</doc>
+               line="1631">The name of the new type, in camel case (like `GtkWidget`)</doc>
         </parameter>
         <parameter name="module_obj_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1626">The name of the new type in lowercase, with words
+               line="1632">The name of the new type in lowercase, with words
  separated by `_` (like `gtk_widget`)</doc>
         </parameter>
         <parameter name="MODULE">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1628">The name of the module, in all caps (like `GTK`)</doc>
+               line="1634">The name of the module, in all caps (like `GTK`)</doc>
         </parameter>
         <parameter name="OBJ_NAME">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1629">The bare name of the type, in all caps (like `WIDGET`)</doc>
+               line="1635">The bare name of the type, in all caps (like `WIDGET`)</doc>
         </parameter>
         <parameter name="ParentName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1630">the name of the parent type, in camel case (like `GtkWidget`)</doc>
+               line="1636">the name of the parent type, in camel case (like `GtkWidget`)</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5387,7 +5390,7 @@ class structure to leave space for the addition of future virtual functions.</do
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1531">A convenience macro for emitting the usual declarations in the header file
+           line="1537">A convenience macro for emitting the usual declarations in the header file
 for a type which is not (at the present time) intended to be subclassed.
 
 You might use it in a header as follows:
@@ -5424,7 +5427,7 @@ This results in the following things happening:
 - the usual `my_app_window_get_type()` function is declared with a return type of #GType
 
 - the `MyAppWindow` type is defined as a `typedef` of `struct _MyAppWindow`.  The struct itself is not
-  defined and should be defined from the .c file before G_DEFINE_TYPE() is used.
+  defined and should be defined from the `.c` file before `G_DEFINE_TYPE()` is used.
 
 - the `MY_APP_WINDOW()` cast is emitted as `static inline` function along with the `MY_APP_IS_WINDOW()` type
   checking function
@@ -5435,9 +5438,9 @@ This results in the following things happening:
   and therefore the fact that the size of the class structure is exposed is not a concern and it can be
   freely changed at any point in the future.
 
-- g_autoptr() support being added for your type, based on the type of your parent class
+- `g_autoptr()` support being added for your type, based on the type of your parent class
 
-You can only use this function if your parent type also supports g_autoptr().
+You can only use this function if your parent type also supports `g_autoptr()`.
 
 Because the type macro (`MY_APP_TYPE_WINDOW` in the above example) is not a callable, you must continue to
 manually define this as a macro for yourself.
@@ -5445,40 +5448,40 @@ manually define this as a macro for yourself.
 The declaration of the `_get_type()` function is the first thing emitted by the macro.  This allows this macro
 to be used in the usual way with export control and API versioning macros.
 
-If you want to declare your own class structure, use G_DECLARE_DERIVABLE_TYPE().
+If you want to declare your own class structure, use [func@GObject.DECLARE_DERIVABLE_TYPE].
 
 If you are writing a library, it is important to note that it is possible to convert a type from using
-G_DECLARE_FINAL_TYPE() to G_DECLARE_DERIVABLE_TYPE() without breaking API or ABI.  As a precaution, you
-should therefore use G_DECLARE_FINAL_TYPE() until you are sure that it makes sense for your class to be
+`G_DECLARE_FINAL_TYPE()` to `G_DECLARE_DERIVABLE_TYPE()` without breaking API or ABI.  As a precaution, you
+should therefore use `G_DECLARE_FINAL_TYPE()` until you are sure that it makes sense for your class to be
 subclassed.  Once a class structure has been exposed it is not possible to change its size or remove or
 reorder items without breaking the API and/or ABI.</doc>
-      <source-position filename="gobject/gtype.h" line="1608"/>
+      <source-position filename="gobject/gtype.h" line="1614"/>
       <parameters>
         <parameter name="ModuleObjName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1533">The name of the new type, in camel case (like `GtkWidget`)</doc>
+               line="1539">The name of the new type, in camel case (like `GtkWidget`)</doc>
         </parameter>
         <parameter name="module_obj_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1534">The name of the new type in lowercase, with words
+               line="1540">The name of the new type in lowercase, with words
  separated by `_` (like `gtk_widget`)</doc>
         </parameter>
         <parameter name="MODULE">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1536">The name of the module, in all caps (like `GTK`)</doc>
+               line="1542">The name of the module, in all caps (like `GTK`)</doc>
         </parameter>
         <parameter name="OBJ_NAME">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1537">The bare name of the type, in all caps (like `WIDGET`)</doc>
+               line="1543">The bare name of the type, in all caps (like `WIDGET`)</doc>
         </parameter>
         <parameter name="ParentName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1538">the name of the parent type, in camel case (like `GtkWidget`)</doc>
+               line="1544">the name of the parent type, in camel case (like `GtkWidget`)</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5488,7 +5491,7 @@ reorder items without breaking the API and/or ABI.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1733">A convenience macro for emitting the usual declarations in the header file for a #GInterface type.
+           line="1739">A convenience macro for emitting the usual declarations in the header file for a #GInterface type.
 
 You might use it in a header as follows:
 
@@ -5546,33 +5549,33 @@ manually define this as a macro for yourself.
 
 The declaration of the `_get_type()` function is the first thing emitted by the macro.  This allows this macro
 to be used in the usual way with export control and API versioning macros.</doc>
-      <source-position filename="gobject/gtype.h" line="1803"/>
+      <source-position filename="gobject/gtype.h" line="1809"/>
       <parameters>
         <parameter name="ModuleObjName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1735">The name of the new type, in camel case (like `GtkWidget`)</doc>
+               line="1741">The name of the new type, in camel case (like `GtkWidget`)</doc>
         </parameter>
         <parameter name="module_obj_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1736">The name of the new type in lowercase, with words
+               line="1742">The name of the new type in lowercase, with words
  separated by `_` (like `gtk_widget`)</doc>
         </parameter>
         <parameter name="MODULE">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1738">The name of the module, in all caps (like `GTK`)</doc>
+               line="1744">The name of the module, in all caps (like `GTK`)</doc>
         </parameter>
         <parameter name="OBJ_NAME">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1739">The bare name of the type, in all caps (like `WIDGET`)</doc>
+               line="1745">The bare name of the type, in all caps (like `WIDGET`)</doc>
         </parameter>
         <parameter name="PrerequisiteName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1740">the name of the prerequisite type, in camel case (like `GtkWidget`)</doc>
+               line="1746">the name of the prerequisite type, in camel case (like `GtkWidget`)</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5582,27 +5585,27 @@ to be used in the usual way with export control and API versioning macros.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1877">A convenience macro for type implementations.
+           line="1883">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE(), but defines an abstract type.
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1891"/>
+      <source-position filename="gobject/gtype.h" line="1897"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1879">The name of the new type, in Camel case.</doc>
+               line="1885">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1880">The name of the new type, in lowercase, with words
+               line="1886">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1882">The #GType of the parent type.</doc>
+               line="1888">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5612,35 +5615,35 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1892">A convenience macro for type implementations.
+           line="1898">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE_WITH_CODE(), but defines an abstract type and
 allows you to insert custom code into the `*_get_type()` function, e.g.
 interface implementations via G_IMPLEMENT_INTERFACE().
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1910"/>
+      <source-position filename="gobject/gtype.h" line="1916"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1894">The name of the new type, in Camel case.</doc>
+               line="1900">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1895">The name of the new type, in lowercase, with words
+               line="1901">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1897">The #GType of the parent type.</doc>
+               line="1903">The #GType of the parent type.</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1898">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
+               line="1904">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5650,26 +5653,26 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1911">Similar to G_DEFINE_TYPE_WITH_PRIVATE(), but defines an abstract type.
+           line="1917">Similar to G_DEFINE_TYPE_WITH_PRIVATE(), but defines an abstract type.
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1924"/>
+      <source-position filename="gobject/gtype.h" line="1930"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1913">The name of the new type, in Camel case.</doc>
+               line="1919">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1914">The name of the new type, in lowercase, with words
+               line="1920">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1916">The #GType of the parent type.</doc>
+               line="1922">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5679,7 +5682,7 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2377">A convenience macro for defining a new custom boxed type.
+           line="2383">A convenience macro for defining a new custom boxed type.
 
 Using this macro is the recommended way of defining new custom boxed
 types, over calling g_boxed_type_register_static() directly. It defines
@@ -5731,28 +5734,28 @@ foo ()
   my_struct_free (ms);
 }
 ]|</doc>
-      <source-position filename="gobject/gtype.h" line="2440"/>
+      <source-position filename="gobject/gtype.h" line="2446"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2379">The name of the new type, in Camel case</doc>
+               line="2385">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2380">The name of the new type, in lowercase, with words
+               line="2386">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
         <parameter name="copy_func">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2382">the #GBoxedCopyFunc for the new type</doc>
+               line="2388">the #GBoxedCopyFunc for the new type</doc>
         </parameter>
         <parameter name="free_func">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2383">the #GBoxedFreeFunc for the new type</doc>
+               line="2389">the #GBoxedFreeFunc for the new type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -5762,7 +5765,7 @@ foo ()
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2441">A convenience macro for boxed type implementations.
+           line="2447">A convenience macro for boxed type implementations.
 
 Similar to G_DEFINE_BOXED_TYPE(), but allows to insert custom code into the
 `type_name_get_type()` function, e.g. to register value transformations with
@@ -5777,33 +5780,33 @@ G_DEFINE_BOXED_TYPE_WITH_CODE (GdkRectangle, gdk_rectangle,
 
 Similarly to the `G_DEFINE_TYPE_*` family of macros, the #GType of the newly
 defined boxed type is exposed in the `g_define_type_id` variable.</doc>
-      <source-position filename="gobject/gtype.h" line="2468"/>
+      <source-position filename="gobject/gtype.h" line="2474"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2443">The name of the new type, in Camel case</doc>
+               line="2449">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2444">The name of the new type, in lowercase, with words
+               line="2450">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
         <parameter name="copy_func">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2446">the #GBoxedCopyFunc for the new type</doc>
+               line="2452">the #GBoxedCopyFunc for the new type</doc>
         </parameter>
         <parameter name="free_func">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2447">the #GBoxedFreeFunc for the new type</doc>
+               line="2453">the #GBoxedFreeFunc for the new type</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2448">Custom code that gets inserted in the `*_get_type()` function</doc>
+               line="2454">Custom code that gets inserted in the `*_get_type()` function</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6009,28 +6012,28 @@ G_DEFINE_FLAGS_TYPE().</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1925">A convenience macro for type implementations.
+           line="1931">A convenience macro for type implementations.
 
-Similar to G_DEFINE_TYPE(), but defines a final type.
+Similar to [func@GObject.DEFINE_TYPE], but defines a final type.
 
-See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1940"/>
+See [func@GObject.DEFINE_TYPE_EXTENDED] for an example.</doc>
+      <source-position filename="gobject/gtype.h" line="1946"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1927">the name of the new type, in Camel case</doc>
+               line="1933">the name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1928">the name of the new type, in lower case, with words
+               line="1934">the name of the new type, in lower case, with words
   separated by `_` (snake case)</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1930">the #GType of the parent type</doc>
+               line="1936">the #GType of the parent type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6040,35 +6043,35 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1941">A convenience macro for type implementations.
+           line="1947">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE_WITH_CODE(), but defines a final type and
 allows you to insert custom code into the `*_get_type()` function, e.g.
 interface implementations via G_IMPLEMENT_INTERFACE().
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1959"/>
+      <source-position filename="gobject/gtype.h" line="1965"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1943">the name of the new type, in Camel case</doc>
+               line="1949">the name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1944">the name of the new type, in lower case, with words
+               line="1950">the name of the new type, in lower case, with words
   separated by `_` (snake case)</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1946">the #GType of the parent type</doc>
+               line="1952">the #GType of the parent type</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1947">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
+               line="1953">Custom code that gets inserted in the `type_name_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6078,28 +6081,28 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1960">A convenience macro for type implementations.
+           line="1966">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE_WITH_PRIVATE(), but defines a final type.
 
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1975"/>
+      <source-position filename="gobject/gtype.h" line="1981"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1962">the name of the new type, in Camel case</doc>
+               line="1968">the name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1963">the name of the new type, in lower case, with words
+               line="1969">the name of the new type, in lower case, with words
   separated by `_` (snake case)</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1965">the #GType of the parent type</doc>
+               line="1971">the #GType of the parent type</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6152,7 +6155,7 @@ generate the type function.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2055">A convenience macro for #GTypeInterface definitions, which declares
+           line="2061">A convenience macro for #GTypeInterface definitions, which declares
 a default vtable initialization function and defines a `*_get_type()`
 function.
 
@@ -6165,22 +6168,22 @@ The initialization function has signature
 the full #GInterfaceInitFunc signature, for brevity and convenience. If you
 need to use an initialization function with an `iface_data` argument, you
 must write the #GTypeInterface definitions manually.</doc>
-      <source-position filename="gobject/gtype.h" line="2078"/>
+      <source-position filename="gobject/gtype.h" line="2084"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2057">The name of the new type, in Camel case.</doc>
+               line="2063">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2058">The name of the new type, in lowercase, with words separated by `_`.</doc>
+               line="2064">The name of the new type, in lowercase, with words separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2059">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
+               line="2065">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
 for no prerequisite type.</doc>
         </parameter>
       </parameters>
@@ -6191,7 +6194,7 @@ for no prerequisite type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2080">A convenience macro for #GTypeInterface definitions.
+           line="2086">A convenience macro for #GTypeInterface definitions.
 
 Similar to G_DEFINE_INTERFACE(), but allows you to insert custom code
 into the `*_get_type()` function, e.g. additional interface implementations
@@ -6199,28 +6202,28 @@ via G_IMPLEMENT_INTERFACE(), or additional prerequisite types.
 
 See G_DEFINE_TYPE_EXTENDED() for a similar example using
 G_DEFINE_TYPE_WITH_CODE().</doc>
-      <source-position filename="gobject/gtype.h" line="2099"/>
+      <source-position filename="gobject/gtype.h" line="2105"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2082">The name of the new type, in Camel case.</doc>
+               line="2088">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2083">The name of the new type, in lowercase, with words separated by `_`.</doc>
+               line="2089">The name of the new type, in lowercase, with words separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2084">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
+               line="2090">The #GType of the prerequisite type for the interface, or %G_TYPE_INVALID
 for no prerequisite type.</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2086">Custom code that gets inserted in the `*_get_type()` function.</doc>
+               line="2092">Custom code that gets inserted in the `*_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6230,19 +6233,19 @@ for no prerequisite type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2538">A convenience macro for pointer type implementations, which defines a
+           line="2544">A convenience macro for pointer type implementations, which defines a
 `type_name_get_type()` function registering the pointer type.</doc>
-      <source-position filename="gobject/gtype.h" line="2549"/>
+      <source-position filename="gobject/gtype.h" line="2555"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2540">The name of the new type, in Camel case</doc>
+               line="2546">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2541">The name of the new type, in lowercase, with words
+               line="2547">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
       </parameters>
@@ -6253,26 +6256,26 @@ for no prerequisite type.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2550">A convenience macro for pointer type implementations.
+           line="2556">A convenience macro for pointer type implementations.
 Similar to G_DEFINE_POINTER_TYPE(), but allows to insert
 custom code into the `type_name_get_type()` function.</doc>
-      <source-position filename="gobject/gtype.h" line="2563"/>
+      <source-position filename="gobject/gtype.h" line="2569"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2552">The name of the new type, in Camel case</doc>
+               line="2558">The name of the new type, in Camel case</doc>
         </parameter>
         <parameter name="type_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2553">The name of the new type, in lowercase, with words
+               line="2559">The name of the new type, in lowercase, with words
  separated by `_`</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2555">Custom code that gets inserted in the `*_get_type()` function</doc>
+               line="2561">Custom code that gets inserted in the `*_get_type()` function</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6282,28 +6285,28 @@ custom code into the `type_name_get_type()` function.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1819">A convenience macro for type implementations, which declares a class
+           line="1825">A convenience macro for type implementations, which declares a class
 initialization function, an instance initialization function (see #GTypeInfo
 for information about these) and a static variable named `t_n_parent_class`
 pointing to the parent class. Furthermore, it defines a `*_get_type()` function.
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1834"/>
+      <source-position filename="gobject/gtype.h" line="1840"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1821">The name of the new type, in Camel case.</doc>
+               line="1827">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1822">The name of the new type, in lowercase, with words
+               line="1828">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1824">The #GType of the parent type.</doc>
+               line="1830">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6313,7 +6316,7 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1976">The most general convenience macro for type implementations, on which
+           line="1982">The most general convenience macro for type implementations, on which
 G_DEFINE_TYPE(), etc are based.
 
 |[&lt;!-- language="C" --&gt;
@@ -6378,33 +6381,33 @@ gtk_gadget_get_type (void)
 The only pieces which have to be manually provided are the definitions of
 the instance and class structure and the definitions of the instance and
 class init functions.</doc>
-      <source-position filename="gobject/gtype.h" line="2053"/>
+      <source-position filename="gobject/gtype.h" line="2059"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1978">The name of the new type, in Camel case.</doc>
+               line="1984">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1979">The name of the new type, in lowercase, with words
+               line="1985">The name of the new type, in lowercase, with words
    separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1981">The #GType of the parent type.</doc>
+               line="1987">The #GType of the parent type.</doc>
         </parameter>
         <parameter name="_f_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1982">#GTypeFlags to pass to g_type_register_static()</doc>
+               line="1988">#GTypeFlags to pass to g_type_register_static()</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1983">Custom code that gets inserted in the `*_get_type()` function.</doc>
+               line="1989">Custom code that gets inserted in the `*_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6414,32 +6417,32 @@ class init functions.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1835">A convenience macro for type implementations.
+           line="1841">A convenience macro for type implementations.
 
 Similar to G_DEFINE_TYPE(), but allows you to insert custom code into the
 `*_get_type()` function, e.g. interface implementations via G_IMPLEMENT_INTERFACE().
 See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
-      <source-position filename="gobject/gtype.h" line="1850"/>
+      <source-position filename="gobject/gtype.h" line="1856"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1837">The name of the new type, in Camel case.</doc>
+               line="1843">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1838">The name of the new type in lowercase, with words separated by `_`.</doc>
+               line="1844">The name of the new type in lowercase, with words separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1839">The #GType of the parent type.</doc>
+               line="1845">The #GType of the parent type.</doc>
         </parameter>
         <parameter name="_C_">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1840">Custom code that gets inserted in the `*_get_type()` function.</doc>
+               line="1846">Custom code that gets inserted in the `*_get_type()` function.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6449,7 +6452,7 @@ See G_DEFINE_TYPE_EXTENDED() for an example.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1851">A convenience macro for type implementations, which declares a class
+           line="1857">A convenience macro for type implementations, which declares a class
 initialization function, an instance initialization function (see #GTypeInfo
 for information about these), a static variable named `t_n_parent_class`
 pointing to the parent class, and adds private instance data to the type.
@@ -6464,23 +6467,23 @@ The private instance data can be retrieved using the automatically generated
 getter function `t_n_get_instance_private()`.
 
 See also: G_ADD_PRIVATE()</doc>
-      <source-position filename="gobject/gtype.h" line="1876"/>
+      <source-position filename="gobject/gtype.h" line="1882"/>
       <parameters>
         <parameter name="TN">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1853">The name of the new type, in Camel case.</doc>
+               line="1859">The name of the new type, in Camel case.</doc>
         </parameter>
         <parameter name="t_n">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1854">The name of the new type, in lowercase, with words
+               line="1860">The name of the new type, in lowercase, with words
  separated by `_`.</doc>
         </parameter>
         <parameter name="T_P">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1856">The #GType of the parent type.</doc>
+               line="1862">The #GType of the parent type.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -6767,6 +6770,15 @@ See also: G_ADD_PRIVATE()</doc>
                     c:identifier="GOBJECT_DEPRECATED_ENUMERATOR_IN_2_88_FOR"
                     introspectable="0">
       <source-position filename="gobject/gobject-visibility.h" line="1096"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="DEPRECATED_ENUMERATOR_IN_2_90_FOR"
+                    c:identifier="GOBJECT_DEPRECATED_ENUMERATOR_IN_2_90_FOR"
+                    introspectable="0">
+      <source-position filename="gobject/gobject-visibility.h" line="1130"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -7069,6 +7081,15 @@ See also: G_ADD_PRIVATE()</doc>
         </parameter>
       </parameters>
     </function-macro>
+    <function-macro name="DEPRECATED_IN_2_90_FOR"
+                    c:identifier="GOBJECT_DEPRECATED_IN_2_90_FOR"
+                    introspectable="0">
+      <source-position filename="gobject/gobject-visibility.h" line="1126"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
     <function-macro name="DEPRECATED_MACRO_IN_2_26_FOR"
                     c:identifier="GOBJECT_DEPRECATED_MACRO_IN_2_26_FOR"
                     introspectable="0">
@@ -7352,6 +7373,15 @@ See also: G_ADD_PRIVATE()</doc>
                     c:identifier="GOBJECT_DEPRECATED_MACRO_IN_2_88_FOR"
                     introspectable="0">
       <source-position filename="gobject/gobject-visibility.h" line="1094"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
+    <function-macro name="DEPRECATED_MACRO_IN_2_90_FOR"
+                    c:identifier="GOBJECT_DEPRECATED_MACRO_IN_2_90_FOR"
+                    introspectable="0">
+      <source-position filename="gobject/gobject-visibility.h" line="1128"/>
       <parameters>
         <parameter name="f">
         </parameter>
@@ -7645,6 +7675,15 @@ See also: G_ADD_PRIVATE()</doc>
         </parameter>
       </parameters>
     </function-macro>
+    <function-macro name="DEPRECATED_TYPE_IN_2_90_FOR"
+                    c:identifier="GOBJECT_DEPRECATED_TYPE_IN_2_90_FOR"
+                    introspectable="0">
+      <source-position filename="gobject/gobject-visibility.h" line="1132"/>
+      <parameters>
+        <parameter name="f">
+        </parameter>
+      </parameters>
+    </function-macro>
     <glib:boxed glib:name="Date"
                 c:symbol-prefix="date"
                 glib:type-name="GDate"
@@ -7895,23 +7934,23 @@ nickname.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2101">A convenience macro to ease interface addition in the `_C_` section
+           line="2107">A convenience macro to ease interface addition in the `_C_` section
 of G_DEFINE_TYPE_WITH_CODE() or G_DEFINE_ABSTRACT_TYPE_WITH_CODE().
 See G_DEFINE_TYPE_EXTENDED() for an example.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 macros, since it depends on variable names from those macros.</doc>
-      <source-position filename="gobject/gtype.h" line="2115"/>
+      <source-position filename="gobject/gtype.h" line="2121"/>
       <parameters>
         <parameter name="TYPE_IFACE">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2103">The #GType of the interface to add</doc>
+               line="2109">The #GType of the interface to add</doc>
         </parameter>
         <parameter name="iface_init">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2104">The interface init function, of type #GInterfaceInitFunc</doc>
+               line="2110">The interface init function, of type #GInterfaceInitFunc</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -8910,25 +8949,25 @@ allocated by the corresponding GInterfaceInitFunc() function.</doc>
     <record name="InterfaceInfo" c:type="GInterfaceInfo">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1158">A structure that provides information to the type system which is
+           line="1164">A structure that provides information to the type system which is
 used specifically for managing interface types.</doc>
-      <source-position filename="gobject/gtype.h" line="1172"/>
+      <source-position filename="gobject/gtype.h" line="1178"/>
       <field name="interface_init" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1160">location of the interface initialization function</doc>
+             line="1166">location of the interface initialization function</doc>
         <type name="InterfaceInitFunc" c:type="GInterfaceInitFunc"/>
       </field>
       <field name="interface_finalize" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1161">location of the interface finalization function</doc>
+             line="1167">location of the interface finalization function</doc>
         <type name="InterfaceFinalizeFunc" c:type="GInterfaceFinalizeFunc"/>
       </field>
       <field name="interface_data" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1162">user-supplied data passed to the interface init/finalize functions</doc>
+             line="1168">user-supplied data passed to the interface init/finalize functions</doc>
         <type name="gpointer" c:type="gpointer"/>
       </field>
     </record>
@@ -12730,33 +12769,33 @@ Since 2.13.0</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2234">Evaluates to the @field_name inside the @inst private data
+           line="2240">Evaluates to the @field_name inside the @inst private data
 structure for @TypeName.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 and G_ADD_PRIVATE() macros, since it depends on variable names from
 those macros.</doc>
-      <source-position filename="gobject/gtype.h" line="2250"/>
+      <source-position filename="gobject/gtype.h" line="2256"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2236">the name of the type in CamelCase</doc>
+               line="2242">the name of the type in CamelCase</doc>
         </parameter>
         <parameter name="inst">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2237">the instance of @TypeName you wish to access</doc>
+               line="2243">the instance of @TypeName you wish to access</doc>
         </parameter>
         <parameter name="field_type">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2238">the type of the field in the private data structure</doc>
+               line="2244">the type of the field in the private data structure</doc>
         </parameter>
         <parameter name="field_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2239">the name of the field in the private data structure</doc>
+               line="2245">the name of the field in the private data structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -12766,28 +12805,28 @@ those macros.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2216">Evaluates to a pointer to the @field_name inside the @inst private data
+           line="2222">Evaluates to a pointer to the @field_name inside the @inst private data
 structure for @TypeName.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 and G_ADD_PRIVATE() macros, since it depends on variable names from
 those macros.</doc>
-      <source-position filename="gobject/gtype.h" line="2231"/>
+      <source-position filename="gobject/gtype.h" line="2237"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2218">the name of the type in CamelCase</doc>
+               line="2224">the name of the type in CamelCase</doc>
         </parameter>
         <parameter name="inst">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2219">the instance of @TypeName you wish to access</doc>
+               line="2225">the instance of @TypeName you wish to access</doc>
         </parameter>
         <parameter name="field_name">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2220">the name of the field in the private data structure</doc>
+               line="2226">the name of the field in the private data structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -12797,23 +12836,23 @@ those macros.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2199">Evaluates to the offset of the @field inside the instance private data
+           line="2205">Evaluates to the offset of the @field inside the instance private data
 structure for @TypeName.
 
 Note that this macro can only be used together with the `G_DEFINE_TYPE_*`
 and G_ADD_PRIVATE() macros, since it depends on variable names from
 those macros.</doc>
-      <source-position filename="gobject/gtype.h" line="2213"/>
+      <source-position filename="gobject/gtype.h" line="2219"/>
       <parameters>
         <parameter name="TypeName">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2201">the name of the type in CamelCase</doc>
+               line="2207">the name of the type in CamelCase</doc>
         </parameter>
         <parameter name="field">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="2202">the name of the field in the private data structure</doc>
+               line="2208">the name of the field in the private data structure</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -14797,8 +14836,8 @@ to hand parameter name/value pairs to g_object_newv().</doc>
     <constant name="SIGNAL_MATCH_MASK" value="63" c:type="G_SIGNAL_MATCH_MASK">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="223">A mask for all #GSignalMatchType bits.</doc>
-      <source-position filename="gobject/gsignal.h" line="228"/>
+           line="229">A mask for all #GSignalMatchType bits.</doc>
+      <source-position filename="gobject/gsignal.h" line="234"/>
       <type name="gint" c:type="gint"/>
     </constant>
     <callback name="SignalAccumulator" c:type="GSignalAccumulator">
@@ -14914,17 +14953,17 @@ You may not attach these to signals created with the %G_SIGNAL_NO_HOOKS flag.</d
       <member name="run_first" value="1" c:identifier="G_SIGNAL_RUN_FIRST">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="112">Invoke the object method handler in the first emission stage.</doc>
+             line="112">Invoke the default signal handler in the first emission stage</doc>
       </member>
       <member name="run_last" value="2" c:identifier="G_SIGNAL_RUN_LAST">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="113">Invoke the object method handler in the third emission stage.</doc>
+             line="113">Invoke the default signal handler in the third emission stage</doc>
       </member>
       <member name="run_cleanup" value="4" c:identifier="G_SIGNAL_RUN_CLEANUP">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="114">Invoke the object method handler in the last emission stage.</doc>
+             line="114">Invoke the default signal handler in the last emission stage</doc>
       </member>
       <member name="no_recurse" value="8" c:identifier="G_SIGNAL_NO_RECURSE">
         <doc xml:space="preserve"
@@ -14936,14 +14975,14 @@ You may not attach these to signals created with the %G_SIGNAL_NO_HOOKS flag.</d
       <member name="detailed" value="16" c:identifier="G_SIGNAL_DETAILED">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="118">This signal supports "::detail" appendices to the signal name
+             line="118">This signal supports `::detail` appendices to the signal name
  upon handler connections and emissions.</doc>
       </member>
       <member name="action" value="32" c:identifier="G_SIGNAL_ACTION">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
              line="120">Action signals are signals that may freely be emitted on alive
- objects from user code via g_signal_emit() and friends, without
+ objects from user code via [func@GObject.signal_emit] and friends, without
  the need of being embedded into extra code that performs pre or
  post emission adjustments on the object. They can also be thought
  of as object methods which can be called generically by
@@ -15486,25 +15525,25 @@ non-%NULL.</doc>
     <record name="SignalInvocationHint" c:type="GSignalInvocationHint">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="253">The #GSignalInvocationHint structure is used to pass on additional information
+           line="259">The #GSignalInvocationHint structure is used to pass on additional information
 to callbacks during a signal emission.</doc>
-      <source-position filename="gobject/gsignal.h" line="271"/>
+      <source-position filename="gobject/gsignal.h" line="277"/>
       <field name="signal_id" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="255">The signal id of the signal invoking the callback</doc>
+             line="261">The signal id of the signal invoking the callback</doc>
         <type name="guint" c:type="guint"/>
       </field>
       <field name="detail" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="256">The detail passed on for this emission</doc>
+             line="262">The detail passed on for this emission</doc>
         <type name="GLib.Quark" c:type="GQuark"/>
       </field>
       <field name="run_type" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="257">The stage the signal emission is currently in, this
+             line="263">The stage the signal emission is currently in, this
  field will contain one of %G_SIGNAL_RUN_FIRST,
  %G_SIGNAL_RUN_LAST or %G_SIGNAL_RUN_CLEANUP and %G_SIGNAL_ACCUMULATOR_FIRST_RUN.
  %G_SIGNAL_ACCUMULATOR_FIRST_RUN is only set for the first run of the accumulator
@@ -15515,91 +15554,91 @@ to callbacks during a signal emission.</doc>
     <bitfield name="SignalMatchType" c:type="GSignalMatchType">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="201">The match types specify what g_signal_handlers_block_matched(),
+           line="207">The match types specify what g_signal_handlers_block_matched(),
 g_signal_handlers_unblock_matched() and g_signal_handlers_disconnect_matched()
 match signals by.</doc>
-      <source-position filename="gobject/gsignal.h" line="222"/>
+      <source-position filename="gobject/gsignal.h" line="228"/>
       <member name="id" value="1" c:identifier="G_SIGNAL_MATCH_ID">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="203">The signal id must be equal.</doc>
+             line="209">The signal id must be equal.</doc>
       </member>
       <member name="detail" value="2" c:identifier="G_SIGNAL_MATCH_DETAIL">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="204">The signal detail must be equal.</doc>
+             line="210">The signal detail must be equal.</doc>
       </member>
       <member name="closure" value="4" c:identifier="G_SIGNAL_MATCH_CLOSURE">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="205">The closure must be the same.</doc>
+             line="211">The closure must be the same.</doc>
       </member>
       <member name="func" value="8" c:identifier="G_SIGNAL_MATCH_FUNC">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="206">The C closure callback must be the same.</doc>
+             line="212">The C closure callback must be the same.</doc>
       </member>
       <member name="data" value="16" c:identifier="G_SIGNAL_MATCH_DATA">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="207">The closure data must be the same.</doc>
+             line="213">The closure data must be the same.</doc>
       </member>
       <member name="unblocked"
               value="32"
               c:identifier="G_SIGNAL_MATCH_UNBLOCKED">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="208">Only unblocked signals may be matched.</doc>
+             line="214">Only unblocked signals may be matched.</doc>
       </member>
     </bitfield>
     <record name="SignalQuery" c:type="GSignalQuery">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="272">A structure holding in-depth information for a specific signal.
+           line="278">A structure holding in-depth information for a specific signal.
 
 See also: g_signal_query()</doc>
-      <source-position filename="gobject/gsignal.h" line="302"/>
+      <source-position filename="gobject/gsignal.h" line="308"/>
       <field name="signal_id" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="274">The signal id of the signal being queried, or 0 if the
+             line="280">The signal id of the signal being queried, or 0 if the
  signal to be queried was unknown.</doc>
         <type name="guint" c:type="guint"/>
       </field>
       <field name="signal_name" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="276">The signal name.</doc>
+             line="282">The signal name.</doc>
         <type name="utf8" c:type="const gchar*"/>
       </field>
       <field name="itype" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="277">The interface/instance type that this signal can be emitted for.</doc>
+             line="283">The interface/instance type that this signal can be emitted for.</doc>
         <type name="GType" c:type="GType"/>
       </field>
       <field name="signal_flags" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="278">The signal flags as passed in to g_signal_new().</doc>
+             line="284">The signal flags as passed in to g_signal_new().</doc>
         <type name="SignalFlags" c:type="GSignalFlags"/>
       </field>
       <field name="return_type" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="279">The return type for user callbacks.</doc>
+             line="285">The return type for user callbacks.</doc>
         <type name="GType" c:type="GType"/>
       </field>
       <field name="n_params" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="280">The number of parameters that user callbacks take.</doc>
+             line="286">The number of parameters that user callbacks take.</doc>
         <type name="guint" c:type="guint"/>
       </field>
       <field name="param_types" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.h"
-             line="281">The individual parameter types for
+             line="287">The individual parameter types for
  user callbacks, note that the effective callback signature is:
  |[&lt;!-- language="C" --&gt;
  @return_type callback (#gpointer     data1,
@@ -15910,8 +15949,8 @@ This macro should only be used in type implementations.</doc>
               c:type="G_TYPE_FLAG_RESERVED_ID_BIT">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="2712">A bit in the type number that's supposed to be left untouched.</doc>
-      <source-position filename="gobject/gtype.h" line="2717"/>
+           line="2718">A bit in the type number that's supposed to be left untouched.</doc>
+      <source-position filename="gobject/gtype.h" line="2723"/>
       <type name="Type" c:type="GType"/>
     </constant>
     <function-macro name="TYPE_FROM_CLASS"
@@ -16696,7 +16735,7 @@ my_object_get_some_field (MyObject *my_object)
 ]|</doc>
         <doc-deprecated xml:space="preserve">Use the G_ADD_PRIVATE() macro with the `G_DEFINE_*`
   family of macros to add instance private data to a type</doc-deprecated>
-        <source-position filename="gobject/gtype.h" line="1503"/>
+        <source-position filename="gobject/gtype.h" line="1509"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -16730,7 +16769,7 @@ class in order to get the private data for the type represented by
 
 You can only call this function after you have registered a private
 data area for @g_class using g_type_class_add_private().</doc>
-        <source-position filename="gobject/gtype.h" line="1522"/>
+        <source-position filename="gobject/gtype.h" line="1528"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.c"
@@ -16747,7 +16786,7 @@ data area for @g_class using g_type_class_add_private().</doc>
         </parameters>
       </method>
       <method name="get_private" c:identifier="g_type_class_get_private">
-        <source-position filename="gobject/gtype.h" line="1519"/>
+        <source-position filename="gobject/gtype.h" line="1525"/>
         <return-value transfer-ownership="none" nullable="1">
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
@@ -16832,7 +16871,7 @@ of #GTypeClassCacheFuncs, avoiding the recursion which would occur
 otherwise.</doc>
         <doc-deprecated xml:space="preserve">Type class reference counting has been removed and type
    classes now cannot be finalized. This function no longer does anything.</doc-deprecated>
-        <source-position filename="gobject/gtype.h" line="2610"/>
+        <source-position filename="gobject/gtype.h" line="2616"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -16847,7 +16886,7 @@ otherwise.</doc>
       </method>
       <function name="adjust_private_offset"
                 c:identifier="g_type_class_adjust_private_offset">
-        <source-position filename="gobject/gtype.h" line="1512"/>
+        <source-position filename="gobject/gtype.h" line="1518"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -17057,16 +17096,19 @@ environment variable.</doc>
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
            line="1071">Bit masks used to check or determine characteristics of a type.</doc>
-      <source-position filename="gobject/gtype.h" line="1094"/>
-      <member name="none" value="0" c:identifier="G_TYPE_FLAG_NONE">
+      <source-position filename="gobject/gtype.h" line="1100"/>
+      <member name="none"
+              value="0"
+              c:identifier="G_TYPE_FLAG_NONE"
+              version="2.74">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1073">No special flags. Since: 2.74</doc>
+             line="1088">No special flags.</doc>
       </member>
       <member name="abstract" value="16" c:identifier="G_TYPE_FLAG_ABSTRACT">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1074">Indicates an abstract type. No instances can be
+             line="1073">Indicates an abstract type. No instances can be
  created for an abstract type</doc>
       </member>
       <member name="value_abstract"
@@ -17074,14 +17116,14 @@ environment variable.</doc>
               c:identifier="G_TYPE_FLAG_VALUE_ABSTRACT">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1076">Indicates an abstract value type, i.e. a type
+             line="1075">Indicates an abstract value type, i.e. a type
  that introduces a value table, but can't be used for
  g_value_init()</doc>
       </member>
       <member name="final" value="64" c:identifier="G_TYPE_FLAG_FINAL">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1079">Indicates a final type. A final type is a non-derivable
+             line="1078">Indicates a final type. A final type is a non-derivable
  leaf node in a deep derivable type hierarchy tree. Since: 2.70</doc>
       </member>
       <member name="deprecated"
@@ -17089,7 +17131,7 @@ environment variable.</doc>
               c:identifier="G_TYPE_FLAG_DEPRECATED">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1081">The type is deprecated and may be removed in a
+             line="1080">The type is deprecated and may be removed in a
  future version. A warning will be emitted if it is instantiated while
  running with `G_ENABLE_DIAGNOSTIC=1`. Since 2.76</doc>
       </member>
@@ -17128,20 +17170,20 @@ fundamental type.</doc>
     <record name="TypeFundamentalInfo" c:type="GTypeFundamentalInfo">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1147">A structure that provides information to the type system which is
+           line="1153">A structure that provides information to the type system which is
 used specifically for managing fundamental types.</doc>
-      <source-position filename="gobject/gtype.h" line="1157"/>
+      <source-position filename="gobject/gtype.h" line="1163"/>
       <field name="type_flags" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1149">#GTypeFundamentalFlags describing the characteristics of the fundamental type</doc>
+             line="1155">#GTypeFundamentalFlags describing the characteristics of the fundamental type</doc>
         <type name="TypeFundamentalFlags" c:type="GTypeFundamentalFlags"/>
       </field>
     </record>
     <record name="TypeInfo" c:type="GTypeInfo">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1095">This structure is used to provide the type system with the information
+           line="1101">This structure is used to provide the type system with the information
 required to initialize and destruct (finalize) a type's class and
 its instances.
 
@@ -17150,29 +17192,29 @@ The initialized structure is passed to the g_type_register_static() function
 g_type_plugin_complete_type_info()). The type system will perform a deep
 copy of this structure, so its memory does not need to be persistent
 across invocation of g_type_register_static().</doc>
-      <source-position filename="gobject/gtype.h" line="1146"/>
+      <source-position filename="gobject/gtype.h" line="1152"/>
       <field name="class_size" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1097">Size of the class structure (required for interface, classed and instantiatable types)</doc>
+             line="1103">Size of the class structure (required for interface, classed and instantiatable types)</doc>
         <type name="guint16" c:type="guint16"/>
       </field>
       <field name="base_init" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1098">Location of the base initialization function (optional)</doc>
+             line="1104">Location of the base initialization function (optional)</doc>
         <type name="BaseInitFunc" c:type="GBaseInitFunc"/>
       </field>
       <field name="base_finalize" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1099">Location of the base finalization function (optional)</doc>
+             line="1105">Location of the base finalization function (optional)</doc>
         <type name="BaseFinalizeFunc" c:type="GBaseFinalizeFunc"/>
       </field>
       <field name="class_init" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1100">Location of the class initialization function for
+             line="1106">Location of the class initialization function for
  classed and instantiatable types. Location of the default vtable
  initialization function for interface types. (optional) This function
  is used both to fill in virtual functions in the class or default vtable,
@@ -17183,7 +17225,7 @@ across invocation of g_type_register_static().</doc>
       <field name="class_finalize" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1106">Location of the class finalization function for
+             line="1112">Location of the class finalization function for
  classed and instantiatable types. Location of the default vtable
  finalization function for interface types. (optional)</doc>
         <type name="ClassFinalizeFunc" c:type="GClassFinalizeFunc"/>
@@ -17191,31 +17233,31 @@ across invocation of g_type_register_static().</doc>
       <field name="class_data" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1109">User-supplied data passed to the class init/finalize functions</doc>
+             line="1115">User-supplied data passed to the class init/finalize functions</doc>
         <type name="gpointer" c:type="gconstpointer"/>
       </field>
       <field name="instance_size" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1110">Size of the instance (object) structure (required for instantiatable types only)</doc>
+             line="1116">Size of the instance (object) structure (required for instantiatable types only)</doc>
         <type name="guint16" c:type="guint16"/>
       </field>
       <field name="n_preallocs" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1111">Prior to GLib 2.10, it specified the number of pre-allocated (cached) instances to reserve memory for (0 indicates no caching). Since GLib 2.10 this field is ignored.</doc>
+             line="1117">Prior to GLib 2.10, it specified the number of pre-allocated (cached) instances to reserve memory for (0 indicates no caching). Since GLib 2.10 this field is ignored.</doc>
         <type name="guint16" c:type="guint16"/>
       </field>
       <field name="instance_init" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1112">Location of the instance initialization function (optional, for instantiatable types only)</doc>
+             line="1118">Location of the instance initialization function (optional, for instantiatable types only)</doc>
         <type name="InstanceInitFunc" c:type="GInstanceInitFunc"/>
       </field>
       <field name="value_table" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1113">A #GTypeValueTable function table for generic handling of GValues
+             line="1119">A #GTypeValueTable function table for generic handling of GValues
  of this type (usually only useful for fundamental types)</doc>
         <type name="TypeValueTable" c:type="const GTypeValueTable*"/>
       </field>
@@ -17229,7 +17271,7 @@ across invocation of g_type_register_static().</doc>
         <type name="TypeClass" c:type="GTypeClass*"/>
       </field>
       <method name="get_private" c:identifier="g_type_instance_get_private">
-        <source-position filename="gobject/gtype.h" line="1509"/>
+        <source-position filename="gobject/gtype.h" line="1515"/>
         <return-value transfer-ownership="none" nullable="1">
           <type name="gpointer" c:type="gpointer"/>
         </return-value>
@@ -17290,7 +17332,7 @@ This means that any type implementing @interface_type must also implement
 @prerequisite_type. Prerequisites can be thought of as an alternative to
 interface derivation (which GType doesn't support). An interface can have
 at most one instantiatable prerequisite type.</doc>
-        <source-position filename="gobject/gtype.h" line="1494"/>
+        <source-position filename="gobject/gtype.h" line="1500"/>
         <return-value transfer-ownership="none">
           <type name="none" c:type="void"/>
         </return-value>
@@ -17316,7 +17358,7 @@ at most one instantiatable prerequisite type.</doc>
 @interface_type which has been added to @instance_type, or %NULL
 if @interface_type has not been added to @instance_type or does
 not have a #GTypePlugin structure. See g_type_add_interface_dynamic().</doc>
-        <source-position filename="gobject/gtype.h" line="2592"/>
+        <source-position filename="gobject/gtype.h" line="2598"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.c"
@@ -17350,7 +17392,7 @@ prerequisite, %G_TYPE_INVALID is returned.
 
 See g_type_interface_add_prerequisite() for more information
 about prerequisites.</doc>
-        <source-position filename="gobject/gtype.h" line="1500"/>
+        <source-position filename="gobject/gtype.h" line="1506"/>
         <return-value transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.c"
@@ -17401,7 +17443,7 @@ passed in class conforms.</doc>
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
              line="1594">Returns the prerequisites of an interfaces type.</doc>
-        <source-position filename="gobject/gtype.h" line="1497"/>
+        <source-position filename="gobject/gtype.h" line="1503"/>
         <return-value transfer-ownership="full">
           <doc xml:space="preserve"
                filename="gobject/gtype.c"
@@ -18270,7 +18312,7 @@ See also: g_type_query()</doc>
               version="2.78">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1260">This function is responsible for converting the values collected from
+           line="1266">This function is responsible for converting the values collected from
 a variadic argument list into contents suitable for storage in a #GValue.
 
 This function should setup @value similar to #GTypeValueInitFunc; e.g.
@@ -18341,11 +18383,11 @@ prior to returning an error; however, `collect_values()` is not obliged
 to return a correctly setup @value for error returns, simply because
 any non-`NULL` return is considered a fatal programming error, and
 further program behaviour is undefined.</doc>
-      <source-position filename="gobject/gtype.h" line="1345"/>
+      <source-position filename="gobject/gtype.h" line="1351"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1339">`NULL` on success, otherwise a
+             line="1345">`NULL` on success, otherwise a
   newly allocated error string on failure</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -18353,19 +18395,19 @@ further program behaviour is undefined.</doc>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1262">the value to initialize</doc>
+               line="1268">the value to initialize</doc>
           <type name="Value" c:type="GValue*"/>
         </parameter>
         <parameter name="n_collect_values" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1263">the number of collected values</doc>
+               line="1269">the number of collected values</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
         <parameter name="collect_values" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1264">the collected values</doc>
+               line="1270">the collected values</doc>
           <array length="1" zero-terminated="0" c:type="GTypeCValue*">
             <type name="TypeCValue" c:type="GTypeCValue"/>
           </array>
@@ -18373,7 +18415,7 @@ further program behaviour is undefined.</doc>
         <parameter name="collect_flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1265">optional flags</doc>
+               line="1271">optional flags</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -18383,7 +18425,7 @@ further program behaviour is undefined.</doc>
               version="2.78">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1216">Copies the content of a #GValue into another.
+           line="1222">Copies the content of a #GValue into another.
 
 The @dest_value is a #GValue with zero-filled data section and @src_value
 is a properly initialized #GValue of same type, or derived type.
@@ -18395,7 +18437,7 @@ contents of @dest_value remain valid. String type example:
 |[&lt;!-- language="C" --&gt;
 dest_value-&gt;data[0].v_pointer = g_strdup (src_value-&gt;data[0].v_pointer);
 ]|</doc>
-      <source-position filename="gobject/gtype.h" line="1237"/>
+      <source-position filename="gobject/gtype.h" line="1243"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -18403,7 +18445,7 @@ dest_value-&gt;data[0].v_pointer = g_strdup (src_value-&gt;data[0].v_pointer);
         <parameter name="src_value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1218">the value to copy</doc>
+               line="1224">the value to copy</doc>
           <type name="Value" c:type="const GValue*"/>
         </parameter>
         <parameter name="dest_value"
@@ -18412,7 +18454,7 @@ dest_value-&gt;data[0].v_pointer = g_strdup (src_value-&gt;data[0].v_pointer);
                    transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1219">the location of the copy</doc>
+               line="1225">the location of the copy</doc>
           <type name="Value" c:type="GValue*"/>
         </parameter>
       </parameters>
@@ -18422,7 +18464,7 @@ dest_value-&gt;data[0].v_pointer = g_strdup (src_value-&gt;data[0].v_pointer);
               version="2.78">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1195">Frees any old contents that might be left in the `value-&gt;data` array of
+           line="1201">Frees any old contents that might be left in the `value-&gt;data` array of
 the given value.
 
 No resources may remain allocated through the #GValue contents after this
@@ -18433,7 +18475,7 @@ function returns. E.g. for our above string type:
 if (!(value-&gt;data[1].v_uint &amp; G_VALUE_NOCOPY_CONTENTS))
   g_free (value-&gt;data[0].v_pointer);
 ]|</doc>
-      <source-position filename="gobject/gtype.h" line="1214"/>
+      <source-position filename="gobject/gtype.h" line="1220"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -18441,7 +18483,7 @@ if (!(value-&gt;data[1].v_uint &amp; G_VALUE_NOCOPY_CONTENTS))
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1197">the value to free</doc>
+               line="1203">the value to free</doc>
           <type name="Value" c:type="GValue*"/>
         </parameter>
       </parameters>
@@ -18451,7 +18493,7 @@ if (!(value-&gt;data[1].v_uint &amp; G_VALUE_NOCOPY_CONTENTS))
               version="2.78">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1174">Initializes the value contents by setting the fields of the `value-&gt;data`
+           line="1180">Initializes the value contents by setting the fields of the `value-&gt;data`
 array.
 
 The data array of the #GValue passed into this function was zero-filled
@@ -18462,7 +18504,7 @@ implementation might look like:
 |[&lt;!-- language="C" --&gt;
 value-&gt;data[0].v_pointer = g_strdup ("");
 ]|</doc>
-      <source-position filename="gobject/gtype.h" line="1193"/>
+      <source-position filename="gobject/gtype.h" line="1199"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -18470,7 +18512,7 @@ value-&gt;data[0].v_pointer = g_strdup ("");
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1176">the value to initialize</doc>
+               line="1182">the value to initialize</doc>
           <type name="Value" c:type="GValue*"/>
         </parameter>
       </parameters>
@@ -18480,7 +18522,7 @@ value-&gt;data[0].v_pointer = g_strdup ("");
               version="2.78">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1350">This function is responsible for storing the `value`
+           line="1356">This function is responsible for storing the `value`
 contents into arguments passed through a variadic argument list which
 got collected into `collect_values` according to `lcopy_format`.
 
@@ -18522,11 +18564,11 @@ else
 
 return NULL;
 ]|</doc>
-      <source-position filename="gobject/gtype.h" line="1407"/>
+      <source-position filename="gobject/gtype.h" line="1413"/>
       <return-value transfer-ownership="full" nullable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1401">`NULL` on success, otherwise
+             line="1407">`NULL` on success, otherwise
   a newly allocated error string on failure</doc>
         <type name="utf8" c:type="gchar*"/>
       </return-value>
@@ -18534,19 +18576,19 @@ return NULL;
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1352">the value to lcopy</doc>
+               line="1358">the value to lcopy</doc>
           <type name="Value" c:type="const GValue*"/>
         </parameter>
         <parameter name="n_collect_values" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1353">the number of collected values</doc>
+               line="1359">the number of collected values</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
         <parameter name="collect_values" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1354">the collected
+               line="1360">the collected
   locations for storage</doc>
           <array length="1" zero-terminated="0" c:type="GTypeCValue*">
             <type name="TypeCValue" c:type="GTypeCValue"/>
@@ -18555,7 +18597,7 @@ return NULL;
         <parameter name="collect_flags" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1356">optional flags</doc>
+               line="1362">optional flags</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
       </parameters>
@@ -18565,7 +18607,7 @@ return NULL;
               version="2.78">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1240">If the value contents fit into a pointer, such as objects or strings,
+           line="1246">If the value contents fit into a pointer, such as objects or strings,
 return this pointer, so the caller can peek at the current contents.
 
 To extend on our above string example:
@@ -18573,18 +18615,18 @@ To extend on our above string example:
 |[&lt;!-- language="C" --&gt;
 return value-&gt;data[0].v_pointer;
 ]|</doc>
-      <source-position filename="gobject/gtype.h" line="1258"/>
+      <source-position filename="gobject/gtype.h" line="1264"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1253">a pointer to the value contents</doc>
+             line="1259">a pointer to the value contents</doc>
         <type name="gpointer" c:type="gpointer"/>
       </return-value>
       <parameters>
         <parameter name="value" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gtype.h"
-               line="1242">the value to peek</doc>
+               line="1248">the value to peek</doc>
           <type name="Value" c:type="const GValue*"/>
         </parameter>
       </parameters>
@@ -18592,7 +18634,7 @@ return value-&gt;data[0].v_pointer;
     <record name="TypeValueTable" c:type="GTypeValueTable">
       <doc xml:space="preserve"
            filename="gobject/gtype.h"
-           line="1412">- `'i'`: Integers, passed as `collect_values[].v_int`
+           line="1418">- `'i'`: Integers, passed as `collect_values[].v_int`
   - `'l'`: Longs, passed as `collect_values[].v_long`
   - `'d'`: Doubles, passed as `collect_values[].v_double`
   - `'p'`: Pointers, passed as `collect_values[].v_pointer`
@@ -18603,29 +18645,29 @@ return value-&gt;data[0].v_pointer;
   needs to be used, and for collection of floats `'d'`.
 The #GTypeValueTable provides the functions required by the #GValue
 implementation, to serve as a container for values of a type.</doc>
-      <source-position filename="gobject/gtype.h" line="1457"/>
+      <source-position filename="gobject/gtype.h" line="1463"/>
       <field name="value_init" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1414">Function to initialize a GValue</doc>
+             line="1420">Function to initialize a GValue</doc>
         <type name="TypeValueInitFunc" c:type="GTypeValueInitFunc"/>
       </field>
       <field name="value_free" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1415">Function to free a GValue</doc>
+             line="1421">Function to free a GValue</doc>
         <type name="TypeValueFreeFunc" c:type="GTypeValueFreeFunc"/>
       </field>
       <field name="value_copy" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1416">Function to copy a GValue</doc>
+             line="1422">Function to copy a GValue</doc>
         <type name="TypeValueCopyFunc" c:type="GTypeValueCopyFunc"/>
       </field>
       <field name="value_peek_pointer" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1417">Function to peek the contents of a GValue if they fit
+             line="1423">Function to peek the contents of a GValue if they fit
   into a pointer</doc>
         <type name="TypeValuePeekPointerFunc"
               c:type="GTypeValuePeekPointerFunc"/>
@@ -18633,7 +18675,7 @@ implementation, to serve as a container for values of a type.</doc>
       <field name="collect_format" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1419">A string format describing how to collect the contents of
+             line="1425">A string format describing how to collect the contents of
   this value bit-by-bit. Each character in the format represents
   an argument to be collected, and the characters themselves indicate
   the type of the argument. Currently supported arguments are:</doc>
@@ -18642,14 +18684,14 @@ implementation, to serve as a container for values of a type.</doc>
       <field name="collect_value" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1433">Function to initialize a GValue from the values
+             line="1439">Function to initialize a GValue from the values
   collected from variadic arguments</doc>
         <type name="TypeValueCollectFunc" c:type="GTypeValueCollectFunc"/>
       </field>
       <field name="lcopy_format" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1435">Format description of the arguments to collect for @lcopy_value,
+             line="1441">Format description of the arguments to collect for @lcopy_value,
   analogous to @collect_format. Usually, @lcopy_format string consists
   only of `'p'`s to provide lcopy_value() with pointers to storage locations.</doc>
         <type name="utf8" c:type="const gchar*"/>
@@ -18657,7 +18699,7 @@ implementation, to serve as a container for values of a type.</doc>
       <field name="lcopy_value" writable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.h"
-             line="1438">Function to store the contents of a value into the
+             line="1444">Function to store the contents of a value into the
   locations collected from variadic arguments</doc>
         <type name="TypeValueLCopyFunc" c:type="GTypeValueLCopyFunc"/>
       </field>
@@ -18671,7 +18713,7 @@ implementation, to serve as a container for values of a type.</doc>
 Note that this function should only be used from source code
 that implements or has internal knowledge of the implementation of
 @type.</doc>
-        <source-position filename="gobject/gtype.h" line="2620"/>
+        <source-position filename="gobject/gtype.h" line="2626"/>
         <return-value transfer-ownership="none" nullable="1">
           <doc xml:space="preserve"
                filename="gobject/gtype.c"
@@ -18749,7 +18791,7 @@ you should use the G_VALUE_COLLECT_INIT() variant and pass the uninitialized
                line="151">flags which are passed on to the collect_value() function of
  the #GTypeValueTable of @value.</doc>
         </parameter>
-        <parameter name="__error">
+        <parameter name="_error">
           <doc xml:space="preserve"
                filename="gobject/gvaluecollector.h"
                line="153">a #gchar** variable that will be modified to hold a g_new()
@@ -18800,7 +18842,7 @@ systems `va_list` variables cannot be passed by reference.</doc>
                line="70">flags which are passed on to the collect_value() function of
  the #GTypeValueTable of @value.</doc>
         </parameter>
-        <parameter name="__error">
+        <parameter name="_error">
           <doc xml:space="preserve"
                filename="gobject/gvaluecollector.h"
                line="72">a #gchar** variable that will be modified to hold a g_new()
@@ -18845,7 +18887,7 @@ to the caller.</doc>
                line="95">flags which are passed on to the collect_value() function of
  the #GTypeValueTable of @value.</doc>
         </parameter>
-        <parameter name="__error">
+        <parameter name="_error">
           <doc xml:space="preserve"
                filename="gobject/gvaluecollector.h"
                line="97">a #gchar** variable that will be modified to hold a g_new()
@@ -19259,7 +19301,7 @@ This is the inverse of G_VALUE_COLLECT().</doc>
                line="219">flags which are passed on to the lcopy_value() function of
  the #GTypeValueTable of @value.</doc>
         </parameter>
-        <parameter name="__error">
+        <parameter name="_error">
           <doc xml:space="preserve"
                filename="gobject/gvaluecollector.h"
                line="221">a #gchar** variable that will be modified to hold a g_new()
@@ -23356,7 +23398,7 @@ unsigned long integer argument.</doc>
               version="2.30">
       <doc xml:space="preserve"
            filename="gobject/gclosure.c"
-           line="1531">A generic marshaller function implemented via
+           line="1596">A generic marshaller function implemented via
 [libffi](http://sourceware.org/libffi/).
 
 Normally this function is not passed explicitly to g_signal_new(),
@@ -23369,26 +23411,26 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
         <parameter name="closure" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
-               line="1533">A #GClosure.</doc>
+               line="1598">A #GClosure.</doc>
           <type name="Closure" c:type="GClosure*"/>
         </parameter>
         <parameter name="return_gvalue" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
-               line="1534">A #GValue to store the return value. May be %NULL
+               line="1599">A #GValue to store the return value. May be %NULL
   if the callback of closure doesn't return a value.</doc>
           <type name="Value" c:type="GValue*"/>
         </parameter>
         <parameter name="n_param_values" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
-               line="1536">The length of the @param_values array.</doc>
+               line="1601">The length of the @param_values array.</doc>
           <type name="guint" c:type="guint"/>
         </parameter>
         <parameter name="param_values" transfer-ownership="none">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
-               line="1537">An array of #GValues holding the arguments
+               line="1602">An array of #GValues holding the arguments
   on which to invoke the callback of closure.</doc>
           <type name="Value" c:type="const GValue*"/>
         </parameter>
@@ -23398,7 +23440,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
-               line="1539">The invocation hint given as the last argument to
+               line="1604">The invocation hint given as the last argument to
   g_closure_invoke().</doc>
           <type name="gpointer" c:type="gpointer"/>
         </parameter>
@@ -23408,7 +23450,7 @@ but used automatically by GLib when specifying a %NULL marshaller.</doc>
                    allow-none="1">
           <doc xml:space="preserve"
                filename="gobject/gclosure.c"
-               line="1541">Additional data specified when registering the
+               line="1606">Additional data specified when registering the
   marshaller, see g_closure_set_marshal() and
   g_closure_set_meta_marshal()</doc>
           <type name="gpointer" c:type="gpointer"/>
@@ -23605,7 +23647,7 @@ If the handler ID is 0 then this function does nothing.
 
 There is also a macro version of this function so that the code
 will be inlined.</doc>
-      <source-position filename="gobject/gsignal.h" line="486"/>
+      <source-position filename="gobject/gsignal.h" line="492"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -25754,7 +25796,7 @@ usually want the signal connection to override the class handler).
 This accumulator will use the return value from the first signal
 handler that is run as the return value for the signal and not run
 any further handlers (ie: the first handler "wins").</doc>
-      <source-position filename="gobject/gsignal.h" line="685"/>
+      <source-position filename="gobject/gsignal.h" line="691"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -25803,7 +25845,7 @@ callbacks will be invoked, while a return of %FALSE allows
 the emission to continue. The idea here is that a %TRUE return
 indicates that the callback handled the signal, and no further
 handling is needed.</doc>
-      <source-position filename="gobject/gsignal.h" line="679"/>
+      <source-position filename="gobject/gsignal.h" line="685"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -25847,7 +25889,7 @@ handling is needed.</doc>
            line="959">Adds an emission hook for a signal, which will get called for any emission
 of that signal, independent of the instance. This is possible only
 for signals which don't have %G_SIGNAL_NO_HOOKS flag set.</doc>
-      <source-position filename="gobject/gsignal.h" line="406"/>
+      <source-position filename="gobject/gsignal.h" line="412"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -25908,7 +25950,7 @@ for signals which don't have %G_SIGNAL_NO_HOOKS flag set.</doc>
 be called from an overridden class closure; see
 g_signal_override_class_closure() and
 g_signal_override_class_handler().</doc>
-      <source-position filename="gobject/gsignal.h" line="513"/>
+      <source-position filename="gobject/gsignal.h" line="519"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -25941,7 +25983,7 @@ g_signal_override_class_handler().</doc>
 only be called from an overridden class closure; see
 g_signal_override_class_closure() and
 g_signal_override_class_handler().</doc>
-      <source-position filename="gobject/gsignal.h" line="516"/>
+      <source-position filename="gobject/gsignal.h" line="522"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -25968,7 +26010,7 @@ g_signal_override_class_handler().</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="521">Connects a [type@GObject.Callback] function to a signal for a particular object.
+           line="527">Connects a [type@GObject.Callback] function to a signal for a particular object.
 
 The handler will be called synchronously, before the default handler of the signal.
 [func@GObject.signal_emit] will not return control until all handlers are called.
@@ -25983,27 +26025,27 @@ non-empty check.
 
 Refer to the [signals documentation](signals.html) for more
 details.</doc>
-      <source-position filename="gobject/gsignal.h" line="548"/>
+      <source-position filename="gobject/gsignal.h" line="554"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="523">the instance to connect to.</doc>
+               line="529">the instance to connect to.</doc>
         </parameter>
         <parameter name="detailed_signal">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="524">a string of the form "signal-name::detail".</doc>
+               line="530">a string of the form "signal-name::detail".</doc>
         </parameter>
         <parameter name="c_handler">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="525">the #GCallback to connect.</doc>
+               line="531">the #GCallback to connect.</doc>
         </parameter>
         <parameter name="data">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="526">data to pass to @c_handler calls.</doc>
+               line="532">data to pass to @c_handler calls.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -26012,7 +26054,7 @@ details.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="550">Connects a #GCallback function to a signal for a particular object.
+           line="556">Connects a #GCallback function to a signal for a particular object.
 
 The handler will be called synchronously, after the default handler of the signal.
 
@@ -26023,27 +26065,27 @@ non-empty check.
 
 Refer to the [signals documentation](signals.html) for more
 details.</doc>
-      <source-position filename="gobject/gsignal.h" line="571"/>
+      <source-position filename="gobject/gsignal.h" line="577"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="552">the instance to connect to.</doc>
+               line="558">the instance to connect to.</doc>
         </parameter>
         <parameter name="detailed_signal">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="553">a string of the form "signal-name::detail".</doc>
+               line="559">a string of the form "signal-name::detail".</doc>
         </parameter>
         <parameter name="c_handler">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="554">the #GCallback to connect.</doc>
+               line="560">the #GCallback to connect.</doc>
         </parameter>
         <parameter name="data">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="555">data to pass to @c_handler calls.</doc>
+               line="561">data to pass to @c_handler calls.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -26063,7 +26105,7 @@ non-empty check.
 
 Refer to the [signals documentation](signals.html) for more
 details.</doc>
-      <source-position filename="gobject/gsignal.h" line="429"/>
+      <source-position filename="gobject/gsignal.h" line="435"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -26114,7 +26156,7 @@ non-empty check.
 
 Refer to the [signals documentation](signals.html) for more
 details.</doc>
-      <source-position filename="gobject/gsignal.h" line="423"/>
+      <source-position filename="gobject/gsignal.h" line="429"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -26173,7 +26215,7 @@ non-empty check.
 
 Refer to the [signals documentation](signals.html) for more
 details.</doc>
-      <source-position filename="gobject/gsignal.h" line="434"/>
+      <source-position filename="gobject/gsignal.h" line="440"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -26298,7 +26340,7 @@ details.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="573">Connects a #GCallback function to a signal for a particular object.
+           line="579">Connects a #GCallback function to a signal for a particular object.
 
 The instance on which the signal is emitted and @data will be swapped when
 calling the handler. This is useful when calling pre-existing functions to
@@ -26332,27 +26374,27 @@ non-empty check.
 
 Refer to the [signals documentation](signals.html) for more
 details.</doc>
-      <source-position filename="gobject/gsignal.h" line="617"/>
+      <source-position filename="gobject/gsignal.h" line="623"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="575">the instance to connect to.</doc>
+               line="581">the instance to connect to.</doc>
         </parameter>
         <parameter name="detailed_signal">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="576">a string of the form "signal-name::detail".</doc>
+               line="582">a string of the form "signal-name::detail".</doc>
         </parameter>
         <parameter name="c_handler">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="577">the #GCallback to connect.</doc>
+               line="583">the #GCallback to connect.</doc>
         </parameter>
         <parameter name="data">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="578">data to pass to @c_handler calls.</doc>
+               line="584">data to pass to @c_handler calls.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -26366,7 +26408,7 @@ The method will only return control after all handlers are called or signal emis
 
 Note that g_signal_emit() resets the return value to the default
 if no handlers are connected, in contrast to g_signal_emitv().</doc>
-      <source-position filename="gobject/gsignal.h" line="366"/>
+      <source-position filename="gobject/gsignal.h" line="372"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26409,7 +26451,7 @@ The method will only return control after all handlers are called or signal emis
 
 Note that g_signal_emit_by_name() resets the return value to the default
 if no handlers are connected, in contrast to g_signal_emitv().</doc>
-      <source-position filename="gobject/gsignal.h" line="371"/>
+      <source-position filename="gobject/gsignal.h" line="377"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26447,7 +26489,7 @@ The method will only return control after all handlers are called or signal emis
 
 Note that g_signal_emit_valist() resets the return value to the default
 if no handlers are connected, in contrast to g_signal_emitv().</doc>
-      <source-position filename="gobject/gsignal.h" line="361"/>
+      <source-position filename="gobject/gsignal.h" line="367"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26489,7 +26531,7 @@ The method will only return control after all handlers are called or signal emis
 
 Note that g_signal_emitv() doesn't change @return_value if no handlers are
 connected, in contrast to g_signal_emit() and g_signal_emit_valist().</doc>
-      <source-position filename="gobject/gsignal.h" line="356"/>
+      <source-position filename="gobject/gsignal.h" line="362"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26535,7 +26577,7 @@ specified signal returns a value, but may be ignored otherwise.</doc>
       <doc xml:space="preserve"
            filename="gobject/gsignal.c"
            line="2291">Returns the invocation hint of the innermost signal emission of instance.</doc>
-      <source-position filename="gobject/gsignal.h" line="394"/>
+      <source-position filename="gobject/gsignal.h" line="400"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -26564,7 +26606,7 @@ blocked before to become active again.
 
 The @handler_id has to be a valid signal handler id, connected to a
 signal of @instance.</doc>
-      <source-position filename="gobject/gsignal.h" line="441"/>
+      <source-position filename="gobject/gsignal.h" line="447"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26593,7 +26635,7 @@ connected to. The @handler_id becomes invalid and may be reused.
 
 The @handler_id has to be a valid signal handler id, connected to a
 signal of @instance.</doc>
-      <source-position filename="gobject/gsignal.h" line="447"/>
+      <source-position filename="gobject/gsignal.h" line="453"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26620,7 +26662,7 @@ The criteria mask is passed as an OR-ed combination of #GSignalMatchType
 flags, and the criteria values are passed as arguments.
 The match @mask has to be non-0 for successful matches.
 If no handler was found, 0 is returned.</doc>
-      <source-position filename="gobject/gsignal.h" line="453"/>
+      <source-position filename="gobject/gsignal.h" line="459"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -26687,7 +26729,7 @@ If no handler was found, 0 is returned.</doc>
       <doc xml:space="preserve"
            filename="gobject/gsignal.c"
            line="2726">Returns whether @handler_id is the ID of a handler connected to @instance.</doc>
-      <source-position filename="gobject/gsignal.h" line="450"/>
+      <source-position filename="gobject/gsignal.h" line="456"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -26726,7 +26768,7 @@ proceeded yet).
 
 The @handler_id has to be a valid id of a signal handler that is
 connected to a signal of @instance and is currently blocked.</doc>
-      <source-position filename="gobject/gsignal.h" line="444"/>
+      <source-position filename="gobject/gsignal.h" line="450"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26750,23 +26792,23 @@ connected to a signal of @instance and is currently blocked.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="648">Blocks all handlers on an instance that match @func and @data.</doc>
-      <source-position filename="gobject/gsignal.h" line="658"/>
+           line="654">Blocks all handlers on an instance that match @func and @data.</doc>
+      <source-position filename="gobject/gsignal.h" line="664"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="650">The instance to block handlers from.</doc>
+               line="656">The instance to block handlers from.</doc>
         </parameter>
         <parameter name="func">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="651">The C closure callback of the handlers (useless for non-C closures).</doc>
+               line="657">The C closure callback of the handlers (useless for non-C closures).</doc>
         </parameter>
         <parameter name="data">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="652">The closure data of the handlers' closures.</doc>
+               line="658">The closure data of the handlers' closures.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -26787,7 +26829,7 @@ If no handlers were found, 0 is returned, the number of blocked handlers
 otherwise.
 
 Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
-      <source-position filename="gobject/gsignal.h" line="461"/>
+      <source-position filename="gobject/gsignal.h" line="467"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -26856,7 +26898,7 @@ Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
            line="2755">Destroy all signal handlers of a type instance. This function is
 an implementation detail of the #GObject dispose implementation,
 and should not be used outside of the type system.</doc>
-      <source-position filename="gobject/gsignal.h" line="692"/>
+      <source-position filename="gobject/gsignal.h" line="698"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -26875,18 +26917,18 @@ and should not be used outside of the type system.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="634">Disconnects all handlers on an instance that match @data.</doc>
-      <source-position filename="gobject/gsignal.h" line="645"/>
+           line="640">Disconnects all handlers on an instance that match @data.</doc>
+      <source-position filename="gobject/gsignal.h" line="651"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="636">The instance to remove handlers from</doc>
+               line="642">The instance to remove handlers from</doc>
         </parameter>
         <parameter name="data">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="637">the closure data of the handlers' closures</doc>
+               line="643">the closure data of the handlers' closures</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -26895,23 +26937,23 @@ and should not be used outside of the type system.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="619">Disconnects all handlers on an instance that match @func and @data.</doc>
-      <source-position filename="gobject/gsignal.h" line="629"/>
+           line="625">Disconnects all handlers on an instance that match @func and @data.</doc>
+      <source-position filename="gobject/gsignal.h" line="635"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="621">The instance to remove handlers from.</doc>
+               line="627">The instance to remove handlers from.</doc>
         </parameter>
         <parameter name="func">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="622">The C closure callback of the handlers (useless for non-C closures).</doc>
+               line="628">The C closure callback of the handlers (useless for non-C closures).</doc>
         </parameter>
         <parameter name="data">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="623">The closure data of the handlers' closures.</doc>
+               line="629">The closure data of the handlers' closures.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -26933,7 +26975,7 @@ matches.  If no handlers were found, 0 is returned, the number of
 disconnected handlers otherwise.
 
 Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
-      <source-position filename="gobject/gsignal.h" line="477"/>
+      <source-position filename="gobject/gsignal.h" line="483"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27000,23 +27042,23 @@ Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
                     introspectable="0">
       <doc xml:space="preserve"
            filename="gobject/gsignal.h"
-           line="662">Unblocks all handlers on an instance that match @func and @data.</doc>
-      <source-position filename="gobject/gsignal.h" line="672"/>
+           line="668">Unblocks all handlers on an instance that match @func and @data.</doc>
+      <source-position filename="gobject/gsignal.h" line="678"/>
       <parameters>
         <parameter name="instance">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="664">The instance to unblock handlers from.</doc>
+               line="670">The instance to unblock handlers from.</doc>
         </parameter>
         <parameter name="func">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="665">The C closure callback of the handlers (useless for non-C closures).</doc>
+               line="671">The C closure callback of the handlers (useless for non-C closures).</doc>
         </parameter>
         <parameter name="data">
           <doc xml:space="preserve"
                filename="gobject/gsignal.h"
-               line="666">The closure data of the handlers' closures.</doc>
+               line="672">The closure data of the handlers' closures.</doc>
         </parameter>
       </parameters>
     </function-macro>
@@ -27039,7 +27081,7 @@ otherwise. The match criteria should not apply to any handlers that are
 not currently blocked.
 
 Support for %G_SIGNAL_MATCH_ID was added in GLib 2.78.</doc>
-      <source-position filename="gobject/gsignal.h" line="469"/>
+      <source-position filename="gobject/gsignal.h" line="475"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27121,7 +27163,7 @@ One example of when you might use this is when the arguments to the
 signal are difficult to compute. A class implementor may opt to not
 emit the signal if no one is attached anyway, thus saving the cost
 of building the arguments.</doc>
-      <source-position filename="gobject/gsignal.h" line="418"/>
+      <source-position filename="gobject/gsignal.h" line="424"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27166,7 +27208,7 @@ which need to be validated at run-time before actually trying to create them.
 
 See [func@GObject.signal_new] for details of the rules for valid names.
 The rules for signal names are the same as those for property names.</doc>
-      <source-position filename="gobject/gsignal.h" line="386"/>
+      <source-position filename="gobject/gsignal.h" line="392"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27188,7 +27230,7 @@ The rules for signal names are the same as those for property names.</doc>
            line="1262">Lists the signals by id that a certain instance or interface type
 created. Further information about the signals can be acquired through
 g_signal_query().</doc>
-      <source-position filename="gobject/gsignal.h" line="383"/>
+      <source-position filename="gobject/gsignal.h" line="389"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27229,7 +27271,7 @@ example, using g_type_class_ref()) for this function to work, as signals are
 always installed during class initialization.
 
 See g_signal_new() for details on allowed signal names.</doc>
-      <source-position filename="gobject/gsignal.h" line="375"/>
+      <source-position filename="gobject/gsignal.h" line="381"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27257,7 +27299,7 @@ See g_signal_new() for details on allowed signal names.</doc>
            line="1314">Given the signal's identifier, finds its name.
 
 Two different signals may have the same name, if they have differing types.</doc>
-      <source-position filename="gobject/gsignal.h" line="378"/>
+      <source-position filename="gobject/gsignal.h" line="384"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27300,7 +27342,7 @@ instead of g_cclosure_marshal_generic().
 If @c_marshaller is non-%NULL, you need to also specify a va_marshaller
 using g_signal_set_va_marshaller() or the generic va_marshaller will
 be used.</doc>
-      <source-position filename="gobject/gsignal.h" line="329"/>
+      <source-position filename="gobject/gsignal.h" line="335"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27410,7 +27452,7 @@ See g_signal_new() for information about signal names.
 
 If c_marshaller is %NULL, g_cclosure_marshal_generic() will be used as
 the marshaller for this signal.</doc>
-      <source-position filename="gobject/gsignal.h" line="340"/>
+      <source-position filename="gobject/gsignal.h" line="346"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27513,7 +27555,7 @@ See g_signal_new() for details on allowed signal names.
 
 If c_marshaller is %NULL, g_cclosure_marshal_generic() will be used as
 the marshaller for this signal.</doc>
-      <source-position filename="gobject/gsignal.h" line="318"/>
+      <source-position filename="gobject/gsignal.h" line="324"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27613,7 +27655,7 @@ See g_signal_new() for details on allowed signal names.
 
 If c_marshaller is %NULL, g_cclosure_marshal_generic() will be used as
 the marshaller for this signal.</doc>
-      <source-position filename="gobject/gsignal.h" line="307"/>
+      <source-position filename="gobject/gsignal.h" line="313"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27721,7 +27763,7 @@ from the type to which the signal belongs.
 See g_signal_chain_from_overridden() and
 g_signal_chain_from_overridden_handler() for how to chain up to the
 parent class closure from inside the overridden one.</doc>
-      <source-position filename="gobject/gsignal.h" line="505"/>
+      <source-position filename="gobject/gsignal.h" line="511"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27760,7 +27802,7 @@ type to which the signal belongs.
 See g_signal_chain_from_overridden() and
 g_signal_chain_from_overridden_handler() for how to chain up to the
 parent class closure from inside the overridden one.</doc>
-      <source-position filename="gobject/gsignal.h" line="509"/>
+      <source-position filename="gobject/gsignal.h" line="515"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27793,7 +27835,7 @@ parent class closure from inside the overridden one.</doc>
            filename="gobject/gsignal.c"
            line="1113">Internal function to parse a signal name into its @signal_id
 and @detail quark.</doc>
-      <source-position filename="gobject/gsignal.h" line="388"/>
+      <source-position filename="gobject/gsignal.h" line="394"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gsignal.c"
@@ -27848,7 +27890,7 @@ structure to hold signal-specific information. If an invalid
 signal id is passed in, the @signal_id member of the #GSignalQuery
 is 0. All members filled into the #GSignalQuery structure should
 be considered constant and have to be left untouched.</doc>
-      <source-position filename="gobject/gsignal.h" line="380"/>
+      <source-position filename="gobject/gsignal.h" line="386"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27876,7 +27918,7 @@ be considered constant and have to be left untouched.</doc>
       <doc xml:space="preserve"
            filename="gobject/gsignal.c"
            line="1033">Deletes an emission hook.</doc>
-      <source-position filename="gobject/gsignal.h" line="412"/>
+      <source-position filename="gobject/gsignal.h" line="418"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27906,7 +27948,7 @@ be considered constant and have to be left untouched.</doc>
 specialised form of the marshaller that can often be used for the
 common case of a single connected signal handler and avoids the
 overhead of #GValue.  Its use is optional.</doc>
-      <source-position filename="gobject/gsignal.h" line="351"/>
+      <source-position filename="gobject/gsignal.h" line="357"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27942,7 +27984,7 @@ This will prevent the default method from running, if the signal was
 flag).
 
 Prints a warning if used on a signal which isn't being emitted.</doc>
-      <source-position filename="gobject/gsignal.h" line="399"/>
+      <source-position filename="gobject/gsignal.h" line="405"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -27975,7 +28017,7 @@ Prints a warning if used on a signal which isn't being emitted.</doc>
 
 This is just like g_signal_stop_emission() except it will look up the
 signal id for you.</doc>
-      <source-position filename="gobject/gsignal.h" line="403"/>
+      <source-position filename="gobject/gsignal.h" line="409"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28117,7 +28159,7 @@ until one of them returns %TRUE. The functions have to check the class id
 passed in to figure whether they actually want to cache the class of this
 type, since all classes are routed through the same #GTypeClassCacheFunc
 chain.</doc>
-      <source-position filename="gobject/gtype.h" line="2604"/>
+      <source-position filename="gobject/gtype.h" line="2610"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28154,7 +28196,7 @@ This function should be called in the
 type's get_type() function after the type is registered.
 The private structure can be retrieved using the
 G_TYPE_CLASS_GET_PRIVATE() macro.</doc>
-      <source-position filename="gobject/gtype.h" line="1516"/>
+      <source-position filename="gobject/gtype.h" line="1522"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28175,7 +28217,7 @@ G_TYPE_CLASS_GET_PRIVATE() macro.</doc>
     </function>
     <function name="type_add_instance_private"
               c:identifier="g_type_add_instance_private">
-      <source-position filename="gobject/gtype.h" line="1506"/>
+      <source-position filename="gobject/gtype.h" line="1512"/>
       <return-value transfer-ownership="none">
         <type name="gint" c:type="gint"/>
       </return-value>
@@ -28203,7 +28245,7 @@ that depends on the interfaces of a class. For instance, the
 implementation of #GObject uses this facility to check that an
 object implements all of the properties that are defined on its
 interfaces.</doc>
-      <source-position filename="gobject/gtype.h" line="2613"/>
+      <source-position filename="gobject/gtype.h" line="2619"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28234,7 +28276,7 @@ interfaces.</doc>
            line="2667">Adds @interface_type to the dynamic @instance_type. The information
 contained in the #GTypePlugin structure pointed to by @plugin
 is used to manage the relationship.</doc>
-      <source-position filename="gobject/gtype.h" line="1490"/>
+      <source-position filename="gobject/gtype.h" line="1496"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28266,7 +28308,7 @@ is used to manage the relationship.</doc>
            line="2630">Adds @interface_type to the static @instance_type.
 The information contained in the #GInterfaceInfo structure
 pointed to by @info is used to manage the relationship.</doc>
-      <source-position filename="gobject/gtype.h" line="1486"/>
+      <source-position filename="gobject/gtype.h" line="1492"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28295,7 +28337,7 @@ pointed to by @info is used to manage the relationship.</doc>
     <function name="type_check_class_cast"
               c:identifier="g_type_check_class_cast"
               introspectable="0">
-      <source-position filename="gobject/gtype.h" line="2636"/>
+      <source-position filename="gobject/gtype.h" line="2642"/>
       <return-value>
         <type name="TypeClass" c:type="GTypeClass*"/>
       </return-value>
@@ -28310,7 +28352,7 @@ pointed to by @info is used to manage the relationship.</doc>
     </function>
     <function name="type_check_class_is_a"
               c:identifier="g_type_check_class_is_a">
-      <source-position filename="gobject/gtype.h" line="2639"/>
+      <source-position filename="gobject/gtype.h" line="2645"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -28328,7 +28370,7 @@ pointed to by @info is used to manage the relationship.</doc>
            filename="gobject/gtype.c"
            line="4004">Private helper function to aid implementation of the
 G_TYPE_CHECK_INSTANCE() macro.</doc>
-      <source-position filename="gobject/gtype.h" line="2625"/>
+      <source-position filename="gobject/gtype.h" line="2631"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -28347,7 +28389,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     <function name="type_check_instance_cast"
               c:identifier="g_type_check_instance_cast"
               introspectable="0">
-      <source-position filename="gobject/gtype.h" line="2627"/>
+      <source-position filename="gobject/gtype.h" line="2633"/>
       <return-value>
         <type name="TypeInstance" c:type="GTypeInstance*"/>
       </return-value>
@@ -28362,7 +28404,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_instance_is_a"
               c:identifier="g_type_check_instance_is_a">
-      <source-position filename="gobject/gtype.h" line="2630"/>
+      <source-position filename="gobject/gtype.h" line="2636"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -28377,7 +28419,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_instance_is_fundamentally_a"
               c:identifier="g_type_check_instance_is_fundamentally_a">
-      <source-position filename="gobject/gtype.h" line="2633"/>
+      <source-position filename="gobject/gtype.h" line="2639"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -28392,7 +28434,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_is_value_type"
               c:identifier="g_type_check_is_value_type">
-      <source-position filename="gobject/gtype.h" line="2642"/>
+      <source-position filename="gobject/gtype.h" line="2648"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -28403,7 +28445,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
       </parameters>
     </function>
     <function name="type_check_value" c:identifier="g_type_check_value">
-      <source-position filename="gobject/gtype.h" line="2644"/>
+      <source-position filename="gobject/gtype.h" line="2650"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -28415,7 +28457,7 @@ G_TYPE_CHECK_INSTANCE() macro.</doc>
     </function>
     <function name="type_check_value_holds"
               c:identifier="g_type_check_value_holds">
-      <source-position filename="gobject/gtype.h" line="2646"/>
+      <source-position filename="gobject/gtype.h" line="2652"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -28467,7 +28509,7 @@ the child types of @type.</doc>
     <function name="type_class_adjust_private_offset"
               c:identifier="g_type_class_adjust_private_offset"
               moved-to="TypeClass.adjust_private_offset">
-      <source-position filename="gobject/gtype.h" line="1512"/>
+      <source-position filename="gobject/gtype.h" line="1518"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28619,7 +28661,7 @@ with zeros.
 Note: Do not use this function, unless you're implementing a
 fundamental type. Also language bindings should not use this
 function, but g_object_new() instead.</doc>
-      <source-position filename="gobject/gtype.h" line="2599"/>
+      <source-position filename="gobject/gtype.h" line="2605"/>
       <return-value>
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -28801,7 +28843,7 @@ Historically, `_get_type()` methods have sometimes been marked as
 first call to a `_get_type()` method has side-effects. These
 annotations should be removed, as they can cause code to be optimized
 out in unexpected ways by the compiler.</doc>
-      <source-position filename="gobject/gtype.h" line="1525"/>
+      <source-position filename="gobject/gtype.h" line="1531"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28822,7 +28864,7 @@ the type, if there is one.
 
 Like g_type_create_instance(), this function is reserved for
 implementors of fundamental types.</doc>
-      <source-position filename="gobject/gtype.h" line="2601"/>
+      <source-position filename="gobject/gtype.h" line="2607"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -28863,7 +28905,7 @@ yet).</doc>
            filename="gobject/gtype.c"
            line="3873">Internal function, used to extract the fundamental type ID portion.
 Use G_TYPE_FUNDAMENTAL() instead.</doc>
-      <source-position filename="gobject/gtype.h" line="2597"/>
+      <source-position filename="gobject/gtype.h" line="2603"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -28887,7 +28929,7 @@ Use G_TYPE_FUNDAMENTAL() instead.</doc>
 register a new fundamental type with g_type_register_fundamental().
 The returned type ID represents the highest currently registered
 fundamental type identifier.</doc>
-      <source-position filename="gobject/gtype.h" line="2595"/>
+      <source-position filename="gobject/gtype.h" line="2601"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -28926,7 +28968,7 @@ variable to include `instance-count`).</doc>
       <doc xml:space="preserve"
            filename="gobject/gtype.c"
            line="3782">Returns the #GTypePlugin structure for @type.</doc>
-      <source-position filename="gobject/gtype.h" line="2590"/>
+      <source-position filename="gobject/gtype.h" line="2596"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -28984,7 +29026,7 @@ of registered types. Any time a type is registered this serial changes,
 which means you can cache information based on type lookups (such as
 g_type_from_name()) and know if the cache is still valid at a later
 time by comparing the current serial with the one at the type lookup.</doc>
-      <source-position filename="gobject/gtype.h" line="1527"/>
+      <source-position filename="gobject/gtype.h" line="1533"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29044,7 +29086,7 @@ This means that any type implementing @interface_type must also implement
 @prerequisite_type. Prerequisites can be thought of as an alternative to
 interface derivation (which GType doesn't support). An interface can have
 at most one instantiatable prerequisite type.</doc>
-      <source-position filename="gobject/gtype.h" line="1494"/>
+      <source-position filename="gobject/gtype.h" line="1500"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -29072,7 +29114,7 @@ at most one instantiatable prerequisite type.</doc>
 @interface_type which has been added to @instance_type, or %NULL
 if @interface_type has not been added to @instance_type or does
 not have a #GTypePlugin structure. See g_type_add_interface_dynamic().</doc>
-      <source-position filename="gobject/gtype.h" line="2592"/>
+      <source-position filename="gobject/gtype.h" line="2598"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29107,7 +29149,7 @@ prerequisite, %G_TYPE_INVALID is returned.
 
 See g_type_interface_add_prerequisite() for more information
 about prerequisites.</doc>
-      <source-position filename="gobject/gtype.h" line="1500"/>
+      <source-position filename="gobject/gtype.h" line="1506"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29161,7 +29203,7 @@ passed in class conforms.</doc>
       <doc xml:space="preserve"
            filename="gobject/gtype.c"
            line="1594">Returns the prerequisites of an interfaces type.</doc>
-      <source-position filename="gobject/gtype.h" line="1497"/>
+      <source-position filename="gobject/gtype.h" line="1503"/>
       <return-value transfer-ownership="full">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29285,7 +29327,7 @@ should not be passed in and will most likely lead to a crash.</doc>
     </function>
     <function name="type_name_from_class"
               c:identifier="g_type_name_from_class">
-      <source-position filename="gobject/gtype.h" line="2657"/>
+      <source-position filename="gobject/gtype.h" line="2663"/>
       <return-value transfer-ownership="none">
         <type name="utf8" c:type="const gchar*"/>
       </return-value>
@@ -29297,7 +29339,7 @@ should not be passed in and will most likely lead to a crash.</doc>
     </function>
     <function name="type_name_from_instance"
               c:identifier="g_type_name_from_instance">
-      <source-position filename="gobject/gtype.h" line="2655"/>
+      <source-position filename="gobject/gtype.h" line="2661"/>
       <return-value transfer-ownership="none">
         <type name="utf8" c:type="const gchar*"/>
       </return-value>
@@ -29425,7 +29467,7 @@ it only supported static types.</doc>
 #GTypePlugin structure pointed to by @plugin to manage the type and its
 instances (if not abstract).  The value of @flags determines the nature
 (e.g. abstract or not) of the type.</doc>
-      <source-position filename="gobject/gtype.h" line="1475"/>
+      <source-position filename="gobject/gtype.h" line="1481"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29470,7 +29512,7 @@ The type system uses the information contained in the #GTypeInfo structure
 pointed to by @info and the #GTypeFundamentalInfo structure pointed to by
 @finfo to manage the type and its instances. The value of @flags determines
 additional characteristics of the fundamental type.</doc>
-      <source-position filename="gobject/gtype.h" line="1480"/>
+      <source-position filename="gobject/gtype.h" line="1486"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29520,7 +29562,7 @@ additional characteristics of the fundamental type.</doc>
 #GTypeInfo structure pointed to by @info to manage the type and its
 instances (if not abstract). The value of @flags determines the nature
 (e.g. abstract or not) of the type.</doc>
-      <source-position filename="gobject/gtype.h" line="1461"/>
+      <source-position filename="gobject/gtype.h" line="1467"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29564,7 +29606,7 @@ instances (if not abstract). The value of @flags determines the nature
 @parent_type.  The value of @flags determines the nature (e.g.
 abstract or not) of the type. It works by filling a #GTypeInfo
 struct and calling g_type_register_static().</doc>
-      <source-position filename="gobject/gtype.h" line="1466"/>
+      <source-position filename="gobject/gtype.h" line="1472"/>
       <return-value transfer-ownership="none">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
@@ -29624,7 +29666,7 @@ struct and calling g_type_register_static().</doc>
            line="2298">Removes a previously installed #GTypeClassCacheFunc. The cache
 maintained by @cache_func has to be empty when calling
 g_type_remove_class_cache_func() to avoid leaks.</doc>
-      <source-position filename="gobject/gtype.h" line="2607"/>
+      <source-position filename="gobject/gtype.h" line="2613"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -29654,7 +29696,7 @@ g_type_remove_class_cache_func() to avoid leaks.</doc>
            filename="gobject/gtype.c"
            line="2371">Removes an interface check function added with
 g_type_add_interface_check().</doc>
-      <source-position filename="gobject/gtype.h" line="2616"/>
+      <source-position filename="gobject/gtype.h" line="2622"/>
       <return-value transfer-ownership="none">
         <type name="none" c:type="void"/>
       </return-value>
@@ -29710,7 +29752,7 @@ g_type_add_interface_check().</doc>
       </parameters>
     </function>
     <function name="type_test_flags" c:identifier="g_type_test_flags">
-      <source-position filename="gobject/gtype.h" line="2649"/>
+      <source-position filename="gobject/gtype.h" line="2655"/>
       <return-value transfer-ownership="none">
         <type name="gboolean" c:type="gboolean"/>
       </return-value>
@@ -29734,7 +29776,7 @@ g_type_add_interface_check().</doc>
 Note that this function should only be used from source code
 that implements or has internal knowledge of the implementation of
 @type.</doc>
-      <source-position filename="gobject/gtype.h" line="2620"/>
+      <source-position filename="gobject/gtype.h" line="2626"/>
       <return-value transfer-ownership="none" nullable="1">
         <doc xml:space="preserve"
              filename="gobject/gtype.c"
