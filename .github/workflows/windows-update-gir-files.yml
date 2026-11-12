@@ -25,7 +25,9 @@ jobs:
         uses: msys2/setup-msys2@v2
         with:
           update: true
+          msystem: UCRT64
           install: >-
+            mingw-w64-ucrt-x86_64-python
             mingw-w64-ucrt-x86_64-pkgconf
             mingw-w64-ucrt-x86_64-gobject-introspection
             mingw-w64-ucrt-x86_64-libadwaita
@@ -37,14 +39,10 @@ jobs:
             mingw-w64-ucrt-x86_64-gtksourceview5
             mingw-w64-ucrt-x86_64-libsecret
             mingw-w64-ucrt-x86_64-librsvg
-      - name: Setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Extract gir files
-        run: python transfer.py /mingw64/share/gir-1.0/ ./windows gir_files.txt,gir_files_windows.txt
+        run: python transfer.py /ucrt64/share/gir-1.0/ ./windows gir_files.txt,gir_files_windows.txt
       - name: Create pull request
         uses: peter-evans/create-pull-request@v4
         with:
